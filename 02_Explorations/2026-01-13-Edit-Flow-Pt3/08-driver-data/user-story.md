@@ -44,7 +44,7 @@ WHERE sen_tix = <TransportOrderId>
 
 
   - `SetDriver(TransportOrderId NUMERIC, DriverNo NUMERIC, DriverName VARCHAR, PhoneNumber VARCHAR)`
-    - `DriverNo` (fahrer_n): Pass Fahrer-ID when driver selected from fuzzy search, NULL for manual entry
+    - `DriverNo` (fahrer_n): Pass `fahrer_schluessel` when driver selected from fuzzy search, NULL for manual entry
     - `DriverName`: Always required (encrypted with `cal_crypt.encrypt()`)
     - `PhoneNumber`: Optional, encrypted with `cal_crypt.encrypt()`
     - **UPDATE** `sen_frk_unt.fahrer_n`, `fahrer_name` and `mobil_tel_n` WHERE `sen_tix = TransportOrderId AND lfd_n = 1`
