@@ -1,0 +1,90 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2758
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18020\viewh17020\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 2024-03-04 Pascal Leicht\
+\
+- sind immer noch am Anfang\
+- er w\'fcrde sich freuen, wenn wir zusammen draufhauen\
+\
+## Azure\
+\
+- PBI, orkitems checken\
+- Zugang wird von Christian \'fcbernommen\
+\
+## TMS\
+\
+### Status QUO: TAMS und wo sie mit PlanG hinwollen\
+- Mengenger\'fcst\
+\'97 60-70 Datenbanken\
+\'97 Sendungen: hunderttausende \
+\
+- ZDB: Versuch, Daten zentral zu halten (vor 10-15 Jahren)\
+- Daten f\'fcr Business Cases\
+- Wird von verschiedenen An\
+- Push von Niederlassungen, UTP-Dienste, alle 5, 10 oder 15 Min\
+\
+### Post Migration\
+\
+- auf gleichen DBs operieren, zumindest in der Zeit des Parallelbetriebs \
+\
+- Meine Frage: \'dcbernahme von Code aus UniFace?\
+\
+- ZDB bleibt Oracle\
+\
+- Knackpunkt: zugriff des Service auf die Datenbank\
+\
+- CrossDock: Ben\'f6tigt Daten aus TMS\
+- ist Fremdsystem\
+- \'84Daten eher hinsinken\'93 = dort redundant halten\
+=> Herausforderung: h\'e4ngt alles an packages\
+\
+\
+=> Hintergrund: new Disco hat ersten Versucht => gescheitert => schnell businesswert liefern \
+=> wenn dann in 10-15 j\'e4hren\
+\
+- DB-Migration: nur Bruchteil der Packages funktioniert\
+- es gibt auch noch keine funktionierende TMS-uniFace Version mit Alloy\
+\
+\
+## Vollst\'e4ndiges zentrales System\
+\
+- hoch kritikal! Betrieb!\
+- konkretes Beispiel: Transportauftr\'e4ge nur noch \'fcber neue => nicht mehr alte Uniface => Graceful abgel\'f6st\
+\
+\
+## Mandanten Switch\
+\
+- \'84Core-FUntoinalit\'e4t\'93: umschalten sollte unten im Stack supported werden => auch \
+\
+## Fragen:\
+\
+- Erwartung von Nagel ! Kam oft vor => kl\'e4ren und Erwartungshaltung managen!\
+\
+- On-premise hei\'dft auf bare-Metal? => Ja auf physischen Servern \
+=> Niederlassungen kommen selten dazu\
+\
+- Uniface Code => Uniface ist dumm => 90-95%\
+\
+- BIA / Monitoring / SLAs\
+=> zentraler Support, 24/7 durch C.A.L. => Entst\'f6rung, Monitoringtools\
+=> 1st Level: Nimmt Ticket auf (Email/Telefon) => analysiert z.B. per Teamviewer\
+=> 2nd Level\
+\
+- Support: Wer ruft an, wenn es nicht geht?\
+\
+\
+\
+- Orga Chart! Wer sind die TMS Kollegen?\
+=> \'84PeterAPI\'93 => nutzen? Problem: Abh\'e4ngigkeit von TMS-Abteilung\
+=> PeterApi = ist schon REST\
+=> Wurde aufgrund von Nischenprojekt gestartet => \'84Fahrertotem\'93 => Ui ist eine Webanendung => von externer Firma entwickelt\
+=> .Net / C#\
+\
+- ERMs w\'fcrde nicht weiterhelfen => reflektieren die PBIs besser => Raul \
+\
+\
+Lorry Dispo = New Dispo}

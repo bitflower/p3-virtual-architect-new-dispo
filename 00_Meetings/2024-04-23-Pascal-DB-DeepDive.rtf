@@ -1,0 +1,104 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2758
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18500\viewh11780\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # 2024-04-23 Pascal\
+\
+- hat mit TMS-Kollegen gesprochen\
+=> \'fcberraschender Zeitplan des MVP-MVP\
+=> Es herrscht Kopfmonopol (Joachim)\
+=> Kollege ist erst ab 29.04.2024\
+\
+=> Zweiten Kollegen hat er angesprochen => hat aber keinen Sinn\
+\
+- F\'fcr weitere Projekte wurden die Daten auch schon angezapft\
+=> Erfahrung liegt vor, beim anbinden neuer Tech-Stack => Macht aber auch der calTMS Kollege Joachim\
+\
+- Schreibende Zugriffe:\
+- Lesende Zugriffe: PeterAPI h\'e4lt er nicht f\'fcr sinnvoll\
+=> Performance evtl. schlechter\
+=> Anforderungen in der Zukunft k\'f6nnten nicht zur PeterAPI passen\
+\
+- F\'fcr anderes Projekt haben sie neue Views gebaut => \'84Proxy\'93 / \'84Contracts\'93\
+=> Sinnvoll aus seiner Sicht\
+\
+- Oracle / PostGre parallel anbinden? Sinnvoll? Aufwand?\
+\
+## Einblicke\
+\
+- T_VA\
+- TIX = Technischer Index\
+\
+- speziell. View bauen\
+- z.B: V_LORRY_VA\
+\
+- Namespace f\'fcr Lorry festlegen\
+- Maintenance Overhead f\'fcr weitere Objekte aus seiner Sicht OK\
+=> Wenn Breaking Change in Table => Wirkt sich auf Vierw aus und kann nicht mehr kompiliert erden\
+\
+- ORM: Zumindest lesen von Oracle auf PostGre\
+=> Er hat Vertrauen verl\'f6ren, dass Migration schnell \'fcber die B\'fchne geht\
+=> Pessimistisch \
+\
+=> Abh\'e4ngig davon machen, was es in der Realit\'e4t bedeutet => Provider \'e4ndern in der COnfig, idealerweise hei\'dfen Sparten gleich\
+\
+- Library als Basisimplementiertung\
+=> kann in weitere Bausteine integrierte erden\
+\
+- Vergleich MobileWebService\
+=> Vorteil hier ist, dass wir nicht Bestand migrieren m\'fcssen\
+\
+## Peter API\
+\
+- soll eine REST API sein\
+- nicht 100% konform\
+- Kollegen sind aber nicht so fit mit REST & Co\
+\
+- Er ist kein Freund der Peter\
+=> Bringt Abh\'e4ngigkeiten rein\
+=> Warum sollte die Anwendung, die potentiell das TMS ersetzt wird, noch eine API dazwischen haben\
+\
+- Abstimmung wie weit die Abstraktion geht:\
+=> Wieviel macht die \'84Abstraktionsebene\'93\
+\
+- TMSProxy = PeterAPI\
+\
+- Allocation: PeterAPI stellt auch Kapazit\'e4tsblocker dar\
+=> Maintenance Themen sp\'e4ter\
+=> Wenn P3 auf die PeterAPI geht => Abh\'e4ngigkeit\
+=> Black Box vermieden\
+\
+## Library Architektur\
+\
+- SQLCommand oder ORM\
+- Multi-DB Connectivity\
+\
+- Nicht limitieren auf Datenbank Connection Zahl\
+\
+- Was ist die Verantwortung der Library \
+=> z.B: \'84GetAllTransportauftr\'e4ge\'93 => Library wird verwendet \
+=> Implementiring ob Table, View oder Procedure verwendet wird ist der konsumierende Anwendung egal sein\
+\
+\
+## ERM Draft\
+\
+- Kurzes Gespr\'e4ch mit Raul\
+=> 5-7 Spalten definieren, die er f\'fcr sinnvoll h\'e4lt\
+=> Frontend fachlich danach schneiden\
+=> DTOs\
+\
+\
+## Rollout\
+\
+- Niederlassungsweise\
+- Grobe Planung\
+\
+## Next Steps\
+\
+- Joachim Terminblocker\
+- Terms festlegen (in Englisch)\
+- Sprache im Code kl\'e4ren (Englisch vorschlagen)\
+}
