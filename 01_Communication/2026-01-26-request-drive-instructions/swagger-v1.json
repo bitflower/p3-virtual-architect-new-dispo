@@ -1,0 +1,5482 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "CALConsult.Disposition API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/branches": {
+      "get": {
+        "tags": [
+          "BranchLocations"
+        ],
+        "summary": "Returns all branch locations",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "BranchLocations"
+        ],
+        "summary": "Creates branch locations",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The branch locations to be created",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkCreateBranchLocationsDto"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkCreateBranchLocationsDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkCreateBranchLocationsDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkCreateBranchLocationsDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BranchLocations"
+        ],
+        "summary": "Removes branch location",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Branches to be deleted",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/branches/{id}": {
+      "put": {
+        "tags": [
+          "BranchLocations"
+        ],
+        "summary": "Updates an existing branch locations with the provided details.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the branch location to be updated.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The object containing the updated branch location information.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBranchLocationRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBranchLocationRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBranchLocationRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBranchLocationRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/contacts": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Returns contact people for selected branch key",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Creates contacts",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The contacts to be created",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkCreateContactRequestDto"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkCreateContactRequestDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkCreateContactRequestDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkCreateContactRequestDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Updates existing contacts with the provided details or inserts them if they do not exist.",
+        "description": "This endpoint updates contacts based on their email addresses and the associated database identifier.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "A collection of contact update requests, each containing updated contact details.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkUpdateContactsRequestDto"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkUpdateContactsRequestDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkUpdateContactsRequestDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkUpdateContactsRequestDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Removes contacts",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contacts to be deleted",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkDeleteContactsRequestDto"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkDeleteContactsRequestDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkDeleteContactsRequestDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BulkDeleteContactsRequestDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/contacts/{id}": {
+      "put": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Updates an existing contact with the provided details.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the contact to be updated.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The object containing the updated contact information.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContactRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContactRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContactRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContactRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/customer-communication/send-mail": {
+      "post": {
+        "tags": [
+          "CustomerCommunication"
+        ],
+        "summary": "Sends emails to a customer.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "An array of the data needed for the mails",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendMailRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendMailRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendMailRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendMailRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendMailResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer-communication/send-to-edi": {
+      "post": {
+        "tags": [
+          "CustomerCommunication"
+        ],
+        "summary": "Sends data for EDI integration.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Data required for the EDI",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendToEdiRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendToEdiRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendToEdiRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendToEdiRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendToEdiResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer-communication/clients-list": {
+      "get": {
+        "tags": [
+          "CustomerCommunication"
+        ],
+        "summary": "Retrieves a list of clients with information about their pickup(VL || HL) shipments/legs and wether they have been communicated or not.\r\nOnly for the first client the distinct pickup tour points are retrieved and attached to the response.",
+        "parameters": [
+          {
+            "name": "dateFrom",
+            "in": "query",
+            "description": "Start date from which clients list info will be retrieved.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "dateTo",
+            "in": "query",
+            "description": "End date until which clients list info will be retrieved.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SingleClientResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer-communication/client-tourpoints": {
+      "get": {
+        "tags": [
+          "CustomerCommunication"
+        ],
+        "summary": "Retrieves the tourpoints for a given client.\r\nTourpoints contain information along with other such as wether they have been communicated or not.",
+        "parameters": [
+          {
+            "name": "clientName",
+            "in": "query",
+            "description": "The client name to retrieve tourpoints information for",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateFrom",
+            "in": "query",
+            "description": "Start date from which tourpoint informations will be retrieved.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "dateTo",
+            "in": "query",
+            "description": "End date until which tourpoint informations will be retrieved.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClientTourpointDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/freight-authorization/transeu": {
+      "get": {
+        "tags": [
+          "FreightAuthorization"
+        ],
+        "summary": "Get TransEu Authorization token and caches it",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "description": "The authorization grant code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "The application context",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/freight-authorization/transeu/reset": {
+      "get": {
+        "tags": [
+          "FreightAuthorization"
+        ],
+        "summary": "Clear tokens",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/freight-exchange/freight-offers/{freight-offer-id}": {
+      "get": {
+        "tags": [
+          "FreightExchange"
+        ],
+        "summary": "Returns detailed information for one freight offer",
+        "parameters": [
+          {
+            "name": "freight-offer-id",
+            "in": "path",
+            "description": "The id of the freight offer",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/freight-exchange/freight-offers": {
+      "get": {
+        "tags": [
+          "FreightExchange"
+        ],
+        "summary": "Returns detailed information of all freight offers queried by transport order number",
+        "parameters": [
+          {
+            "name": "transportOrderNumber",
+            "in": "query",
+            "description": "The id/number of a transport order",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "FreightExchange"
+        ],
+        "summary": "Create a freight offer for a supported platform",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Freight-Platform-Names",
+            "in": "header",
+            "description": "Identifier for the selected freight platforms",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The freight offer info required to make the publishing possible",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFreightOfferDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFreightOfferDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFreightOfferDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFreightOfferDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "FreightExchange"
+        ],
+        "summary": "Update a an existing freight offer on a platform",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Freight-Platform-Names",
+            "in": "header",
+            "description": "Identifier for the selected freight platforms",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The required update information",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFreightOfferDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFreightOfferDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFreightOfferDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFreightOfferDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "FreightExchange"
+        ],
+        "summary": "Removes a freight offer",
+        "parameters": [
+          {
+            "name": "thirdPartyFreightId",
+            "in": "query",
+            "description": "The third party id of the freight offer",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "freightExchangePlatform",
+            "in": "query",
+            "description": "The platform on which the freight offer is published",
+            "schema": {
+              "$ref": "#/components/schemas/FreightExchangePlatforms"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Freight-Platform-Names",
+            "in": "header",
+            "description": "Identifier for the selected freight platforms",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Endpoint to initialize the needed data for pickup planning feature.\r\nEntities such as Lots and Legs are generated and persisted in the database.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/lots": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Returns created new lot",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains info about the lot we want to create",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLotRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLotRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLotRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLotRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/lots/{sourceLotId}/legs/{legId}": {
+      "put": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Updates the lot for a specified leg by replacing an existing lot with new one.",
+        "description": "This endpoint also recalculates aggregates properties for the lots.",
+        "parameters": [
+          {
+            "name": "sourceLotId",
+            "in": "path",
+            "description": "The unique identifier of the lot to be replaced within the specified leg.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "legId",
+            "in": "path",
+            "description": "The unique identifier of the leg.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "A DTO containing the new lot details that will replace the old lot.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MoveLegIntoLotRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MoveLegIntoLotRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MoveLegIntoLotRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MoveLegIntoLotRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/lots-and-legs": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Returns paginated sorted and filtered lots with their legs",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The lot and leg retrieve info",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LotsAndLegsRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LotsAndLegsRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LotsAndLegsRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LotsAndLegsRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/transportorders": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Returns a list of groups of transport orders. The groups are based on the Truck license plate in the transport orders.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The transport order groups retrieval info",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PickupPlanningGetTransportOrdersRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PickupPlanningGetTransportOrdersRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PickupPlanningGetTransportOrdersRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PickupPlanningGetTransportOrdersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Deletes a single transport order.",
+        "parameters": [
+          {
+            "name": "TransportOrderId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/transportorders/from-leg": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Creates a transport order with the provided leg",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "A DTO containing the Leg ID",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransportOrderFromLegRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransportOrderFromLegRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransportOrderFromLegRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransportOrderFromLegRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/transportorders/from-lot": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Creates a transport order from the provided lot",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "A DTO containing the Lot ID",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransportOrderFromLotRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransportOrderFromLotRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransportOrderFromLotRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransportOrderFromLotRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/legs/reorder": {
+      "put": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Adjusts the loading sequence of legs within a lot assignment.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains the info needed to reorder the legs",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderLegRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderLegRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderLegRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderLegRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/transportorders/merge-suggestion": {
+      "get": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Retrieves a single lot assignment id for the purpose of merging a leg to that assignment entity",
+        "parameters": [
+          {
+            "name": "legId",
+            "in": "query",
+            "description": "The leg for which we find a merge suggestion",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "transportOrderId",
+            "in": "query",
+            "description": "The transport order's assignments that we search through",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/lotassignments/from-leg": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Assigns a leg to a transport order.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "A DTO with the legId we want to assign to a transport order and the transportOrderId",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignLegToTransportOrderRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignLegToTransportOrderRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignLegToTransportOrderRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignLegToTransportOrderRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/lotassignments/reorder": {
+      "put": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Adjusts the loading sequence of lot assignments within a transport order.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains the info needed to reorder the lot assignments",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderLotAssignmentRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderLotAssignmentRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderLotAssignmentRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderLotAssignmentRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/transportorders/graph-tour-points": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Returns the tour points of the provided transport orders for the graphs",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "A DTO containg a list of transport order ids",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetGraphTourPointsRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetGraphTourPointsRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetGraphTourPointsRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetGraphTourPointsRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/lotassignments/from-lot": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Assigns a lot to a transport order",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "A DTO with the lotId we want to assign to a transport order and the transportOrderId",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignLotToTransportOrderRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignLotToTransportOrderRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignLotToTransportOrderRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignLotToTransportOrderRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/transportorders/{transportOrderId}/drive-instructions": {
+      "get": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Retrieves drive instructions for a transport order.",
+        "parameters": [
+          {
+            "name": "transportOrderId",
+            "in": "path",
+            "description": "The id of the transport order to retrieve drive instructions for",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/tourpoints/reorder": {
+      "put": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Adjusts the order of the tourpoints.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains the info needed to reorder of the tourpoints",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderTourpointRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderTourpointRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderTourpointRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReorderTourpointRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/transportorders/tourpoint": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Add a tourpoint to a transport order",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains the info for adding a tourpoint",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddTourpointRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddTourpointRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddTourpointRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddTourpointRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddedTourpoint"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Delete tourpoint from transport order.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains transportOrderId, tourpointId, mode",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTourpointGraphQLRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTourpointGraphQLRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTourpointGraphQLRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTourpointGraphQLRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/legs/{legId}/stays-loaded": {
+      "patch": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Updates the leg to denote if it should stay loaded or not.",
+        "parameters": [
+          {
+            "name": "legId",
+            "in": "path",
+            "description": "Leg guid of the leg pf which the stays loaded value should be changed.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "staysLoadedValue",
+            "in": "query",
+            "description": "The new stays loaded value.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarkStaysLoadedResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/lots-and-legs/unassign": {
+      "put": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Unassign lots and legs from a transport order.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains the info needed to unassign lots and legs from a transport order",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnassignLegsAndLotsRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnassignLegsAndLotsRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnassignLegsAndLotsRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnassignLegsAndLotsRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnassignLegsAndLotsResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/transportorders/{transportOrderId}": {
+      "get": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Retrieves a transport order by its id.",
+        "parameters": [
+          {
+            "name": "transportOrderId",
+            "in": "path",
+            "description": "The id of the transport order",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransportOrderByIdGraphQLResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/transportorders/{transportOrderId}/calculate-routes": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Calculate the optimal routes for a given transport order and persists them.",
+        "parameters": [
+          {
+            "name": "transportOrderId",
+            "in": "path",
+            "description": "The id of the transport order",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalculateRoutesResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pickup-planning/contact-person/details": {
+      "post": {
+        "tags": [
+          "PickupPlanning"
+        ],
+        "summary": "Retrieves contact details by field name and value.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The info required to get the contact details",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetContactPersonDetailsRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetContactPersonDetailsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetContactPersonDetailsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetContactPersonDetailsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactPersonDetailsGraphQLResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pubsub/consume": {
+      "post": {
+        "tags": [
+          "PubSubPush"
+        ],
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PubSubPushDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/admin/branches": {
+      "get": {
+        "tags": [
+          "TMSBranches"
+        ],
+        "summary": "Reads branch-related secrets from GCP Secret Manager loaded in Configuration.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/transportorders/paged": {
+      "post": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Returns paginated and sorted transport order items",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains sorting and pagination request input",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagedTransportOrdersRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagedTransportOrdersRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagedTransportOrdersRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagedTransportOrdersRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/transportorders/{orderNumber}": {
+      "get": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Returns a single transport order item found by order number",
+        "parameters": [
+          {
+            "name": "orderNumber",
+            "in": "path",
+            "description": "The number of the transport order",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/transportorders/fieldvalues": {
+      "post": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Returns paginated and sorted field values for a given field",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains pagination, field name and saerch term request input",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagedFieldValuesRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagedFieldValuesRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagedFieldValuesRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagedFieldValuesRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/transportorders/chamber-temperature": {
+      "post": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Update a transport order's chamber temperature value",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains information required for update of chamber temperature",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditChamberTemperatureInfoRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditChamberTemperatureInfoRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditChamberTemperatureInfoRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditChamberTemperatureInfoRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/transportorders/{transportOrderId}/assign-vehicle": {
+      "post": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Assign vehicle by id or license plate to a transport order",
+        "parameters": [
+          {
+            "name": "transportOrderId",
+            "in": "path",
+            "description": "The ID of the transport order",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains information required for assigning a vehicle to a transport order",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignVehicleRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignVehicleRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignVehicleRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignVehicleRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssignVehicleGraphQLResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transportorders/tourpoint/{tourPointId}/tournumber": {
+      "patch": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Update a tourpoint's tour number",
+        "parameters": [
+          {
+            "name": "tourPointId",
+            "in": "path",
+            "description": "The ID of the tour point",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains information required for updating a tour number",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetCustomerTourNumberRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetCustomerTourNumberRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetCustomerTourNumberRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetCustomerTourNumberRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetCustomerTourNumberResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transportorders/tourpoints/{tourPointId}": {
+      "put": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Updates a tourpoint by setting person data such as the address",
+        "parameters": [
+          {
+            "name": "tourPointId",
+            "in": "path",
+            "description": "The ID of the tour point",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains information required for updating the tourpoint such as the person address data",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditTourpointRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditTourpointRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditTourpointRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditTourpointRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EditedTourpoint"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transportorders/tourpoints/{tourpointId}/loading-interval": {
+      "put": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Sets the loading interval of a tourpoint.",
+        "parameters": [
+          {
+            "name": "tourpointId",
+            "in": "path",
+            "description": "The ID of the tour point",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains startTime, endTime",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTourpointLoadingIntervalRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTourpointLoadingIntervalRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTourpointLoadingIntervalRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTourpointLoadingIntervalRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetTourpointLoadingIntervalResponseDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Removes the loading interval of a tourpoint.",
+        "parameters": [
+          {
+            "name": "tourpointId",
+            "in": "path",
+            "description": "The ID of the tour point",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/transportorders/{transportOrderId}/participant": {
+      "put": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Sets transport participant",
+        "parameters": [
+          {
+            "name": "transportOrderId",
+            "in": "path",
+            "description": "The id of the transport order",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "A DTO containing the information about the participant",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTransportParticipantRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTransportParticipantRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTransportParticipantRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTransportParticipantRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetParticipantResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transportorders/locations/details/paged": {
+      "post": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Retrieves locations by multiple filters containing field name, operator and value to filter on.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The info required to get the location details",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetLocationsRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetLocationsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetLocationsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetLocationsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationDetailsLocationsGraphQLResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transportorders/participants/paged": {
+      "post": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Retrieves participants by multiple filters containing field name, operator and value to filter on.",
+        "parameters": [
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The info required to get the participants details",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetParticipantsRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetParticipantsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetParticipantsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetParticipantsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParticipantDtoParticipantsGraphQLResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transportorders/{transportOrderId}/vehicle-attributes": {
+      "put": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Sets vehicle attributes",
+        "parameters": [
+          {
+            "name": "transportOrderId",
+            "in": "path",
+            "description": "The id of the transport order",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "A DTO with the desired attributes to set",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetVehicleAttributesRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetVehicleAttributesRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetVehicleAttributesRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetVehicleAttributesRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetVehicleAttributesResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transportorders/tourpoints/{tourpointId}/loading-reference": {
+      "put": {
+        "tags": [
+          "TransportOrders"
+        ],
+        "summary": "Sets the loading reference of a tourpoint.",
+        "parameters": [
+          {
+            "name": "tourpointId",
+            "in": "path",
+            "description": "The ID of the tour point",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "Database-Identifier",
+            "in": "header",
+            "description": "Identifier for the database to be used",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Contains loading reference",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTourpointLoadingReferenceRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTourpointLoadingReferenceRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTourpointLoadingReferenceRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTourpointLoadingReferenceRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetTourpointLoadingReferenceResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddTourpointRequestDto": {
+        "required": [
+          "tourpointType",
+          "transportOrderId"
+        ],
+        "type": "object",
+        "properties": {
+          "transportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tourpointType": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productType": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryDateFrom": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "deliveryTimeFrom": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryDateTo": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "deliveryTimeTo": {
+            "type": "string",
+            "nullable": true
+          },
+          "personNumber": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "personTix": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "name1": {
+            "type": "string",
+            "nullable": true
+          },
+          "tourNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenceTourpointId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetAndHouseNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "houseNumberAddition": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "tourpointPosition": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddedTourpoint": {
+        "required": [
+          "IsTourpointAdded"
+        ],
+        "type": "object",
+        "properties": {
+          "IsTourpointAdded": {
+            "type": "boolean"
+          },
+          "TourpointId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssignLegToTransportOrderRequestDto": {
+        "required": [
+          "legId",
+          "transportOrderId"
+        ],
+        "type": "object",
+        "properties": {
+          "transportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "legId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "destinationTourPointId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "relationType": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "lotAssignmentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssignLotToTransportOrderRequestDto": {
+        "required": [
+          "lotId",
+          "transportOrderId"
+        ],
+        "type": "object",
+        "properties": {
+          "transportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lotId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "destinationTourPointId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "relationType": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssignVehicleGraphQLResponseDto": {
+        "required": [
+          "isVehicleAssigned",
+          "transportOrderId"
+        ],
+        "type": "object",
+        "properties": {
+          "transportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isVehicleAssigned": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssignVehicleRequestDto": {
+        "required": [
+          "LicensePlate",
+          "Mode",
+          "VehicleId"
+        ],
+        "type": "object",
+        "properties": {
+          "VehicleId": {
+            "type": "string",
+            "nullable": true
+          },
+          "LicensePlate": {
+            "type": "string",
+            "nullable": true
+          },
+          "Mode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkCreateBranchLocationsDto": {
+        "required": [
+          "city",
+          "country",
+          "firmId",
+          "key",
+          "name",
+          "street",
+          "zipCode"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "firmId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkCreateContactRequestDto": {
+        "required": [
+          "email",
+          "firstName",
+          "lastName"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobilePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "$ref": "#/components/schemas/ContactTitle"
+          },
+          "transEuId": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActiveTimocomContact": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkDeleteContactsRequestDto": {
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkUpdateContactsRequestDto": {
+        "required": [
+          "email",
+          "firstName",
+          "lastName"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobilePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "$ref": "#/components/schemas/ContactTitle"
+          },
+          "transEuId": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActiveTimocomContact": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalculateRoutesPlanDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "distance": {
+            "type": "number",
+            "format": "double"
+          },
+          "serviceDuration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "drivingDuration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "waitingDuration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "breakDuration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tours": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalculateRoutesTourDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalculateRoutesPlanningIntervalDto": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalculateRoutesPoolDto": {
+        "type": "object",
+        "properties": {
+          "planningInterval": {
+            "$ref": "#/components/schemas/CalculateRoutesPlanningIntervalDto"
+          },
+          "plans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalculateRoutesPlanDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalculateRoutesResponseDto": {
+        "required": [
+          "poolDto",
+          "setXserverDtoResponse"
+        ],
+        "type": "object",
+        "properties": {
+          "poolDto": {
+            "$ref": "#/components/schemas/CalculateRoutesPoolDto"
+          },
+          "setXserverDtoResponse": {
+            "$ref": "#/components/schemas/SetXServerDtoResponseDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalculateRoutesTourDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id",
+            "nullable": true
+          },
+          "vehicleId": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "distance": {
+            "type": "number",
+            "description": "Distance driven in leg",
+            "format": "double"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "Driving time of leg or service time of point excluding breaks [s]",
+            "format": "int32"
+          },
+          "serviceDuration": {
+            "type": "integer",
+            "description": "Loading/Unloading Time in seconds excluding breaks",
+            "format": "int32"
+          },
+          "drivingDuration": {
+            "type": "integer",
+            "description": "Driving Duration in seconds",
+            "format": "int32"
+          },
+          "waitingDuration": {
+            "type": "integer",
+            "description": "Waiting Duration in seconds",
+            "format": "int32"
+          },
+          "breakDuration": {
+            "type": "integer",
+            "description": "Break Duration in seconds",
+            "format": "int32"
+          },
+          "tourElements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalculateRoutesTourElementDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalculateRoutesTourElementDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "integer",
+            "description": "POINT = 0, LEG = 1",
+            "format": "int32"
+          },
+          "extendedType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "distance": {
+            "type": "number",
+            "description": "Distance driven in leg",
+            "format": "double"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "Driving time of leg or service time of point excluding breaks [s]",
+            "format": "int32"
+          },
+          "serviceDuration": {
+            "type": "integer",
+            "description": "Loading/Unloading Time in seconds excluding breaks",
+            "format": "int32"
+          },
+          "drivingDuration": {
+            "type": "integer",
+            "description": "Driving Duration in seconds",
+            "format": "int32"
+          },
+          "waitingDuration": {
+            "type": "integer",
+            "description": "Waiting Duration in seconds",
+            "format": "int32"
+          },
+          "breakDuration": {
+            "type": "integer",
+            "description": "Break Duration in seconds",
+            "format": "int32"
+          },
+          "startTourPointId": {
+            "type": "string",
+            "nullable": true
+          },
+          "endTourPointId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClientTourpointDto": {
+        "required": [
+          "tourpointId"
+        ],
+        "type": "object",
+        "properties": {
+          "tourpointId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tourNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "shipmentIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          },
+          "truckLicensePlate": {
+            "type": "string",
+            "nullable": true
+          },
+          "plannedArrivalTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "transportOrderNumber": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "volumePalletSpaces": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "shipmentsAmount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "emailCommunicatedCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isEdiCommunicated": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContactDetails": {
+        "type": "object",
+        "properties": {
+          "personId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "personNumber": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "name1": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContactDetailsFieldValues": {
+        "required": [
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContactDetails"
+            },
+            "nullable": true
+          },
+          "TotalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PageInfo": {
+            "$ref": "#/components/schemas/PageInfo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContactPersonDetailsGraphQLResponseDto": {
+        "required": [
+          "personOffsetPagedEntities"
+        ],
+        "type": "object",
+        "properties": {
+          "personOffsetPagedEntities": {
+            "$ref": "#/components/schemas/ContactDetailsFieldValues"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContactTitle": {
+        "enum": [
+          "MR",
+          "MRS"
+        ],
+        "type": "string"
+      },
+      "CreateFreightOfferDto": {
+        "required": [
+          "ContactPersonId",
+          "Currency",
+          "Language",
+          "Notes",
+          "PlatformNames",
+          "Price",
+          "ShouldAddContactPersonCellularPhoneNumber",
+          "ShouldAddContactPersonEmail",
+          "ShouldAddContactPersonTelephoneNumber",
+          "TransportOrderNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "TransportOrderNumber": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "Price": {
+            "type": "number",
+            "format": "double"
+          },
+          "Currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "ShouldAddContactPersonEmail": {
+            "type": "boolean"
+          },
+          "ShouldAddContactPersonTelephoneNumber": {
+            "type": "boolean"
+          },
+          "ShouldAddContactPersonCellularPhoneNumber": {
+            "type": "boolean"
+          },
+          "ContactPersonId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoolingFRC": {
+            "type": "boolean"
+          },
+          "CoolingFRB": {
+            "type": "boolean"
+          },
+          "Box": {
+            "type": "boolean"
+          },
+          "SwapBridge": {
+            "type": "boolean"
+          },
+          "Plane": {
+            "type": "boolean"
+          },
+          "TankSilo": {
+            "type": "boolean"
+          },
+          "PreCooling": {
+            "type": "boolean"
+          },
+          "Divider": {
+            "type": "boolean"
+          },
+          "DoubleDeck": {
+            "type": "boolean"
+          },
+          "TemperatureRecorder": {
+            "type": "boolean"
+          },
+          "Language": {
+            "type": "string",
+            "nullable": true
+          },
+          "PlatformNames": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FreightExchangePlatforms"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateLotRequestDto": {
+        "required": [
+          "BranchKey",
+          "TotalWeight"
+        ],
+        "type": "object",
+        "properties": {
+          "LegId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "BranchKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "TotalWeight": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalVolumePalletSpaces": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "TotalFloorPalletSpaces": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "UniqueClientsCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateTransportOrderFromLegRequestDto": {
+        "required": [
+          "legId",
+          "performanceDate"
+        ],
+        "type": "object",
+        "properties": {
+          "legId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "performanceDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateTransportOrderFromLotRequestDto": {
+        "required": [
+          "lotId",
+          "performanceDate"
+        ],
+        "type": "object",
+        "properties": {
+          "lotId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "performanceDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteTourpointGraphQLRequestDto": {
+        "required": [
+          "TourpointId",
+          "TransportOrderId"
+        ],
+        "type": "object",
+        "properties": {
+          "TransportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "TourpointId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "Mode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeletedTourpointResponseDto": {
+        "required": [
+          "IsTourpointDeleted"
+        ],
+        "type": "object",
+        "properties": {
+          "IsTourpointDeleted": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EditChamberTemperatureInfoRequestDto": {
+        "required": [
+          "ResourceId",
+          "Temperature",
+          "TransportOrderId"
+        ],
+        "type": "object",
+        "properties": {
+          "TransportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ResourceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "Temperature": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EditTourpointRequestDto": {
+        "type": "object",
+        "properties": {
+          "personNumber": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "personTix": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "name1": {
+            "type": "string",
+            "nullable": true
+          },
+          "tourNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenceTourpointId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetAndHouseNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "houseNumberAddition": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "tourpointPosition": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EditedTourpoint": {
+        "required": [
+          "IsTourpointEdited"
+        ],
+        "type": "object",
+        "properties": {
+          "IsTourpointEdited": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FilterCriterionRequestDto": {
+        "required": [
+          "fieldName",
+          "filterOperator"
+        ],
+        "type": "object",
+        "properties": {
+          "fieldName": {
+            "type": "string",
+            "nullable": true
+          },
+          "filterOperator": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "nullable": true
+          },
+          "isCalc": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FreightExchangePlatforms": {
+        "enum": [
+          "Timocom",
+          "TransEu"
+        ],
+        "type": "string"
+      },
+      "GetContactPersonDetailsRequest": {
+        "required": [
+          "FilterCriterias",
+          "OffsetInfo"
+        ],
+        "type": "object",
+        "properties": {
+          "OffsetInfo": {
+            "$ref": "#/components/schemas/OffsetPaginatedRequestDto"
+          },
+          "FilterCriterias": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterCriterionRequestDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetGraphTourPointsRequestDto": {
+        "required": [
+          "transportOrderIds"
+        ],
+        "type": "object",
+        "properties": {
+          "transportOrderIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetLocationsRequest": {
+        "required": [
+          "FilterCriterias",
+          "OffsetInfo"
+        ],
+        "type": "object",
+        "properties": {
+          "OffsetInfo": {
+            "$ref": "#/components/schemas/OffsetPaginatedRequestDto"
+          },
+          "FilterCriterias": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterCriterionRequestDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetParticipantsRequest": {
+        "required": [
+          "FilterCriterias",
+          "OffsetInfo"
+        ],
+        "type": "object",
+        "properties": {
+          "OffsetInfo": {
+            "$ref": "#/components/schemas/OffsetPaginatedRequestDto"
+          },
+          "FilterCriterias": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterCriterionRequestDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LegsRequestItem": {
+        "type": "object",
+        "properties": {
+          "sortOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SortItemRequestDto"
+            },
+            "nullable": true
+          },
+          "filterCriteria": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterCriterionRequestDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationDetails": {
+        "type": "object",
+        "properties": {
+          "locationId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "string",
+            "nullable": true
+          },
+          "tarif": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "creationTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "updateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "relationsNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "tourNumber": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "drivingDistrict": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "drivingRegion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "operationRegion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "eastWestSign": {
+            "type": "string",
+            "nullable": true
+          },
+          "districtNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "trainStationNumber": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationDetailsLocationFieldValues": {
+        "required": [
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationDetails"
+            },
+            "nullable": true
+          },
+          "TotalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PageInfo": {
+            "$ref": "#/components/schemas/PageInfo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationDetailsLocationsGraphQLResponseDto": {
+        "required": [
+          "pagedLocationsEntities"
+        ],
+        "type": "object",
+        "properties": {
+          "pagedLocationsEntities": {
+            "$ref": "#/components/schemas/LocationDetailsLocationFieldValues"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LotsAndLegsRequestDto": {
+        "type": "object",
+        "properties": {
+          "lotsRequestInfo": {
+            "$ref": "#/components/schemas/LotsRequestItem"
+          },
+          "legsRequestInfo": {
+            "$ref": "#/components/schemas/LegsRequestItem"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LotsRequestItem": {
+        "required": [
+          "offsetInfo"
+        ],
+        "type": "object",
+        "properties": {
+          "offsetInfo": {
+            "$ref": "#/components/schemas/OffsetPaginatedRequestDto"
+          },
+          "sortOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SortItemRequestDto"
+            },
+            "nullable": true
+          },
+          "filterCriteria": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterCriterionRequestDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MarkStaysLoadedResponseDto": {
+        "required": [
+          "isStaysLoadedSet",
+          "legId"
+        ],
+        "type": "object",
+        "properties": {
+          "legId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "isStaysLoadedSet": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MoveLegIntoLotRequestDto": {
+        "type": "object",
+        "properties": {
+          "DestinationLotId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OffsetPaginatedRequestDto": {
+        "required": [
+          "limit",
+          "offset"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int32",
+            "default": 25
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageInfo": {
+        "type": "object",
+        "properties": {
+          "HasNextPage": {
+            "type": "boolean"
+          },
+          "HasPreviousPage": {
+            "type": "boolean"
+          },
+          "StartCursor": {
+            "type": "string",
+            "nullable": true
+          },
+          "EndCursor": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagedFieldValuesRequestDto": {
+        "required": [
+          "FilterCriterias",
+          "OffsetInfo"
+        ],
+        "type": "object",
+        "properties": {
+          "OffsetInfo": {
+            "$ref": "#/components/schemas/OffsetPaginatedRequestDto"
+          },
+          "FilterCriterias": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterCriterionRequestDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagedTransportOrdersRequestDto": {
+        "required": [
+          "OffsetInfo"
+        ],
+        "type": "object",
+        "properties": {
+          "OffsetInfo": {
+            "$ref": "#/components/schemas/OffsetPaginatedRequestDto"
+          },
+          "SortColumn": {
+            "$ref": "#/components/schemas/SortItemRequestDto"
+          },
+          "FilterCriteria": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterCriterionRequestDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParticipantDto": {
+        "type": "object",
+        "properties": {
+          "personId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "personNumber": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "index": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "firm": {
+            "type": "number",
+            "format": "double"
+          },
+          "branch": {
+            "type": "number",
+            "format": "double"
+          },
+          "isDeleted": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "name1": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParticipantDtoParticipantsFieldValues": {
+        "required": [
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParticipantDto"
+            },
+            "nullable": true
+          },
+          "TotalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PageInfo": {
+            "$ref": "#/components/schemas/PageInfo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParticipantDtoParticipantsGraphQLResponseDto": {
+        "required": [
+          "pagedParticipants"
+        ],
+        "type": "object",
+        "properties": {
+          "pagedParticipants": {
+            "$ref": "#/components/schemas/ParticipantDtoParticipantsFieldValues"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonAddress": {
+        "required": [
+          "city",
+          "country",
+          "district",
+          "name1",
+          "street",
+          "zipcode"
+        ],
+        "type": "object",
+        "properties": {
+          "name1": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PickupPlanningGetTransportOrdersRequest": {
+        "required": [
+          "groupsOffsetInfo"
+        ],
+        "type": "object",
+        "properties": {
+          "groupsOffsetInfo": {
+            "$ref": "#/components/schemas/OffsetPaginatedRequestDto"
+          },
+          "dateFrom": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateTo": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "filterCriteriaInsideGroups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterCriterionRequestDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PubSubMessageDto": {
+        "type": "object",
+        "properties": {
+          "Attributes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "Data": {
+            "type": "string",
+            "nullable": true
+          },
+          "MessageId": {
+            "type": "string",
+            "nullable": true
+          },
+          "PublishTime": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PubSubPushDto": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "$ref": "#/components/schemas/PubSubMessageDto"
+          },
+          "Subscription": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RemoveLoadingIntervalsResponseDto": {
+        "required": [
+          "isDeleted"
+        ],
+        "type": "object",
+        "properties": {
+          "isDeleted": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReorderLegRequestDto": {
+        "type": "object",
+        "properties": {
+          "LotAssignmentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "LegId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "NewOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReorderLotAssignmentRequestDto": {
+        "type": "object",
+        "properties": {
+          "LotAssignmentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "NewPickupTourPointOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TransportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReorderTourpointRequestDto": {
+        "required": [
+          "DestinationTourpointId",
+          "RelationType",
+          "SourceTourpointId",
+          "SourceTransportOrderTix"
+        ],
+        "type": "object",
+        "properties": {
+          "SourceTransportOrderTix": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "SourceTourpointId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "DestinationTourpointId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "RelationType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Mode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendMailRequestDto": {
+        "required": [
+          "clientMail",
+          "clientName",
+          "tourpoints"
+        ],
+        "type": "object",
+        "properties": {
+          "clientName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "clientMail": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "tourpoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SendMailTourpointDto"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendMailResponseDto": {
+        "required": [
+          "operationSuccessful"
+        ],
+        "type": "object",
+        "properties": {
+          "operationSuccessful": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendMailTourpointDto": {
+        "required": [
+          "licencePlate",
+          "pickupDate",
+          "shipmentIds",
+          "tourNumber",
+          "tourpointId"
+        ],
+        "type": "object",
+        "properties": {
+          "tourpointId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tourNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shipmentIds": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "licencePlate": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "pickupDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "transportOrderNumber": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "vehicleId": {
+            "type": "string",
+            "nullable": true
+          },
+          "weight": {
+            "type": "number",
+            "format": "double"
+          },
+          "vollumeSpace": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numberOfShipments": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendToEdiRequestDto": {
+        "required": [
+          "clientName",
+          "tourpoints"
+        ],
+        "type": "object",
+        "properties": {
+          "clientName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "tourpoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SendToEdiTourpointDto"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendToEdiResponseDto": {
+        "required": [
+          "operationSuccessful"
+        ],
+        "type": "object",
+        "properties": {
+          "operationSuccessful": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendToEdiTourpointDto": {
+        "required": [
+          "licencePlate",
+          "pickupDate",
+          "shipmentIds",
+          "tourNumber",
+          "tourpointId"
+        ],
+        "type": "object",
+        "properties": {
+          "tourpointId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tourNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shipmentIds": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "licencePlate": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "pickupDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "transportOrderNumber": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "vehicleId": {
+            "type": "string",
+            "nullable": true
+          },
+          "weight": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "vollumeSpace": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numberOfShipments": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetCustomerTourNumberRequestDto": {
+        "type": "object",
+        "properties": {
+          "tourNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "personNumber": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetCustomerTourNumberResponseDto": {
+        "required": [
+          "isCustomerTourNumberSet",
+          "isTourNumberAlreadyUsed",
+          "tourNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "isCustomerTourNumberSet": {
+            "type": "boolean"
+          },
+          "isTourNumberAlreadyUsed": {
+            "type": "boolean"
+          },
+          "tourNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetParticipantResponseDto": {
+        "required": [
+          "isParticipantSet",
+          "transportOrderId"
+        ],
+        "type": "object",
+        "properties": {
+          "transportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isParticipantSet": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetTourpointLoadingIntervalRequestDto": {
+        "type": "object",
+        "properties": {
+          "StartTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "EndTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetTourpointLoadingIntervalResponseDto": {
+        "required": [
+          "isEndTimeSet",
+          "isStartTimeSet"
+        ],
+        "type": "object",
+        "properties": {
+          "isStartTimeSet": {
+            "type": "boolean"
+          },
+          "isEndTimeSet": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetTourpointLoadingReferenceRequestDto": {
+        "required": [
+          "LoadingReference"
+        ],
+        "type": "object",
+        "properties": {
+          "LoadingReference": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetTourpointLoadingReferenceResponseDto": {
+        "required": [
+          "isLoadingReferenceSet"
+        ],
+        "type": "object",
+        "properties": {
+          "isLoadingReferenceSet": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetTransportParticipantRequestDto": {
+        "required": [
+          "mode"
+        ],
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "string",
+            "nullable": true
+          },
+          "personId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "personAddress": {
+            "$ref": "#/components/schemas/PersonAddress"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetVehicleAttributesRequestDto": {
+        "type": "object",
+        "properties": {
+          "atpFrc": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "atpFrb": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "atpBox": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "swapBody": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "tarpaulin": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "tankSilo": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "precoolingRequired": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "tempLogging": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "partitionWall": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "doubleDeck": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetVehicleAttributesResponseDto": {
+        "required": [
+          "isAttributeSet"
+        ],
+        "type": "object",
+        "properties": {
+          "isAttributeSet": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetXServerDtoResponseDto": {
+        "required": [
+          "isSuccessful",
+          "responseText"
+        ],
+        "type": "object",
+        "properties": {
+          "responseText": {
+            "type": "string",
+            "nullable": true
+          },
+          "isSuccessful": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SingleClientResponseDto": {
+        "required": [
+          "assignedShipmentsCount",
+          "clientName",
+          "communicationHistoryIcon",
+          "distinctPickupTourpointsCount",
+          "totalShipmentsCount"
+        ],
+        "type": "object",
+        "properties": {
+          "clientName": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalShipmentsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "assignedShipmentsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "distinctPickupTourpointsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "communicationHistoryIcon": {
+            "type": "string",
+            "nullable": true
+          },
+          "tourpoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientTourpointDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SortItemRequestDto": {
+        "required": [
+          "fieldName"
+        ],
+        "type": "object",
+        "properties": {
+          "fieldName": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "sortDirection": {
+            "$ref": "#/components/schemas/SortOrderDirection"
+          },
+          "isCalc": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SortOrderDirection": {
+        "enum": [
+          "Asc",
+          "Desc"
+        ],
+        "type": "string"
+      },
+      "TourpointsInfoResponseDto": {
+        "required": [
+          "sequenceNumber",
+          "transportOrderId",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "transportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "plannedArrivalTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "plannedDepartureTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "volumePalletSpaces": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "name1": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransportOrderByIdGraphQLResponseDto": {
+        "required": [
+          "pickupPlanningTransportOrders"
+        ],
+        "type": "object",
+        "properties": {
+          "pickupPlanningTransportOrders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TransportOrderInfoResponseDto"
+            },
+            "nullable": true
+          },
+          "tourpoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TourpointsInfoResponseDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransportOrderInfoResponseDto": {
+        "type": "object",
+        "properties": {
+          "transportOrderId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "transportOrderNumber": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "truckLicensePlate": {
+            "type": "string",
+            "nullable": true
+          },
+          "truckMatchCodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "transportMode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "plannedDepartureTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "loadingDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "contractorId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "contractorNumber": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "contractorIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "contractorName1": {
+            "type": "string",
+            "nullable": true
+          },
+          "contractorPostalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "plannedVolumePalletSpaces": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "plannedFloorPalletSpaces": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "driveInstructions": {
+            "type": "string",
+            "nullable": true
+          },
+          "numberOfTourpoints": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "chamber1Temperature": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "chamber2Temperature": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "chamber3Temperature": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UnassignLegsAndLotsRequestDto": {
+        "required": [
+          "LegIds",
+          "LotAssignmentIds",
+          "TransportOrderId"
+        ],
+        "type": "object",
+        "properties": {
+          "LotAssignmentIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          },
+          "LegIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          },
+          "TransportOrderId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UnassignLegsAndLotsResponseDto": {
+        "required": [
+          "LegsResponse",
+          "LotsResponse"
+        ],
+        "type": "object",
+        "properties": {
+          "LotsResponse": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpsertOperationResponseDto"
+            },
+            "nullable": true
+          },
+          "LegsResponse": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpsertOperationResponseDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateBranchLocationRequestDto": {
+        "required": [
+          "city",
+          "country",
+          "firmId",
+          "key",
+          "name",
+          "street",
+          "zipCode"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "firmId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateContactRequestDto": {
+        "required": [
+          "email",
+          "firstName",
+          "lastName"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobilePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "$ref": "#/components/schemas/ContactTitle"
+          },
+          "transEuId": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActiveTimocomContact": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateFreightOfferDetails": {
+        "required": [
+          "FreightOfferId",
+          "PlatformName"
+        ],
+        "type": "object",
+        "properties": {
+          "FreightOfferId": {
+            "type": "string",
+            "nullable": true
+          },
+          "PlatformName": {
+            "$ref": "#/components/schemas/FreightExchangePlatforms"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateFreightOfferDto": {
+        "required": [
+          "ContactPersonId",
+          "Currency",
+          "FreightOffersToUpdate",
+          "Language",
+          "Notes",
+          "Price",
+          "ShouldAddContactPersonCellularPhoneNumber",
+          "ShouldAddContactPersonEmail",
+          "ShouldAddContactPersonTelephoneNumber",
+          "TransportOrderNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "TransportOrderNumber": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "Price": {
+            "type": "number",
+            "format": "double"
+          },
+          "Currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "ShouldAddContactPersonEmail": {
+            "type": "boolean"
+          },
+          "ShouldAddContactPersonTelephoneNumber": {
+            "type": "boolean"
+          },
+          "ShouldAddContactPersonCellularPhoneNumber": {
+            "type": "boolean"
+          },
+          "ContactPersonId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoolingFRC": {
+            "type": "boolean"
+          },
+          "CoolingFRB": {
+            "type": "boolean"
+          },
+          "Box": {
+            "type": "boolean"
+          },
+          "SwapBridge": {
+            "type": "boolean"
+          },
+          "Plane": {
+            "type": "boolean"
+          },
+          "TankSilo": {
+            "type": "boolean"
+          },
+          "PreCooling": {
+            "type": "boolean"
+          },
+          "Divider": {
+            "type": "boolean"
+          },
+          "DoubleDeck": {
+            "type": "boolean"
+          },
+          "TemperatureRecorder": {
+            "type": "boolean"
+          },
+          "Language": {
+            "type": "string",
+            "nullable": true
+          },
+          "FreightOffersToUpdate": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateFreightOfferDetails"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpsertOperationResponseDto": {
+        "required": [
+          "Id",
+          "Success"
+        ],
+        "type": "object",
+        "properties": {
+          "Success": {
+            "type": "boolean"
+          },
+          "Id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Error": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Please provide JWT with bearer (Bearer {jwt token})",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
