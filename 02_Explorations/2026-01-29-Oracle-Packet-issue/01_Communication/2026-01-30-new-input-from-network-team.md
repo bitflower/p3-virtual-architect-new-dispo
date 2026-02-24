@@ -1,0 +1,1 @@
+Disposing the Oracle connection "neatly" was highlighted as an additional option to address the issue, ensuring that every database connection is properly closed after use to prevent open connections and related problems.

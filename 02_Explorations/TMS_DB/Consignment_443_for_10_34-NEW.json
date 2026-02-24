@@ -1,0 +1,224 @@
+{
+    "QueueTransmissionData": {
+        "SourceEntityName": "V_ESB_CONSIGNMENT",
+        "TargetEntityName": "KND_SEN",
+        "Entity_Id": "89950",
+        "EntityIdColumn": "CONSIGNMENT_ID",
+        "DateQueued": "2025-08-05T10:55:00"
+    },
+    "KndSen": {
+        "Firma": "10",
+        "Nl": "34",
+        "Sen_N": "443",
+        "C_Time": "2025-08-11T11:37:16",
+        "C_User": "",
+        "U_Time": "2025-08-28T17:38:03",
+        "U_User": "",
+        "Abs_Ref_K": "443",
+        "Vk_Strom": "3",
+        "Lst_D": "2025-08-11T00:00:00",
+        "Emp_Rel": "60",
+        "Fix_Bis_D": "2025-08-12T00:00:00",
+        "Frank": "6",
+        "Status_K": "3",
+        "Prod_Grp": "01",
+        "Consignment_Id": "89950",
+        "Consignment_Statuscode": "42",
+        "Quell_K": "s",
+        "Fix_Key": "34",
+        "Tran_Art": "01",
+        "Sen_Art": "A",
+        "Tran_K": "1",
+        "U_Version": "!",
+        "SelbstAbh_K": "0",
+        "SelbstAnl_B": "0",
+        "Dir_Angelad_B": "0",
+        "Sort_K": "OMS-0000000000000000033823"
+    },
+    "KndSenLsRecords": {
+        "KndSenLs": [
+            {
+                "Ls_N": "OMS0001",
+                "U_Version": "!",
+                "Ls_D": "2025-08-11T11:37:18",
+                "Colli_C": "0",
+                "Tats_Gew": "78",
+                "Inh": "FEINKOST"
+            },
+            {
+                "Ls_N": "OMS0002",
+                "U_Version": "!",
+                "Ls_D": "2025-08-11T07:37:18",
+                "Colli_C": "0",
+                "Tats_Gew": "78",
+                "Inh": "FEINKOST"
+            }
+        ]
+    },
+    "KndSenPosRecords": {
+        "KndSenPos": [
+            {
+                "Pos_N": "1",
+                "Ve_C": "1",
+                "Ve_Tk": "EUR",
+                "Lhm_C": "20",
+                "Lhm_Tk": "BOX",
+                "Stellplatz_C": "6.5",
+                "Gueterart": "00001",
+                "Tats_Gew": "2578",
+                "Frpf_Gew": "78",
+                "Stueck_C": "40",
+                "Zeichen_N": "4477888",
+                "Inh": "SPEZIELLES",
+                "U_Version": "!",
+                "Bodenstpl_C": "1"
+            },
+            {
+                "Pos_N": "2",
+                "Lhm_C": "5",
+                "Lhm_Tk": "EUR",
+                "Stellplatz_C": "0",
+                "Gueterart": "00002",
+                "Tats_Gew": "1511",
+                "Frpf_Gew": "22",
+                "Stueck_C": "7",
+                "Zeichen_N": "2244111",
+                "Inh": "LECKERFOOD",
+                "U_Version": "!"
+            },
+            {
+                "Pos_N": "3",
+                "Lhm_C": "40",
+                "Lhm_Tk": "BOX",
+                "Stellplatz_C": "0",
+                "Gueterart": "00007",
+                "Tats_Gew": "1531",
+                "Frpf_Gew": "32",
+                "Stueck_C": "100",
+                "Zeichen_N": "3355566",
+                "Inh": "DRINKS",
+                "U_Version": "!"
+            }
+        ]
+    },
+    "KndSenPstRecords": {
+        "KndSenPst": [
+            {
+                "Pst_N": "357200389300707189",
+                "Pst_Ebene": "E",
+                "U_Version": "!"
+            },
+            {
+                "Pst_N": "357200389300707196",
+                "Pst_Ebene": "E",
+                "U_Version": "!"
+            },
+            {
+                "Pst_N": "357200389300707202",
+                "Pst_Ebene": "E",
+                "U_Version": "!"
+            }
+        ]
+    },
+    "KndSenRefRecords": {
+        "KndSenRef": [
+            {
+                "Typ": "OMS_ID",
+                "Ref": "89950",
+                "Art": "I",
+                "U_Version": "!"
+            },
+            {
+                "Typ": "IFTMIN-BGM",
+                "Ref": "1502361",
+                "Art": "I",
+                "U_Version": "!"
+            },
+            {
+                "Typ": "LIEFNR",
+                "Ref": "1502361",
+                "Art": "I",
+                "U_Version": "!"
+            }
+        ]
+    },
+    "KndSenTbRecords": {
+        "KndSenTb": [
+            {
+                "Pers_N": "787878",
+                "Pers_I": "0",
+                "Pers_Tb": "ABS",
+                "Name1": "TEST D34",
+                "Str": "HASELWEG 5",
+                "Sitz_Land": "D",
+                "Sitz_Plz": "34233",
+                "Sitz_Ort": "FULDATAL",
+                "Sitz_Bez": "ROTHWESTEN",
+                "Ber_Land": "D",
+                "Ber_Plz": "34233",
+                "Ber_Ort": "FULDATAL",
+                "Ber_Bez": "ROTHWESTEN",
+                "U_Version": "!"
+            },
+            {
+                "Pers_N": "0",
+                "Pers_I": "0",
+                "Pers_Tb": "EMP",
+                "Name1": "THORSTENS SHOPPING MALL",
+                "Str": "BERLINER STRASSE 45",
+                "Sitz_Land": "D",
+                "Sitz_Plz": "61118",
+                "Sitz_Ort": "BAD VILBEL",
+                "Ber_Land": "D",
+                "Ber_Plz": "61118",
+                "Ber_Ort": "BAD VILBEL",
+                "U_Version": "!"
+            }
+        ]
+    },
+    "KndSenLsRefRecords": {
+        "KndSenLsRef": [
+            {
+                "Ls_N": "OMS0002",
+                "Typ": "AUF",
+                "Ref": "TEST2AUFT066LS",
+                "Art": "E",
+                "U_Version": "!"
+            },
+            {
+                "Ls_N": "OMS0002",
+                "Typ": "BES",
+                "Ref": "TEST2BESTEL654",
+                "Art": "E",
+                "U_Version": "!"
+            }
+        ]
+    },
+    "KndSenTRecords": {
+        "KndSenT": [
+            {
+                "Lfd_N": "1",
+                "U_Version": "!",
+                "Typ": "M",
+                "T": "SYSTEMTEST OMS"
+            }
+        ]
+    },
+    "KndSenPosTRecords": null,
+    "KndSenLsPstRecords": null,
+    "KndSenFRecords": null,
+    "KndSenZusRecords": {
+        "KndSenZus": [
+            {
+                "U_Version": "!",
+                "Id": "ABL_SCAN_ANW_K",
+                "Wert": "1"
+            },
+            {
+                "U_Version": "!",
+                "Id": "SA_ANGELADEN"
+            }
+        ]
+    },
+    "KndSoFuRecords": null
+}

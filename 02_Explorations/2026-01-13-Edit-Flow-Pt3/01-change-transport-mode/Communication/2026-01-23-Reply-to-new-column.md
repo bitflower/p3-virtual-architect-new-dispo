@@ -1,0 +1,2 @@
+Hallo Matthias, klar, das machen wir. Es wird aber kein neues Feld in Sendung und auch kein Flag in einer Hilfstabelle, sondern wir nehmen ein vom TO unbenutztes in Sendung. Da muss kein Index drauf sein. Wir haben uns allerdings noch nicht festgelegt.
+Aber Boyan kann schon mal ein Feld in den V_DIS_TransportOrder aufnehmen, z.B. "Own", "OwnTO", "Foreign" oder "ForeignTO".
