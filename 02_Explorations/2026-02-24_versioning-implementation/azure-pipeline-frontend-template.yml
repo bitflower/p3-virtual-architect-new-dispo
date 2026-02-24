@@ -1,0 +1,230 @@
+# Azure Pipeline Template for Disposition-Frontend
+# Copy this to: Code/Disposition-Frontend/azure-pipelines-release.yml
+
+trigger: none  # Manual trigger only
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - name: ComponentName
+    value: 'disposition-frontend'
+  - name: DockerRegistry
+    value: 'europe-west3-docker.pkg.dev'
+  - name: GcpProject
+    value: 'prj-cal-w-wl4-t-4c48-53ad'  # Replace with your project
+  - name: ImageRepository
+    value: '$(DockerRegistry)/$(GcpProject)/cal-new-disposition/$(ComponentName)'
+  - name: ManifestRepoUrl
+    value: 'https://$(System.AccessToken)@dev.azure.com/your-org/your-project/_git/system-manifest'
+
+stages:
+  - stage: Build
+    displayName: 'Build and Release'
+    jobs:
+      - job: BuildJob
+        displayName: 'Build Docker Image'
+        steps:
+          # Extract version from Git tag
+          - task: PowerShell@2
+            displayName: 'Extract version from tag'
+            name: version
+            inputs:
+              targetType: 'inline'
+              script: |
+                $tag = "$(Build.SourceBranch)" -replace "refs/tags/v", ""
+                $commit = "$(Build.SourceVersion)".Substring(0, 7)
+
+                if ([string]::IsNullOrEmpty($tag) -or $tag -eq "$(Build.SourceBranch)") {
+                  Write-Error "This pipeline must be triggered by a Git tag (e.g., v1.2.3)"
+                  exit 1
+                }
+
+                Write-Host "Version: $tag"
+                Write-Host "Commit: $commit"
+
+                Write-Host "##vso[task.setvariable variable=VERSION;isOutput=true]$tag"
+                Write-Host "##vso[task.setvariable variable=COMMIT;isOutput=true]$commit"
+
+          # Install Node.js
+          - task: NodeTool@0
+            displayName: 'Install Node.js'
+            inputs:
+              versionSpec: '20.x'
+
+          # Install dependencies
+          - task: Npm@1
+            displayName: 'Install npm packages'
+            inputs:
+              command: 'ci'
+              workingDir: '.'
+
+          # Build Angular app (production)
+          - task: Npm@1
+            displayName: 'Build Angular application'
+            inputs:
+              command: 'custom'
+              customCommand: 'run cal:build-production'
+              workingDir: '.'
+
+          # Authenticate to Google Artifact Registry
+          - task: Docker@2
+            displayName: 'Login to Google Artifact Registry'
+            inputs:
+              command: 'login'
+              containerRegistry: 'google-artifact-registry'
+
+          # Build Docker image with version labels
+          # Note: Angular build is done in Dockerfile stage 1
+          - task: Docker@2
+            displayName: 'Build Docker image'
+            inputs:
+              command: 'build'
+              Dockerfile: 'Dockerfile'
+              tags: |
+                $(ImageRepository):$(version.VERSION)
+                $(ImageRepository):latest
+              arguments: |
+                --label "com.calconsult.component.name=$(ComponentName)"
+                --label "com.calconsult.component.version=$(version.VERSION)"
+                --label "com.calconsult.git.commit=$(version.COMMIT)"
+                --label "com.calconsult.git.repo=Disposition-Frontend"
+                --label "com.calconsult.build.date=$(Build.BuildNumber)"
+
+          # Push Docker image (component version)
+          - task: Docker@2
+            displayName: 'Push Docker image'
+            inputs:
+              command: 'push'
+              tags: |
+                $(ImageRepository):$(version.VERSION)
+
+          # Bump system version
+          - task: Bash@3
+            displayName: 'Bump system version'
+            name: systemversion
+            inputs:
+              targetType: 'inline'
+              script: |
+                set -e
+
+                # Download bump script from manifest repo
+                git clone --depth 1 $(ManifestRepoUrl) /tmp/manifest
+
+                # Run bump script
+                bash /tmp/manifest/bump-system-version.sh \
+                  "$(ComponentName)" \
+                  "$(version.VERSION)" \
+                  "$(version.COMMIT)"
+
+                # Clean up
+                rm -rf /tmp/manifest
+            env:
+              MANIFEST_REPO_URL: $(ManifestRepoUrl)
+              SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
+          # Tag component repo with system version
+          - task: Bash@3
+            displayName: 'Tag component repo with system version'
+            inputs:
+              targetType: 'inline'
+              script: |
+                set -e
+
+                SYSTEM_VERSION=$(systemversion.SYSTEM_VERSION)
+
+                if [ -z "$SYSTEM_VERSION" ]; then
+                  echo "Error: SYSTEM_VERSION not set"
+                  exit 1
+                fi
+
+                echo "Tagging with system-v${SYSTEM_VERSION}"
+
+                git config user.email "azure-pipelines@cal-consult.com"
+                git config user.name "Azure Pipelines"
+                git tag "system-v${SYSTEM_VERSION}"
+                git push origin "system-v${SYSTEM_VERSION}"
+            env:
+              SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
+          # Re-tag Docker image with system version
+          - task: Docker@2
+            displayName: 'Tag Docker image with system version'
+            inputs:
+              command: 'tag'
+              arguments: |
+                $(ImageRepository):$(version.VERSION) \
+                $(ImageRepository):system-v$(systemversion.SYSTEM_VERSION)
+
+          - task: Docker@2
+            displayName: 'Push Docker image (system version)'
+            inputs:
+              command: 'push'
+              tags: $(ImageRepository):system-v$(systemversion.SYSTEM_VERSION)
+
+          - task: Bash@3
+            displayName: 'Log release info'
+            inputs:
+              targetType: 'inline'
+              script: |
+                echo "========================================="
+                echo "Release Complete!"
+                echo "========================================="
+                echo "Component: $(ComponentName)"
+                echo "Component Version: $(version.VERSION)"
+                echo "System Version: $(systemversion.SYSTEM_VERSION)"
+                echo "Git Commit: $(version.COMMIT)"
+                echo "Docker Image: $(ImageRepository):$(version.VERSION)"
+                echo "Docker Image (System): $(ImageRepository):system-v$(systemversion.SYSTEM_VERSION)"
+                echo "========================================="
+
+  # Manual deployment stage
+  - stage: Deploy
+    displayName: 'Deploy to Test Environment'
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'Manual'))
+    jobs:
+      - deployment: DeployTest
+        displayName: 'Deploy to Cloud Run (Test)'
+        environment: 'test-environment'
+        variables:
+          VERSION: $[ stageDependencies.Build.BuildJob.outputs['version.VERSION'] ]
+          COMMIT: $[ stageDependencies.Build.BuildJob.outputs['version.COMMIT'] ]
+          SYSTEM_VERSION: $[ stageDependencies.Build.BuildJob.outputs['systemversion.SYSTEM_VERSION'] ]
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                # Fetch current manifest to inject into container
+                - task: Bash@3
+                  displayName: 'Fetch system manifest'
+                  name: manifest
+                  inputs:
+                    targetType: 'inline'
+                    script: |
+                      set -e
+
+                      git clone --depth 1 $(ManifestRepoUrl) /tmp/manifest
+                      MANIFEST_JSON=$(cat /tmp/manifest/versions.json | jq -c '.components')
+
+                      echo "Manifest: $MANIFEST_JSON"
+                      echo "##vso[task.setvariable variable=MANIFEST_JSON;isOutput=true]$MANIFEST_JSON"
+
+                      rm -rf /tmp/manifest
+                  env:
+                    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
+                - task: Bash@3
+                  displayName: 'Deploy to Cloud Run'
+                  inputs:
+                    targetType: 'inline'
+                    script: |
+                      echo "Deploying $(ComponentName) v$(VERSION)"
+                      echo "System version: v$(SYSTEM_VERSION)"
+
+                      # Deploy with environment variables for runtime config injection
+                      gcloud run deploy $(ComponentName) \
+                        --image=$(ImageRepository):$(VERSION) \
+                        --region=europe-west3 \
+                        --platform=managed \
+                        --set-env-vars="COMPONENT_NAME=$(ComponentName),COMPONENT_VERSION=$(VERSION),SYSTEM_VERSION=$(SYSTEM_VERSION),GIT_COMMIT=$(COMMIT),SHOW_VERSION_PANEL=true,COMPONENT_MANIFEST=$(manifest.MANIFEST_JSON)"
