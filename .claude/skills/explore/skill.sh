@@ -20,12 +20,29 @@ fi
 # Get current date in format YYYY-MM-DD
 CURRENT_DATE=$(date +%Y-%m-%d)
 
+# Get the directory where this skill is located
+SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Find project root (look for .git directory)
+PROJECT_ROOT="$SKILL_DIR"
+while [ "$PROJECT_ROOT" != "/" ]; do
+    if [ -d "$PROJECT_ROOT/.git" ]; then
+        break
+    fi
+    PROJECT_ROOT="$(dirname "$PROJECT_ROOT")"
+done
+
+if [ ! -d "$PROJECT_ROOT/.git" ]; then
+    echo "Error: Could not find project root (no .git directory found)"
+    exit 1
+fi
+
 # Clean up topic for folder name (remove special characters, limit length)
 FOLDER_TOPIC=$(echo "$TOPIC" | sed 's/[^a-zA-Z0-9 _-]//g' | sed 's/ /_/g' | cut -c1-80)
 
 # Create folder name: date + topic
 FOLDER_NAME="${CURRENT_DATE}_${FOLDER_TOPIC}"
-EXPLORATION_DIR="02_Explorations/${FOLDER_NAME}"
+EXPLORATION_DIR="${PROJECT_ROOT}/02_Explorations/${FOLDER_NAME}"
 
 # Check if directory already exists
 if [ -d "$EXPLORATION_DIR" ]; then
@@ -48,8 +65,6 @@ if [ -f "$MD_FILE" ]; then
     exit 1
 fi
 
-# Get the directory where this skill is located
-SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TEMPLATE_FILE="${SKILL_DIR}/template.md"
 
 # Check if template exists
