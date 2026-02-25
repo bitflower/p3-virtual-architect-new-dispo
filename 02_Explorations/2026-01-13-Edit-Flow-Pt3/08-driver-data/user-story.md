@@ -22,8 +22,8 @@
 - Master data: `fahrer` (Nagel-internal drivers only, PK: `fahrer_schluessel`)
 - Transport Order link: `sen_frk_unt` (1:1 relationship, always `lfd_n = 1`)
   - `fahrer_n` (FK, not enforced, always `NULL`)
-  - `fahrer_name` (VARCHAR, encrypted driver name)
-  - `mobil_tel_n` (VARCHAR, encrypted phone number with country code)
+  - `fahrer_name` (VARCHAR, encrypted driver name - automatic via trigger `trbiu_sen_frk_unt_crypt`)
+  - `mobil_tel_n` (VARCHAR, encrypted phone number with country code - automatic via trigger `trbiu_sen_frk_unt_crypt`)
 - Country codes: `land.tel_k`
 
 **Read:**
@@ -45,14 +45,15 @@ WHERE sen_tix = <TransportOrderId>
 
   - `SetDriver(TransportOrderId NUMERIC, DriverNo NUMERIC, DriverName VARCHAR, PhoneNumber VARCHAR)`
     - `DriverNo` (fahrer_n): Pass `fahrer_schluessel` when driver selected from fuzzy search, NULL for manual entry
-    - `DriverName`: Always required (encrypted with `cal_crypt.encrypt()`)
-    - `PhoneNumber`: Optional, encrypted with `cal_crypt.encrypt()`
+    - `DriverName`: Always required (plaintext - encrypted automatically by trigger `trbiu_sen_frk_unt_crypt`)
+    - `PhoneNumber`: Optional (plaintext - encrypted automatically by trigger `trbiu_sen_frk_unt_crypt`)
     - **UPDATE** `sen_frk_unt.fahrer_n`, `fahrer_name` and `mobil_tel_n` WHERE `sen_tix = TransportOrderId AND lfd_n = 1`
     - **INSERT** new sen_frk_unt record if not found (fallback for legacy data)
       - Sets `unt_tix = NULL`, `firma = pTA.getfirma()`, `nl = pTA.getnl()`
     - Handles both "Change Driver" (existing record) and "Add Driver" (missing record) scenarios
       - New Dispo created Transport Orders always have a `sen_frk_unt` record, for `pTA.New()` created ones it is not guaranteed
     - Follows `pTA.addUnt()` pattern (lines 3105-3114 in PTA.sql) with UPDATE first, INSERT fallback
+    - **No manual encryption required** - BEFORE INSERT/UPDATE trigger automatically encrypts personal data
 
   - `RemoveDriver(TransportOrderId NUMERIC)`
     - Clears all driver fields: `fahrer_n`, `fahrer_name`, `mobil_tel_n` → NULL
@@ -73,30 +74,26 @@ WHERE sen_tix = <TransportOrderId>
 CREATE OR REPLACE PROCEDURE pDIS_TransportOrder.SetDriver(
     TransportOrderId NUMERIC,
     DriverNo         NUMERIC,   -- Fahrer-ID from fuzzy search (NULL for manual entry)
-    DriverName       VARCHAR,   -- Always required
-    PhoneNumber      VARCHAR    -- Phone with country code
+    DriverName       VARCHAR,   -- Always required (plaintext)
+    PhoneNumber      VARCHAR    -- Phone with country code (plaintext)
 )
 LANGUAGE plpgsql
 AS $$
-DECLARE
-    vEncryptedName  VARCHAR;
-    vEncryptedPhone VARCHAR;
 BEGIN
     -- Validate: DriverName must always be provided
     IF DriverName IS NULL OR trim(DriverName) = '' THEN
         RAISE EXCEPTION 'DriverName is required';
     END IF;
 
-    -- Encrypt personal data
-    vEncryptedName  := cal_crypt.encrypt(DriverName);
-    vEncryptedPhone := cal_crypt.encrypt(PhoneNumber);
+    -- NOTE: No manual encryption needed - BEFORE INSERT/UPDATE trigger 'trbiu_sen_frk_unt_crypt'
+    -- automatically encrypts fahrer_name and mobil_tel_n for GDPR compliance
 
     -- Try UPDATE first (Change Driver scenario - existing sen_frk_unt record)
     UPDATE sen_frk_unt
     SET
         fahrer_n    = DriverNo,         -- Set FK if known driver, NULL for manual entry
-        fahrer_name = vEncryptedName,   -- Always set encrypted name
-        mobil_tel_n = vEncryptedPhone,  -- Encrypted phone
+        fahrer_name = DriverName,       -- Plaintext - encrypted by trigger
+        mobil_tel_n = PhoneNumber,      -- Plaintext - encrypted by trigger
         u_version   = cal_util.getuversion(u_version),
         u_time      = pTA.gete(),
         u_user      = pTA.getuser()
@@ -113,7 +110,7 @@ BEGIN
             TransportOrderId, 1, '!',
             pTA.gete(), pTA.getuser(), pTA.gete(), pTA.getuser(),
             NULL, pTA.getfirma(), pTA.getnl(),
-            DriverNo, vEncryptedName, vEncryptedPhone
+            DriverNo, DriverName, PhoneNumber  -- Plaintext - encrypted by trigger
         );
     END IF;
 END;
@@ -213,10 +210,9 @@ FROM dual;
 - Country code pre-selected from carrier's country, updates dynamically on carrier change (if no driver assigned yet) - handled in backend/UI
 
 **Constraints:**
-d
 - No referential integrity enforcement possible (`fahrer_n` FK cannot be used)
 - Driver assignment depends on entrepreneur/carrier being set first (business rule enforced in UI/backend)
-- Personal data encryption mandatory for GDPR compliance
+- Personal data encryption mandatory for GDPR compliance (enforced by trigger `trbiu_sen_frk_unt_crypt`)
 - sen_frk_unt may not exist for old data (98.60% of orders in ABN 1034 have no sen_frk_unt record)
 - Solution must handle both UPDATE (existing record) and INSERT (missing record) scenarios
 - Driver data can be stored independently of contractor
