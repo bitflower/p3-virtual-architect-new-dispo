@@ -1,0 +1,8 @@
+{
+  "name": "new-dispo-tools",
+  "description": "Tools for managing the New Dispo project repositories",
+  "author": {
+    "name": "CAL Consult",
+    "email": "support@example.com"
+  }
+}

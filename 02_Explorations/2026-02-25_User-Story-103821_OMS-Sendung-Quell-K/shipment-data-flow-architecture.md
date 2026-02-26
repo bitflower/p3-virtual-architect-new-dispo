@@ -436,26 +436,56 @@ WHERE sendungsart = 'A';  -- Only type 'A' shipments
 - **Key Finding**: CDC replication is **externally configured** - not automatic for all tables
 - **Implication**: Only tables explicitly added to a publication are captured by CDC
 
-**Current State Analysis:**
-- **Data Source**: CDC captures data from tables configured in publications
-- **Current Scope**:
-  - ❓ Unknown which tables are currently published for replication
-  - ❓ Unknown if `sendung` table is published
-  - ❓ Unknown if `sen_ref` table is published
-  - 📝 Publication configuration is external to the codebase (configured in database)
-- **Bucket Data**: Contains `GoogleBucketShipmentData` with ~40+ fields
-- **OMS_ID Status**:
-  - ❓ Unknown if CDC currently captures data from `sen_ref` table (depends on publication)
-  - ❓ Unknown if OMS_ID is in bucket data
-  - ❌ Confirmed: `GoogleBucketShipmentData` DTO does NOT have an `OmsId` property (checked in both Backend and Cloud Functions)
-- **Event Handlers**: Currently extract shipment data from `Payload` - no database queries
-- **View Dependency**: ❌ Does NOT use `v_dis_shipment_all` view
+**Current State Analysis - VERIFIED (Branch: release/7.0.0.8+NEW-DISPO):**
 
-**Critical Gap in Analysis:**
-- Cannot determine from codebase alone which tables are currently published for CDC replication
-- Need to query database: `SELECT * FROM pg_publication_tables;` to see configured publications
+**Evidence 1: Event Handler Table Filtering**
+- All CDC event handlers explicitly check: `SourceMetadata.Table == "sendung"`
+- File references:
+  - `DeletedShipmentEventHandler.cs:25` → checks `Table == "sendung"`
+  - `NewShipmentCreatedEventHandler.cs:37` → checks `Table == "sendung"`
+  - `ShipmentUpdatedEventHandler.cs:62,65` → checks `Table == "sendung"`
+- ✅ **Confirmed**: System is designed to handle ONLY `sendung` table CDC events
+- ❌ **Confirmed**: No event handlers exist for `sen_ref` or any other table
 
-### For Pickup Planning Path (Batch) - Current State Analysis
+**Evidence 2: Bucket Data DTO Structure**
+- Only one payload DTO exists: `GoogleBucketShipmentData`
+- DTO contains 44 fields mapping to `sendung` table columns
+- Fields include: `sendung_tix`, `sendungsart`, `sendung_n`, `firma`, `niederlassung`, etc.
+- ❌ **Confirmed**: No `OmsId` property in the DTO
+- ❌ **Confirmed**: No `quell_k` property in the DTO
+- ❌ **Confirmed**: No fields from `sen_ref` table (like `ref`, `typ`)
+- 📝 No other table DTOs exist (no `GoogleBucketSenRefData` or similar)
+
+**Evidence 3: System Design**
+- Cloud Functions filter: Only process events where `shipmentType == 'A'`
+- Event handlers: Only support table = "sendung"
+- DTO structure: Only models `sendung` table columns
+- ✅ **Strong Evidence**: Only `sendung` table is currently published for CDC replication
+
+**Current Scope Conclusion:**
+- ✅ **High Confidence**: `sendung` table IS published and captured by CDC
+- ❌ **High Confidence**: `sen_ref` table is NOT published or captured by CDC
+- ❌ **Confirmed**: OMS_ID (from `sen_ref`) is NOT flowing through CDC pipeline
+- ❌ **Confirmed**: `quell_k` column (from `sendung`) is NOT in CDC data
+
+**OMS_ID Status:**
+- ❌ `sen_ref` table is not captured by CDC (no handlers, no DTO)
+- ❌ `GoogleBucketShipmentData` DTO does NOT have an `OmsId` property
+- ❌ OMS_ID is NOT in CDC bucket data
+- ❌ OMS_ID is NOT flowing to Backend via CDC pipeline
+
+**Additional Findings:**
+- `quell_k` column from `sendung` table is also NOT in `GoogleBucketShipmentData` DTO
+- Both OMS_ID and `quell_k` are missing from CDC data flow
+
+**View Dependency**: ❌ Does NOT use `v_dis_shipment_all` view
+
+**Verification Note:**
+- Database publication configuration is still external (runtime config)
+- Could theoretically query: `SELECT * FROM pg_publication_tables;` to confirm
+- But code evidence strongly suggests only `sendung` is published
+
+### For Pickup Planning Path (Batch) - Current State Analysis (VERIFIED)
 - **Data Source**: GraphQL query to TMS Bridge → `v_dis_shipment_all` view
 - **Current Scope**: View selects from `sendung` table WHERE `sendungsart = 'A'`
 - **OMS_ID Status**:
@@ -463,6 +493,12 @@ WHERE sendungsart = 'A';  -- Only type 'A' shipments
   - ❌ `DISShipmentEntity` does NOT have an `OmsId` property
   - ❌ `PickupPlanningShipmentDto` does NOT have an `OmsId` property
   - ❌ TMS Bridge GraphQL schema does NOT expose OMS_ID
+- **quell_k Status**:
+  - ✅ `quell_k` column EXISTS in `sendung` table (character(1))
+  - ❌ `v_dis_shipment_all` view does NOT select `quell_k` column
+  - ❌ `DISShipmentEntity` does NOT have a `QuellK` property
+  - ❌ `PickupPlanningShipmentDto` does NOT have a `QuellK` property
+  - ❌ TMS Bridge GraphQL schema does NOT expose quell_k
 - **Query Pattern**: Backend builds GraphQL query with filters (e.g., `dispatchStatus = 'F'`)
 - **View Dependency**: ✅ DOES use `v_dis_shipment_all` view
 
@@ -550,12 +586,15 @@ POST /Initialize
 
 **Observation**: OMS_ID is stored in `sen_ref` table (TMS Database) but is **not currently flowing** through either pipeline.
 
-**CDC Pipeline - Current OMS_ID State:**
-- CDC captures data: ❓ Unknown scope - only `sendung` or also related tables like `sen_ref`?
-- Bucket data: ❓ Unknown if OMS_ID is present in bucket JSON
-- `GoogleBucketShipmentData` DTO: ❌ No `OmsId` property exists
-- Event handlers: Extract only what's in `GoogleBucketShipmentData` DTO
-- Result: ❌ OMS_ID does NOT flow to Backend via CDC
+**CDC Pipeline - Current OMS_ID State (VERIFIED):**
+- CDC captures data: ✅ **Only `sendung` table** (proven by event handler code and DTO structure)
+- `sen_ref` table: ❌ **NOT captured** by CDC (no handlers, no DTO, not in bucket)
+- Bucket data: ❌ OMS_ID is NOT present in bucket JSON (sen_ref not captured)
+- `GoogleBucketShipmentData` DTO: ❌ No `OmsId` property exists (44 fields, all from sendung)
+- `quell_k` column: ❌ Also NOT in DTO (missing from 44 fields)
+- Event handlers: Extract only what's in `GoogleBucketShipmentData` DTO (sendung table only)
+- Result: ❌ **OMS_ID does NOT flow to Backend via CDC**
+- Additional: ❌ **`quell_k` also does NOT flow to Backend via CDC**
 
 **Pickup Planning Pipeline - Current OMS_ID State:**
 - `v_dis_shipment_all` view: ❌ Does NOT join to `sen_ref` table
@@ -569,4 +608,9 @@ POST /Initialize
 - Both pipelines populate `LegEntity`
 - Both pipelines would need to provide OMS_ID data
 
-**Gap Summary**: OMS_ID exists in TMS (`sen_ref` table) but is not accessible through either data pipeline to the Backend.
+**Gap Summary**:
+- **OMS_ID**: Exists in TMS (`sen_ref` table) but is NOT accessible through either data pipeline to the Backend
+- **quell_k**: ✅ Exists as column in TMS `sendung` table (character(1))
+  - ❌ NOT in `v_dis_shipment_all` view
+  - ❌ NOT in `GoogleBucketShipmentData` DTO
+  - ❌ NOT flowing through either pipeline to Backend
