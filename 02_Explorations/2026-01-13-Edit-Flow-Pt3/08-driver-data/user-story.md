@@ -11,8 +11,12 @@
     
 **Postconditions**:
 *   The selected or manually entered driver information (name, country code, phone) is stored on the transport order.
-*   Linked driver data references the master driver record (if selected).    
+*   Linked driver data references the master driver record (if selected).
 *   Manually entered phone details persist only in the transport order, not the master data.
+
+**Business Constraints:**
+*   **Driver Terminal Constraint**: A driver cannot be changed if another driver has already authenticated with their signature at the terminal (signature = acceptance of goods = transfer of risk).
+*   This constraint requires additional validation logic (see Hardening Solution below).
 
 **Technical Solution:**
 
@@ -42,6 +46,15 @@ WHERE sen_tix = <TransportOrderId>
 **Write:**
 - New procedures in `pDis_TransportOrder`:
 
+**Hardening Solution (Driver Terminal Constraint):** *(Added: 2026-02-26)*
+Before allowing driver changes, the system must check if the driver has already signed at the terminal:
+
+* **Validation Logic**: TMS core validation mechanism will check if driver has signed (equivalent to "dispatched"). Will be implemented by Joachim Schreiner.
+* **Integration**: `SetDriver` procedure will call validation before UPDATE/INSERT. If check fails, procedure will raise exception and prevent driver change. Developed by P3.
+
+*(End Added: 2026-02-26)*
+
+---
 
   - `SetDriver(TransportOrderId NUMERIC, DriverNo NUMERIC, DriverName VARCHAR, PhoneNumber VARCHAR)`
     - `DriverNo` (fahrer_n): Pass `fahrer_schluessel` when driver selected from fuzzy search, NULL for manual entry
@@ -84,6 +97,15 @@ BEGIN
     IF DriverName IS NULL OR trim(DriverName) = '' THEN
         RAISE EXCEPTION 'DriverName is required';
     END IF;
+
+    -- ============================================================================
+    -- TODO (ADDED 2026-02-26): Driver Terminal Constraint Validation
+    -- ============================================================================
+    -- Check if driver can be changed (driver terminal signature check)
+    -- If driver has already signed at terminal, modification must be blocked
+    --
+    -- Implementation: Call pTA.Exec(TransportOrderId, pTA_Lib.ACTION_TAMODDRIVER())
+    -- ============================================================================
 
     -- NOTE: No manual encryption needed - BEFORE INSERT/UPDATE trigger 'trbiu_sen_frk_unt_crypt'
     -- automatically encrypts fahrer_name and mobil_tel_n for GDPR compliance
@@ -220,3 +242,20 @@ FROM dual;
 The business requirements have been aligned with **Maximilian Beisheim** and **Patrick Uschmann**.
 The technical solution design has been aligned with **Joachim Schreiner**.
 All code including database, backend and frontend of this story is developed by P3.
+
+---
+
+## Implementation Status & Dependencies *(Added: 2026-02-26)*
+
+**Current Implementation:**
+- Basic `SetDriver`, `RemoveDriver`, and `GetDriver` procedures have been implemented
+
+**Pending Hardening (Driver Terminal Constraint):**
+- **Status**: Follow-up PBI required
+- **Owner**: Joachim Schreiner will implement:
+  - New action constant in `pTA_Lib` for driver modification
+  - `pTA.Exec` logic to check if driver has signed at terminal
+- **Dependency**: Current version can be deployed to ABN1034 for testing
+- **Decision**: Deploy current version first, then implement hardening in follow-up sprint
+
+*(End Added: 2026-02-26)*
