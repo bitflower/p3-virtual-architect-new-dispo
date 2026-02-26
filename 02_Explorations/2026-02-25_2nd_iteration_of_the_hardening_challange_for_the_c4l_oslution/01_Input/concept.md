@@ -121,11 +121,11 @@ Business users, backend systems
 
 **Upload**
 
-![Nagel - Markant DVA - Components - Target - Full (2).png](/.attachments/Nagel%20-%20Markant%20DVA%20-%20Components%20-%20Target%20-%20Full%20(2)-97cb9526-3311-4f36-897f-8dc1ea8bad7a.png)
+![Nagel - Markant DVA - Components - Target - Full (2).png](image.png)
 
 **Download**
 
-![Nagel - Markant DVA - Components - Target - Full (3).png](/.attachments/Nagel%20-%20Markant%20DVA%20-%20Components%20-%20Target%20-%20Full%20(3)-44e4305f-72c0-4ca2-8cba-88f309792728.png)
+![Nagel - Markant DVA - Components - Target - Full (3).png](image copy.png)
 
 **Performance**
 1. Batching - should be utilized for polling or fetching data from different source to 
