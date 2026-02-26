@@ -1,0 +1,16 @@
+{
+  "name": "wiki-connector",
+  "version": "1.0.0",
+  "description": "Plugin for publishing local concept files to WIKI documentation",
+  "author": "Virtual Architect",
+  "skills": [
+    {
+      "name": "publish-concept",
+      "description": "Publish local exploration/documentation files to WIKI",
+      "file": "publish-concept.md"
+    }
+  ],
+  "configuration": {
+    "mappingsFile": "publish-mappings.json"
+  }
+}

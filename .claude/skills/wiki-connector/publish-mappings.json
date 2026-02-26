@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Mappings for publishing local concept files to WIKI documentation",
+  "version": "2.0",
+  "syncApproach": "diff-based",
+  "mappings": [
+    {
+      "id": "driver-data-user-story",
+      "source": "02_Explorations/2026-01-13-Edit-Flow-Pt3/08-driver-data/user-story.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Planning/Team-Refinements/2026%2D01%2D21/Edit-Flow-%2D-Part-2-%2D-Feature-Outline.md",
+      "description": "Driver data user story to Edit Flow Part 2 feature outline",
+      "syncStrategy": {
+        "type": "diff-sync",
+        "scope": "sections",
+        "trackingSections": [
+          "Business Constraints",
+          "Hardening Solution (Driver Terminal Constraint)",
+          "Implementation Status & Dependencies"
+        ],
+        "dateMarkers": {
+          "enabled": true,
+          "format": "*(Added: YYYY-MM-DD)*",
+          "endFormat": "*(End Added: YYYY-MM-DD)*"
+        },
+        "notes": "Only sync changes within tracked sections, use date markers to identify managed content"
+      }
+    },
+    {
+      "id": "shipment-data-flow",
+      "source": "08_Documentation/2026-02-26_leg-lot-creation-table-sendung/shipment-data-flow-architecture.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Documentation/Process-Flows/Shipment-Data-Flow-Architecture.md",
+      "description": "Shipment data flow architecture documentation",
+      "syncStrategy": {
+        "type": "diff-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Track entire document, apply line-by-line diffs"
+      }
+    }
+  ]
+}
