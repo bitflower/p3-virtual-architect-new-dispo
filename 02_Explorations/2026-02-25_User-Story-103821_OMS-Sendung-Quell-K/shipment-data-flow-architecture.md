@@ -603,14 +603,42 @@ POST /Initialize
 - `PickupPlanningShipmentDto`: ❌ No `OmsId` property exists
 - Result: ❌ OMS_ID does NOT flow to Backend via Pickup Planning
 
-**Backend Database - Current OMS_ID State:**
+**Backend Database - Current State:**
 - `LegEntity`: ❓ Need to verify if `OmsId` property exists
+- `LegEntity`: ❓ Need to verify if `QuellK` property exists
 - Both pipelines populate `LegEntity`
-- Both pipelines would need to provide OMS_ID data
+- Both pipelines would need to provide data
+
+### Missing Fields Analysis - User Story 103821
+
+**Field 1: OMS_ID** (from `sen_ref` table)
+- **Location in TMS**: `sen_ref.ref` WHERE `sen_ref.typ = 'OMS_ID'`
+- **Relationship**: `sen_ref.sendung_tix` → `sendung.sendung_tix` (foreign key)
+- **CDC Pipeline Status**:
+  - ❌ `sen_ref` table NOT captured by CDC
+  - ❌ NOT in `GoogleBucketShipmentData` DTO
+  - ❌ NOT flowing to Backend
+- **Pickup Planning Pipeline Status**:
+  - ❌ `v_dis_shipment_all` view does NOT join `sen_ref`
+  - ❌ NOT exposed in TMS Bridge GraphQL
+  - ❌ NOT in Backend DTOs
+  - ❌ NOT flowing to Backend
+
+**Field 2: quell_k** (from `sendung` table)
+- **Location in TMS**: `sendung.quell_k` (character(1) - source key)
+- **User Story Context**: "Quell_K for OMS shipments can be any lowercase letter or O"
+- **CDC Pipeline Status**:
+  - ✅ `sendung` table IS captured by CDC
+  - ❌ `quell_k` column NOT included in `GoogleBucketShipmentData` DTO (only 44 of ~100+ sendung columns)
+  - ❌ NOT flowing to Backend
+- **Pickup Planning Pipeline Status**:
+  - ✅ `sendung` table IS queried via view
+  - ❌ `v_dis_shipment_all` view does NOT select `quell_k` column
+  - ❌ NOT exposed in TMS Bridge GraphQL
+  - ❌ NOT in Backend DTOs
+  - ❌ NOT flowing to Backend
 
 **Gap Summary**:
-- **OMS_ID**: Exists in TMS (`sen_ref` table) but is NOT accessible through either data pipeline to the Backend
-- **quell_k**: ✅ Exists as column in TMS `sendung` table (character(1))
-  - ❌ NOT in `v_dis_shipment_all` view
-  - ❌ NOT in `GoogleBucketShipmentData` DTO
-  - ❌ NOT flowing through either pipeline to Backend
+- **OMS_ID**: Exists in TMS (`sen_ref` table) → NOT accessible through either pipeline
+- **quell_k**: Exists in TMS (`sendung.quell_k` column) → NOT accessible through either pipeline
+- **Root Cause**: Both fields intentionally excluded from data flows (not an oversight - appears to be by design based on selective column inclusion)
