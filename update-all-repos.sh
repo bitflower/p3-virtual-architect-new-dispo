@@ -25,15 +25,36 @@ for dir in */; do
         echo "Fetching..."
         git fetch --all
 
-        # Determine if the repo uses 'master' or 'main'
-        if git show-ref --verify --quiet refs/heads/master; then
-            branch="master"
-        elif git show-ref --verify --quiet refs/heads/main; then
-            branch="main"
+        # Special handling for TMS Database repo
+        if [ "$repo_name" = "tms-alloydb-schema" ]; then
+            # Look for branch matching pattern x.x.x.x+New-DISPO
+            new_dispo_branch=$(git branch -r | grep -E 'origin/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\+New-DISPO' | sed 's/.*origin\///' | head -n 1)
+
+            if [ -n "$new_dispo_branch" ]; then
+                branch="$new_dispo_branch"
+                echo "Found New-DISPO branch: $branch"
+            elif git show-ref --verify --quiet refs/heads/master; then
+                branch="master"
+                echo "New-DISPO branch not found, falling back to master"
+            elif git show-ref --verify --quiet refs/heads/main; then
+                branch="main"
+                echo "New-DISPO branch not found, falling back to main"
+            else
+                echo "⚠️  No suitable branch found, skipping..."
+                cd ..
+                continue
+            fi
         else
-            echo "⚠️  Neither 'master' nor 'main' branch found, skipping..."
-            cd ..
-            continue
+            # Standard behavior for other repos: use 'master' or 'main'
+            if git show-ref --verify --quiet refs/heads/master; then
+                branch="master"
+            elif git show-ref --verify --quiet refs/heads/main; then
+                branch="main"
+            else
+                echo "⚠️  Neither 'master' nor 'main' branch found, skipping..."
+                cd ..
+                continue
+            fi
         fi
 
         echo "Checking out and pulling $branch branch..."
