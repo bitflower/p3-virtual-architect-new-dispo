@@ -2,6 +2,7 @@
 
 **Date:** 2026-02-26
 **Focus:** Complete data flow from TMS Database to Backend for shipment processing
+**Published:** [Wiki - Process Flows - Shipment Data Flow Architecture](/Documentation/Process-Flows/Shipment-Data-Flow-Architecture)
 
 ---
 

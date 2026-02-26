@@ -13,6 +13,7 @@
 
 ## WIKI
 
-| Folder                          | Component      |
-| ------------------------------- | -------------- |
-| WIKI/Nagel-CAL-Disposition.wiki | "New TMS" Wiki |
+| Folder                                        | Component                           |
+| --------------------------------------------- | ----------------------------------- |
+| WIKI/Nagel-CAL-Disposition.wiki               | "New TMS" Wiki                      |
+| WIKI/Nagel-CAL-Disposition.wiki/Documentation | User-Facing "New TMS" Documentation |
