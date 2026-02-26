@@ -1,0 +1,371 @@
+[P3 Internal] New TMS Architecure Bi-Weekly-20260225_170437-Besprechungsaufzeichnung
+25. Februar 2026, 04:04PM
+1 Std. 17 Min. 3 Sek.
+ Ivailo Pashov   0:17 I tried to explain to put all these diagrams and to explain all the processing logic, the key architectural aspects in that regard and I also assembled together these non functional requirements over here. I have documented them. So when in doubt, you can also come back to this quality non-functional requirements and try to figure out if there are any particular gaps that might potentially need to be addressed by the architecture and haven't been addressed.
+ Matthias Max   0:36 Great. OK.
+ Ivailo Pashov   0:52 So from architectural perspective, this is something that we already discussed with probably different set of audience over here. Let me know if I'm repeating too much, just stop. I just want to give you a quick overview again what we aim to implement. So here in this design we have, we are keeping this exist and my the assumption is you already know the baseline architecture. If someone is not familiar with the baseline architecture for a cloud for log, then it makes sense for me to step back and explain the baseline. Oh, good. No, no one really has any gaps on this baseline, OK. I take this for confirmation and I'll proceed. So we are preserving this cron job for the upload, but rather will be reducing the time, the intervals it would be working on and in regards to the upload workflow. So we more or less preserve it the same. Probably we'll need to extend a bit the configurations over here so we can get additional configuration in regards to which consignees mapped to which particular platform, whether it's cloud for lock or mark on. But essentially that doesn't change too much. All the rest remains the same and the key changes start from. Yeah, Matthias.
+ Matthias Max   2:39 Uh, sorry, did you say we should ask directly or collect questions? Or later.
+ Ivailo Pashov   2:47 Yeah, ask us directly.
+ Matthias Max   2:49 OK, so we keep the static like static kind of spinning up of functions in the upload flow as we have it right now, one per.
+ Ivailo Pashov   3:03 Yeah, the alternative potentially was to capture that data over CDC, but they that that may like increase the overall amount of work. In my opinion, this would get even more complicated.
+ Matthias Max   3:12 Hmm. Um.
+ Ivailo Pashov   3:20 From our ends and theoretically.
+ Matthias Max   3:21 Yeah, yeah, I I just remember. Oh, sorry. Yeah.
+ Ivailo Pashov   3:27 Theoretically, that's the most efficient architecture from the perspective of, let's say, latency from the perspective of like reducing overheads with the CDC. But in my opinion, this would like.
+ Matthias Max   3:31 Mhm.
+ Ivailo Pashov   3:46 Build additional Uh cost for the implementation and it's probably not worth it. We can still address the requirements from the customer with this architecture.
+ Matthias Max   3:50 Mm. Yeah, I was just thinking about it as well the last few days and we don't know the load spectrum from the how many was it 35 triggers. One could have a lot of data, the other little, and the interval is literally used differently per load. One might exceed the runtime, the schedule interval.
+ Ivailo Pashov   4:13 Yes. Yeah, yeah.
+ Matthias Max   4:28 Others might just have two records, for example. Do we did we discuss this and do we still consider this an issue or is it somehow mitigated?
+ Ivailo Pashov   4:40 My idea is to actually mitigate this with more frequent runs and still that wouldn't prevent some. If some like applications are not available, that would create potentially a massive amount of data that we need to reprocess.
+ Matthias Max   4:46 Mhm.
+ Ivailo Pashov   5:00 Again, so we can upload it. So to mitigate around this, we'll have some frequent checkpoints in in this additional storage where we store the offset. So we should be using some sort of batch.
+ Matthias Max   5:01 Yeah. Mhm. No. Mhm. Um, I see. Yeah. Uh, no.
+ Ivailo Pashov   5:33 These records and then we store the offset and we try with the next one if that particular service is cute.
+ Matthias Max   5:35 Mhm, mhm.
+ Ivailo Pashov   5:42 Then the next time it resumes, it will just resume from the same batch.
+ Matthias Max   5:45 I see. So you have batch of bulk batches within intervals, so speaking more visually if one batch runs 3 seconds.
+ Ivailo Pashov   5:54 Mm-hmm. Yes.
+ Matthias Max   6:02 And we have 30 seconds intervals. We can run 10 batches in the best case. But we have artificial circuit breaks basically.
+    6:09 And.
+ Ivailo Pashov   6:09 Yes. Mm-hmm. Alternative way of doing that would be, for example, to trigger, let's say, each service every, let's say, one second and it would, let's say.
+ Matthias Max   6:16 And.
+ Ivailo Pashov   6:30 Based on the outcome of the previous one, if it knew like it already took all the IT filled in the entire batch, then potentially there could have been more records, so it should be immediately triggered. Otherwise it might check it's not time right now to. To query for the results.
+ Matthias Max   6:51 Yeah.
+ Ivailo Pashov   6:51 And each cartage upload could work only on a single batch, let's say 50 records. And that's also an option as well, like if we encounter this situation, we we like last time we processed.
+ Matthias Max   6:58 Yeah. Mhm.
+ Ivailo Pashov   7:09 The entire batch like we filled in the entire batch, we we we have a batch size of 50 and we queried 50 records. Then the probability that there are other records and we need to run immediately is very, very high.
+ Matthias Max   7:24 Mhm. OK. Stunny stuff.
+ Ivailo Pashov   7:29 Yes.
+ Stanislav Stoychev   7:31 Yeah, so we're supposed to a publish towards the topic once we have performed all the extraction steps, right? And OK and unless we have done, we just persist the record in the recovery storage.
+ Ivailo Pashov   7:40 Yes. Yes. Yes, once we upload the entire batch, we just store that offset. Potentially we can also track intermediate records storing that offset, but this may impact the performance in negative way.
+ Stanislav Stoychev   7:49 OK.
+ Ivailo Pashov   8:04 So in my opinion it's better actually to use some some batch size, do the checkpointing on a batch and then if we if we we can play around with with the batch size. If we see that that's relatively big and we need like more frequent checkpoints, we will just reduce the batch size. If we see there's a big overhead in terms of queries, it's better to get more data at once. We increase that batch size.
+ Stanislav Stoychev   8:33 Sure.
+ Ivailo Pashov   8:37 So that's also the alternative. I haven't listed that, but maybe we can go that way as well, like just query and see if if it's relevant to trigger again. And potentially we also need to limit the execution time over a single batch. So we just abandoned that batch if we didn't manage to do anything meaningful with that batch rather submit it. Because there would be if we stuck concurrently 2 executions on the same offset, we might end up with submitting duplicated data.
+ Matthias Max   9:10 Yeah. Um.
+ Ivailo Pashov   9:22 Uh, which is not ideal.
+ Matthias Max   9:25 No.
+ Ivailo Pashov   9:27 So that's also the alternative. Let's say we trigger every three to four seconds, like very, very frequently. Instead of like doing it every 20 seconds, we trigger very frequently. We check what was the worst offset. We do it. Like some time based difference between the last record. We are not checking the last record offset, we are checking the last run. So we will need to preserve the last record offset and the last run time.
+ Matthias Max   9:54 Uh huh.
+ Ivailo Pashov   10:01 And we also need to preserve how many records we got, like total of three different properties per the poll.
+ Matthias Max   10:04 Mhm.
+ Ivailo Pashov   10:10 So overall for four different columns in this table storage.
+ Matthias Max   10:17 Yeah.
+ Ivailo Pashov   10:19 And then we we decide is it time to to run or it's not time, it's not we're it's not like time hasn't elapsed. So we need to trigger another query to TMS bridge and so we we just break early and. We do nothing.
+ Matthias Max   10:38 Um.
+ Ivailo Pashov   10:40 Um, that may result in more post for the cloud function invocations though.
+ Matthias Max   10:47 Yeah.
+ Ivailo Pashov   10:48 We need to be aware of that.
+ Matthias Max   10:51 Mm.
+ Ivailo Pashov   10:54 But that would ultimately yield better results in terms of latency and better results in handling spikes, because this would dynamically adjust to spikes.
+ Matthias Max   10:54 OK, yeah. Mm. Yeah. OK. Maybe I want, I mean we're here to openly discuss, right. I I just had one more thought the last days and it would be to go to a queue even earlier.
+ Ivailo Pashov   11:24 Mhm.
+ Matthias Max   11:24 Like just with the set of IDs we need to process from the list, not with the already processed ones. This is very fast I would say and would already queue stuff early on.
+ Ivailo Pashov   11:28 Mhm. OK. Yeah.
+ Matthias Max   11:40 That was another idea. Question is would it be two queues or the one just move to the top?
+ Ivailo Pashov   11:42 Mm-hmm. Yeah. Mhm.
+ Matthias Max   11:51 I don't know how how far we want to go and and change this again. You've made a lot of thoughts and had a lot of discussions. That's why I asked how far do we want the the discussion to be open.
+ Ivailo Pashov   11:51 Yeah, I already uh. Yeah. Yeah. I was thinking about this as well. So in theory we can for example just query the IDs of these border rows, rows, cart and then do the actual work of querying the data and like querying from Digilis because this is yet another dependence. And so on. If we decide to split the IDs over separate messages, then we end up with this inefficiency in terms of querying multiple times.
+ Matthias Max   12:25 Yeah.
+ Ivailo Pashov   12:39 Digilist instead of doing a single query on multiple IDs. If we bundle the IDs together, um, potentially.
+ Matthias Max   12:44 Mhm.
+ Ivailo Pashov   12:49 We can somewhat, let's say, try to work around this concurrency issues on the same, let's say, range of records if we have some capabilities of deduplication.
+ Matthias Max   13:04 Yeah.
+ Ivailo Pashov   13:05 We pops up. But it's it would further increase let's say the amount of services that we need to host, so more DevOps work and.
+ Matthias Max   13:15 Um.
+ Ivailo Pashov   13:19 Pro slightly more back end work as well and more integration testing work as well.
+ Matthias Max   13:19 Yeah. Yeah. And more load on digging this in terms of non requests.
+ Ivailo Pashov   13:30 Yeah, yeah.
+ Matthias Max   13:32 So it's just good to have these arguments ready and that's good that we have facilitator running when someone is asking. Then we have this up our sleeve to argument for or against what we what we chose.
+ Ivailo Pashov   13:44 Mm.
+ Matthias Max   13:52 OK.
+ Ivailo Pashov   13:52 Yes, if you're also him. You also have a question, Yusuf.
+ Yosif Mihaylov   13:55 Yeah, yeah. So like yesterday with Stasi we discussed the something he mentioned that you like you 2 discussed it before this Kartichopol service which is. I mean it would be a cloud function like we discuss whether it actually makes sense to host it as a cloud function as opposed to, for example, hosting it. It's something that it's running.
+ Matthias Max   14:14 Mhm.
+ Yosif Mihaylov   14:26 Pretty much constantly because like we spent a lot of effort and probably we keep spending a lot of effort in terms of fine tuning the networking around the cloud function. Like I'm not saying that this is something that is a must have, but. It's probably something to consider whether really it makes sense to use a cloud function when we have these frequent triggers, meaning like everyone, which is essentially something that it should be living, at least in my mind.
+ Ivailo Pashov   14:55 Mhm. Yeah, yeah. True.
+ Yosif Mihaylov   15:03 Should be, should be running all the time.
+ Ivailo Pashov   15:05 True. If we go with that model where we run every one second etcetera, then most likely it would be better to host not on a Cloud function, but rather on something cheaper. That's first the cost perspective then another. Consideration it might be if there is some difficulties about these functions that for example for you to run locally or run as part of component integration tests if there are any difficulties about. The functions themselves. Maybe a containerized application would be better suited.
+ Yosif Mihaylov   15:53 Yeah, I'm also, yeah, like from development point of view and I think also like I'm not sure of reliability, but I just have have a feel that something like this will make our life easier to be honest because I think that cloud functions are. Generally more trickier, especially in the use cases like we have like because if we implement this for example is say something like that's running constantly like a hosted service or something like that, we could be also implementing this.
+ Ivailo Pashov   16:29 Mhm.
+ Yosif Mihaylov   16:32 Orchestration the workflow logic. This is 2 components. This would make far much easier for example from development point of view to actually simulate the whole thing because right now like we can only trigger the functions like.
+ Ivailo Pashov   16:35 Yeah, yeah, yeah. That was, yeah.
+ Yosif Mihaylov   16:52 Separately like like from the workflow because you don't really have much control.
+ Ivailo Pashov   16:57 Yeah, that what that was also something that I was thinking about. There's too much logic, business logic in this workflow. So it's hard to test like these kind of execution, et cetera. Within let's say integration testing, we need to be have everything deployed on the cloud and it's very implicit. If we put that in a.net application though sorry.net, this would mean potentially we can. Test also this stuff and may have like more granular control over concurrency etcetera over execution like intervals. Over timeouts.
+ Matthias Max   17:46 Uh. Yeah.
+ Stanislav Stoychev   17:50 About.
+ Matthias Max   17:51 Sorry.
+ Stanislav Stoychev   17:52 Yeah, but in such cases where we have to use a instance that is entirely managed by us, for example the hosted service approach, then we'll have to store the configuration in an external space because we'll then end up in. Issues when trying to scale the instances of the host service because we currently work for a large number of depots and this may allocate a lot of CPU band member.
+ Ivailo Pashov   18:14 Yeah. Yeah, yeah, in that, in that regards, we should have several instances running and they should be like compete against each other to allocate like ownership over the depos.
+ Matthias Max   18:20 No.
+ Ivailo Pashov   18:34 That they would be fetching from the configuration bucket and locking on particular the post that they're currently executing on. So I imagine if we have like 5 instances and 35 the posts, let's say one instance would allocate the 1st 10, probably the second one would be able to allocate 5 or 6 and so on.
+ Matthias Max   18:47 Mhm.
+ Stanislav Stoychev   19:00 Yes, I see what you're getting at, but you know that the load is way to unevenly distributed across the different depots. So then we have to come up with a strategy that somehow we know which depots are currently allocated and being processed by a given instance which. I mean, I don't know if it is feasible with the static setup that we have.
+ Ivailo Pashov   19:17 Do we do we have that like that much of A that significant load actually that based on my understanding like during peak submissions we have. 120 records per minute, which makes it, let's say, 2 requests per second. I don't think this is a really big amount of data to be processed, to be honest.
+ Stanislav Stoychev   19:47 Yes, it is not, but normally I mean the upload phase is the one that is taking a long due to bottleneck on the call for work API probably for Mark and we would have no bottleneck whatsoever.
+ Ivailo Pashov   20:03 Mm-hmm. Yeah. So it's not really extracting the information that's the bottleneck, but rather publishing it.
+ Matthias Max   20:05 Is this a?
+ Stanislav Stoychev   20:08 Yes. Yes.
+ Matthias Max   20:12 So is the 120 per minute during Easter and Christmas on the biggest branches?
+ Ivailo Pashov   20:13 So.
+ Stanislav Stoychev   20:21 The highest spike that was extracted for the past few months across all depots.
+ Matthias Max   20:27 But past three months, OK.
+ Stanislav Stoychev   20:28 For a single minute. Yeah, for a single minute.
+ Matthias Max   20:31 And it includes Christmas time.
+ Ivailo Pashov   20:32 So.
+ Matthias Max   20:35 Three months should include the December then.
+ Ivailo Pashov   20:38 Yeah, should be.
+ Yosif Mihaylov   20:43 Also like I'm not I mean like I'm not sure, but I think that it might be an option like not not to go for scalability horizontally but not sure vertically. Like if we if it it would make sense really I'm not sure what the. Like performance hit would be and whether this would be an issue at all because we could go.
+ Ivailo Pashov   21:06 I I don't think so. I I don't think that this will be a performance issue because think about how much stuff needs to really be processed in in the process of like the discartage upload service very small like most of it it's IO. Work with corresponding Digilis and corresponding DPM breach and so on, the TMS breach and so on. So that being said, we shouldn't in theory have an issue even if there is a single instance running only.
+ Yosif Mihaylov   21:44 That's also my understanding because like given like there are monoliths that are serving like in handling like millions of requests and like it, it's still fine like probably like. You'll you'll be fine and like if something like this works for us, it would I think tremendously simplify the workflow if we just have a single instance that's pretty much managing the depots and can everything in one place.
+ Ivailo Pashov   22:14 Mhm. Yeah, but we need to make sure that we have sufficient health checks on it. So if something happens with that instance and it, let's say it's unresponsive, etcetera, we need to have some immediate instance being triggered, another one to to take over the work. That's something that we need to be really, uh, precise about. Otherwise, if there are no other instances and this one is like not responsive.
+ Matthias Max   22:43 Mm. Mhm.
+ Ivailo Pashov   22:53 We would end up with like lack of synchronization.
+ Matthias Max   23:02 No.
+ Stanislav Stoychev   23:03 So we should not only determine the health of the instance by the whether it is in a registered, but also taking into account whether the extraction phase has been completed.
+ Ivailo Pashov   23:17 Yes.
+ Stanislav Stoychev   23:18 OK.
+ Ivailo Pashov   23:20 So if you say it would be more convenient for you to merge this cron job, this upload workflow and this cartage upload service within a single instance and we can like. Do it within the same. Estimates. I would rather like vote for that approach.
+ Matthias Max   23:52 Me too. Looking also at the way how we work as you've described before with Cloud Functions, it's way more difficult. Also we should. Probably include some new members of the future application monitoring and operations team. As I've mentioned earlier, there's currently a team put together to take over all of that operation. That is not just new dispo, that includes cloud for lock and everything we run. They would be the ones monitoring these infrastructure. And of course, it would be cool if they are, if they would have been part of the meeting, but the team is not even precisely put together.
+ Yosif Mihaylov   24:50 Yeah, in my opinion like it would definitely take make our lives easier please. That's that's how I feel about it. I'm not sure if we are going to hit some some underwater rocks or some like some edge cases obviously like I can be certain of that but otherwise. I think that it will greatly simplify the whole workflow. It would make it easier both in terms of monitoring development, managing this quality infrastructure. It will probably reduce costs most likely as well. And like about whether we can, we can get this as part of the current estimations like I guess this need, I mean we need to think about it. In details to see how much effort exactly it would be. Ideally like it would be mostly I imagine infrastructure work. I mean the logic is there. We shouldn't be like implementing new logic apart from some refactoring. Which actually could be even done later. So yeah.
+ Ivailo Pashov   26:06 Yeah, please please try to estimate what will be the amount of work to refactor and incorporate the workflow and the Chrome jobs. Or different for for let's say for triggering the the pulse etcetera. And then we can discuss. Maybe if you're able to when you need, do we need to present that approach? I mean overall there was a.
+ Cem Karaman   26:42 And that's exactly what Matthias now also asking. So he wants actually the cost of that and we already have some like numbers, but will that affect also our numbers for?
+ Matthias Max   26:45 Yeah. OK.
+ Cem Karaman   27:01 But we show them in as full target.
+ Ivailo Pashov   27:08 Might, might be, might be. In my opinion, there would be an impact, probably would take more time.
+ Cem Karaman   27:09 Hello, can you hear me?
+ Matthias Max   27:10 Yeah.
+ Ivailo Pashov   27:20 We, I mean for for the refactoring, maybe we can save some time for this integration testing, but overall it will take more time. When we sum up, this would take more time.
+ Cem Karaman   27:36 So I just wrote to Christian that he can't get the estimates he wanted it today, end of business day from us. I already have prepared, but I wanted to speak that with Martin and with Habun. So good that I mentioned him that we can't send it today, but let's do a follow up after this. But you are not with us, so tomorrow that's the point we. Because we also need to work on cloud for lock on this architecture. Am I right? That's actually the base.
+ Ivailo Pashov   28:07 Yeah. Yeah, I can provide my numbers. I can provide my numbers late in the evening or early in the morning for you and then you can also compare it with Yosef. Either take the average or the bigger number.
+ Cem Karaman   28:21 Yep. All right, then I will let's finalize this. So then you can give your estimation. Of course tomorrow in the morning I can then schedule before the daily that we take time and that we go through all of the.
+ Ivailo Pashov   28:29 And Stanislav, of course, of course. Uh, sorry.
+ Cem Karaman   28:41 Like features, items that we already have created and let's take some estimation for the refactory. Would that be an option for everyone?
+ Ivailo Pashov   28:51 Yeah, for this, for this additional refactoring, I can just send you the numbers on top that are needed for the refactoring.
+ Cem Karaman   28:58 Is it OK? We will do the refactoring on upload and on download site, right? So we will actually change the architecture like in.
+ Ivailo Pashov   29:05 Um. Yes, we should be consistent in my opinion. It doesn't make sense to have one approach on the upload and on the download.
+ Cem Karaman   29:17 OK. Then use the time now for being like OK with Stanislav and Joseph and tomorrow we can then take. I can then take their hours. So I will then include that to our to our offer. And we'll then send it. Of course, Matthias, I will first then come back to you. We can then approve it together so I can then share it with Martin and Harun. But first, let's do a calculation. Let's do an estimation with Stanislav Yosif. Who else do we need in this call for tomorrow morning?
+ Matthias Max   30:01 I mean same round probably.
+ Cem Karaman   30:04 Same round. All right. Click said Ivo. All right. I am then taking everyone into the call for tomorrow from 10 to 10:45 Belgrade time, yes.
+ Matthias Max   30:07 Why not?
+ Yosif Mihaylov   30:12 Uh, can we? Jim.
+ Cem Karaman   30:32 OK. OK.
+ Yosif Mihaylov   30:33 Properly, I don't think that one or two hours would be enough for me.
+ Cem Karaman   30:35 Of course. All right then I can do it to like name me say what time after the because you had you have also the daily for this.
+ Yosif Mihaylov   30:46 Play.
+    30:47 Um.
+ Stanislav Stoychev   30:49 Shall we do it in the afternoon?
+ Yosif Mihaylov   30:52 Can you do it like 3-3 PM for example?
+ Cem Karaman   30:53 Right.
+ Yosif Mihaylov   30:57 We'll get in time.
+ Cem Karaman   30:58 Three PM, 3:00 PM Bulgarian time. Matthias, is this also working for you?
+ Stanislav Stoychev   31:05 Also.
+ Matthias Max   31:05 That's too German, right?
+ Cem Karaman   31:08 Yes, that's two German time. We have at 1:00 we have the project overview call, the reporting call and at 2:00, half an hour or one hour.
+ Stanislav Stoychev   31:08 Or just.
+ Matthias Max   31:22 I think it clashes with the new disk for refundment, so if it's 30 minutes is enough, we could do it at 3 probably.
+ Cem Karaman   31:26 Uh huh.
+ Boyan Valchev   31:34 Like a question, do you need for this I mean estimate? Do you need me, Ivo and I mean Ivo Petrov and Chris? Because I mean I personally don't feel confident to estimate this because I'm not that familiar with the cloud for log project.
+ Cem Karaman   31:35 Be true.
+ Matthias Max   31:54 All good.
+ Boyan Valchev   31:54 If you if you insist on having us there, that's fine. But like from the implementation wise and for example how much a potential refactoring would take, I don't feel confident to give like a like a estimate which would be which I can back up with like some facts.
+ Yosif Mihaylov   32:13 Yeah, Bobby, I don't think that it is expected from you guys to give an estimate. I think it was more about audiencing like being audience on the meeting. But given the question with the new display, I guess this could be reconsidered and maybe we can record the meeting and you can. Um.
+ Boyan Valchev   32:33 Yeah, that's fine. That's fine. I mean, we can join for the part. Like if if you guys need more time, then we can just us like me and Chris, we can jump to the new dispo meeting. But yeah, I mean, it's whatever you decide, guys.
+ Yosif Mihaylov   32:33 Just, uh, later.
+ Cem Karaman   32:57 Right, so you can continue. I am creating the estimation call for the refactoring code and TMS architecture and we can then see the numbers. So I will let them wait because I told them we will now have the decision call. So it is totally fine. Vivo, you can continue.
+ Ivailo Pashov   33:40 Right. So considering that refactoring option would need to be evaluated, we then proceed with the actual submission of the data, no matter what kind of approach would be utilized. End of the day that data would need to arrive into Pubsub. We'll have those two different services that would be picking up the data from pub sub topics and then publish to cloud for local market. What's important to say here is. In in a similar manner that we may decide to also host this Cloud Function actually to make it containerized. Same stuff applies here because. This publishing of of pub sub to a particular Azure function is only push based mechanism. So the the drawback of the push based mechanism is like there is a little. Little less, less concurrency control over distributing of messages across instances and potentially less control over the application on how to retry messages, etcetera. So this this is something that potentially you may want also to consider during your evaluation here and I also do that research. If we decide to go with containerized workloads, then in this case we may also want to do the pool. What happens here and should be mentioned is these are general topics. That means that all of the messages coming from different the posts, all the different cartridges. Would be actually stored on that single subscription. And would be processed in parallel by the same dedicated instances by the same shared instances. So we don't have, let's say one instance processing one the pose and another instance processing another.
+ Matthias Max   36:05 Yeah. I mean, that's the big benefit with introduction of the bus, right?
+ Ivailo Pashov   36:09 Yes, we can even out. Let's say we can share these instances across the post. So even if there is some imbalance between the post, that would be evened out when we try uploading code to cloud for lock which and Markant which obviously is. Um, anyway, the bottleneck. The other benefits here? Yep, Matthias, you have also something to say.
+ Matthias Max   36:30 Yeah. Isn't that actually a requirement that a necessity to have it in microservice? Because you would need to control the amount of data you sent to these platforms. How can you do that with an uncontrolled range swarm of? Cloud functions running.
+ Ivailo Pashov   36:53 So with Cloud Functions you can limit the concurrency. There is a Max concurrency for that trigger. Which you can do that kind of limit.
+ Matthias Max   37:06 Mm. Yeah, meaning you have to find the right sweet spot so that cloud for lock almost does not push you back yet.
+ Ivailo Pashov   37:12 Yeah. Yes, but you can still has have the most throughput. If you saturate it then it's getting worse. If you're under provisioning then you're.
+ Matthias Max   37:17 Hmm. Mhm.
+ Ivailo Pashov   37:30 You don't have sufficient capacity potentially to process some spikes. Whether that is material enough, I don't know.
+ Matthias Max   37:36 Mm. And the acknowledgement on the bus would be done, obviously only once successfully delivered, so we don't lose anything.
+ Ivailo Pashov   37:46 Yeah.
+ Matthias Max   37:49 OK.
+ Stanislav Stoychev   37:53 And I was wondering to also this call function should be triggered upon receiving a message into the respective subscriptions, right?
+ Ivailo Pashov   38:09 Uh, the race time is low.
+ Matthias Max   38:09 OK.
+ Stanislav Stoychev   38:11 I was saying that this upload to quad functions for the respective third party provider should be triggered upon entering of a message in the respective subscriptions, right?
+ Ivailo Pashov   38:12 OK. Yes.
+ Stanislav Stoychev   38:25 OK.
+ Matthias Max   38:35 OK. I mean also the questions here, what is the refactoring effort? Huge parts of this would be in a cloud function already. Have to strip apart a lot of stuff to make it just the uploader. That's probably less of work than migrating it completely to a microservice. Yeah. OK, we need to think about this. I think as long as we are roughly in the same effort space, the details still can be discussed in the next few days if we have a huge drift. In budget, then it's more relevant because. Yeah, it's another discussion with Christian.
+ Cem Karaman   39:40 Is that something what he's expecting already? Then let's discuss it if not.
+ Matthias Max   39:44 What exactly the technical details of how we will solve it?
+ Cem Karaman   39:49 Yeah, like.
+ Matthias Max   39:49 What I mean, that's something I would ask you actually. What is he requesting? You previously said he's mainly interested in numbers.
+ Cem Karaman   40:00 Actually, yes, we we already, yeah, we already give him the offer for the basic and the full target option. And as you know he mentioned that 70% as in our mail we mentioned that the architecture is already covering also Macant and now we are.
+ Matthias Max   40:00 Not so much in tech details. Mm. Hmm. Mm.
+ Cem Karaman   40:19 Are changing like our architecture part. Actually he's really interested in more like the numbers, but I think also in the like technical part, if the architecture is changing and if you need another meeting before we need to get some decisions.
+ Matthias Max   40:26 Yeah. 2.
+ Cem Karaman   40:36 I can also like arrange that part.
+ Matthias Max   40:40 I think he is really interested in two things. One, what does it cost? And two, does it provide what is requested, which is secure transfer of this data?
+ Cem Karaman   40:47 Mhm.
+ Matthias Max   40:56 Without loss.
+ Cem Karaman   40:56 Mhm. Exact.
+ Matthias Max   40:59 He's not interested too much in details, although he is a technical guy, the outcome counts for him.
+ Cem Karaman   41:08 So as you described, he's really now very curious about the numbers of of the budget and that it is a safe place where we have no data lost.
+ Matthias Max   41:15 13. Yeah, I mean still we need to be sensible in the communication because who's been part in the last meeting has was probably seen that he was a bit building mistrust. So this mistrust needs to be tackled or actively played at to get back mistrust. This only happens with technical with the technical explanation.
+ Cem Karaman   41:46 I I done it from business side. Exact from business side, exit from the business side, I've done everything. I also communicated with him and Marius. They are happy from the business side. Now as you say, the technical side needs to approve what we have mentioned them. In the calls from business sites with Harun, Martin and Marius and Christian, happy as I mentioned, they are happy about the business side that we do proactively this communication with them, but the technical part needs also.
+ Matthias Max   42:20 Mhm.
+ Cem Karaman   42:22 Approve and sign this.
+ Matthias Max   42:25 Yeah, yeah. So let's let's move on with the meeting. Then we can at the end quickly decide when to show the outcomes of our technical design. I think it could be also separately from your. Budget communication. All right. So Ivaro, sorry for interrupting. We were at the upload pass.
+ Ivailo Pashov   42:55 Yes.
+ Matthias Max   42:55 Discussed Cloud function as a microservice.
+ Ivailo Pashov   42:59 Yes, um. That's like it's really from the components integration perspective. Let's just go through like some of the tactics that should be utilized. We already mentioned this patching to reduce this N + 1. Query complexity and also to utilize batching so we don't fetch an enormous chunks of data, even if they're we are lagging behind in terms of either peak or some downtime that. Put a lot of data that's unprocessed in terms of auto scaling this kind of consumption of messages that could be like triggered based on this consumption with Azure functions. That would be probably easier at this kind of auto scaling with containers. We need to double check. This would be probably more static, but shouldn't be that limiting factor. Throtling limiting that overall concurrent. I see that I mentioned before, so there there should be auto scaling in a way or but should be some somewhat cupped. And the polling interval should be configurable. We previously mentioned 20 seconds, but now this need to be updated if we are actually doing it more dynamic to figure out if there is more data to process around spikes so we can catch up faster. Now for the retries. We need to let's say check like do some retry logic around the style operations that could fail the transient errors. Classification of errors is critical because if we have a false false positive transient error. Obviously permanent error that's recognised as transient will occupy some resources within the three tries the the the reverse. It's even worse because false positive for for an error that's. Like none that's should be transient, but we identify it as non transient. This this leads to discarding some data which should have been retried. Checkpointing means that we should be able to recover from this last spot batch or timestamp. Fault isolation. We already discussed separate subscriptions for the different platforms, concurrent message processing, which makes it easier to pinpoint individual potentially faulty messages being retried while the rest are being processed. Processed concurrency isolation. This relates to not reprocessing the same data from multiple instances. At least once delivery that we should always await for submission to be confirmed before we actually update any kind of checkpoint or confirm upstreams that everything was fine. Idempotent processing. This is critical once used in conjunction with at least once delivery, because if that ultimate destination is cannot like process idempotent during our retries, we will create duplicates. Might be business significant, but might not be that business significant. My understanding is we shouldn't do that.
+ Matthias Max   46:57 It has been an issue in the past, right? Where do we put this check?
+ Ivailo Pashov   47:11 This should be done on the end destination. There there must be a way for us. We already had that discussion with Markant but not sure about cloud for lock. So with Markant they mentioned that they would be adding some ability for us to have this item potent processing.
+ Matthias Max   47:34 Oh.
+ Ivailo Pashov   47:35 For cloud for lock, we need to still check that. At least Cloud for log has some something similar to transaction where we like finalize the bundle and complete it. This is this was not present with Mark Hunt.
+ Matthias Max   47:56 No.
+ Ivailo Pashov   48:04 So. Um. That's it really.
+ Matthias Max   48:17 All right then.
+ Ivailo Pashov   48:17 Or.
+ Matthias Max   48:20 OK.
+ Ivailo Pashov   48:21 I think we already like mentioned the rest. Yosef, you have a question.
+ Yosif Mihaylov   48:27 Now like in terms of what we discussed and what we are going to be estimating about moving from cloud function to containerized service and looking at the diagram and looking at the two cloud functions for the cloud for walk upload and mark and upload. For about like theoretically I guess these could stay cloud functions, but like then then it's kind of like washing away the idea of what we want to achieve.
+ Ivailo Pashov   48:54 Mhm.
+ Yosif Mihaylov   49:05 And what do you think about? Does it make sense to have this on the same place and just?
+ Ivailo Pashov   49:12 These these functions, these things are, I would say they're stateless and being stateless without manipulating additional state without. We don't have this level of complexity here to distribute the work, right? Among, let's say, instances who would be picking up some some existing records from the database. That's the hardest part and the clumsiest part here with the existing solution. Here it comes very naturally with the. Subscription so the functions can auto scale. They can also have a limit on the concurrency. Um.
+ Yosif Mihaylov   49:47 Yeah.
+ Ivailo Pashov   49:54 Potentially there there might be impact on integration testing if we have some obstacles on running this locally.
+ Stanislav Stoychev   50:10 And currently, because normally the initial step when we do in the call for workflow is to validate the configuration against the deployed instance of the call for work by fetching the GONS for the respective organizations and the hosted service approach, I believe we just rearrange the business logic a little bit. So that we upload the GL of the deliver node that we have extracted to the subscription, we can remove the this qual for work part of the extraction phase altogether and make it in isolated manner where just just service. Only gives information about the found deliver note itself with anything can relate to the third party system that it will be used for.
+ Ivailo Pashov   50:55 I to be honest, I'm not sure whether we really need to execute this as a very first step to check whether the consignees on boarded on cloud for lock that we configured already because this this is a configuration issue. If that configuration issue happens, potentially like what would happen is this upload service should lock an error and just discard the data. I mean not discarding it, but just putting it, let's say in a dead letter queue, maybe for further processing. That's what I mean.
+ Stanislav Stoychev   51:28 We do this verification step normally because the our use case is different from the defined constraints of the code for work API because we assume that there is always going to be 1 organization site with unique GON, which is not the case. It's not the case per API definition on the cloud for work system and we can end up in scenarios like we did previously where someone accidentally uses a geoin that already exists and then we have to have this upload to a system that is. To a depot that we shouldn't do, we shouldn't do applause for.
+ Ivailo Pashov   52:10 Yeah, that that's fine. I mean, we can just drop data, like reject it and like it, let it enter into a dead letter queue, whether we we skip processing or we just process some data up to the point that we discover that we cannot like upload it successfully.
+ Stanislav Stoychev   52:19 I see you.
+ Ivailo Pashov   52:27 I think it's just a a bit of an overhead for the processing, but that's more of a configuration issue. Rather than something that's the like the the system should dynamically handle.
+ Matthias Max   52:44 Can you elaborate quickly again what the logic is here? Are you talking about pulling in the the configuration from the top again during the upload? Face.
+ Ivailo Pashov   53:01 So my understanding is there would be different consignee and consigners GONS configured over here, but we also do additional checks on these on their related GONS to make sure that like there are no duplicates when on boarded on cloud for lock and.
+ Matthias Max   53:07 Mm-hmm.
+ Ivailo Pashov   53:19 These are really present over there. Yeah, Stanley stuff. Correct me if I'm wrong.
+ Stanislav Stoychev   53:26 No, this is indeed the case. I mean, one cartridge can only be correlated, I mean.
+ Ivailo Pashov   53:32 Uh, stunning stuff. I can barely hear you.
+ Matthias Max   53:34 Yeah.
+ Stanislav Stoychev   53:34 Sorry, is it better like this?
+ Ivailo Pashov   53:37 Yes.
+ Matthias Max   53:37 Yeah.
+ Stanislav Stoychev   53:37 OK, I was saying that a single we determined where for which depot the car to choose for by this GON and then we need for the value of the organization. We didn't call for work, which I assume quite similar for the markup. And then know how to handle it in the in terms of API operations that we should do.
+ Ivailo Pashov   54:03 Yes.
+ Matthias Max   54:05 Is this something new or is this in the code already this logic?
+ Stanislav Stoychev   54:10 This is so ready present.
+ Matthias Max   54:12 OK, well, because I my assumption right now is we don't touch any logical business rules anymore. We just refactor it in terms of the technology stack and flow of data, right? And I try to understand why you're discussing this right now. If the logic is already there, you you try to find out where to put it. Is that the question?
+ Yosif Mihaylov   54:45 I think what Stasi meant, sorry in the beginning is about that if we go with the approach of the hostage service, we could simplify and improve performance and simplify the logic around this.
+ Ivailo Pashov   54:46 Yeah.
+ Matthias Max   54:59 Mhm. See. Yeah. So I see. Yeah.
+ Ivailo Pashov   55:04 Well, if we if we need, if we need to, let's say do a quick check up with cloud for lock with this adapter pattern and we have some Cloud functions that only process on messaging, then obviously we we won't be able to invoke that same function with. A REST call because that function only has a single trigger. So what would happen is containerized hosting might be better option. But the question is do we really do we really need that requirement at this point? Is it that we we cannot like configure the data in a different way? For this consigner, et cetera.
+ Matthias Max   55:51 Hmm.
+ Ivailo Pashov   55:53 Can't we delay that operation until it reaches that corresponding adapter until it reaches that upload service?
+ Stanislav Stoychev   56:08 Yes, I think at least I think we can because if we just send the. GON together with the deliver node because this validation we are only interested in the GON that we work for in the current depot. We just forward it to the single entry of the subscription. We can the function itself will then put it from that ends. Does this validation step would?
+ Ivailo Pashov   56:48 I think if we can defer that it would be more decoupled, otherwise we create more coupling with this preliminary validation step.
+ Matthias Max   57:01 Mm. So literally in front of my imaginary eye. We would have to take the code base. And dissect it into its parts and map it to the new infrastructure. Probably as a next step to see if we cover all logic that was collected so far and is really valuable because it manifests real world experience and rules.
+ Ivailo Pashov   57:27 Yeah. Yeah, what's?
+ Matthias Max   57:44 Would it even make sense to do this together in in another step, not leave it up to single persons? I mean, of course this would be part of the user stories, PVI's, et cetera. Just thinking out loud.
+ Ivailo Pashov   58:00 Something that I also want to add on top of that is this. This refactoring is requires additional regression testing and since we want to invest into integration tests, it would make sense to. Start actually with the test 1st and then evolve both the tests and the implementation. Somehow. Otherwise we won't have enough confidence about the overall success.
+ Matthias Max   58:27 Mm. No.
+ Ivailo Pashov   58:36 And there would be more books and then. Customer won't be happy. They end of the day they want to see that we fix all together all potential reliability concerns on one end, but on the other we don't introduce any new regressions that would **** them off.
+ Matthias Max   58:56 Of course.
+ Ivailo Pashov   58:56 Order. They already ****** ***.
+ Matthias Max   58:57 Yeah. And who's in charge of the testing in Ivaylo? Are you taking that or?
+ Ivailo Pashov   59:06 My opinion here it's.
+ Matthias Max   59:09 No, no, not you. Sorry. The other one, the the other Ivaylo.
+ Ivailo Pashov   59:13 Uh, my opinion here is it's this is more of a developer work. Uh.
+    59:14 Sorry.
+ Ivaylo Petrov   59:17 For.
+ Matthias Max   59:18 No, no, I I want. I meant, I meant Ivailo Petrov. Sorry.
+ Cem Karaman   59:21 Mm.
+ Ivailo Pashov   59:22 Yeah, yeah, yeah. But that what I mean, it's like it's not fully QA work. This requires deep understanding of the code base and launching some stub dependencies as potentially inside the code base. Within, let's say, slightly modified configuration of the application so that some of these dependencies are actually reaching out to some steps that live in the memory, something like war mock library, etc.
+ Matthias Max   59:49 Mhm, sure. Yeah, yeah, yeah.
+ Ivailo Pashov   59:54 And that thing is usually more complex and requires more of a back end developer. Um work. That's my read key.
+ Matthias Max   1:00:07 Agreed. Yeah, yeah. I just meant who is in the driver's seat to to drive the regression tests home or it's a collaboration later on.
+ Yosif Mihaylov   1:00:09 This the is. Yeah.
+ Matthias Max   1:00:19 But someone needs to be responsible in the driver's seat first.
+ Yosif Mihaylov   1:00:26 Yeah, just a heads up that is a back end developer for quite some time, not not a QA.
+ Ivailo Pashov   1:00:30 No, OK. OK. Uh, that's that's cool. OK, yeah, because I was, I was thinking that because of Matthias pinpointed him, I thought he he thought he's the the QA guy. Sorry, sorry.
+ Yosif Mihaylov   1:00:35 Yeah, in that the.
+ Matthias Max   1:00:47 Yeah, and I'm sorry if I mixed it up, but I think you you were in a QA role once, right?
+ Ivailo Pashov   1:00:47 Sorry, sorry.
+ Ivaylo Petrov   1:00:53 Yeah, well, like about more than one year ago.
+ Matthias Max   1:00:58 Yeah, sorry for that. Then anyway, you're perfect for that.
+ Ivaylo Petrov   1:01:01 Yeah, no worries.
+ Matthias Max   1:01:06 All right. OK.
+ Ivailo Pashov   1:01:16 So the plan is I will be providing my estimates later this evening or very early in the morning to Chem. In the meantime, you folks can just discuss it tomorrow and we we have some.
+ Matthias Max   1:01:17 Good.
+ Ivailo Pashov   1:01:34 Some realistic probably input for providing that information to the customer.
+ Matthias Max   1:01:42 Yeah. I'm just gonna be planned.
+ Cem Karaman   1:01:45 Sounds like a flag. I'm then do you want me like Yosef Sunny creating a new epic for this like cloud for log refactoring or are we going to take it in the same epic? So we can also create our PB is maybe for doing the estimation. Tomorrow.
+ Yosif Mihaylov   1:02:12 Just one question, like what is, I mean the general idea like we provide some estimates tomorrow afternoon and then you talk with Christian about it. Is that it?
+ Cem Karaman   1:02:26 Exact. I will wait for this. We will do the meeting for the refactoring as you mentioned and then I will share this with Harun, Martin, Matthias and then of course with Christian.
+ Yosif Mihaylov   1:02:43 Because if I have to be completely honest, I mean I can come up with the estimation like for tomorrow afternoon, at least how I understand it. But like this concept of moving this into hosted service, although we discussed it, we never really dive deep, dive deep. Into it and I really would strongly consider and suggest to have like some intermediate step one or more inquiry where the value is also part of because otherwise like for example tomorrow me and Stacey will provide. Some estimates we have some understanding about how this should happen, but like I just don't want to turn out that we missed something big. I don't think that that that is very likely this to be happen, but given that Ivailo is the architect for this project.
+ Cem Karaman   1:03:23 Yes.
+ Yosif Mihaylov   1:03:41 I really think that after our estimation and after our review, we just run this whole thing through him. Unfortunately, he'll be off for some days, so in the end it's up to you how we should proceed.
+ Cem Karaman   1:03:56 I see also that we not like we are not confident with the solution what we are now presenting Matthias or name it, you name it. So if I see if you would confident we also would give estimations, this is not an issue.
+ Yosif Mihaylov   1:04:13 Hmm.
+ Cem Karaman   1:04:14 But I see that there we need still some overthinking on this to be sure.
+ Matthias Max   1:04:20 Yeah. What? What is the What is the vacation situation? We have the public vacation as well next week, right? Tuesday or?
+ Cem Karaman   1:04:29 Yeah. On Monday, mostly on on Tuesday, there is a bank holiday in Bulgaria, yes, and mostly most of the guys are also taking the Monday. So it's a longer weekend, but let me let's ask them. So if they are they planning it also like this or?
+ Matthias Max   1:04:33 Mhm, yeah. So OK.
+ Yosif Mihaylov   1:04:48 Yeah, I mean Monday, Monday, I think we are all off. I think the real question is here like can we really allow ourselves to to delay this until mid next week, let's say Wednesday or something like that?
+ Matthias Max   1:05:03 The.
+ Yosif Mihaylov   1:05:04 Because if that if there, if this is not an option, then obviously like we need to proceed with something similar what we discussed. But if this is not really such high, high priority to give these estimates and everything until then, I think that the far better and safer. If our option would be to to postpone this for Wednesday first, we will have multiple days to think about this and to figure it out. Then we will be able to to to run through the whole team, Matthias, Ivailo and.
+ Cem Karaman   1:05:30 Mm.
+ Matthias Max   1:05:33 Yeah. Yeah.
+ Cem Karaman   1:05:39 Yeah.
+ Yosif Mihaylov   1:05:39 I think we'll be more confident.
+ Matthias Max   1:05:42 So I I have a plan actually, and I think Martin is a is a very important communication cornerstone here.
+ Cem Karaman   1:05:43 Then do you think yes? Mhm.
+ Matthias Max   1:05:51 We will. We make our estimates tomorrow as planned, but they are not finals. They are more like trend indicators.
+ Cem Karaman   1:06:02 Mhm.
+ Matthias Max   1:06:04 And based on that, we can decide on business side with Martin, that's why I mentioned him, if we communicate the numbers because we have this trend indicator or if we step back and say, hey. We still need some time and it's unfortunate that there is this bank holiday, but it is what it is. We will tell you next week. That's the two options I see, and both are fine for me, but I'm totally with Joseph and all the others that we should not give out numbers when we're not totally confident yet. So it's all open until we have the trend indicator tomorrow.
+ Cem Karaman   1:06:57 All right, then let's go that way. And also I will speak directly to Martin that he can call Christian and let him know about it. Just one question, the cloud flow implementation then for now, is it that we are pausing this because it doesn't make sense to work on? Like on this architecture or how do we see this point? Because then I also need to communicate this part.
+ Matthias Max   1:07:23 I mean, obviously we have drastic changes coming up for it.
+ Cem Karaman   1:07:32 Mhm.
+ Matthias Max   1:07:33 So investing any further into the current solution than we know we will most probably not use doesn't make sense, right? The side story here is what was communicated or what's the state regarding a release date?
+ Cem Karaman   1:07:40 Mhm.
+ Matthias Max   1:07:52 I guess the expectation is as soon as possible because it is already over like months past the original deadline. So that's the challenge here.
+ Cem Karaman   1:07:53 Um. Thanks. Makes sense.
+ Matthias Max   1:08:08 Joseph.
+ Yosif Mihaylov   1:08:11 Yeah, I mean the release is 1 topic, but on the other topic for example, I know the change requests that there is that it's pretty much adding some extra business logic into our current business workflow. I think this could be like this could be. Started and really like it doesn't really that heavily depend on on this refactoring that we make because it's just adding more business logic where we already have it like this could be also like be be worked on in parallel and I think it should be no problem. The release on the other hand. The release on the other hand is another topic.
+ Cem Karaman   1:08:49 That is great. Exact release is just like I will communicate this with Martin also and also with Christian and Marius. But if this has no impact, if we can work on parallel like on our topics, on our PBIS, that's great.
+ Yosif Mihaylov   1:08:54 Um.
+ Stanislav Stoychev   1:09:00 Yeah, so.
+ Cem Karaman   1:09:17 Makes it.
+ Stanislav Stoychev   1:09:18 The release we are only, I mean the only wishful experience it is with the code for look. On that note, I'm going to push them once again to receive an answer from their support team. But The thing is that now we're shooting some shots in the dark with. Attempting different solutions that could be caused on our end and instead of spending efforts with shooting the shots and doing unnecessary work, we can just focus on this stuff that is in regards to the new architecture.
+ Cem Karaman   1:09:41 Yes. Exactly. That's what I wanted to notice. Like that's also my point, like we we are changing the architecture and we are changing the architecture as I see that it doesn't make sense to work on the old. Like if there are some business like Yosef mentioned, some work to do parallel of course can be done, but let's don't waste any effort.
+ Matthias Max   1:09:48 Mhm.
+ Stanislav Stoychev   1:10:01 Um.
+ Cem Karaman   1:10:08 On the on the architecture which we will not use. This is also my point. I will directly communicate this with Martin. He's also today on a workshop tomorrow morning. My first thing is to speak about this and also. To just give the information that it doesn't make sense for now for working on this and to that we need to have time until Thursday, Friday next week to be sure and confident on our side, on the architecture side and also on the implementation. Site and I will communicate this, but let's do as Martias mentioned the estimation for tomorrow what we have understood. So let me speak to Martin, yes.
+ Stanislav Stoychev   1:10:45 Uh. Sorry, my my Internet dropped. Can you repeat the last minute?
+ Cem Karaman   1:10:59 Of course, of course, no worries. I will communicate with Martin that we need time for this and that it doesn't make sense to give more effort on the old architecture like implementation, that it is better if we have a task where we can work parallely, then we will do these PB.
+ Matthias Max   1:11:00 Ha.
+ Cem Karaman   1:11:19 I see. If not, we will pause and we will Co focus on the new architecture and we will like get confident on the new architecture and we will do the estimation for the refactoring. So this is what I will communicate. But let's do take us, let's take the half an hour tomorrow. To just go to do have an estimation for this and I will speak with Martin and let you know about the upcoming process.
+ Matthias Max   1:11:53 Yeah. How much is the effort? Oh, sorry, yes, if you.
+ Cem Karaman   1:11:54 Yes, Yusuf.
+ Yosif Mihaylov   1:12:00 One question which is really a very business oriented question which I'm not sure that has been discussed, but given that we are planning to go live and our client is planning to to start using this in production. Like are we aware and are is the client aware how our refactoring will pretty much switch in production and like. Pretty much are we expect in the quiet expected to to move on this smoothly and what's the expectation there because we'll be we will be significantly changing everything and if you have something running in production. I'm like, I'm not sure if we have a strategy how we are going to to.
+ Cem Karaman   1:12:53 It is. We are not in production actually, but yeah, Stanley, maybe you will answer.
+ Stanislav Stoychev   1:12:57 Well, it, I mean this really depends on what what we decide to prioritize because if we decide to roll out the solution as it is, we'll definitely need to come up with a whole new roll out strategy because we would introduce no new components in favor of the old ones. This would be that we have to accommodate for a seamless. Migration from the old components towards the new ones. Which is additional effort and Yosef in the past normally we developed the rollout strategies.
+ Matthias Max   1:13:25 Yeah. So I think we should be all very open here, Jim. I've not been in touch with with Christian the last few days, but he saw the numbers for our proposals of basic and target versions. He said it's too much. Then there was a back and forth. So at some point there must have been an honest moment where we opened up about having to reinvest in this solution. Did that happen or did that happen? Not yet.
+ Cem Karaman   1:14:05 I already talked to him, sent him the mail. Also Harun is in contact with him. I directly contacted Harun after our Friday call that we proactively call Christian, that he knows that we are aware of what happened, what is now the situation and that we.
+ Matthias Max   1:14:10 Mhm. Mhm. Mhm. Mhm, yeah.
+ Cem Karaman   1:14:25 We'll solve this that we totally will support him on this point and then to his e-mail I also wrote in like we will do the restructuring of the architecture and also of the refactoring of the code and this will be totally on P3 side because he's now saying.
+ Matthias Max   1:14:30 Yeah. Mhm.
+ Cem Karaman   1:14:45 Like he's showing us a mail and he's saying that this was already discussed. I was not included in these mails. That's why I just couldn't had say something in in the call. But afterwise I also checked the mails and we are now, as I mentioned on the business side, he knows that we will restructure this.
+ Matthias Max   1:14:57 OK.
+ Cem Karaman   1:15:05 And and I see that we now need in this like like the acknowledgment from the technical side that we agree on that what we do that we are confident with with the technical solution.
+ Matthias Max   1:15:05 Yeah. Yeah, yeah. So to cut the Long story short, Joseph, in my opinion, we should play open and say we'd rather make this good per first and then go live. Rather than going live on pressure with the old one, which we know has issues, then have a troublesome migration while life. This is not the way to go. I'd rather make the client wait another few weeks.
+ Cem Karaman   1:15:49 No. Of course.
+ Matthias Max   1:15:53 That's my my personal opinion.
+ Yosif Mihaylov   1:15:55 To be honest, I also see things this way. I think first like it will save us effort and time for us, then money for the client, then save wrong expectations.
+ Matthias Max   1:16:09 Yeah, exactly. All points are on that side of the discussion, I think.
+ Cem Karaman   1:16:10 Yeah, exactly.
+ Matthias Max   1:16:16 OK, but I will be in touch with Harun and Martin for that. They are the key accounts. They need to handle this. Yeah, challenging communication part.
+ Cem Karaman   1:16:23 Mhm. The communication part is totally like fine, it's it can be done. I think I just need to figure out from Christian and Marius about the go life expectation right now to have their free time.
+ Matthias Max   1:16:35 Yeah. Good. Mhm. Um. OK, good. Then thanks a lot for the meeting. Have a great evening.
+ Cem Karaman   1:16:51 All right.
+ Matthias Max   1:16:57 Speak soon.
+ Cem Karaman   1:16:57 Thanks a lot. See you tomorrow. See you. Bye.
+ Stanislav Stoychev   1:16:58 You too, guys. Bye, bye.
+  Transkription beendet
