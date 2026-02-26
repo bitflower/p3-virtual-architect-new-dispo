@@ -31,10 +31,10 @@ Updates all git repositories in the Code folder by fetching and pulling their ap
 
 ## How to use this skill
 
-Simply run the update script that's already in place:
+The skill automatically runs the update script:
 
 ```bash
-./update-all-repos.sh
+./update-repos.sh
 ```
 
 The script will automatically:
