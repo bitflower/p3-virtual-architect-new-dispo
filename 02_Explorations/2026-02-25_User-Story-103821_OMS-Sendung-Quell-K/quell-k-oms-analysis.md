@@ -1,695 +1,600 @@
-# User Story 103821: Sendung.Quell_K and Sen_Ref.Typ=OMS_ID
+# User Story 103821: Display OMS_ID in Drive Instructions
 
 **Date:** 2026-02-25
+**Updated:** 2026-02-26
 **Status:** Exploration
 **Related User Story:** 103821
 
 ---
 
-## Original User Input
+## Objective
 
-> Von Joachim: User Story 103821: Sendung.Quell_K=s und Sen_Ref.Typ=OMS_ID
-> Sorry, das war nicht ganz korrekt. Quell_K für OMS-Sendungen kann jeder Kleinbuchstabe oder O sein.
+Display the **OMS_ID** for OMS shipments in the New Dispo Frontend Drive Instructions drawer, next to the shipment number.
 
-**Translation:**
-> Sorry, that wasn't quite correct. Quell_K for OMS shipments can be any lowercase letter or O.
+**User Input:**
+> Quell_K für OMS-Sendungen kann jeder Kleinbuchstabe oder O sein.
+> (Quell_K for OMS shipments can be any lowercase letter or O)
+
+![Drive Instructions Screenshot](image.png)
 
 ---
 
-## Summary
+## Executive Summary
 
-This exploration investigates how to retrieve the **OMS_ID** for OMS shipments and display it in the New Dispo Frontend, specifically in the Drive Instructions drawer next to the shipment number.
+**OMS Shipment Identification (Database):**
 
-## Entity Relationships
+- `SENDUNG.QUELL_K` = lowercase letter (a-z) OR uppercase 'O'
+- `SEN_REF` table: `TYP='OMS_ID'` → `REF` contains OMS_ID value
+- OMS_ID is **leg-level data**, not TourPoint-level (one TourPoint can have multiple legs with different OMS_IDs)
 
-**TMS Database Entities (AlloyDB):**
-- **SENDUNG** (Shipment) - has `SENDUNG_TIX` (ID), `SENDUNG_N` (Number), `QUELL_K` (Source Key)
-- **SEN_REF** - stores references for shipments, including `TYP='OMS_ID'` → `REF` (the OMS ID value)
-- **Transport Order** - corresponds to `SENDUNG` with `SENDUNGSART='S'`
+**Implementation Options:**
 
-**Backend Entities (Backend Database):**
-- **Lot** (Partie) - has `LotNumber` - groups multiple Legs for dispatch planning (Backend-only entity, NOT in TMS)
-- **LotAssignment** - has `Number` - when a Lot is assigned to a Transport Order
-- **Leg** - represents a Sendung from TMS:
+**Option 1 (Batch Only):** ❌ Not viable - only covers initial migration, all new shipments via CDC would lack OMS_ID
+
+**Option 2 (Store in CDC):** ⚠️ Too complex, not performant, expensive
+
+- Store OMS_ID in `LegEntity` by querying during CDC event processing or publishing `sen_ref` in CDC
+- 4+ layers affected, database schema change, CDC modifications, queries every shipment (even if never viewed)
+
+**Option 3 (Query On-Demand):** ✅ Recommended
+
+- Query OMS_ID from `sen_ref` when Drive Instructions drawer opens
+- 2-3 layers (Backend + Frontend, potentially + DIS view wrapper), no schema changes, no CDC changes
+
+**Option 4 (Extend TourPoint Pipeline):**
+
+- Modify existing Frontend → Backend → TMS Bridge → Database flow to include OMS_ID in leg collection
+- 4 layers affected, modifies shared `V_DIS_TO_TOURPOINT` view, increased complexity
+
+---
+
+## Architecture Overview
+
+### Data Pipelines
+
+The system has **two independent pipelines** that create/update Legs in the Backend:
+
+1. **CDC Pipeline (Real-time)**
+   - Captures changes directly from `sendung` table via PostgreSQL logical replication
+   - Data embedded in CDC event payload (does NOT query database during processing)
+   - ❌ Does NOT use `v_dis_shipment_all` view
+   - ❌ Does NOT capture `sen_ref` table (not published in CDC)
+
+2. **Pickup Planning Pipeline (One-Time Migration)**
+   - GraphQL query to TMS Bridge → `v_dis_shipment_all` view
+   - Triggered by POST /Initialize (one-time or rare re-initialization)
+   - ✅ Uses `v_dis_shipment_all` view
+   - Bulk loads unplanned shipments (initial data migration)
+
+**Reference:** See [Shipment Data Flow Architecture](../../08_Documentation/2026-02-26_leg-lot-creation-table-sendung/shipment-data-flow-architecture.md) for complete details.
+
+### Key Data Entities
+
+**TMS Database (AlloyDB):**
+
+- `SENDUNG` - Main shipment table with `SENDUNG_TIX` (ID), `SENDUNG_N` (Number), `QUELL_K` (Source Key)
+- `SEN_REF` - References table: `TYP='OMS_ID'` → `REF` (the OMS ID value)
+- `v_dis_shipment_all` - View used by Pickup Planning Pipeline
+- `RES_HST` - TourPoint table (stops on a tour)
+- `RES_HST_ZUS` - TourPoint assignments (links TourPoints to Shipments)
+- `V_DIS_TO_TOURPOINT` - View used by Drive Instructions (aggregates TourPoints, used by TMS Bridge GraphQL)
+
+**Backend Database:**
+
+- `LegEntity` - Represents a shipment/leg, currently has:
   - `ShipmentId` (long) - references TMS `SENDUNG.SENDUNG_TIX`
-  - `ShipmentNumber` (long?) - the `SENDUNG.SENDUNG_N` from TMS
-  - **Required:** Add `OmsId` (long?) field
+  - `ShipmentNumber` (long?) - the `SENDUNG.SENDUNG_N`
+  - **Note:** OMS_ID not stored here
 
-**Screenshot Analysis:**
-- **Partie Nr. 12345604** = Lot Number (Backend: `LotEntity.LotNumber`)
-- **Sdg.-Nr. 604905** = Shipment Number (TMS: `SENDUNG.SENDUNG_N`, Backend: `LegEntity.ShipmentNumber`)
-- **D10 badge** = Destination Branch (Backend: `LegEntity.ConsigneeServiceArea`)
+**Data Hierarchy - Drive Instructions Context:**
 
-## Objective
+- **Tour** → has multiple **TourPoints** (stops)
+- **TourPoint** → has multiple **Legs/Shipments** (deliveries/pickups at that stop)
+- **Leg/Shipment** → has **OMS_ID** (for OMS shipments only)
 
-**Make OMS_ID available in the Frontend** by implementing changes across all layers:
-1. **TMS Database:** Expose OMS_ID in views queried by TMS Bridge
-2. **TMS Bridge:** Add OMS_ID to GraphQL schema
-3. **Backend:** Add OMS_ID to DTOs and entities
-4. **Frontend:** Display OMS_ID in Drive Instructions drawer
+**Critical Constraint:** OMS_ID is a **leg-level property**, not a TourPoint-level property. The Drive Instructions drawer loads data through TourPoints (aggregated view), but OMS_ID must be displayed at the leg level within each TourPoint.
 
-**Performance Constraint:** The OMS_ID lookup must not degrade query performance, especially the `sen_ref` table join.
+### OMS Shipment Identification
 
-## Verified End-to-End Data Flow
+**Quell_K (Source Key):**
 
-### Flow for Displaying OMS_ID in Drive Instructions Drawer
-
-```
-USER: Opens Drive Instructions for Transport Order #12345
-  │
-  ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ 1. FRONTEND (Disposition-Frontend)                             │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │ drive-instructions-drawer.service.ts                     │  │
-│  │ • executeGetTourPoints(transportOrderId)                 │  │
-│  │ • GET /api/pickup-drive-instructions?transportOrderId=X  │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
-                         │ HTTP GET
-                         ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ 2. BACKEND API (Disposition-Backend)                           │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │ PickupDriveInstructionsController                        │  │
-│  │ • GET /api/pickup-drive-instructions                     │  │
-│  │ • Returns DriveInstructionsTourPointCardDto[]            │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│                         │                                       │
-│                         ▼                                       │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │ GetDriveInstructionsQueryHandler                         │  │
-│  │ • Queries Backend DB: _appDbContext.LotAssignments       │  │
-│  │   - Gets LotAssignmentEntity with LegLinks               │  │
-│  │   - Reads LegEntity (has ShipmentNumber ✅)              │  │
-│  │   - Builds DriveInstructionsLegCardDto ❌ NO OMS_ID     │  │
-│  │ • Also calls TMS Bridge for tour points                  │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│                         │                                       │
-│                         │ (LegEntity was populated earlier via) │
-│                         │                                       │
-│                         ▼                                       │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │ PickupPlanningShipmentProvider (initial data load)       │  │
-│  │ • GetAllUnplanned(branchKey)                             │  │
-│  │ • GraphQL query to TMS Bridge: "shipments"               │  │
-│  │ • Populates LegEntity in Backend DB                      │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
-                         │ GraphQL Query
-                         ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ 3. TMS BRIDGE (Disposition-Abstraction-Layer)                  │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │ GraphQL API                                              │  │
-│  │ query {                                                  │  │
-│  │   shipments(databaseIdentifier: "branch_key") {          │  │
-│  │     shipmentId                                           │  │
-│  │     shipmentNumber  ✅                                   │  │
-│  │     omsId           ❌ MISSING                           │  │
-│  │     ... other fields                                     │  │
-│  │   }                                                      │  │
-│  │ }                                                        │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
-                         │ SQL Query
-                         ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ 4. TMS DATABASE (AlloyDB)                                      │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │ Tables:                                                  │  │
-│  │  SENDUNG (SENDUNG_TIX, SENDUNG_N, QUELL_K)              │  │
-│  │  SEN_REF (SEN_TIX, TYP='OMS_ID', REF=<OMS_ID_value>)    │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│                         │                                       │
-│                         ▼                                       │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │ View queried by TMS Bridge (needs identification)        │  │
-│  │ • Must include LEFT JOIN to sen_ref                      │  │
-│  │ • Must SELECT oms_id field                               │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### Critical Insight
-
-**The shipment data (including ShipmentNumber) displayed in the Drive Instructions drawer comes from the Backend Database (`LegEntity`), NOT directly from TMS.**
-
-**Data Flow Timeline:**
-1. **Initial Load** (when shipments become unplanned):
-   - `PickupPlanningShipmentProvider` queries TMS Bridge GraphQL `shipments` query
-   - This populates `LegEntity` in Backend database
-   - **This is where OMS_ID must be captured**
-
-2. **Display in UI** (when user opens Drive Instructions):
-   - Frontend calls Backend `/api/pickup-drive-instructions`
-   - Backend reads from its own `LegEntity` table
-   - Returns `DriveInstructionsLegCardDto` with `ShipmentNumber` (and soon `OmsId`)
-
-**Therefore:**
-- The TMS Bridge GraphQL `shipments` query MUST include `omsId` field
-- The TMS database view queried by this GraphQL schema MUST include OMS_ID
-- The Backend `LegEntity` must store `OmsId` when populated from TMS
-- The Backend `DriveInstructionsLegCardDto` must include `OmsId` when returned to Frontend
-
-## OMS Shipment Identification
-
-**Quell_K (Source Key) Criteria:**
 - Any lowercase letter (a-z), OR
 - Uppercase 'O'
 
 **Sendungsart (Shipment Type):**
-- 'A' (Avis/Notification)
+
+- 'A' (Avis/Notification) - used in `v_dis_shipment_all`
 - 'N' (Normal shipment)
 - 'T' (Grobavis/Rough notification)
-- 'S' (Sammelgut/Groupage - for New Dispo views)
 
-## TMS Bridge (GraphQL Layer)
+---
 
-**Component:** Disposition-Abstraction-Layer (TMS Bridge)
-**Purpose:** Provides GraphQL API over TMS database views
+## Implementation Challenges
 
-### Verified GraphQL Query Used
+### Key Architectural Constraints
 
-The Backend retrieves shipment data via the **`shipments` GraphQL query**:
+**Data Storage vs. On-Demand Query:**
 
-**Caller:** `PickupPlanningShipmentProvider.GetAllUnplanned()`
-**File:** `Code/Disposition-Backend/.../ShipmentProvider/PickupPlanningShipmentProvider.cs`
+- OMS_ID could be stored in `LegEntity` or queried when needed
+- Storing requires capturing during leg creation via both pipelines
+- Querying requires access to `sen_ref` table at runtime
+
+**Two-Pipeline Architecture:**
+
+- CDC events contain only `sendung` table data
+- `sen_ref` table is not published in CDC
+- Batch pipeline runs only once (initial migration)
+- All subsequent shipments enter via CDC only
+
+**Impact on Implementation Scope:**
+
+- Storing OMS_ID requires modifying CDC event handling
+- Querying OMS_ID avoids CDC changes but adds runtime queries
+
+---
+
+## Implementation Options
+
+### ❌ OPTION 1: Store During Batch Migration Only (NOT VIABLE)
+
+**Approach:** Add OMS_ID to Pickup Planning Pipeline only.
+
+**Scope:**
+
+1. Add OMS_ID to `v_dis_shipment_all` view (LEFT JOIN to `sen_ref`)
+2. Add OMS_ID to TMS Bridge GraphQL schema
+3. Add OMS_ID to Backend `LegEntity` and DTOs
+4. Display OMS_ID in Frontend
+5. **Do NOT modify CDC Pipeline**
+
+**Behavior:**
+
+- ✅ Legs created during initial migration have OMS_ID
+- ❌ **All subsequent shipments via CDC have NULL OMS_ID forever**
+- ⚠️ Batch pipeline is a one-time migration, NOT recurring
+
+**Why this doesn't work:**
+
+The batch pipeline only runs once (or very rarely for re-initialization). After that, **ALL new shipments enter the system via CDC only**. This means:
+
+- Existing shipments at migration time: ✅ Have OMS_ID
+- New shipments after migration: ❌ NO OMS_ID forever
+
+**Verdict:** ❌ Not viable for production use.
+
+---
+
+### OPTION 2: Real-time OMS_ID via CDC (STORE IT)
+
+**Approach:** Modify both pipelines to capture and store OMS_ID.
+
+Since the batch pipeline only runs once and all subsequent shipments come via CDC, we **must** add OMS_ID to the CDC path.
+
+**Sub-options:**
+
+#### 2A: Query OMS_ID During CDC Event Processing
+
+**Implementation:**
+
+- When `NewShipmentCreatedEventHandler` processes a `sendung` event, make additional query to TMS Bridge GraphQL or directly to `sen_ref` table
+- Lookup OMS_ID using `shipmentId` → `sen_ref` where `TYP='OMS_ID'`
+- Store in `LegEntity.OmsId`
+
+**Pros:**
+
+- ✅ Relatively simple implementation
+- ✅ No CDC reconfiguration needed
+- ✅ Guaranteed fresh data
+- ✅ No runtime queries when displaying
+
+**Cons:**
+
+- ⚠️ Additional query per CDC event (every shipment)
+- ⚠️ Database schema change (add column to leg table)
+- ⚠️ Query happens even if user never views Drive Instructions
+
+#### 2B: Publish `sen_ref` Table in CDC
+
+**Implementation:**
+
+- Add `sen_ref` to CDC publication configuration
+- Create `SenRefChangedEventHandler` to process SEN_REF events
+- Correlate SEN_REF events (where `TYP='OMS_ID'`) with existing Legs
+- Update `LegEntity.OmsId` when matching record found
+
+**Pros:**
+
+- ✅ No additional queries
+- ✅ Event-driven, consistent with architecture
+
+**Cons:**
+
+- ⚠️ CDC reconfiguration required
+- ⚠️ Complex event correlation logic
+- ⚠️ Database schema change
+
+---
+
+### ✅ OPTION 3: Query OMS_ID On-Demand (SIMPLEST)
+
+**Approach:** Don't store OMS_ID. Query it only when needed.
+
+**Sub-options:**
+
+#### 3A: Query When Drive Instructions Drawer Opens
+
+**Implementation:**
+
+- Backend: When `GetDriveInstructionsQueryHandler` builds the response, query OMS_ID for each leg
+- Query `sen_ref` table for all shipment IDs in the response: `WHERE sen_tix IN (...) AND typ = 'OMS_ID'`
+- Include OMS_ID in `DriveInstructionsLegCardDto`
+- Frontend displays it
+
+**Pros:**
+
+- ✅ **No database schema changes** (no column in leg table)
+- ✅ **No CDC handler changes**
+- ✅ **Simplest implementation** - Backend query logic + Frontend display (potentially 3 layers if DIS view wrapper required)
+- ✅ Only queries when actually needed (user opens drawer)
+- ✅ Always fresh data from source of truth
+
+**Cons:**
+
+- ⚠️ Additional query every time Drive Instructions drawer opens
+- ⚠️ Slight latency when opening drawer (batch query for all legs in drawer)
+
+**Performance:** Single batch query for all legs in a drawer (typically 10-50 shipments) - efficient with proper index on `sen_ref(sen_tix, typ)`.
+
+#### 3B: Query When User Clicks OMS Link
+
+**Implementation:**
+
+- Frontend: Display a clickable OMS icon/link next to shipment number
+- On click: Backend endpoint `/api/shipments/{shipmentId}/oms-id` queries `sen_ref` and returns OMS_ID
+- Frontend uses OMS_ID to construct OMS system URL and navigates
+
+**Pros:**
+
+- ✅ **No database schema changes**
+- ✅ **No CDC handler changes**
+- ✅ **Minimal implementation** - just add one endpoint
+- ✅ Only queries if user actually clicks (rare action)
+- ✅ Always fresh data
+
+**Cons:**
+
+- ⚠️ User must wait for query when clicking link
+- ⚠️ Slightly worse UX (not visible until click)
+- ⚠️ Additional HTTP request on every click
+
+---
+
+### OPTION 4: Extend Existing TourPoint Pipeline
+
+**Approach:** Modify the existing Drive Instructions data flow (Frontend → Backend → TMS Bridge → Database) to include OMS_ID.
+
+**Architectural Challenge:**
+
+The Drive Instructions drawer loads data through **TourPoints**, not Legs directly:
+
+- **TourPoint** = One stop on a tour (aggregated, from `RES_HST` table)
+- **Leg/Shipment** = Individual shipment assigned to a TourPoint (detail records from `SENDUNG` via `RES_HST_ZUS`)
+- **OMS_ID** = Property of individual Legs/Shipments, NOT the TourPoint itself
+
+**Current Data Flow:**
+
+1. Frontend → `GET /api/pickup-drive-instructions?transportOrderId={id}`
+2. Backend → `GetDriveInstructionsQueryHandler`
+3. TMS Bridge → GraphQL query to `TourpointEntity`
+4. Database → `V_DIS_TO_TOURPOINT` view
+
+**The Problem:**
+
+`V_DIS_TO_TOURPOINT` uses `GROUP BY` aggregation (line 101) to roll up TourPoint-level data (shipmentamount, weight, pallets, etc.). However:
+
+- One TourPoint can have **multiple Legs** (shipments)
+- Each Leg can have a different OMS_ID
+- OMS_ID cannot be aggregated - it's a leg-level property
+
+**Implementation:**
+
+**Option 4A: Add Leg Collection to TourPoint Response**
+
+Restructure the response to include leg-level details within each TourPoint:
+
+1. **Database:** Create new view or query that returns TourPoint → Leg relationships with OMS_ID
+   - Either: Modify `V_DIS_TO_TOURPOINT` to include leg array
+   - Or: Create separate `V_DIS_TOURPOINT_LEGS` view
+   - Join to `SEN_REF` to get OMS_ID per leg
+
+2. **TMS Bridge:** Extend `TourpointEntity` to include `Legs[]` collection
+   - Add `LegDto` with `ShipmentId`, `ShipmentNumber`, `OmsId`
+
+3. **Backend:** Map leg data from TMS Bridge to `DriveInstructionsLegCardDto`
+   - Already builds leg cards, would need to populate OMS_ID from TourPoint leg collection
+
+4. **Frontend:** Display OMS_ID in leg cards (already has leg display structure)
+
+**Option 4B: Return TourPoint-Leg Pairs (No Aggregation)**
+
+Avoid aggregation, return flat structure of TourPoint-Leg pairs:
+
+1. **Database:** Create view that returns one row per TourPoint-Leg combination
+   - Join `RES_HST` → `RES_HST_ZUS` → `SENDUNG` → `SEN_REF`
+   - Include OMS_ID in each row
+
+2. **TMS Bridge:** Query returns multiple rows per TourPoint
+   - Client-side grouping in Backend
+
+3. **Backend:** Group by TourPoint, build leg cards with OMS_ID
+
+4. **Frontend:** Display (same as Option 4A)
+
+**Pros:**
+
+- ✅ Uses existing data pipeline (Frontend → Backend → TMS Bridge → Database)
+- ✅ OMS_ID flows through the system naturally
+- ✅ All leg-level data (including OMS_ID) available in one query
+
+**Cons:**
+
+- ⚠️ **4 layers affected:** Database view + TMS Bridge + Backend + Frontend
+- ⚠️ Modifies shared `V_DIS_TO_TOURPOINT` view (affects other consumers) OR requires new view
+- ⚠️ TMS Bridge schema changes (add leg collection to TourpointEntity)
+- ⚠️ Backend mapping complexity (handle leg collections from TourPoint)
+- ⚠️ More complex than querying on-demand
+
+**Verdict:** ⚠️ Viable but significantly more complex than Option 3A. Only justified if other leg-level data is needed in the future.
+
+---
+
+**Recommendation:** **Option 3A** (Query when drawer opens)
+
+- **Simplest implementation** - no schema changes, no CDC changes
+- 2-3 layers need changes: Backend query logic + Frontend display (+ potentially DIS view wrapper)
+- Queries only when needed (drawer opens)
+- Efficient batch query for all legs
+- Always accurate (no stale data concerns)
+
+**Note:** View layer scope subject to team discussion per DIS wrapper guideline.
+
+---
+
+## Recommended Implementation: Option 3A
+
+### Why Option 3A?
+
+**Simplest approach** - query OMS_ID on-demand when Drive Instructions drawer opens.
+
+**Key advantages:**
+
+1. ✅ **No database schema changes** - no new column in leg table, no migration
+2. ✅ **No CDC handler changes** - CDC pipeline remains untouched
+3. ✅ **Minimal scope** - Backend query logic + Frontend display (potentially 3 layers with DIS view wrapper)
+4. ✅ **Always accurate** - reads from source of truth (sen_ref)
+5. ✅ **Efficient** - single batch query for all legs when drawer opens
+6. ✅ **Only queries when needed** - no wasted queries for shipments user never views
+
+**Performance:** With proper index on `sen_ref(sen_tix, typ)`, batch query for 10-50 shipments in a drawer is very fast (sub-millisecond per lookup).
+
+### Implementation Strategy
+
+**Layers requiring changes:**
+
+- **Backend:** Add OMS_ID query in `GetDriveInstructionsQueryHandler`
+- **Frontend:** Display OMS_ID in UI
+- **TMS Database (potentially):** Create DIS view wrapper for `sen_ref` access (subject to team discussion per DIS wrapper guideline)
+
+**Layers that DON'T need changes:**
+
+- ⏭️ TMS Bridge GraphQL (no schema changes needed - unless DIS view wrapper approach requires it)
+- ⏭️ CDC event handlers (no changes needed)
+- ⏭️ Database migrations (no schema changes needed)
+
+---
+
+## Comparison: All Options
+
+| Aspect | Option 1 (Batch Only) | Option 2A (Store in CDC) | Option 3A (On-Demand) | Option 4 (Extend Pipeline) |
+|--------|----------------------|--------------------------|----------------------|---------------------------|
+| **Viability** | ❌ Not viable | ⚠️ Viable but not recommended | ✅ Viable | ✅ Viable |
+| **Scope** | 4 layers | 4 layers + CDC + migration | 2-3 layers* | 4 layers** |
+| **Database Schema Change** | ✅ Add column to leg | ✅ Add column to leg | ❌ None | ⚠️ View modification |
+| **TMS Bridge Changes** | ✅ GraphQL schema | ✅ GraphQL schema | ❌ None | ✅ GraphQL + Entity |
+| **CDC Handler Changes** | ❌ None | ✅ Required | ❌ None | ❌ None |
+| **Query Frequency** | Never after migration | Every shipment (CDC) | Every drawer open | Never (in pipeline) |
+| **Performance Impact** | ❌ N/A | ⚠️ High (queries all shipments) | ✅ Low (queries on user action) | ✅ Low (in pipeline) |
+| **Cost** | ❌ N/A | ⚠️ High (every shipment) | ✅ Low (only when viewed) | ✅ Medium (pipeline load) |
+| **Data Freshness** | Stale after migration | Fresh at creation | Always current | Current at load |
+| **Complexity** | Low | ⚠️ High | ✅ Very Low | Medium-High |
+| **Works for new shipments?** | ❌ No | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Pipeline Integration** | Batch only | CDC + Batch | Separate query | Existing TourPoint flow |
+| **Impact on Shared Views** | ❌ Low | ❌ Low | ❌ None | ⚠️ Modifies V_DIS_TO_TOURPOINT |
+
+*Option 3A may require 3 layers if DIS wrapper guideline requires creating a dedicated view for `sen_ref` access - subject to team discussion.
+
+**Option 4 requires 4 layers: TMS Database view + TMS Bridge entity/GraphQL + Backend mapping + Frontend display. Also impacts shared view used by other consumers.
+
+---
+
+## Backup: Detailed Implementation Guide
+
+### Implementation Layers
+
+#### Backend: Query OMS_ID On-Demand
+
+**File:** `CALConsult.Disposition.API/Application/Features/PickupDriveInstructions/Requests/GetDriveInstructions/GetDriveInstructionsQueryHandler.cs`
+
+**Current flow:**
+
+1. Queries `LotAssignments` from Backend database
+2. Reads `LegEntity` data (shipmentId, shipmentNumber, etc.)
+3. Builds `DriveInstructionsLegCardDto` array
+4. Returns to Frontend
+
+**Add OMS_ID query:**
 
 ```csharp
-var query = $@"query {{
-    shipments(
-        databaseIdentifier: ""{branchKey}"",
-        where: {{ dispatchStatus: {{ eq: ""F"" }} }}  // F = Freigegeben (Released/Unplanned)
-    )
-    {{
-       shipmentId
-       shipmentNumber
-       omsId            // ❌ MISSING - needs to be added
-       company
-       branch
-       // ... ~40 other fields (weight, dates, addresses, etc.)
-    }}
-}}";
+public async Task<List<DriveInstructionsTourPointCardDto>> Handle(...)
+{
+    // ... existing code to get lot assignments and legs ...
+
+    // Extract all shipment IDs from legs
+    var shipmentIds = legs.Select(l => l.ShipmentId).Distinct().ToList();
+
+    // Batch query OMS_IDs from TMS database
+    var omsIds = await GetOmsIdsForShipments(shipmentIds);
+
+    // Build DTOs with OMS_IDs
+    var legDtos = legs.Select(leg => new DriveInstructionsLegCardDto
+    {
+        ShipmentId = leg.ShipmentId,
+        ShipmentNumber = leg.ShipmentNumber,
+        OmsId = omsIds.GetValueOrDefault(leg.ShipmentId),  // ADD THIS
+        // ... other fields
+    });
+
+    return tourPoints;
+}
+
+private async Task<Dictionary<long, long?>> GetOmsIdsForShipments(List<long> shipmentIds)
+{
+    // Option A: Query via TMS Bridge GraphQL
+    // Option B: Direct database query to TMS sen_ref table via connection
+
+    // Example SQL (if using direct query):
+    // SELECT sen_tix, ref::numeric(22) as oms_id
+    // FROM sen_ref
+    // WHERE sen_tix = ANY(@shipmentIds) AND typ = 'OMS_ID'
+
+    // Return dictionary: shipmentId -> omsId (null if not found)
+}
 ```
 
-**When This Query Runs:**
-- Triggered when shipments become unplanned (dispatchStatus = 'F')
-- Populates Backend `LegEntity` table with shipment data
-- This is the **ONLY** time shipment data flows from TMS to Backend
+**Files to modify:**
 
-**Required Changes in TMS Bridge:**
-1. **Identify which TMS database view** the `shipments` GraphQL type queries
-2. Add `omsId` field to GraphQL `Shipment` type definition
-3. Add LEFT JOIN to `sen_ref` in the underlying TMS database view
-4. Map `oms_id` column from database view to GraphQL `omsId` field
+- `GetDriveInstructionsQueryHandler.cs` - Add OMS_ID query logic
+- `DriveInstructionsLegCardDto.cs` - Add `OmsId` property
 
-## TMS Database Views
+**No database migration needed** - not storing OMS_ID in leg table.
 
-### Critical: Identify View Used by TMS Bridge
+#### Frontend: Display OMS_ID
 
-**Action Required:** Find which TMS database view backs the GraphQL `shipments` query in the TMS Bridge.
+**Files:**
 
-**Steps:**
-1. Search TMS Bridge codebase (`Code/Disposition-Abstraction-Layer/`) for:
-   - GraphQL schema definition of `Shipment` type
-   - Resolver or data source configuration
-   - SQL view name or query
+- `apps/nagel-cal-disposition/src/models/planningPageTypes.ts`
+- `apps/nagel-cal-disposition/src/app/components/tour-point/leg-tour-point/leg-tour-point.component.html`
 
-2. Once identified, verify the view structure:
-   - Does it already include `quell_k`? ✓ (probably yes, as Backend has origin data)
-   - Does it include joins needed for shipment details? ✓ (yes, it returns ~40 fields)
-   - Does it join to `sen_ref`? ❌ (probably no)
+Add property to interfaces:
 
-### Example: V_DIS_TRANSPORTORDER (for reference)
+```typescript
+export interface LegResponseStructure {
+  shipmentNumber: number;
+  omsId?: number | null;  // ADD THIS
+  // ...
+}
 
-**File:** `Code/tms-alloydb-schema/src/sql/view/V_DIS_TRANSPORTORDER.sql`
-
-**Note:** This view is for Transport Orders, NOT individual shipments. The TMS Bridge likely uses a different view for the `shipments` GraphQL query.
-
-**However, this shows the pattern to follow:**
-
-```sql
--- Current (line 84-100):
-from sendung s1
-  left join relation rel on ...
-  left join region reg on ...
-  left join sen_frk_unt u on ...
-
--- Required addition:
-  left join sen_ref sr on (sr.sen_tix = s1.sendung_tix and sr.typ = 'OMS_ID')
-
--- Add to SELECT:
-sr.ref::numeric(22) as oms_id
+export interface LegTourPointConfig {
+  legId: string;
+  shipmentNumber: number;
+  omsId?: number | null;  // ADD THIS
+  // ...
+}
 ```
 
-**Performance Considerations:**
-1. **Index Check:** Verify `sen_ref` has index on `(sen_tix, typ)` for efficient lookup
-2. **LEFT JOIN Impact:** Since not all shipments have OMS_ID, LEFT JOIN is necessary
-3. **Proven Pattern:** `V_ESB_SENDUNG` already uses this exact pattern successfully
+Update component template:
 
-## Database Schema
+```html
+<div class="flex justify-start items-center">
+    <span class="legNumberLabel grey-label" i18n>Shipment number: </span>
+    <span class="value ml-1">{{legTourPoint.shipmentNumber}}</span>
 
-### SENDUNG Table
-```sql
-CREATE TABLE sendung (
-    sendung_tix numeric(22,0) NOT NULL,
-    ...
-    quell_k character(1),  -- Line 160: Source key (single character)
-    ...
-);
+    @if(legTourPoint.omsId) {
+        <span class="label grey-label ml-3" i18n>OMS ID: </span>
+        <span class="value ml-1">{{legTourPoint.omsId}}</span>
+    }
+
+    <app-chip ... />
+</div>
 ```
 
-### SEN_REF Table
-```sql
-CREATE TABLE sen_ref (
-    sen_tix numeric(22,0) NOT NULL,
-    typ character varying(16) NOT NULL,  -- Reference type (e.g., 'OMS_ID')
-    ref character varying(144) NOT NULL, -- Reference value
-    u_version character(1),
-    c_time timestamp without time zone,
-    c_user character(8),
-    u_time timestamp without time zone,
-    u_user character(8),
-    art character(1)
-);
-```
+---
 
-## How OMS_ID is Retrieved - Reference Implementation
+### Implementation Checklist (Option 3A)
 
-### V_ESB_SENDUNG View Pattern
+#### Prerequisites
+
+- [ ] Verify index exists on `sen_ref(sen_tix, typ)` for query performance
+- [ ] Determine query method: TMS Bridge GraphQL vs direct TMS database access
+
+#### Backend Implementation
+
+- [ ] Add `OmsId` property to `DriveInstructionsLegCardDto`
+- [ ] Create `GetOmsIdsForShipments()` helper method in `GetDriveInstructionsQueryHandler`
+  - Implement batch query to `sen_ref` table
+  - Return dictionary mapping shipmentId → omsId
+- [ ] Update `Handle()` method to:
+  - Extract shipment IDs from legs
+  - Call `GetOmsIdsForShipments()`
+  - Include OMS_ID in DTOs
+- [ ] Test backend returns OMS_ID in `/api/pickup-drive-instructions` response
+
+#### Frontend Implementation
+
+- [ ] Add `omsId` property to `LegTourPointConfig` interface
+- [ ] Update `leg-tour-point.component.html` to display OMS_ID
+- [ ] Ensure null handling (don't display if OMS_ID is null)
+- [ ] Test Drive Instructions drawer displays OMS_ID correctly
+
+#### Testing
+
+- [ ] **OMS Shipments:** Open drawer for OMS shipments, verify OMS_ID appears
+- [ ] **Non-OMS Shipments:** Verify non-OMS shipments don't show OMS_ID
+- [ ] **Performance:** Monitor query time when opening drawer (expect < 50ms for batch query)
+- [ ] **Index Verification:** Run EXPLAIN on query to confirm index usage
+
+#### Deployment
+
+- [ ] Deploy Backend API (no database migration needed)
+- [ ] Deploy Frontend
+
+---
+
+## Reference: How OMS_ID is Retrieved
+
+### V_ESB_SENDUNG Pattern
 
 **File:** `Code/tms-alloydb-schema/src/sql/view/V_ESB_SENDUNG.sql`
 
-This view demonstrates the **established pattern** for retrieving OMS_ID:
+Proven production pattern for OMS_ID retrieval:
 
 ```sql
-create or replace view V_ESB_SENDUNG
-as
+create or replace view V_ESB_SENDUNG as
   select s.SENDUNG_TIX     SEN_TIX,
-         r.REF :: numeric(22) OMS_ID,  -- ⚠️ Key retrieval pattern
+         r.REF :: numeric(22) OMS_ID,
          s.VERKEHRSSTROM   VK_STROM
     from SENDUNG s
-    left join SEN_REF r on (r.SEN_TIX = s.SENDUNG_TIX and r.TYP = 'OMS_ID')  -- ⚠️ Simple LEFT JOIN
+    left join SEN_REF r on (r.SEN_TIX = s.SENDUNG_TIX and r.TYP = 'OMS_ID')
    where s.SENDUNGSART in ('A','N','T')
      and (s.QUELL_K between 'a' and 'z' or s.QUELL_K = 'O');
 ```
 
-**Key Points:**
-- Simple LEFT JOIN to `sen_ref` table
+**Key points:**
+
+- Simple LEFT JOIN to `sen_ref`
 - Filter on `typ = 'OMS_ID'`
 - Cast `ref` to `numeric(22)` for type safety
-- LEFT JOIN ensures non-OMS shipments return NULL
-
-**Performance:**
-- ✅ Direct table join (no function calls)
-- ✅ Can leverage indexes on `sen_ref(sen_tix, typ)`
-- ✅ Already used in production ESB integration
-
-### Performance Analysis
-
-**Index Requirements:**
-```sql
--- Check if this index exists on sen_ref:
-CREATE INDEX idx_sen_ref_sen_tix_typ ON sen_ref(sen_tix, typ);
-```
-
-**Impact Assessment:**
-1. **Best Case:** Index exists → sub-millisecond lookup per row
-2. **Worst Case:** No index → table scan, significant performance degradation
-3. **Cardinality:** Not all shipments have OMS_ID → LEFT JOIN mandatory
-
-**Recommendation:** Use the V_ESB_SENDUNG pattern (direct LEFT JOIN) rather than creating a function wrapper, as it:
-- Allows query optimizer to use indexes effectively
-- Avoids function call overhead
-- Makes dependencies explicit in the query plan
-
-## Frontend Components (Where OMS_ID Should Appear)
-
-### Screenshot Analysis
-The OMS_ID needs to be displayed in the **Drive Instructions Slider** next to the shipment number (Sdg.-Nr.).
-
-**File:** `02_Explorations/2026-02-25_User-Story-103821_OMS-Sendung-Quell-K/image.png`
-
-Shows:
-- **Partie Nr.** 12345604 (Transport Order Number) - displayed at top
-- **Sdg.-Nr.** 604905 with **D10** badge (Shipment Number + Destination Branch)
-- Company details, weight, VSP, BSP, date
-
-### Component Hierarchy
-
-```
-transport-order-drive-instructions-dialog.component
-└─ group-tour-point-list.component
-   ├─ pickup-planning-transport-order-card (shows Transport Order info)
-   └─ group-tour-point (shows tour points with Lot Assignment Numbers)
-      └─ leg-tour-point.component (shows individual shipment details)
-         ├─ shipmentNumber (line 9) ✅ Currently displayed
-         ├─ D04 badge (line 12) ⚠️ Hardcoded, should be dynamic
-         └─ OMS_ID ❌ MISSING - needs to be added here
-```
-
-### Key Frontend Files
-
-**1. Leg Tour Point Component** (displays shipment details)
-- **HTML:** `Code/Disposition-Frontend/apps/nagel-cal-disposition/src/app/components/tour-point/leg-tour-point/leg-tour-point.component.html`
-- **TypeScript:** `Code/Disposition-Frontend/apps/nagel-cal-disposition/src/app/components/tour-point/leg-tour-point/leg-tour-point.component.ts`
-- **Current:** Shows `shipmentNumber` (line 9)
-- **Required:** Add `omsId` field display
-
-**2. Data Model - LegTourPointConfig**
-- **File:** `Code/Disposition-Frontend/apps/nagel-cal-disposition/src/models/planningPageTypes.ts:432`
-- **Current fields:**
-  - `legId: string`
-  - `shipmentNumber: number` (line 434)
-  - `order, name, country, city, street, zipCode`
-  - `weight, volumePalletSpaces, floorPalletSpaces`
-  - `destinationCountry, consigneeServiceArea, serviceAreaIdentifier`
-  - `infoChips: InfoLotChip[]`
-- **Required:** Add `omsId?: number | null` field
-
-**3. Data Model - LegResponseStructure**
-- **File:** `Code/Disposition-Frontend/apps/nagel-cal-disposition/src/models/planningPageTypes.ts:104`
-- **Current fields:**
-  - `shipmentId: number` (line 106)
-  - `shipmentNumber: number` (line 132)
-  - Traffic flow, product group, dates, destinations, weight, etc.
-- **Required:** Add `omsId?: number | null` field
-
-**4. Group Tour Point List Component**
-- **File:** `Code/Disposition-Frontend/apps/nagel-cal-disposition/src/app/components/transport-order-drive-instructions-dialog/tour-points-list/group-tour-point-list.component.html`
-- **Purpose:** Displays the drive instructions drawer with tour points
-- **Action:** Ensure OMS_ID data flows through to leg-tour-point component
-
-### Frontend Implementation Tasks
-
-1. **Add field to TypeScript models:**
-   ```typescript
-   // In LegTourPointConfig interface (line 432)
-   export interface LegTourPointConfig {
-     legId: string,
-     shipmentNumber: number,
-     omsId?: number | null,  // ✅ ADD THIS
-     // ... rest of fields
-   }
-
-   // In LegResponseStructure interface (line 104)
-   export interface LegResponseStructure {
-     shipmentNumber: number;
-     omsId?: number | null;  // ✅ ADD THIS
-     // ... rest of fields
-   }
-   ```
-
-2. **Update leg-tour-point.component.html:**
-   ```html
-   <div class="flex items-center gap-[2px] justify-between align-middle">
-       <div class="flex justify-start items-center">
-           <span class="legNumberLabel grey-label" i18n>Shipment number: </span>
-           <span class="value ml-1">{{legTourPoint.shipmentNumber}}</span>
-
-           <!-- ADD OMS_ID DISPLAY HERE -->
-           @if(legTourPoint.omsId) {
-               <span class="label grey-label ml-2" i18n>OMS ID: </span>
-               <span class="value ml-1">{{legTourPoint.omsId}}</span>
-           }
-
-           <app-chip
-               class="ml-2"
-               [content]="legTourPoint.serviceAreaIdentifier || 'D04'"
-               className="relative text-center mt-1 mb-1 mr-1 rounded-2xl overflow-hidden !flex text-xs final-branch"/>
-       </div>
-   ```
-
-3. **Backend API must expose omsId:**
-   - Ensure the Backend API endpoint returns `omsId` for each leg/shipment
-   - Backend should query the enhanced `v_dis_transportorder` view (or related views) that includes the OMS_ID
-
-## Implementation Checklist
-
-### Layer 1: TMS Database (Code/tms-alloydb-schema)
-- [ ] **CRITICAL FIRST STEP:** Identify which TMS database view backs the GraphQL `shipments` query
-  - Search TMS Bridge codebase for GraphQL schema and resolver
-  - Document the view name and current structure
-
-- [ ] **Verify index:** Check if index exists on `sen_ref(sen_tix, typ)`
-  ```sql
-  SELECT * FROM pg_indexes WHERE tablename = 'sen_ref' AND indexdef LIKE '%sen_tix%typ%';
-  ```
-
-- [ ] **Update identified view:** Add OMS_ID
-  ```sql
-  -- Add this LEFT JOIN:
-  left join sen_ref sr on (sr.sen_tix = s.sendung_tix and sr.typ = 'OMS_ID')
-
-  -- Add this to SELECT clause:
-  sr.ref::numeric(22) as oms_id
-  ```
-
-- [ ] **Test performance:** Run EXPLAIN ANALYZE on updated view
-  ```sql
-  EXPLAIN ANALYZE SELECT * FROM <identified_view> WHERE <typical_conditions>;
-  ```
-
-- [ ] **Deploy:** Apply database view changes (likely requires migration)
-
-### Layer 2: TMS Bridge (Code/Disposition-Abstraction-Layer)
-- [ ] **Identify GraphQL schema location** for `shipments` query
-- [ ] **Add field to GraphQL type:**
-  ```graphql
-  type Shipment {
-    shipmentId: Long!
-    shipmentNumber: Long!
-    omsId: Long  # ✅ ADD THIS
-    # ... other fields
-  }
-  ```
-- [ ] **Update resolvers** to map `oms_id` from database views
-- [ ] **Test GraphQL query:**
-  ```graphql
-  query {
-    shipments(databaseIdentifier: "branch_key") {
-      shipmentId
-      shipmentNumber
-      omsId
-    }
-  }
-  ```
-- [ ] **Deploy:** TMS Bridge API
-
-### Layer 3: Backend (Code/Disposition-Backend)
-- [ ] **Update PickupPlanningShipmentDto:**
-  ```csharp
-  [JsonProperty("omsId")]
-  public long? OmsId { get; set; }  // ✅ ADD THIS
-  ```
-  File: `CALConsult.Disposition.API/Application/_Shared/Services/ShipmentProvider/Dtos/PickupPlanningShipmentDto.cs`
-
-- [ ] **Update LegEntity:**
-  ```csharp
-  public long? OmsId { get; set; }  // ✅ ADD THIS
-  ```
-  File: `CALConsult.Disposition.API/Domain/Entities/Leg/LegEntity.cs`
-
-- [ ] **Update LegEntityConfiguration** to map database column
-  File: `CALConsult.Disposition.API/Domain/Entities/Leg/LegEntityConfiguration.cs`
-
-- [ ] **Create database migration** for `OmsId` column in `leg` table
-
-- [ ] **Update LegResponseDto** and related DTOs to include `OmsId`
-
-- [ ] **Update DriveInstructionsLegCardDto:**
-  ```csharp
-  public long? OmsId { get; set; }  // ✅ ADD THIS
-  ```
-
-- [ ] **Test Backend API:** Verify `/api/drive-instructions` returns `omsId`
-
-- [ ] **Deploy:** Run migrations and deploy Backend API
-
-### Layer 4: Frontend (Code/Disposition-Frontend)
-- [ ] **Update LegResponseStructure:**
-  ```typescript
-  export interface LegResponseStructure {
-    shipmentNumber: number;
-    omsId?: number | null;  // ✅ ADD THIS
-    // ... other fields
-  }
-  ```
-  File: `apps/nagel-cal-disposition/src/models/planningPageTypes.ts:104`
-
-- [ ] **Update LegTourPointConfig:**
-  ```typescript
-  export interface LegTourPointConfig {
-    legId: string,
-    shipmentNumber: number,
-    omsId?: number | null,  // ✅ ADD THIS
-    // ... other fields
-  }
-  ```
-  File: `apps/nagel-cal-disposition/src/models/planningPageTypes.ts:432`
-
-- [ ] **Update leg-tour-point.component.html:**
-  ```html
-  <div class="flex items-center gap-[2px] justify-between align-middle">
-      <div class="flex justify-start items-center">
-          <span class="legNumberLabel grey-label" i18n>Shipment number: </span>
-          <span class="value ml-1">{{legTourPoint.shipmentNumber}}</span>
-
-          @if(legTourPoint.omsId) {
-              <span class="label grey-label ml-3" i18n>OMS ID: </span>
-              <span class="value ml-1">{{legTourPoint.omsId}}</span>
-          }
-
-          <app-chip ... />
-      </div>
-  ```
-  File: `apps/nagel-cal-disposition/src/app/components/tour-point/leg-tour-point/leg-tour-point.component.html`
-
-- [ ] **Test Frontend:**
-  - Open Drive Instructions drawer
-  - Verify OMS_ID displays for OMS shipments
-  - Verify non-OMS shipments don't show OMS_ID (null handling)
-
-- [ ] **Deploy:** Frontend application
-
-### Testing & Validation
-- [ ] **End-to-end test:** Create/assign Lot with OMS shipments, verify OMS_ID appears in UI
-- [ ] **Performance test:** Monitor query performance with OMS_ID joins
-- [ ] **Cross-reference test:** Verify OMS_ID values match between TMS and OMS systems
-
-## Related Files by Layer
-
-### Layer 1: TMS Database (Code/tms-alloydb-schema)
-**Tables:**
-- `src/sql/table/sendung.sql` - Main shipment table (has `quell_k`)
-- `src/sql/table/sen_ref.sql` - Shipment references table (stores OMS_ID)
-
-**Views (need to identify which views TMS Bridge queries):**
-- `src/sql/view/V_DIS_TRANSPORTORDER.sql` - Main New Dispo view (Transport Orders)
-- `src/sql/view/v_dis_transportorder_filter.sql`
-- Other shipment views queried by TMS Bridge (need to identify)
-
-**Reference Implementation:**
-- `src/sql/view/V_ESB_SENDUNG.sql` - Shows OMS_ID retrieval pattern with LEFT JOIN
-
-### Layer 2: TMS Bridge (Code/Disposition-Abstraction-Layer)
-**GraphQL Schema:**
-- GraphQL type definitions for `Shipment` (need to locate)
-- GraphQL resolvers for `shipments` query (need to locate)
-
-### Layer 3: Backend (Code/Disposition-Backend)
-**DTOs:**
-- `CALConsult.Disposition.API/Application/_Shared/Services/ShipmentProvider/Dtos/PickupPlanningShipmentDto.cs`
-- `CALConsult.Disposition.API/Application/Features/PickupPlanningView/Requests/GetLotsAndLegs/Dtos/LegResponseDto.cs`
-- `CALConsult.Disposition.API/Application/Features/PickupDriveInstructions/Requests/GetDriveInstructions/Dtos/DriveInstructionsLegCardDto.cs`
-
-**Entities:**
-- `CALConsult.Disposition.API/Domain/Entities/Leg/LegEntity.cs`
-- `CALConsult.Disposition.API/Domain/Entities/Leg/LegEntityConfiguration.cs`
-
-**Services:**
-- `CALConsult.Disposition.API/Application/_Shared/Services/ShipmentProvider/PickupPlanningShipmentProvider.cs`
-
-### Layer 4: Frontend (Code/Disposition-Frontend)
-**Type Definitions:**
-- `apps/nagel-cal-disposition/src/models/planningPageTypes.ts`
-  - `LegResponseStructure` interface (line 104)
-  - `LegTourPointConfig` interface (line 432)
-
-**Components:**
-- `apps/nagel-cal-disposition/src/app/components/tour-point/leg-tour-point/leg-tour-point.component.html`
-- `apps/nagel-cal-disposition/src/app/components/tour-point/leg-tour-point/leg-tour-point.component.ts`
-- `apps/nagel-cal-disposition/src/app/components/transport-order-drive-instructions-dialog/tour-points-list/group-tour-point-list.component.html`
-
-## Next Steps
-
-### Phase 1: Discovery (TMS Bridge Architecture)
-1. **CRITICAL:** Identify which TMS database view the TMS Bridge `shipments` GraphQL query uses
-   - Search TMS Bridge codebase for GraphQL schema definition of `Shipment` type
-   - Find the SQL view or query that backs this GraphQL type
-   - Document the current view structure and fields
-
-2. **Verify Index:** Check if `sen_ref` table has index on `(sen_tix, typ)` for performance
-
-### Phase 2: Database Layer
-3. **Add OMS_ID to identified TMS view:**
-   ```sql
-   left join sen_ref sr on (sr.sen_tix = s.sendung_tix and sr.typ = 'OMS_ID')
-   -- Add to SELECT: sr.ref::numeric(22) as oms_id
-   ```
-4. **Test Performance:** Use EXPLAIN ANALYZE to verify no performance degradation
-
-### Phase 3: Implementation
-5. **TMS Bridge:** Add `omsId` field to GraphQL schema
-6. **Backend:** Add `OmsId` to DTOs, entities, and database migrations
-7. **Frontend:** Add `omsId` to interfaces and display in UI
-8. **End-to-End Test:** Verify OMS_ID appears in Drive Instructions drawer
-
----
-
-## Verified Architecture Summary
-
-### ✅ Confirmed Data Flow
-
-**Frontend Call:**
-```typescript
-// File: drive-instructions-drawer.service.ts:70
-GET /api/pickup-drive-instructions?transportOrderId=12345
-Returns: TourPointConfig[] with nested LegTourPointConfig[]
-```
-
-**Backend Endpoint:**
-```csharp
-// File: PickupDriveInstructionsController.cs:43
-[HttpGet]
-public async Task<JsonResult> GetDriveInstructions([FromQuery] long transportOrderId)
-// Returns: DriveInstructionsTourPointCardDto[] with nested DriveInstructionsLegCardDto
-```
-
-**Backend Data Source:**
-```csharp
-// File: GetDriveInstructionsQueryHandler.cs:35-39
-// Reads from Backend database: _appDbContext.LotAssignments
-// Which includes LegEntity (populated earlier from TMS via GraphQL)
-```
-
-**Initial Data Load:**
-```csharp
-// File: PickupPlanningShipmentProvider.cs:39-47
-// GraphQL query to TMS Bridge:
-query {
-  shipments(
-    databaseIdentifier: "branch_key",
-    where: { dispatchStatus: { eq: "F" } }  // Unplanned shipments
-  ) {
-    shipmentId
-    shipmentNumber  ✅ Currently included
-    omsId           ❌ MISSING
-    // ~40 other fields
-  }
-}
-```
-
-### ❓ Critical Unknown
-
-**Which TMS database view backs the GraphQL `shipments` query?**
-
-This must be identified in the TMS Bridge (`Code/Disposition-Abstraction-Layer/`) before implementation can proceed.
+- LEFT JOIN ensures NULL for non-OMS shipments
 
 ---
 
 ## Background Context
 
-### OMS Integration via ESB
+### OMS Integration
 
-OMS shipments are integrated with TMS and changes are synchronized back to OMS via ESB (Enterprise Service Bus).
-
-**Trigger: TRAIU_SENDUNG_ESB**
+OMS shipments are integrated via ESB (Enterprise Service Bus). When traffic flow changes, TMS notifies OMS via trigger `TRAIU_SENDUNG_ESB`.
 
 **File:** `Code/tms-alloydb-schema/src/sql/trigger/TRAIU_SENDUNG_ESB.sql`
-
-When traffic flow (`verkehrsstrom`) changes for OMS shipments (Quell_K between 'a'-'z' or 'O', Sendungsart 'A'/'N'/'T'), the trigger queues a message to notify OMS:
 
 ```sql
 elsif new.SENDUNGSART in ('A','N','T')
@@ -700,62 +605,40 @@ then
 end if;
 ```
 
-This integration context explains why OMS_ID is needed: to identify the correct shipment in OMS when reporting changes.
-
-### Other ESB Views Using OMS_ID
-
-- `V_ESB_FAKLSTG.sql`
-- `V_ESB_SEN_HST.sql`
-- `V_ESB_SEN_ON_LL.sql`
-- `V_ESB_SEN_ON_RK.sql`
-
-### Open Questions
-
-1. **Quell_K Semantics:** What's the difference between lowercase (a-z) and uppercase 'O'?
-   - Different source systems within OMS?
-   - Different data entry methods?
-
-2. **Complete Quell_K Mapping:**
-   - '0' = TMS internal
-   - 'D' = New Dispo
-   - a-z, O = OMS
-   - Others?
-
-3. **SEN_REF Reference Types:** What other reference types exist besides 'OMS_ID'?
+OMS_ID identifies the shipment in the OMS system for synchronization.
 
 ### Related User Stories
 
 - DEMPM-332: Avis-Handling: Übernahme aus OMS - Task 167434
 - PBI-145369: DEMPM-332: Rückübertragung des Verkehrsstroms an OMS
-- User Story 103821: Sendung.Quell_K and Sen_Ref.Typ=OMS_ID (current)
+- User Story 103821: Display OMS_ID in Frontend (current)
 
 ---
 
 ## Summary
 
-### Key Findings
+**Objective:** Display OMS_ID in Drive Instructions drawer next to shipment number.
 
-1. **Entity Clarification:**
-   - **Partie Nr.** = Lot Number (Backend entity `LotEntity.LotNumber`, NOT in TMS)
-   - **Sdg.-Nr.** = Shipment Number (TMS: `SENDUNG.SENDUNG_N`, Backend: `LegEntity.ShipmentNumber`)
-   - Lot is a Backend concept for grouping Legs (shipments) for dispatch planning
+**Architecture:** Two independent pipelines - CDC (real-time, ongoing) and Pickup Planning (one-time migration).
 
-2. **Verified API Endpoints:**
-   - **Frontend → Backend:** `GET /api/pickup-drive-instructions?transportOrderId={id}`
-   - **Backend → TMS Bridge:** GraphQL query `shipments(databaseIdentifier, where: {dispatchStatus: {eq: "F"}})`
-   - **TMS Bridge → TMS Database:** SQL query to TMS view (needs identification)
+**Critical Constraint:** Batch pipeline runs once. After that, ALL new shipments enter via CDC only.
 
-3. **Data Flow Timeline:**
-   - **Initial Load:** Shipments flow from TMS → TMS Bridge → Backend database (`LegEntity`)
-   - **Display:** Frontend reads from Backend database (NOT directly from TMS)
-   - **Critical:** OMS_ID must be captured during initial load, not at display time
+**Recommended Solution:** **Option 3A** - Query OMS_ID on-demand when drawer opens.
 
-4. **Performance:**
-   - Use direct LEFT JOIN to `sen_ref` table (proven pattern from `V_ESB_SENDUNG`)
-   - Verify index on `sen_ref(sen_tix, typ)` exists
-   - Avoid function wrappers to allow query optimizer to work effectively
+**Why Option 3A?**
 
-5. **Implementation Scope:**
-   - 4 layers to update: TMS Database view → TMS Bridge → Backend → Frontend
-   - **Most Critical First Step:** Identify which TMS database view backs the GraphQL `shipments` query in TMS Bridge
-   - Each subsequent layer is straightforward once previous layer exposes OMS_ID
+- ✅ **Simplest implementation** - 2-3 layers (Backend + Frontend, potentially + DIS view wrapper)
+- ✅ **No database schema changes** - no migration needed
+- ✅ **No CDC changes** - CDC pipeline untouched
+- ✅ **Always accurate** - reads from source of truth
+- ✅ **Efficient** - single batch query for all legs in drawer
+
+**Scope:**
+
+1. **Backend:** Add OMS_ID batch query in `GetDriveInstructionsQueryHandler`
+2. **Frontend:** Display OMS_ID in UI
+3. **TMS Database (potentially):** DIS view wrapper for `sen_ref` - subject to team discussion
+
+**Performance:** With proper index on `sen_ref(sen_tix, typ)`, batch query is very fast (< 50ms for typical drawer with 10-50 shipments).
+
+**Key Decision:** Don't store OMS_ID - query it when needed. Simpler and always accurate.
