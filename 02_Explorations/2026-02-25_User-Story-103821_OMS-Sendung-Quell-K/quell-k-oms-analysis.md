@@ -26,7 +26,7 @@ Display the **OMS_ID** for OMS shipments in the New Dispo Frontend Drive Instruc
 
 - `SENDUNG.QUELL_K` = lowercase letter (a-z) OR uppercase 'O'
 - `SEN_REF` table: `TYP='OMS_ID'` → `REF` contains OMS_ID value
-- OMS_ID is **leg-level data**, not TourPoint-level (one TourPoint can have multiple legs with different OMS_IDs)
+- OMS_ID is **shipment-level data**, not TourPoint-level (one TourPoint can have multiple shipments with different OMS_IDs; legs are children of shipments)
 
 **Implementation Options:**
 
@@ -73,11 +73,12 @@ The system has **two independent pipelines** that create/update Legs in the Back
 
 **TMS Database (AlloyDB):**
 
-**Shipment/Leg Level:**
+**Shipment Level:**
 
 - `SENDUNG` - Main shipment table with `SENDUNG_TIX` (ID), `SENDUNG_N` (Number), `QUELL_K` (Source Key)
 - `SEN_REF` - References table: `TYP='OMS_ID'` → `REF` (the OMS ID value)
 - `v_dis_shipment_all` - View used by Pickup Planning Pipeline
+- **Note:** Legs are children of shipments; OMS_ID is at the shipment level
 
 **TourPoint Level:**
 
@@ -87,18 +88,19 @@ The system has **two independent pipelines** that create/update Legs in the Back
 
 **Backend Database:**
 
-- `LegEntity` - Represents a shipment/leg, currently has:
+- `LegEntity` - Represents a leg (child of shipment), currently has:
   - `ShipmentId` (long) - references TMS `SENDUNG.SENDUNG_TIX`
   - `ShipmentNumber` (long?) - the `SENDUNG.SENDUNG_N`
-  - **Note:** OMS_ID not stored here
+  - **Note:** OMS_ID not stored here (OMS_ID is shipment-level data in TMS)
 
 **Data Hierarchy - Drive Instructions Context:**
 
 - **Tour** → has multiple **TourPoints** (stops)
-- **TourPoint** → has multiple **Legs/Shipments** (deliveries/pickups at that stop)
-- **Leg/Shipment** → has **OMS_ID** (for OMS shipments only)
+- **TourPoint** → has multiple **Shipments** (deliveries/pickups at that stop)
+- **Shipment** → has **OMS_ID** (for OMS shipments only) and has **Legs** as children
+- **Leg** → child record of a shipment
 
-**Critical Constraint:** OMS_ID is a **leg-level property**, not a TourPoint-level property. The Drive Instructions drawer loads data through TourPoints (aggregated view), but OMS_ID must be displayed at the leg level within each TourPoint.
+**Critical Constraint:** OMS_ID is a **shipment-level property**, not a TourPoint-level property. The Drive Instructions drawer loads data through TourPoints (aggregated view), but OMS_ID must be displayed at the shipment/leg level within each TourPoint. Legs reference their parent shipment via `ShipmentId`, which is used to retrieve the shipment's OMS_ID.
 
 ### OMS Shipment Identification
 
@@ -282,11 +284,12 @@ Since the batch pipeline only runs once and all subsequent shipments come via CD
 
 **Architectural Challenge:**
 
-The Drive Instructions drawer loads data through **TourPoints**, not Legs directly:
+The Drive Instructions drawer loads data through **TourPoints**, not Shipments directly:
 
 - **TourPoint** = One stop on a tour (aggregated, from `RES_HST` table)
-- **Leg/Shipment** = Individual shipment assigned to a TourPoint (detail records from `SENDUNG` via `RES_HST_ZUS`)
-- **OMS_ID** = Property of individual Legs/Shipments, NOT the TourPoint itself
+- **Shipment** = Individual shipment assigned to a TourPoint (from `SENDUNG` via `RES_HST_ZUS`)
+- **Leg** = Child record of a Shipment (references parent via `ShipmentId`)
+- **OMS_ID** = Property of Shipments, NOT the TourPoint itself (retrieved via the leg's shipment ID reference)
 
 **Current Data Flow:**
 
@@ -299,41 +302,41 @@ The Drive Instructions drawer loads data through **TourPoints**, not Legs direct
 
 `V_DIS_TO_TOURPOINT` uses `GROUP BY` aggregation (line 101) to roll up TourPoint-level data (shipmentamount, weight, pallets, etc.). However:
 
-- One TourPoint can have **multiple Legs** (shipments)
-- Each Leg can have a different OMS_ID
-- OMS_ID cannot be aggregated - it's a leg-level property
+- One TourPoint can have **multiple Shipments**
+- Each Shipment has its own OMS_ID (shipments have legs as children)
+- OMS_ID cannot be aggregated - it's a shipment-level property
 
 **Implementation:**
 
-**Option 4A: Add Leg Collection to TourPoint Response**
+**Option 4A: Add Shipment/Leg Collection to TourPoint Response**
 
-Restructure the response to include leg-level details within each TourPoint:
+Restructure the response to include shipment-level details (with legs) within each TourPoint:
 
-1. **Database:** Create new view or query that returns TourPoint → Leg relationships with OMS_ID
-   - Either: Modify `V_DIS_TO_TOURPOINT` to include leg array
-   - Or: Create separate `V_DIS_TOURPOINT_LEGS` view
-   - Join to `SEN_REF` to get OMS_ID per leg
+1. **Database:** Create new view or query that returns TourPoint → Shipment → Leg relationships with OMS_ID
+   - Either: Modify `V_DIS_TO_TOURPOINT` to include shipment/leg array
+   - Or: Create separate `V_DIS_TOURPOINT_SHIPMENTS` view
+   - Join to `SEN_REF` to get OMS_ID per shipment
 
-2. **TMS Bridge:** Extend `TourpointEntity` to include `Legs[]` collection
-   - Add `LegDto` with `ShipmentId`, `ShipmentNumber`, `OmsId`
+2. **TMS Bridge:** Extend `TourpointEntity` to include `Shipments[]` collection
+   - Add `ShipmentDto` with `ShipmentId`, `ShipmentNumber`, `OmsId`, `Legs[]`
 
-3. **Backend:** Map leg data from TMS Bridge to `DriveInstructionsLegCardDto`
-   - Already builds leg cards, would need to populate OMS_ID from TourPoint leg collection
+3. **Backend:** Map shipment data from TMS Bridge to `DriveInstructionsLegCardDto`
+   - Already builds leg cards, would need to populate OMS_ID from shipment data within TourPoint
 
-4. **Frontend:** Display OMS_ID in leg cards (already has leg display structure)
+4. **Frontend:** Display OMS_ID in leg cards (uses leg's shipment ID to retrieve parent shipment's OMS_ID)
 
-**Option 4B: Return TourPoint-Leg Pairs (No Aggregation)**
+**Option 4B: Return TourPoint-Shipment-Leg Pairs (No Aggregation)**
 
-Avoid aggregation, return flat structure of TourPoint-Leg pairs:
+Avoid aggregation, return flat structure of TourPoint-Shipment-Leg tuples:
 
-1. **Database:** Create view that returns one row per TourPoint-Leg combination
+1. **Database:** Create view that returns one row per TourPoint-Shipment-Leg combination
    - Join `RES_HST` → `RES_HST_ZUS` → `SENDUNG` → `SEN_REF`
-   - Include OMS_ID in each row
+   - Include OMS_ID from shipment in each row
 
 2. **TMS Bridge:** Query returns multiple rows per TourPoint
    - Client-side grouping in Backend
 
-3. **Backend:** Group by TourPoint, build leg cards with OMS_ID
+3. **Backend:** Group by TourPoint and Shipment, build leg cards with shipment's OMS_ID
 
 4. **Frontend:** Display (same as Option 4A)
 
@@ -341,17 +344,17 @@ Avoid aggregation, return flat structure of TourPoint-Leg pairs:
 
 - ✅ Uses existing data pipeline (Frontend → Backend → TMS Bridge → Database)
 - ✅ OMS_ID flows through the system naturally
-- ✅ All leg-level data (including OMS_ID) available in one query
+- ✅ All shipment-level data (including OMS_ID) available in one query
 
 **Cons:**
 
 - ⚠️ **4 layers affected:** Database view + TMS Bridge + Backend + Frontend
 - ⚠️ Modifies shared `V_DIS_TO_TOURPOINT` view (affects other consumers) OR requires new view
-- ⚠️ TMS Bridge schema changes (add leg collection to TourpointEntity)
-- ⚠️ Backend mapping complexity (handle leg collections from TourPoint)
+- ⚠️ TMS Bridge schema changes (add shipment/leg collection to TourpointEntity)
+- ⚠️ Backend mapping complexity (handle shipment/leg hierarchies from TourPoint)
 - ⚠️ More complex than querying on-demand
 
-**Verdict:** ⚠️ Viable but significantly more complex than Option 3A. Only justified if other leg-level data is needed in the future.
+**Verdict:** ⚠️ Viable but significantly more complex than Option 3A. Only justified if other shipment-level data is needed in the future.
 
 ---
 
