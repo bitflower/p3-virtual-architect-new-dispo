@@ -39,8 +39,8 @@ Display the **OMS_ID** for OMS shipments in the New Dispo Frontend Drive Instruc
 
 **Option 3 (Query On-Demand):** ✅ **SELECTED** (Team Decision 2026-02-27)
 
-- Query OMS_ID from `sen_ref` when Drive Instructions drawer opens
-- 2-3 layers (Backend + Frontend, potentially + DIS view wrapper), no schema changes, no CDC changes
+- Query OMS_ID from `sen_ref` directly when Drive Instructions drawer opens
+- 2 layers (Backend + Frontend), no TMS Database changes, no schema changes, no CDC changes
 
 **Option 4 (Extend TourPoint Pipeline):**
 
@@ -240,7 +240,8 @@ Since the batch pipeline only runs once and all subsequent shipments come via CD
 
 - ✅ **No database schema changes** (no column in leg table)
 - ✅ **No CDC handler changes**
-- ✅ **Simplest implementation** - Backend query logic + Frontend display (potentially 3 layers if DIS view wrapper required)
+- ✅ **No TMS Database changes** (queries `sen_ref` directly, no DIS wrapper needed)
+- ✅ **Simplest implementation** - Backend query logic + Frontend display (2 layers only)
 - ✅ Only queries when actually needed (user opens drawer)
 - ✅ Always fresh data from source of truth
 
@@ -360,13 +361,12 @@ Avoid aggregation, return flat structure of TourPoint-Leg pairs:
 
 **Rationale:**
 
-- **Simplest implementation** - no schema changes, no CDC changes
-- 2-3 layers need changes: Backend query logic + Frontend display (+ potentially DIS view wrapper)
+- **Simplest implementation** - no schema changes, no CDC changes, no TMS Database changes
+- **2 layers only:** Backend query logic + Frontend display
+- Queries `sen_ref` table directly (no DIS wrapper needed)
 - Queries only when needed (drawer opens)
 - Efficient batch query for all legs
 - Always accurate (no stale data concerns)
-
-**Note:** View layer scope subject to team discussion per DIS wrapper guideline.
 
 ---
 
@@ -380,26 +380,27 @@ Avoid aggregation, return flat structure of TourPoint-Leg pairs:
 
 1. ✅ **No database schema changes** - no new column in leg table, no migration
 2. ✅ **No CDC handler changes** - CDC pipeline remains untouched
-3. ✅ **Minimal scope** - Backend query logic + Frontend display (potentially 3 layers with DIS view wrapper)
-4. ✅ **Always accurate** - reads from source of truth (sen_ref)
-5. ✅ **Efficient** - single batch query for all legs when drawer opens
-6. ✅ **Only queries when needed** - no wasted queries for shipments user never views
+3. ✅ **No TMS Database changes** - queries `sen_ref` directly, no DIS wrapper needed
+4. ✅ **Minimal scope** - Backend query logic + Frontend display (2 layers only)
+5. ✅ **Always accurate** - reads from source of truth (sen_ref)
+6. ✅ **Efficient** - single batch query for all legs when drawer opens
+7. ✅ **Only queries when needed** - no wasted queries for shipments user never views
 
 **Performance:** With proper index on `sen_ref(sen_tix, typ)`, batch query for 10-50 shipments in a drawer is very fast (sub-millisecond per lookup).
 
 ### Implementation Strategy
 
-**Layers requiring changes:**
+**Layers requiring changes (2 layers):**
 
-- **Backend:** Add OMS_ID query in `GetDriveInstructionsQueryHandler`
+- **Backend:** Add OMS_ID query in `GetDriveInstructionsQueryHandler` (queries `sen_ref` directly)
 - **Frontend:** Display OMS_ID in UI
-- **TMS Database (potentially):** Create DIS view wrapper for `sen_ref` access (subject to team discussion per DIS wrapper guideline)
 
 **Layers that DON'T need changes:**
 
-- ⏭️ TMS Bridge GraphQL (no schema changes needed - unless DIS view wrapper approach requires it)
+- ⏭️ TMS Database (no view changes, no DIS wrapper - queries `sen_ref` directly)
+- ⏭️ TMS Bridge GraphQL (no schema changes needed)
 - ⏭️ CDC event handlers (no changes needed)
-- ⏭️ Database migrations (no schema changes needed)
+- ⏭️ Backend database schema (no migrations needed)
 
 ---
 
@@ -408,7 +409,7 @@ Avoid aggregation, return flat structure of TourPoint-Leg pairs:
 | Aspect | Option 1 (Batch Only) | Option 2A (Store in CDC) | Option 3A (On-Demand) | Option 4 (Extend Pipeline) |
 |--------|----------------------|--------------------------|----------------------|---------------------------|
 | **Viability** | ❌ Not viable | ⚠️ Viable but not recommended | ✅ Viable | ✅ Viable |
-| **Scope** | 4 layers | 4 layers + CDC + migration | 2-3 layers* | 4 layers** |
+| **Scope** | 4 layers | 4 layers + CDC + migration | 2 layers (Backend + Frontend) | 4 layers** |
 | **Database Schema Change** | ✅ Add column to leg | ✅ Add column to leg | ❌ None | ⚠️ View modification |
 | **TMS Bridge Changes** | ✅ GraphQL schema | ✅ GraphQL schema | ❌ None | ✅ GraphQL + Entity |
 | **CDC Handler Changes** | ❌ None | ✅ Required | ❌ None | ❌ None |
@@ -419,9 +420,7 @@ Avoid aggregation, return flat structure of TourPoint-Leg pairs:
 | **Complexity** | Low | ⚠️ High | ✅ Very Low | Medium-High |
 | **Works for new shipments?** | ❌ No | ✅ Yes | ✅ Yes | ✅ Yes |
 | **Pipeline Integration** | Batch only | CDC + Batch | Separate query | Existing TourPoint flow |
-| **Impact on Shared Views** | ❌ Low | ❌ Low | ❌ None | ⚠️ Modifies V_DIS_TO_TOURPOINT |
-
-*Option 3A may require 3 layers if DIS wrapper guideline requires creating a dedicated view for `sen_ref` access - subject to team discussion.
+| **Impact on Shared Views** | ❌ Low | ❌ Low | ❌ None (direct `sen_ref` query) | ⚠️ Modifies V_DIS_TO_TOURPOINT |
 
 **Option 4 requires 4 layers: TMS Database view + TMS Bridge entity/GraphQL + Backend mapping + Frontend display. Also impacts shared view used by other consumers.
 
@@ -637,17 +636,17 @@ OMS_ID identifies the shipment in the OMS system for synchronization.
 
 **Why Option 3A?**
 
-- ✅ **Simplest implementation** - 2-3 layers (Backend + Frontend, potentially + DIS view wrapper)
+- ✅ **Simplest implementation** - 2 layers only (Backend + Frontend)
 - ✅ **No database schema changes** - no migration needed
+- ✅ **No TMS Database changes** - queries `sen_ref` directly
 - ✅ **No CDC changes** - CDC pipeline untouched
 - ✅ **Always accurate** - reads from source of truth
 - ✅ **Efficient** - single batch query for all legs in drawer
 
 **Implementation Scope:**
 
-1. **Backend:** Add OMS_ID batch query in `GetDriveInstructionsQueryHandler`
+1. **Backend:** Add OMS_ID batch query in `GetDriveInstructionsQueryHandler` (direct `sen_ref` query)
 2. **Frontend:** Display OMS_ID in UI
-3. **TMS Database (potentially):** DIS view wrapper for `sen_ref` - subject to team discussion
 
 **Performance:** With proper index on `sen_ref(sen_tix, typ)`, batch query is very fast (< 50ms for typical drawer with 10-50 shipments).
 
