@@ -1,8 +1,9 @@
 # User Story 103821: Display OMS_ID in Drive Instructions
 
 **Date:** 2026-02-25
-**Updated:** 2026-02-26
-**Status:** Exploration
+**Updated:** 2026-02-27
+**Status:** Approved - Option 3A Selected
+**Decision:** Team Refinement 2026-02-27
 **Related User Story:** 103821
 
 ---
@@ -36,7 +37,7 @@ Display the **OMS_ID** for OMS shipments in the New Dispo Frontend Drive Instruc
 - Store OMS_ID in `LegEntity` by querying during CDC event processing or publishing `sen_ref` in CDC
 - 4+ layers affected, database schema change, CDC modifications, queries every shipment (even if never viewed)
 
-**Option 3 (Query On-Demand):** ✅ Recommended
+**Option 3 (Query On-Demand):** ✅ **SELECTED** (Team Decision 2026-02-27)
 
 - Query OMS_ID from `sen_ref` when Drive Instructions drawer opens
 - 2-3 layers (Backend + Frontend, potentially + DIS view wrapper), no schema changes, no CDC changes
@@ -72,9 +73,14 @@ The system has **two independent pipelines** that create/update Legs in the Back
 
 **TMS Database (AlloyDB):**
 
+**Shipment/Leg Level:**
+
 - `SENDUNG` - Main shipment table with `SENDUNG_TIX` (ID), `SENDUNG_N` (Number), `QUELL_K` (Source Key)
 - `SEN_REF` - References table: `TYP='OMS_ID'` → `REF` (the OMS ID value)
 - `v_dis_shipment_all` - View used by Pickup Planning Pipeline
+
+**TourPoint Level:**
+
 - `RES_HST` - TourPoint table (stops on a tour)
 - `RES_HST_ZUS` - TourPoint assignments (links TourPoints to Shipments)
 - `V_DIS_TO_TOURPOINT` - View used by Drive Instructions (aggregates TourPoints, used by TMS Bridge GraphQL)
@@ -348,7 +354,11 @@ Avoid aggregation, return flat structure of TourPoint-Leg pairs:
 
 ---
 
-**Recommendation:** **Option 3A** (Query when drawer opens)
+## ✅ Approved Decision: Option 3A (Query On-Demand)
+
+**Team Decision:** Selected in Team Refinement on 2026-02-27
+
+**Rationale:**
 
 - **Simplest implementation** - no schema changes, no CDC changes
 - 2-3 layers need changes: Backend query logic + Frontend display (+ potentially DIS view wrapper)
@@ -360,7 +370,7 @@ Avoid aggregation, return flat structure of TourPoint-Leg pairs:
 
 ---
 
-## Recommended Implementation: Option 3A
+## Implementation Plan: Option 3A
 
 ### Why Option 3A?
 
@@ -623,7 +633,7 @@ OMS_ID identifies the shipment in the OMS system for synchronization.
 
 **Critical Constraint:** Batch pipeline runs once. After that, ALL new shipments enter via CDC only.
 
-**Recommended Solution:** **Option 3A** - Query OMS_ID on-demand when drawer opens.
+**✅ Approved Solution:** **Option 3A** - Query OMS_ID on-demand when drawer opens (Team Decision 2026-02-27).
 
 **Why Option 3A?**
 
@@ -633,7 +643,7 @@ OMS_ID identifies the shipment in the OMS system for synchronization.
 - ✅ **Always accurate** - reads from source of truth
 - ✅ **Efficient** - single batch query for all legs in drawer
 
-**Scope:**
+**Implementation Scope:**
 
 1. **Backend:** Add OMS_ID batch query in `GetDriveInstructionsQueryHandler`
 2. **Frontend:** Display OMS_ID in UI
