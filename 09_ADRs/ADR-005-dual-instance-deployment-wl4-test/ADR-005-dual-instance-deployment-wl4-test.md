@@ -158,8 +158,6 @@ This decision does not introduce significant new costs. The dual instance deploy
 - *Red X (❌): Missing WL4 DEV environment*
 - *Warning box (⚠️): Dual deployment (2x instances) in WL4 TEST*
 
-*Source: [Original diagram](../../01_Communication/2026-02-12_Dominik-Landau-GCP-workload-gap/wls.svg) | [Editable Excalidraw](./wl4-dual-deployment-annotated.excalidraw)*
-
 **Dual Instance Deployment Pattern:**
 
 The dual instance deployment pattern within WL4 TEST can be visualized as follows:
