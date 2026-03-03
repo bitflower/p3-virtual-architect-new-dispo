@@ -25,15 +25,16 @@ Deploy two instances in WL4 TEST:
 - Reversible if WL4 DEV gets provisioned later
 
 **Components affected:**
-- New Dispo Backend and Frontend
-- New Dispo Database
-- KeyCloak
-- Pickup Filter Function (CloudFn)
+- New Dispo Backend and Frontend (WL4)
+- New Dispo Database (WL4)
+- KeyCloak (WL4)
+
+WL5 components (TMS Bridge, Cloud Functions) not affected.
 
 **Costs:**
 Approx. 2x infrastructure costs in TEST environment (2x Cloud Run, 2x databases, etc.).
 
-This is an anti-pattern and technical debt, but pragmatic given the alternative.
+This is an anti-pattern compared to the other GCP setup and technical debt, but pragmatic given the alternative.
 
 Full documentation: ADR-005
 

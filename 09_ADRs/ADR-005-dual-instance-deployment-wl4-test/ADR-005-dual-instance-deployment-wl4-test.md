@@ -23,16 +23,20 @@ The Nagel Group currently operates five GCP Workload projects:
 The absence of the DEV environment in WL4 creates a deployment dilemma: where should internal development and testing deployments go before they are ready for customer validation?
 
 **Systems Affected in WL4:**
-* New Dispo Backend
-* New Dispo Frontend
-* New Dispo Database
-* KeyCloak
-* Pickup Filter Function (CloudFn)
+* New Dispo Backend (Cloud Run)
+* New Dispo Frontend (Cloud Run)
+* New Dispo Database (CloudSQL PostgreSQL)
+* KeyCloak (Identity Provider)
 
-**Note on System Distribution:**
-* **WL3**: TMS Database (AlloyDB)
-* **WL4**: New Dispo Backend, Frontend, Database, KeyCloak, Cloud Functions
-* **WL5**: TMS Bridge, Cloud4Log Functions
+**Complete System Distribution Across Workloads:**
+
+| Workload | Components |
+|----------|------------|
+| **WL3** | TMS Database (AlloyDB) |
+| **WL4** | New Dispo Backend, New Dispo Frontend, New Dispo Database (CloudSQL), KeyCloak |
+| **WL5** | TMS Bridge, Dispo Filter Function (Cloud Function), Cloud4Log Functions, CrossDock Event Publisher |
+
+**Note:** Only WL4 components are affected by the dual instance deployment decision. WL5 components (TMS Bridge, Cloud Functions) maintain the standard three-environment pattern (DEV, TEST, PROD).
 
 Key requirements include:
 
@@ -147,6 +151,7 @@ This decision does not introduce significant new costs. The dual instance deploy
 * **Management Summary**: [01_Communication/2026-03-02_wl4-dual-instance-deployment](../../01_Communication/2026-03-02_wl4-dual-instance-deployment/management-summary.md)
 * **Communication - Workload Gap Analysis**: [01_Communication/2026-02-12_Dominik-Landau-GCP-workload-gap](../../01_Communication/2026-02-12_Dominik-Landau-GCP-workload-gap/wls.svg)
 * **Related Discussion - Missing GCP Project**: [01_Communication/2026-02-18_missing-gcp-project](../../01_Communication/2026-02-18_missing-gcp-project)
+* **Deployment & Workload Mapping**: [02_Explorations/2026-03-03_deployment_workload_mapping_and_pipeline_infrastructure](../../02_Explorations/2026-03-03_deployment_workload_mapping_and_pipeline_infrastructure/deployment-workload-mapping-and-pipeline-infrastructure.md)
 
 ## Architecture Diagram
 
@@ -163,25 +168,37 @@ This decision does not introduce significant new costs. The dual instance deploy
 The dual instance deployment pattern within WL4 TEST can be visualized as follows:
 
 ```
-WL4 GCP Project
+WL4 GCP Project (prj-cal-w-wl4-t-4c48-53ad for TEST)
 │
 ├── TEST Environment (contains both instances)
-│   ├── Instance 1 (DEV-equivalent)
-│   │   ├── new-dispo-backend-dev
-│   │   ├── new-dispo-frontend-dev
-│   │   ├── new-dispo-database-dev
-│   │   ├── keycloak-dev
-│   │   └── pickup-filter-function-dev
+│   ├── Instance 1 (DEV-equivalent) — Internal Development & Testing
+│   │   ├── new-dispo-backend-dev (Cloud Run)
+│   │   ├── new-dispo-frontend-dev (Cloud Run)
+│   │   ├── new-dispo-database-dev (CloudSQL PostgreSQL)
+│   │   └── keycloak-dev (Identity Provider)
 │   │
-│   └── Instance 2 (TEST-proper)
-│       ├── new-dispo-backend-test
-│       ├── new-dispo-frontend-test
-│       ├── new-dispo-database-test
-│       ├── keycloak-test
-│       └── pickup-filter-function-test
+│   └── Instance 2 (TEST-proper) — Customer-Facing Testing
+│       ├── new-dispo-backend-test (Cloud Run)
+│       ├── new-dispo-frontend-test (Cloud Run)
+│       ├── new-dispo-database-test (CloudSQL PostgreSQL)
+│       └── keycloak-test (Identity Provider)
 │
-└── PROD Environment
+└── PROD Environment (prj-cal-w-wl4-p-afad-53ad)
     └── (standard production deployment)
+```
+
+**WL5 Components (Not Affected):**
+```
+WL5 GCP Project
+│
+├── DEV Environment ✓
+│   └── TMS Bridge, Dispo Filter Function, Cloud4Log, etc.
+│
+├── TEST Environment ✓
+│   └── TMS Bridge, Dispo Filter Function, Cloud4Log, CrossDock Publisher, etc.
+│
+└── PROD Environment ✓
+    └── TMS Bridge, Cloud4Log, etc.
 ```
 
 **Comparison to Standard Pattern:**
