@@ -1,0 +1,4 @@
+ /explore with me the statments made by one of the lead devs here: 00_Meetings/2025-10-10_yosif-cdc-sync-and-error-flow.md. I'm aware of the flaws we currently have in the system regarding the syncronization of 
+the New Dispo Backend and the TMS Databases. I need to prepare clear documentation of how the "top down" synchronization works currently (Top = New DIspo, Down = TMS database). We have clear interfaces on the TMS
+ database sied used by New Dispo and TMS Bridge to manage transport order, legs etc in the TMS database. However whenever someone adds or midifies data in TMS Database directly (e.g. thourhg the old Uniface fat 
+client) we won't notice in New DIspo. let's sparr to get the facts down (based on the actual code) 
