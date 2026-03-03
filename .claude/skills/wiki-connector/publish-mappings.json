@@ -38,6 +38,20 @@
         },
         "notes": "Track entire document, apply line-by-line diffs"
       }
+    },
+    {
+      "id": "oms-id-solution-design",
+      "source": "02_Explorations/2026-02-25_User-Story-103821_OMS-Sendung-Quell-K/quell-k-oms-analysis.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Planning/Solution-Design/2026-02-27-User-Story-103821-OMS-ID-Solution-Design.md",
+      "description": "User Story 103821: OMS_ID display solution design",
+      "syncStrategy": {
+        "type": "diff-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Track entire document, apply line-by-line diffs"
+      }
     }
   ]
 }
