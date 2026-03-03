@@ -4,14 +4,6 @@ This document describes the external services and systems that the New Dispo inf
 
 ## Keycloak (Identity Provider)
 
-### Overview
-
-Keycloak provides centralized authentication and authorization for the New Dispo system.
-
-**Technology:** Keycloak open-source identity and access management
-
-**Deployment:** Separate from main application components (deployment details TBD)
-
 ### Endpoints
 
 **Test Environment:**
@@ -35,11 +27,6 @@ Keycloak provides centralized authentication and authorization for the New Dispo
 - Authorization Code flow for user authentication
 - Client Credentials flow for service-to-service
 
-**Token Configuration:**
-- Access token lifetime: (To be documented)
-- Refresh token lifetime: (To be documented)
-- ID token included: Yes
-
 ### Integration Points
 
 **Frontend:**
@@ -53,27 +40,18 @@ Keycloak provides centralized authentication and authorization for the New Dispo
 - Uses tokens for API authorization
 
 **CrossDock Publisher:**
-- Uses Keycloak configuration from Secret Manager
+- Uses Keycloak configuration from Secret Manager: `keyCloakConfig`
 - Service account authentication (client credentials flow)
-- Configuration stored in Secret: `keyCloakConfig`
 
 ### Secret Management
 
 **Backend Client Secret:**
 - Injected via Azure DevOps pipeline variable: `KEYCLOAK_CLIENT_SECRET`
-- Stored in Azure DevOps secure files/variables
 
 **CrossDock Publisher Config:**
-- Full Keycloak configuration stored in GCP Secret Manager: `keyCloakConfig`
-- Contains client ID, client secret, realm, and endpoint URLs
+- Stored in GCP Secret Manager: `keyCloakConfig`
 
 ## Azure Service Bus
-
-### Overview
-
-Azure Service Bus is used to publish events from the New Dispo system to external consumers, particularly for cross-dock operations.
-
-**Service:** Microsoft Azure Service Bus
 
 **Protocol:** AMQP 1.0 over TLS
 
@@ -94,13 +72,6 @@ Azure Service Bus is used to publish events from the New Dispo system to externa
 **Connection String:**
 - Stored in GCP Secret Manager: `asb-topic-connection-string`
 - Environment variable: `OUTBOUND_CONNECTION_STRING`
-- Accessed by CrossDock Publisher function
-
-**Topics/Queues:**
-- (To be documented - specific topic/queue names)
-
-**Message Format:**
-- (To be documented - message schema and structure)
 
 ### Environment-Specific Settings
 
@@ -110,19 +81,11 @@ Azure Service Bus is used to publish events from the New Dispo system to externa
 - Source bucket: `tms-alloydb-datastream-bucket-wl5-t-t`
 
 **Production Environment:**
-- (To be documented - no production deployment exists yet)
-
-> **Note:** Currently only deployed to test environment. Production deployment approach and configuration to be determined.
+- No production deployment exists
 
 ## DigiLiS (Document Management System)
 
-### Overview
-
-DigiLiS is an external document management system accessed via SMB/CIFS file share. Cloud4Log integrates with DigiLiS for uploading and downloading logistics documents.
-
 **Technology:** SMB/CIFS file share
-
-**Access Method:** Network file share access via VPC connectivity
 
 ### Document Types
 
@@ -141,8 +104,7 @@ DigiLiS is an external document management system accessed via SMB/CIFS file sha
 - Domain: Injected via pipeline variable `DIGILIS_DOMAIN`
 
 **Network Access:**
-- Via VPC Connector to internal network
-- Likely through VPN or Cloud Interconnect
+- Via VPC Connector
 - SMB/CIFS protocol (ports 139, 445)
 
 ### Integration Points
@@ -161,7 +123,7 @@ DigiLiS is an external document management system accessed via SMB/CIFS file sha
 
 **download:**
 - Downloads PoD documents from DigiLiS file share
-- Stores in Cloud Storage bucket (`$(C4L_BUCKET_POD)` / `$(C4L_BUCKET_POD_P_P)`)
+- Stores in Cloud Storage bucket
 - Returns status to Cloud Workflow
 
 ### Workflow Orchestration
@@ -169,74 +131,25 @@ DigiLiS is an external document management system accessed via SMB/CIFS file sha
 **Upload Workflow (`c4l-workflow-upload`):**
 - Scheduled: Every 5 minutes (test), every minute (production)
 - Invokes: bordero-upload, then rollkart-upload
-- Configuration: GCS source for depot configurations
 
 **Download Workflow (`c4l-workflow-download`):**
 - Scheduled: Every 15 minutes (both environments)
 - Invokes: download function
-- Configuration: GCS source for depot configurations
 
 ### Depot Configuration
 
 **Configuration Files:**
-- Stored in Cloud Storage: `c4l-static-files-files-documents-t-t` (test), `c4l-static-files-files-documents-p-p` (production)
+- Stored in Cloud Storage:
+  - Test: `c4l-static-files-files-documents-t-t`
+  - Production: `c4l-static-files-files-documents-p-p`
 - Format: JSON files with depot-specific settings
-- Updated via dedicated pipelines: `azure-pipelines-cloudrun-t-t-c4ldepots-json.yml`, `azure-pipelines-cloudrun-p-p-c4ldepots-json.yml`
-
-**Configuration Content:**
-- Depot identifiers
-- File path mappings
-- Document type configurations
-- Schedule overrides (if applicable)
-
-## SMTP (Email Service)
-
-### Overview
-
-The New Dispo Backend integrates with an SMTP server for sending email notifications to users and administrators.
-
-**Protocol:** SMTP (Simple Mail Transfer Protocol)
-
-### Configuration
-
-**Connection Details:**
-- Server: Injected via pipeline variable `SMTP_SERVER`
-- Port: Injected via pipeline variable `SMTP_PORT`
-- Username: Injected via pipeline variable `SMTP_USERNAME`
-- Password: Injected via pipeline variable `SMTP_PASSWORD`
-
-**Security:**
-- TLS encryption: (To be documented - assumed enabled)
-- Authentication: Username/password
-
-### Use Cases
-
-**Notification Types:**
-- User registration confirmations
-- Password reset emails
-- Disposition status updates
-- System alerts and warnings
-- Daily/weekly reports
-
-**Email Templates:**
-- (To be documented - template management approach)
-
-### Integration Point
-
-**Backend Service:**
-- Sends emails based on application events
-- Uses SMTP client library in .NET
-- Handles email queueing and retry logic
+- Updated via dedicated pipelines:
+  - Test: `azure-pipelines-cloudrun-t-t-c4ldepots-json.yml`
+  - Production: `azure-pipelines-cloudrun-p-p-c4ldepots-json.yml`
 
 ## TOP Service
 
-### Overview
-
-TOP Service (Transport Optimization Platform) is an internal system that the New Dispo Backend integrates with for optimization calculations and transport planning.
-
 **Protocol:** HTTP/HTTPS
-
-**Deployment:** On-premises or internal network
 
 ### Endpoints
 
@@ -244,31 +157,16 @@ TOP Service (Transport Optimization Platform) is an internal system that the New
 - Base URL: https://featuretest-top.cal-consult.int/
 - XServer URL: http://10.32.3.102:30000
 
-**Production Environment:**
-- (To be documented)
-
 ### Network Access
 
-**Connection Path:**
-- Backend Cloud Run service → VPC Connector → VPC → Internal network (10.32.3.0/24 or similar)
-- Requires VPN or Cloud Interconnect for on-premises access
-
 **Internal IP:** 10.32.3.102
-- Suggests direct internal network connectivity
-- No public internet routing
 
 ### Integration Points
 
 **Backend Service:**
 - Calls TOP Service APIs for route optimization
-- Uses XServer endpoint for specific calculations
+- Uses XServer endpoint for calculations
 - Configuration injected via pipeline variables
-
-**Use Cases:**
-- Route planning and optimization
-- Cost calculations
-- Transport capacity analysis
-- Scheduling optimization
 
 ### Configuration
 
@@ -278,10 +176,6 @@ TOP Service (Transport Optimization Platform) is an internal system that the New
 
 ## TMS Database (AlloyDB)
 
-### Overview
-
-While technically a GCP service, the TMS Database (AlloyDB) serves as an external data source for the New Dispo system, managed separately with its own deployment lifecycle.
-
 **Technology:** Google Cloud AlloyDB for PostgreSQL
 
 **Management:** GitHub Actions workflows (separate from main application)
@@ -289,7 +183,6 @@ While technically a GCP service, the TMS Database (AlloyDB) serves as an externa
 ### Integration Points
 
 **TMS Bridge:**
-- Primary consumer of TMS data
 - Provides REST API abstraction over TMS database
 - Direct database connection via VPC
 
@@ -318,119 +211,21 @@ While technically a GCP service, the TMS Database (AlloyDB) serves as an externa
 
 **CDC Buckets:**
 - Test: `tms-alloydb-datastream-bucket-wl5-t-t`
-- UAT2820: `$(WL5_CDC_BUCKET_UAT2820)`
-- ABN1034: `$(WL5_CDC_BUCKET_ABN1034)`
+- UAT2820: Pipeline variable `WL5_CDC_BUCKET_UAT2820`
+- ABN1034: Pipeline variable `WL5_CDC_BUCKET_ABN1034`
 
 ### Environment Instances
 
 Multiple TMS database instances exist for different environments:
 - **UAT2820:** User acceptance testing environment 2820
 - **ABN1034:** ABN customer environment 1034
-- (Additional instances to be documented)
-
-Each instance has its own CDC configuration and consumer functions.
 
 ## External API Summary
 
-| External System | Protocol | Purpose | Integrated By | Network Path |
-|-----------------|----------|---------|---------------|--------------|
-| Keycloak | HTTPS (OAuth2/OIDC) | Authentication & Authorization | Frontend, Backend, CrossDock Publisher | Public HTTPS |
-| Azure Service Bus | AMQP over TLS | Event publishing | CrossDock Publisher | Public HTTPS/AMQP |
-| DigiLiS | SMB/CIFS | Document upload/download | Cloud4Log functions | VPN/Interconnect |
-| SMTP Server | SMTP | Email notifications | Backend | Public SMTP or internal |
-| TOP Service | HTTP | Route optimization | Backend | VPN/Interconnect (internal IP) |
-| TMS Database | PostgreSQL | TMS data access | TMS Bridge, Dispo Filter, CrossDock Publisher | VPC (AlloyDB) |
-
-## Security Considerations
-
-### Credential Management
-
-- All credentials stored in GCP Secret Manager or Azure DevOps secure variables
-- No hardcoded credentials in source code or configuration files
-- Credentials rotated regularly (policy to be documented)
-
-### Network Security
-
-- External HTTPS connections use TLS 1.2 or higher
-- Certificate validation enforced for all HTTPS connections
-- SMB/CIFS connections encrypted (verify configuration)
-- Internal network access via VPN or Cloud Interconnect
-
-### Access Control
-
-- Service accounts follow principle of least privilege
-- External API access limited to specific service accounts
-- Network firewall rules restrict access to necessary services only
-- Regular audit of external access patterns
-
-## Monitoring and Alerting
-
-### Integration Health Checks
-
-**Recommended Monitoring:**
-- Keycloak: Token validation success rate, authentication latency
-- Azure Service Bus: Message publish success rate, queue depth
-- DigiLiS: File upload/download success rate, connection failures
-- SMTP: Email send success rate, bounce rate
-- TOP Service: API call success rate, response time
-- TMS Database: Connection pool health, query performance
-
-**Alerting Thresholds:**
-- Error rate > 5% for any integration
-- Latency > 5 seconds for critical APIs
-- Connection failures > 3 consecutive attempts
-- Queue backlog exceeding thresholds
-
-### Logging
-
-All external integration calls should be logged with:
-- Request timestamp
-- Request/response correlation ID
-- Success/failure status
-- Error messages (if applicable)
-- Response time
-
-Logs available in Cloud Logging for all services.
-
-## Disaster Recovery
-
-### External Service Outages
-
-**Keycloak:**
-- Impact: Users cannot authenticate (critical)
-- Mitigation: Cached tokens, graceful degradation with limited functionality
-- Recovery: Automated health checks, failover to backup instance (if configured)
-
-**Azure Service Bus:**
-- Impact: Events not published (degraded functionality)
-- Mitigation: Queue messages locally, retry with exponential backoff
-- Recovery: Resume publishing when service restored
-
-**DigiLiS:**
-- Impact: Documents not uploaded/downloaded (degraded functionality)
-- Mitigation: Cloud Storage staging area retains documents, retry on next scheduled run
-- Recovery: Workflow resumes automatically when service restored
-
-**SMTP:**
-- Impact: Emails not sent (degraded functionality)
-- Mitigation: Queue emails in database, retry periodically
-- Recovery: Resume email sending when service restored
-
-**TOP Service:**
-- Impact: Optimization calculations unavailable (degraded functionality)
-- Mitigation: Use cached results or fallback algorithms
-- Recovery: Resume calculations when service restored
-
-**TMS Database:**
-- Impact: No TMS data access (critical)
-- Mitigation: High-availability AlloyDB configuration, automatic failover
-- Recovery: AlloyDB automatic failover, no manual intervention needed
-
-## Future Considerations
-
-- Document production configurations for all integrations
-- Implement comprehensive health check endpoints for all external dependencies
-- Set up automated alerting for integration failures
-- Regular testing of disaster recovery procedures
-- Implement rate limiting and circuit breakers for external API calls
-- Consider caching strategies to reduce external dependencies
+| External System | Protocol | Purpose | Integrated By |
+|-----------------|----------|---------|---------------|
+| Keycloak | HTTPS (OAuth2/OIDC) | Authentication & Authorization | Frontend, Backend, CrossDock Publisher |
+| Azure Service Bus | AMQP over TLS | Event publishing | CrossDock Publisher |
+| DigiLiS | SMB/CIFS | Document upload/download | Cloud4Log functions |
+| TOP Service | HTTP | Route optimization | Backend |
+| TMS Database | PostgreSQL | TMS data access | TMS Bridge, Dispo Filter, CrossDock Publisher |

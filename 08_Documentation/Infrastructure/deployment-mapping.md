@@ -41,14 +41,13 @@ All test deployments use the `master` branch.
 
 **Database Connection:**
 - Connects to AlloyDB via VPC network
-- Uses network tags for connectivity: `postgres-user`
+- Uses network tag: `postgres-user`
 
-**Key Configuration:**
+**Configuration:**
 - Region: europe-west3
+- Memory: 1Gi
+- CPU: 1
 - VPC Connector attached for database access
-- Memory: 2Gi
-- CPU: 2
-- Max instances: 100
 
 ### New Dispo Backend
 
@@ -61,16 +60,14 @@ All test deployments use the `master` branch.
 - Production: `prj-cal-w-wl4-p-afad-53ad:europe-west3:cal-new-disposition-postgres-p-p` (CloudSQL)
 - Uses CloudSQL Proxy for connectivity
 
-**Key Configuration:**
+**Configuration:**
 - Region: europe-west3
+- Memory: 1Gi
+- CPU: 1
 - Pub/Sub subscription: `backend-topic-sub` (test environment)
-- Memory: 2Gi
-- CPU: 2
-- Max instances: 100
 
 **External Integrations:**
 - Keycloak for authentication
-- SMTP for email notifications
 - TOP Service (XServer)
 - Cloud4Log functions
 
@@ -80,12 +77,10 @@ All test deployments use the `master` branch.
 
 **Technology:** Angular application served via Cloud Run
 
-**Key Configuration:**
+**Configuration:**
 - Region: europe-west3
-- Serves static assets and SPA
 - Memory: 1Gi
 - CPU: 1
-- Max instances: 50
 
 ### Dispo Filter Function
 
@@ -98,15 +93,12 @@ All test deployments use the `master` branch.
 - **ABN1034:** For ABN customer environment 1034
 
 **Triggers:**
-- Cloud Storage bucket: CDC data written by AlloyDB Datastream
-- Bucket examples: `$(WL5_CDC_BUCKET_UAT2820)`, `$(WL5_CDC_BUCKET_ABN1034)`
+- Cloud Storage bucket containing CDC data written by AlloyDB Datastream
 
-**Key Configuration:**
-- Deploys as Gen2 Cloud Function
-- Post-deployment updated to attach to VPC
-- Publishes to Pub/Sub topics: `$(WL5_CDC_TOPIC_UAT2820)`, `$(WL5_CDC_TOPIC_ABN1034)`
-
-> **Note:** Multiple environment-specific instances exist to support different database instances or customer environments. This pattern allows isolation between different TMS databases.
+**Configuration:**
+- Deployed as Gen2 Cloud Function
+- Attached to VPC post-deployment
+- Publishes to Pub/Sub topics
 
 ### Cloud4Log
 
@@ -119,19 +111,22 @@ All test deployments use the `master` branch.
 2. **rollkart-upload:** Uploads rollkart documents to DigiLiS
 3. **download:** Downloads proof of delivery (PoD) from DigiLiS
 
-**Performance Configuration:**
+**Function Configuration:**
 - Memory: 4Gi per function
 - CPU: 2 per function
 - Timeout: 150s
 - Max instances: 50
-- Concurrency: `maxInstanceRequestConcurrency: 10`
+- Concurrency: 10 requests per instance
 
 **Orchestration:**
-- Uses Cloud Workflows for process orchestration
-- Workflows: `c4l-workflow-upload`, `c4l-workflow-download`, `c4l-workflow-restore-data`
-- Scheduled via Cloud Scheduler:
-  - Upload: Every 5 minutes (test), every minute (production)
-  - Download: Every 15 minutes (both environments)
+- Cloud Workflows: `c4l-workflow-upload`, `c4l-workflow-download`, `c4l-workflow-restore-data`
+- Cloud Scheduler jobs:
+  - Upload job: `c4l-upload-job`
+    - Test schedule: `*/5 * * * *` (every 5 minutes)
+    - Production schedule: `* * * * *` (every minute)
+  - Download job: `c4l-download-job`
+    - Test schedule: `*/15 * * * *` (every 15 minutes)
+    - Production schedule: `*/15 * * * *` (every 15 minutes)
 
 ### CrossDock Event Publisher
 
@@ -139,37 +134,21 @@ All test deployments use the `master` branch.
 
 **Technology:** Cloud Function Gen2
 
-**Trigger:** Cloud Storage bucket containing AlloyDB Datastream data
-- Test: `tms-alloydb-datastream-bucket-wl5-t-t`
+**Trigger:**
+- Cloud Storage bucket: `tms-alloydb-datastream-bucket-wl5-t-t` (contains AlloyDB Datastream data)
 
-**Key Configuration:**
+**Configuration:**
 - Database identifier: `Database3`
 - Environment: `28302`
-- Publishes to Azure Service Bus (not GCP Pub/Sub)
-- Uses Keycloak configuration from Secret Manager
+- Publishes to Azure Service Bus
+- Keycloak configuration from Secret Manager: `keyCloakConfig`
+- Connection string from Secret Manager: `asb-topic-connection-string`
 
-> **Note:** Currently only deployed to test environment. No production pipeline exists yet.
+**Deployment Status:**
+- Currently only deployed to test environment
+- No production pipeline exists
 
 ## Database Infrastructure
-
-### AlloyDB (TMS Database)
-
-**Repository:** `Code/tms-alloydb-schema`
-
-**Deployment Method:** GitHub Actions (not Azure DevOps)
-
-**Key Workflows:**
-- `manual_db_schema_create.yml` - Create TMS database
-- `manual_cron_db_schema_create.yml` - Create TMS CRON database
-- `manual_db_privileges_create.yml` - Create roles and privileges
-- `auto_db_schema_create.yml` - Automated schema creation
-- `manual_file_db_schema_create.yml` - File-based schema creation
-- `manual_db_schema_build_image.yml` - Build schema Docker image
-
-**Change Data Capture:**
-- Uses AlloyDB Datastream to capture database changes
-- CDC data written to Cloud Storage buckets
-- Triggers Dispo Filter Function and CrossDock Publisher
 
 ### CloudSQL (New Dispo Backend Database)
 
@@ -183,27 +162,25 @@ All test deployments use the `master` branch.
 - Full path: `prj-cal-w-wl4-p-afad-53ad:europe-west3:cal-new-disposition-postgres-p-p`
 - Used by: New Dispo Backend
 
-## Deployment Patterns
+## Deployment Configuration
 
 ### Cloud Run Services
 
-All main application components (TMS Bridge, Backend, Frontend) are deployed as Cloud Run services with:
+All Cloud Run services (TMS Bridge, Backend, Frontend) are deployed with:
 - VPC connectivity for database and internal service access
 - IAM-based authentication between services
-- Automatic scaling based on load
-- Blue-green deployment via Cloud Run revisions
+- Ingress: internal
+- VPC egress: all-traffic
 
 ### Cloud Functions Gen2
 
-All Cloud Functions use Gen2 with a specific deployment pattern:
+Cloud Functions deployment process:
 1. Initial deployment as Cloud Function Gen2
 2. Post-deployment update to attach to shared VPC
-3. Additional configuration updates for network tags and settings
-
-This workaround is necessary due to Gen2 limitations in the deployment API.
+3. Network tags configuration
 
 ### Multi-Environment Strategy
 
-- **Test Environment:** Uses `master` branch, allows rapid iteration
-- **Production Environment:** Uses dedicated release branches (`release/v2.0`, `release/v2.2.2`, etc.)
-- **Environment-specific configurations:** Injected via Azure DevOps pipeline variables
+- **Test Environment:** Uses `master` branch
+- **Production Environment:** Uses dedicated release branches
+- **Configuration:** Environment-specific values injected via Azure DevOps pipeline variables

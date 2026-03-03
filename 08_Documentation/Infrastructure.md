@@ -44,7 +44,7 @@ This separation provides:
 - [CI/CD Pipelines](Infrastructure/cicd-pipelines.md) - Pipeline configurations and automation
 - [GCP Resources](Infrastructure/gcp-resources.md) - Cloud Storage, Pub/Sub, databases, and other GCP services
 - [Network Configuration](Infrastructure/network-configuration.md) - VPC, subnets, and network security
-- [External Integrations](Infrastructure/external-integrations.md) - Azure Service Bus, DigiLiS, SMTP, and other external services
+- [External Integrations](Infrastructure/external-integrations.md) - Keycloak, Azure Service Bus, DigiLiS, TOP Service, and TMS Database
 
 ## Quick Reference
 
