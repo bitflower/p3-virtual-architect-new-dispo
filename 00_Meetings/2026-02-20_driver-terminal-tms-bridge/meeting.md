@@ -1,5 +1,6 @@
 
 Besprechungsnotizen:
+https://teams.microsoft.com/l/meetingrecap?driveId=b%217nHidAmQ9UqEj83x13NRmsrTkZNkFv1HviL7i4d9aGWHNvx5Ed-PRKvITK4fQtyw&driveItemId=016WZ3YZ6SLL7Y2AO42JFLTGZRCQ4K6F37&sitePath=https%3A%2F%2Fp3web-my.sharepoint.com%2F%3Av%3A%2Fg%2Fpersonal%2Fcem_karaman_p3-group_com%2FIQDSWv-NAdzSSrmbMRQ4rxd_AX1fhhDto77JGqnym4lF0ak&fileUrl=https%3A%2F%2Fp3web-my.sharepoint.com%2Fpersonal%2Fcem_karaman_p3-group_com%2FDocuments%2FAufnahmen%2FBusiness+Flow+I+Cloud+4+Log+%26+Markant+DVA+%26+Driver+Terminal+QR+Code-20260220_140302-Besprechungsaufzeichnung.mp4%3Fweb%3D1&iCalUid=040000008200E00074C5B7101A82E008000000004B4C746D499FDC0100000000000000001000000062E4983C7C6C6E48B76AF7C520D1F71E&threadId=19%3Ameeting_MjRjYmY1ZWYtZmYxOS00NzZiLWI3ZTMtNzY1NGJkNDM5NDM5%40thread.v2&organizerId=26fd8bad-5455-48c0-a105-54098592fdfc&tenantId=38ea53fb-9117-4764-adc6-31f828910b30&callId=30d8a3ff-33bb-4766-b2b4-d700f1754f0b&threadType=meeting&meetingType=Scheduled&subType=RecapSharingLink_RecapCore
 
 Business Flow und QR-Code-Prozess Cloud for Lock: 
 
