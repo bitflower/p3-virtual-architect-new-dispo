@@ -58,7 +58,7 @@ for dir in */; do
     if [ "$REPO_NAME" = "tms-alloydb-schema" ]; then
         # Look for x.x.x.x+New-DISPO pattern
         echo "🔍 Looking for New-DISPO branch pattern..."
-        BRANCH=$(git branch -r | grep -E 'origin/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\+New-DISPO' | head -n 1 | sed 's/.*origin\///' | xargs)
+        BRANCH=$(git branch -r | grep -E 'origin/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+[+]New-DISPO' | head -n 1 | sed 's/.*origin\///' | xargs)
 
         if [ -z "$BRANCH" ]; then
             echo "  No New-DISPO branch found, checking for master/main..."
