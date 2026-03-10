@@ -1,0 +1,22 @@
+2026-02-04 Technische Probleme bei TMS PULSE
+
+Hallo Christian, hallo Pascal,
+
+derzeit gibt es technische Probleme in der Kette des TMS PULS, konkret bei den Replication Slots der Alloy-Datenbanken. Vor ein paar Tagen wurde bekannt, dass deren Größe teilweise fast 500 Gigabyte oder mehr erreicht. Dementsprechend haben Nikolai, Ron, Kollegen von euch, und ich das Problem untersucht und versucht herauszufinden, woran es liegen könnte. Die genauen Details folgen noch, allerdings hat sich herausgestellt, dass die Verantwortlichkeiten in diesen Bereichen nicht eindeutig sind, ähnlich wie beim kürzlichen Thema mit den Oracle-Verbindungen, die bei DIGLIS abbrechen.
+
+Es gibt drei wesentliche Verantwortungsbereiche, die für das Funktionieren des TMS PULSE zusammenarbeiten müssen:
+
+1. Die Datenbank, die zum Managed Service bei GCP gehört.
+2. Das Datenbankschema mit seinen Skripten, wozu auch die Replication Slots gehören. Hier liegt die Verantwortung bei der Nagelite.
+3. Die Data Stream-Komponente in GCP, die von uns installiert und konfiguriert wurde.
+
+Laut Matt Wilkinson sind wir für den gesamten CDC Stream, der TMS PULSE ausmacht, verantwortlich.
+
+Aktueller Stand der Analyse:
+- Die Replication Slots sind ordnungsgemäß aufgesetzt. Dazu gehört die Prüfung, ob alle Tabellen gescannt werden oder tatsächlich nur die Tabelle "Sendung", die uns wirklich interessiert.
+- Der Data Stream wurde überprüft und die Konfiguration verifiziert. Auch hier ist alles in Ordnung.
+
+Nach all diesen Untersuchungen führt die Spur der Zeit zu den Releases, die auf der Datenbank durchgeführt werden. Diese führen dazu, dass die Replicationslots neu angelegt werden, was vermutlich Probleme bei der Verbindung von Data Stream verursacht. Dadurch laufen die Replicationslots voll und werden nicht mehr wie vorgesehen von Data Stream verarbeitet, was zu den riesigen Größen der Replication Slots führt.
+
+Beste Grüße,
+Matthias
