@@ -11,6 +11,23 @@ This minimal viable tracing solution focuses exclusively on the components you c
 
 **Goal:** Prove value quickly with a solution you can implement and test locally.
 
+## ⚠️ NON-NEGOTIABLE: Non-Blocking Architecture
+
+**The tracing system MUST be non-blocking at all stages and layers.**
+
+This is not optional - it's a core architectural constraint:
+
+- ✅ **Never blocks** the main business flow
+- ✅ **Never throws exceptions** that fail the operation
+- ✅ **Never impacts performance** negatively
+- ✅ **Fire-and-forget** - capture async, process in background
+- ✅ **Self-healing** - circuit breakers, auto-disable on failure
+- ✅ **Resource-bounded** - limited queues, timeouts, sampling
+
+**Rule:** If tracing fails, the business operation continues successfully.
+
+All code examples in this document follow non-blocking patterns. Tracing is observability infrastructure - it must be invisible to the main application.
+
 ## Scope
 
 ### ✅ In Scope (Your Components)
@@ -470,30 +487,47 @@ public class InMemoryTraceCapture : ITraceCapture
         _logger = logger;
     }
 
+    /// <summary>
+    /// NON-BLOCKING: Returns immediately, never throws
+    /// </summary>
     public Task CaptureAsync(TraceCapturePoint point)
     {
-        // Store in memory
-        _traces.AddOrUpdate(
-            point.TraceId,
-            new List<TraceCapturePoint> { point },
-            (key, list) =>
+        try
+        {
+            // Store in memory - fast, non-blocking
+            _traces.AddOrUpdate(
+                point.TraceId,
+                new List<TraceCapturePoint> { point },
+                (key, list) =>
+                {
+                    list.Add(point);
+                    return list;
+                }
+            );
+
+            // Log for immediate visibility (best-effort)
+            try
             {
-                list.Add(point);
-                return list;
+                var dataJson = JsonSerializer.Serialize(point.Data, _jsonOptions);
+                _logger.LogInformation(
+                    "[TRACE:{TraceId}] {Component}::{CapturePoint} | {Direction}\n{Data}",
+                    point.TraceId,
+                    point.Component,
+                    point.CapturePoint,
+                    point.Direction,
+                    dataJson
+                );
             }
-        );
-
-        // Also log for immediate visibility
-        var dataJson = JsonSerializer.Serialize(point.Data, _jsonOptions);
-
-        _logger.LogInformation(
-            "[TRACE:{TraceId}] {Component}::{CapturePoint} | {Direction}\n{Data}",
-            point.TraceId,
-            point.Component,
-            point.CapturePoint,
-            point.Direction,
-            dataJson
-        );
+            catch
+            {
+                // Suppress serialization errors - don't fail main operation
+            }
+        }
+        catch (Exception ex)
+        {
+            // CRITICAL: Never throw - tracing must not break business logic
+            _logger.LogDebug(ex, "Trace capture failed (non-critical)");
+        }
 
         return Task.CompletedTask;
     }
@@ -548,11 +582,14 @@ public class FileBasedTraceCapture : ITraceCapture
         Directory.CreateDirectory(_tracesBasePath);
     }
 
+    /// <summary>
+    /// NON-BLOCKING: Returns immediately, processes file I/O in background, never throws
+    /// </summary>
     public Task CaptureAsync(TraceCapturePoint point)
     {
         try
         {
-            // Add to in-memory buffer
+            // Add to in-memory buffer (fast, non-blocking)
             _activeTraces.AddOrUpdate(
                 point.TraceId,
                 new List<TraceCapturePoint> { point },
@@ -563,24 +600,43 @@ public class FileBasedTraceCapture : ITraceCapture
                 }
             );
 
-            // Log for immediate visibility
-            _logger.LogInformation(
-                "[TRACE:{TraceId}] {Component}::{CapturePoint} | {Direction}",
-                point.TraceId,
-                point.Component,
-                point.CapturePoint,
-                point.Direction
-            );
+            // Log for immediate visibility (best-effort)
+            try
+            {
+                _logger.LogInformation(
+                    "[TRACE:{TraceId}] {Component}::{CapturePoint} | {Direction}",
+                    point.TraceId,
+                    point.Component,
+                    point.CapturePoint,
+                    point.Direction
+                );
+            }
+            catch
+            {
+                // Suppress logging errors
+            }
 
-            // Flush to file when trace is complete
+            // Fire-and-forget: Flush to file in background when trace completes
             if (IsEndOfTrace(point))
             {
-                _ = Task.Run(() => FlushTraceToFileAsync(point.TraceId));
+                _ = Task.Run(async () =>
+                {
+                    try
+                    {
+                        await FlushTraceToFileAsync(point.TraceId);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Background task - just log, never propagate
+                        _logger.LogDebug(ex, "Trace file flush failed (non-critical)");
+                    }
+                });
             }
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Failed to capture trace point");
+            // CRITICAL: Never throw - tracing must not break business logic
+            _logger.LogDebug(ex, "Trace capture failed (non-critical)");
         }
 
         return Task.CompletedTask;
@@ -847,7 +903,7 @@ public class CalculateRoutesCommandHandler : ICommandHandler<CalculateRoutesComm
         var traceId = _httpContextAccessor.HttpContext?.Request.GetTraceId();
 
         // CAPTURE #3: Command Entry
-        await _traceCapture.CaptureAsync(new TraceCapturePoint
+        _ = _traceCapture.CaptureAsync(new TraceCapturePoint
         {
             TraceId = traceId,
             Component = "Backend",
@@ -861,7 +917,7 @@ public class CalculateRoutesCommandHandler : ICommandHandler<CalculateRoutesComm
         });
 
         // CAPTURE #4: Before GetPoolDto
-        await _traceCapture.CaptureAsync(new TraceCapturePoint
+        _ = _traceCapture.CaptureAsync(new TraceCapturePoint
         {
             TraceId = traceId,
             Component = "Backend",
@@ -879,7 +935,7 @@ public class CalculateRoutesCommandHandler : ICommandHandler<CalculateRoutesComm
             request.TransportOrderId);
 
         // CAPTURE #5: After GetPoolDto - CRITICAL: Full PoolDTO
-        await _traceCapture.CaptureAsync(new TraceCapturePoint
+        _ = _traceCapture.CaptureAsync(new TraceCapturePoint
         {
             TraceId = traceId,
             Component = "Backend",
@@ -902,7 +958,7 @@ public class CalculateRoutesCommandHandler : ICommandHandler<CalculateRoutesComm
         });
 
         // CAPTURE #6: Before TOP Service
-        await _traceCapture.CaptureAsync(new TraceCapturePoint
+        _ = _traceCapture.CaptureAsync(new TraceCapturePoint
         {
             TraceId = traceId,
             Component = "Backend",
@@ -914,7 +970,7 @@ public class CalculateRoutesCommandHandler : ICommandHandler<CalculateRoutesComm
         PoolDto enrichedPoolDto = await _topService.CalculateRoutes(poolDto, cancellationToken);
 
         // CAPTURE #7: After TOP Service - CRITICAL: Enriched PoolDTO
-        await _traceCapture.CaptureAsync(new TraceCapturePoint
+        _ = _traceCapture.CaptureAsync(new TraceCapturePoint
         {
             TraceId = traceId,
             Component = "Backend",
@@ -934,7 +990,7 @@ public class CalculateRoutesCommandHandler : ICommandHandler<CalculateRoutesComm
         });
 
         // CAPTURE #8: Before SetPoolDto
-        await _traceCapture.CaptureAsync(new TraceCapturePoint
+        _ = _traceCapture.CaptureAsync(new TraceCapturePoint
         {
             TraceId = traceId,
             Component = "Backend",
@@ -948,7 +1004,7 @@ public class CalculateRoutesCommandHandler : ICommandHandler<CalculateRoutesComm
             request.DatabaseIdentifier);
 
         // CAPTURE #9: After SetPoolDto
-        await _traceCapture.CaptureAsync(new TraceCapturePoint
+        _ = _traceCapture.CaptureAsync(new TraceCapturePoint
         {
             TraceId = traceId,
             Component = "Backend",
@@ -1293,6 +1349,92 @@ Even without database instrumentation, you can see:
 ❌ UI visualization
 
 See [v2-future-enhancements.md](./v2-future-enhancements.md) for these features.
+
+## Non-Blocking Implementation Checklist
+
+**Before deploying, verify these non-blocking patterns are followed:**
+
+### Backend (.NET)
+
+- ✅ **Fire-and-forget**: Use `_ = _traceCapture.CaptureAsync(...)` (NOT `await`)
+- ✅ **Comprehensive try-catch**: All `CaptureAsync` methods wrapped in try-catch
+- ✅ **Never throw**: Catch all exceptions, log at Debug level, never propagate
+- ✅ **Fast return**: `CaptureAsync` returns `Task.CompletedTask` immediately
+- ✅ **Background processing**: File I/O or network calls via `Task.Run` or channels
+- ✅ **Circuit breaker** (optional): Auto-disable after repeated failures
+- ✅ **Resource limits**: Bounded queues (drop oldest when full)
+- ✅ **Timeouts**: All async operations have timeout (e.g., 2 seconds max)
+
+### Frontend (Angular)
+
+- ✅ **Console only**: Use `console.log` for immediate tracing (non-blocking)
+- ✅ **Error suppression**: Wrap in try-catch if calling HTTP endpoints
+- ✅ **RxJS tap operator**: Non-blocking, doesn't interrupt stream
+- ✅ **No await**: If sending to backend, use fire-and-forget HTTP calls
+
+### TMS Bridge (GraphQL)
+
+- ✅ **Fire-and-forget**: Use `_ = traceCapture.SafeCaptureAsync(...)`
+- ✅ **Never block resolver**: Trace capture must not delay query response
+- ✅ **Error handling**: Try-catch in resolver, suppress trace errors
+
+### Testing Non-Blocking Behavior
+
+```csharp
+// Test: Verify CaptureAsync returns immediately (< 100ms)
+var stopwatch = Stopwatch.StartNew();
+_ = _traceCapture.CaptureAsync(point);
+stopwatch.Stop();
+Assert.True(stopwatch.ElapsedMilliseconds < 100, "CaptureAsync must not block");
+
+// Test: Verify exceptions don't propagate
+var failingCapture = new Mock<ITraceCapture>();
+failingCapture.Setup(x => x.CaptureAsync(It.IsAny<TraceCapturePoint>()))
+    .ThrowsAsync(new Exception("Test failure"));
+
+// Should not throw
+await Assert.DoesNotThrowAsync(async () =>
+{
+    _ = failingCapture.Object.CaptureAsync(point);
+    await Task.Delay(100); // Allow background processing
+});
+```
+
+### Anti-Patterns to Avoid
+
+**DO NOT:**
+```csharp
+// ❌ WRONG: Blocking await
+await _traceCapture.CaptureAsync(point);
+await _business.ProcessAsync();
+
+// ❌ WRONG: Throwing exceptions
+if (point == null)
+    throw new ArgumentNullException();
+
+// ❌ WRONG: Synchronous I/O
+File.WriteAllText("trace.log", data); // Blocks thread
+
+// ❌ WRONG: Unhandled exceptions
+await _database.InsertAsync(point); // Can crash app
+```
+
+**DO THIS:**
+```csharp
+// ✅ CORRECT: Fire-and-forget
+_ = _traceCapture.CaptureAsync(point);
+await _business.ProcessAsync();
+
+// ✅ CORRECT: Never throw
+if (point == null) return;
+
+// ✅ CORRECT: Background I/O
+_ = Task.Run(() => File.WriteAllTextAsync("trace.log", data));
+
+// ✅ CORRECT: Error handling
+try { await _database.InsertAsync(point); }
+catch (Exception ex) { _logger.LogDebug(ex, "Trace failed"); }
+```
 
 ## Success Criteria
 

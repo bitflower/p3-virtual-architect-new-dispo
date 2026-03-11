@@ -1,0 +1,16 @@
+Frontend Console Log - Trace ID: e86fb4e5-f246-4250-b53a-39b8ad8baada
+================================================================================
+
+[TraceIdService] Generated new trace ID: e86fb4e5-f246-4250-b53a-39b8ad8baada
+
+[CalculateRoutesService] Starting tour calculation for order 10340432603203 with trace ID: e86fb4e5-f246-4250-b53a-39b8ad8baada
+
+[TraceCaptureService] Initialized trace: e86fb4e5-f246-4250-b53a-39b8ad8baada
+
+[TraceCaptureService] {"traceId":"e86fb4e5-f246-4250-b53a-39b8ad8baada","capturePointId":"CP-FE-1","component":"Frontend","label":"Calculate routes request initiated","timestamp":"2026-03-10T17:44:59.794Z"}
+
+[TraceCaptureService] Trace completed: e86fb4e5-f246-4250-b53a-39b8ad8baada, duration: 0ms, points: 1
+
+[CalculateRoutesService] Tour calculation completed for order 10340432603203, trace ID: e86fb4e5-f246-4250-b53a-39b8ad8baada, duration: 7113ms
+
+[TraceCaptureService] {"traceId":"e86fb4e5-f246-4250-b53a-39b8ad8baada","capturePointId":"CP-FE-2","component":"Frontend","label":"Calculate routes response received - Success","timestamp":"2026-03-10T17:45:06.907Z","durationMs":7113}

@@ -1,0 +1,236 @@
+{
+  "traceId": "6837d454-6b09-41d5-be55-be6316e3790d",
+  "transportOrderId": "10340432603203",
+  "startTime": "2026-03-10T17:23:37.654Z",
+  "endTime": "2026-03-10T17:23:45.549Z",
+  "totalDurationMs": 7895,
+  "status": "success",
+  "capturePoints": [
+    {
+      "sequence": 1,
+      "capturePointId": "CP-FE-1",
+      "component": "Frontend",
+      "timestamp": "2026-03-10T17:23:37.654Z",
+      "label": "Calculate routes request initiated",
+      "data": {
+        "transportOrderId": "10340432603203",
+        "endpoint": "/api/transportorders/10340432603203/calculate-routes",
+        "method": "POST",
+        "isSilent": false
+      }
+    },
+    {
+      "sequence": 2,
+      "capturePointId": "CP-BE-1",
+      "component": "Backend",
+      "timestamp": "2026-03-10T17:23:37.672Z",
+      "label": "Calculate Routes request received",
+      "data": {
+        "transportOrderId": "10340432603203"
+      },
+      "localTime": "2026-03-10 18:23:37.675 +01:00"
+    },
+    {
+      "sequence": 3,
+      "capturePointId": "CP-BE-2",
+      "component": "Backend",
+      "timestamp": "2026-03-10T17:23:37.682Z",
+      "label": "Before GetPoolDto call to TMS Bridge",
+      "data": {
+        "transportOrderId": "10340432603203"
+      },
+      "localTime": "2026-03-10 18:23:37.682 +01:00",
+      "note": "Trace ID propagated to TMS Bridge via GraphQL header"
+    },
+    {
+      "sequence": 4,
+      "capturePointId": "CP-TB-1",
+      "component": "TMS-Bridge",
+      "timestamp": "2026-03-10T17:23:37.684Z",
+      "label": "GetXserverDto GraphQL query entry",
+      "data": {
+        "databaseIdentifier": "D-10-34",
+        "transportOrderId": "10340432603203"
+      },
+      "localTime": "2026-03-10 18:23:37.684 +01:00"
+    },
+    {
+      "sequence": 5,
+      "capturePointId": "CP-TB-1-Complete",
+      "component": "TMS-Bridge",
+      "timestamp": "2026-03-10T17:23:38.644Z",
+      "label": "GetXserverDto completed",
+      "durationMs": 960,
+      "data": {
+        "resultLength": "PoolDTO returned from TMS database"
+      },
+      "localTime": "2026-03-10 18:23:38.644 +01:00"
+    },
+    {
+      "sequence": 6,
+      "capturePointId": "CP-BE-3",
+      "component": "Backend",
+      "timestamp": "2026-03-10T17:23:38.704Z",
+      "label": "After GetPoolDto call - PoolDTO received",
+      "durationMs": 1022,
+      "data": {
+        "note": "Complete PoolDTO received from TMS Bridge",
+        "critical": "This is the PoolDTO BEFORE TOP Service optimization"
+      },
+      "localTime": "2026-03-10 18:23:38.704 +01:00"
+    },
+    {
+      "sequence": 7,
+      "capturePointId": "CP-BE-4",
+      "component": "Backend",
+      "timestamp": "2026-03-10T17:23:38.704Z",
+      "label": "Before TOP Service call",
+      "data": {
+        "note": "About to send PoolDTO to TOP Service for route optimization"
+      },
+      "localTime": "2026-03-10 18:23:38.704 +01:00"
+    },
+    {
+      "sequence": 8,
+      "capturePointId": "CP-BE-5",
+      "component": "Backend",
+      "timestamp": "2026-03-10T17:23:44.691Z",
+      "label": "After TOP Service call - Enriched PoolDTO",
+      "durationMs": 5987,
+      "data": {
+        "note": "PoolDTO enriched with optimized routes from TOP Service",
+        "critical": "This is the PoolDTO AFTER TOP Service optimization",
+        "bottleneck": "TOP Service took 5.987 seconds (76% of total time)"
+      },
+      "localTime": "2026-03-10 18:23:44.692 +01:00"
+    },
+    {
+      "sequence": 9,
+      "capturePointId": "CP-BE-6",
+      "component": "Backend",
+      "timestamp": "2026-03-10T17:23:44.691Z",
+      "label": "Before SetPoolDto call to TMS Bridge",
+      "data": {
+        "note": "About to save enriched PoolDTO back to TMS"
+      },
+      "localTime": "2026-03-10 18:23:44.692 +01:00"
+    },
+    {
+      "sequence": 10,
+      "capturePointId": "CP-TB-2",
+      "component": "TMS-Bridge",
+      "timestamp": "2026-03-10T17:23:44.712Z",
+      "label": "SetXserverDto GraphQL mutation entry",
+      "data": {
+        "databaseIdentifier": "D-10-34",
+        "transportOrderId": "10340432603203"
+      },
+      "localTime": "2026-03-10 18:23:44.712 +01:00"
+    },
+    {
+      "sequence": 11,
+      "capturePointId": "CP-TB-2-Complete",
+      "component": "TMS-Bridge",
+      "timestamp": "2026-03-10T17:23:45.499Z",
+      "label": "SetXserverDto completed successfully",
+      "durationMs": 787,
+      "data": {
+        "status": "success",
+        "note": "Enriched PoolDTO saved to TMS database"
+      },
+      "localTime": "2026-03-10 18:23:45.499 +01:00"
+    },
+    {
+      "sequence": 12,
+      "capturePointId": "CP-BE-7",
+      "component": "Backend",
+      "timestamp": "2026-03-10T17:23:45.507Z",
+      "label": "After SetPoolDto call",
+      "durationMs": 815,
+      "data": {
+        "note": "PoolDTO successfully saved to TMS"
+      },
+      "localTime": "2026-03-10 18:23:45.508 +01:00"
+    },
+    {
+      "sequence": 13,
+      "capturePointId": "CP-BE-8",
+      "component": "Backend",
+      "timestamp": "2026-03-10T17:23:45.534Z",
+      "label": "Calculate Routes response sent",
+      "durationMs": 7862,
+      "data": {
+        "success": true,
+        "note": "Response returned to Frontend"
+      },
+      "localTime": "2026-03-10 18:23:45.534 +01:00"
+    },
+    {
+      "sequence": 14,
+      "capturePointId": "CP-FE-2",
+      "component": "Frontend",
+      "timestamp": "2026-03-10T17:23:45.549Z",
+      "label": "Calculate routes response received - Success",
+      "durationMs": 7895,
+      "data": {
+        "success": true
+      }
+    }
+  ],
+  "performanceMetrics": {
+    "totalDurationMs": 7895,
+    "breakdown": {
+      "getPoolDtoMs": 1022,
+      "getPoolDtoPercent": 13,
+      "topServiceMs": 5987,
+      "topServicePercent": 76,
+      "setPoolDtoMs": 815,
+      "setPoolDtoPercent": 10,
+      "overheadMs": 71,
+      "overheadPercent": 1
+    },
+    "componentBreakdown": {
+      "frontend": {
+        "totalMs": 7895,
+        "capturePoints": 2
+      },
+      "backend": {
+        "totalMs": 7862,
+        "capturePoints": 8,
+        "criticalPoints": ["CP-BE-3", "CP-BE-5"]
+      },
+      "tmsBridge": {
+        "getXserverDtoMs": 960,
+        "setXserverDtoMs": 787,
+        "totalMs": 1747,
+        "capturePoints": 4
+      }
+    },
+    "bottleneck": {
+      "component": "TOP Service",
+      "durationMs": 5987,
+      "percentOfTotal": 76,
+      "note": "Route optimization is the primary bottleneck"
+    }
+  },
+  "metadata": {
+    "implementationVersion": "V1",
+    "capturePointsTotal": 14,
+    "capturePointsByComponent": {
+      "Frontend": 2,
+      "Backend": 8,
+      "TMS-Bridge": 4
+    },
+    "traceIdPropagation": {
+      "method": "HTTP Header (X-Trace-Id)",
+      "frontendToBackend": "HTTP Request Header",
+      "backendToTmsBridge": "GraphQL Request Header",
+      "status": "successful"
+    },
+    "logFiles": {
+      "frontend": "frontend-console-log.txt",
+      "backend": "backend-log-20260310.txt",
+      "tmsBridge": "tms-bridge-log-20260310.txt"
+    }
+  }
+}

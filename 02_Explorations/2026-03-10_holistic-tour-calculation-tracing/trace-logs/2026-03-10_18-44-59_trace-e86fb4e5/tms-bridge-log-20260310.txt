@@ -1,0 +1,1377 @@
+2026-03-10 12:54:20.840 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. Unable to infer or resolve a schema type from the type reference `@AuthorizeDirective`. (HotChocolate.Types.ObjectTypeExtension<CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrderQuery>)
+
+   at HotChocolate.Configuration.TypeInitializer.DiscoverTypes()
+   at HotChocolate.Configuration.TypeInitializer.Initialize()
+   at HotChocolate.SchemaBuilder.Setup.InitializeTypes(SchemaBuilder builder, IDescriptorContext context, IReadOnlyList`1 types)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass20_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-10 12:59:34.241 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. Unable to infer or resolve a schema type from the type reference `@AuthorizeDirective`. (HotChocolate.Types.ObjectTypeExtension<CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrderQuery>)
+
+   at HotChocolate.Configuration.TypeInitializer.DiscoverTypes()
+   at HotChocolate.Configuration.TypeInitializer.Initialize()
+   at HotChocolate.SchemaBuilder.Setup.InitializeTypes(SchemaBuilder builder, IDescriptorContext context, IReadOnlyList`1 types)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass20_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-10 13:05:44.513 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. Unable to infer or resolve a schema type from the type reference `@AuthorizeDirective`. (HotChocolate.Types.ObjectTypeExtension<CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrderQuery>)
+
+   at HotChocolate.Configuration.TypeInitializer.DiscoverTypes()
+   at HotChocolate.Configuration.TypeInitializer.Initialize()
+   at HotChocolate.SchemaBuilder.Setup.InitializeTypes(SchemaBuilder builder, IDescriptorContext context, IReadOnlyList`1 types)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass20_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-10 13:05:46.413 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. Unable to infer or resolve a schema type from the type reference `@AuthorizeDirective`. (HotChocolate.Types.ObjectTypeExtension<CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrderQuery>)
+
+   at HotChocolate.Configuration.TypeInitializer.DiscoverTypes()
+   at HotChocolate.Configuration.TypeInitializer.Initialize()
+   at HotChocolate.SchemaBuilder.Setup.InitializeTypes(SchemaBuilder builder, IDescriptorContext context, IReadOnlyList`1 types)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass20_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-10 13:05:53.119 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. Unable to infer or resolve a schema type from the type reference `@AuthorizeDirective`. (HotChocolate.Types.ObjectTypeExtension<CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrderQuery>)
+
+   at HotChocolate.Configuration.TypeInitializer.DiscoverTypes()
+   at HotChocolate.Configuration.TypeInitializer.Initialize()
+   at HotChocolate.SchemaBuilder.Setup.InitializeTypes(SchemaBuilder builder, IDescriptorContext context, IReadOnlyList`1 types)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass20_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-10 13:06:16.132 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. Unable to infer or resolve a schema type from the type reference `@AuthorizeDirective`. (HotChocolate.Types.ObjectTypeExtension<CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrderQuery>)
+
+   at HotChocolate.Configuration.TypeInitializer.DiscoverTypes()
+   at HotChocolate.Configuration.TypeInitializer.Initialize()
+   at HotChocolate.SchemaBuilder.Setup.InitializeTypes(SchemaBuilder builder, IDescriptorContext context, IReadOnlyList`1 types)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass20_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-10 13:32:55.512 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. Unable to infer or resolve a schema type from the type reference `@AuthorizeDirective`. (HotChocolate.Types.ObjectTypeExtension<CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrderQuery>)
+
+   at HotChocolate.Configuration.TypeInitializer.DiscoverTypes()
+   at HotChocolate.Configuration.TypeInitializer.Initialize()
+   at HotChocolate.SchemaBuilder.Setup.InitializeTypes(SchemaBuilder builder, IDescriptorContext context, IReadOnlyList`1 types)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass20_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-10 15:19:06.937 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+HotChocolate.SchemaException: For more details look at the `Errors` property.
+
+1. Unable to infer or resolve a schema type from the type reference `@AuthorizeDirective`. (HotChocolate.Types.ObjectTypeExtension<CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrderQuery>)
+
+   at HotChocolate.Configuration.TypeInitializer.DiscoverTypes()
+   at HotChocolate.Configuration.TypeInitializer.Initialize()
+   at HotChocolate.SchemaBuilder.Setup.InitializeTypes(SchemaBuilder builder, IDescriptorContext context, IReadOnlyList`1 types)
+   at HotChocolate.SchemaBuilder.Setup.Create(SchemaBuilder builder, LazySchema lazySchema, IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.SchemaBuilder.HotChocolate.ISchemaBuilder.Create(IDescriptorContext context)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaAsync(ConfigurationContext context, RequestExecutorSetup setup, RequestExecutorOptions executorOptions, IServiceProvider schemaServices, TypeModuleChangeMonitor typeModuleChangeMonitor, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.CreateSchemaServicesAsync(ConfigurationContext context, RequestExecutorSetup setup, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorNoLockAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorResolver.GetRequestExecutorAsync(String schemaName, CancellationToken cancellationToken)
+   at HotChocolate.Execution.RequestExecutorProxy.GetRequestExecutorAsync(CancellationToken cancellationToken)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.HandleRequestAsync(HttpContext context)
+   at HotChocolate.AspNetCore.HttpPostMiddlewareBase.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.<>c__DisplayClass20_0.<<UseCancellation>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-10 15:25:08.618 +01:00 [INF] [TraceContext] Trace ID set: 690ad605-98b2-4162-a3d2-f9826e75644f
+2026-03-10 15:25:08.676 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 690ad605-98b2-4162-a3d2-f9826e75644f
+2026-03-10 15:25:08.834 +01:00 [ERR] TMS Bridge error ocurred
+System.FormatException: Database identifier ABN1034 does not match expected format ^[DO]-(\d{1,2})-(\d{1,3})$
+   at CALConsult.TMSBridge.API.Data.DbContexts.BranchDbContextFactory.GetTmsSchemaName(String databaseIdentifier, Nullable`1 vendorName) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Data/DbContexts/BranchDbContextFactory.cs:line 81
+   at CALConsult.TMSBridge.API.Data.DbContexts.BranchDbContextFactory.CreateDbContext[T](String databaseIdentifier) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Data/DbContexts/BranchDbContextFactory.cs:line 34
+   at CALConsult.TMSBridge.API.Data.DbContexts.ScopedDbContextProvider`1.GetDbContext(String databaseIdentifier) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Data/DbContexts/ScopedDbContextProvider.cs:line 18
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 20
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 15:30:18.342 +01:00 [INF] [TraceContext] Trace ID set: 82af06c0-df8d-4569-a190-583a3e9b4676
+2026-03-10 15:30:18.343 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 82af06c0-df8d-4569-a190-583a3e9b4676
+2026-03-10 15:30:18.348 +01:00 [ERR] TMS Bridge error ocurred
+System.FormatException: Database identifier ABN1034 does not match expected format ^[DO]-(\d{1,2})-(\d{1,3})$
+   at CALConsult.TMSBridge.API.Data.DbContexts.BranchDbContextFactory.GetTmsSchemaName(String databaseIdentifier, Nullable`1 vendorName) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Data/DbContexts/BranchDbContextFactory.cs:line 81
+   at CALConsult.TMSBridge.API.Data.DbContexts.BranchDbContextFactory.CreateDbContext[T](String databaseIdentifier) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Data/DbContexts/BranchDbContextFactory.cs:line 34
+   at CALConsult.TMSBridge.API.Data.DbContexts.ScopedDbContextProvider`1.GetDbContext(String databaseIdentifier) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Data/DbContexts/ScopedDbContextProvider.cs:line 18
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 20
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 15:33:24.461 +01:00 [INF] [TraceContext] Trace ID set: 5bad4d81-38fe-4a07-9425-37faff0f0895
+2026-03-10 15:33:24.462 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 5bad4d81-38fe-4a07-9425-37faff0f0895
+2026-03-10 15:33:24.466 +01:00 [ERR] TMS Bridge error ocurred
+System.ArgumentException: Invalid database identifier (Parameter 'databaseIdentifier')
+   at CALConsult.TMSBridge.API.Services.DbConnectionStringProvider.GetConnectionString(String databaseIdentifier) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/DbConnectionStringProvider.cs:line 20
+   at CALConsult.TMSBridge.API.Data.DbContexts.BranchDbContextFactory.CreateDbContext[T](String databaseIdentifier) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Data/DbContexts/BranchDbContextFactory.cs:line 27
+   at CALConsult.TMSBridge.API.Data.DbContexts.ScopedDbContextProvider`1.GetDbContext(String databaseIdentifier) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Data/DbContexts/ScopedDbContextProvider.cs:line 18
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 20
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 15:35:16.074 +01:00 [INF] [TraceContext] Trace ID set: 9ced22c4-6ae8-4844-9fca-6aaeedeff1eb
+2026-03-10 15:35:16.137 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 9ced22c4-6ae8-4844-9fca-6aaeedeff1eb
+2026-03-10 15:35:16.270 +01:00 [INF] DbContext CREATED 28307253
+2026-03-10 15:35:17.293 +01:00 [ERR] TMS Bridge error ocurred
+Npgsql.PostgresException (0x80004005): 28P01: password authentication failed for user "tms1034"
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+  Exception data:
+    Severity: FATAL
+    SqlState: 28P01
+    MessageText: password authentication failed for user "tms1034"
+    File: auth.c
+    Line: 375
+    Routine: auth_failed
+2026-03-10 15:35:17.318 +01:00 [INF] DbContext DISPOSED 28307253
+2026-03-10 15:38:06.605 +01:00 [INF] [TraceContext] Trace ID set: f0fd12fc-3937-41bd-a03c-9d91ce60f4fc
+2026-03-10 15:38:06.656 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f0fd12fc-3937-41bd-a03c-9d91ce60f4fc
+2026-03-10 15:38:06.773 +01:00 [INF] DbContext CREATED 40948352
+2026-03-10 15:38:13.783 +01:00 [INF] DbContext DISPOSED 40948352
+2026-03-10 15:38:13.797 +01:00 [INF] [TraceContext] Trace ID set: f0fd12fc-3937-41bd-a03c-9d91ce60f4fc
+2026-03-10 15:38:13.797 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f0fd12fc-3937-41bd-a03c-9d91ce60f4fc
+2026-03-10 15:38:13.807 +01:00 [INF] DbContext CREATED 23997996
+2026-03-10 15:38:13.965 +01:00 [INF] DbContext DISPOSED 23997996
+2026-03-10 15:38:56.149 +01:00 [INF] [TraceContext] Trace ID set: f0fd12fc-3937-41bd-a03c-9d91ce60f4fc
+2026-03-10 15:38:56.150 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f0fd12fc-3937-41bd-a03c-9d91ce60f4fc
+2026-03-10 15:38:56.158 +01:00 [INF] DbContext CREATED 9251717
+2026-03-10 15:38:56.258 +01:00 [INF] DbContext DISPOSED 9251717
+2026-03-10 15:39:10.226 +01:00 [INF] [TraceContext] Trace ID set: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:10.228 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:10.235 +01:00 [INF] DbContext CREATED 20072712
+2026-03-10 15:39:10.399 +01:00 [INF] DbContext DISPOSED 20072712
+2026-03-10 15:39:10.410 +01:00 [INF] [TraceContext] Trace ID set: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:10.410 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:10.412 +01:00 [INF] DbContext CREATED 54382901
+2026-03-10 15:39:10.413 +01:00 [INF] DbContext CREATED 5161737
+2026-03-10 15:39:10.414 +01:00 [INF] DbContext CREATED 38663436
+2026-03-10 15:39:10.417 +01:00 [INF] DbContext CREATED 8178802
+2026-03-10 15:39:11.062 +01:00 [INF] DbContext DISPOSED 54382901
+2026-03-10 15:39:11.062 +01:00 [INF] DbContext DISPOSED 5161737
+2026-03-10 15:39:11.062 +01:00 [INF] DbContext DISPOSED 38663436
+2026-03-10 15:39:11.062 +01:00 [INF] DbContext DISPOSED 8178802
+2026-03-10 15:39:11.075 +01:00 [INF] [TraceContext] Trace ID set: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:11.075 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:11.076 +01:00 [INF] DbContext CREATED 48901333
+2026-03-10 15:39:11.163 +01:00 [INF] DbContext DISPOSED 48901333
+2026-03-10 15:39:56.970 +01:00 [INF] [TraceContext] Trace ID set: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:56.972 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:57.010 +01:00 [INF] DbContext CREATED 41446661
+2026-03-10 15:39:57.145 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingStartTime.SetTargetLoadingStartTimeMutation.CallSetTargetLoadingStartTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingStartTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingStartTime/SetTargetLoadingStartTimeMutation.cs:line 47
+2026-03-10 15:39:57.158 +01:00 [INF] DbContext DISPOSED 41446661
+2026-03-10 15:39:57.162 +01:00 [INF] [TraceContext] Trace ID set: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:57.162 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: b86c0bda-204d-4df4-8f29-55d2e0aaace1
+2026-03-10 15:39:57.164 +01:00 [INF] DbContext CREATED 20437859
+2026-03-10 15:39:57.286 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingEndTime.SetTargetLoadingEndTimeMutation.CallSetTargetLoadingEndTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingEndTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingEndTime/SetTargetLoadingEndTimeMutation.cs:line 47
+2026-03-10 15:39:57.287 +01:00 [INF] DbContext DISPOSED 20437859
+2026-03-10 15:39:57.333 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:39:57.334 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:39:57.337 +01:00 [INF] DbContext CREATED 42598521
+2026-03-10 15:39:57.843 +01:00 [INF] DbContext DISPOSED 42598521
+2026-03-10 15:39:59.653 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:39:59.654 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:39:59.656 +01:00 [INF] DbContext CREATED 10033453
+2026-03-10 15:39:59.768 +01:00 [INF] DbContext DISPOSED 10033453
+2026-03-10 15:39:59.809 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:39:59.810 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:39:59.810 +01:00 [INF] DbContext CREATED 21219673
+2026-03-10 15:39:59.986 +01:00 [INF] DbContext DISPOSED 21219673
+2026-03-10 15:39:59.988 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:39:59.988 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:39:59.989 +01:00 [INF] DbContext CREATED 49275120
+2026-03-10 15:39:59.990 +01:00 [INF] DbContext CREATED 11112185
+2026-03-10 15:39:59.991 +01:00 [INF] DbContext CREATED 5695304
+2026-03-10 15:39:59.992 +01:00 [INF] DbContext CREATED 47553142
+2026-03-10 15:40:00.355 +01:00 [INF] DbContext DISPOSED 49275120
+2026-03-10 15:40:00.355 +01:00 [INF] DbContext DISPOSED 11112185
+2026-03-10 15:40:00.355 +01:00 [INF] DbContext DISPOSED 5695304
+2026-03-10 15:40:00.355 +01:00 [INF] DbContext DISPOSED 47553142
+2026-03-10 15:40:00.356 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:40:00.357 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:40:00.357 +01:00 [INF] DbContext CREATED 24792984
+2026-03-10 15:40:00.398 +01:00 [INF] DbContext DISPOSED 24792984
+2026-03-10 15:40:07.547 +01:00 [INF] [TraceContext] Trace ID set: 8258d3b3-edd3-47b2-aa9a-daf681316ec2
+2026-03-10 15:40:07.552 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 8258d3b3-edd3-47b2-aa9a-daf681316ec2
+2026-03-10 15:40:07.557 +01:00 [INF] DbContext CREATED 55430151
+2026-03-10 15:40:07.711 +01:00 [INF] DbContext DISPOSED 55430151
+2026-03-10 15:40:07.714 +01:00 [INF] [TraceContext] Trace ID set: 8258d3b3-edd3-47b2-aa9a-daf681316ec2
+2026-03-10 15:40:07.714 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 8258d3b3-edd3-47b2-aa9a-daf681316ec2
+2026-03-10 15:40:07.715 +01:00 [INF] DbContext CREATED 17771184
+2026-03-10 15:40:07.832 +01:00 [INF] DbContext DISPOSED 17771184
+2026-03-10 15:41:01.457 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:01.459 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:01.462 +01:00 [INF] DbContext CREATED 24485701
+2026-03-10 15:41:01.624 +01:00 [INF] DbContext DISPOSED 24485701
+2026-03-10 15:41:01.626 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:01.626 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:01.626 +01:00 [INF] DbContext CREATED 63437770
+2026-03-10 15:41:01.727 +01:00 [INF] DbContext DISPOSED 63437770
+2026-03-10 15:41:09.638 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:09.639 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:09.644 +01:00 [INF] DbContext CREATED 29376697
+2026-03-10 15:41:09.728 +01:00 [INF] DbContext DISPOSED 29376697
+2026-03-10 15:41:09.731 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:09.731 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:09.733 +01:00 [INF] DbContext CREATED 66135450
+2026-03-10 15:41:09.774 +01:00 [INF] DbContext DISPOSED 66135450
+2026-03-10 15:41:22.516 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:22.516 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:22.520 +01:00 [INF] DbContext CREATED 66598566
+2026-03-10 15:41:22.604 +01:00 [INF] DbContext DISPOSED 66598566
+2026-03-10 15:41:22.607 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:22.607 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:41:22.608 +01:00 [INF] DbContext CREATED 59344694
+2026-03-10 15:41:22.655 +01:00 [INF] DbContext DISPOSED 59344694
+2026-03-10 15:42:30.425 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:42:30.428 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:42:30.439 +01:00 [INF] DbContext CREATED 58555438
+2026-03-10 15:42:30.579 +01:00 [INF] DbContext DISPOSED 58555438
+2026-03-10 15:42:30.581 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:42:30.581 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:42:30.582 +01:00 [INF] DbContext CREATED 55800167
+2026-03-10 15:42:30.687 +01:00 [INF] DbContext DISPOSED 55800167
+2026-03-10 15:42:35.754 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:42:35.754 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:42:35.756 +01:00 [INF] DbContext CREATED 15452079
+2026-03-10 15:42:35.800 +01:00 [INF] DbContext DISPOSED 15452079
+2026-03-10 15:42:38.551 +01:00 [INF] [TraceContext] Trace ID set: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:42:38.552 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f2fa9f0a-7af8-4b93-a943-d5263860bda6
+2026-03-10 15:42:38.554 +01:00 [INF] DbContext CREATED 27900598
+2026-03-10 15:42:38.599 +01:00 [INF] DbContext DISPOSED 27900598
+2026-03-10 15:42:43.929 +01:00 [INF] [TraceContext] Trace ID set: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:42:43.929 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:42:43.930 +01:00 [INF] DbContext CREATED 30336561
+2026-03-10 15:42:44.079 +01:00 [INF] DbContext DISPOSED 30336561
+2026-03-10 15:42:44.081 +01:00 [INF] [TraceContext] Trace ID set: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:42:44.081 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:42:44.082 +01:00 [INF] DbContext CREATED 18072320
+2026-03-10 15:42:44.082 +01:00 [INF] DbContext CREATED 4282167
+2026-03-10 15:42:44.083 +01:00 [INF] DbContext CREATED 33214577
+2026-03-10 15:42:44.084 +01:00 [INF] DbContext CREATED 41568728
+2026-03-10 15:42:44.358 +01:00 [INF] DbContext DISPOSED 18072320
+2026-03-10 15:42:44.358 +01:00 [INF] DbContext DISPOSED 4282167
+2026-03-10 15:42:44.358 +01:00 [INF] DbContext DISPOSED 33214577
+2026-03-10 15:42:44.358 +01:00 [INF] DbContext DISPOSED 41568728
+2026-03-10 15:42:44.360 +01:00 [INF] [TraceContext] Trace ID set: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:42:44.360 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:42:44.361 +01:00 [INF] DbContext CREATED 41695172
+2026-03-10 15:42:44.414 +01:00 [INF] DbContext DISPOSED 41695172
+2026-03-10 15:43:02.955 +01:00 [INF] [TraceContext] Trace ID set: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:02.956 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:02.970 +01:00 [INF] DbContext CREATED 33055176
+2026-03-10 15:43:03.080 +01:00 [INF] DbContext DISPOSED 33055176
+2026-03-10 15:43:12.647 +01:00 [INF] [TraceContext] Trace ID set: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:12.647 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:12.649 +01:00 [INF] DbContext CREATED 42329
+2026-03-10 15:43:12.750 +01:00 [INF] DbContext DISPOSED 42329
+2026-03-10 15:43:13.561 +01:00 [INF] [TraceContext] Trace ID set: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:13.561 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:13.562 +01:00 [INF] DbContext CREATED 20335911
+2026-03-10 15:43:14.077 +01:00 [INF] [TraceContext] Trace ID set: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:14.077 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:14.079 +01:00 [INF] DbContext CREATED 60346289
+2026-03-10 15:43:14.084 +01:00 [INF] DbContext DISPOSED 20335911
+2026-03-10 15:43:14.323 +01:00 [INF] DbContext DISPOSED 60346289
+2026-03-10 15:43:38.514 +01:00 [INF] [TraceContext] Trace ID set: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:38.514 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 7cb9d5f3-f110-4edb-b353-ef606f9b73e5
+2026-03-10 15:43:38.522 +01:00 [INF] DbContext CREATED 9067190
+2026-03-10 15:43:38.681 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTransportOrder.AddTourpoint.AddTourpointMutation.CallAddTourpoint(IDbContextProvider`1 dbContextProvider, IRoutineExecutor executor, String databaseIdentifier, AddTourpointInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTransportOrder/AddTourpoint/AddTourpointMutation.cs:line 62
+2026-03-10 15:43:38.684 +01:00 [INF] DbContext DISPOSED 9067190
+2026-03-10 15:43:38.705 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:38.705 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:38.706 +01:00 [INF] DbContext CREATED 50516706
+2026-03-10 15:43:39.158 +01:00 [INF] DbContext DISPOSED 50516706
+2026-03-10 15:43:39.657 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:39.657 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:39.657 +01:00 [INF] DbContext CREATED 49517844
+2026-03-10 15:43:39.803 +01:00 [INF] DbContext DISPOSED 49517844
+2026-03-10 15:43:39.819 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:39.819 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:39.820 +01:00 [INF] DbContext CREATED 38975051
+2026-03-10 15:43:39.951 +01:00 [INF] DbContext DISPOSED 38975051
+2026-03-10 15:43:39.953 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:39.953 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:39.953 +01:00 [INF] DbContext CREATED 9635414
+2026-03-10 15:43:39.954 +01:00 [INF] DbContext CREATED 27041939
+2026-03-10 15:43:39.955 +01:00 [INF] DbContext CREATED 48606758
+2026-03-10 15:43:39.956 +01:00 [INF] DbContext CREATED 31667708
+2026-03-10 15:43:40.285 +01:00 [INF] DbContext DISPOSED 9635414
+2026-03-10 15:43:40.286 +01:00 [INF] DbContext DISPOSED 27041939
+2026-03-10 15:43:40.286 +01:00 [INF] DbContext DISPOSED 48606758
+2026-03-10 15:43:40.286 +01:00 [INF] DbContext DISPOSED 31667708
+2026-03-10 15:43:40.288 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:40.288 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 15:43:40.289 +01:00 [INF] DbContext CREATED 24838427
+2026-03-10 15:43:40.326 +01:00 [INF] DbContext DISPOSED 24838427
+2026-03-10 15:43:47.534 +01:00 [INF] [TraceContext] Trace ID set: 2799a50b-4523-4f7e-a0d6-ccf9ad7b1189
+2026-03-10 15:43:47.535 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 2799a50b-4523-4f7e-a0d6-ccf9ad7b1189
+2026-03-10 15:43:47.539 +01:00 [INF] DbContext CREATED 34369914
+2026-03-10 15:43:47.765 +01:00 [INF] DbContext DISPOSED 34369914
+2026-03-10 15:43:47.766 +01:00 [INF] [TraceContext] Trace ID set: 2799a50b-4523-4f7e-a0d6-ccf9ad7b1189
+2026-03-10 15:43:47.766 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 2799a50b-4523-4f7e-a0d6-ccf9ad7b1189
+2026-03-10 15:43:47.767 +01:00 [INF] DbContext CREATED 48073425
+2026-03-10 15:43:47.878 +01:00 [INF] DbContext DISPOSED 48073425
+2026-03-10 17:03:31.267 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:31.268 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:31.271 +01:00 [INF] DbContext CREATED 30572163
+2026-03-10 17:03:31.730 +01:00 [INF] DbContext DISPOSED 30572163
+2026-03-10 17:03:31.732 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:31.732 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:31.733 +01:00 [INF] DbContext CREATED 12669032
+2026-03-10 17:03:31.827 +01:00 [INF] DbContext DISPOSED 12669032
+2026-03-10 17:03:38.899 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:38.899 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:38.905 +01:00 [INF] DbContext CREATED 4911328
+2026-03-10 17:03:39.134 +01:00 [INF] DbContext DISPOSED 4911328
+2026-03-10 17:03:39.136 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:39.136 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:39.139 +01:00 [INF] DbContext CREATED 41570763
+2026-03-10 17:03:39.305 +01:00 [INF] DbContext DISPOSED 41570763
+2026-03-10 17:03:46.973 +01:00 [INF] [TraceContext] Trace ID set: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:46.974 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 026df251-bd05-4264-946a-9792b6d6019e
+2026-03-10 17:03:46.979 +01:00 [INF] DbContext CREATED 29642227
+2026-03-10 17:03:47.042 +01:00 [INF] DbContext DISPOSED 29642227
+2026-03-10 17:03:49.398 +01:00 [INF] [TraceContext] Trace ID set: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:03:49.398 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:03:49.400 +01:00 [INF] DbContext CREATED 54014278
+2026-03-10 17:03:49.553 +01:00 [INF] DbContext DISPOSED 54014278
+2026-03-10 17:03:49.556 +01:00 [INF] [TraceContext] Trace ID set: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:03:49.556 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:03:49.558 +01:00 [INF] DbContext CREATED 12894363
+2026-03-10 17:03:49.560 +01:00 [INF] DbContext CREATED 63823883
+2026-03-10 17:03:49.561 +01:00 [INF] DbContext CREATED 35369101
+2026-03-10 17:03:49.564 +01:00 [INF] DbContext CREATED 29707553
+2026-03-10 17:03:49.858 +01:00 [INF] DbContext DISPOSED 12894363
+2026-03-10 17:03:49.858 +01:00 [INF] DbContext DISPOSED 63823883
+2026-03-10 17:03:49.859 +01:00 [INF] DbContext DISPOSED 35369101
+2026-03-10 17:03:49.859 +01:00 [INF] DbContext DISPOSED 29707553
+2026-03-10 17:03:49.860 +01:00 [INF] [TraceContext] Trace ID set: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:03:49.860 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:03:49.861 +01:00 [INF] DbContext CREATED 62650992
+2026-03-10 17:03:49.903 +01:00 [INF] DbContext DISPOSED 62650992
+2026-03-10 17:04:38.842 +01:00 [INF] [TraceContext] Trace ID set: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:04:38.843 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:04:38.847 +01:00 [INF] DbContext CREATED 49816933
+2026-03-10 17:04:38.967 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingStartTime.SetTargetLoadingStartTimeMutation.CallSetTargetLoadingStartTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingStartTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingStartTime/SetTargetLoadingStartTimeMutation.cs:line 47
+2026-03-10 17:04:38.971 +01:00 [INF] DbContext DISPOSED 49816933
+2026-03-10 17:04:38.973 +01:00 [INF] [TraceContext] Trace ID set: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:04:38.973 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 54cfa27d-934c-4028-8453-583222b02f1a
+2026-03-10 17:04:38.974 +01:00 [INF] DbContext CREATED 14990230
+2026-03-10 17:04:39.089 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingEndTime.SetTargetLoadingEndTimeMutation.CallSetTargetLoadingEndTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingEndTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingEndTime/SetTargetLoadingEndTimeMutation.cs:line 47
+2026-03-10 17:04:39.089 +01:00 [INF] DbContext DISPOSED 14990230
+2026-03-10 17:04:39.106 +01:00 [INF] [TraceContext] Trace ID set: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:39.106 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:39.107 +01:00 [INF] DbContext CREATED 63124386
+2026-03-10 17:04:39.628 +01:00 [INF] DbContext DISPOSED 63124386
+2026-03-10 17:04:45.587 +01:00 [INF] [TraceContext] Trace ID set: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:45.588 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:45.589 +01:00 [INF] DbContext CREATED 53339240
+2026-03-10 17:04:45.787 +01:00 [INF] DbContext DISPOSED 53339240
+2026-03-10 17:04:45.922 +01:00 [INF] [TraceContext] Trace ID set: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:45.923 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:45.932 +01:00 [INF] DbContext CREATED 59718645
+2026-03-10 17:04:46.110 +01:00 [INF] DbContext DISPOSED 59718645
+2026-03-10 17:04:46.113 +01:00 [INF] [TraceContext] Trace ID set: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:46.113 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:46.113 +01:00 [INF] DbContext CREATED 45525674
+2026-03-10 17:04:46.114 +01:00 [INF] DbContext CREATED 66618036
+2026-03-10 17:04:46.116 +01:00 [INF] DbContext CREATED 66308048
+2026-03-10 17:04:46.118 +01:00 [INF] DbContext CREATED 18493375
+2026-03-10 17:04:46.496 +01:00 [INF] DbContext DISPOSED 45525674
+2026-03-10 17:04:46.497 +01:00 [INF] DbContext DISPOSED 66618036
+2026-03-10 17:04:46.497 +01:00 [INF] DbContext DISPOSED 66308048
+2026-03-10 17:04:46.497 +01:00 [INF] DbContext DISPOSED 18493375
+2026-03-10 17:04:46.497 +01:00 [INF] [TraceContext] Trace ID set: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:46.497 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 60679807-4f55-4e17-8598-7423b23ed73d
+2026-03-10 17:04:46.497 +01:00 [INF] DbContext CREATED 67000418
+2026-03-10 17:04:46.534 +01:00 [INF] DbContext DISPOSED 67000418
+2026-03-10 17:04:46.934 +01:00 [INF] [TraceContext] Trace ID set: 3e5799b4-6657-4696-9715-d7a8a8f9e562
+2026-03-10 17:04:46.934 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 3e5799b4-6657-4696-9715-d7a8a8f9e562
+2026-03-10 17:04:46.935 +01:00 [INF] DbContext CREATED 42074083
+2026-03-10 17:04:47.159 +01:00 [INF] DbContext DISPOSED 42074083
+2026-03-10 17:04:47.169 +01:00 [INF] [TraceContext] Trace ID set: 3e5799b4-6657-4696-9715-d7a8a8f9e562
+2026-03-10 17:04:47.169 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 3e5799b4-6657-4696-9715-d7a8a8f9e562
+2026-03-10 17:04:47.169 +01:00 [INF] DbContext CREATED 3250774
+2026-03-10 17:04:47.334 +01:00 [INF] DbContext DISPOSED 3250774
+2026-03-10 17:04:47.933 +01:00 [INF] [TraceContext] Trace ID set: 5a968e0b-a2f0-4d75-8044-08c8faf78ef3
+2026-03-10 17:04:47.933 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 5a968e0b-a2f0-4d75-8044-08c8faf78ef3
+2026-03-10 17:04:47.934 +01:00 [INF] DbContext CREATED 47443300
+2026-03-10 17:04:48.177 +01:00 [INF] DbContext DISPOSED 47443300
+2026-03-10 17:04:48.180 +01:00 [INF] [TraceContext] Trace ID set: 5a968e0b-a2f0-4d75-8044-08c8faf78ef3
+2026-03-10 17:04:48.180 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 5a968e0b-a2f0-4d75-8044-08c8faf78ef3
+2026-03-10 17:04:48.181 +01:00 [INF] DbContext CREATED 33037030
+2026-03-10 17:04:48.389 +01:00 [INF] DbContext DISPOSED 33037030
+2026-03-10 17:04:54.961 +01:00 [INF] [TraceContext] Trace ID set: a5775e42-0f5b-4304-8bf3-7221cd5de275
+2026-03-10 17:04:54.961 +01:00 [INF] [TraceContext] Trace ID set: f600ab4a-f895-4b25-a513-a4cb14dda6d6
+2026-03-10 17:04:54.966 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: a5775e42-0f5b-4304-8bf3-7221cd5de275
+2026-03-10 17:04:54.966 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f600ab4a-f895-4b25-a513-a4cb14dda6d6
+2026-03-10 17:04:54.975 +01:00 [INF] DbContext CREATED 20042524
+2026-03-10 17:04:54.975 +01:00 [INF] DbContext CREATED 25275322
+2026-03-10 17:04:55.201 +01:00 [INF] DbContext DISPOSED 20042524
+2026-03-10 17:04:55.202 +01:00 [INF] [TraceContext] Trace ID set: f600ab4a-f895-4b25-a513-a4cb14dda6d6
+2026-03-10 17:04:55.202 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f600ab4a-f895-4b25-a513-a4cb14dda6d6
+2026-03-10 17:04:55.203 +01:00 [INF] DbContext CREATED 45822009
+2026-03-10 17:04:55.229 +01:00 [INF] DbContext DISPOSED 25275322
+2026-03-10 17:04:55.229 +01:00 [INF] [TraceContext] Trace ID set: a5775e42-0f5b-4304-8bf3-7221cd5de275
+2026-03-10 17:04:55.230 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: a5775e42-0f5b-4304-8bf3-7221cd5de275
+2026-03-10 17:04:55.230 +01:00 [INF] DbContext CREATED 24727653
+2026-03-10 17:04:55.360 +01:00 [INF] DbContext DISPOSED 45822009
+2026-03-10 17:04:55.391 +01:00 [INF] DbContext DISPOSED 24727653
+2026-03-10 17:38:55.909 +01:00 [INF] [TraceContext] Trace ID set: 78b7d5fc-301b-41d8-97cd-ec506c5998fb
+2026-03-10 17:38:56.052 +01:00 [INF] [TraceContext] Trace ID set: d1e71e21-2a5e-40f1-aaf1-9212158616b3
+2026-03-10 17:38:56.088 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 78b7d5fc-301b-41d8-97cd-ec506c5998fb
+2026-03-10 17:38:56.089 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: d1e71e21-2a5e-40f1-aaf1-9212158616b3
+2026-03-10 17:38:56.637 +01:00 [INF] DbContext CREATED 61670055
+2026-03-10 17:38:56.637 +01:00 [INF] DbContext CREATED 42333843
+2026-03-10 17:38:56.935 +01:00 [INF] [TraceContext] Trace ID set: 78b7d5fc-301b-41d8-97cd-ec506c5998fb
+2026-03-10 17:38:56.935 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 78b7d5fc-301b-41d8-97cd-ec506c5998fb
+2026-03-10 17:38:56.938 +01:00 [INF] DbContext CREATED 14655495
+2026-03-10 17:38:56.938 +01:00 [INF] [TraceContext] Trace ID set: 8f624ae4-d8e3-43a7-aafe-850c4e86aad0
+2026-03-10 17:38:56.938 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 8f624ae4-d8e3-43a7-aafe-850c4e86aad0
+2026-03-10 17:38:56.938 +01:00 [INF] DbContext CREATED 41265362
+2026-03-10 17:39:12.249 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 10.100.47.236:5432
+ ---> System.TimeoutException: Timeout during connection attempt
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.<>c__DisplayClass50_0.<ExecuteResolverPipelineAsync>b__0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:39:12.249 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 10.100.47.236:5432
+ ---> System.TimeoutException: The operation has timed out.
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:39:12.249 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 10.100.47.236:5432
+ ---> System.TimeoutException: The operation has timed out.
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:39:12.249 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 10.100.47.236:5432
+ ---> System.TimeoutException: The operation has timed out.
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:39:12.274 +01:00 [INF] DbContext DISPOSED 41265362
+2026-03-10 17:39:12.274 +01:00 [INF] DbContext DISPOSED 14655495
+2026-03-10 17:39:12.274 +01:00 [INF] DbContext DISPOSED 42333843
+2026-03-10 17:39:12.274 +01:00 [INF] DbContext DISPOSED 61670055
+2026-03-10 17:41:50.446 +01:00 [INF] [TraceContext] Trace ID set: 0353e8bb-4168-4133-bacf-84ea7c7d68c9
+2026-03-10 17:41:50.449 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 0353e8bb-4168-4133-bacf-84ea7c7d68c9
+2026-03-10 17:41:50.453 +01:00 [INF] DbContext CREATED 48044185
+2026-03-10 17:42:05.508 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 10.100.47.236:5432
+ ---> System.TimeoutException: The operation has timed out.
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:42:05.522 +01:00 [INF] DbContext DISPOSED 48044185
+2026-03-10 17:42:10.322 +01:00 [INF] [TraceContext] Trace ID set: d474b7bd-89dd-42b3-a9a0-e770c60fa7de
+2026-03-10 17:42:10.325 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: d474b7bd-89dd-42b3-a9a0-e770c60fa7de
+2026-03-10 17:42:10.329 +01:00 [INF] DbContext CREATED 40087530
+2026-03-10 17:42:11.714 +01:00 [INF] DbContext DISPOSED 40087530
+2026-03-10 17:42:11.721 +01:00 [INF] [TraceContext] Trace ID set: d474b7bd-89dd-42b3-a9a0-e770c60fa7de
+2026-03-10 17:42:11.721 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: d474b7bd-89dd-42b3-a9a0-e770c60fa7de
+2026-03-10 17:42:11.727 +01:00 [INF] DbContext CREATED 32246756
+2026-03-10 17:42:11.965 +01:00 [INF] DbContext DISPOSED 32246756
+2026-03-10 17:42:29.662 +01:00 [INF] [TraceContext] Trace ID set: d474b7bd-89dd-42b3-a9a0-e770c60fa7de
+2026-03-10 17:42:29.664 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: d474b7bd-89dd-42b3-a9a0-e770c60fa7de
+2026-03-10 17:42:29.668 +01:00 [INF] DbContext CREATED 23769307
+2026-03-10 17:42:29.948 +01:00 [INF] DbContext DISPOSED 23769307
+2026-03-10 17:42:31.640 +01:00 [INF] [TraceContext] Trace ID set: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:31.640 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:31.641 +01:00 [INF] DbContext CREATED 11573581
+2026-03-10 17:42:31.825 +01:00 [INF] DbContext DISPOSED 11573581
+2026-03-10 17:42:31.849 +01:00 [INF] [TraceContext] Trace ID set: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:31.849 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:31.850 +01:00 [INF] DbContext CREATED 18199545
+2026-03-10 17:42:31.851 +01:00 [INF] DbContext CREATED 37089736
+2026-03-10 17:42:31.852 +01:00 [INF] DbContext CREATED 1543000
+2026-03-10 17:42:31.854 +01:00 [INF] DbContext CREATED 23753936
+2026-03-10 17:42:32.376 +01:00 [INF] DbContext DISPOSED 18199545
+2026-03-10 17:42:32.376 +01:00 [INF] DbContext DISPOSED 37089736
+2026-03-10 17:42:32.376 +01:00 [INF] DbContext DISPOSED 1543000
+2026-03-10 17:42:32.376 +01:00 [INF] DbContext DISPOSED 23753936
+2026-03-10 17:42:32.386 +01:00 [INF] [TraceContext] Trace ID set: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:32.386 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:32.387 +01:00 [INF] DbContext CREATED 45609160
+2026-03-10 17:42:32.425 +01:00 [INF] DbContext DISPOSED 45609160
+2026-03-10 17:42:56.975 +01:00 [INF] [TraceContext] Trace ID set: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:56.976 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:56.990 +01:00 [INF] DbContext CREATED 66837416
+2026-03-10 17:42:57.116 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingStartTime.SetTargetLoadingStartTimeMutation.CallSetTargetLoadingStartTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingStartTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingStartTime/SetTargetLoadingStartTimeMutation.cs:line 47
+2026-03-10 17:42:57.118 +01:00 [INF] DbContext DISPOSED 66837416
+2026-03-10 17:42:57.124 +01:00 [INF] [TraceContext] Trace ID set: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:57.124 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 4b3fadc6-38c3-4ee9-b952-8023629a226e
+2026-03-10 17:42:57.127 +01:00 [INF] DbContext CREATED 34075338
+2026-03-10 17:42:57.250 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingEndTime.SetTargetLoadingEndTimeMutation.CallSetTargetLoadingEndTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingEndTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingEndTime/SetTargetLoadingEndTimeMutation.cs:line 47
+2026-03-10 17:42:57.251 +01:00 [INF] DbContext DISPOSED 34075338
+2026-03-10 17:42:57.290 +01:00 [INF] [TraceContext] Trace ID set: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:42:57.290 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:42:57.294 +01:00 [INF] [TraceCaptureService] Initialized trace: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:42:57.294 +01:00 [INF] [TraceCaptureService] TraceId=e4107f72-32ae-460c-9c7c-d506f8836784, CapturePoint=CP-TB-1, Component=TMS-Bridge, Label=GetXserverDto GraphQL query entry, Timestamp="2026-03-10T16:42:57.2933480Z"
+2026-03-10 17:42:57.295 +01:00 [INF] DbContext CREATED 29072261
+2026-03-10 17:42:57.905 +01:00 [INF] [TraceCaptureService] TraceId=e4107f72-32ae-460c-9c7c-d506f8836784, CapturePoint=CP-TB-1-Complete, Component=TMS-Bridge, Label=GetXserverDto completed, Timestamp="2026-03-10T16:42:57.9052580Z"
+2026-03-10 17:42:57.907 +01:00 [INF] DbContext DISPOSED 29072261
+2026-03-10 17:43:04.931 +01:00 [INF] [TraceContext] Trace ID set: c2eef77e-aabf-4007-9fab-d7e8deedf4c7
+2026-03-10 17:43:04.932 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: c2eef77e-aabf-4007-9fab-d7e8deedf4c7
+2026-03-10 17:43:04.933 +01:00 [INF] DbContext CREATED 31276277
+2026-03-10 17:43:05.264 +01:00 [INF] DbContext DISPOSED 31276277
+2026-03-10 17:43:05.268 +01:00 [INF] [TraceContext] Trace ID set: c2eef77e-aabf-4007-9fab-d7e8deedf4c7
+2026-03-10 17:43:05.268 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: c2eef77e-aabf-4007-9fab-d7e8deedf4c7
+2026-03-10 17:43:05.270 +01:00 [INF] DbContext CREATED 5580609
+2026-03-10 17:43:05.473 +01:00 [INF] DbContext DISPOSED 5580609
+2026-03-10 17:43:14.886 +01:00 [INF] [TraceContext] Trace ID set: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:43:14.887 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:43:14.890 +01:00 [INF] [TraceCaptureService] TraceId=e4107f72-32ae-460c-9c7c-d506f8836784, CapturePoint=CP-TB-2, Component=TMS-Bridge, Label=SetXserverDto GraphQL mutation entry, Timestamp="2026-03-10T16:43:14.8903700Z"
+2026-03-10 17:43:14.890 +01:00 [INF] DbContext CREATED 1923568
+2026-03-10 17:43:15.224 +01:00 [INF] [TraceCaptureService] TraceId=e4107f72-32ae-460c-9c7c-d506f8836784, CapturePoint=CP-TB-2-Complete, Component=TMS-Bridge, Label=SetXserverDto completed successfully, Timestamp="2026-03-10T16:43:15.2247350Z"
+2026-03-10 17:43:15.227 +01:00 [INF] DbContext DISPOSED 1923568
+2026-03-10 17:43:15.291 +01:00 [INF] [TraceContext] Trace ID set: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:43:15.291 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:43:15.292 +01:00 [INF] DbContext CREATED 39657227
+2026-03-10 17:43:15.399 +01:00 [INF] DbContext DISPOSED 39657227
+2026-03-10 17:43:15.402 +01:00 [INF] [TraceContext] Trace ID set: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:43:15.403 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:43:15.403 +01:00 [INF] DbContext CREATED 43232397
+2026-03-10 17:43:15.404 +01:00 [INF] DbContext CREATED 65375789
+2026-03-10 17:43:15.405 +01:00 [INF] DbContext CREATED 57596438
+2026-03-10 17:43:15.406 +01:00 [INF] DbContext CREATED 64026376
+2026-03-10 17:43:15.653 +01:00 [INF] DbContext DISPOSED 43232397
+2026-03-10 17:43:15.654 +01:00 [INF] DbContext DISPOSED 65375789
+2026-03-10 17:43:15.654 +01:00 [INF] DbContext DISPOSED 57596438
+2026-03-10 17:43:15.654 +01:00 [INF] DbContext DISPOSED 64026376
+2026-03-10 17:43:15.657 +01:00 [INF] [TraceContext] Trace ID set: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:43:15.657 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e4107f72-32ae-460c-9c7c-d506f8836784
+2026-03-10 17:43:15.658 +01:00 [INF] DbContext CREATED 63981122
+2026-03-10 17:43:15.694 +01:00 [INF] DbContext DISPOSED 63981122
+2026-03-10 17:43:22.944 +01:00 [INF] [TraceContext] Trace ID set: d0c27efe-60b7-4cd4-b4f3-d9929a459752
+2026-03-10 17:43:22.946 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: d0c27efe-60b7-4cd4-b4f3-d9929a459752
+2026-03-10 17:43:22.946 +01:00 [INF] DbContext CREATED 4929381
+2026-03-10 17:43:23.144 +01:00 [INF] DbContext DISPOSED 4929381
+2026-03-10 17:43:23.147 +01:00 [INF] [TraceContext] Trace ID set: d0c27efe-60b7-4cd4-b4f3-d9929a459752
+2026-03-10 17:43:23.147 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: d0c27efe-60b7-4cd4-b4f3-d9929a459752
+2026-03-10 17:43:23.148 +01:00 [INF] DbContext CREATED 32741935
+2026-03-10 17:43:23.330 +01:00 [INF] DbContext DISPOSED 32741935
+2026-03-10 17:50:37.091 +01:00 [INF] [TraceContext] Trace ID set: fb82c36b-8ae2-4442-89a1-ebcaff9b03ae
+2026-03-10 17:50:37.092 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: fb82c36b-8ae2-4442-89a1-ebcaff9b03ae
+2026-03-10 17:50:37.094 +01:00 [INF] DbContext CREATED 25471591
+2026-03-10 17:50:37.662 +01:00 [INF] DbContext DISPOSED 25471591
+2026-03-10 17:50:37.688 +01:00 [INF] [TraceContext] Trace ID set: fb82c36b-8ae2-4442-89a1-ebcaff9b03ae
+2026-03-10 17:50:37.688 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: fb82c36b-8ae2-4442-89a1-ebcaff9b03ae
+2026-03-10 17:50:37.688 +01:00 [INF] DbContext CREATED 4519083
+2026-03-10 17:50:37.689 +01:00 [INF] DbContext CREATED 21458870
+2026-03-10 17:50:37.690 +01:00 [INF] DbContext CREATED 21463788
+2026-03-10 17:50:37.690 +01:00 [INF] DbContext CREATED 67007493
+2026-03-10 17:50:38.004 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Exception while reading from stream
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.<>c__DisplayClass50_0.<ExecuteResolverPipelineAsync>b__0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:50:38.008 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Exception while reading from stream
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.<>c__DisplayClass50_0.<ExecuteResolverPipelineAsync>b__0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:50:38.031 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Exception while performing SSL handshake
+ ---> System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.<>c__DisplayClass50_0.<ExecuteResolverPipelineAsync>b__0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:50:38.093 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Exception while reading from stream
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.<>c__DisplayClass50_0.<ExecuteResolverPipelineAsync>b__0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:50:38.094 +01:00 [INF] DbContext DISPOSED 4519083
+2026-03-10 17:50:38.094 +01:00 [INF] DbContext DISPOSED 21458870
+2026-03-10 17:50:38.094 +01:00 [INF] DbContext DISPOSED 21463788
+2026-03-10 17:50:38.094 +01:00 [INF] DbContext DISPOSED 67007493
+2026-03-10 17:50:53.940 +01:00 [INF] [TraceContext] Trace ID set: fb82c36b-8ae2-4442-89a1-ebcaff9b03ae
+2026-03-10 17:50:53.942 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: fb82c36b-8ae2-4442-89a1-ebcaff9b03ae
+2026-03-10 17:50:53.957 +01:00 [INF] DbContext CREATED 31842875
+2026-03-10 17:50:54.023 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Exception while reading from stream
+ ---> System.IO.IOException: Unable to read data from the transport connection: Connection reset by peer.
+ ---> System.Net.Sockets.SocketException (54): Connection reset by peer
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:50:54.026 +01:00 [INF] DbContext DISPOSED 31842875
+2026-03-10 17:52:48.063 +01:00 [INF] [TraceContext] Trace ID set: c91fc4ad-f8f7-4c03-8f4e-a3df2d8e61d6
+2026-03-10 17:52:48.066 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: c91fc4ad-f8f7-4c03-8f4e-a3df2d8e61d6
+2026-03-10 17:52:48.071 +01:00 [INF] DbContext CREATED 30348955
+2026-03-10 17:52:48.141 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Exception while reading from stream
+ ---> System.IO.IOException: Unable to read data from the transport connection: Connection reset by peer.
+ ---> System.Net.Sockets.SocketException (54): Connection reset by peer
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:52:48.146 +01:00 [INF] DbContext DISPOSED 30348955
+2026-03-10 17:53:51.005 +01:00 [INF] [TraceContext] Trace ID set: d0562049-8c75-415a-b8a7-f5f09db53bd6
+2026-03-10 17:53:51.011 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: d0562049-8c75-415a-b8a7-f5f09db53bd6
+2026-03-10 17:53:51.028 +01:00 [INF] DbContext CREATED 39174495
+2026-03-10 17:53:51.083 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Exception while reading from stream
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 17:53:51.086 +01:00 [INF] DbContext DISPOSED 39174495
+2026-03-10 18:03:33.331 +01:00 [INF] [TraceContext] Trace ID set: ddfdf9e8-64ed-422c-9b53-42756946470b
+2026-03-10 18:03:33.332 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: ddfdf9e8-64ed-422c-9b53-42756946470b
+2026-03-10 18:03:33.338 +01:00 [INF] DbContext CREATED 21151702
+2026-03-10 18:03:33.414 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Exception while reading from stream
+ ---> System.IO.IOException: Unable to read data from the transport connection: Connection reset by peer.
+ ---> System.Net.Sockets.SocketException (54): Connection reset by peer
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 18:03:33.423 +01:00 [INF] DbContext DISPOSED 21151702
+2026-03-10 18:05:26.898 +01:00 [INF] [TraceContext] Trace ID set: 76f67f12-a184-48c4-af21-2210163dfaeb
+2026-03-10 18:05:26.899 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 76f67f12-a184-48c4-af21-2210163dfaeb
+2026-03-10 18:05:26.904 +01:00 [INF] DbContext CREATED 31033164
+2026-03-10 18:05:26.970 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Exception while reading from stream
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at Npgsql.Internal.NpgsqlReadBuffer.<Ensure>g__EnsureLong|55_0(NpgsqlReadBuffer buffer, Int32 count, Boolean async, Boolean readingNotifications)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CALConsult.TMSBridge.API.GraphQL.Queries.TransportOrdersGroupedQuery.TransportOrdersGroupedQuery.GetGroupedTransportOrdersAsync(Int32 skip, Int32 take, DateTime startDepartureDate, DateTime endDepartureDate, String databaseIdentifier, IDbContextProvider`1 dbContextProvider) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Queries/TransportOrdersGroupedQuery/TransportOrdersGroupedQuery.cs:line 30
+   at HotChocolate.Resolvers.Expressions.ExpressionHelper.AwaitTaskHelper[T](Task`1 task)
+   at HotChocolate.Types.Helpers.FieldMiddlewareCompiler.<>c__DisplayClass9_0.<<CreateResolverMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 18:05:26.978 +01:00 [INF] DbContext DISPOSED 31033164
+2026-03-10 18:22:56.061 +01:00 [INF] [TraceContext] Trace ID set: 137e67a0-8c65-4cc4-aa62-3b023e483abc
+2026-03-10 18:22:56.063 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 137e67a0-8c65-4cc4-aa62-3b023e483abc
+2026-03-10 18:22:56.095 +01:00 [INF] DbContext CREATED 44989217
+2026-03-10 18:22:56.845 +01:00 [INF] DbContext DISPOSED 44989217
+2026-03-10 18:22:56.865 +01:00 [INF] [TraceContext] Trace ID set: 137e67a0-8c65-4cc4-aa62-3b023e483abc
+2026-03-10 18:22:56.865 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 137e67a0-8c65-4cc4-aa62-3b023e483abc
+2026-03-10 18:22:56.865 +01:00 [INF] DbContext CREATED 50602964
+2026-03-10 18:22:57.202 +01:00 [INF] DbContext DISPOSED 50602964
+2026-03-10 18:23:07.408 +01:00 [INF] [TraceContext] Trace ID set: 137e67a0-8c65-4cc4-aa62-3b023e483abc
+2026-03-10 18:23:07.409 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 137e67a0-8c65-4cc4-aa62-3b023e483abc
+2026-03-10 18:23:07.410 +01:00 [INF] DbContext CREATED 47435436
+2026-03-10 18:23:07.483 +01:00 [INF] DbContext DISPOSED 47435436
+2026-03-10 18:23:09.148 +01:00 [INF] [TraceContext] Trace ID set: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:09.149 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:09.149 +01:00 [INF] DbContext CREATED 66693590
+2026-03-10 18:23:09.789 +01:00 [INF] DbContext DISPOSED 66693590
+2026-03-10 18:23:09.794 +01:00 [INF] [TraceContext] Trace ID set: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:09.794 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:09.796 +01:00 [INF] DbContext CREATED 20540129
+2026-03-10 18:23:09.798 +01:00 [INF] DbContext CREATED 31471729
+2026-03-10 18:23:09.800 +01:00 [INF] DbContext CREATED 18107467
+2026-03-10 18:23:09.802 +01:00 [INF] DbContext CREATED 51892339
+2026-03-10 18:23:10.321 +01:00 [INF] DbContext DISPOSED 20540129
+2026-03-10 18:23:10.321 +01:00 [INF] DbContext DISPOSED 31471729
+2026-03-10 18:23:10.321 +01:00 [INF] DbContext DISPOSED 18107467
+2026-03-10 18:23:10.321 +01:00 [INF] DbContext DISPOSED 51892339
+2026-03-10 18:23:10.348 +01:00 [INF] [TraceContext] Trace ID set: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:10.348 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:10.348 +01:00 [INF] DbContext CREATED 9705213
+2026-03-10 18:23:10.383 +01:00 [INF] DbContext DISPOSED 9705213
+2026-03-10 18:23:37.298 +01:00 [INF] [TraceContext] Trace ID set: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:37.303 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:37.332 +01:00 [INF] DbContext CREATED 28291408
+2026-03-10 18:23:37.543 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingStartTime.SetTargetLoadingStartTimeMutation.CallSetTargetLoadingStartTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingStartTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingStartTime/SetTargetLoadingStartTimeMutation.cs:line 47
+2026-03-10 18:23:37.547 +01:00 [INF] DbContext DISPOSED 28291408
+2026-03-10 18:23:37.553 +01:00 [INF] [TraceContext] Trace ID set: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:37.553 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 76999155-ad68-470b-a5b2-db13c1dc3fe5
+2026-03-10 18:23:37.553 +01:00 [INF] DbContext CREATED 6215765
+2026-03-10 18:23:37.635 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingEndTime.SetTargetLoadingEndTimeMutation.CallSetTargetLoadingEndTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingEndTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingEndTime/SetTargetLoadingEndTimeMutation.cs:line 47
+2026-03-10 18:23:37.636 +01:00 [INF] DbContext DISPOSED 6215765
+2026-03-10 18:23:37.684 +01:00 [INF] [TraceContext] Trace ID set: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:37.684 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:37.684 +01:00 [INF] [TraceCaptureService] Initialized trace: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:37.684 +01:00 [INF] [TraceCaptureService] TraceId=6837d454-6b09-41d5-be55-be6316e3790d, CapturePoint=CP-TB-1, Component=TMS-Bridge, Label=GetXserverDto GraphQL query entry, Timestamp="2026-03-10T17:23:37.6848500Z"
+2026-03-10 18:23:37.685 +01:00 [INF] DbContext CREATED 38940830
+2026-03-10 18:23:38.644 +01:00 [INF] [TraceCaptureService] TraceId=6837d454-6b09-41d5-be55-be6316e3790d, CapturePoint=CP-TB-1-Complete, Component=TMS-Bridge, Label=GetXserverDto completed, Timestamp="2026-03-10T17:23:38.6444870Z"
+2026-03-10 18:23:38.646 +01:00 [INF] DbContext DISPOSED 38940830
+2026-03-10 18:23:44.711 +01:00 [INF] [TraceContext] Trace ID set: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:44.712 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:44.712 +01:00 [INF] [TraceCaptureService] TraceId=6837d454-6b09-41d5-be55-be6316e3790d, CapturePoint=CP-TB-2, Component=TMS-Bridge, Label=SetXserverDto GraphQL mutation entry, Timestamp="2026-03-10T17:23:44.7125220Z"
+2026-03-10 18:23:44.712 +01:00 [INF] DbContext CREATED 36564993
+2026-03-10 18:23:45.398 +01:00 [INF] [TraceContext] Trace ID set: 59d91de5-3ae7-4f87-870f-e2e8c901fcda
+2026-03-10 18:23:45.399 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 59d91de5-3ae7-4f87-870f-e2e8c901fcda
+2026-03-10 18:23:45.399 +01:00 [INF] DbContext CREATED 13853932
+2026-03-10 18:23:45.499 +01:00 [INF] [TraceCaptureService] TraceId=6837d454-6b09-41d5-be55-be6316e3790d, CapturePoint=CP-TB-2-Complete, Component=TMS-Bridge, Label=SetXserverDto completed successfully, Timestamp="2026-03-10T17:23:45.4992800Z"
+2026-03-10 18:23:45.500 +01:00 [INF] DbContext DISPOSED 36564993
+2026-03-10 18:23:45.568 +01:00 [INF] [TraceContext] Trace ID set: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:45.568 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:45.568 +01:00 [INF] DbContext CREATED 13327391
+2026-03-10 18:23:45.896 +01:00 [INF] DbContext DISPOSED 13327391
+2026-03-10 18:23:45.897 +01:00 [INF] [TraceContext] Trace ID set: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:45.897 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:45.897 +01:00 [INF] DbContext CREATED 17156449
+2026-03-10 18:23:45.898 +01:00 [INF] DbContext CREATED 55050482
+2026-03-10 18:23:45.899 +01:00 [INF] DbContext CREATED 31791092
+2026-03-10 18:23:45.899 +01:00 [INF] DbContext CREATED 10453069
+2026-03-10 18:23:46.000 +01:00 [INF] DbContext DISPOSED 13853932
+2026-03-10 18:23:46.001 +01:00 [INF] [TraceContext] Trace ID set: 59d91de5-3ae7-4f87-870f-e2e8c901fcda
+2026-03-10 18:23:46.001 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 59d91de5-3ae7-4f87-870f-e2e8c901fcda
+2026-03-10 18:23:46.002 +01:00 [INF] DbContext CREATED 65504840
+2026-03-10 18:23:46.357 +01:00 [INF] DbContext DISPOSED 65504840
+2026-03-10 18:23:46.560 +01:00 [INF] DbContext DISPOSED 17156449
+2026-03-10 18:23:46.560 +01:00 [INF] DbContext DISPOSED 55050482
+2026-03-10 18:23:46.560 +01:00 [INF] DbContext DISPOSED 31791092
+2026-03-10 18:23:46.560 +01:00 [INF] DbContext DISPOSED 10453069
+2026-03-10 18:23:46.567 +01:00 [INF] [TraceContext] Trace ID set: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:46.567 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 6837d454-6b09-41d5-be55-be6316e3790d
+2026-03-10 18:23:46.568 +01:00 [INF] DbContext CREATED 62990912
+2026-03-10 18:23:46.730 +01:00 [INF] DbContext DISPOSED 62990912
+2026-03-10 18:23:53.393 +01:00 [INF] [TraceContext] Trace ID set: 56d859f7-cb2d-49fa-b53f-fcc60ef16390
+2026-03-10 18:23:53.393 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 56d859f7-cb2d-49fa-b53f-fcc60ef16390
+2026-03-10 18:23:53.395 +01:00 [INF] DbContext CREATED 28975790
+2026-03-10 18:23:53.782 +01:00 [INF] DbContext DISPOSED 28975790
+2026-03-10 18:23:53.784 +01:00 [INF] [TraceContext] Trace ID set: 56d859f7-cb2d-49fa-b53f-fcc60ef16390
+2026-03-10 18:23:53.784 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 56d859f7-cb2d-49fa-b53f-fcc60ef16390
+2026-03-10 18:23:53.785 +01:00 [INF] DbContext CREATED 49257367
+2026-03-10 18:23:54.070 +01:00 [INF] DbContext DISPOSED 49257367
+2026-03-10 18:44:10.055 +01:00 [INF] [TraceContext] Trace ID set: 9d104162-3c62-466a-9b12-62f7f1a789a6
+2026-03-10 18:44:10.057 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: 9d104162-3c62-466a-9b12-62f7f1a789a6
+2026-03-10 18:44:10.061 +01:00 [INF] DbContext CREATED 65274863
+2026-03-10 18:44:25.101 +01:00 [ERR] TMS Bridge error ocurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 10.100.47.236:5432
+ ---> System.TimeoutException: Timeout during connection attempt
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.<>c__DisplayClass50_0.<ExecuteResolverPipelineAsync>b__0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.ExecuteResolverPipelineAsync(CancellationToken cancellationToken)
+   at HotChocolate.Execution.Processing.Tasks.ResolverTask.TryExecuteAsync(CancellationToken cancellationToken)
+2026-03-10 18:44:25.108 +01:00 [INF] DbContext DISPOSED 65274863
+2026-03-10 18:44:37.356 +01:00 [INF] [TraceContext] Trace ID set: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:37.357 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:37.363 +01:00 [INF] DbContext CREATED 64955736
+2026-03-10 18:44:37.818 +01:00 [INF] DbContext DISPOSED 64955736
+2026-03-10 18:44:37.821 +01:00 [INF] [TraceContext] Trace ID set: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:37.821 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:37.823 +01:00 [INF] DbContext CREATED 59240097
+2026-03-10 18:44:37.827 +01:00 [INF] DbContext CREATED 35708723
+2026-03-10 18:44:37.829 +01:00 [INF] DbContext CREATED 57126085
+2026-03-10 18:44:37.833 +01:00 [INF] DbContext CREATED 14612839
+2026-03-10 18:44:38.106 +01:00 [INF] DbContext DISPOSED 59240097
+2026-03-10 18:44:38.106 +01:00 [INF] DbContext DISPOSED 35708723
+2026-03-10 18:44:38.106 +01:00 [INF] DbContext DISPOSED 57126085
+2026-03-10 18:44:38.106 +01:00 [INF] DbContext DISPOSED 14612839
+2026-03-10 18:44:38.108 +01:00 [INF] [TraceContext] Trace ID set: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:38.108 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:38.108 +01:00 [INF] DbContext CREATED 13334478
+2026-03-10 18:44:38.152 +01:00 [INF] DbContext DISPOSED 13334478
+2026-03-10 18:44:59.420 +01:00 [INF] [TraceContext] Trace ID set: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:59.420 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:59.423 +01:00 [INF] DbContext CREATED 25764916
+2026-03-10 18:44:59.581 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingStartTime.SetTargetLoadingStartTimeMutation.CallSetTargetLoadingStartTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingStartTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingStartTime/SetTargetLoadingStartTimeMutation.cs:line 47
+2026-03-10 18:44:59.587 +01:00 [INF] DbContext DISPOSED 25764916
+2026-03-10 18:44:59.590 +01:00 [INF] [TraceContext] Trace ID set: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:59.590 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: fdaa042c-b511-4bfb-9b05-0c9f570a2891
+2026-03-10 18:44:59.591 +01:00 [INF] DbContext CREATED 55829167
+2026-03-10 18:44:59.788 +01:00 [ERR] P0001: 20000 case not found
+System.InvalidOperationException: P0001: 20000 case not found
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 93
+   at CALConsult.TMSBridge.API.Services.RoutineExecutor.ExecuteRoutineAsync(DbContext dbContext, String operationType, RoutineDto routine) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/Services/RoutineExecutor.cs:line 101
+   at CALConsult.TMSBridge.API.GraphQL.Mutations.PdisTourPoint.SetTargetLoadingEndTime.SetTargetLoadingEndTimeMutation.CallSetTargetLoadingEndTime(IRoutineExecutor executor, IDbContextProvider`1 dbContextProvider, String databaseIdentifier, SetTargetLoadingEndTimeInput input) in /Users/matthiasmax/Documents/CAL Consult/Virtual Architect - New Dispo/Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/GraphQL/Mutations/PdisTourPoint/SetTargetLoadingEndTime/SetTargetLoadingEndTimeMutation.cs:line 47
+2026-03-10 18:44:59.789 +01:00 [INF] DbContext DISPOSED 55829167
+2026-03-10 18:44:59.808 +01:00 [INF] [TraceContext] Trace ID set: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:44:59.808 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:44:59.808 +01:00 [INF] [TraceCaptureService] Initialized trace: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:44:59.808 +01:00 [INF] [TraceCaptureService] TraceId=e86fb4e5-f246-4250-b53a-39b8ad8baada, CapturePoint=CP-TB-1, Component=TMS-Bridge, Label=GetXserverDto GraphQL query entry, Timestamp="2026-03-10T17:44:59.8086110Z"
+2026-03-10 18:44:59.809 +01:00 [INF] DbContext CREATED 64415392
+2026-03-10 18:45:00.334 +01:00 [INF] [TraceCaptureService] TraceId=e86fb4e5-f246-4250-b53a-39b8ad8baada, CapturePoint=CP-TB-1-Complete, Component=TMS-Bridge, Label=GetXserverDto completed, Timestamp="2026-03-10T17:45:00.3343960Z"
+2026-03-10 18:45:00.335 +01:00 [INF] DbContext DISPOSED 64415392
+2026-03-10 18:45:06.323 +01:00 [INF] [TraceContext] Trace ID set: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:45:06.323 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:45:06.324 +01:00 [INF] [TraceCaptureService] TraceId=e86fb4e5-f246-4250-b53a-39b8ad8baada, CapturePoint=CP-TB-2, Component=TMS-Bridge, Label=SetXserverDto GraphQL mutation entry, Timestamp="2026-03-10T17:45:06.3241730Z"
+2026-03-10 18:45:06.324 +01:00 [INF] DbContext CREATED 15040980
+2026-03-10 18:45:06.901 +01:00 [INF] [TraceCaptureService] TraceId=e86fb4e5-f246-4250-b53a-39b8ad8baada, CapturePoint=CP-TB-2-Complete, Component=TMS-Bridge, Label=SetXserverDto completed successfully, Timestamp="2026-03-10T17:45:06.9016480Z"
+2026-03-10 18:45:06.902 +01:00 [INF] DbContext DISPOSED 15040980
+2026-03-10 18:45:06.918 +01:00 [INF] [TraceContext] Trace ID set: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:45:06.918 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:45:06.919 +01:00 [INF] DbContext CREATED 5373200
+2026-03-10 18:45:07.170 +01:00 [INF] DbContext DISPOSED 5373200
+2026-03-10 18:45:07.172 +01:00 [INF] [TraceContext] Trace ID set: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:45:07.172 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:45:07.173 +01:00 [INF] DbContext CREATED 23421622
+2026-03-10 18:45:07.174 +01:00 [INF] DbContext CREATED 2104588
+2026-03-10 18:45:07.175 +01:00 [INF] DbContext CREATED 46724888
+2026-03-10 18:45:07.175 +01:00 [INF] DbContext CREATED 48445646
+2026-03-10 18:45:07.386 +01:00 [INF] [TraceContext] Trace ID set: da62f17d-5bb0-4f4b-90bc-e95c874cc472
+2026-03-10 18:45:07.386 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: da62f17d-5bb0-4f4b-90bc-e95c874cc472
+2026-03-10 18:45:07.386 +01:00 [INF] DbContext CREATED 30029646
+2026-03-10 18:45:07.525 +01:00 [INF] DbContext DISPOSED 23421622
+2026-03-10 18:45:07.525 +01:00 [INF] DbContext DISPOSED 2104588
+2026-03-10 18:45:07.525 +01:00 [INF] DbContext DISPOSED 46724888
+2026-03-10 18:45:07.525 +01:00 [INF] DbContext DISPOSED 48445646
+2026-03-10 18:45:07.526 +01:00 [INF] [TraceContext] Trace ID set: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:45:07.526 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: e86fb4e5-f246-4250-b53a-39b8ad8baada
+2026-03-10 18:45:07.527 +01:00 [INF] DbContext CREATED 4283770
+2026-03-10 18:45:07.579 +01:00 [INF] DbContext DISPOSED 4283770
+2026-03-10 18:45:07.695 +01:00 [INF] DbContext DISPOSED 30029646
+2026-03-10 18:45:07.696 +01:00 [INF] [TraceContext] Trace ID set: da62f17d-5bb0-4f4b-90bc-e95c874cc472
+2026-03-10 18:45:07.696 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: da62f17d-5bb0-4f4b-90bc-e95c874cc472
+2026-03-10 18:45:07.696 +01:00 [INF] DbContext CREATED 27172270
+2026-03-10 18:45:07.904 +01:00 [INF] DbContext DISPOSED 27172270
+2026-03-10 18:45:14.396 +01:00 [INF] [TraceContext] Trace ID set: f369314a-f84b-4706-bc35-2db4548863ad
+2026-03-10 18:45:14.397 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f369314a-f84b-4706-bc35-2db4548863ad
+2026-03-10 18:45:14.400 +01:00 [INF] DbContext CREATED 2790407
+2026-03-10 18:45:14.736 +01:00 [INF] DbContext DISPOSED 2790407
+2026-03-10 18:45:14.737 +01:00 [INF] [TraceContext] Trace ID set: f369314a-f84b-4706-bc35-2db4548863ad
+2026-03-10 18:45:14.737 +01:00 [INF] [TraceContextRequestMiddleware] GraphQL request received with trace ID: f369314a-f84b-4706-bc35-2db4548863ad
+2026-03-10 18:45:14.737 +01:00 [INF] DbContext CREATED 36412043
+2026-03-10 18:45:14.950 +01:00 [INF] DbContext DISPOSED 36412043

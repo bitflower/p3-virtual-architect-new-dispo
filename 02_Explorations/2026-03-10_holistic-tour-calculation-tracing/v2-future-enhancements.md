@@ -14,6 +14,17 @@ This document outlines potential future enhancements that would extend tracing i
 
 **Important:** These enhancements require coordination with external teams (CAL for TOP, database team for schema changes) and should only be pursued after V1 demonstrates value.
 
+### ⚠️ Non-Blocking Constraint Applies to V2
+
+All V2 enhancements MUST follow the same non-blocking architecture as V1:
+
+- Database stored procedures: Use `EXCEPTION WHEN OTHERS THEN` to suppress trace failures
+- TOP Service: Wrap all trace calls in try-catch, never throw
+- Background processing: Use channels, queues, or fire-and-forget patterns
+- Never impact main transaction or business flow
+
+**Rule:** If tracing fails, the main operation continues successfully. This applies to ALL components, including database and external services.
+
 ## Why V2?
 
 V1 gives you visibility at **your component boundaries**. V2 would add visibility **inside external components**.

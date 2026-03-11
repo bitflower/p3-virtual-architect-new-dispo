@@ -1,0 +1,16 @@
+Frontend Console Log - Trace ID: 6837d454-6b09-41d5-be55-be6316e3790d
+================================================================================
+
+[TraceIdService] Generated new trace ID: 6837d454-6b09-41d5-be55-be6316e3790d
+
+[CalculateRoutesService] Starting tour calculation for order 10340432603203 with trace ID: 6837d454-6b09-41d5-be55-be6316e3790d
+
+[TraceCaptureService] Initialized trace: 6837d454-6b09-41d5-be55-be6316e3790d
+
+[TraceCaptureService] {"traceId":"6837d454-6b09-41d5-be55-be6316e3790d","capturePointId":"CP-FE-1","component":"Frontend","label":"Calculate routes request initiated","timestamp":"2026-03-10T17:23:37.654Z"}
+
+[TraceCaptureService] Trace completed: 6837d454-6b09-41d5-be55-be6316e3790d, duration: 0ms, points: 1
+
+[CalculateRoutesService] Tour calculation completed for order 10340432603203, trace ID: 6837d454-6b09-41d5-be55-be6316e3790d, duration: 7895ms
+
+[TraceCaptureService] {"traceId":"6837d454-6b09-41d5-be55-be6316e3790d","capturePointId":"CP-FE-2","component":"Frontend","label":"Calculate routes response received - Success","timestamp":"2026-03-10T17:23:45.549Z","durationMs":7895}
