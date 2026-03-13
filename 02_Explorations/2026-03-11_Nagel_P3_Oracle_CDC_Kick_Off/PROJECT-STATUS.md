@@ -35,18 +35,14 @@
 
 ### 🔄 In Progress
 - [ ] Datastream setup in WL5 (P3 responsibility)
-- [ ] Oracle prerequisites setup (ARCHIVELOG, LogMiner, CDC user)
-- [ ] Character set compatibility investigation
-- [ ] Manual insert trigger into sending table (post-datastream enablement)
+- [ ] Oracle prerequisites setup (ARCHIVELOG, LogMiner, CDC user, Nagel IT responsibility)
 
 ### ⏳ Next Up
 - Workshop execution (March 16)
+- Manual insert trigger into sending table (post-datastream enablement)
+- Character set compatibility investigation
 - Parallel POC testing (Striim + Datastream)
 - Load testing with OMS order duplication (1 week duration)
-
-### Blockers
-1. **Connection details handoff** - TMS1034 Oracle connection ready, need to identify P3 contact for receiving details
-2. **Oracle prerequisites** - LogMiner setup and supplemental logging needed for Datastream
 
 ---
 
