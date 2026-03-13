@@ -1,4 +1,7 @@
-Generiert von KI. Achten Sie darauf, die Genauigkeit zu überprüfen.
+# 2026-03-10 Vorbereitung Kick-Off Call
+
+Teilnehmer: Martin Dittmann, Matthias Max
+
 Besprechungsnotizen:
 Planung und Vorbereitung des Go-Live-Prozesses für B.O.C.: 
 Matthias und Martin besprachen die Integration der Go-Live-Thematik in die B.O.C.-Objectives, die Erstellung einer präsentierbaren Übersicht der Abhängigkeiten und Aufgaben sowie die Notwendigkeit, die verschiedenen technischen Optionen und deren Anforderungen klar zu strukturieren.
