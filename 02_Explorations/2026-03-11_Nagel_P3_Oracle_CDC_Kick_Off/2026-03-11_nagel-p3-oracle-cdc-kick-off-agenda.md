@@ -3,6 +3,8 @@
 **Date:** 2026-03-11
 **Status:** Exploration
 
+Link: https://teams.microsoft.com/meet/39050326979606?p=6txN2RVcQCVGEmqpuZ
+
 ---
 
 ## Original User Input

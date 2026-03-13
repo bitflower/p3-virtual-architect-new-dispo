@@ -8,8 +8,8 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILLS_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-UPDATE_REPOS_SCRIPT="$SKILLS_DIR/update-repos/update-repos.sh"
-UPDATE_WIKIS_SCRIPT="$SKILLS_DIR/update-wikis/update-wikis.sh"
+UPDATE_REPOS_SCRIPT="$SKILLS_DIR/update-repos/skill.sh"
+UPDATE_WIKIS_SCRIPT="$SKILLS_DIR/update-wikis/skill.sh"
 
 echo "═══════════════════════════════════════════════════════════"
 echo "  Updating All Repositories and Wikis (Parallel)"

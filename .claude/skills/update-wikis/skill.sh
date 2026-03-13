@@ -6,7 +6,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../../.." && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 WIKI_DIR="$PROJECT_ROOT/WIKI"
 
 echo "═══════════════════════════════════════════════════════════"
@@ -52,9 +52,11 @@ for dir in */; do
         continue
     fi
 
-    # Determine branch (master or main)
+    # Determine branch (wikiMaster, master, or main)
     BRANCH=""
-    if git rev-parse --verify origin/master >/dev/null 2>&1; then
+    if git rev-parse --verify origin/wikiMaster >/dev/null 2>&1; then
+        BRANCH="wikiMaster"
+    elif git rev-parse --verify origin/master >/dev/null 2>&1; then
         BRANCH="master"
     elif git rev-parse --verify origin/main >/dev/null 2>&1; then
         BRANCH="main"

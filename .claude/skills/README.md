@@ -109,6 +109,139 @@ trace-logs/
 - See `02_Explorations/2026-03-10_holistic-tour-calculation-tracing/trace-logs/HOW-TO-EXTRACT-TRACES.md`
 - See `.claude/skills/extract-trace/README.md` for detailed usage
 
+---
+
+### `/project-manager` - Manage Living Project Documentation
+
+Creates and manages living project documentation that stays current as work progresses.
+
+**Usage:**
+```bash
+# Create new project
+/project-manager create "<project-name>" "<exploration-folder>"
+
+# Update project status
+/project-manager update <project-file> --status "<status>"
+
+# Add completed item
+/project-manager add <project-file> --section completed --item "<description>" [--link "<file>"]
+
+# Add in-progress item
+/project-manager add <project-file> --section in-progress --item "<description>"
+
+# Add next-up item
+/project-manager add <project-file> --section next-up --item "<description>"
+
+# Add blocker
+/project-manager add <project-file> --section blockers --item "<description>"
+```
+
+**Examples:**
+```bash
+/project-manager create "Oracle CDC POC" "02_Explorations/2026-03-11_Nagel_P3_Oracle_CDC_Kick_Off"
+/project-manager update PROJECT-STATUS.md --status "In Progress"
+/project-manager add PROJECT-STATUS.md --section completed --item "GCP infrastructure provisioned"
+```
+
+**What it does:**
+1. Creates PROJECT-STATUS.md from template with all sections
+2. Tracks current status, milestones, and timeline
+3. Manages team assignments and stakeholders
+4. Links related documentation and meeting notes
+5. Maintains automatic change log with timestamps
+6. Uses minimal emojis (only 🎯 ✅ 🔄 ⏳)
+
+**Features:**
+- Template-based creation with standard structure
+- Status management (In Progress, Completed, On Hold)
+- Item tracking across completed/in-progress/next-up sections
+- Automatic timestamp and change log updates
+- Calendar week tracking for completed items (CW XX)
+- Integration with wiki-connector for stakeholder visibility
+
+**Output:**
+Creates or updates PROJECT-STATUS.md files with:
+- Current status overview with minimal emojis
+- Timeline and milestones table
+- Team and stakeholder lists
+- Related documentation links
+- Success criteria and health indicators
+- Automatic change log
+
+**Two-Space Architecture:**
+- **Local** (exploration folders): Internal working documents with all details and internal links
+- **Wiki** (WIKI/Projects/): Clean, client-facing documents with transformed content
+- Mapping managed in `.claude/skills/wiki-connector/publish-mappings.json`
+
+**Sync Process:**
+```bash
+# Work locally in exploration folder
+/project-manager add PROJECT-STATUS.md --section completed --item "Task done"
+
+# Sync to wiki (removes internal links, keeps clean content)
+/project-manager sync PROJECT-STATUS.md
+
+# Result: Wiki updated, ready for client/stakeholder viewing
+```
+
+**Templates:**
+- `999_Tools/PROJECT-STATUS-TEMPLATE.md` - Local template (internal)
+- `999_Tools/PROJECT-STATUS-WIKI-TEMPLATE.md` - Wiki template (client-facing)
+
+**Related docs:**
+- See `.claude/skills/project-manager/SKILL.md` for detailed usage
+- See example at `02_Explorations/2026-03-11_Nagel_P3_Oracle_CDC_Kick_Off/PROJECT-STATUS.md`
+- Mapping file: `.claude/skills/wiki-connector/publish-mappings.json`
+
+---
+
+### `/update-repos` - Update Code Repositories
+
+Fetches and pulls appropriate branches for all repositories in the Code folder.
+
+**Usage:**
+```bash
+/update-repos
+```
+
+**What it does:**
+- Updates TMS Database (x.x.x.x+New-DISPO pattern)
+- Updates other repos (master/main)
+- Shows summary of all updates
+
+---
+
+### `/update-wikis` - Update Wiki Repositories
+
+Fetches and pulls all Wiki repositories in the WIKI folder.
+
+**Usage:**
+```bash
+/update-wikis
+```
+
+**What it does:**
+- Updates Nagel-CAL-Disposition.wiki (wikiMaster branch)
+- Updates any other wiki repos
+- Shows summary of all updates
+
+---
+
+### `/update-all` - Update Everything
+
+Updates all repositories and wikis in one command.
+
+**Usage:**
+```bash
+/update-all
+```
+
+**What it does:**
+- Runs update-repos and update-wikis in parallel
+- Shows combined summary
+
+---
+
 ## Skill Development
 
 ### Simple Skills (Single File)
