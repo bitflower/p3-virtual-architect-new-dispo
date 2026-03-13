@@ -140,7 +140,7 @@
     {
       "id": "project-oracle-cdc",
       "source": "02_Explorations/2026-03-11_Nagel_P3_Oracle_CDC_Kick_Off/PROJECT-STATUS.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Oracle-CDC-TMS-Branches.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Oracle-CDC-Solution-for-TMS-Branch-Databases.md",
       "description": "Oracle CDC Solution for TMS Branch Databases - Living project status",
       "syncStrategy": {
         "type": "full-sync",
@@ -154,7 +154,7 @@
           "removeInternalLinks": true,
           "rewriteToWikiPaths": true
         },
-        "notes": "Living project document - sync from exploration folder to wiki, rewrite internal links to wiki paths"
+        "notes": "Living project document - sync from exploration folder to wiki, rewrite internal links to wiki paths, uses Azure DevOps URL-encoded filename"
       }
     }
   ]

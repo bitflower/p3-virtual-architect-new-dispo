@@ -16,6 +16,8 @@
 - **Striim** (already deployed at Nagel, character set mapping capability)
 - **Datastream** (native GCP, consistent with existing Postgres CDC)
 
+**POC Scope:** Intentionally kept minimal - CDC replication ends at Cloud Storage (Object Store). Downstream Cloud SQL updates and event format harmonization (Oracle ↔ Postgres) are considered post-POC as preparation for business logic integration.
+
 **Decision Timeline:** End of March 2026 (POC completion)
 
 ---
@@ -26,12 +28,16 @@
 - [x] GCP storage buckets provisioned (oracle-striim-bucket-poc, oracle-datastream-bucket-poc)
 - [x] Workshop scheduled for Monday, March 16, 14:30-15:00
 - [x] Initial gap analysis completed - [Analysis](2026-03-13_meeting-coverage-analysis.md)
+- [x] TMS1034 (ABN) Oracle connection ready for P3
+- [x] UAT 1060 Oracle DB ready for order duplication
+- [x] UAT 1034 Oracle DB ready for order duplication
+- [x] Database selection confirmed (1034 ABN, 1060 UAT)
 
 ### 🔄 In Progress
-- [ ] Datastream instance creation (scheduled for Monday workshop)
-- [ ] Database selection confirmation (candidates: 1034, 1060)
+- [ ] Datastream setup in WL5 (P3 responsibility)
 - [ ] Oracle prerequisites setup (ARCHIVELOG, LogMiner, CDC user)
 - [ ] Character set compatibility investigation
+- [ ] Manual insert trigger into sending table (post-datastream enablement)
 
 ### ⏳ Next Up
 - Workshop execution (March 16)
@@ -39,24 +45,24 @@
 - Load testing with OMS order duplication (1 week duration)
 
 ### Blockers
-1. **Database availability** - Awaiting confirmation from Nagel Infrastructure
+1. **Connection details handoff** - TMS1034 Oracle connection ready, need to identify P3 contact for receiving details
 2. **Oracle prerequisites** - LogMiner setup and supplemental logging needed for Datastream
 
 ---
 
 ## Timeline
 
-| Phase | Period | Status | Key Activities |
-|-------|--------|--------|----------------|
-| Kick-Off | March 11 | ✅ Complete | Initial alignment, option presentation |
-| Preparation | March 11-15 | 🔄 In Progress | GCP setup, Oracle prerequisites |
-| Workshop | March 16 | ⏳ Scheduled | Technical walkthrough, POC kickoff |
-| POC Execution | March 16-20 | ⏳ Planned | Manual validation, setup confirmation |
-| Load Testing | March 23-30 | ⏳ Planned | 1-week stress test with order duplication |
-| Evaluation | End of March | ⏳ Planned | Option selection, cost analysis |
-| Decision | Early April | ⏳ Planned | Final architecture decision |
-| Implementation | April-May | ⏳ Planned | Production rollout preparation |
-| Go-Live | June 2026 | 🎯 Target | P3 branches production deployment |
+| Phase          | Period       | Status        | Key Activities                            |
+| -------------- | ------------ | ------------- | ----------------------------------------- |
+| Kick-Off       | March 11     | ✅ Complete    | Initial alignment, option presentation    |
+| Preparation    | March 11-15  | 🔄 In Progress | GCP setup, Oracle prerequisites           |
+| Workshop       | March 16     | ⏳ Scheduled   | Technical walkthrough, POC kickoff        |
+| POC Execution  | March 16-20  | ⏳ Planned     | Manual validation, setup confirmation     |
+| Load Testing   | March 23-30  | ⏳ Planned     | 1-week stress test with order duplication |
+| Evaluation     | End of March | ⏳ Planned     | Option selection, cost analysis           |
+| Decision       | Early April  | ⏳ Planned     | Final architecture decision               |
+| Implementation | April-May    | ⏳ Planned     | Production rollout preparation            |
+| Go-Live        | June 2026    | 🎯 Target      | P3 branches production deployment         |
 
 ---
 
@@ -147,12 +153,14 @@ _To be defined in workshop - pending alignment with stakeholders_
 
 ## Change Log
 
-| Date | Update | Updated By |
-|------|--------|------------|
-| 2026-03-13 | Project page created, pending items documented | Matthias |
-| 2026-03-13 | Workshop scheduled for March 16 | Martin |
-| 2026-03-13 | GCP infrastructure provisioning completed | P3 DevOps Team |
-| 2026-03-11 | Kick-off meeting conducted, 7 action items assigned | All |
+| Date       | Update                                                                                                                                                             | Updated By             |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| 2026-03-13 | Project status synced to wiki, all updates from Matt's communication reflected                                                                                     | Virtual Architect      |
+| 2026-03-13 | TMS1034 (ABN) Oracle connection ready, UAT databases (1034, 1060) ready for order duplication, Datastream setup assigned to WL5, Cloud SQL/Storage assigned to WL4 | Matt Wilkinson (Nagel) |
+| 2026-03-13 | Project page created, pending items documented                                                                                                                     | Matthias               |
+| 2026-03-13 | Workshop scheduled for March 16                                                                                                                                    | Martin                 |
+| 2026-03-13 | GCP infrastructure provisioning completed                                                                                                                          | P3 DevOps Team         |
+| 2026-03-11 | Kick-off meeting conducted, 7 action items assigned                                                                                                                | All                    |
 
 ---
 
