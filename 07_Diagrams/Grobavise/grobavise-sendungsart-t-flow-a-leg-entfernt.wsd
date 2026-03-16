@@ -1,0 +1,26 @@
+@startuml grobavise-sendungsart-t-flow-a-leg-entfernt
+title T-Leg vom FA entfernt
+
+skinparam backgroundColor white
+skinparam ActivityBackgroundColor white
+skinparam ActivityDiamondBackgroundColor white
+
+start
+
+:T-Leg wird vom FA entfernt;
+
+if (Referenz zu A-Sendung?) then (Ja)
+  :T-Leg wird gelöscht;
+  if (A-Leg vorhanden?) then (Ja)
+    stop
+  else (Nein)
+    :A-Leg erstellen;
+    :A-Leg übernimmt Position des früh. T-Legs im Lot;
+    stop
+  endif
+
+else (Nein)
+  stop
+endif
+
+@enduml

@@ -1,0 +1,22 @@
+actor Dispatcher
+participant DateRangePicker
+participant Frontend
+participant Backend
+
+Dispatcher -> Frontend : Opens Date Range component in dropdown
+Dispatcher -> DateRangePicker : Selects start date
+Dispatcher -> DateRangePicker : Selects start time
+Dispatcher -> DateRangePicker : Selects end date
+Dispatcher -> DateRangePicker : Selects end time
+DateRangePicker -> DateRangePicker : Fires when closed
+DateRangePicker -> Frontend
+alt Scope of this story
+    Frontend -> Frontend : Builds the filter object
+    Frontend -> Backend : Sends filter request for lots and legs
+    Backend -> Frontend : Return filtered Lots and Legs
+    Frontend -> Dispatcher : Sees updated list of Lots and Legs
+end
+
+caption
+User Story 111768: As a user I want to see lots and legs filtered by planning date
+endcaption

@@ -1,0 +1,28 @@
+actor Dispatcher
+participant DateRangePicker
+participant Frontend
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database TMS
+
+alt Scope of this story
+    Dispatcher -> Frontend : Opens Date Range component in dropdown
+    Dispatcher -> DateRangePicker : Selects start date
+    Dispatcher -> DateRangePicker : Selects start time
+    Dispatcher -> DateRangePicker : Selects end date
+    Dispatcher -> DateRangePicker : Selects end time
+    DateRangePicker -> DateRangePicker : Fires when closed
+    DateRangePicker -> Frontend
+    Frontend -> Frontend : Building the filter object & pass service filter service
+end
+Frontend -> Backend : Request transport orders
+Backend -> TMSBridge : Request transport orders
+TMSBridge -> TMS : Request V_DIS_TRANSPORTORDER
+TMS -> TMSBridge : Return List<TransportOrder>
+TMSBridge -> Backend : Return List<TransportOrder>
+Backend -> Frontend : Return List<TransportOrder>
+Frontend -> Dispatcher : Sees updated list of transport orders
+
+caption
+User Story 111767: As a user I want to see transport orders filtered by planning date
+endcaption

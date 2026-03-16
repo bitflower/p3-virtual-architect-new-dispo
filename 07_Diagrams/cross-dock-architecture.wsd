@@ -1,0 +1,37 @@
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!include DEVICONS/dotnet.puml
+!include DEVICONS/postgresql.puml
+
+caption
+= Cross-Dock Publisher
+<font color=green>Status: Final</font>
+Solution for live status updates of Transport Orders in CALSuite
+endcaption
+
+System_Boundary(c4, 'TMS Bridge') {
+    Component(componentDatastreamTransportOrders, "Cross-Dock Pipeline", "Datastream", "Listens for data changes on the table SEN_TS")
+    Component(componentCDCCloudStorage, "Cross-Dock Bucket", "Cloud Storage", "Stores SEN_TS CDC events")
+    Container(containerTMSBridge, "TMS Bridge", ".Net / Cloud Run", "REST Gateway to TMS databases", $sprite="dotnet")
+    Component(componentCrossDockPublisher, "Cross-Dock Publisher", "CloudFunction", "Publishes Transport Orders to CALSuite", $sprite="dotnet")
+    Component(componentCrossDockListener, "Cross-Dock Listener", ".Net / Cloud Run", "Listens to and processes event from CALSuite", $sprite="dotnet")
+}
+
+System_Boundary(c1, 'CALtms') {
+    ContainerDb(containerTMSDatabase, "TMS Database", "PostGreSQL", "Single TMS branch database", $sprite="postgresql")
+}
+
+System_Boundary(c2, 'CALSuite') {
+    System(systemCALSuite, "CALSuite", "Optional Description")
+}
+
+Rel_D(componentDatastreamTransportOrders, containerTMSDatabase, "Listens for changes", "Transaction Logs")    
+Rel_U(componentDatastreamTransportOrders, componentCDCCloudStorage, "Stores CDC event", "Protocol ?")
+Rel_U(componentCDCCloudStorage, componentCrossDockPublisher, "Triggers", "Protocol ?")
+Rel(componentCrossDockPublisher, containerTMSBridge, "Reads TransportOrders from", "HTTPS")
+Rel(containerTMSBridge, containerTMSDatabase, "Reads TransportOrders", "TCP/IP")
+Rel_R(componentCrossDockPublisher, systemCALSuite, "Publishes events to", "Azure Service Bus")
+Rel_U(componentCrossDockListener, systemCALSuite, "Listens for and publishes events", "Azure Service Bus")    
+Rel_D(componentCrossDockListener, containerTMSBridge, "Execute TMS business logic", "HTTP / GraphQL")

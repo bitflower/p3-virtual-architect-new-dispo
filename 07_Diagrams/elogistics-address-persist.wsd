@@ -1,0 +1,38 @@
+@startuml elogistics-address-persist
+actor Dispatcher
+participant "New Dispo Frontend" as Frontend
+participant "New Dispo Backend" as Backend
+participant "eLogistics Portal" as eLogistics
+participant "TMS Bridge" as TMSBridge
+database "TMS Database" as TMS
+
+title "Persist Verified Address from eLogistics"
+
+Dispatcher -> Frontend : Select verified address\n(from eLogistics results)
+Dispatcher -> Frontend : Click "Save"
+
+activate Frontend
+Frontend -> Backend : Request to persist\nTransport Order with address
+
+activate Backend
+Backend -> TMSBridge : Save Transport Order\n(including address info)
+
+activate TMSBridge
+TMSBridge -> TMS : pDis_TransportOrder.Save()\n(TransportOrder details + address info)
+
+activate TMS
+TMS -> TMS : Store address info as snapshot\nlinked to Transport Order
+TMS --> TMSBridge : Success
+deactivate TMS
+
+TMSBridge --> Backend : Return success
+deactivate TMSBridge
+
+Backend --> Frontend : Return success
+deactivate Backend
+
+Frontend -> Frontend : Prepare success notification
+Frontend --> Dispatcher : Display success notification
+deactivate Frontend
+
+@enduml

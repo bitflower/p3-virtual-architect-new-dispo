@@ -1,0 +1,44 @@
+participant "CALSuite ASB" as CALSuite
+participant "Cross-Dock Listener" as CDListener
+participant "TMS Bridge" as TMSBridge
+database TMS
+
+CALSuite -> CDListener : Read event "CallTms_StartEntladung"
+CDListener -> CDListener : Extract event information
+CDListener -> CDListener : Map event info to target TMS Bridge endpoint
+CDListener -> TMSBridge : HTTP request to mapped end point
+TMSBridge -> TMS : Call DB procedure ""
+TMS -> TMSBridge : Receive result from DB
+TMSBridge -> CDListener : HTTP response
+CDListener -> CALSuite : Publish event "TmsFinished_StartEntladung"
+
+' Dispatcher -> Frontend : Choose new traffic mode\nof Shipment
+' Frontend -> "New Dispo Backend" : Request to set traffic mode\nof Shipment
+' activate "New Dispo Backend"
+
+' "New Dispo Backend" -> "New Dispo Backend" : Check if Shipment traffic mode\ncan be changed
+' alt #Yellow Change of Traffic Mode denied
+'     "New Dispo Backend" -> Frontend : Plausi violated, HTTP code 40X
+'     Frontend -> Dispatcher : Provide notification\n"Traffic mode can't be changed"
+' end
+' alt #LightGreen Change of Traffic Mode allowed
+'     "New Dispo Backend" -> "New Dispo Backend" : Purge Legs of Shipment
+'     "New Dispo Backend" -> TMSBridge : Request change of traffic mode
+'     TMSBridge -> TMS: Call package pSend.setTrafficMode()
+'     note right of TMS: Package to be defined
+'     TMS -> TMSBridge: Return changed Shipment
+'     TMSBridge -> "New Dispo Backend": Return changed Shipment
+'     "New Dispo Backend" -> Frontend: Return changed Shipment, HTTP 200
+'     Frontend -> Dispatcher: See confirmation
+'     alt #LightGrey Just for transparency\n(not part of this synchronuous process)
+'         TMS <- CDC: Detects changed Shipment
+'         CDC -> CloudStorage: Stores change event
+'         CloudStorage -> "Pickup Planning Publisher": Informs/Triggers
+'         "Pickup Planning Publisher" -> "New Dispo Backend": Triggers Leg-building process
+'         "New Dispo Backend" -> "New Dispo Backend": Create Legs for Shipment
+'         Frontend  "New Dispo Backend": Pulls updated Leg information
+'         note right of Frontend : Temporary, needs more work
+'     end
+' end
+
+' deactivate "New Dispo Backend"

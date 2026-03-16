@@ -1,0 +1,18 @@
+@startuml
+title Cloud Function State Transitions
+
+[*] --> Queued : Event arrives in Cloud Storage
+
+Queued --> Processing : Cloud Function Triggered
+Processing --> WaitingForTMS : Send Event to TMS Bridge
+WaitingForTMS --> Processing : Response Received
+Processing --> Success : Publish Processed Data
+
+WaitingForTMS --> Retry : Timeout or Error
+Retry --> Processing : Retry Processing
+Retry --> Failed : Max Retries Reached
+
+Success --> [*]
+Failed --> [*]
+
+@enduml

@@ -1,0 +1,1642 @@
+WEBVTT
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/5-0
+00:00:05.943 --> 00:00:06.543
+<v Matthias Max>Läuft.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/6-0
+00:00:07.703 --> 00:00:08.263
+<v Maximilian Kehder>Jo.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/7-0
+00:00:08.863 --> 00:00:09.503
+<v Matthias Max>Stop.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/9-0
+00:00:09.863 --> 00:00:16.823
+<v Maximilian Kehder>Also Zusammenfassung für den Umgang der
+Tee.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/10-0
+00:00:17.903 --> 00:00:20.903
+<v Maximilian Kehder>Sendungsart Sätze, Datensätze.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/11-0
+00:00:22.103 --> 00:00:23.783
+<v Maximilian Kehder>In Kombination mit den.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/12-0
+00:00:25.023 --> 00:00:28.343
+<v Maximilian Kehder>A. Sendungsart Daten setzen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/13-0
+00:00:30.103 --> 00:00:37.291
+<v Maximilian Kehder>Nummer 1. wenn es kein T.
+Datensatz für einen ASA Datensatz gibt</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/13-1
+00:00:37.291 --> 00:00:41.383
+<v Maximilian Kehder>und es gibt erst einen ASA Datensatz.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/14-0
+00:00:42.903 --> 00:00:46.343
+<v Maximilian Kehder>Dann ist ein neu einkommender T Datensatz.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/15-0
+00:00:47.463 --> 00:00:48.263
+<v Maximilian Kehder>Zu ignorieren.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/16-0
+00:00:50.023 --> 00:00:50.823
+<v Maximilian Kehder>Ganz simpel.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/17-0
+00:00:52.903 --> 00:00:58.503
+<v Maximilian Kehder>Fall 2: Wir haben einen T-Datensatz
+bereits importiert.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/18-0
+00:00:59.463 --> 00:01:05.348
+<v Maximilian Kehder>T. Datensatz steht für Gruppavise, A.
+Datensatz für vorläufige oder finale</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/18-1
+00:01:05.348 --> 00:01:09.743
+<v Maximilian Kehder>Sendungen und jetzt importieren wir einen
+A. Datensatz.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/19-0
+00:01:10.743 --> 00:01:15.551
+<v Maximilian Kehder>Erfolgt die erste der erste Check,
+ist dieser referenziert. Das heißt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/19-1
+00:01:15.551 --> 00:01:18.463
+<v Maximilian Kehder>wir prüfen,
+gibt es hierzu im System einen</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/19-2
+00:01:18.463 --> 00:01:22.256
+<v Maximilian Kehder>T-Datensatz?
+Dabei kann ein Nein der Nein-Weg bedeuten,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/19-3
+00:01:22.256 --> 00:01:27.403
+<v Maximilian Kehder>entweder es gibt keinen T-Datensatz oder
+es gibt noch keine keinen Verweis,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/19-4
+00:01:27.403 --> 00:01:30.383
+<v Maximilian Kehder>keine Referenzierung auf den
+existierenden.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/20-0
+00:01:30.503 --> 00:01:31.623
+<v Maximilian Kehder>Einen t Datensatz.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/21-0
+00:01:33.463 --> 00:01:36.862
+<v Maximilian Kehder>Gehen wir aber mal den Ja-Fall durch,
+das heißt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/21-1
+00:01:36.862 --> 00:01:42.135
+<v Maximilian Kehder>wir haben A-Datensatz und haben jetzt den
+T-Datensatz dazu gefunden. O. K.,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/21-2
+00:01:42.135 --> 00:01:46.298
+<v Maximilian Kehder>ist referenziert.
+Jetzt der nächste Check ist, ist das Leg,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/21-3
+00:01:46.298 --> 00:01:49.143
+<v Maximilian Kehder>um das es geht, das wir erstellen wollen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/22-0
+00:01:50.423 --> 00:01:52.183
+<v Maximilian Kehder>Bereits verplant oder nicht?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/23-0
+00:01:54.183 --> 00:01:57.063
+<v Maximilian Kehder>Wenn es noch nicht verplant ist.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/24-0
+00:01:58.423 --> 00:02:02.888
+<v Maximilian Kehder>Ist es relativ simpel,
+dass der T Datensatz kann ignoriert</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/24-1
+00:02:02.888 --> 00:02:06.520
+<v Maximilian Kehder>werden,
+der das Alec wird erstellt und das Alec</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/24-2
+00:02:06.520 --> 00:02:09.623
+<v Maximilian Kehder>kann dann Alec kann dann verplant werden.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/25-0
+00:02:11.863 --> 00:02:18.071
+<v Maximilian Kehder>Wieder der gleiche Plus und dann sind wir
+am Ende. Wieder der gleiche Plus.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/25-1
+00:02:18.071 --> 00:02:24.279
+<v Maximilian Kehder>Wir sind A. Datensatz ist verplant,
+wird ignoriert und was heißt ignoriert?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/25-2
+00:02:24.279 --> 00:02:27.383
+<v Maximilian Kehder>Wir löschen tatsächlich das Teleg und.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/26-0
+00:02:27.623 --> 00:02:32.352
+<v Maximilian Kehder>Dieses Tele kann dann auch nicht mehr
+verplant werden. Das heißt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/26-1
+00:02:32.352 --> 00:02:36.150
+<v Maximilian Kehder>der Nutzer darf es dann nicht mehr
+verplanen können,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/26-2
+00:02:36.150 --> 00:02:41.166
+<v Maximilian Kehder>weil es ein konkurrierendes und Äh,
+wie soll das überlegenes oder ein</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/26-3
+00:02:41.166 --> 00:02:42.743
+<v Maximilian Kehder>bevorzugtes Alec gibt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/27-0
+00:02:44.823 --> 00:02:52.503
+<v Maximilian Kehder>Wenn das T-Leg allerdings verplant ist,
+dann wird erstmal das A-Leg ignoriert.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/28-0
+00:02:53.503 --> 00:02:54.143
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/29-0
+00:02:53.863 --> 00:02:59.723
+<v Maximilian Kehder>Wir haben keine Erstellung des Alex und
+es kann auch aktuell nicht verplant</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/29-1
+00:02:59.723 --> 00:03:00.263
+<v Maximilian Kehder>werden.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/30-0
+00:03:02.583 --> 00:03:06.721
+<v Maximilian Kehder>da das T.
+da das Teleg bereits verplant ist und wir</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/30-1
+00:03:06.721 --> 00:03:13.008
+<v Maximilian Kehder>wollen nicht, wenn das Teleg verplant ist,
+dass es ein ein konkurrierendes Leg</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/30-2
+00:03:13.008 --> 00:03:17.227
+<v Maximilian Kehder>erstellt wird,
+was eventuell mehr Informationen hat,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/30-3
+00:03:17.227 --> 00:03:17.943
+<v Maximilian Kehder>aber dann</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/31-0
+00:03:18.063 --> 00:03:19.463
+<v Maximilian Kehder>Doppelt verbucht werden könnte.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/32-0
+00:03:21.303 --> 00:03:25.845
+<v Maximilian Kehder>Hier haben wir den ersten Weg zurück,
+falls wir die Telec aber entfernen</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/32-1
+00:03:25.845 --> 00:03:26.343
+<v Maximilian Kehder>sollten.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/33-0
+00:03:27.543 --> 00:03:30.798
+<v Maximilian Kehder>dann wird das also entfernt von dem V.
+Auftrag,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/33-1
+00:03:30.798 --> 00:03:33.783
+<v Maximilian Kehder>also wieder in den Unassigned Status
+kommt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/34-0
+00:03:34.143 --> 00:03:34.863
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/35-0
+00:03:35.703 --> 00:03:38.558
+<v Maximilian Kehder>Dann, ja,
+letzten Endes kommen wir ja hier</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/35-1
+00:03:38.558 --> 00:03:42.343
+<v Maximilian Kehder>eigentlich gar nicht mehr in den
+Referenziertmodus rein.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/36-0
+00:03:44.023 --> 00:03:45.303
+<v Maximilian Kehder>sondern in den</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/37-0
+00:03:47.303 --> 00:03:49.263
+<v Maximilian Kehder>In den Modus.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/38-0
+00:03:50.103 --> 00:03:53.155
+<v Maximilian Kehder>Jetzt ist nämlich die erste Sache,
+die nicht ganz sauber ist,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/38-1
+00:03:53.155 --> 00:03:53.943
+<v Maximilian Kehder>hier glaube ich.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/39-0
+00:03:54.823 --> 00:03:57.303
+<v Maximilian Kehder>Wir sind ja schon unter der Annahme, dass.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/40-0
+00:03:58.943 --> 00:04:01.623
+<v Matthias Max>A. und T. referenziert sind.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/43-0
+00:03:59.143 --> 00:04:03.870
+<v Maximilian Kehder>ist, es ist, es ist referenziert.
+Da müssen wir nicht noch mal den gleichen</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/43-1
+00:04:03.870 --> 00:04:07.914
+<v Maximilian Kehder>Check machen. Ich meine,
+letzten Endes können wir den Check noch</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/41-0
+00:04:04.143 --> 00:04:04.583
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/43-2
+00:04:07.914 --> 00:04:11.211
+<v Maximilian Kehder>mal machen,
+aber wir gehen von da aus eigentlich nie</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/43-3
+00:04:11.211 --> 00:04:15.192
+<v Maximilian Kehder>in den hier nach unten.
+Aber letzten Endes ist es nicht falsch,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/42-0
+00:04:12.863 --> 00:04:13.543
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/43-4
+00:04:15.192 --> 00:04:16.063
+<v Maximilian Kehder>es ist nur ein</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/45-0
+00:04:16.583 --> 00:04:19.661
+<v Maximilian Kehder>weiterer Schritt, der geprüft wird. So,
+das heißt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/45-1
+00:04:19.661 --> 00:04:24.369
+<v Maximilian Kehder>wir haben das T-Leg jetzt entfernt und
+jetzt müsste eigentlich daraus folgen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/44-0
+00:04:22.863 --> 00:04:23.343
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/45-2
+00:04:24.369 --> 00:04:27.508
+<v Maximilian Kehder>das T-Leg ist nicht verplant und deshalb
+gehen wir,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/45-3
+00:04:27.508 --> 00:04:32.035
+<v Maximilian Kehder>wird der T-Datensatz gelöscht und wir
+erstellen das Alec und das Alec kann</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/45-4
+00:04:32.035 --> 00:04:33.303
+<v Maximilian Kehder>jetzt geplant werden.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/46-0
+00:04:33.783 --> 00:04:40.343
+<v Maximilian Kehder>Es übernimmt jetzt den Platz in der UI
+von dem ehemaligen Telec.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/48-0
+00:04:41.663 --> 00:04:46.754
+<v Matthias Max>2 Fragen. Teleg entfernt heißt,
+es wird vom T. A. runtergenommen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/48-1
+00:04:46.754 --> 00:04:52.463
+<v Matthias Max>vom Transport Order runtergenommen,
+also entplant oder wie sagt man dazu?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/47-0
+00:04:48.103 --> 00:04:48.663
+<v Maximilian Kehder>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/49-0
+00:04:53.423 --> 00:04:54.863
+<v Matthias Max>Oder aus der Planung genommen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/50-0
+00:04:54.983 --> 00:04:56.623
+<v Maximilian Kehder>Vom T. A. entfernt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/51-0
+00:04:57.103 --> 00:04:57.583
+<v Matthias Max>Good.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/52-0
+00:04:58.103 --> 00:04:59.463
+<v Maximilian Kehder>So, ich hab's noch ein bisschen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/53-0
+00:04:59.903 --> 00:05:06.056
+<v Matthias Max>Und dann die zweite Frage: Bei all diesen
+Entscheidungen, wo es heißt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/53-1
+00:05:06.056 --> 00:05:10.043
+<v Matthias Max>Telex verplant,
+betrachten wir alle Legarten,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/53-2
+00:05:10.043 --> 00:05:11.343
+<v Matthias Max>alle Leg-Typen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/54-0
+00:05:13.503 --> 00:05:19.503
+<v Matthias Max>Kann es sein, dass man ein V. L.
+Leck oder ein Pick up Black runternimmt?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/55-0
+00:05:20.783 --> 00:05:21.583
+<v Matthias Max>Aber.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/57-0
+00:05:22.703 --> 00:05:27.199
+<v Matthias Max>Hauptläufe, Nachläufe,
+später wahrscheinlich erst noch vom Tee</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/56-0
+00:05:26.663 --> 00:05:26.983
+<v Maximilian Kehder>Hey.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/57-1
+00:05:27.199 --> 00:05:32.623
+<v Matthias Max>verplant sind, dann ist die Frage,
+gilt es für alle oder nur für die Phase?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/58-0
+00:05:33.983 --> 00:05:36.150
+<v Matthias Max>Wahrscheinlich für immer für alle.
+Ich denke,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/58-1
+00:05:36.150 --> 00:05:38.223
+<v Matthias Max>das geht auch schon zu weit oder für
+jetzt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/59-0
+00:05:38.663 --> 00:05:42.152
+<v Maximilian Kehder>Für jetzt geht es zu weit,
+weil wir uns mit Pickup beschäftigen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/59-1
+00:05:42.152 --> 00:05:44.836
+<v Maximilian Kehder>aber in die Zukunft blickend,
+gehe ich davon aus,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/59-2
+00:05:44.836 --> 00:05:48.809
+<v Maximilian Kehder>dass dieses dieser diese Logik immer
+angewendet werden sollte. Das heißt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/59-3
+00:05:48.809 --> 00:05:53.265
+<v Maximilian Kehder>es geht ja immer nur um den Paarvergleich,
+das heißt, ich vergleiche das eine Lag,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/59-4
+00:05:53.265 --> 00:05:54.983
+<v Maximilian Kehder>das mit dem konkurrierenden Lag.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/60-0
+00:05:55.223 --> 00:06:01.872
+<v Maximilian Kehder>Und sobald wir eine, äh,
+weil die Referenz von der von dem A und T</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/60-1
+00:06:01.872 --> 00:06:03.063
+<v Maximilian Kehder>besteht, ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/61-0
+00:06:03.663 --> 00:06:04.223
+<v Matthias Max>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/62-0
+00:06:04.263 --> 00:06:06.241
+<v Maximilian Kehder>Das ist ja immer nur dann,
+wenn es besteht.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/62-1
+00:06:06.241 --> 00:06:08.983
+<v Maximilian Kehder>Ansonsten werden sie halt als separate
+Sendungen betrachtet.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/63-0
+00:06:10.103 --> 00:06:14.581
+<v Maximilian Kehder>Und deshalb ist der Neinweg auch komplett
+nicht gesplittet im Sinne von nein,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/63-1
+00:06:14.581 --> 00:06:17.968
+<v Maximilian Kehder>wir wissen nicht,
+ob es 'ne Referenzierung gibt oder nicht</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/63-2
+00:06:17.968 --> 00:06:22.044
+<v Maximilian Kehder>oder nein, es gibt kein anderes,
+sondern es ist erst mal nur der Fakt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/63-3
+00:06:22.044 --> 00:06:26.063
+<v Maximilian Kehder>es gibt keine Referenzierung und deshalb
+werden sie gleich behandelt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/64-0
+00:06:26.863 --> 00:06:27.343
+<v Matthias Max>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/65-0
+00:06:28.343 --> 00:06:33.756
+<v Maximilian Kehder>Und von daher gehe ich davon aus,
+dass auch in Folge in den Folgeprozessen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/65-1
+00:06:33.756 --> 00:06:38.743
+<v Maximilian Kehder>wenn man jetzt quasi schon alles
+durchplanen würde mit dem Grob-Avis.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/66-0
+00:06:40.903 --> 00:06:42.303
+<v Maximilian Kehder>Das erst.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/68-0
+00:06:44.423 --> 00:06:50.338
+<v Maximilian Kehder>Später nur bei Runterziehen,
+dass Alec interessant wird,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/68-1
+00:06:50.338 --> 00:06:52.103
+<v Maximilian Kehder>egal bei welchem.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/67-0
+00:06:51.383 --> 00:06:51.983
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/69-0
+00:06:53.303 --> 00:06:56.710
+<v Maximilian Kehder>Aber da ist dann halt die Frage,
+welche Mischform wollen wir haben?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/69-1
+00:06:56.710 --> 00:06:57.863
+<v Maximilian Kehder>Gibt es All or Nothing?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/70-0
+00:06:57.823 --> 00:06:59.023
+<v Matthias Max>Ja, ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/71-0
+00:06:59.783 --> 00:07:04.046
+<v Maximilian Kehder>Wurde alles noch nicht besprochen.
+Wir haben jetzt erstmal nur das Erste und</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/71-1
+00:07:04.046 --> 00:07:08.143
+<v Maximilian Kehder>das Erste haben wir auch noch nicht den
+Stress mit dem, was danach kommt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/72-0
+00:07:09.103 --> 00:07:09.783
+<v Matthias Max>Passt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/73-0
+00:07:11.583 --> 00:07:12.223
+<v Matthias Max>Okay.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/74-0
+00:07:11.623 --> 00:07:12.623
+<v Maximilian Kehder>OK.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/75-0
+00:07:13.623 --> 00:07:17.418
+<v Maximilian Kehder>So, jetzt sind wir im wunderschönen.
+Das ist eigentlich das einfach der</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/75-1
+00:07:17.418 --> 00:07:18.103
+<v Maximilian Kehder>einfache Weg.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/76-0
+00:07:19.223 --> 00:07:23.642
+<v Maximilian Kehder>Nämlich, es ist referenziert. Ja,
+und da müssen wir eigentlich nur checken,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/76-1
+00:07:23.642 --> 00:07:27.130
+<v Maximilian Kehder>ist verplant oder nicht.
+Und daraus folgt dann entweder wir</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/76-2
+00:07:27.130 --> 00:07:29.863
+<v Maximilian Kehder>behalten das Alec oder wir behalten das
+T-Lec.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/77-0
+00:07:31.023 --> 00:07:31.423
+<v Matthias Max>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/78-0
+00:07:31.543 --> 00:07:36.874
+<v Maximilian Kehder>Wenn wir keine Referenz haben,
+so dann erstellen wir erst mal eine</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/78-1
+00:07:36.874 --> 00:07:40.932
+<v Maximilian Kehder>eigenständige A. A.
+Sendung beziehungsweise der A.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/78-2
+00:07:40.932 --> 00:07:45.627
+<v Maximilian Kehder>-Satz im Dispo A.
+-Satz als eigenständige Sendung erkannt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/78-3
+00:07:45.627 --> 00:07:46.423
+<v Maximilian Kehder>Das heißt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/81-0
+00:07:46.503 --> 00:07:49.167
+<v Maximilian Kehder>Wir betrachten es so,
+als hätte es niemals,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/81-1
+00:07:49.167 --> 00:07:53.828
+<v Maximilian Kehder>würde es niemals einer gehabt haben oder
+hat keine oder ist vollkommen egal.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/81-2
+00:07:53.828 --> 00:07:57.461
+<v Maximilian Kehder>Wir haben keine Referenz,
+es ist eine neue Sendung, fertig.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/81-3
+00:07:57.461 --> 00:08:01.517
+<v Maximilian Kehder>Wir erstellen das, wir erstellen das Lag.
+Wie wir es immer machen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/79-0
+00:07:58.703 --> 00:07:59.263
+<v Matthias Max>Werd ich.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/80-0
+00:08:01.503 --> 00:08:02.303
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/81-4
+00:08:01.517 --> 00:08:04.423
+<v Maximilian Kehder>hier gibt es keine Änderung zum aktuellen
+Flow.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/82-0
+00:08:05.703 --> 00:08:10.670
+<v Maximilian Kehder>Und letzten Endes warten wir,
+bis das Alex verplant ist,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/82-1
+00:08:10.670 --> 00:08:13.023
+<v Maximilian Kehder>wenn es nicht verplant ist.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/83-0
+00:08:14.183 --> 00:08:16.743
+<v Maximilian Kehder>Müssen wir eigentlich quasi immer checken.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/85-0
+00:08:18.343 --> 00:08:23.578
+<v Maximilian Kehder>Wird diese Referenzierung zu dem T-Leg
+während des Status es ist noch nicht</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/85-1
+00:08:23.578 --> 00:08:25.783
+<v Maximilian Kehder>verplant hergestellt oder nicht?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/84-0
+00:08:24.383 --> 00:08:24.863
+<v Matthias Max>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/86-0
+00:08:26.703 --> 00:08:29.686
+<v Matthias Max>OK,
+also wird relevant beim erstmaligen</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/86-1
+00:08:29.686 --> 00:08:31.103
+<v Matthias Max>Verplanen des Alex.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/89-0
+00:08:32.343 --> 00:08:37.820
+<v Maximilian Kehder>Mhm, noch nee,
+wir müssten das eigentlich andauernd</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/87-0
+00:08:32.463 --> 00:08:34.383
+<v Matthias Max>Oder? Na ja, eigentlich.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/89-1
+00:08:37.820 --> 00:08:38.663
+<v Maximilian Kehder>checken.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/88-0
+00:08:38.143 --> 00:08:39.023
+<v Matthias Max>Under only.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/93-0
+00:08:39.783 --> 00:08:42.197
+<v Maximilian Kehder>Irgendwie,
+oder wir müssen auf das Event warten,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/90-0
+00:08:40.143 --> 00:08:40.943
+<v Matthias Max>Richtig.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/93-1
+00:08:42.197 --> 00:08:44.857
+<v Maximilian Kehder>mehr oder weniger.
+Das ist vielleicht eher die Frage,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/91-0
+00:08:43.183 --> 00:08:43.743
+<v Matthias Max>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/93-2
+00:08:44.857 --> 00:08:48.847
+<v Maximilian Kehder>nicht Referenz hergestellt, sondern Event,
+dass diese Referenzierung hergestellt</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/93-3
+00:08:48.847 --> 00:08:49.143
+<v Maximilian Kehder>wurde.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/92-0
+00:08:49.423 --> 00:08:50.543
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/94-0
+00:08:50.583 --> 00:08:54.828
+<v Maximilian Kehder>Und solange das es nicht gibt,
+müssen wir halt auf dieses Referent auf</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/94-1
+00:08:54.828 --> 00:08:57.638
+<v Maximilian Kehder>das Warten,
+aber halt unter der der Bedingung,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/94-2
+00:08:57.638 --> 00:09:01.285
+<v Maximilian Kehder>es ist deshalb ist das Flowchart ist
+nicht komplett richtig,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/94-3
+00:09:01.285 --> 00:09:04.514
+<v Maximilian Kehder>weil letzten Endes müsste es ja
+eigentlich wieder in,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/94-4
+00:09:04.514 --> 00:09:07.623
+<v Maximilian Kehder>wenn ich das hier jetzt müsste ich hier
+reinlaufen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/95-0
+00:09:05.983 --> 00:09:09.668
+<v Matthias Max>Das ist ein anderer Flow. Ja,
+das ist auch ein anderer Flow.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/95-1
+00:09:09.668 --> 00:09:12.446
+<v Matthias Max>Sieht man ja schon da dran, dass über C.D.
+C.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/95-2
+00:09:12.446 --> 00:09:14.863
+<v Matthias Max>permanent neue Informationen reinkommen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/97-0
+00:09:15.223 --> 00:09:18.015
+<v Maximilian Kehder>Genau,
+aber letzten Endes müsste es nach hier</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/97-1
+00:09:18.015 --> 00:09:21.172
+<v Maximilian Kehder>reinlaufen,
+weil es immer mit der mit der Bedingung</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/96-0
+00:09:20.383 --> 00:09:20.943
+<v Matthias Max>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/97-2
+00:09:21.172 --> 00:09:23.964
+<v Maximilian Kehder>ist, dass es Nein ist. Weil,
+wenn es Ja wäre,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/97-3
+00:09:23.964 --> 00:09:28.578
+<v Maximilian Kehder>wäre hier die Referenz hergestellt,
+die Referenzierung wäre hergestellt und</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/97-4
+00:09:28.578 --> 00:09:30.703
+<v Maximilian Kehder>dann müsste man halt schauen. O. K.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/98-0
+00:09:30.823 --> 00:09:33.069
+<v Maximilian Kehder>Ist dieses Teleg bereits verplant oder
+nicht?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/98-1
+00:09:33.069 --> 00:09:36.535
+<v Maximilian Kehder>Und dann kann man dementsprechend wieder
+in die alten Flows reingehen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/98-2
+00:09:36.535 --> 00:09:40.343
+<v Maximilian Kehder>weil wir dann zwei konkurrierende haben
+und die behandeln wir wieder genauso.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/99-0
+00:09:41.503 --> 00:09:42.063
+<v Matthias Max>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/100-0
+00:09:41.503 --> 00:09:46.543
+<v Maximilian Kehder>Unter der Annahme, wie gesagt,
+dass das Alec noch nicht verplant ist.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/101-0
+00:09:48.583 --> 00:09:48.943
+<v Matthias Max>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/102-0
+00:09:49.303 --> 00:09:51.183
+<v Maximilian Kehder>Wenn es allerdings verplant ist.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/103-0
+00:09:52.823 --> 00:09:55.543
+<v Maximilian Kehder>Schauen wir,
+ob die Referenzierung hergestellt ist.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/104-0
+00:09:57.943 --> 00:10:02.263
+<v Maximilian Kehder>Also eigentlich ist die ja,
+das ist nur wichtig.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/105-0
+00:10:03.783 --> 00:10:08.423
+<v Maximilian Kehder>Wenn die Referenz hier so wir haben jetzt
+Moment, Moment, Moment, jetzt muss ich.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/106-0
+00:10:07.863 --> 00:10:11.151
+<v Matthias Max>Dann ist, dann sind wir schon im A-Zug.
+Ach so,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/106-1
+00:10:11.151 --> 00:10:13.823
+<v Matthias Max>wir hatten aber eine unreferenzierte A.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/107-0
+00:10:13.943 --> 00:10:16.743
+<v Maximilian Kehder>Genau so, das Alec wird jetzt verplant.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/109-0
+00:10:14.823 --> 00:10:17.943
+<v Matthias Max>Und jetzt kommt der Tee dazu, ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/110-0
+00:10:18.743 --> 00:10:22.636
+<v Maximilian Kehder>So, und jetzt kommt nämlich,
+jetzt bin ich mir nämlich nicht ganz</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/110-1
+00:10:22.636 --> 00:10:25.703
+<v Maximilian Kehder>sicher, wo das Teil ist,
+wo ich das ansiedeln muss.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/111-0
+00:10:26.423 --> 00:10:32.552
+<v Matthias Max>Dann ist doch T. wird unterworfen,
+oder das ist dann nicht mehr richtig.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/111-1
+00:10:32.552 --> 00:10:34.063
+<v Matthias Max>Dann siegt doch A.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/112-0
+00:10:37.223 --> 00:10:38.423
+<v Matthias Max>But stop it off.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/113-0
+00:10:37.303 --> 00:10:38.183
+<v Maximilian Kehder>Wenn das.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/114-0
+00:10:40.183 --> 00:10:44.335
+<v Maximilian Kehder>Ja, weil das ist nämlich genau der Punkt,
+das ist, wenn beide verplant sind.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/114-1
+00:10:44.335 --> 00:10:47.139
+<v Maximilian Kehder>Das ist ja genau das Ding,
+weil es ist ja nicht so,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/114-2
+00:10:47.139 --> 00:10:50.968
+<v Maximilian Kehder>es könnte ja sein, dass zu dem Zustand,
+weil wir wissen ja noch nicht,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/114-3
+00:10:50.968 --> 00:10:53.934
+<v Maximilian Kehder>was wir betrachten,
+wir betrachten jetzt nicht noch 'n</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/114-4
+00:10:53.934 --> 00:10:54.743
+<v Maximilian Kehder>unbeachtetes T.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/115-0
+00:10:57.463 --> 00:11:00.343
+<v Maximilian Kehder>Sondern wir stellen nur eine Referenz her.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/116-0
+00:11:01.223 --> 00:11:05.303
+<v Maximilian Kehder>Das heißt, es kann schon im System sein.
+Das wissen wir noch nicht.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/117-0
+00:11:06.423 --> 00:11:07.063
+<v Matthias Max>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/118-0
+00:11:08.263 --> 00:11:10.718
+<v Maximilian Kehder>Weil,
+wenn es später erst ins System kommen</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/118-1
+00:11:10.718 --> 00:11:12.503
+<v Maximilian Kehder>würde, würden wir es ignorieren.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/119-0
+00:11:13.703 --> 00:11:15.383
+<v Matthias Max>Dann würden wir es ignorieren, ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/121-0
+00:11:15.623 --> 00:11:20.586
+<v Maximilian Kehder>Aber das heißt, wir gucken jetzt, ah, OK,
+es ist referenziert auf 'ne T. Sendung,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/121-1
+00:11:20.586 --> 00:11:25.730
+<v Maximilian Kehder>die wir schon also bei verplant haben. Ja,
+dann haben wir hier erstmal 'n Errorfall,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/120-0
+00:11:24.263 --> 00:11:24.743
+<v Matthias Max>Ah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/121-2
+00:11:25.730 --> 00:11:29.604
+<v Maximilian Kehder>den wir sagen, hey, wir haben 'n Problem,
+hier ist so 'n Error,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/121-3
+00:11:29.604 --> 00:11:31.783
+<v Maximilian Kehder>diese beiden bitte irgendwie klären.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/123-0
+00:11:32.183 --> 00:11:35.172
+<v Matthias Max>Dann hast du ja einen Merch-Konflikt in
+Git Sinne.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/123-1
+00:11:35.172 --> 00:11:38.219
+<v Matthias Max>Dann sind auf beiden Records sind Lecks
+entstanden,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/122-0
+00:11:36.103 --> 00:11:36.983
+<v Maximilian Kehder>Genau weil.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/123-2
+00:11:38.219 --> 00:11:42.263
+<v Matthias Max>die vielleicht sogar schon verplant sind
+und jetzt ist ein Konflikt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/124-0
+00:11:41.463 --> 00:11:44.860
+<v Maximilian Kehder>Nee, nee, die sogar verplant sind.
+Das ist ja die Bedingung. Wir wissen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/124-1
+00:11:44.860 --> 00:11:46.023
+<v Maximilian Kehder>dass beide verplant sind.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/125-0
+00:11:47.263 --> 00:11:51.868
+<v Maximilian Kehder>Weil die Referenzierung erst hier
+irgendwann nach der Verplanung</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/125-1
+00:11:51.868 --> 00:11:53.143
+<v Maximilian Kehder>hergestellt wurde.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/126-0
+00:11:53.383 --> 00:11:54.223
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/127-0
+00:11:55.303 --> 00:12:00.979
+<v Maximilian Kehder>Und dann checken wir. Ah, OK,
+Telec ist auch verplant. Error, das heißt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/127-1
+00:12:00.979 --> 00:12:03.623
+<v Maximilian Kehder>das zeigen wir nur an, mehr nicht.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/128-0
+00:12:03.463 --> 00:12:04.863
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/129-0
+00:12:05.143 --> 00:12:09.303
+<v Maximilian Kehder>Und wenn es nicht verplant ist,
+dann wandern wir genau hierhin.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/129-1
+00:12:09.303 --> 00:12:12.423
+<v Maximilian Kehder>T-Satz wird ignoriert und T-Satz wird
+gelöscht.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/130-0
+00:12:13.143 --> 00:12:13.703
+<v Matthias Max>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/131-0
+00:12:17.583 --> 00:12:18.463
+<v Matthias Max>OK.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/132-0
+00:12:21.103 --> 00:12:21.623
+<v Matthias Max>Puh.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/133-0
+00:12:27.023 --> 00:12:28.503
+<v Matthias Max>Es hat schon in sich.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/134-0
+00:12:29.703 --> 00:12:34.674
+<v Maximilian Kehder>Ja, aber an sich also ist das halt egal.
+Es ist, man muss ja wissen, OK,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/134-1
+00:12:34.674 --> 00:12:37.943
+<v Maximilian Kehder>wir haben ein paar Sachen,
+wo wir enden können.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/135-0
+00:12:38.983 --> 00:12:45.783
+<v Maximilian Kehder>Nämlich keine, also das heißt,
+wir haben eigentlich 1234 Endpunkte.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/136-0
+00:12:49.143 --> 00:12:49.463
+<v Matthias Max>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/137-0
+00:12:49.703 --> 00:12:56.544
+<v Maximilian Kehder>Hier haben wir den den Konflikt gelöst
+zwischen welche Sendung wir haben wollen</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/137-1
+00:12:56.544 --> 00:13:00.820
+<v Maximilian Kehder>und wenn welche nicht. Moment,
+123 haben wir nur.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/137-2
+00:13:00.820 --> 00:13:04.583
+<v Maximilian Kehder>Hier ist der Konflikt gelöst,
+weil wir das.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/138-0
+00:13:04.743 --> 00:13:08.396
+<v Maximilian Kehder>Alec ignorieren.
+Hier ist der Konflikt gelöst,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/138-1
+00:13:08.396 --> 00:13:12.983
+<v Maximilian Kehder>weil wir Telec ignorieren und bei dem
+Konflikt von beiden.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/139-0
+00:13:15.063 --> 00:13:15.943
+<v Maximilian Kehder>Sagen wir ever.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/140-0
+00:13:17.223 --> 00:13:21.463
+<v Matthias Max>Gut, und dieser Konfliktfall,
+den gibt es tatsächlich, oder?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/141-0
+00:13:23.303 --> 00:13:25.863
+<v Matthias Max>Dass das hinterher erst referenziert wird.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/142-0
+00:13:27.063 --> 00:13:31.568
+<v Maximilian Kehder>Na ja, wir brauchen Modus, um zu sagen,
+was ist, wenn das der Fall ist.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/142-1
+00:13:31.568 --> 00:13:36.324
+<v Maximilian Kehder>Was machen wir dann, wenn wir wissen, OK,
+wir haben noch keine Logik dafür,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/142-2
+00:13:36.324 --> 00:13:39.703
+<v Maximilian Kehder>sondern wir sagen erst mal Leute,
+hier ist ein Error.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/143-0
+00:13:41.943 --> 00:13:46.131
+<v Matthias Max>das schon,
+aber wenn das gar nicht vorkommt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/143-1
+00:13:46.131 --> 00:13:52.274
+<v Matthias Max>bei mir fällt halt direkt ein,
+dass es ja 2 Schreibvorgänge sind.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/143-2
+00:13:52.274 --> 00:13:56.183
+<v Matthias Max>Ich muss den Satz schreiben in in Sendung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/144-0
+00:13:57.223 --> 00:14:00.983
+<v Matthias Max>Und erst kurz drauf kann ich 'Send zu'
+schreiben.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/146-0
+00:14:02.143 --> 00:14:05.795
+<v Matthias Max>Das heißt,
+für ein paar Millisekunden ist immer ein</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/146-1
+00:14:05.795 --> 00:14:09.728
+<v Matthias Max>Sendungssatz da,
+der erst mal noch keine Zuordnung hat.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/146-2
+00:14:09.728 --> 00:14:14.433
+<v Matthias Max>Das ist auch schon wieder ein Problem,
+rein technisch, weil C.D.C.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/145-0
+00:14:14.183 --> 00:14:14.903
+<v Maximilian Kehder>Warum?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/146-3
+00:14:14.433 --> 00:14:17.383
+<v Matthias Max>löst wahrscheinlich schon aus auf Sendung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/147-0
+00:14:18.503 --> 00:14:22.103
+<v Matthias Max>Und kurz drauf kommt ein zu Ort Rats rein.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/149-0
+00:14:22.823 --> 00:14:26.358
+<v Maximilian Kehder>Aber es geht ja nicht darum,
+dass es sofort zugeordnet wird,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/148-0
+00:14:23.063 --> 00:14:23.623
+<v Matthias Max>Vermisst du.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/149-1
+00:14:26.358 --> 00:14:28.503
+<v Maximilian Kehder>sondern es geht darum, dass wir eine.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/151-0
+00:14:29.863 --> 00:14:33.795
+<v Maximilian Kehder>2 konkurrierende,
+also der untere Fall ist ja,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/151-1
+00:14:33.795 --> 00:14:38.982
+<v Maximilian Kehder>beide sind im System,
+beide sind getrackt und jetzt haben wir</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/151-2
+00:14:38.982 --> 00:14:42.663
+<v Maximilian Kehder>den Trigger.
+Referenzierung wurde geändert.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/150-0
+00:14:43.023 --> 00:14:43.783
+<v Matthias Max>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/152-0
+00:14:43.743 --> 00:14:48.042
+<v Maximilian Kehder>Und wir haben jetzt beide die beiden
+Parteien, die gemergt werden sollen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/152-1
+00:14:48.042 --> 00:14:51.063
+<v Maximilian Kehder>nach den Regeln,
+die wir hier oben definiert haben.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/153-0
+00:14:51.463 --> 00:14:52.103
+<v Matthias Max>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/154-0
+00:14:52.823 --> 00:14:54.103
+<v Maximilian Kehder>Die kommen jetzt zusammen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/156-0
+00:14:55.143 --> 00:14:59.575
+<v Matthias Max>Was ja,
+aber wenn du die ersten beiden Flows hast,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/156-1
+00:14:59.575 --> 00:15:04.703
+<v Matthias Max>gibt es auch das Problem,
+dass ich gerade geschrieben hab.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/155-0
+00:15:03.143 --> 00:15:03.943
+<v Maximilian Kehder>Nämlich.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/157-0
+00:15:05.863 --> 00:15:10.250
+<v Matthias Max>Da müssten wir unter Umständen gar keine
+Lags erstellen, wenn sich rausstellt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/157-1
+00:15:10.250 --> 00:15:12.583
+<v Matthias Max>die Zuordnung kommt gerade auch noch rein.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/159-0
+00:15:13.943 --> 00:15:15.703
+<v Maximilian Kehder>Die Zuordnung heißt was.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/158-0
+00:15:14.023 --> 00:15:14.983
+<v Matthias Max>Just find that.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/161-0
+00:15:16.583 --> 00:15:22.224
+<v Matthias Max>Die Verbindung zwischen T und A-Satz über
+Send zu Referenzierung. Sorry,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/160-0
+00:15:19.463 --> 00:15:21.623
+<v Maximilian Kehder>Also, die Referenzierung bitte.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/161-1
+00:15:22.224 --> 00:15:23.383
+<v Matthias Max>Referenzierung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/162-0
+00:15:24.023 --> 00:15:27.848
+<v Maximilian Kehder>Ja, so noch mal also das heißt,
+wir haben ja das heißt gerade eben hast</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/162-1
+00:15:27.848 --> 00:15:30.451
+<v Maximilian Kehder>du was gesagt,
+was ich fehlinterpretiert hab mit</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/162-2
+00:15:30.451 --> 00:15:30.983
+<v Maximilian Kehder>Zuordnung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/163-0
+00:15:31.543 --> 00:15:34.465
+<v Matthias Max>Ja, sorry,
+ich hätte "Referenzierung" sagen müssen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/163-1
+00:15:34.465 --> 00:15:38.623
+<v Matthias Max>weil die Tabelle "Send Zuordnung" heißt.
+Deshalb war ich bei "Zuordnung".</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/164-0
+00:15:40.903 --> 00:15:43.543
+<v Matthias Max>Ich bin halt ein Joachim 2.0.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/165-0
+00:15:47.223 --> 00:15:49.263
+<v Matthias Max>Gut, dass das Transkript mitläuft.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/166-0
+00:15:52.623 --> 00:15:53.063
+<v Maximilian Kehder>Ups.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/167-0
+00:15:54.343 --> 00:15:59.044
+<v Matthias Max>Also, du weißt, was ich meine.
+Rein technisch sind es 2 Tabellen,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/167-1
+00:15:59.044 --> 00:16:03.959
+<v Matthias Max>die Referenzierungstabelle und die
+wirkliche Sendungstabelle. Heißt,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/167-2
+00:16:03.959 --> 00:16:08.303
+<v Matthias Max>der Trigger im C. D. C.
+wird auf jeden Fall erst auf Sendung</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/167-3
+00:16:08.303 --> 00:16:10.583
+<v Matthias Max>ausgeführt, weil den brauch ich.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/168-0
+00:16:11.143 --> 00:16:16.607
+<v Matthias Max>Kurz darauf wird die Referenzierung
+gemacht und das entsteht dort in CDC,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/168-1
+00:16:16.607 --> 00:16:18.823
+<v Matthias Max>falls wir die Tabelle tracken.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/169-0
+00:16:20.103 --> 00:16:24.503
+<v Maximilian Kehder>Mhm, aber die Sache ist ja,
+wir tracken ja eine neue Sendung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/170-0
+00:16:27.063 --> 00:16:29.383
+<v Maximilian Kehder>Mit also neuen Eintrag Entsendung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/171-0
+00:16:29.943 --> 00:16:30.343
+<v Matthias Max>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/172-0
+00:16:32.343 --> 00:16:35.348
+<v Maximilian Kehder>Das heißt,
+wir haben das Event und müssen jetzt</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/172-1
+00:16:35.348 --> 00:16:39.355
+<v Maximilian Kehder>einfach bei dem Flow,
+wir erstellen eine neue Sendung, checken,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/172-2
+00:16:39.355 --> 00:16:43.863
+<v Maximilian Kehder>gibt es eine Referenzierung und dann
+kommt dieser ganze Flow hier rein.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/173-0
+00:16:44.743 --> 00:16:46.705
+<v Matthias Max>Genau,
+aber die ist vielleicht in der Sekunde</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/173-1
+00:16:46.705 --> 00:16:47.303
+<v Matthias Max>noch nicht da.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/174-0
+00:16:49.863 --> 00:16:52.423
+<v Matthias Max>Stell dir vor, T-Satz ist schon im System.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/176-0
+00:16:53.863 --> 00:16:57.792
+<v Matthias Max>Seit Monaten, seit Tagen, Tagen,
+dann kommt der A-Satz.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/176-1
+00:16:57.792 --> 00:17:02.704
+<v Matthias Max>Es macht Klingeling in C.D.C.
+Neuer A-Satz. Aha, hat keine Zuordnung,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/176-2
+00:17:02.704 --> 00:17:07.194
+<v Matthias Max>keine Referenzierung.
+Ist eine neue Sendung, völlig unabhängig.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/175-0
+00:17:05.943 --> 00:17:06.503
+<v Maximilian Kehder>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/176-3
+00:17:07.194 --> 00:17:10.703
+<v Matthias Max>Eine Sekunde später macht der Chor die
+Zuordnung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/177-0
+00:17:10.823 --> 00:17:14.441
+<v Matthias Max>Gehört die Referenzierung,
+dann ist unser Loop schon am Laufen und</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/177-1
+00:17:14.441 --> 00:17:17.303
+<v Matthias Max>behandelt das Ding als völlig unabhängige
+A-Sendung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/178-0
+00:17:17.703 --> 00:17:20.023
+<v Maximilian Kehder>Genau, aber dann sind wir,
+dann sind wir halt hier.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/179-0
+00:17:20.583 --> 00:17:21.383
+<v Matthias Max>Dann sind wir da.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/180-0
+00:17:22.263 --> 00:17:22.983
+<v Maximilian Kehder>Und dann.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/181-0
+00:17:23.943 --> 00:17:26.743
+<v Maximilian Kehder>Sind wir ja erstmal in dem Loop hier.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/183-0
+00:17:27.463 --> 00:17:32.663
+<v Matthias Max>Dann haben wir unverplant mit Alex für
+eine scheinbar unabhängige Sendung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/182-0
+00:17:27.903 --> 00:17:28.903
+<v Maximilian Kehder>Wir sind die ganze Zeit.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/184-0
+00:17:32.743 --> 00:17:37.571
+<v Maximilian Kehder>unverplante Alex für 'ne scheinbar
+unabhängige so und sind hier drin und</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/184-1
+00:17:37.571 --> 00:17:41.737
+<v Maximilian Kehder>plötzlich macht es Klick,
+weil in diesen sagen wir in den paar</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/184-2
+00:17:41.737 --> 00:17:45.044
+<v Maximilian Kehder>Millisekunden,
+in den paar oder Sekunden hat noch</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/184-3
+00:17:45.044 --> 00:17:47.623
+<v Maximilian Kehder>niemand Refresh geklickt. Keine Ahnung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/186-0
+00:17:48.023 --> 00:17:51.943
+<v Matthias Max>Schon, schon richtig. Ja, ja,
+ich denk nur sehr technisch.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/185-0
+00:17:49.943 --> 00:17:50.343
+<v Maximilian Kehder>So.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/188-0
+00:17:52.263 --> 00:17:55.798
+<v Maximilian Kehder>Ja, aber gut, das ist ja, aber genau,
+das ist ja dann der Austausch.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/187-0
+00:17:52.823 --> 00:17:53.383
+<v Matthias Max>Was?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/188-1
+00:17:55.798 --> 00:17:59.845
+<v Maximilian Kehder>Und dann triggert das hier und sagt: 'Hey,
+wir haben jetzt 'ne Referenzierung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/188-2
+00:17:59.845 --> 00:18:02.561
+<v Maximilian Kehder>Event mit der Referenzierung ist
+reingekommen. Zack,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/188-3
+00:18:02.561 --> 00:18:05.788
+<v Maximilian Kehder>wie schaut's denn hier aus?
+Ist das Teleg verplant oder nicht?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/188-4
+00:18:05.788 --> 00:18:07.223
+<v Maximilian Kehder>' Und dann sortieren wir es.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/189-0
+00:18:07.823 --> 00:18:12.686
+<v Matthias Max>Mhm, passt, weil dann können wir die Alex,
+die ja komplett jungfräulich sind,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/189-1
+00:18:12.686 --> 00:18:14.183
+<v Matthias Max>direkt wieder wegwerfen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/190-0
+00:18:15.223 --> 00:18:17.463
+<v Maximilian Kehder>Oder halt die Telex rauswerfen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/191-0
+00:18:17.543 --> 00:18:23.676
+<v Matthias Max>Oder die Telex und das ist halt der Punkt,
+wo man technisch vielleicht ein bisschen</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/191-1
+00:18:23.676 --> 00:18:27.107
+<v Matthias Max>spielen kann, indem man sagt,
+wir hauen nicht,</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/191-2
+00:18:27.107 --> 00:18:32.583
+<v Matthias Max>starten nicht sofort mit der A.
+Leg Generierung. So warten mal 5 Sekunden.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/192-0
+00:18:32.903 --> 00:18:33.783
+<v Matthias Max>Oder so was.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/193-0
+00:18:33.943 --> 00:18:35.383
+<v Maximilian Kehder>Ja, ja, das.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/194-0
+00:18:35.223 --> 00:18:38.503
+<v Matthias Max>Das wäre dann vermeidet man die Leck
+Generierung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/196-0
+00:18:39.703 --> 00:18:40.663
+<v Matthias Max>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/195-0
+00:18:39.943 --> 00:18:40.623
+<v Maximilian Kehder>Mhm.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/199-0
+00:18:42.463 --> 00:18:44.743
+<v Matthias Max>OK, aber das wird.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/197-0
+00:18:42.743 --> 00:18:43.143
+<v Maximilian Kehder>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/198-0
+00:18:44.143 --> 00:18:44.743
+<v Maximilian Kehder>Ist ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/200-0
+00:18:46.343 --> 00:18:50.903
+<v Matthias Max>Das wird dann die Komplexität darstellen,
+ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/201-0
+00:18:52.583 --> 00:18:53.463
+<v Maximilian Kehder>Den Punkt.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/202-0
+00:18:54.343 --> 00:18:55.303
+<v Maximilian Kehder>Haben wir noch nichts.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/203-0
+00:18:57.223 --> 00:18:59.463
+<v Matthias Max>Mit Aufheben der Referenzierung.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/204-0
+00:18:59.783 --> 00:19:00.343
+<v Maximilian Kehder>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/205-0
+00:19:01.303 --> 00:19:02.743
+<v Matthias Max>Yeah, so.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/206-0
+00:19:02.103 --> 00:19:05.143
+<v Maximilian Kehder>Da, äh, schreib mal.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/207-0
+00:19:04.023 --> 00:19:09.336
+<v Matthias Max>Ganze quasi, oder? Das heißt,
+2 scheinbar zusammengehörige T. und A.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/207-1
+00:19:09.336 --> 00:19:12.263
+<v Matthias Max>Sätze sind doch nicht zusammengehörig.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/208-0
+00:19:14.663 --> 00:19:17.507
+<v Matthias Max>Falls es das gibt,
+da würde ich aber echt aufs Feedback</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/208-1
+00:19:17.507 --> 00:19:17.863
+<v Matthias Max>warten.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/209-0
+00:19:18.903 --> 00:19:23.818
+<v Maximilian Kehder>Ja, ja, also das will ich mir jetzt nicht.
+Das ist ja dann noch mal quasi eine</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/209-1
+00:19:23.818 --> 00:19:25.623
+<v Maximilian Kehder>Erweiterung des ganzen Flows.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/211-0
+00:19:25.783 --> 00:19:28.968
+<v Matthias Max>Ja, und das,
+wenn das hier ein Konzeptdokument werden</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/211-1
+00:19:28.968 --> 00:19:33.039
+<v Matthias Max>soll, würde ich das scopen,
+sonst wird das wieder ein riesen Konzept</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/211-2
+00:19:33.039 --> 00:19:36.343
+<v Matthias Max>und wir haben Abhängigkeiten schon in der
+Konzeptphase.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/210-0
+00:19:36.743 --> 00:19:37.303
+<v Maximilian Kehder>Ja.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/212-0
+00:19:38.103 --> 00:19:42.463
+<v Maximilian Kehder>Aber gut so, das ist der Input von mir.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/213-0
+00:19:43.703 --> 00:19:44.183
+<v Matthias Max>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/214-0
+00:19:43.863 --> 00:19:46.983
+<v Maximilian Kehder>Was die Business,
+was die Business Requirements sind.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/215-0
+00:19:48.263 --> 00:19:48.743
+<v Matthias Max>Yeah.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/216-0
+00:19:48.263 --> 00:19:49.063
+<v Maximilian Kehder>Uh.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/217-0
+00:19:50.823 --> 00:19:51.703
+<v Maximilian Kehder>And now.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/219-0
+00:19:53.143 --> 00:19:54.663
+<v Maximilian Kehder>Müssen wir jetzt? Müssen wir schauen?</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/218-0
+00:19:53.543 --> 00:19:54.023
+<v Matthias Max>Out.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/220-0
+00:19:55.103 --> 00:19:57.703
+<v Matthias Max>Now I leave the call and you makes the
+flows.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/222-0
+00:19:59.583 --> 00:20:04.663
+<v Maximilian Kehder>Will jetzt auch mal das Recording direkt
+wieder stoppen, weil letzten Endes das.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/221-0
+00:20:02.823 --> 00:20:03.623
+<v Matthias Max>Stoppen.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/223-0
+00:20:05.303 --> 00:20:08.983
+<v Matthias Max>Das ist jetzt der zusammengefasste
+Business.</v>
+
+0bb4d321-294d-40c2-b36e-0c6d36c179e3/224-0
+00:20:10.263 --> 00:20:10.903
+<v Matthias Max>Sicht</v>

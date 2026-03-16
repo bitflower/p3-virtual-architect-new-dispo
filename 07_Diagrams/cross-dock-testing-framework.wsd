@@ -1,0 +1,35 @@
+actor "Test Runner" as TestRunner
+participant "Proc/Func Test Catalog" as TestCases
+participant "Azure Service Bus" as ASB
+participant "Cross-Dock Publisher" as Publisher
+participant "TMS Bridge" as TMSBridge
+database TMS
+
+title "Automated Testing Framework - Cross-Dock Publisher (End-2-End)"
+
+loop Loop over proc/func definitions
+    alt Step 1: Publish event
+        TestRunner -> TestCases : Pick next proc/func definition
+        TestCases -> TestRunner : Definition of event, success and failure
+        TestRunner -> ASB : Publish test event
+        ASB -> Publisher : Consume test event
+        Publisher -> TMSBridge : Request/Call proc/func
+        TMSBridge -> TMS : Call proc/func
+        note right of TMS: Mocked
+    end
+
+    alt #LightGreen Success case
+        TMS -> TMSBridge : Proc/func return value
+        TMSBridge -> Publisher : Return result
+        note right of Publisher: Business logic failure not treated as failed test
+        Publisher -> ASB : Publishes success event
+        ASB -> TestRunner : Consume success event
+        TestRunner -> TestRunner : TEST: OK
+    end
+    alt #LightSalmon Error Case
+        TMSBridge -> Publisher : Error occured
+        Publisher -> ASB : Publishs failure event
+        ASB -> TestRunner : Consume failure event
+        TestRunner -> TestRunner : TEST:NOK
+    end
+end

@@ -1,0 +1,115 @@
+{
+  "TransportOrders": [
+    {
+      "Id": "101",
+      "Number": 1234567,
+      "Company": "10",
+      "Branch": "33",
+      "Id": "10340281247982",
+      "Number": 225,
+      "Company": 10,
+      "Branch": 34,
+      "Type": "LH",
+      "PerformanceDate": "1900-01-01T00:00:00+01:00",
+      "TransportMode": "SelfCollection",
+      "State": 4,
+      "StateList": ["InPlanning"],
+      "Remark": "Rückladung Culina\\nEX",
+      "Remarks": [
+        {
+          "Type": "1",
+          "Text": "Rückladung Culina"
+        },
+        {
+          "Type": "2",
+          "Text": "EX"
+        }
+      ],
+      "Participants": [
+        {
+          "Type": "Principal",
+          "PersonId": "10340001249716"
+        },
+        {
+          "Type": "Forwarder",
+          "PersonId": "10340001249716"
+        },
+        {
+          "Type": "Contractor",
+          "PersonId": "10340368142662"
+        },
+        {
+          "Type": "Carrier",
+          "PersonId": "10340368142662"
+        },
+        {
+          "Type": "Staff",
+          "PersonId": "103402812479821"
+        }
+      ],
+      "Resources": [
+        {
+          "Id": "Z-GO 410",
+          "Type": "Truck",
+          "SealNumber": ""
+        },
+        {
+          "Id": "138099",
+          "Type": "Trailer",
+          "SealNumber": "",
+          "Resources": [
+            {
+              "Id": "138099~TC1",
+              "Type": "Chamber",
+              "Name": "TC1",
+              "PresetTemperature": null,
+              "MeasuredTemperature": null,
+              "RequiredTemperature": 3
+            }
+          ]
+        },
+        {
+          "Id": "TEL DISPO",
+          "Type": "Driver",
+          "Phone": "+4937627593422"
+        }
+      ],
+      "TourPoints": [
+        {
+          "Id": "10340281248045",
+          "PersonId": 10340006408924,
+          "OpeningIntervals": null,
+          "ServiceInterval": {
+            "Start": null,
+            "End": null
+          },
+          "BookingId": "",
+          "Instructions": "",
+          "Gate": ""
+        },
+        {
+          "Id": "10340281248046",
+          "PersonId": 10340001249716,
+          "OpeningIntervals": [
+            {
+              "Start": "1900-01-01T06:00:00+01:00",
+              "End": null
+            },
+            {
+              "Start": null,
+              "End": null
+            }
+          ],
+          "ServiceInterval": {
+            "Start": "1900-01-01T06:00:00+01:00",
+            "End": null
+          },
+          "BookingId": "",
+          "Instructions": "",
+          "Gate": ""
+        }
+      ],
+      "Costs": null
+    }
+  ]
+}

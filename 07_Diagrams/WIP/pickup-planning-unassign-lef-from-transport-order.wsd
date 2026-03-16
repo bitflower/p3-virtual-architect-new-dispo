@@ -1,0 +1,74 @@
+actor Dispatcher
+participant Frontend
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database TMS
+' participant TOP as "TOP (.Net)"
+' participant xServer
+
+title "Unassign a Leg from a Transport Order"
+
+Dispatcher -> Frontend : Clicks a button to unassign Leg \nfrom Transport Order
+Frontend -> Backend : Request to unassign Leg\nfrom Transport Order
+
+activate Backend
+' Backend -> Backend : Extract/Map Shipment ID from Leg
+' note right of Backend: Leg = Shipment
+Backend -> TMSBridge : Request to unassign Leg\nfrom Transport Order
+activate TMSBridge
+TMSBridge -> TMS : Request to unassign Leg\nfrom Transport Order
+activate TMS
+note right of TMS: pDis_TransportOrder.RemoveLeg()
+group Transactional Data Integrity
+    TMS -> TMS: BEGIN;
+    ' TMS -> TMS : pDis_TransportOrder.RemoveLeg()
+    TMS -> TMS : Apply removing logic
+    note right of TMS: TMS will keep the TMS-Leg (same as New Dispo)\nbut the status_dispatched will be 'F'
+    note right of TMS: Tourpoints in TMS will be removed in case they are empty\n(e.g. if the leg was the last one in the tour point)
+    alt #LightGreen Success case
+        TMS -> TMS : COMMIT;
+        ' TMS -> TMS : Rollback changes
+        TMS --> TMSBridge : Return
+    end
+    alt #LightSalmon Error Case
+        TMS -> TMS : ROLLBACK;
+        TMS --> TMSBridge : Return NULL
+    end
+end
+
+deactivate TMS
+TMSBridge --> Backend : Return
+deactivate TMSBridge
+
+group Leg Update
+    Backend -> Backend : Remove TMS-Leg ID reference
+    note right of Backend: Still TBD if we keep the reference
+    Backend -> Backend : Remove Tourpoint ID reference
+    note right of Backend: Do we even have this?
+    Backend -> Backend : Set status to unplanned / move to unplanned table
+end
+
+group Tour Points Calculation
+    
+    Backend -> Backend : Check if there are relevant changes to the Transport Order after the removal ?
+    note right of Backend: Certain conditions indicate if we need to re-calculate\nvia xServer (Assumption: Avoiding re-calcualtions is preferred).
+    note right of Backend: E.g.: Number of Tour Points, Order of Tour Points
+
+    alt #LightGreen Yes
+        Backend -> Backend : Trigger xServer Process
+    end
+    alt #LightSalmon No
+        Backend -> Backend : No activity
+    end
+end
+
+Backend --> Frontend : Return 
+deactivate Backend
+
+activate Frontend
+Frontend --> Frontend : Create Snackbar item
+
+Frontend --> Dispatcher : Provides snackbar
+deactivate Frontend
+
+Dispatcher --> Frontend : Clicks snackbar to copy\nthe Transport Order ID to clipboard

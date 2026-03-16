@@ -1,0 +1,30 @@
+@startuml grobavise-sendungsart-t-flow-referenz-festgestellt
+title Sendungsart T: Referenz A↔T festgestellt
+caption Event: Referenz zwischen A-Satz und T-Satz wird entdeckt
+
+skinparam backgroundColor white
+skinparam ActivityBackgroundColor white
+skinparam ActivityDiamondBackgroundColor white
+
+start
+#LightYellow:Referenz A↔T\nfestgestellt;
+
+if (A-Legs\nexistieren?) then (Nein)
+  #LightGray:Keine Aktion;
+  stop
+else (Ja)
+  if (A-Legs\nverplant?) then (Nein)
+    #PaleGreen:A-Legs löschen;
+    stop
+  else (Ja)
+    if (T-Legs\nverplant?) then (Nein)
+      #PaleGreen:T-Legs löschen;
+      stop
+    else (Ja)
+      #OrangeRed:Merge-Konflikt\n(manuelle Klärung);
+      stop
+    endif
+  endif
+endif
+
+@enduml

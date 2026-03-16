@@ -1,0 +1,62 @@
+@startuml
+actor Dispatcher
+participant Frontend
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database "TMS Database" as TMS
+participant "TOP REST Service (.Net 4.6)" as TOP
+participant xServer
+
+title "Route Calculation for a Transport Order (Happy Flow)"
+
+Dispatcher -> Frontend : Request route calculation\nfor Transport Order
+Frontend -> Backend : Request route calculation\nfor Transport Order
+
+activate Backend
+Backend -> TMSBridge : Get PoolDTO for TransportOrderId
+TMSBridge -> TMS : pDis_TransportOrder.getXServerDto(TransportOrderId)
+TMS --> TMSBridge : Return PoolDTO
+TMSBridge --> Backend : Return PoolDTO
+
+group 🟢 NEW: Interception: Dummy Vehicle
+    Backend -> Backend : Set dummy vehicle\n(static configuration)
+end
+
+group #LightGray Route Calculation via TOP & xServer (Closed System ⚠️)
+    Backend -> TOP : CalculateRoute(PoolDTO)\nvia HTTP/REST
+    activate TOP
+
+    TOP -> TOP : Map PoolDTO to xServer DTO
+    TOP -> xServer : Send xServer DTO (HTTP)
+    xServer --> TOP : Return calculated route (HTTP)
+    TOP -> TOP : Map xServer DTO to PoolDTO
+    TOP --> Backend : Return updated PoolDTO\nvia HTTP/REST
+    deactivate TOP
+end
+
+Backend -> TMSBridge : Submit updated PoolDTO
+TMSBridge -> TMS : pDis_TransportOrder.setXServerDto()
+
+activate TMS
+TMS -> TMS : Business logic\n(Tourpoint update etc.)
+TMS --> TMSBridge : Success
+deactivate TMS
+
+TMSBridge --> Backend : Return success
+
+group 🟢 NEW: Update Assigned New Dispo Legs
+    Backend --> Backend : Update Assigned Legs from Tourpoints
+end
+
+Backend --> Frontend : Return success
+
+deactivate Backend
+
+Frontend -> Dispatcher : Report success\n(and show spinner "Loading tourpoints" or so)
+
+group Follow flow: Update tour points
+    Frontend -> Backend : Reloads tour points ...
+    Backend --> Frontend : Display updated tour points
+    Frontend --> Dispatcher : Display updated tour points
+end
+@enduml

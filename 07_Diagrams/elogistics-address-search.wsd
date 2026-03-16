@@ -1,0 +1,31 @@
+@startuml elogistics-address-search
+actor Dispatcher
+participant "New Dispo Frontend" as Frontend
+participant "New Dispo Backend" as Backend
+participant "eLogistics Portal" as eLogistics
+participant "TMS Bridge" as TMSBridge
+database "TMS Database" as TMS
+
+title "Address Search via eLogistics Portal"
+
+Dispatcher -> Frontend : Search for Country, City or Street
+
+activate Frontend
+Frontend -> Backend : Request address search\n(search term)
+
+activate Backend
+Backend -> eLogistics : Search via API\n(search term)
+
+activate eLogistics
+eLogistics -> eLogistics : Search for matching addresses
+eLogistics --> Backend : Return matching address records\n(Country Code, Country, City, Street)
+deactivate eLogistics
+
+Backend --> Frontend : Forward address records
+deactivate Backend
+
+Frontend -> Frontend : Prepare dropdown options
+Frontend --> Dispatcher : Display address options\nin dropdown
+deactivate Frontend
+
+@enduml

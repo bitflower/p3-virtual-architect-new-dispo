@@ -1,0 +1,69 @@
+actor Dispatcher
+participant Frontend
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database TMS
+' participant TOP as "TOP (.Net)"
+participant xServer
+
+title "Adding a logical tour point"
+
+' Dispatcher -> Frontend : Drag and Drop Leg\nonto Planning View
+' Frontend -> Backend : Request Transport Order Creation\nby sending Leg Information
+
+' activate Backend
+' Backend -> Backend : Extract/Map Shipment ID from Leg
+' note right of Backend: Leg = Shipment
+' Backend -> TMSBridge : Request to create \nTransport Order from Shipment
+' activate TMSBridge
+' TMSBridge -> TMS : Request to create \nTransport Order from Shipment
+' activate TMS
+' note right of TMS: pDis_TransportOrder.CreateTransportOrderFromShipment()
+' group Transactional Data Integrity
+'     TMS -> TMS: BEGIN;
+'     TMS -> TMS : pDis_TransportOrder.New()
+'     TMS -> TMS : pDis_TransportOrder.AddShipment()
+'     note right of TMS: Also creates "default" tour points structure
+'     ' TMS -> TOP : Was passiert hier?
+'     ' note right of TOP: Was passiert hier?
+'     ' TOP -> TMS : Return tour points
+'     alt #LightGreen Success case
+'         TMS -> TMS : COMMIT;
+'         ' TMS -> TMS : Rollback changes
+'         TMS --> TMSBridge : Return Transport Order ID (TIX)
+'     end
+'     alt #LightSalmon Error Case
+'         TMS -> TMS : ROLLBACK;
+'         TMS --> TMSBridge : Return NULL
+'     end
+' end
+
+' deactivate TMS
+' TMSBridge --> Backend : Return Transport Order ID (TIX)
+' deactivate TMSBridge
+
+' group Tour Points / Calculation
+'     Backend -> TMSBridge : Request master data
+'     note right of TMSBridge : Logic extracted from UniFace (?)
+'     TMSBridge -> Backend : Return master data
+
+'     Backend -> xServer : Request tour calculation
+'     note right of Backend : Use TOP (.Net)?
+'     xServer -> Backend : Return tour points
+
+'     Backend -> TMSBridge : Update tour points
+'     TMSBridge -> TMS
+'     TMS -> TMSBridge
+'     TMSBridge -> Backend : Return updated tour points
+' end
+
+' Backend --> Frontend : Return New Transport Order ID (TIX)
+' deactivate Backend
+
+' activate Frontend
+' Frontend --> Frontend : Create Snackbar item containing Tranport Order ID
+
+' Frontend --> Dispatcher : Provides snackbar
+' deactivate Frontend
+
+' Dispatcher --> Frontend : Clicks snackbar to copy\nthe Transport Order ID to clipboard

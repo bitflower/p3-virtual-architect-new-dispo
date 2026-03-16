@@ -1,0 +1,16 @@
+Frontend -> "New Dispo Backend" : Request route optimization (TA_TIX)
+activate "New Dispo Backend"
+"New Dispo Backend" -> "TMS Bridge" : Request transport order (via TA_TIX)
+"TMS Bridge" -> "New Dispo Backend" : Return transport order
+"New Dispo Backend" -> "New Dispo Backend" : Extract tour points
+"New Dispo Backend" -> "New Dispo Backend" : Map tour points to xServer API DTO
+"New Dispo Backend" -> xServer : Request route optimization
+note right of xServer : Which API?
+xServer -> "New Dispo Backend" : Return optimized route
+"New Dispo Backend" -> "New Dispo Backend" : Map tour points to TMS DTO
+"New Dispo Backend" -> "TMS Bridge" : Update tour points in transport order
+"TMS Bridge" -> "New Dispo Backend" : Return updated transport order
+note right of "TMS Bridge" : Maybe just the tour points?
+"New Dispo Backend" -> Frontend : Return optimized route
+deactivate "New Dispo Backend"
+Frontend -> Frontend : Render new tour points

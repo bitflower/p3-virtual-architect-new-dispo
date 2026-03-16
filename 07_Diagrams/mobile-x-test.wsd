@@ -1,0 +1,20 @@
+actor Driver
+participant App
+participant "Mobile Web Service" as Backend
+database "TMS DB" as TMS
+
+
+Driver -> App : Scan MP2
+activate App
+App -> Backend : Request
+activate Backend
+Backend -> TMS: Request
+activate TMS
+TMS -> Backend : Entity<List>
+deactivate TMS
+Backend -> App : Entity<List>
+deactivate Backend
+App -> App : Render whatever
+App -> Driver : Sees result
+deactivate App
+

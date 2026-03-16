@@ -1,0 +1,95 @@
+@startuml grobavise-sendungsart-t-flow
+title Konzept: Sendungsart T - Grobavise Handling Flow
+caption Annahme: T-Satz importiert
+
+skinparam backgroundColor white
+skinparam ActivityBackgroundColor white
+skinparam ActivityDiamondBackgroundColor white
+
+start
+#LightYellow:A-Satz importiert;
+
+if (Referenziert?) then (Nein)
+
+  #LightGray:New Dispo:\nA-Satz als eigenständige\nSendung erkannt;
+  #PaleGreen:New Dispo:\nA-Legs erstellen;
+
+  if (A-Legs\nverplant?) then (Ja)
+    if (T-Leg\nReferenzierung\nhergestellt?) then (Ja)
+      if (T-Legs\nverplant?) then (Ja)
+        #OrangeRed:(O) End;
+        stop
+      else (Nein)
+        note right
+          T-Leg nicht verplant:
+          Loop zurück zu
+          "T-Legs verplant?"
+        end note
+        stop
+      endif
+    else (Nein)
+      note right #LightYellow
+        **Merge-Konflikt**
+        Beide Legs verplant,
+        Referenz erst später
+        hergestellt.
+        Manuelle Klärung nötig.
+      end note
+      #OrangeRed:Error:\nBeide Legs verplant\n(Merge-Konflikt);
+      stop
+    endif
+  else (Nein)
+    if (T-Leg\nReferenzierung\nhergestellt?) then (Ja)
+      note right
+        Referenz hergestellt:
+        Loop zurück zu
+        "T-Legs verplant?"
+      end note
+      stop
+    else (Nein)
+      note right #LightYellow
+        Warten auf
+        Referenzierung
+        (Event-getriggert)
+      end note
+      stop
+    endif
+  endif
+
+else (Ja)
+  if (T-Legs\nverplant?) then (Ja)
+    #PaleGreen:New Dispo:\nIgnoriert A-Satz;
+    split
+      #PaleGreen:New Dispo:\nT-Legs verplant;
+      if (T-Leg vom FA\nentfernt?) then (Ja)
+        #PaleGreen:New Dispo:\nT-Legs entfernt;
+        note right
+          Weiter zu:
+          "Ignoriert T-Satz"
+        end note
+        stop
+      else (Nein)
+        #LightGray:Keine Änderung\nmehr;
+        stop
+      endif
+    split again
+      #LightCoral:New Dispo:\nKeine A-Leg-Erstellung;
+      #LightCoral:A-Legs können nicht\nverplant werden;
+      stop
+    end split
+  else (Nein)
+    #PaleGreen:New Dispo:\nIgnoriert T-Satz;
+    split
+      #PaleGreen:New Dispo:\nT-Leg löschen;
+      #LightCoral:T-Legs können nicht\nverplant werden;
+      stop
+    split again
+      #PaleGreen:New Dispo:\nA-Legs erstellen;
+      #PaleGreen:New Dispo:\nA-Legs verplant;
+      stop
+    end split
+  endif
+
+endif
+
+@enduml

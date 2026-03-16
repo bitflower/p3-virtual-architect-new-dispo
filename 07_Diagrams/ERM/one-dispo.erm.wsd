@@ -1,0 +1,168 @@
+' verstecke das E im Entitäten-Titel
+hide circle
+
+skinparam  class {
+    BackgroundColor<<p3-entity>> #A9DCDF
+}
+
+' verhindere Probleme mit gewinkelten Krähenfüßen
+skinparam linetype ortho
+
+package TMS as pkgTMS {
+  entity "Customer" as customer {
+
+  }
+  package "Transport Order" as pkgTransportOrder {
+
+    entity "TransportOrder" as transportOrder <<fromSpec>> {
+        + MasterTruck : String
+        + TransportMode : String
+        + Contractor : String               ' Contracting partner via freight contract
+        + Carrier : String                  ' Actual carrier/subcontractor of the contractor
+        + TruckLicensePlate : String
+        + TrailerLicensePlate : String
+        + SealNumber : String
+        + DriverName : String                ' Only applicable for contractors
+        + DriverMobileNumber : String
+        + Comments : String
+        + TransportOrderType : TransportOrderType
+        + FrameworkTourNumber : String       // Rahmentournummer
+        + EncounterTrafficNumber : String    // Begegnungsverkehrsnummer
+        + ShuttleTrafficNumber : String      // Staffelverkehrsnummer
+    }
+
+    package Enums {
+      enum TransportOrderType {
+          DeliveryTour                ' Zustelltour: Only delivery stops
+          PickupTourShuttle           ' Abholtour/Shuttle: Only pickup stops
+          DeliveryAndPickupTour       ' Zustell- & Abholtour: Both delivery and pickup stops
+          SystemTraffic               ' Systemverkehr: Daily system-bound tour with fixed schedule
+          EncounterTraffic            ' Begegnungsverkehr: System traffic with trailer exchange
+          AdditionalLoading           ' Zuladung: Additional load assigned at a branch office
+          PartCharter                 ' Teilcharter: Max 66% filled, 75% max charge compared to full load
+          EmptyRun                    ' Leerfahrt: No load assigned
+          ShuttleTraffic              ' Staffelverkehr: Requires a ShuttleTrafficNumber
+      }
+    }
+  }
+
+  package "Shipment" as pkgShipment {
+    entity "Shipment" as shipment  {
+      + shipmentid
+      + company
+      + branch
+      + shipmenttype
+      + shipmentnumber
+      + modeoftransport
+      + productgroup
+      + consignorname
+      + consignorcountry
+      + consignorzipcode
+      + consignorcity
+      + consignorstreet
+      + consignorservicearea
+      + consigneename
+      + consigneecountry
+      + consigneezipcode
+      + consigneecity
+      + consigneestreet
+      + consigneeservicearea
+      + departureservicearea
+      + destinationservicearea
+      + modeoftraffic
+    }
+  }
+}
+
+package "TMS Bridge" as pkgTmsBridge {
+  entity "Branch" as branch <<p3-entity>> {
+      + branch_key VARCHAR(255) NOT NULL
+      --
+      + branch_name VARCHAR(255) NOT NULL
+  }
+}
+
+package "Pickup Planning" as pkgLegsLots {
+  
+  enum LotStatusMessage {
+    Sent
+    Transferred
+    Confirmed
+    Rejected
+    Canceled
+    Started
+    Completed
+  }
+
+  entity "Leg" as leg <<p3-entity>> {
+      leg_guid UUID PRIMARY KEY DEFAULT
+      --
+      leg_branch_key VARCHAR(255) NOT NULL
+      leg_shipment_id UUID NOT NULL
+      leg_traffic_mode VARCHAR(100) NOT NULL
+      leg_product_group VARCHAR(100) NOT NULL
+      leg_dispatch_status VARCHAR(100) NOT NULL
+      leg_fixed_delivery_date TIMESTAMP
+      leg_delivery_date_from TIMESTAMP
+      leg_delivery_date_to TIMESTAMP
+      leg_consignor_name VARCHAR(255) NOT NULL
+      leg_consignor_country VARCHAR(100) NOT NULL
+      leg_consignor_city VARCHAR(100) NOT NULL
+      leg_consignor_zipcode VARCHAR(20) NOT NULL
+      leg_consignor_street VARCHAR(255)
+      leg_consignee_name VARCHAR(255) NOT NULL
+      leg_consignee_country VARCHAR(100) NOT NULL
+      leg_consignee_city VARCHAR(100) NOT NULL
+      leg_consignee_zipcode VARCHAR(20) NOT NULL
+      leg_consignee_street VARCHAR(255)
+      leg_weight DECIMAL(102) NOT NULL
+      --
+      leg_volume_pallet_spaces DECIMAL(102)
+      leg_floor_pallet_spaces DECIMAL(102)
+  }
+
+  entity "Lot" as lot <<p3-entity>> {
+      lot_guid : UUID PRIMARY KEY DEFAULT
+      --
+      lot_branch_key : VARCHAR(255) NOT NULL
+      lot_total_weight : DECIMAL(10,2) NOT NULL
+      lot_status : LotStatusMessage
+      --
+      lot_total_volume_pallet_spaces : DECIMAL(10,2)
+      lot_total_floor_pallet_spaces : DECIMAL(10,2)
+      lot_total_clients_count : INT
+  }
+
+  entity "LegLotLink" as legLotLink <<p3-entity>> {
+      leglotlink_guid UUID PRIMARY KEY DEFAULT
+      --
+      leglotlink_leg_guid UUID NOT NULL
+      leglotlink_lot_guid UUID NOT NULL
+  }
+
+  leg }|..|{ legLotLink
+  lot }|..|{ legLotLink
+
+  shipment ||..|{ leg
+
+}
+
+package "New Feature" as pkgNewFeature {
+  entity "TransportOrder_NewFeatureFields" as transportOrderNew <<p3-entity>> {
+      + id : UUID
+      --
+      + transport_order_id : INT
+      + leg_branch_key VARCHAR(255) NOT NULL
+      --
+      + any_new_field : STRING
+  }
+
+  transportOrderNew .. transportOrder
+  transportOrderNew .. branch
+}
+
+lot }o..o| transportOrder
+leg }o..o| transportOrder
+
+lot .. branch
+leg .. branch

@@ -1,0 +1,39 @@
+@startuml
+actor User
+participant "Datastream\n(Cross-Dock Pipeline)" as Pipeline
+database "Cloud Storage\n(Cross-Dock Bucket)" as Bucket
+participant "Cloud Function\n(Cross-Dock Publisher)" as Publisher
+participant "TMS Bridge" as TMSBridge
+database "TMS Database" as TMSDB
+participant "CALSuite" as CALSuite
+
+User -> TMSDB: Data Change on SEN_TS
+Pipeline -> TMSDB: Listen for Changes (Transaction Logs)
+Pipeline -> Bucket: Store CDC Event
+activate Bucket
+Bucket -> Publisher: Trigger on new file
+activate Publisher
+
+Publisher -> TMSBridge: Read Transport Orders (HTTPS)
+activate TMSBridge
+TMSBridge -> TMSDB: Read Transport Orders (TCP/IP)
+activate TMSDB
+TMSDB -> TMSBridge: Return Transport Orders (Result Set)
+
+deactivate TMSDB
+TMSBridge --> Publisher: Transport Order Data (JSON Response)
+deactivate TMSBridge
+
+note right of TMSBridge
+  Potential Bottleneck:
+  - Processing delay (1-3 sec)
+  - Sequential dependencies
+  - Limited concurrency
+end note
+
+Publisher -> CALSuite: Publish Events (Azure Service Bus)
+
+Publisher --> Bucket : Acknowledge Processing
+deactivate Publisher
+deactivate Bucket
+@enduml

@@ -1,0 +1,52 @@
+actor Dispatcher
+participant Frontend
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database TMS
+' participant TOP as "TOP (.Net)"
+' participant xServer
+
+title "Remove Transport Order without Legs"
+
+Dispatcher -> Frontend : Clicks a button to\nremove Transport Order
+Frontend -> Dispatcher : Show Confirmation for removal
+    alt #LightSalmon Error Case
+        Dispatcher -> Dispatcher : Skip
+    end
+Dispatcher -> Frontend : Approve
+Frontend -> Backend : Request to delete\nTransport Order
+
+activate Backend
+Backend -> TMSBridge : Request to delete\nTransport Order
+activate TMSBridge
+TMSBridge -> TMS : Request to delete\nTransport Order
+activate TMS
+note right of TMS: pDis_TransportOrder.Delete()
+group Transactional Data Integrity
+    TMS -> TMS: pTa.Del();
+    ' TMS -> TMS : Apply removing logic
+    alt #LightGreen Delete possible
+        TMS -> TMS : COMMIT;
+        TMS --> TMSBridge : Return
+    end
+    alt #LightSalmon Delete not possible (e.g. it's abgefertigt already)
+        TMS -> TMS : ROLLBACK;
+        TMS --> TMSBridge : Return NULL
+    end
+    alt #Red Error Case
+        TMS -> TMS : ROLLBACK;
+        TMS --> TMSBridge : Return NULL
+    end
+end
+
+deactivate TMS
+TMSBridge --> Backend : Return
+deactivate TMSBridge
+
+Backend --> Frontend : Return 
+deactivate Backend
+
+activate Frontend
+
+Frontend --> Dispatcher : Show success message
+deactivate Frontend

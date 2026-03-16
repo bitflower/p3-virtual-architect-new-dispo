@@ -1,0 +1,70 @@
+@startuml
+actor User
+participant Frontend
+participant "New Dispo Backend" as Backend
+participant "TMS Bridge" as TMSBridge
+database TMS
+
+title "Create a Transport Order from Lot"
+User -> Frontend : Drag and Drop Lot onto Planning View
+Frontend -> Backend : Request Transport Order Creation\nby sending Lot Information
+activate Backend
+
+Backend -> Backend : Retrieve Legs from Lot
+note right of Backend : Legs are resolved internally\nwithin the Backend
+
+group Transactional Integrity
+    Backend -> TMSBridge : Request to create new transport order
+    activate TMSBridge
+    TMSBridge -> TMS : Request to create new transport order
+    activate TMS
+    note right of TMS: pDis_TransportOrder.New()
+
+    alt #LightGreen Success Case
+        TMS -> TMSBridge: Return Transport Order ID (TIX)
+        TMSBridge -> Backend: Return Transport Order ID (TIX)
+    else #LightSalmon Error Case
+        note right of TMS: Rollback entire Transport Order
+        ' break
+    end
+
+
+
+    loop for each Leg in Lot
+        Backend -> Backend : Extract/Map Shipment ID for Leg
+        Backend -> TMSBridge : Request to add Shipment to Transport Order
+        TMSBridge -> TMS : Request to add Shipment
+        activate TMS
+        
+        alt #LightGreen Success Case for Leg
+            TMS -> TMS : COMMIT Leg
+            TMS --> TMSBridge : Return two Tour Point IDs
+        else #LightSalmon Error Case for Leg
+            note right of TMS: Rollback entire Transport Order\nprocess due to failure
+            break
+        end
+
+        deactivate TMS
+        TMSBridge --> Backend : Return two Tour Point IDs or Error
+        deactivate TMSBridge
+        
+        alt #LightGreen Success Case
+            note right of Backend : Handle and store Tour Point IDs
+        else #LightSalmon Error Case
+            note right of Backend : Log error, rollback initiated
+            end loop
+        end
+    end
+
+    alt #LightGreen Success Case for all Legs
+        TMS -> TMS : COMMIT Transport Order Transaction
+        Backend --> Frontend : Confirmation with Tour Point IDs
+    else #LightSalmon Error Case for any Leg
+        TMS -> TMS : ROLLBACK Transport Order Transaction
+        Backend --> Frontend : Error occurred, entire process rolled back
+    end
+    deactivate TMS
+    deactivate TMSBridge
+end
+deactivate Backend
+@enduml

@@ -1,0 +1,91 @@
+@startuml
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!include DEVICONS/dotnet.puml
+!include DEVICONS/postgresql.puml
+
+caption
+= **Cross-Dock Publisher - Stress Test Scenarios**  
+<font color=red>**Focus: Identifying bottlenecks & ensuring resilience under load**</font>  
+<font color=green>Status: Final</font>  
+Each component is annotated with relevant test cases (2.x)  
+to analyze system behavior under stress.
+endcaption
+
+System_Boundary(c4, 'TMS Bridge') {
+    Component(componentDatastreamTransportOrders, "Cross-Dock Pipeline", "Datastream", "Listens for data changes on the table SEN_TS")
+
+    note right of componentDatastreamTransportOrders
+    **Test 2.1: Daily Load Simulation**  
+    - Focus: Event ingestion rate from DB  
+    - Checks pipeline delay  
+    - Measures throughput at different times
+    end note
+
+    Component(componentCDCCloudStorage, "Cross-Dock Bucket", "Cloud Storage", "Stores SEN_TS CDC events")
+
+    note left of componentCDCCloudStorage
+    **Test 2.2: Peak Load**  
+    - Simulates **1000+ events/sec**  
+    - Monitors **lag in Cloud Storage**  
+    - Measures backlog formation
+    end note
+
+    Container(containerTMSBridge, "TMS Bridge", ".Net", "REST Gateway to TMS databases", $sprite="dotnet")
+
+    note right of containerTMSBridge
+    **Test 2.4: TMS Bridge Performance**  
+    - Simulates **high query load**  
+    - Tests latency when reading transport orders  
+    - Identifies potential bottlenecks
+    end note
+
+    Component(componentCrossDockPublisher, "Cross-Dock Publisher", "CloudFunction", "Publishes Transport Orders to CALSuite", $sprite="dotnet")
+
+    note left of componentCrossDockPublisher
+    **Test 2.3: High-Burst Scenario**  
+    - Measures **function execution time**  
+    - Tests **burst handling**  
+    - Ensures scaling & retry mechanisms
+    end note
+
+    note right of componentCrossDockPublisher
+    **Test 2.6: Failure & Recovery**  
+    - Simulates **Service Bus outage**  
+    - Tests **TMS Database failure recovery**  
+    - Measures event consistency after crash
+    end note
+}
+
+System_Boundary(c1, 'CALtms') {
+    ContainerDb(containerTMSDatabase, "TMS Database", "PostGreSQL", "Single TMS branch database", $sprite="postgresql")
+
+    note left of containerTMSDatabase
+    **Test 2.4: TMS Database Bottleneck**  
+    - Simulates slow DB responses (3-5 sec)  
+    - Measures impact on processing speed  
+    - Checks if backlog grows uncontrollably
+    end note
+}
+
+System_Boundary(c2, 'CALSuite') {
+    System(systemCALSuite, "CALSuite", "Optional Description")
+
+    note right of systemCALSuite
+    **Test 2.5: Azure Service Bus Throttling**  
+    - Identifies max event throughput  
+    - Observes retry logic on message limits  
+    - Ensures message queue recovery  
+    end note
+}
+
+Rel_D(componentDatastreamTransportOrders, containerTMSDatabase, "Listens for changes", "Transaction Logs")    
+Rel_U(componentDatastreamTransportOrders, componentCDCCloudStorage, "Stores CDC event", "Protocol ?")
+Rel_U(componentCDCCloudStorage, componentCrossDockPublisher, "Triggers", "Protocol ?")
+Rel(componentCrossDockPublisher, containerTMSBridge, "Reads TransportOrders from", "HTTPS")
+Rel(containerTMSBridge, containerTMSDatabase, "Reads TransportOrders", "TCP/IP")
+Rel_R(componentCrossDockPublisher, systemCALSuite, "Publishes events to", "Azure Service Bus")
+
+@enduml

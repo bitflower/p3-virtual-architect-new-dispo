@@ -1,0 +1,64 @@
+actor Dispatcher
+participant Frontend
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database TMS
+' participant TOP as "TOP (.Net)"
+' participant xServer
+
+title "Creating a Transport Order from a Leg"
+
+Dispatcher -> Frontend : Drag and Drop Leg\nonto Planning View
+Frontend -> Backend : Request Transport Order Creation\nby sending Leg Information
+
+activate Backend
+Backend -> Backend : Extract/Map Shipment ID from Leg
+' note right of Backend: Leg = Shipment
+Backend -> TMSBridge : Request to create \nTransport Order from Leg
+activate TMSBridge
+TMSBridge -> TMS : Request to create \nTransport Order from Leg
+activate TMS
+note right of TMS: pDis_TransportOrder.CreateTransportOrderFromLeg()
+group Transactional Data Integrity
+    TMS -> TMS: BEGIN;
+    TMS -> TMS : pDis_TransportOrder.New()
+    TMS -> TMS : pDis_Shipment.CreateLeg()
+    note right of TMS: Creates TMS Leg or uses existing one
+    TMS -> TMS : pDis_TransportOrder.AddLeg()
+    note right of TMS: Also creates "default" tour points structure
+    ' TMS -> TOP : Was passiert hier?
+    ' note right of TOP: Was passiert hier?
+    ' TOP -> TMS : Return tour points
+    alt #LightGreen Success case
+        TMS -> TMS : COMMIT;
+        ' TMS -> TMS : Rollback changes
+        TMS --> TMSBridge : Return Transport Order ID (TIX),\n Leg-ID (TIX) & Tourpoint IDs
+    end
+    alt #LightSalmon Error Case
+        TMS -> TMS : ROLLBACK;
+        TMS --> TMSBridge : Return NULL
+    end
+end
+
+deactivate TMS
+TMSBridge --> Backend : Return Transport Order ID (TIX),\n Leg-ID (TIX) & Tourpoint IDs
+deactivate TMSBridge
+
+group Leg-ID Persistence
+    Backend -> Backend : Store TMS Leg-ID in New Dispo Leg
+end
+
+group Tour Points / Calculation
+    Backend -> Backend : Trigger xServer Process
+end
+
+Backend --> Frontend : Return New Transport Order ID (TIX)
+deactivate Backend
+
+activate Frontend
+Frontend --> Frontend : Create Snackbar item containing Tranport Order ID
+
+Frontend --> Dispatcher : Provides snackbar
+deactivate Frontend
+
+Dispatcher --> Frontend : Clicks snackbar to copy\nthe Transport Order ID to clipboard

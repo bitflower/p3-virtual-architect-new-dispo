@@ -1,0 +1,44 @@
+@startgantt
+projectscale weekly zoom 3
+
+hide footbox
+' saturday are closed
+' sunday are closed
+
+<style>
+ganttDiagram {
+  milestone {
+	FontSize 16
+	}
+  task {
+	FontSize 13
+    BackGroundColor GreenYellow
+    LineColor Green 
+  }
+  undone {
+    BackGroundColor red
+  }
+}
+</style>
+
+Project starts 2025-01-01
+[Publish Transport Order Changes from TMS] as [taskPublishTo] starts 2025-01-01
+[taskPublishTo] ends 2025-02-28
+[taskPublishTo] is 90% completed
+[Read-Flow Go-Live (March 1st)] as [ms1] happens on 1 days after [taskPublishTo]'s end
+
+[Update Transport Orders in TMS] as [taskUpdateTo] starts 2025-01-20
+[taskUpdateTo] ends 2025-04-30
+[taskUpdateTo] is 40% completed
+note bottom
+  Missing information from CALSuite
+end note
+[Write-Flow Go-Live (Date to be confirmed)] as [ms2] happens on 1 days after [taskUpdateTo]'s end
+
+legend right
+|= Color |= Status |
+|<#GreenYellow> | Done |
+|<#red>| Open |
+end legend
+
+@endgantt

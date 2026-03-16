@@ -1,0 +1,732 @@
+{
+  "ForwardingOrders": [
+    {
+      "Id": "10340409079997",
+      "Number": 446425,
+      "Company": 10,
+      "Branch": 34,
+      "PerformanceDate": "2024-07-23T00:00:00+02:00",
+      "PickupInterval": { "Start": null, "End": null },
+      "DeliveryInterval": {
+        "Start": "2024-07-25T00:00:00+02:00",
+        "End": "2024-07-25T14:00:00+02:00"
+      },
+      "TrafficMode": 3,
+      "TransportMode": "Delivery",
+      "PickupServiceArea": "34",
+      "TransitServiceArea": "700",
+      "DeliveryServiceArea": "760",
+      "Priority": "",
+      "InternalPriority": "",
+      "Weight": 269.0,
+      "VolumePalletSpaces": 0.75,
+      "FloorPalletSpaces": 1.0,
+      "Legs": [
+        {
+          "Id": "10340409079997~V",
+          "Type": "V",
+          "TourPoints": [
+            { "Id": "10340409079997~V~ABS", "PersonId": "10340394869768" },
+            { "Id": "10340409079997~V~SPE", "PersonId": "10340001249716" }
+          ]
+        },
+        {
+          "Id": "10340409079997~H1",
+          "Type": "H1",
+          "TourPoints": [
+            { "Id": "10340409079997~H1~SPE", "PersonId": "10340001249716" },
+            { "Id": "10340409079997~H1~SPT", "PersonId": "10340253268328" }
+          ]
+        },
+        {
+          "Id": "10340409079997~H2",
+          "Type": "H2",
+          "TourPoints": [
+            { "Id": "10340409079997~H2~SPT", "PersonId": "10340253268328" },
+            { "Id": "10340409079997~H2~KSP", "PersonId": "10340253268329" }
+          ]
+        },
+        {
+          "Id": "10340409079997~N",
+          "Type": "N",
+          "TourPoints": [
+            { "Id": "10340409079997~N~KSP", "PersonId": "10340253268329" },
+            { "Id": "10340409079997~N~EMP", "PersonId": "10340001249517" }
+          ]
+        }
+      ],
+      "Participants": [
+        { "Type": "Principal", "PersonId": "10340394869768" },
+        { "Type": "Consignor", "PersonId": "10340394869768" },
+        { "Type": "Consignee", "PersonId": "10340001249517" },
+        { "Type": "Contractor", "PersonId": "10340001249716" },
+        { "Type": "Forwarder", "PersonId": "10340001249716" }
+      ],
+      "ForwardingOrderPositions": [
+        {
+          "Id": "10340409079997~1",
+          "GoodsTypeId": "",
+          "Marks": "LS0062",
+          "Content": "TK-WARE DAMPFNUDELN",
+          "ShippingUnitId": "EUR",
+          "ShippingUnitSum": 1,
+          "ShippingUnitMode": "1",
+          "ShippingUnitType": 1,
+          "LoadingAidsId": "KRT",
+          "LoadingAidsSum": 56,
+          "LoadingAidsMode": "0",
+          "LoadingAidsType": 0,
+          "Pieces": null,
+          "Weight": 269.0
+        }
+      ]
+    },
+    {
+      "Id": "10340409087629",
+      "Number": 446512,
+      "Company": 10,
+      "Branch": 34,
+      "PerformanceDate": "2024-07-23T00:00:00+02:00",
+      "PickupInterval": { "Start": null, "End": null },
+      "DeliveryInterval": {
+        "Start": "2024-07-25T00:00:00+02:00",
+        "End": "2024-07-26T00:00:00+02:00"
+      },
+      "TrafficMode": 3,
+      "TransportMode": "Delivery",
+      "PickupServiceArea": "34",
+      "DeliveryServiceArea": "700",
+      "Priority": "",
+      "InternalPriority": "",
+      "Weight": 1659.0,
+      "VolumePalletSpaces": 2.5,
+      "FloorPalletSpaces": 3.0,
+      "Legs": [
+        {
+          "Id": "10340409087629~V",
+          "Type": "V",
+          "TourPoints": [
+            { "Id": "10340409087629~V~ABS", "PersonId": "10340307487808" },
+            { "Id": "10340409087629~V~SPE", "PersonId": "10340001249716" }
+          ]
+        },
+        {
+          "Id": "10340409087629~H",
+          "Type": "H",
+          "TourPoints": [
+            { "Id": "10340409087629~H~SPE", "PersonId": "10340001249716" },
+            { "Id": "10340409087629~H~KSP", "PersonId": "10340253268328" }
+          ]
+        },
+        {
+          "Id": "10340409087629~N",
+          "Type": "N",
+          "TourPoints": [
+            { "Id": "10340409087629~N~KSP", "PersonId": "10340253268328" },
+            { "Id": "10340409087629~N~EMP", "PersonId": "10340331416846" }
+          ]
+        }
+      ],
+      "Participants": [
+        { "Type": "Principal", "PersonId": "10340307487808" },
+        { "Type": "Consignor", "PersonId": "10340307487808" },
+        { "Type": "Consignee", "PersonId": "10340331416846" },
+        { "Type": "Contractor", "PersonId": "10340001249716" },
+        { "Type": "Forwarder", "PersonId": "10340001249716" }
+      ],
+      "ForwardingOrderPositions": [
+        {
+          "Id": "10340409087629~1",
+          "GoodsTypeId": "",
+          "Marks": "245223400959,245223400959",
+          "Content": "TIEFKUEHLPRODUKTE",
+          "ShippingUnitId": "EUR",
+          "ShippingUnitSum": 3,
+          "ShippingUnitMode": "1",
+          "ShippingUnitType": 1,
+          "LoadingAidsId": "KRT",
+          "LoadingAidsSum": 270,
+          "LoadingAidsMode": "0",
+          "LoadingAidsType": 0,
+          "Pieces": null,
+          "Weight": 1659.0
+        }
+      ]
+    },
+    {
+      "Id": "10340409087632",
+      "Number": 446515,
+      "Company": 10,
+      "Branch": 34,
+      "PerformanceDate": "2024-07-23T00:00:00+02:00",
+      "PickupInterval": { "Start": null, "End": null },
+      "DeliveryInterval": {
+        "Start": "2024-07-25T00:00:00+02:00",
+        "End": "2024-07-26T00:00:00+02:00"
+      },
+      "TrafficMode": 3,
+      "TransportMode": "Delivery",
+      "PickupServiceArea": "34",
+      "DeliveryServiceArea": "700",
+      "Priority": "",
+      "InternalPriority": "",
+      "Weight": 1659.0,
+      "VolumePalletSpaces": 2.5,
+      "FloorPalletSpaces": 3.0,
+      "Legs": [
+        {
+          "Id": "10340409087632~V",
+          "Type": "V",
+          "TourPoints": [
+            { "Id": "10340409087632~V~ABS", "PersonId": "10340307487808" },
+            { "Id": "10340409087632~V~SPE", "PersonId": "10340001249716" }
+          ]
+        },
+        {
+          "Id": "10340409087632~H",
+          "Type": "H",
+          "TourPoints": [
+            { "Id": "10340409087632~H~SPE", "PersonId": "10340001249716" },
+            { "Id": "10340409087632~H~KSP", "PersonId": "10340253268328" }
+          ]
+        },
+        {
+          "Id": "10340409087632~N",
+          "Type": "N",
+          "TourPoints": [
+            { "Id": "10340409087632~N~KSP", "PersonId": "10340253268328" },
+            { "Id": "10340409087632~N~EMP", "PersonId": "10340331416845" }
+          ]
+        }
+      ],
+      "Participants": [
+        { "Type": "Principal", "PersonId": "10340307487808" },
+        { "Type": "Consignor", "PersonId": "10340307487808" },
+        { "Type": "Consignee", "PersonId": "10340331416845" },
+        { "Type": "Contractor", "PersonId": "10340001249716" },
+        { "Type": "Forwarder", "PersonId": "10340001249716" }
+      ],
+      "ForwardingOrderPositions": [
+        {
+          "Id": "10340409087632~1",
+          "GoodsTypeId": "",
+          "Marks": "245223400962,245223400962",
+          "Content": "TIEFKUEHLPRODUKTE",
+          "ShippingUnitId": "EUR",
+          "ShippingUnitSum": 3,
+          "ShippingUnitMode": "1",
+          "ShippingUnitType": 1,
+          "LoadingAidsId": "KRT",
+          "LoadingAidsSum": 270,
+          "LoadingAidsMode": "0",
+          "LoadingAidsType": 0,
+          "Pieces": null,
+          "Weight": 1659.0
+        }
+      ]
+    },
+    {
+      "Id": "10340409159076",
+      "Number": 447240,
+      "Company": 10,
+      "Branch": 34,
+      "PerformanceDate": "2024-07-23T00:00:00+02:00",
+      "PickupInterval": { "Start": null, "End": null },
+      "DeliveryInterval": {
+        "Start": "2024-07-25T00:00:00+02:00",
+        "End": "2024-07-26T00:00:00+02:00"
+      },
+      "TrafficMode": 3,
+      "TransportMode": "Delivery",
+      "PickupServiceArea": "34",
+      "TransitServiceArea": "700",
+      "DeliveryServiceArea": "760",
+      "Priority": "STD",
+      "InternalPriority": "STD",
+      "Weight": 582.4,
+      "VolumePalletSpaces": 0.75,
+      "FloorPalletSpaces": 1.0,
+      "Legs": [
+        {
+          "Id": "10340409159076~V",
+          "Type": "V",
+          "TourPoints": [
+            { "Id": "10340409159076~V~ABS", "PersonId": "10340307487533" },
+            { "Id": "10340409159076~V~SPE", "PersonId": "10340001249716" }
+          ]
+        },
+        {
+          "Id": "10340409159076~H1",
+          "Type": "H1",
+          "TourPoints": [
+            { "Id": "10340409159076~H1~SPE", "PersonId": "10340001249716" },
+            { "Id": "10340409159076~H1~SPT", "PersonId": "10340253268328" }
+          ]
+        },
+        {
+          "Id": "10340409159076~H2",
+          "Type": "H2",
+          "TourPoints": [
+            { "Id": "10340409159076~H2~SPT", "PersonId": "10340253268328" },
+            { "Id": "10340409159076~H2~KSP", "PersonId": "10340253268329" }
+          ]
+        },
+        {
+          "Id": "10340409159076~N",
+          "Type": "N",
+          "TourPoints": [
+            { "Id": "10340409159076~N~KSP", "PersonId": "10340253268329" },
+            { "Id": "10340409159076~N~EMP", "PersonId": "10340001249517" }
+          ]
+        }
+      ],
+      "Participants": [
+        { "Type": "Principal", "PersonId": "10340307487533" },
+        { "Type": "Consignor", "PersonId": "10340307487533" },
+        { "Type": "Consignee", "PersonId": "10340001249517" },
+        { "Type": "Contractor", "PersonId": "10340001249716" },
+        { "Type": "Forwarder", "PersonId": "10340001249716" }
+      ],
+      "ForwardingOrderPositions": [
+        {
+          "Id": "10340409159076~1",
+          "GoodsTypeId": "",
+          "Marks": "LFG24-15170",
+          "Content": "TK-WARE",
+          "ShippingUnitId": "EUR",
+          "ShippingUnitSum": 1,
+          "ShippingUnitMode": "1",
+          "ShippingUnitType": 1,
+          "LoadingAidsId": "KRT",
+          "LoadingAidsSum": 56,
+          "LoadingAidsMode": "0",
+          "LoadingAidsType": 0,
+          "Pieces": null,
+          "Weight": 582.4
+        }
+      ]
+    },
+    {
+      "Id": "10340409163987",
+      "Number": 447277,
+      "Company": 10,
+      "Branch": 34,
+      "PerformanceDate": "2024-07-23T00:00:00+02:00",
+      "PickupInterval": { "Start": null, "End": null },
+      "DeliveryInterval": {
+        "Start": "2024-07-26T00:00:00+02:00",
+        "End": "2024-07-26T14:00:00+02:00"
+      },
+      "TrafficMode": 3,
+      "TransportMode": "Delivery",
+      "PickupServiceArea": "34",
+      "DeliveryServiceArea": "700",
+      "Priority": "",
+      "InternalPriority": "",
+      "Weight": 269.0,
+      "VolumePalletSpaces": 0.75,
+      "FloorPalletSpaces": 1.0,
+      "Legs": [
+        {
+          "Id": "10340409163987~V",
+          "Type": "V",
+          "TourPoints": [
+            { "Id": "10340409163987~V~ABS", "PersonId": "10340394869768" },
+            { "Id": "10340409163987~V~SPE", "PersonId": "10340001249716" }
+          ]
+        },
+        {
+          "Id": "10340409163987~H",
+          "Type": "H",
+          "TourPoints": [
+            { "Id": "10340409163987~H~SPE", "PersonId": "10340001249716" },
+            { "Id": "10340409163987~H~KSP", "PersonId": "10340253268328" }
+          ]
+        },
+        {
+          "Id": "10340409163987~N",
+          "Type": "N",
+          "TourPoints": [
+            { "Id": "10340409163987~N~KSP", "PersonId": "10340253268328" },
+            { "Id": "10340409163987~N~EMP", "PersonId": "10340001249517" }
+          ]
+        }
+      ],
+      "Participants": [
+        { "Type": "Principal", "PersonId": "10340394869768" },
+        { "Type": "Consignor", "PersonId": "10340394869768" },
+        { "Type": "Consignee", "PersonId": "10340001249517" },
+        { "Type": "Contractor", "PersonId": "10340001249716" },
+        { "Type": "Forwarder", "PersonId": "10340001249716" }
+      ],
+      "ForwardingOrderPositions": [
+        {
+          "Id": "10340409163987~1",
+          "GoodsTypeId": "",
+          "Marks": "LS0063",
+          "Content": "TK-WARE DAMPFNUDELN",
+          "ShippingUnitId": "EUR",
+          "ShippingUnitSum": 1,
+          "ShippingUnitMode": "1",
+          "ShippingUnitType": 1,
+          "LoadingAidsId": "KRT",
+          "LoadingAidsSum": 56,
+          "LoadingAidsMode": "0",
+          "LoadingAidsType": 0,
+          "Pieces": null,
+          "Weight": 269.0
+        }
+      ]
+    }
+  ],
+  "TransportOrders": [
+    {
+      "Id": "10340409071146",
+      "Number": 412942,
+      "Company": 10,
+      "Branch": 34,
+      "Type": "LH",
+      "PerformanceDate": "2024-07-23T00:00:00+02:00",
+      "TransportMode": "CoLoad",
+      "State": 16,
+      "StateList": ["Dispatched"],
+      "Remark": "LINIE 200 WEITER NACH 700",
+      "Remarks": [{ "Type": "2", "Text": "LINIE 200 WEITER NACH 700" }],
+      "Participants": [
+        { "Type": "Principal", "PersonId": "10340001249716" },
+        { "Type": "Forwarder", "PersonId": "10340001249716" },
+        { "Type": "Contractor", "PersonId": "10340253268311" },
+        { "Type": "Carrier", "PersonId": "10340253268311" }
+      ],
+      "Resources": [
+        { "Id": "GT-NG 5596", "Type": "Truck", "SealNumber": "" },
+        {
+          "Id": "177351",
+          "Type": "Trailer",
+          "SealNumber": "1852538",
+          "Resources": [
+            {
+              "Id": "177351~TC1",
+              "Type": "Chamber",
+              "Name": "TC1",
+              "PresetTemperature": -25,
+              "MeasuredTemperature": -18.5,
+              "RequiredTemperature": -25
+            }
+          ]
+        }
+      ],
+      "TourPoints": [
+        {
+          "Id": "10340409157652",
+          "PersonId": 10340001249716,
+          "OpeningIntervals": null,
+          "ServiceInterval": {
+            "Start": null,
+            "End": "2024-07-23T22:00:00+02:00"
+          },
+          "BookingId": "",
+          "Instructions": "",
+          "Gate": ""
+        },
+        {
+          "Id": "10340409157653",
+          "PersonId": 10340253268328,
+          "OpeningIntervals": null,
+          "ServiceInterval": {
+            "Start": "2024-07-24T04:30:00+02:00",
+            "End": null
+          },
+          "BookingId": "",
+          "Instructions": "",
+          "Gate": ""
+        }
+      ],
+      "Costs": [{ "Amount": 0.01, "Currency": "EUR", "Type": "Freight" }]
+    }
+  ],
+  "Persons": [
+    {
+      "Id": "10340394869768",
+      "Type": "Customer",
+      "numeric": 1000098797,
+      "Index": 0,
+      "Name1": "BÄCKEREI GERHARD HÜNERMUND",
+      "Street": "TEMPELSTRASSE 63",
+      "Country": "DE",
+      "PostalCode": "37308",
+      "City": "HEUTHEN",
+      "District": "HEUTHEN",
+      "ServiceArea": "*",
+      "Coordinate": { "Longitude": 10.22363, "Latitude": 51.33104 }
+    },
+    {
+      "Id": "10340001249716",
+      "Type": "Branch",
+      "numeric": 99034,
+      "Index": 0,
+      "Name1": "NAGEL-GROUP LOGISTICS SE",
+      "Name3": "NIEDERLASSUNG KASSEL",
+      "Street": "SCHWARZE BREITE 16",
+      "Country": "DE",
+      "PostalCode": "34260",
+      "City": "KAUFUNGEN",
+      "District": "KAUFUNGEN",
+      "ServiceArea": "*",
+      "Coordinate": { "Longitude": 9.5735, "Latitude": 51.28465 }
+    },
+    {
+      "Id": "10340253268328",
+      "Type": "Branch",
+      "numeric": 877072,
+      "Index": 0,
+      "Name1": "NAGEL-GROUP LOGISTICS SE",
+      "Street": "ZEPPELINSTR. 36",
+      "Country": "DE",
+      "PostalCode": "71706",
+      "City": "MARKGROENINGEN",
+      "District": "MARKGROENINGEN",
+      "ServiceArea": "*",
+      "Coordinate": { "Longitude": 9.09879, "Latitude": 48.90119 }
+    },
+    {
+      "Id": "10340253268329",
+      "Type": "Branch",
+      "numeric": 877077,
+      "Index": 0,
+      "Name1": "NAGEL-GROUP LOGISTICS SE",
+      "Street": "HEINKELSTRASSE 7",
+      "Country": "DE",
+      "PostalCode": "76461",
+      "City": "MUGGENSTURM",
+      "District": "MUGGENSTURM",
+      "ServiceArea": "*",
+      "Coordinate": { "Longitude": 8.27639, "Latitude": 48.87891 }
+    },
+    {
+      "Id": "10340001249517",
+      "Type": "Customer",
+      "numeric": 0,
+      "Index": 0,
+      "Name1": "COOL DISCOUNT GMBH",
+      "Street": "ERICH KESSLER STRASSE 3",
+      "Country": "DE",
+      "PostalCode": "76689",
+      "City": "KARLSDORF-NEUTHARD",
+      "District": "NEUTHARD",
+      "ServiceArea": "*",
+      "Coordinate": { "Longitude": 8.55341, "Latitude": 49.14083 }
+    },
+    {
+      "Id": "10340307487808",
+      "Type": "Customer",
+      "numeric": 180386,
+      "Index": 0,
+      "Name1": "LUKOWA FOOD AG",
+      "Street": "SEMPACHERSTRASSE 5",
+      "Country": "DE",
+      "PostalCode": "34123",
+      "City": "KASSEL",
+      "District": "WALDAU",
+      "ServiceArea": "*",
+      "Coordinate": { "Longitude": 9.51947, "Latitude": 51.29121 }
+    },
+    {
+      "Id": "10340331416846",
+      "Type": "Customer",
+      "numeric": 700410075,
+      "Index": 5,
+      "Name1": "NETTO MARKEN-DISCOUNT AG & CO. KG",
+      "Street": "VOR DEM HALDENWALD",
+      "Country": "DE",
+      "PostalCode": "78609",
+      "City": "TUNINGEN",
+      "District": "TUNINGEN",
+      "ServiceArea": "78",
+      "Coordinate": { "Longitude": 8.61898, "Latitude": 48.02583 }
+    },
+    {
+      "Id": "10340331416845",
+      "Type": "Customer",
+      "numeric": 700410074,
+      "Index": 5,
+      "Name1": "NETTO MARKEN-DISCOUNT AG & CO. KG",
+      "Street": "RUDOLF-SCHELS-STR. 6",
+      "Country": "DE",
+      "PostalCode": "89547",
+      "City": "GERSTETTEN",
+      "District": "DETTINGEN",
+      "ServiceArea": "*",
+      "Coordinate": { "Longitude": 10.12972, "Latitude": 48.58941 }
+    },
+    {
+      "Id": "10340307487533",
+      "Type": "Carrier",
+      "numeric": 534004,
+      "Index": 50,
+      "Name1": "W. U. U. SCHARF TRANSPORT",
+      "Name2": "GMBH & CO. KG",
+      "Street": "AM FIESELER WERK 6",
+      "Country": "DE",
+      "PostalCode": "34253",
+      "City": "LOHFELDEN",
+      "District": "LOHFELDEN",
+      "ServiceArea": "*",
+      "Coordinate": { "Longitude": 9.52776, "Latitude": 51.28381 }
+    },
+    {
+      "Id": "10340253268311",
+      "Type": "Branch",
+      "numeric": 877021,
+      "Index": 0,
+      "Name1": "NAGEL-GROUP LOGISTICS SE",
+      "Street": "RONDENBARG 25",
+      "Country": "DE",
+      "PostalCode": "22525",
+      "City": "HAMBURG",
+      "District": "HAMBURG",
+      "ServiceArea": ""
+    }
+  ],
+  "Equipments": [
+    {
+      "Id": "GT-NG 5596",
+      "Info": "GT-NG 5596",
+      "Type": "Truck",
+      "LicensePlate": "GT-NG 5596"
+    },
+    {
+      "Id": "177351",
+      "Info": "11326912",
+      "Type": "Trailer",
+      "LicensePlate": "GT-NG 6912",
+      "Chambers": [
+        { "Id": "177351~TC1", "Type": "Chamber" },
+        { "Id": "177351~TC2", "Type": "Chamber" }
+      ]
+    }
+  ],
+  "GoodsTypes": null,
+  "Tasks": [
+    {
+      "Id": "10340409079997~H1~Pickup",
+      "Type": "Pickup",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409079997", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409079997~H1~SPE", "Type": "LegPoint" }
+      ]
+    },
+    {
+      "Id": "10340409079997~H1~Delivery",
+      "Type": "Delivery",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409079997", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409079997~H1~SPE", "Type": "LegPoint" },
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409079997", "Type": "ForwardingOrder" },
+        { "Id": "10340409157653", "Type": "TourPoint" },
+        { "Id": "10340409079997~H1~SPT", "Type": "LegPoint" }
+      ]
+    },
+    {
+      "Id": "10340409087629~H~Pickup",
+      "Type": "Pickup",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409087629", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409087629~H~SPE", "Type": "LegPoint" }
+      ]
+    },
+    {
+      "Id": "10340409087629~H~Delivery",
+      "Type": "Delivery",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409087629", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409087629~H~SPE", "Type": "LegPoint" },
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409087629", "Type": "ForwardingOrder" },
+        { "Id": "10340409157653", "Type": "TourPoint" },
+        { "Id": "10340409087629~H~KSP", "Type": "LegPoint" }
+      ]
+    },
+    {
+      "Id": "10340409087632~H~Pickup",
+      "Type": "Pickup",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409087632", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409087632~H~SPE", "Type": "LegPoint" }
+      ]
+    },
+    {
+      "Id": "10340409087632~H~Delivery",
+      "Type": "Delivery",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409087632", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409087632~H~SPE", "Type": "LegPoint" },
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409087632", "Type": "ForwardingOrder" },
+        { "Id": "10340409157653", "Type": "TourPoint" },
+        { "Id": "10340409087632~H~KSP", "Type": "LegPoint" }
+      ]
+    },
+    {
+      "Id": "10340409159076~H1~Pickup",
+      "Type": "Pickup",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409159076", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409159076~H1~SPE", "Type": "LegPoint" }
+      ]
+    },
+    {
+      "Id": "10340409159076~H1~Delivery",
+      "Type": "Delivery",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409159076", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409159076~H1~SPE", "Type": "LegPoint" },
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409159076", "Type": "ForwardingOrder" },
+        { "Id": "10340409157653", "Type": "TourPoint" },
+        { "Id": "10340409159076~H1~SPT", "Type": "LegPoint" }
+      ]
+    },
+    {
+      "Id": "10340409163987~H~Pickup",
+      "Type": "Pickup",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409163987", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409163987~H~SPE", "Type": "LegPoint" }
+      ]
+    },
+    {
+      "Id": "10340409163987~H~Delivery",
+      "Type": "Delivery",
+      "BusinessObjects": [
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409163987", "Type": "ForwardingOrder" },
+        { "Id": "10340409157652", "Type": "TourPoint" },
+        { "Id": "10340409163987~H~SPE", "Type": "LegPoint" },
+        { "Id": "10340409071146", "Type": "TransportOrder" },
+        { "Id": "10340409163987", "Type": "ForwardingOrder" },
+        { "Id": "10340409157653", "Type": "TourPoint" },
+        { "Id": "10340409163987~H~KSP", "Type": "LegPoint" }
+      ]
+    }
+  ]
+}

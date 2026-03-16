@@ -1,0 +1,63 @@
+@startuml
+actor "Dispatcher" as Dispatcher
+participant "Frontend" as Frontend
+participant "Backend" as Backend
+participant "TMS Bridge" as TMSBridge
+participant "Azure Service Bus" as ServiceBus
+
+title "Sending Transport Order Information via EDI"
+
+caption
+<font color=red>**Focus: Architectural integration (not data contract of DTO)**</font>  
+<font color=green>Status: Draft</font>  
+Date: 2025-08-14
+endcaption
+
+
+== EDI Communication Flow ==
+
+Dispatcher -> Frontend : Click "Send EDI" button\non customer's list of open items
+activate Frontend
+
+Frontend -> Backend : Request to publish\nTransport Order information to EDI
+activate Backend
+
+alt #LightYellow Optional: Data Mapping Required
+    note right of Backend : To be clarified:\nMapping to target EDI format\n(provided by CAL)
+    Backend -> TMSBridge : Request required source data
+    activate TMSBridge
+    TMSBridge --> Backend : Return source data
+    deactivate TMSBridge
+    Backend -> Backend : Create EDI DTO from source data
+else #LightBlue Alternative: Request Mapped DTO from TMS
+    Backend -> TMSBridge : Request mapped DTO
+    activate TMSBridge
+    TMSBridge --> Backend : Return mapped DTO
+    deactivate TMSBridge
+end
+
+Backend -> ServiceBus : Send DTO with mapped content
+note right of ServiceBus : Details to be defined
+
+alt #LightGreen Success Flow
+    ServiceBus --> Backend : Success confirmation
+    Backend -> Backend : Mark Transport Order / Tour Info as "sent"
+    Backend -> Frontend : Return success message
+    deactivate Backend
+    Frontend -> Frontend : Display success message
+    Frontend --> Dispatcher : Show success notification/message
+    note right of Dispatcher : Dispatcher sees\nsuccess notification
+    
+else #LightSalmon Failure Flow
+    ServiceBus --> Backend : Failure to publish
+    Backend -> Backend : Mark Transport Order / Tour Info as "failed"
+    Backend -> Frontend : Return error message
+    deactivate Backend
+    Frontend -> Frontend : Display error message
+    Frontend --> Dispatcher : Show error and cause
+    note right of Dispatcher : Dispatcher is informed\nabout error and cause
+end
+
+deactivate Frontend
+
+@enduml

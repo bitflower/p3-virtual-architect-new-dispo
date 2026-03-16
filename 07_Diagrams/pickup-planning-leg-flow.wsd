@@ -1,0 +1,71 @@
+@startuml
+actor Dispatcher
+participant Frontend
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database "TMS Database" as TMS
+participant "TMS Pulse" as TMSPulse
+participant OMS
+
+title "Pickup Planning - New Dispo Leg Creation Flow"
+
+== Flow 2: Transport Planning Process ==
+
+Dispatcher -> Frontend : Drag Leg onto planning area
+Frontend -> Backend : Request to add Leg to Transport Order
+
+activate Backend
+Backend -> TMSBridge : Add Leg to Transport Order
+TMSBridge -> TMS : Execute pDis_TransportOrder.AddLeg()
+
+activate TMS
+TMS -> TMS : Create new TMS-Leg
+TMS -> TMS : Execute internal business logic\nfor adding legs
+note right of TMS
+No conflict regarding Data Integrity
+as the Leg data is TMS-internal anyway.
+
+For New Dispo it doesn't matter if the
+Legs are already present or created instantly
+in that moment on behalf of New Dispo.
+end note
+TMS --> TMSBridge : Leg added successfully\n and Leg-ID returned
+deactivate TMS
+
+TMSBridge --> Backend : Return Leg-ID
+Backend -> Backend : Store Leg-Id reference\nin existing New Dispo Leg
+Backend --> Frontend : Return success
+deactivate Backend
+
+Frontend -> Dispatcher : Show updated planning view
+
+' == Flow 3: TMS-Leg Creation in UniFace ==
+
+' Dispatcher -> UniFace : Create TMS-Leg
+' UniFace -> TMS : Request to create Leg\nand run business logic
+
+' activate TMS
+' TMS -> TMS : Create Leg
+' TMS -> TMS : Execute business logic
+' TMS -> TMS : Set Leg status to "planned"
+' TMS -> TMS : Update table "sendung"
+' TMS --> UniFace : Leg created successfully
+' deactivate TMS
+
+' TMSPulse -> TMS : Detect change on table "sendung"
+' TMS --> TMSPulse : Record change detected
+' TMSPulse -> Backend : Send data change event
+
+' activate Backend
+' Backend -> Backend : Apply Leg-detection filters
+' Backend -> Backend : Check if change is Leg-related
+' alt Leg detected
+'     Backend -> Backend : Extract Leg information\nincluding SEN_TIX value
+'     Backend -> Backend : Search leg database\nfor matching SEN_TIX id
+'     Backend -> Backend : Set leg status to "planned"
+'     Backend -> Frontend : Propagate status change
+'     Frontend -> Dispatcher : Display updated Leg status
+' end
+' deactivate Backend
+
+@enduml

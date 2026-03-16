@@ -1,0 +1,34 @@
+@startuml
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database "TMS Database" as TMS
+participant "TMS Pulse" as TMSPulse
+participant OMS
+
+title "Pickup Planning - New Dispo Leg Creation Flow"
+
+== Flow 1: Shipment Creation and Import ==
+
+OMS -> OMS : New shipment created
+OMS -> TMS : Import shipment
+activate TMS
+TMS -> TMS : Store shipment
+TMS --> OMS : Shipment imported
+note right of TMS
+  The shipment implicitly represents the leg.
+end note
+deactivate TMS
+
+TMS -> TMSPulse : Detects new shipment (sendung record)\n(through CDC)
+activate TMSPulse
+
+TMSPulse --> Backend : Inform about new shipment detected (sendung record)\n(via CloudFn)
+deactivate TMSPulse
+activate Backend
+Backend -> TMSBridge : Pull Shipment (Full DTO)
+TMSBridge --> Backend : Receive Shipment (Full DTO)
+Backend -> Backend : Split shipment into legs\n(business logic & traffic mode)
+Backend -> Backend : Store legs in database
+deactivate Backend
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+title Datastream to Cloud Function Flow
+
+start
+:Datastream captures CDC event (in TMS database);
+:Datastream writes event to Cloud Storage;
+
+if (New File in Cloud Storage?) then (Yes)
+    :Cloud Function (Cross-Dock Publisher) is Triggered;
+    :Cloud Function requests TransportOrder from TMS Bridge (1-3 sec delay);
+    if (TMS Bridge Responds?) then (Yes)
+        :Process Data;
+        :Publish to Downstream System (CALSuite ASB);
+        end
+    else (No)
+        :Retry Processing;
+        if (Max Retries Reached?) then (Yes)
+            :Mark as Failed;
+            end
+        else (No)
+            :Reattempt Processing;
+        endif
+    endif
+else (No)
+    :Wait for New Files;
+endif
+
+@enduml

@@ -1,0 +1,47 @@
+title Google Cloud Caching Mechanism for V_DIS_TRANSPORTORDER
+
+actor User
+
+participant "TMS Bridge/New Layer" as App
+database "TMS" as DB
+participant "Expensive SQL (due to procedures)" as View
+participant "Datastream (CDC)" as Datastream
+queue "Cloud Pub/Sub" as PubSub
+participant "Cloud Function (Cache Updater)" as CacheUpdater
+database "Cloud Memorystore (Redis)" as Redis
+
+User -> App: Request Query
+activate App
+App -> Redis: Check Cache
+alt Cache Hit
+    activate Redis
+    Redis -> App: Return Cached Result
+    deactivate Redis
+else Cache Miss
+    App -> DB: Execute Expensive Query
+    activate DB
+    DB -> View: Compute Expensive View
+    activate View
+    View -> DB: Return Result
+    deactivate View
+    DB -> App: Query Result
+    deactivate DB
+    App -> Redis: Store in Cache (TTL or Permanent)
+end
+App -> User: Response
+deactivate App
+
+== Change Data Capture (CDC) for Cache Invalidation & Update ==
+
+Datastream -> PubSub: Capture Change Event (Insert/Update/Delete)
+PubSub -> CacheUpdater: Trigger Cache Invalidation & Update
+
+alt Record Deleted
+    CacheUpdater -> Redis: Remove Stale Cache Entry
+else Record Updated or Inserted
+    CacheUpdater -> DB: Fetch Updated Record
+    activate DB
+    DB -> CacheUpdater: Return New Data
+    deactivate DB
+    CacheUpdater -> Redis: Update Cache Entry
+end

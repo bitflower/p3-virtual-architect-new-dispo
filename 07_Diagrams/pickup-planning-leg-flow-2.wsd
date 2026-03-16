@@ -1,0 +1,67 @@
+@startuml
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database "TMS Database" as TMS
+participant "TMS Pulse" as TMSPulse
+participant OMS
+
+title "Pickup Planning - Shipment Change Flow (WIP!)"
+
+== Flow 2: Shipment Chnaged and Import ==
+
+OMS -> OMS : Shipment changed
+OMS -> TMS : Shipment updated
+activate TMS
+TMS -> TMS : Store shipment changes
+TMS --> OMS : Shipment updated
+deactivate TMS
+
+TMS -> TMSPulse : Detects changed shipment (sendung record)
+activate TMSPulse
+
+TMSPulse --> Backend : Changed shipment detected (sendung record)
+deactivate TMSPulse
+activate Backend
+Backend -> TMSBridge : Pull Shipment (Full DTO)
+TMSBridge --> Backend : Receive Shipment (Full DTO)
+
+note right of Backend
+    Check conditions
+endnote
+
+Backend -> Backend : Check: Is the (pickup) leg planned already?
+alt No
+    note right of Backend
+    No activity in TMS needed
+    endnote
+    note right of Backend
+    Regular New Dispo leg adaption logic
+    endnote
+end
+alt Yes
+    Backend -> Backend : Check: Is the change leg-splitting-relevant? \n(Is the Traffic Mode changed in a way that affects legs) 
+
+    alt No
+        Backend -> Backend : Update existing New Dispo legs with new meta data\n(e.g. picktup time, consignor address, ..)
+        Backend -> TMSBridge : Trigger update existing TMS legs with new meta data
+        activate TMSBridge
+        TMSBridge -> TMS : Trigger update existing TMS legs
+        activate TMS
+        TMS --> TMSBridge
+        deactivate TMS
+        TMSBridge --> Backend
+        deactivate TMSBridge
+    end
+    alt Yes
+        Backend -> Backend : Create/Update/Delete leg instances
+        Backend -> TMS : Trigger Create/Update/Delete existing TMS legs
+        activate TMS
+        TMS --> Backend
+        deactivate TMS
+    end
+
+end
+
+deactivate Backend
+
+@enduml

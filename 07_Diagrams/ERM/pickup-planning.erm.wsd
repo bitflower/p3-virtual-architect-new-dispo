@@ -1,0 +1,38 @@
+' verstecke das E im Entitäten-Titel
+hide circle
+
+' verhindere Probleme mit gewinkelten Krähenfüßen
+skinparam linetype ortho
+
+entity "Shipment" as shipment {
+  '*e1_id : nummer <<generiert>>
+  '--
+  '*name : text
+  'beschreibung: text
+}
+
+entity "Leg" as leg {
+'   *e2_id : nummer <<generiert>>
+'   --
+'   *e1_id : nummer <<FS>>
+'   andere_details : text
+}
+
+entity "Lot" as lot {
+'   *e3_id : nummer <<generiert>>
+'   --
+'   e1_id : nummer <<FS>>
+'   andere_details : text
+}
+
+entity "TransportOrder" as transportOrder {
+'   *e3_id : nummer <<generiert>>
+'   --
+'   e1_id : nummer <<FS>>
+'   andere_details : text
+}
+
+shipment ||..|{ leg
+lot ||..|{ leg
+lot }o..o| transportOrder
+leg }o..o| transportOrder

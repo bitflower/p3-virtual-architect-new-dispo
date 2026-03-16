@@ -1,0 +1,52 @@
+actor Dispatcher
+participant Frontend
+participant Backend
+participant "TMS Bridge" as TMSBridge
+database TMS
+
+title "Add a Leg to a Transport Order"
+
+Dispatcher -> Frontend : Drag and Drop Leg\nonto existing Transport Order
+activate Frontend
+Frontend -> Backend : Request adding of leg\nby sending Leg & Transport Order Information
+
+activate Backend
+Backend -> Backend : Extract/Map Shipment ID from Leg
+' note right of Backend: Leg = Shipment
+Backend -> TMSBridge : Request to add Leg to \nTransport Order
+activate TMSBridge
+TMSBridge -> TMS : Request to add Leg \nto Transport Order
+activate TMS
+note right of TMS: pDis_TransportOrder.CreateAndAddLeg()
+group Transactional Data Integrity
+    TMS -> TMS: BEGIN;
+    TMS -> TMS : pDis_Shipment.CreateLeg()
+    TMS -> TMS : pDis_TransportOrder.AddLeg()
+    note right of TMS: Also creates "default" tour points structure
+    alt #LightGreen Success case
+        TMS -> TMS : COMMIT;
+        TMS --> TMSBridge : Return Leg-ID (TIX) & Tourpoint IDs
+    end
+    alt #LightSalmon Error Case
+        TMS -> TMS : ROLLBACK;
+        TMS --> TMSBridge : Return NULL
+    end
+end
+
+deactivate TMS
+TMSBridge --> Backend : Return Leg-ID (TIX) & Tourpoint IDs
+deactivate TMSBridge
+
+group Leg-ID Persistence
+    Backend -> Backend : Store TMS Leg-ID in New Dispo Leg
+end
+
+group Tour Points / Calculation
+    Backend -> Backend : Trigger xServer Process
+end
+
+Backend --> Frontend : Return New Leg ID (TIX)
+deactivate Backend
+
+Frontend --> Dispatcher : Show success info
+deactivate Frontend

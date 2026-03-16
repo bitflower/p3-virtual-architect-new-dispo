@@ -1,0 +1,62 @@
+actor Dispatcher
+participant Frontend
+participant "New Dispo Backend" as Backend
+participant "TMS Bridge" as TMSBridge
+database TMS
+' participant CDC
+
+Dispatcher -> Frontend : Wants to see list of Transport Orders
+activate Frontend
+Frontend -> Backend : Request
+activate Backend
+Backend -> TMSBridge : Request
+activate TMSBridge
+TMSBridge -> TMS: V_DIS_TRANSPORTORDER
+activate TMS
+TMS -> TMSBridge: TransportOrder<List>
+deactivate TMS
+TMSBridge -> Backend : TransportOrder<List>
+deactivate TMSBridge
+Backend -> Frontend : TransportOrder<List>
+deactivate Backend
+Frontend -> Frontend : Render Transport Order items
+Frontend -> Dispatcher : Sees Transport Orders (without details)
+alt #LightGreen (Initial) Loading
+    Frontend -> Frontend : Detect visible Transport Order items
+    Frontend -> Backend : Request details for single/\nmultiple Transport Orders
+    activate Backend
+    Backend -> TMSBridge : Request
+    activate TMSBridge
+    TMSBridge -> TMS: PDIS_TRANSPORTORDER_DTO.get()
+    activate TMS
+    TMS -> TMSBridge: TransportOrder (JSON)
+    deactivate TMS
+    TMSBridge -> Backend : TransportOrder (JSON)
+    deactivate TMSBridge
+    Backend -> Frontend : TransportOrder (JSON)
+    deactivate Backend
+    Frontend -> Frontend : Render Transport Order Details\nfor visible items
+    Frontend -> Dispatcher : Sees Transport Orders (incl. details)
+end
+alt #Yellow Lazy Loading
+    Dispatcher -> Frontend : Scrolls down
+    alt #LightGreen "Repeat Initial Flow"
+        Frontend -> Frontend : Detect Transport Order items\nthat became visible
+        Frontend -> Backend : Request details for single/\nmultiple Transport Orders
+        activate Backend
+        Backend -> TMSBridge : Request
+        activate TMSBridge
+        TMSBridge -> TMS: PDIS_TRANSPORTORDER_DTO.get()
+        activate TMS
+        TMS -> TMSBridge: TransportOrder (JSON)
+        deactivate TMS
+        TMSBridge -> Backend : TransportOrder (JSON)
+        deactivate TMSBridge
+        Backend -> Frontend : TransportOrder (JSON)
+        deactivate Backend
+        Frontend -> Frontend : Render Transport Order Details\nfor visible items
+    end
+    Frontend -> Dispatcher : Sees Transport Orders (incl. details)\nof scrolled view
+end
+deactivate Frontend
+

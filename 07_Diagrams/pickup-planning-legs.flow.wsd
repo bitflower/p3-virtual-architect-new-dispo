@@ -1,0 +1,213 @@
+start
+:Shipment received;
+
+
+switch (TMS Traffic Mode)
+case ( modeoftraffic 34 )
+  :New Dispo Traffic Mode 1;
+case ( modeoftraffic 30 )
+  :New Dispo Traffic Mode 2;
+case ( modeoftraffic 3 )
+    switch (NoPreCarriage\n(DIREKT_ANGELADEN))
+      case (yes or 1)
+          :New Dispo Traffic Mode 3;
+      case (no)
+          :New Dispo Traffic Mode 4;
+    endswitch
+case ( modeoftraffic 31/32 )
+  :New Dispo Traffic Mode 4;
+case ( modeoftraffic 99 )
+  :Ignored;
+  end
+endswitch
+
+<style>
+diamond {
+  BackgroundColor White
+}
+</style>
+
+switch (New Dispo Traffic Mode)
+case ( Traffic Mode 1 )
+  #palegreen:Extract Leg 1;
+  :Create record/object 'leg';
+
+  :Map:
+  shipmentid -> leg.shipmentId
+  company -> leg.company
+  branch -> leg.branch
+  consignorcountry -> leg.originCountry
+  consignorzipcode -> leg.originZipcode
+  consignorcity -> leg.originCity
+  consignorstreet -> leg.originStreet
+  consignorname -> leg.originName;
+
+  :Map:
+  consigneecountry -> leg.destinationCountry
+  consigneezipcode -> leg.destinationZipcode
+  consigneecity -> leg.destinationCity
+  consigneestreet -> leg.destinationStreet
+  consigneename -> leg.destinationName;
+
+  :Set: leg.legType 'hl';
+
+case ( Traffic Mode 2 ) 
+  #palegreen:Extract Leg 1;
+  :Create record/object 'leg';
+
+  :Map:
+  shipmentid -> leg.shipmentId
+  company -> leg.company
+  branch -> leg.branch
+  consignorcountry -> leg.originCountry
+  consignorzipcode -> leg.originZipcode
+  consignorcity -> leg.originCity
+  consignorstreet -> leg.originStreet
+  consignorname -> leg.originName;
+
+  :Map:
+  {CUR_BRANCH}country -> leg.destinationCountry
+  {CUR_BRANCH}zipcode -> leg.destinationZipcode
+  {CUR_BRANCH}city -> leg.destinationCity
+  {CUR_BRANCH}street -> leg.destinationStreet
+  {CUR_BRANCH}name -> leg.destinationName;
+ 
+  :Set: leg.legType 'vl';
+
+  #palegreen:Extract Leg 2;
+  :Create record/object 'leg';
+
+  :Map:
+  shipmentid -> leg.shipmentId
+  company -> leg.company
+  branch -> leg.branch
+  {CUR_BRANCH}country -> leg.originCountry
+  {CUR_BRANCH}zipcode -> leg.originZipcode
+  {CUR_BRANCH}city -> leg.originCity
+  {CUR_BRANCH}street -> leg.originStreet
+  {CUR_BRANCH}name -> leg.originName;
+
+  :Map:
+  consigneecountry -> leg.destinationCountry
+  consigneezipcode -> leg.destinationZipcode
+  consigneecity -> leg.destinationCity
+  consigneestreet -> leg.destinationStreet
+  consigneename -> leg.destinationName;
+ 
+  :Set: leg.legType 'hl';
+
+case ( Traffic Mode 3 ) 
+  #palegreen:Extract Leg 1;
+  :Create record/object 'leg';
+
+  :Map:
+  shipmentid -> leg.shipmentId
+  company -> leg.company
+  branch -> leg.branch
+  consignorcountry -> leg.originCountry
+  consignorzipcode -> leg.originZipcode
+  consignorcity -> leg.originCity
+  consignorstreet -> leg.originStreet^
+  consignorname -> leg.originName;
+
+  :Map:
+  {REL_BRANCH}country -> leg.destinationCountry
+  {REL_BRANCH}zipcode -> leg.destinationZipcode
+  {REL_BRANCH}city -> leg.destinationCity
+  {REL_BRANCH}street -> leg.destinationStreet
+  {REL_BRANCH}name -> leg.destinationName;
+
+  :Set: leg.legType 'hl';
+
+  #palegreen:Extract Leg 2;
+  :Create record/object 'leg';
+
+  :Map:
+  shipmentid -> leg.shipmentId
+  company -> leg.company
+  branch -> leg.branch
+  {REL_BRANCH}country -> leg.originCountry
+  {REL_BRANCH}zipcode -> leg.originZipcode
+  {REL_BRANCH}city -> leg.originCity
+  {REL_BRANCH}street -> leg.originStreet
+  {REL_BRANCH}name -> leg.originName;
+
+  :Map:
+  consigneecountry -> leg.destinationCountry
+  consigneezipcode -> leg.destinationZipcode
+  consigneecity -> leg.destinationCity
+  consigneestreet -> leg.destinationStreet
+  consigneename -> leg.destinationName;
+
+  :Set: leg.legType 'nl';
+
+case ( Traffic Mode 4 )
+  #palegreen:Extract Leg 1;
+  :Create record/object 'leg';
+
+  :Map:
+  shipmentid -> leg.shipmentId
+  company -> leg.company
+  branch -> leg.branch
+  consignorcountry -> leg.originCountry
+  consignorzipcode -> leg.originZipcode
+  consignorcity -> leg.originCity
+  consignorstreet -> leg.originStreet
+  consignorname -> leg.originName;
+
+  :Map:
+  {CUR_BRANCH}country -> leg.destinationCountry
+  {CUR_BRANCH}zipcode -> leg.destinationZipcode
+  {CUR_BRANCH}city -> leg.destinationCity
+  {CUR_BRANCH}street -> leg.destinationStreet
+  {CUR_BRANCH}name -> leg.destinationName;
+
+  :Set: leg.legType 'vl';
+
+  #palegreen:Extract Leg 2;
+  :Create record/object 'leg';
+
+  :Map:
+  shipmentid -> leg.shipmentId
+  company -> leg.company
+  branch -> leg.branch
+  {CUR_BRANCH}country -> leg.originCountry
+  {CUR_BRANCH}zipcode -> leg.originZipcode
+  {CUR_BRANCH}city -> leg.originCity
+  {CUR_BRANCH}street -> leg.originStreet
+  {CUR_BRANCH}name -> leg.originName;
+
+  :Map:
+  {REL_BRANCH}country -> leg.destinationCountry
+  {REL_BRANCH}zipcode -> leg.destinationZipcode
+  {REL_BRANCH}city -> leg.destinationCity
+  {REL_BRANCH}street -> leg.destinationStreet
+  {REL_BRANCH}name -> leg.destinationName;
+
+  :Set: leg.legType 'hl';
+
+  #palegreen:Extract Leg 3;
+  :Create record/object 'leg';
+
+  :Map:
+  shipmentid -> leg.shipmentId
+  company -> leg.company
+  branch -> leg.branch
+  {REL_BRANCH}country -> leg.originCountry
+  {REL_BRANCH}zipcode -> leg.originZipcode
+  {REL_BRANCH}city -> leg.originCity
+  {REL_BRANCH}street -> leg.originStreet
+  {REL_BRANCH}name -> leg.originName;
+
+  :Map:
+  consigneecountry -> leg.destinationCountry
+  consigneezipcode -> leg.destinationZipcode
+  consigneecity -> leg.destinationCity
+  consigneestreet -> leg.destinationStreet
+  consigneename -> leg.destinationName;
+
+  :Set: leg.legType 'nl';
+
+endswitch
+:Legs of Shipment created;
+stop

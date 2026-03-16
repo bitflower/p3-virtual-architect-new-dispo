@@ -1,0 +1,60 @@
+actor "Logistics Dispatcher" as Dispatcher
+participant "New Dispo Frontend" as Frontend
+participant "New Dispo Backend" as Backend
+participant "TMS Bridge" as TMSBridge
+database "TMS" as TMS
+
+title "Sending Tour Information via Email or EDI"
+
+Dispatcher -> Frontend : Navigate to Customer Page
+Frontend -> Frontend : Display Customer Overview Page
+
+Dispatcher -> Frontend : Select a customer to view open tours
+Frontend -> Frontend : Display open tours page
+
+group Tour Information Dispatch
+    Dispatcher -> Frontend : Click Email or EDI button
+    note right of Frontend : Begins process to send tour\ninformation to the customer
+
+    Frontend -> Backend : Send request with \ntour information
+
+    activate Backend
+    Backend -> Backend : Retrieve tour number to be sent
+
+    Backend -> TMSBridge : Forward request to \nwrite tour number to TMS
+    activate TMSBridge
+    TMSBridge -> TMS : Execute pDisTourpoint.SetTourNumber\n(transportorderId, tourpointId, tourpointNumber)
+    activate TMS
+
+    alt #LightGreen Success case
+        TMS -> TMSBridge : Confirm success
+        deactivate TMS
+        TMSBridge -> Backend : Confirm tour number update
+        deactivate TMSBridge
+        
+        note right of Backend : Proceed to send Email/EDI
+        Backend -> Backend : Determine selected dispatch method
+        note right of Backend : Interface and method to be discussed
+
+        Backend -> Backend : Send Email or EDI to customer
+        Backend -> Frontend : Return success HTTP response
+    else #LightSalmon Error case
+        TMS -> TMSBridge : Return failure
+        deactivate TMS
+        TMSBridge -> Backend : Return failure in tour number update
+        deactivate TMSBridge
+
+        note right of Backend : Handle error appropriately
+        Backend -> Frontend : Return error response
+    end
+
+    deactivate Backend
+end
+
+alt #LightGreen Success case in Frontend
+    Frontend -> Frontend : Render green check mark \non the selected action\n(Email or EDI)
+else #LightSalmon Error case in Frontend
+    Frontend -> Frontend : Display error indicator
+end
+
+Frontend --> Dispatcher : See success or error indicator

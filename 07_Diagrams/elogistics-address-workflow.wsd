@@ -1,0 +1,60 @@
+@startuml elogistics-address-workflow
+
+title Address Selection, Customization & Verification Workflow
+
+|Dispatcher|
+start
+:Start typing in name field;
+
+|Frontend|
+:Display options;
+:Send search request to Backend;
+
+|Backend|
+:Request address search via API;
+
+|eLogistics Portal|
+:Search for matching contacts;
+:Return matching contacts with addresses;
+
+|Backend|
+:Forward contact options;
+
+|Frontend|
+:Display contact & address options;
+
+|Dispatcher|
+if (Contact & Address contained?) then (no)
+  :Enter custom name and address;
+else (yes)
+  :Select matching proposal\n(contact incl. address);
+endif
+
+:Click "Save";
+
+|Frontend|
+:Send persist request to Backend;
+
+|Backend|
+:Request to save Transport Order\nvia TMS Bridge;
+
+|TMS Bridge|
+:Call pDis_TransportOrder.Save()\n(TransportOrder details + address info);
+
+|TMS Database|
+:Store Transport Order with\ncontact & address snapshot;
+:Return success;
+
+|TMS Bridge|
+:Return success;
+
+|Backend|
+:Return success;
+
+|Frontend|
+:Display success notification;
+
+|Dispatcher|
+stop
+
+@enduml

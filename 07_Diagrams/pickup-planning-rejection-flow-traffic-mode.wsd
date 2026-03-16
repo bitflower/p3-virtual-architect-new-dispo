@@ -1,0 +1,27 @@
+UniFace -> "TMS DB" : Set traffic mode
+activate "TMS DB"
+"TMS DB" -> CDC : Persists changed Shipment
+deactivate "TMS DB"
+activate CDC
+CDC -> "Pickup Planning Publisher" : Detects and pushes changed Shipment
+deactivate CDC
+activate "Pickup Planning Publisher"
+"Pickup Planning Publisher" -> "New Dispo Backend" : Inform about changes on Shipment
+deactivate "Pickup Planning Publisher"
+activate "New Dispo Backend"
+"New Dispo Backend" -> "New Dispo Backend" : Check business rules for Traffic Mode
+alt #Yellow Invalid Traffic Mode change
+    "New Dispo Backend" -> "TMS Bridge" : Reject traffic mode change
+    activate "TMS Bridge"
+    "TMS Bridge" -> "TMS DB" : Revert traffic mode change
+    deactivate "TMS Bridge"
+    activate "TMS DB"
+    "TMS DB" [#red]-> UniFace : Display rejected status
+    deactivate "TMS DB"
+end
+alt #LightGreen Valid Traffic Mode change
+    activate "New Dispo Backend"
+    "New Dispo Backend" -> "New Dispo Backend" : Apply business rules for traffic mode
+    "New Dispo Backend" -> "New Dispo Frontend" : Display updated Legs/Lots
+end
+deactivate "New Dispo Backend"

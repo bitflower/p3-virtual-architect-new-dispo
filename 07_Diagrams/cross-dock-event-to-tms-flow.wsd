@@ -1,0 +1,97 @@
+title Cross-Dock Listener: Event-to-TMS-Flow
+
+participant "Cross-Dock" as CrossDock
+queue "CALSuite ASB" as ServiceBus
+
+participant "Cross-Dock Listener" as CDListener
+participant "KeyCloak" as KeyCloak
+participant "TMS Bridge" as TMSBridge
+database "TMS" as TMS
+
+CrossDock -> ServiceBus: Request TMS Functionality
+note right of CrossDock
+Incoming Message
+**CallTMS_<ProcedureName>**  
+{
+  dbParamaterName1: <string | int | ...>,
+  dbParamaterName2: <string | int | ...>,
+  ...
+}
+end note
+CDListener --> ServiceBus: Listen for events
+
+== On new events ==
+
+ServiceBus -> CDListener: Receive event
+CDListener -> CDListener : Extract procedure name from event name
+CDListener -> CDListener : Extract body
+CDListener -> CDListener : Map procedure name to TMS Bridge GraphQL
+CDListener -> CDListener : Map body parameters to TMS Bridge parameters
+note right of CDListener
+**TMS Bridge uses friendly parameter names (TBD!)**  
+
+Example:
+i_tor_list => gateList
+end note
+CDListener -> KeyCloak : Authenticate
+CDListener -> TMSBridge : Request GraphQL query/mutation
+note right of TMSBridge
+**GraphQL Query/Mutation (using friendly names)**  
+
+{
+   startEntladung(branchId: string, parameterName1: ...) {
+      data
+   }
+}
+end note
+TMSBridge -> TMS : Request
+
+TMS -> TMSBridge : Response
+alt HTTP 200 (incl. business rules fail)
+    note right of TMSBridge
+    **GraphQL Response**  
+
+    {
+       data {
+          dbOutPutParameter1: ...,
+          dbOutPutParameter2: ...,
+       }
+    }
+    end note
+
+    TMSBridge -> CDListener : Success Response
+    CDListener -> CDListener : Map friendly GraphQL names to ASB TMS names
+    CDListener -> CDListener : Map procedure name
+    note right of CDListener
+    Resulting Message
+    **TmsFinished_<ProcedureName>**
+    {
+       data {
+          dbOutPutParameter1: ...,
+          dbOutPutParameter2: ...,
+       }
+    }
+    end note
+
+else Error case
+    TMSBridge -> CDListener : Error response (HTTP XXX)
+
+    alt #lightgreen Covered in separate story
+        CDListener -> CDListener : Prepare error event
+        note right of CDListener
+        Resulting Message
+        **CallTmsFailed_<ProcedureName>**
+        {
+           errorMessage: string,
+           error: {
+              message: string;
+              errObj: original error object;
+           }
+        }
+        end note
+    end
+end
+
+CDListener -> ServiceBus : Publish event
+
+CrossDock -> ServiceBus : Consume event
