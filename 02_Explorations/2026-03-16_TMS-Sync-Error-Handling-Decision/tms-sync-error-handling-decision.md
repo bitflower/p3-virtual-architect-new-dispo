@@ -13,7 +13,7 @@
 
 ## Summary
 
-Three failure scenarios threaten data consistency between New Dispo and TMS. Three architectural approaches exist. Decision impacts delivery timeline, operational complexity, user experience. Recommendation: manual recovery for June, migrate to outbox pattern post-release.
+Three failure scenarios threaten data consistency between New Dispo and TMS. Three architectural approaches exist. Decision impacts delivery timeline, operational complexity, user experience. June release targets single branch (not 64-branch Big Bang), reducing risk exposure. Recommendation: manual recovery for June, migrate to outbox pattern post-release.
 
 ---
 
@@ -92,7 +92,47 @@ sequenceDiagram
     Note over U,NDB: TMS updated, New Dispo not updated<br/>DATA OUT OF SYNC
 ```
 
-**Impact:** TMS updated, New Dispo unknown state. Rare but critical. Requires reconciliation.
+**Impact:** TMS updated, New Dispo unknown state. Rare but possible. Requires reconciliation. **Critical constraint:** Idempotency must be guaranteed for retry mechanism to work safely.
+
+---
+
+## Technical Analysis
+
+### When is Outbox Pattern Required?
+
+**Not required for Scenario 2:** If TMS Bridge returns error early (400/500), no state written anywhere. Safe to abort, no recovery mechanism needed.
+
+**Required for Scenario 1:** If TMS succeeds but New Dispo DB unavailable, outbox ensures eventual alignment. This is primary use case justifying outbox pattern.
+
+**Required for Scenario 3:** If TMS executes but response lost, system enters uncertain state. Outbox or manual retry mechanism needed to reconcile.
+
+### Error Classification Strategy
+
+**Recoverable (transient):**
+- TMS Bridge 5xx errors (service temporarily unavailable)
+- New Dispo DB connection failures
+- Network timeouts
+- Can be safely retried
+
+**Non-recoverable (permanent):**
+- TMS Bridge 4xx errors (validation failures, constraint violations)
+- Data inconsistency errors
+- Require user intervention to fix root cause before retry
+
+**Uncertain:**
+- Network failures after TMS execution (Scenario 3)
+- TMS Bridge returns error but operation may have succeeded due to internal bug
+- Requires state query to determine if operation completed
+- If completed: reconcile; if not: retry
+
+### Key Technical Constraints
+
+1. **Idempotency is non-negotiable:** Without idempotent operations or state-checking capability, retry mechanisms are unsafe
+2. **Outbox pattern is reusable:** Once implemented, applies to all future TMS synchronization scenarios
+3. **Cloud Tasks/Pub/Sub insufficient:** Cannot provide atomic guarantees needed for reliable two-phase commit
+4. **Current execution order matters:** TMS operation executes first, New Dispo second - this sequence justifies outbox over other patterns
+5. **TMS is source of truth:** New Dispo currently slave to TMS databases. Event-driven architecture only viable long-term when New Dispo masters its own domains
+6. **Single transaction requirement:** Outbox writes to both New Dispo DB and Outbox table in single atomic transaction, enabling reliable recovery
 
 ---
 
@@ -106,13 +146,17 @@ sequenceDiagram
 - On sync failure (Scenarios 1, 3), rollback local transaction or mark as "pending"
 - User sees error message with "Retry" option
 - User manually triggers re-sync operation
-- System attempts to reconcile by re-reading TMS state and aligning New Dispo
+- Before retry: Check if TMS operation already executed (query TMS state)
+- If already present: Align New Dispo database to match TMS state (reconciliation)
+- If not present: Execute full operation again
+- **Prerequisite:** TMS operations must be idempotent or state-checkable to enable safe retries
 
 **Characteristics:**
 - **Complexity:** Low. No background workers, no outbox infrastructure
 - **Reliability:** Depends on user action. Failures remain visible until resolved
 - **User Experience:** Degrades under failure. User must understand and act on errors
-- **Development Effort:** Minimal. Can deliver within June timeline
+- **Development Effort:** Minimal. ~10-20% of outbox pattern effort. Can deliver within June timeline
+- **June Release Context:** Single branch deployment (not 64-branch Big Bang) reduces risk exposure
 - **Operational Overhead:** Manual intervention required for each failure
 - **Data Consistency:** Eventually consistent only if user acts
 
@@ -171,12 +215,13 @@ sequenceDiagram
 - **User Experience:** Async by nature. User may not see immediate TMS reflection. Requires notification mechanism
 - **Development Effort:** Significant. Complete redesign of sync flow
 - **Operational Overhead:** Low for transient failures. Higher for monitoring and debugging async flows
-- **Data Consistency:** Eventual consistency. No atomic guarantees across New Dispo and TMS
+- **Data Consistency:** Eventual consistency. **No atomic guarantees** - cannot reliably publish to Cloud Tasks/Pub/Sub and commit to database in single transaction. If publishing to queue first then database fails, message is lost. If committing to database first then queue publish fails, state misalignment occurs. Outbox pattern solves this; event queues alone do not.
 
 **Risks:**
 - Major architectural change incompatible with June timeline
 - Requires rethinking of user expectations (immediate vs. eventual sync)
 - Debugging async flows more complex than synchronous
+- Only viable when New Dispo becomes master of data (long-term goal), not while TMS remains source of truth
 
 **Timeline:** Not feasible for June release. Long-term refactoring candidate.
 
@@ -202,9 +247,13 @@ sequenceDiagram
 
 **Rationale:**
 - Timeline constraint mandates low-risk, low-complexity approach
+- Single branch deployment in June (not 64-branch Big Bang) limits blast radius of potential failures
 - Failures are rare in stable infrastructure (Scenarios 1, 3)
 - Scenario 2 (early fail) already handled gracefully
 - Manual recovery provides safety net without overengineering
+- Effort is ~10-20% of outbox implementation, preserving budget for post-June improvements
+- Outbox pattern is "relatively complex and requires very careful testing" - significant investment for tight timeline
+- Business may tolerate manual resolution if failure frequency low on single branch
 
 **Post-June Roadmap:** Migrate to **Option 2 (Outbox Pattern)** in subsequent release.
 
@@ -217,30 +266,39 @@ sequenceDiagram
 
 ## Questions/Open Items
 
-1. **Error messaging UX:** What specific error messages and retry button placement for manual recovery?
-2. **Retry operation semantics:** How to handle idempotency and reconciliation logic in manual retry flow?
-3. **Error classification:** Which errors are recoverable (transient) vs. non-recoverable (data violations)?
-4. **Monitoring requirements:** What metrics needed to track failure frequency and validate approach?
-5. **Support team training:** What documentation and runbooks required for manual error scenarios?
+1. **Idempotency verification (CRITICAL):** Must verify TMS operations are idempotent or state-checkable before implementing any retry mechanism. "If not, we cannot do it. If it is, we can do it." Without idempotency guarantee, retry strategies are unsafe.
+2. **Error messaging UX:** What specific error messages and retry button placement for manual recovery?
+3. **Retry operation semantics:** Check TMS state before retry - if operation already succeeded, align New Dispo; if not, execute full operation. How to implement state-checking queries?
+4. **Error classification:** Which errors are recoverable (transient) vs. non-recoverable (data violations)? How to distinguish at runtime?
+5. **Monitoring requirements:** What metrics needed to track failure frequency and validate approach?
+6. **Support team training:** What documentation and runbooks required for manual error scenarios?
+7. **Client budget discussion:** Present effort estimates for Options 1 & 2 to align expectations and budget allocation
 
 ---
 
 ## Next Steps
 
 ### Immediate (this week)
-- Finalize error messaging UX for manual retry flow
-- Define retry operation semantics (idempotency, reconciliation logic)
-- Estimate Option 2 (Outbox) for post-June planning
+- **Team:** Reflect on and document all error scenarios discussed (build backlog of failure cases)
+- **Matthias:** Prepare effort estimates for Option 1 (manual) and Option 2 (outbox) for client discussion
+- **Team:** Verify idempotency guarantees in TMS Bridge operations (blocking requirement)
+- **Team:** Provide feedback/counterarguments on approach selection
 
-### Pre-June Release
-- Implement manual retry mechanism
+### Pre-Decision (by 2026-03-20)
+- Client discussion: Present options, effort estimates, trade-offs
+- Finalize approach selection based on budget and timeline
+- Define error messaging UX if Option 1 selected
+
+### Pre-June Release (if Option 1 selected)
+- Implement manual retry mechanism with state-checking logic
 - Document known failure scenarios and recovery procedures
-- Train support team on error handling
+- Train support team on error handling and manual resolution process
+- Monitor single-branch deployment for failure patterns
 
 ### Post-June
-- Design outbox pattern implementation
-- Evaluate event-driven architecture for broader system refactoring
-- Monitor failure frequency to validate approach
+- Evaluate Option 2 (Outbox) implementation based on observed failure frequency
+- If justified: Design outbox pattern for automated recovery
+- Long-term: Event-driven architecture when New Dispo becomes data master
 
 ---
 
@@ -258,7 +316,8 @@ sequenceDiagram
 
 ## Related Files
 
-- `/00_Meetings/2026-03-12_Refinement-New-Dispo-TMS-Transactional-Behaviour.md` - Source refinement session notes
+- `/00_Meetings/2026-03-12_Refinement-New-Dispo-TMS-Transactional-Behaviour.md` - Source refinement session summary
+- `/00_Meetings/2026-03-12/Weekly Refinement - NewDispo - 2026.03.12.docx` - Full meeting transcript
 - `Code/Disposition-Backend/` - New Dispo Backend implementation
 - `Code/Disposition-Abstraction-Layer/` - TMS Bridge implementation
 
