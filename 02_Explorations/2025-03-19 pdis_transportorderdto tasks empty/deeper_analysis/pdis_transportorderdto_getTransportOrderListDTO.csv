@@ -1,0 +1,14 @@
+"procedure_name","schema_name","procedure_definition"
+"gettransportorderlistdto","pdis_transportorderdto","CREATE OR REPLACE FUNCTION pdis_transportorderdto.gettransportorderlistdto(ntatix numeric)
+ RETURNS text
+ LANGUAGE plpgsql
+AS $function$
+  declare
+    oGLVar   pDIS_TransportOrderDTO.GL_VAR_TYPE := pDIS_TransportOrderDTO.Get_GL_VAR();
+    sJson    text;
+  begin
+    call CAL_Json.add( sJson, pDIS_TransportOrderDTO.getTransportOrderDTO(oGLVar.rTA) );
+    return CAL_Json.encloseArray(sJson);
+  end;
+  $function$
+"

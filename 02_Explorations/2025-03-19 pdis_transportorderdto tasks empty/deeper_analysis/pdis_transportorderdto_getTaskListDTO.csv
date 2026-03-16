@@ -1,0 +1,20 @@
+"procedure_name","schema_name","procedure_definition"
+"gettasklistdto","pdis_transportorderdto","CREATE OR REPLACE FUNCTION pdis_transportorderdto.gettasklistdto(ntatix numeric)
+ RETURNS text
+ LANGUAGE plpgsql
+AS $function$
+  declare
+    oGLVar   pDIS_TransportOrderDTO.GL_VAR_TYPE := pDIS_TransportOrderDTO.Get_GL_VAR();
+    sJson    text;
+  begin
+    if coalesce(array_length(oGLVar.tTask,1),0) > 0 then
+       for i in array_lower(oGLVar.tTask,1) .. array_upper(oGLVar.tTask,1) loop
+          call CAL_Json.add( sJson, pDIS_TransportOrderDTO.getTaskDTO(oGLVar.tTask[i]) );
+       end loop;
+       return CAL_Json.encloseArray(sJson);
+    else
+       return sJson;
+    end if;
+  end;
+  $function$
+"

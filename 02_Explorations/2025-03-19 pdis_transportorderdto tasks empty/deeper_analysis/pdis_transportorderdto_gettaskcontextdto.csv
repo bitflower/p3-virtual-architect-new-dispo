@@ -1,0 +1,14 @@
+"procedure_name","schema_name","procedure_definition"
+"gettaskcontextdto","pdis_transportorderdto","CREATE OR REPLACE FUNCTION pdis_transportorderdto.gettaskcontextdto(sid character varying, stype character varying)
+ RETURNS text
+ LANGUAGE plpgsql
+AS $function$
+  declare
+    sJson    text;
+  begin
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Id',   sId)  );
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Type', sType));
+    return CAL_Json.encloseStruct(sJson);
+  end;
+  $function$
+"

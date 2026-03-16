@@ -1,0 +1,12 @@
+SELECT
+    ST.SEN_TIX,
+	S.*
+FROM
+	SENDUNG S
+	LEFT JOIN SEN_TS ST ON S.SENDUNG_TIX = ST.SEN_TIX
+WHERE
+	S.SENDUNGSART = 'S'
+	--AND ST.SEN_TIX IS NOT NULL -- Records that are in both tables
+	AND ST.SEN_TIX IS NULL -- Records that are only in SENDUNG
+LIMIT
+	10;

@@ -1,0 +1,11 @@
+"column_name","data_type","numeric_precision","numeric_scale","is_nullable","is_pk"
+"sen_tix","numeric",22,0,"NO",True
+"tran_code","character",NULL,NULL,"NO",True
+"u_version","character",NULL,NULL,"YES",False
+"tran_k","character",NULL,NULL,"YES",False
+"tran_e","timestamp without time zone",NULL,NULL,"YES",False
+"c_time","timestamp without time zone",NULL,NULL,"YES",False
+"c_user","character",NULL,NULL,"YES",False
+"u_time","timestamp without time zone",NULL,NULL,"YES",False
+"u_user","character",NULL,NULL,"YES",False
+"meta_t","character varying",NULL,NULL,"YES",False

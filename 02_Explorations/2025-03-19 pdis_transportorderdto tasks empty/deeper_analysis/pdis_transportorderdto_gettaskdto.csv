@@ -1,0 +1,19 @@
+"procedure_name","schema_name","procedure_definition"
+"gettaskdto","pdis_transportorderdto","CREATE OR REPLACE FUNCTION pdis_transportorderdto.gettaskdto(r pdis_transportorderdto.trtask)
+ RETURNS text
+ LANGUAGE plpgsql
+AS $function$
+  declare
+    sJson    text;
+    sSubJson text;
+  begin
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Id',   r.Id)  );
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Type', r.Type));
+    for i in array_lower(r.tContext,1) .. array_upper(r.tContext,1) loop
+       call CAL_Json.add( sSubJson, pDIS_TransportOrderDTO.getTaskContextDTO( r.tContext[i].Id, r.tContext[i].Type ) );
+    end loop;
+    call CAL_Json.add( sJson, CAL_Json.concatArray('BusinessObjects', CAL_Json.encloseArray(sSubJson)) );
+    return CAL_Json.encloseStruct(sJson);
+  end;
+  $function$
+"

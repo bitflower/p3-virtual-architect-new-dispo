@@ -1,0 +1,184 @@
+"column_name","data_type","numeric_precision","numeric_scale","is_nullable","is_pk"
+"sendung_tix","numeric",22,0,"NO",True
+"u_version","character",NULL,NULL,"YES",False
+"sendung_n","numeric",7,0,"YES",False
+"fix_key","character",NULL,NULL,"YES",False
+"sendungsart","character",NULL,NULL,"YES",False
+"firma","numeric",3,0,"YES",False
+"niederlassung","numeric",2,0,"YES",False
+"rollkart_tix","numeric",22,0,"YES",False
+"bordero_tix","numeric",22,0,"YES",False
+"ladelist_tix","numeric",22,0,"YES",False
+"c_time","timestamp without time zone",NULL,NULL,"YES",False
+"c_user","character",NULL,NULL,"YES",False
+"u_time","timestamp without time zone",NULL,NULL,"YES",False
+"ols_user","character",NULL,NULL,"YES",False
+"leistungsdatum","timestamp without time zone",NULL,NULL,"YES",False
+"auftrag_n","character varying",NULL,NULL,"YES",False
+"lagerplatz","character",NULL,NULL,"YES",False
+"zone_abg","character",NULL,NULL,"YES",False
+"zone_empf","character",NULL,NULL,"YES",False
+"fixtermin_datum","timestamp without time zone",NULL,NULL,"YES",False
+"fixtermin_zeit","timestamp without time zone",NULL,NULL,"YES",False
+"frankatur","character",NULL,NULL,"YES",False
+"status_erf","character",NULL,NULL,"YES",False
+"status_dis","character",NULL,NULL,"YES",False
+"relation","character",NULL,NULL,"YES",False
+"tour","numeric",3,0,"YES",False
+"status_zus","character",NULL,NULL,"YES",False
+"status_frb","character",NULL,NULL,"YES",False
+"status_mod","character",NULL,NULL,"YES",False
+"status_abf","character",NULL,NULL,"YES",False
+"status_fak","character",NULL,NULL,"YES",False
+"status_rue","character",NULL,NULL,"YES",False
+"status_sta","character",NULL,NULL,"YES",False
+"status_hst","numeric",3,0,"YES",False
+"status_1","character",NULL,NULL,"YES",False
+"status_2","character",NULL,NULL,"YES",False
+"status_3","character",NULL,NULL,"YES",False
+"status_4","character",NULL,NULL,"YES",False
+"status_5","character",NULL,NULL,"YES",False
+"status_6","character",NULL,NULL,"YES",False
+"status_7","character",NULL,NULL,"YES",False
+"status_8","character",NULL,NULL,"YES",False
+"status_9","character",NULL,NULL,"YES",False
+"status_10","character",NULL,NULL,"YES",False
+"status_11","character",NULL,NULL,"YES",False
+"status_12","character",NULL,NULL,"YES",False
+"status_13","character",NULL,NULL,"YES",False
+"status_14","character",NULL,NULL,"YES",False
+"status_15","character",NULL,NULL,"YES",False
+"auftrag_doss_t","character",NULL,NULL,"YES",False
+"absend_n","numeric",10,0,"YES",False
+"absend_i","numeric",2,0,"YES",False
+"absend_name1","character",NULL,NULL,"YES",False
+"empf_n","numeric",10,0,"YES",False
+"empf_i","numeric",2,0,"YES",False
+"empf_name1","character",NULL,NULL,"YES",False
+"sped_n","numeric",10,0,"YES",False
+"sped_i","numeric",2,0,"YES",False
+"sped_name1","character",NULL,NULL,"YES",False
+"unt_n","numeric",10,0,"YES",False
+"unt_i","numeric",2,0,"YES",False
+"unt_name1","character",NULL,NULL,"YES",False
+"dispo_deaktiv","character",NULL,NULL,"YES",False
+"direktsendung","character",NULL,NULL,"YES",False
+"direkt_angeladen","character",NULL,NULL,"YES",False
+"gefahrgut","character",NULL,NULL,"YES",False
+"lauf_kennz","character",NULL,NULL,"YES",False
+"zeitzone","numeric",2,0,"YES",False
+"gewicht","numeric",9,3,"YES",False
+"gewicht_frachtpf","numeric",9,3,"YES",False
+"volumen","numeric",9,3,"YES",False
+"anzahl_colli","numeric",5,0,"YES",False
+"eing_bordero_n","character",NULL,NULL,"YES",False
+"eing_bordero_pos","numeric",3,0,"YES",False
+"rollk_n","numeric",15,0,"YES",False
+"rollk_pos","numeric",3,0,"YES",False
+"rollk_e","timestamp without time zone",NULL,NULL,"YES",False
+"rollk_abhol_n","numeric",15,0,"YES",False
+"rollk_abhol_pos","numeric",3,0,"YES",False
+"bordero_n","numeric",15,0,"YES",False
+"bordero_pos","numeric",3,0,"YES",False
+"bordero_e","timestamp without time zone",NULL,NULL,"YES",False
+"ladeliste_n","numeric",15,0,"YES",False
+"ladeliste_pos","numeric",3,0,"YES",False
+"ladeliste_e","timestamp without time zone",NULL,NULL,"YES",False
+"entladeliste","numeric",15,0,"YES",False
+"auftragsart","character",NULL,NULL,"YES",False
+"faktur_freigabe","character",NULL,NULL,"YES",False
+"selbstabholer","character",NULL,NULL,"YES",False
+"selbstanlieferer","character",NULL,NULL,"YES",False
+"dfue_in","timestamp without time zone",NULL,NULL,"YES",False
+"dfue_out","timestamp without time zone",NULL,NULL,"YES",False
+"dfue_empf_sped","character",NULL,NULL,"YES",False
+"absend_name2","character",NULL,NULL,"YES",False
+"absend_name3","character",NULL,NULL,"YES",False
+"absend_strasse","character",NULL,NULL,"YES",False
+"absend_land","character",NULL,NULL,"YES",False
+"absend_plz","character",NULL,NULL,"YES",False
+"absend_ort","character",NULL,NULL,"YES",False
+"absend_bezirk","character",NULL,NULL,"YES",False
+"absend_ort_tix","numeric",22,0,"YES",False
+"absend_postf","character",NULL,NULL,"YES",False
+"absend_pf_plz","character",NULL,NULL,"YES",False
+"absend_abw_land","character",NULL,NULL,"YES",False
+"absend_abw_plz","character",NULL,NULL,"YES",False
+"absend_abw_ort","character",NULL,NULL,"YES",False
+"absend_abw_bez","character",NULL,NULL,"YES",False
+"absend_abworttix","numeric",22,0,"YES",False
+"absend_ust_id","character",NULL,NULL,"YES",False
+"empf_name2","character",NULL,NULL,"YES",False
+"empf_name3","character",NULL,NULL,"YES",False
+"empf_strasse","character",NULL,NULL,"YES",False
+"empf_land","character",NULL,NULL,"YES",False
+"empf_plz","character",NULL,NULL,"YES",False
+"empf_ort","character",NULL,NULL,"YES",False
+"empf_bezirk","character",NULL,NULL,"YES",False
+"empf_ort_tix","numeric",22,0,"YES",False
+"empf_postf","character",NULL,NULL,"YES",False
+"empf_pf_plz","character",NULL,NULL,"YES",False
+"empf_abw_land","character",NULL,NULL,"YES",False
+"empf_abw_plz","character",NULL,NULL,"YES",False
+"empf_abw_ort","character",NULL,NULL,"YES",False
+"empf_abw_bez","character",NULL,NULL,"YES",False
+"empf_abwort_tix","numeric",22,0,"YES",False
+"empf_ust_id","character",NULL,NULL,"YES",False
+"empf_adr_aend","character",NULL,NULL,"YES",False
+"sped_strasse","character",NULL,NULL,"YES",False
+"sped_ort_tix","numeric",22,0,"YES",False
+"sped_postf","character",NULL,NULL,"YES",False
+"sped_pf_plz","character",NULL,NULL,"YES",False
+"sped_ust_id","character",NULL,NULL,"YES",False
+"unt_strasse","character",NULL,NULL,"YES",False
+"unt_ort_tix","numeric",22,0,"YES",False
+"unt_postf","character",NULL,NULL,"YES",False
+"unt_pf_plz","character",NULL,NULL,"YES",False
+"unt_ust_id","character",NULL,NULL,"YES",False
+"zustelldatum","timestamp without time zone",NULL,NULL,"YES",False
+"absend_adr_aend","character",NULL,NULL,"YES",False
+"verkehrsstrom","character",NULL,NULL,"YES",False
+"abs_rel","character",NULL,NULL,"YES",False
+"kond_bed","character",NULL,NULL,"YES",False
+"transit_k","character",NULL,NULL,"YES",False
+"ref_sen_tix","numeric",22,0,"YES",False
+"ref_k","character",NULL,NULL,"YES",False
+"stellplatz_c","numeric",5,2,"YES",False
+"quell_k","character",NULL,NULL,"YES",False
+"abl_scan_anw_k","character",NULL,NULL,"YES",False
+"emp_erm_rel","character",NULL,NULL,"YES",False
+"emp_abf_rel","character",NULL,NULL,"YES",False
+"tran_art","numeric",2,0,"YES",False
+"rrv_gremp_b","character",NULL,NULL,"YES",False
+"pst_verfolg_k","character",NULL,NULL,"YES",False
+"abs_ursp_rel","character",NULL,NULL,"YES",False
+"abs_st_land","character",NULL,NULL,"YES",False
+"emp_st_land","character",NULL,NULL,"YES",False
+"zusa_k","character varying",NULL,NULL,"YES",False
+"prod_grp","character",NULL,NULL,"YES",False
+"abf_bereich_k","character",NULL,NULL,"YES",False
+"neutr_auslief_b","character",NULL,NULL,"YES",False
+"emp_adr_art","character",NULL,NULL,"YES",False
+"tran_art2","character",NULL,NULL,"YES",False
+"fix_bis_d","timestamp without time zone",NULL,NULL,"YES",False
+"fix_bis_z","timestamp without time zone",NULL,NULL,"YES",False
+"ursp_sen_n","numeric",7,0,"YES",False
+"lspers_k","character varying",NULL,NULL,"YES",False
+"logistik_k","character",NULL,NULL,"YES",False
+"dok_emp_b","character",NULL,NULL,"YES",False
+"d_kunde_b","character",NULL,NULL,"YES",False
+"kombisen_b","character",NULL,NULL,"YES",False
+"rrv_sperr_k","numeric",1,0,"YES",False
+"rrv_emp_typ","character varying",NULL,NULL,"YES",False
+"emp_rel_prod_grp","character",NULL,NULL,"YES",False
+"mde_id","character varying",NULL,NULL,"YES",False
+"prod_k","character varying",NULL,NULL,"YES",False
+"prod_intern_k","character varying",NULL,NULL,"YES",False
+"fix_von_d","timestamp without time zone",NULL,NULL,"YES",False
+"fix_von_z","timestamp without time zone",NULL,NULL,"YES",False
+"bodenstpl_c","numeric",5,2,"YES",False
+"volstpl_c","numeric",5,2,"YES",False
+"abh_von_d","timestamp without time zone",NULL,NULL,"YES",False
+"abh_von_z","timestamp without time zone",NULL,NULL,"YES",False
+"abh_bis_d","timestamp without time zone",NULL,NULL,"YES",False
+"abh_bis_z","timestamp without time zone",NULL,NULL,"YES",False

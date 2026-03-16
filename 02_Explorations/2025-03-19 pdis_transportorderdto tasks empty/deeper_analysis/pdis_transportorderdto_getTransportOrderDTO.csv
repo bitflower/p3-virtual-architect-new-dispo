@@ -1,0 +1,29 @@
+"procedure_name","schema_name","procedure_definition"
+"gettransportorderdto","pdis_transportorderdto","CREATE OR REPLACE FUNCTION pdis_transportorderdto.gettransportorderdto(rta v_ta)
+ RETURNS text
+ LANGUAGE plpgsql
+AS $function$
+  declare
+    sJson  text;
+    nBitState   numeric := pDIS_TransportOrderDTO.getTOBitState(rTA);
+  begin
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Id'             , rTA.TA_Tix:: varchar));
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Number'         , rTA.TA_N            ));
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Company'        , rTA.Firma           ));
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Branch'         , rTA.Nl              ));
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Type'           , case rTA.Vk_Art when 28 then 'FTL' when 50 then 'SH' else 'LH' end)); -- FTL: Full Truck Load, SH: Short Haul (NV), LH: Long Haul (FV)
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('PerformanceDate', rTA.Lst_D           ));
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('TransportMode'  , pDIS_TransportOrderDTO.getTOTransportMode(rTA)            ));
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('State'          , pDIS_TransportOrderDTO.getTOStateDTO(nBitState)           ));
+    call CAL_Json.add(sJson, CAL_Json.concatArray ('StateList'      , pDIS_TransportOrderDTO.getTOStateListDTO(nBitState)       ));
+    call CAL_Json.add(sJson, CAL_Json.concatScalar('Remark'         , pDIS_TransportOrderDTO.getTOConcatRemarkDTO(rTA)          ));
+    call CAL_Json.add(sJson, CAL_Json.concatArray ('Remarks'        , pDIS_TransportOrderDTO.getTORemarkListDTO(rTA)            ));
+    call CAL_Json.add(sJson, CAL_Json.concatArray ('Participants'   , pDIS_TransportOrderDTO.getTOParticipantListDTO(rTA.TA_Tix)));
+    call CAL_Json.add(sJson, CAL_Json.concatArray ('Resources'      , pDIS_TransportOrderDTO.getTOResourceListDTO(rTA.TA_Tix)   ));
+    call CAL_Json.add(sJson, CAL_Json.concatArray ('TourPoints'     , pDIS_TransportOrderDTO.getTOTourPointListDTO(rTA.TA_Tix)  ));
+    call CAL_Json.add(sJson, CAL_Json.concatArray ('Costs'          , pDIS_TransportOrderDTO.getTOCostListDTO(rTA.TA_Tix)       ));
+    call pDIS_TransportOrderDTO.addTOTaskList(rTA.TA_Tix:: varchar);
+    return CAL_Json.encloseStruct(sJson);
+  end;
+  $function$
+"

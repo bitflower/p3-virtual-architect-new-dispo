@@ -1,0 +1,33 @@
+"procedure_name","schema_name","procedure_definition"
+"get","pdis_transportorderdto","CREATE OR REPLACE FUNCTION pdis_transportorderdto.get(sid character varying)
+ RETURNS text
+ LANGUAGE plpgsql
+AS $function$
+  declare
+    oGLVar   pDIS_TransportOrderDTO.GL_VAR_TYPE := pDIS_TransportOrderDTO.Get_GL_VAR();
+    sJson    text;
+  begin
+     call pTA.clear();
+     oGLVar.tPers      := NULL;
+     oGLVar.tGoodsType := NULL;
+     oGLVar.tTourPoint := NULL;
+     oGLVar.tTask      := NULL;
+     oGLVar.tLeg       := NULL;
+     oGLVar.tEquipment := NULL;
+     oGLVar.tContext   := NULL;
+     oGLVar.rTA := ( select row(t.*) from V_TA t where t.TA_Tix = (sId:: numeric) );
+     oGLVar.rSPE := pPers.getrPers(CAL_Firma.getSPE((oGLVar.rTA).Firma, (oGLVar.rTA).Nl));
+     call pDIS_TransportOrderDTO.Set_GL_VAR(oGLVar);
+   --call CAL_Json.add(sJson, CAL_Json.concatArray('Resources'       , pDIS_TransportOrderDTO.getResourceListDTO((oGLVar.rTA).TA_Tix))       );
+     call CAL_Json.add(sJson, CAL_Json.concatArray('ForwardingOrders', pDIS_TransportOrderDTO.getForwardingOrderListDTO ((oGLVar.rTA).TA_Tix)));
+     call CAL_Json.add(sJson, CAL_Json.concatArray('TransportOrders' , pDIS_TransportOrderDTO.getTransportOrderListDTO  ((oGLVar.rTA).TA_Tix)));
+     call CAL_Json.add(sJson, CAL_Json.concatArray('Persons'         , pDIS_TransportOrderDTO.getPersonListDTO          ((oGLVar.rTA).TA_Tix)));
+     call CAL_Json.add(sJson, CAL_Json.concatArray('Equipments'      , pDIS_TransportOrderDTO.getEquipmentListDTO       ((oGLVar.rTA).TA_Tix)));
+     call CAL_Json.add(sJson, CAL_Json.concatArray('GoodsTypes'      , pDIS_TransportOrderDTO.getGoodsTypeListDTO       ((oGLVar.rTA).TA_Tix)));
+     call CAL_Json.add(sJson, CAL_Json.concatArray('Tasks'           , pDIS_TransportOrderDTO.getTaskListDTO            ((oGLVar.rTA).TA_Tix)));
+     return CAL_Json.encloseStruct(sJson);
+  exception when NO_DATA_FOUND then
+     return null::text;
+  end;
+  $function$
+"
