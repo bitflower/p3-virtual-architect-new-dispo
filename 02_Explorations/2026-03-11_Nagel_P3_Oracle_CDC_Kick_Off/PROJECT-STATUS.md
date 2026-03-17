@@ -154,13 +154,13 @@ _To be defined in workshop - pending alignment with stakeholders_
 
 | Date       | Update                                                                                                                                                             | Updated By             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
-| 2026-03-13 | POC scope clarified - intentionally ends at Cloud Storage, Cloud SQL harmonization post-POC                                                                       | Matt Wilkinson (Nagel) |
+| 2026-03-13 | POC scope clarified - intentionally ends at Cloud Storage, Cloud SQL harmonization post-POC                                                                       | Virtual Architect      |
 | 2026-03-13 | Project status synced to wiki, all updates from Matt's communication reflected                                                                                     | Virtual Architect      |
-| 2026-03-13 | TMS1034 (ABN) Oracle connection ready, UAT databases (1034, 1060) ready for order duplication, Datastream setup assigned to WL5, Cloud SQL/Storage assigned to WL4 | Matt Wilkinson (Nagel) |
-| 2026-03-13 | Project page created, pending items documented                                                                                                                     | Matthias               |
-| 2026-03-13 | Workshop scheduled for March 16                                                                                                                                    | Martin                 |
-| 2026-03-13 | GCP infrastructure provisioning completed                                                                                                                          | P3 DevOps Team         |
-| 2026-03-11 | Kick-off meeting conducted, 7 action items assigned                                                                                                                | All                    |
+| 2026-03-13 | TMS1034 (ABN) Oracle connection ready, UAT databases (1034, 1060) ready for order duplication, Datastream setup assigned to WL5, Cloud SQL/Storage assigned to WL4 | Virtual Architect      |
+| 2026-03-13 | Project page created, pending items documented                                                                                                                     | Virtual Architect      |
+| 2026-03-13 | Workshop scheduled for March 16                                                                                                                                    | Virtual Architect      |
+| 2026-03-13 | GCP infrastructure provisioning completed                                                                                                                          | Virtual Architect      |
+| 2026-03-11 | Kick-off meeting conducted, 7 action items assigned                                                                                                                | Virtual Architect      |
 
 ---
 
