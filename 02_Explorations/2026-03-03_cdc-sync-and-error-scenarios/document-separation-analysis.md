@@ -19,9 +19,10 @@ The current `cdc-sync-and-error-scenarios.md` document (569 lines) addresses mul
 | Document | Type | Key Contributions |
 |----------|------|-------------------|
 | `00_Meetings/2025-10-10_yosif-cdc-sync-and-error-flow.md` | Meeting Notes | Identified Problems 1 & 2 |
-| `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/matthias-input.md` | Exploration Request | Identified Problem 3 |
+| `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/_archive/matthias-input.md` | Exploration Request | Identified Problem 3 (archived - no longer relevant) |
 | `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/cdc-sync-and-error-scenarios.md` | Technical Analysis | 569-line combined analysis |
 | `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/potential-solutions.md` | Solution Proposals | Remediation patterns |
+| `02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/` | Detailed Exploration | Problem 1 (Top-Down Sync) covered in depth |
 
 ---
 
@@ -30,6 +31,8 @@ The current `cdc-sync-and-error-scenarios.md` document (569 lines) addresses mul
 From a distributed systems architecture perspective, there are **THREE DISTINCT PROBLEMS**:
 
 ### Problem 1: Distributed Transaction Failure (Top-Down Sync)
+
+**Status:** ✅ **Covered in separate exploration:** `02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders`
 
 **Complexity:** High (Complex)
 **Category:** Dual-Write Anti-Pattern
@@ -109,6 +112,8 @@ New Dispo Backend (ConsumeEventCommandHandler)
 
 ### Problem 3: External TMS Modifications Invisible to New Dispo
 
+**Status:** ⚠️ **Descoped** - This problem has been descoped and is no longer being actively addressed.
+
 **Complexity:** Unknown (requires investigation)
 **Category:** External Write Detection Gap
 
@@ -142,7 +147,7 @@ Whenever someone adds or modifies data in TMS Database directly (e.g., through t
 
 ## Problem Comparison Matrix
 
-| Aspect | Problem 1 | Problem 2 | Problem 3 |
+| Aspect | Problem 1 (Covered separately) | Problem 2 | Problem 3 (Descoped) |
 |--------|-----------|-----------|-----------|
 | **Name** | Distributed Transaction Failure | CDC Event Processing Failure | External TMS Modifications |
 | **Direction** | New Dispo → TMS | TMS → New Dispo | External → TMS |
