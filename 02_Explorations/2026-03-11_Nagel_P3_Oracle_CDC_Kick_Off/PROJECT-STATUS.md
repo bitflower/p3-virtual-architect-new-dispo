@@ -20,6 +20,9 @@
 
 **Decision Timeline:** End of March 2026 (POC completion)
 
+**Related Work Items:**
+- [Feature 121925: TMS Pulse ORA Extension](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_workitems/edit/121925)
+
 ---
 
 ## Current Status
