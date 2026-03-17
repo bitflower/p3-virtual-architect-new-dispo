@@ -156,6 +156,26 @@
         },
         "notes": "Living project document - sync from exploration folder to wiki, rewrite internal links to wiki paths, uses Azure DevOps URL-encoded filename"
       }
+    },
+    {
+      "id": "project-cdc-error-flow",
+      "source": "02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/PROJECT-STATUS.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-CDC-Error-Flow-Solution-Design.md",
+      "description": "CDC Error Flow Solution Design - Implementing reliable CDC event processing retry mechanism",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "template": "wiki",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Living project document - sync from exploration folder to wiki, remove internal exploration links, clean for stakeholder visibility"
+      }
     }
   ]
 }
