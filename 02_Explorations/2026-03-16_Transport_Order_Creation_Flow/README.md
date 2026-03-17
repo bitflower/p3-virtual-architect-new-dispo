@@ -1,4 +1,4 @@
-# Transport Order Creation via Drag & Drop
+# Transport Order Creation Flow
 
 **Date:** 2026-03-16
 **Status:** Documentation Complete
@@ -8,18 +8,20 @@
 
 ## What This Documents
 
-This exploration documents the complete flow for creating transport orders in the New Dispo system through the dispatcher's drag-and-drop interface. When a dispatcher drags a lot or leg from the unplanned area and drops it on the "Create Transport Order" zone, the following occurs:
+This exploration documents the complete flow for creating transport orders in the New Dispo system. When a dispatcher drags a lot or leg from the unplanned area and drops it on the "Create Transport Order" zone, the following occurs:
 
 1. ✅ Transport order is created in TMS
 2. ✅ Legs are assigned to the transport order
 3. ✅ Tour calculation is automatically triggered (xServer optimization)
 4. ✅ UI is refreshed with the new transport order
+5. ✅ Error handling and retry mechanisms for TMS synchronization failures
+6. ✅ Idempotency guarantees for safe retry operations
 
 ---
 
 ## Document Structure
 
-This exploration is split into **6 focused documents** for easy navigation and maintenance:
+This exploration is split into **8 focused documents** for easy navigation and maintenance:
 
 ### 📖 [01. Overview & Flow](./01-overview-and-flow.md)
 **Audience:** Product owners, architects, new team members
@@ -106,6 +108,34 @@ Quick reference for all endpoints:
 
 ---
 
+### ⚠️ [07. TMS Sync Error Handling Decision](./tms-sync-error-handling-decision.md)
+**Audience:** Solution architects, technical leads, product owners
+
+Decision paper for error handling strategy:
+- Three failure scenarios (local DB failure, early Bridge failure, network interruption)
+- Three architectural approaches (manual recovery, outbox pattern, event-driven)
+- Comparison matrix and trade-offs
+- Implementation recommendations for June 2026 release
+- Post-release migration path
+
+**Read this** if you need to understand error handling strategy or implement retry mechanisms.
+
+---
+
+### 🔒 [08. Idempotency Analysis](./idempotency-analysis.md)
+**Audience:** Backend developers, integration specialists
+
+Detailed idempotency verification:
+- TMS database operation analysis
+- `PTA.HASSEN()` duplicate check mechanism
+- Transport order creation idempotency constraints
+- Safe retry implementation patterns
+- State-checking logic for reconciliation
+
+**Read this** if you need to implement retry logic or verify TMS operation safety.
+
+---
+
 ## Quick Navigation by Role
 
 ### 👨‍💼 **Product Owner / Business Analyst**
@@ -118,17 +148,21 @@ Then check: [06. API Reference](./06-api-reference.md)
 ### ⚙️ **Backend Developer**
 Go to: [03. Backend Implementation](./03-backend-implementation.md)
 Then check: [04. TMS Integration](./04-tms-integration.md)
+For error handling: [07. TMS Sync Error Handling](./tms-sync-error-handling-decision.md)
+For retry logic: [08. Idempotency Analysis](./idempotency-analysis.md)
 
 ### 🗄️ **Database / Integration Specialist**
 Go to: [04. TMS Integration](./04-tms-integration.md)
 Then check: [05. Data Model & Transformations](./05-data-model-transformations.md)
+Then read: [08. Idempotency Analysis](./idempotency-analysis.md)
 
 ### 🧪 **Tester / QA**
 Go to: [06. API Reference](./06-api-reference.md)
 Then read: [01. Overview & Flow](./01-overview-and-flow.md)
+For error scenarios: [07. TMS Sync Error Handling](./tms-sync-error-handling-decision.md)
 
 ### 🏗️ **Solution Architect**
-Read in order: 01 → 03 → 04 → 05
+Read in order: 01 → 03 → 04 → 05 → 07 → 08
 
 ---
 
@@ -168,9 +202,10 @@ The complete, unsplit documentation is preserved in:
 ## Document Maintenance
 
 - **Created:** 2026-03-16
-- **Last Updated:** 2026-03-16
+- **Last Updated:** 2026-03-17
 - **Maintained By:** Virtual Architect Team
 - **Update Policy:** Update individual documents when code changes occur in their respective layers
+- **Recent Changes:** Added TMS sync error handling and idempotency analysis documents
 
 ---
 
@@ -182,3 +217,5 @@ The complete, unsplit documentation is preserved in:
 - [TMS Integration](./04-tms-integration.md)
 - [Data Model & Transformations](./05-data-model-transformations.md)
 - [API Reference](./06-api-reference.md)
+- [TMS Sync Error Handling Decision](./tms-sync-error-handling-decision.md)
+- [Idempotency Analysis](./idempotency-analysis.md)

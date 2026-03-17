@@ -146,10 +146,21 @@ sequenceDiagram
 - On sync failure (Scenarios 1, 3), rollback local transaction or mark as "pending"
 - User sees error message with "Retry" option
 - User manually triggers re-sync operation
-- Before retry: Check if TMS operation already executed (query TMS state)
-- If already present: Align New Dispo database to match TMS state (reconciliation)
-- If not present: Execute full operation again
-- **Prerequisite:** TMS operations must be idempotent or state-checkable to enable safe retries
+- **State-checking logic (required):**
+  1. Get legs from failed lot (all legs sent to TMS together in batch)
+  2. Query TMS Bridge for first leg: `GetTransportOrderByLeg(legId)`
+     - Note: TMS doesn't have "lot" concept - query by leg (TMS shipment ID)
+  3. If leg found on transport order (operation succeeded):
+     - Retrieve transport order ID and tour point IDs from TMS
+     - Verify all lot legs on same transport order (defensive check)
+     - Create LotAssignmentEntity with LegLinks in New Dispo DB
+     - Remove original LotEntity
+     - Skip transport order creation
+  4. If leg not found (operation failed):
+     - Execute full CreateTransportOrderFromLot operation
+     - New transport order created with all legs
+- **Verified:** Leg assignment operations are idempotent via `PTA.HASSEN()` check
+- **Lot clustering:** All legs in lot share same pickup/delivery/timing - assigned atomically to single transport order
 
 **Characteristics:**
 - **Complexity:** Low. No background workers, no outbox infrastructure
@@ -254,6 +265,13 @@ sequenceDiagram
 - Effort is ~10-20% of outbox implementation, preserving budget for post-June improvements
 - Outbox pattern is "relatively complex and requires very careful testing" - significant investment for tight timeline
 - Business may tolerate manual resolution if failure frequency low on single branch
+- **✅ Idempotency verified:** Leg assignment operations are idempotent; state-checking logic enables safe retry
+
+**Idempotency Status (Verified 2026-03-16):**
+- ✅ TMS leg assignment operations idempotent via `PTA.HASSEN()` duplicate check
+- ⚠️ Transport order creation NOT idempotent (always creates new record)
+- ✅ State-checking approach enables safe retry without duplicates
+- See detailed analysis: `idempotency-analysis.md`
 
 **Post-June Roadmap:** Migrate to **Option 2 (Outbox Pattern)** in subsequent release.
 
@@ -266,7 +284,7 @@ sequenceDiagram
 
 ## Questions/Open Items
 
-1. **Idempotency verification (CRITICAL):** Must verify TMS operations are idempotent or state-checkable before implementing any retry mechanism. "If not, we cannot do it. If it is, we can do it." Without idempotency guarantee, retry strategies are unsafe.
+1. **Idempotency verification (RESOLVED):** ✅ **Leg assignment operations are idempotent** via `PTA.HASSEN()` check. ⚠️ **Transport order creation is NOT idempotent**. Retry mechanism must query TMS state before re-executing to avoid duplicate transport orders. See detailed analysis: `idempotency-analysis.md`
 2. **Error messaging UX:** What specific error messages and retry button placement for manual recovery?
 3. **Retry operation semantics:** Check TMS state before retry - if operation already succeeded, align New Dispo; if not, execute full operation. How to implement state-checking queries?
 4. **Error classification:** Which errors are recoverable (transient) vs. non-recoverable (data violations)? How to distinguish at runtime?
@@ -281,7 +299,8 @@ sequenceDiagram
 ### Immediate (this week)
 - **Team:** Reflect on and document all error scenarios discussed (build backlog of failure cases)
 - **Matthias:** Prepare effort estimates for Option 1 (manual) and Option 2 (outbox) for client discussion
-- **Team:** Verify idempotency guarantees in TMS Bridge operations (blocking requirement)
+- **✅ COMPLETED:** Verify idempotency guarantees in TMS Bridge operations - See `idempotency-analysis.md`
+- **NEW:** Define TMS Bridge state query API: `GetTransportOrderByLeg(legId)` - returns transport order ID + tour point IDs if leg assigned
 - **Team:** Provide feedback/counterarguments on approach selection
 
 ### Pre-Decision (by 2026-03-20)
@@ -290,7 +309,14 @@ sequenceDiagram
 - Define error messaging UX if Option 1 selected
 
 ### Pre-June Release (if Option 1 selected)
-- Implement manual retry mechanism with state-checking logic
+- **TMS Bridge:** Implement state query API: `GetTransportOrderByLeg(legId)`
+  - Query by leg (TMS shipment ID), not lot (New Dispo concept)
+  - Return: transport order ID, pickup tour point ID, delivery tour point ID, TMS leg IDs
+- **Backend:** Implement manual retry mechanism with state-checking logic
+  - Check first leg from lot in TMS
+  - If found: reconcile all legs, skip transport order creation
+  - If not found: retry full operation
+- **Frontend:** Update error messages with retry button and clear guidance
 - Document known failure scenarios and recovery procedures
 - Train support team on error handling and manual resolution process
 - Monitor single-branch deployment for failure patterns
@@ -318,8 +344,11 @@ sequenceDiagram
 
 - `/00_Meetings/2026-03-12_Refinement-New-Dispo-TMS-Transactional-Behaviour.md` - Source refinement session summary
 - `/00_Meetings/2026-03-12/Weekly Refinement - NewDispo - 2026.03.12.docx` - Full meeting transcript
+- `./idempotency-analysis.md` - **Detailed TMS database idempotency verification** (transport order creation flow)
 - `Code/Disposition-Backend/` - New Dispo Backend implementation
 - `Code/Disposition-Abstraction-Layer/` - TMS Bridge implementation
+- `Code/tms-alloydb-schema/src/sql/package/PDIS_TRANSPORTORDER.sql` - TMS transport order operations
+- `Code/tms-alloydb-schema/src/sql/package/PTA.sql` - Core TMS assignment logic with idempotency checks
 
 ---
 
