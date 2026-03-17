@@ -56,7 +56,11 @@ This exploration primarily focuses on **Problem 2**: CDC events are consumed but
 
 **Key Issue:** HTTP 200 OK returned even on processing failures → Pub/Sub acknowledges message → Event lost forever
 
-**Recommended Solution:** Return HTTP 500/503 on failure + configure Pub/Sub retry policy + dead letter topic
+**Solution Options:**
+- **Option A (Recommended):** Fix push model - Return HTTP 500/503 on failure + Dead Letter Topic
+- **Option B:** Event Store - Persist all CDC events for replay
+- **Option C:** Idempotent Handlers - Add deduplication logic
+- **Option D:** Pull Subscription - Switch from push to pull for explicit acknowledgment control
 
 ---
 

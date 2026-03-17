@@ -139,6 +139,151 @@ Make handlers idempotent and store processed event IDs.
 
 ---
 
+## Option D: Switch from Push to Pull Subscription
+
+Switch from push-based (Pub/Sub → Backend) to pull-based (Backend → Pub/Sub) subscription model.
+
+### Current Model (Push)
+
+```
+Pub/Sub → HTTP POST → New Dispo Backend → Returns 200 OK (premature ack!)
+```
+
+**Problem:** Backend returns HTTP 200 before processing completes → message acknowledged prematurely
+
+### Proposed Model (Pull)
+
+```
+New Dispo Backend → Pulls messages from Pub/Sub → Processes → Explicitly calls ack()
+```
+
+**Benefit:** Backend controls acknowledgment timing → only ack after successful processing
+
+### Implementation
+
+**1. Change Pub/Sub subscription from Push to Pull:**
+```bash
+gcloud pubsub subscriptions update backend-topic-sub \
+  --push-endpoint="" \
+  --ack-deadline=60
+```
+
+**2. Implement background pull worker service:**
+```csharp
+public class CdcPullWorkerService : BackgroundService
+{
+    private readonly SubscriberClient _subscriber;
+    private readonly IEventHandler[] _eventHandlers;
+    private readonly ILogger<CdcPullWorkerService> _logger;
+
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        var subscriptionName = new SubscriptionName(projectId, subscriptionId);
+
+        await _subscriber.StartAsync((message, cancellationToken) =>
+        {
+            try
+            {
+                // Deserialize CDC event
+                var json = Encoding.UTF8.GetString(message.Data.ToByteArray());
+                var cdcEvent = JsonConvert.DeserializeObject<GoogleRecordChangeDto>(json);
+
+                // Find and execute handler
+                var handler = _eventHandlers.FirstOrDefault(h => h.Supports(cdcEvent));
+                await handler.Handle(cdcEvent);
+
+                _logger.LogInformation("CDC event processed successfully: {MessageId}", message.MessageId);
+
+                // ✅ Explicitly acknowledge only on success
+                return Task.FromResult(SubscriberClient.Reply.Ack);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "CDC event processing failed: {MessageId}", message.MessageId);
+
+                // ❌ Don't acknowledge - Pub/Sub will redeliver automatically
+                return Task.FromResult(SubscriberClient.Reply.Nack);
+            }
+        });
+
+        // Keep worker running
+        await Task.Delay(Timeout.Infinite, stoppingToken);
+    }
+}
+```
+
+**3. Deploy as long-running worker:**
+- **Option A:** Cloud Run Job with `minInstances: 1`
+- **Option B:** GKE Deployment
+- **Option C:** Compute Engine VM
+- **Option D:** Cloud Functions 2nd Gen (abstracts pull internally)
+
+### Pros
+
+- **Explicit acknowledgment control** - Only ack after successful processing (solves core problem)
+- **Automatic retry** - Unacknowledged messages automatically redelivered by Pub/Sub
+- **Backpressure handling** - Backend controls consumption rate based on capacity
+- **No HTTP endpoint exposure** - No need for public webhook endpoint
+- **Simpler error handling** - Don't need to worry about HTTP status codes
+- **Flow control** - Can pause/resume pulling based on system health (e.g., DB down)
+
+### Cons
+
+- **Requires persistent worker** - Can't leverage Cloud Run's request-driven scaling as effectively
+- **Deployment complexity** - Need long-running service or scheduled job
+- **Polling overhead** - Adds latency (mitigated by streaming pull)
+- **Infrastructure management** - Need to manage pull workers (health checks, restarts)
+- **Not using existing Cloud Run HTTP pattern** - Different from current architecture
+
+### Effort
+
+**High** - Significant architectural change:
+- Implement new background service
+- Change deployment model (Cloud Run Job or GKE)
+- Update Pub/Sub subscription configuration
+- Remove existing HTTP endpoint
+- Test pull worker behavior
+
+Estimated: 2-3 sprints
+
+### Risk
+
+**Medium**
+- New deployment pattern (persistent workers vs. request-driven)
+- Need to manage worker lifecycle
+- Different scaling characteristics than current Cloud Run setup
+
+---
+
+## Comparison: Push vs Pull
+
+| Aspect | Push (Current) | Push (Fixed - Option A) | Pull (Option D) |
+|--------|---------------|------------------------|-----------------|
+| **Ack Control** | ❌ Poor (HTTP 200 bug) | ✅ Good (throw on error) | ✅ **Excellent (explicit)** |
+| **Cloud Run Fit** | ✅ Perfect | ✅ Perfect | ⚠️ Acceptable (needs always-on) |
+| **Latency** | ✅ Low (immediate push) | ✅ Low (immediate push) | ⚠️ Higher (polling interval) |
+| **Backpressure** | ⚠️ Limited | ⚠️ Limited | ✅ **Full control** |
+| **Code Changes** | 🟡 Minimal (fix bug) | 🟡 Minimal (fix bug) | 🔴 **Significant (new worker)** |
+| **Deployment** | ✅ Existing | ✅ Existing | 🔴 **New infrastructure** |
+| **Effort** | 🟢 Low (1 sprint) | 🟢 Low (1 sprint) | 🔴 **High (2-3 sprints)** |
+| **Solves Problem** | ❌ No | ✅ **Yes** | ✅ **Yes** |
+
+---
+
+## When to Choose Pull (Option D)
+
+Consider pull model if:
+- ✅ Team wants **explicit control** over acknowledgment patterns
+- ✅ Backend needs **sophisticated backpressure control** (e.g., pause consumption when DB unhealthy)
+- ✅ Moving to **GKE or always-on infrastructure** anyway
+- ✅ Need **fine-grained control** over message consumption rate
+- ✅ Want to **avoid HTTP endpoint** exposure concerns
+- ✅ Team has experience with **long-running worker patterns**
+
+**Recommendation:** Only choose pull if you have **strategic reasons beyond solving Problem 2**. The core acknowledgment bug is solved equally well by fixing push (Option A) with much less effort.
+
+---
+
 ## Monitoring & Alerting (Cross-Cutting)
 
 Regardless of chosen solution, implement:
@@ -200,6 +345,15 @@ Regardless of chosen solution, implement:
 - Add deduplication logic
 - Enable safe retries without side effects
 
+### Alternative: Pull Model (Option D)
+
+🤔 **Consider if strategic reasons exist:**
+- If moving to GKE or persistent worker infrastructure
+- If explicit backpressure control becomes critical
+- If team wants explicit acknowledgment patterns
+
+**Note:** Only pursue if there are benefits beyond solving Problem 2, as Option A (fixed push) solves the core issue with much less effort.
+
 ---
 
 ## Implementation Tasks
@@ -235,9 +389,36 @@ Regardless of chosen solution, implement:
 - [ ] Add unique event ID extraction from CDC metadata
 - [ ] Test retry scenarios
 
+### Alternative: Pull Model (Option D)
+
+**Only pursue if strategic reasons exist beyond solving Problem 2**
+
+- [ ] **Design Phase:**
+  - [ ] Choose deployment model (Cloud Run Job / GKE / Compute Engine)
+  - [ ] Design pull worker architecture
+  - [ ] Plan scaling and health check strategy
+- [ ] **Implementation:**
+  - [ ] Implement `CdcPullWorkerService` background service
+  - [ ] Implement message acknowledgment logic (Ack/Nack)
+  - [ ] Add graceful shutdown handling
+  - [ ] Configure worker health checks and restarts
+- [ ] **Infrastructure:**
+  - [ ] Convert Pub/Sub subscription from Push to Pull
+  - [ ] Deploy pull worker service
+  - [ ] Set up worker monitoring and alerting
+  - [ ] Remove/deprecate existing HTTP endpoint
+- [ ] **Testing:**
+  - [ ] Test pull worker startup and shutdown
+  - [ ] Test acknowledgment behavior (Ack on success, Nack on failure)
+  - [ ] Test worker restart and message redelivery
+  - [ ] Load test pull throughput and latency
+  - [ ] Test backpressure scenarios (slow processing)
+
 ---
 
 ## Testing Strategy
+
+### Common Tests (All Options)
 
 - Integration tests simulating processing failures
 - Test retry mechanism with various failure types:
@@ -245,8 +426,28 @@ Regardless of chosen solution, implement:
   - Mapping errors (permanent)
   - Constraint violations (permanent)
 - Verify dead letter queue handling
-- Test event replay from event store
-- Validate idempotency (same event processed twice = same result)
+- Test event replay from event store (Option B)
+- Validate idempotency (same event processed twice = same result, Option C)
+
+### Pull Model Specific Tests (Option D)
+
+- **Worker Lifecycle:**
+  - Test worker startup and initial subscription
+  - Test graceful shutdown (acknowledge in-flight messages)
+  - Test worker restart and message redelivery
+- **Acknowledgment Behavior:**
+  - Test Ack on successful processing
+  - Test Nack on failed processing
+  - Test automatic redelivery after Nack
+  - Test message redelivery after worker crash (before ack)
+- **Performance:**
+  - Load test pull throughput vs push
+  - Measure latency impact of polling
+  - Test concurrent message processing
+- **Backpressure:**
+  - Test worker pause/resume on DB unavailability
+  - Test controlled consumption rate during high load
+  - Test message accumulation when worker stopped
 
 ---
 

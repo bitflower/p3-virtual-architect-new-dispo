@@ -194,7 +194,13 @@ public async Task<ConsumeEventResponseDto> Handle(ConsumeEventCommand request, C
 
 See detailed analysis in: `problem-2-solutions.md`
 
-### Recommended: Pub/Sub Retry + Dead Letter Topic
+**Four solution approaches available:**
+- **Option A (Recommended):** Fix push model - Return HTTP 500 on failure + Dead Letter Topic
+- **Option B:** Event Store for CDC Events - Persist all events for replay
+- **Option C:** Idempotent Event Handlers + Deduplication
+- **Option D:** Switch from Push to Pull Subscription - Explicit acknowledgment control
+
+### Recommended: Option A - Pub/Sub Retry + Dead Letter Topic
 
 **Quick Fix (Low Effort, High Impact):**
 
