@@ -21,7 +21,7 @@ This exploration documents the complete flow for creating transport orders in th
 
 ## Document Structure
 
-This exploration is split into **8 focused documents** for easy navigation and maintenance:
+This exploration is split into **9 focused documents** for easy navigation and maintenance:
 
 ### 📖 [01. Overview & Flow](./01-overview-and-flow.md)
 **Audience:** Product owners, architects, new team members
@@ -108,21 +108,35 @@ Quick reference for all endpoints:
 
 ---
 
-### ⚠️ [07. TMS Sync Error Handling Decision](./tms-sync-error-handling-decision.md)
+### 🚨 [07. TMS Sync Failure Scenarios](./tms-sync-failure-scenarios.md)
+**Audience:** All technical roles - foundational reference
+
+Reference documentation for three failure scenarios:
+- Scenario 1: Early failure from Bridge (consistent state)
+- Scenario 2: Local database failure post-TMS success (data out of sync)
+- Scenario 3: Network interruption post-TMS execution (uncertain state)
+- Sequence diagrams and characteristics for each scenario
+- Recovery requirements and handling strategies
+
+**Read this first** to understand what can go wrong during TMS synchronization.
+
+---
+
+### ⚠️ [08. TMS Sync Error Handling Decision](./tms-sync-error-handling-decision.md)
 **Audience:** Solution architects, technical leads, product owners
 
 Decision paper for error handling strategy:
-- Three failure scenarios (local DB failure, early Bridge failure, network interruption)
+- References the three failure scenarios
 - Three architectural approaches (manual recovery, outbox pattern, event-driven)
 - Comparison matrix and trade-offs
 - Implementation recommendations for June 2026 release
 - Post-release migration path
 
-**Read this** if you need to understand error handling strategy or implement retry mechanisms.
+**Read this** if you need to understand error handling strategy decisions and implementation approach.
 
 ---
 
-### 🔒 [08. Idempotency Analysis](./idempotency-analysis.md)
+### 🔒 [09. Idempotency Analysis](./idempotency-analysis.md)
 **Audience:** Backend developers, integration specialists
 
 Detailed idempotency verification:
@@ -148,21 +162,22 @@ Then check: [06. API Reference](./06-api-reference.md)
 ### ⚙️ **Backend Developer**
 Go to: [03. Backend Implementation](./03-backend-implementation.md)
 Then check: [04. TMS Integration](./04-tms-integration.md)
-For error handling: [07. TMS Sync Error Handling](./tms-sync-error-handling-decision.md)
-For retry logic: [08. Idempotency Analysis](./idempotency-analysis.md)
+For error scenarios: [07. TMS Sync Failure Scenarios](./tms-sync-failure-scenarios.md)
+For error handling: [08. TMS Sync Error Handling Decision](./tms-sync-error-handling-decision.md)
+For retry logic: [09. Idempotency Analysis](./idempotency-analysis.md)
 
 ### 🗄️ **Database / Integration Specialist**
 Go to: [04. TMS Integration](./04-tms-integration.md)
 Then check: [05. Data Model & Transformations](./05-data-model-transformations.md)
-Then read: [08. Idempotency Analysis](./idempotency-analysis.md)
+Then read: [09. Idempotency Analysis](./idempotency-analysis.md)
 
 ### 🧪 **Tester / QA**
 Go to: [06. API Reference](./06-api-reference.md)
 Then read: [01. Overview & Flow](./01-overview-and-flow.md)
-For error scenarios: [07. TMS Sync Error Handling](./tms-sync-error-handling-decision.md)
+For error scenarios: [07. TMS Sync Failure Scenarios](./tms-sync-failure-scenarios.md)
 
 ### 🏗️ **Solution Architect**
-Read in order: 01 → 03 → 04 → 05 → 07 → 08
+Read in order: 01 → 03 → 04 → 05 → 07 → 08 → 09
 
 ---
 
@@ -217,5 +232,6 @@ The complete, unsplit documentation is preserved in:
 - [TMS Integration](./04-tms-integration.md)
 - [Data Model & Transformations](./05-data-model-transformations.md)
 - [API Reference](./06-api-reference.md)
+- [TMS Sync Failure Scenarios](./tms-sync-failure-scenarios.md)
 - [TMS Sync Error Handling Decision](./tms-sync-error-handling-decision.md)
 - [Idempotency Analysis](./idempotency-analysis.md)
