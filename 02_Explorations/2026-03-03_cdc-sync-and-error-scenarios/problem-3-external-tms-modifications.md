@@ -48,6 +48,7 @@ This problem was identified during initial exploration but was descoped before d
 
 ## Cross-References
 
+- **Solutions:** `problem-3-solutions.md` (descoped - not pursued)
 - **Original Request:** `_archive/matthias-input.md` (mentioned this problem)
 - **Related Problems:**
   - `problem-1-distributed-transaction-failure.md` (Top-down sync)

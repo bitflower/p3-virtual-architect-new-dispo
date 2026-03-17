@@ -78,6 +78,7 @@ See detailed decision rationale in:
 
 ## Cross-References
 
+- **Solutions:** `problem-1-solutions.md`
 - **Primary Exploration:** `02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/`
 - **Original Meeting:** `00_Meetings/2025-10-10_yosif-cdc-sync-and-error-flow.md`
 - **Related Problem:** `problem-2-cdc-event-processing-failure.md` (Bottom-up sync)

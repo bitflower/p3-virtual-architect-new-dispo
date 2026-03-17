@@ -192,7 +192,7 @@ public async Task<ConsumeEventResponseDto> Handle(ConsumeEventCommand request, C
 
 ## Solution Options
 
-See detailed analysis in: `potential-solutions.md`
+See detailed analysis in: `problem-2-solutions.md`
 
 ### Recommended: Pub/Sub Retry + Dead Letter Topic
 
@@ -262,6 +262,6 @@ public async Task<ConsumeEventResponseDto> Handle(...)
 
 ## Cross-References
 
+- **Solutions:** `problem-2-solutions.md`
 - **Original Meeting:** `00_Meetings/2025-10-10_yosif-cdc-sync-and-error-flow.md`
-- **Solution Proposals:** `potential-solutions.md`
 - **Related Problem:** `problem-1-distributed-transaction-failure.md` (Top-down sync)

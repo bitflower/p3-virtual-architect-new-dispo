@@ -14,37 +14,36 @@ This exploration addresses synchronization challenges between New Dispo and TMS 
 
 ## Documents
 
-### Active Problems
+### Problems & Solutions
 
-| Problem | Document | Status |
-|---------|----------|--------|
-| **Problem 1**: Distributed Transaction Failure (Top-Down) | `problem-1-distributed-transaction-failure.md` | ✅ Covered in `02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/` |
-| **Problem 2**: CDC Event Processing Failure (Bottom-Up) | `problem-2-cdc-event-processing-failure.md` | 🔴 **Active - requires solution** |
-| **Problem 3**: External TMS Modifications | `problem-3-external-tms-modifications.md` | ⚠️ Descoped |
+| Problem | Problem Doc | Solutions Doc | Status |
+|---------|-------------|---------------|--------|
+| **Problem 1**: Distributed Transaction Failure (Top-Down) | `problem-1-distributed-transaction-failure.md` | `problem-1-solutions.md` | ✅ Covered in `02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/` |
+| **Problem 2**: CDC Event Processing Failure (Bottom-Up) | `problem-2-cdc-event-processing-failure.md` | `problem-2-solutions.md` | 🔴 **Active - requires solution** |
+| **Problem 3**: External TMS Modifications | `problem-3-external-tms-modifications.md` | `problem-3-solutions.md` | ⚠️ Descoped |
 
 ### Supporting Documents
 
-- `potential-solutions.md` - Solution proposals for all problems
 - `document-separation-analysis.md` - Analysis and rationale for splitting the original mega-document
 
 ### Archive
 
 - `_archive/matthias-input.md` - Original exploration request (no longer relevant)
 - `_archive/cdc-sync-and-error-scenarios-original.md` - Original combined analysis (split into focused documents)
+- `_archive/potential-solutions-original.md` - Original combined solutions (split into problem-specific documents)
 
 ---
 
 ## Quick Navigation
 
 ### I need to understand CDC event processing failures
-👉 Read: `problem-2-cdc-event-processing-failure.md`
+👉 **Problem:** `problem-2-cdc-event-processing-failure.md`
+👉 **Solutions:** `problem-2-solutions.md`
 
 ### I need to understand the distributed transaction problem
-👉 Read: `problem-1-distributed-transaction-failure.md`
-👉 Then go to: `02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/`
-
-### I need solution proposals
-👉 Read: `potential-solutions.md`
+👉 **Problem:** `problem-1-distributed-transaction-failure.md`
+👉 **Solutions:** `problem-1-solutions.md`
+👉 **Detailed Analysis:** `02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/`
 
 ### I want to understand why documents were split
 👉 Read: `document-separation-analysis.md`

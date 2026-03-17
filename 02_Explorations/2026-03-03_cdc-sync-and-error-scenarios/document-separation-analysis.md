@@ -24,7 +24,10 @@ The original `cdc-sync-and-error-scenarios.md` document (569 lines) addressed mu
 | `00_Meetings/2025-10-10_yosif-cdc-sync-and-error-flow.md` | Meeting Notes | Identified Problems 1 & 2 |
 | `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/_archive/matthias-input.md` | Exploration Request | Identified Problem 3 (archived - no longer relevant) |
 | `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/_archive/cdc-sync-and-error-scenarios-original.md` | Technical Analysis | Original 569-line combined analysis (archived, now split) |
-| `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/potential-solutions.md` | Solution Proposals | Remediation patterns |
+| `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/_archive/potential-solutions-original.md` | Solution Proposals | Original remediation patterns (archived, now split) |
+| `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/problem-1-solutions.md` | Solution Document | Problem 1 solutions (redirects to 2026-03-16 exploration) |
+| `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/problem-2-solutions.md` | Solution Document | Problem 2 solutions (CDC event processing) |
+| `02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/problem-3-solutions.md` | Solution Document | Problem 3 solutions (descoped) |
 | `02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/` | Detailed Exploration | Problem 1 (Top-Down Sync) covered in depth |
 
 ---
