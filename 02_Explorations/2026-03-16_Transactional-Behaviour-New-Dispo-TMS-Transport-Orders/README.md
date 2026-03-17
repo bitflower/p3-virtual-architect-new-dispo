@@ -198,7 +198,7 @@ Read in order: 01 → 03 → 04 → 05 → 07 → 08 → 09
 ## Original Full Document
 
 The complete, unsplit documentation is preserved in:
-- **`00-ORIGINAL-FULL-DOCUMENT.md`** (for reference or searching)
+- **`_archive/00-ORIGINAL-FULL-DOCUMENT.md`** (for reference or searching)
 
 ---
 
