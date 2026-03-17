@@ -2,11 +2,14 @@
 
 **Date:** 2026-03-03
 **Status:** Proposals / Recommendations
-**Related Analysis:** cdc-sync-and-error-scenarios.md
+**Related Problems:**
+- `problem-1-distributed-transaction-failure.md`
+- `problem-2-cdc-event-processing-failure.md`
+- `problem-3-external-tms-modifications.md`
 
 ---
 
-**Note:** This document contains potential solutions and recommendations. For fact-based analysis of the current system, see `cdc-sync-and-error-scenarios.md`.
+**Note:** This document contains potential solutions and recommendations. For fact-based analysis, see the problem-specific documents listed above.
 
 ---
 
