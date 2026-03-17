@@ -1,0 +1,1368 @@
+WEBVTT
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/12-0
+00:00:13.225 --> 00:00:18.745
+<v Matthias Max>OK, let's wait a bit.
+Let's check who is missing.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/13-0
+00:00:21.625 --> 00:00:21.945
+<v Matthias Max>Matt.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/15-0
+00:00:24.505 --> 00:00:25.945
+<v Matthias Max>A robot exactly.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/16-0
+00:00:26.585 --> 00:00:26.745
+<v Matthias Max>We.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/18-0
+00:00:27.865 --> 00:00:32.625
+<v Matthias Max>Then Ron will not try because it doesn't
+fit his schedule.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/17-0
+00:00:31.745 --> 00:00:32.225
+<v Martin Dittmann>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/19-0
+00:00:34.305 --> 00:00:38.545
+<v Martin Dittmann>Pascal also accepted,
+so I think you will also join in a bit.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/20-0
+00:00:40.505 --> 00:00:41.145
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/21-0
+00:00:41.825 --> 00:00:45.545
+<v Martin Dittmann>So I think only Ron and Christian will
+not participate.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/22-0
+00:00:46.545 --> 00:00:47.265
+<v Matthias Max>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/24-0
+00:00:50.065 --> 00:00:52.825
+<v Maximilian Kehder>What about Matt? That is.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/26-0
+00:00:58.821 --> 00:00:59.261
+<v Martin Dittmann>I meant.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/28-0
+00:01:01.101 --> 00:01:02.621
+<v Matt Wilkinson>Hello. Hello.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/29-0
+00:01:04.421 --> 00:01:04.701
+Hello.
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/30-0
+00:01:04.781 --> 00:01:05.021
+Hello.
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/43-0
+00:01:08.021 --> 00:01:11.821
+<v Matthias Max>OK, we've just wrapped up the audience.
+I think we're ready.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/73-0
+00:01:13.301 --> 00:01:21.289
+<v Matthias Max>So it's a proactive working meeting.
+We actually want to configure things,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/73-1
+00:01:21.289 --> 00:01:28.637
+<v Matthias Max>run things, monitor things.
+So maybe we start with the database site</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/73-2
+00:01:28.637 --> 00:01:30.021
+<v Matthias Max>preparations.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/87-0
+00:01:31.061 --> 00:01:40.424
+<v Matthias Max>Which database should we start with and
+which technology should we start with?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/87-1
+00:01:40.424 --> 00:01:43.031
+<v Matthias Max>Stream or data stream?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/110-0
+00:01:44.261 --> 00:01:51.998
+<v Matt Wilkinson>Data stream is what I was setting up.
+So Nikolay got the details for that on</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/93-0
+00:01:47.101 --> 00:01:47.501
+<v Matthias Max>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/103-0
+00:01:51.141 --> 00:01:52.301
+<v Matthias Max>Mm-hmm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/110-1
+00:01:51.998 --> 00:01:52.701
+<v Matt Wilkinson>Friday.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/116-0
+00:01:52.141 --> 00:01:57.304
+<v Nikolay Hristov>Yes, and I have just tested it,
+but there is no connectivity to that IP</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/116-1
+00:01:57.304 --> 00:01:59.741
+<v Nikolay Hristov>address. I will share to check it.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/124-0
+00:02:05.781 --> 00:02:08.741
+<v Matthias Max>OK, so you're in workload 5 now.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/126-0
+00:02:08.661 --> 00:02:11.021
+<v Matt Wilkinson>Mm-hmm. Test.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/127-0
+00:02:11.101 --> 00:02:11.341
+<v Matthias Max>Aura.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/128-0
+00:02:14.261 --> 00:02:14.621
+<v Matthias Max>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/131-0
+00:02:18.301 --> 00:02:20.581
+<v Nikolay Hristov>These are the settings.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/133-0
+00:02:21.701 --> 00:02:22.221
+<v Matt Wilkinson>Hang on.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/132-0
+00:02:21.781 --> 00:02:22.261
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/134-0
+00:02:27.341 --> 00:02:27.821
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/135-0
+00:02:28.541 --> 00:02:29.021
+<v Nikolay Hristov>But.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/138-0
+00:02:30.461 --> 00:02:31.981
+<v Nikolay Hristov>It's time out think.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/158-0
+00:02:34.981 --> 00:02:40.155
+<v Matthias Max>So this is even before we touch any
+database I guess, right?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/158-1
+00:02:40.155 --> 00:02:42.021
+<v Matthias Max>Or is it it's already?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/163-0
+00:02:40.421 --> 00:02:45.182
+<v Nikolay Hristov>It's just try.
+It tries to connect to the database and</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/154-0
+00:02:41.061 --> 00:02:42.221
+<v Matt Wilkinson>So this.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/162-0
+00:02:44.821 --> 00:02:45.101
+<v Matthias Max>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/163-1
+00:02:45.182 --> 00:02:45.701
+<v Nikolay Hristov>fails.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/165-0
+00:02:48.061 --> 00:02:48.101
+<v Matt Wilkinson>Oh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/166-0
+00:02:48.141 --> 00:02:48.261
+<v Matthias Max>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/170-0
+00:02:50.141 --> 00:02:51.741
+<v Matthias Max>And in this case.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/176-0
+00:02:53.301 --> 00:02:56.701
+<v Matthias Max>Well,
+the data stream should have an Oracle.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/203-0
+00:02:58.381 --> 00:03:03.353
+<v Matthias Max>Connector, right?
+Because we already get an Aura issue.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/203-1
+00:03:03.353 --> 00:03:08.501
+<v Matthias Max>We don't get a TCP or HTTP issue,
+we get an Oracle issue.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/204-0
+00:03:08.101 --> 00:03:12.021
+<v Nikolay Hristov>Yeah, yeah, I I'm using the Oracles.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/217-0
+00:03:12.821 --> 00:03:18.464
+<v Nikolay Hristov>I can see just just a second.
+I'm creating a new profile and I'm using</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/210-0
+00:03:14.061 --> 00:03:14.581
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/217-1
+00:03:18.464 --> 00:03:18.861
+<v Nikolay Hristov>this.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/220-0
+00:03:19.861 --> 00:03:22.021
+<v Nikolay Hristov>Oracle connection rofile.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/222-0
+00:03:21.781 --> 00:03:24.301
+<v Matthias Max>Mm-hmm. Mm-hmm. Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/223-0
+00:03:24.101 --> 00:03:24.461
+<v Nikolay Hristov>And.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/244-0
+00:03:29.501 --> 00:03:34.947
+<v Matt Wilkinson>This is pre because we we might need to
+add the Oracle network tag on it and I'm</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/244-1
+00:03:34.947 --> 00:03:37.501
+<v Matt Wilkinson>just wondering where we would do that.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/249-0
+00:03:36.741 --> 00:03:42.354
+<v Nikolay Hristov>I'm not.
+I'm not sure that here you cannot tax,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/242-0
+00:03:37.741 --> 00:03:38.261
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/249-1
+00:03:42.354 --> 00:03:42.821
+<v Nikolay Hristov>but.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/248-0
+00:03:42.901 --> 00:03:43.981
+<v Matthias Max>Mm-hmm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/255-0
+00:03:54.221 --> 00:03:55.661
+<v Matt Wilkinson>Lockminer.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/254-0
+00:03:55.301 --> 00:03:55.501
+<v Nikolay Hristov>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/258-0
+00:04:06.981 --> 00:04:08.141
+<v Nikolay Hristov>Yes, but.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/260-0
+00:04:10.501 --> 00:04:11.501
+<v Nikolay Hristov>Encryption.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/263-0
+00:04:13.901 --> 00:04:15.661
+<v Matt Wilkinson>Turn on.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/271-0
+00:04:15.861 --> 00:04:20.901
+<v Nikolay Hristov>And here on the private connectivity I'm
+using only that network that I have.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/273-0
+00:04:23.661 --> 00:04:25.341
+<v Nikolay Hristov>Just this one.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/279-0
+00:04:27.021 --> 00:04:30.541
+<v Robert Zanter>Uh, can you go one step back please?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/283-0
+00:04:31.141 --> 00:04:33.341
+<v Nikolay Hristov>On the secure connection here.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/304-0
+00:04:32.741 --> 00:04:40.256
+<v Robert Zanter>Then two steps please.
+The connection settings system identifier</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/304-1
+00:04:40.256 --> 00:04:43.261
+<v Robert Zanter>OSCL is not right I think.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/305-0
+00:04:43.381 --> 00:04:46.421
+<v Nikolay Hristov>Yes, uh, I I'm trying this one I think.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/312-0
+00:04:49.741 --> 00:04:51.981
+<v Nikolay Hristov>But it's. Is that correct one?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/319-0
+00:04:51.021 --> 00:04:53.941
+<v Robert Zanter>Let me check it.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/321-0
+00:04:55.541 --> 00:04:58.581
+<v Nikolay Hristov>This is for the instance of the Oracle I
+think.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/336-0
+00:04:58.581 --> 00:05:02.336
+<v Robert Zanter>Yes,
+but I think under score DG1 is not a</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/336-1
+00:05:02.336 --> 00:05:05.821
+<v Robert Zanter>system identifier, it's a service name.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/338-0
+00:05:07.261 --> 00:05:10.141
+<v Nikolay Hristov>OK, so it should be like this maybe?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/339-0
+00:05:18.421 --> 00:05:19.181
+<v Nikolay Hristov>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/345-0
+00:05:19.381 --> 00:05:24.301
+<v Robert Zanter>Uh, one moment. Yes, without under score,
+yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/344-0
+00:05:23.821 --> 00:05:23.941
+<v Nikolay Hristov>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/349-0
+00:05:28.141 --> 00:05:28.381
+<v Nikolay Hristov>And.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/360-0
+00:05:28.341 --> 00:05:31.701
+<v Matt Wilkinson>Nikolay, I just go, sorry,
+go up a little bit, go up, up, up.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/360-1
+00:05:31.701 --> 00:05:34.301
+<v Matt Wilkinson>I get where it says labels.
+Just say add label.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/373-0
+00:05:36.581 --> 00:05:39.949
+<v Matt Wilkinson>I don't ignore it. OK,
+so I just wanted to check is in network</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/373-1
+00:05:39.949 --> 00:05:42.301
+<v Matt Wilkinson>label. That's all it wasn't.
+Can you go in?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/372-0
+00:05:41.821 --> 00:05:42.061
+<v Nikolay Hristov>Notes.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/406-0
+00:05:46.581 --> 00:05:49.739
+<v Maximilian Kehder>Quick question,
+if this is purely about the Aura</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/406-1
+00:05:49.739 --> 00:05:52.897
+<v Maximilian Kehder>connection,
+basically I think Patrick and I will</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/406-2
+00:05:52.897 --> 00:05:57.279
+<v Maximilian Kehder>leave and if you got questions or
+anything you need our input from,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/406-3
+00:05:57.279 --> 00:05:59.341
+<v Maximilian Kehder>we will just come back and join.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/407-0
+00:06:01.181 --> 00:06:02.421
+<v Matthias Max>Sounds good.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/408-0
+00:06:02.381 --> 00:06:02.621
+<v Maximilian Kehder>Right.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/411-0
+00:06:03.661 --> 00:06:05.421
+<v Maximilian Kehder>Alright, see you later then.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/413-0
+00:06:06.661 --> 00:06:06.861
+Yeah.
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/418-0
+00:06:08.381 --> 00:06:09.661
+<v Nikolay Hristov>OK, so I'm just.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/422-0
+00:06:11.461 --> 00:06:13.821
+<v Nikolay Hristov>This these are the settings but.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/423-0
+00:06:15.461 --> 00:06:15.901
+<v Nikolay Hristov>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/430-0
+00:06:17.461 --> 00:06:19.821
+<v Nikolay Hristov>When I run tests, just timeouts probably.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/443-0
+00:06:23.981 --> 00:06:27.152
+<v Nikolay Hristov>I'm not, I don't.
+I'm not sure that you can put here a</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/443-1
+00:06:27.152 --> 00:06:27.901
+<v Nikolay Hristov>network back.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/444-0
+00:06:27.781 --> 00:06:29.581
+<v Matt Wilkinson>Yeah, it's OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/480-0
+00:06:31.221 --> 00:06:34.430
+<v Yosif Mihaylov>Nikki,
+can we can we somehow try just the</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/480-1
+00:06:34.430 --> 00:06:40.084
+<v Yosif Mihaylov>availability of the database server
+itself and just so without setting up</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/462-0
+00:06:37.901 --> 00:06:38.141
+<v Nikolay Hristov>Then.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/480-2
+00:06:40.084 --> 00:06:44.820
+<v Yosif Mihaylov>profiles or anything,
+just like like a roll ping or something</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/480-3
+00:06:44.820 --> 00:06:47.341
+<v Yosif Mihaylov>like that from our cloud network?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/507-0
+00:06:47.141 --> 00:06:57.077
+<v Nikolay Hristov>I can try that but no it's I can try the
+from the cloud run but on the cloud run I</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/507-1
+00:06:57.077 --> 00:07:03.661
+<v Nikolay Hristov>cannot the network talk and probably it
+will work but.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/495-0
+00:06:58.861 --> 00:06:59.421
+<v Matthias Max>And.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/526-0
+00:07:04.061 --> 00:07:10.805
+<v Nikolay Hristov>Here I don't see where I can put the
+network back, but just to be sure,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/514-0
+00:07:06.021 --> 00:07:06.621
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/526-1
+00:07:10.805 --> 00:07:11.741
+<v Nikolay Hristov>let's see.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/534-0
+00:07:11.301 --> 00:07:14.895
+<v Matthias Max>Is it? Mm-hmm.
+Is it the same network than the databases</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/534-1
+00:07:14.895 --> 00:07:17.101
+<v Matthias Max>that we also access from the cloud?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/535-0
+00:07:18.661 --> 00:07:18.781
+<v Matthias Max>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/548-0
+00:07:19.701 --> 00:07:22.626
+<v Matt Wilkinson>The the test,
+the test ones are in there as well 'cause</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/548-1
+00:07:22.626 --> 00:07:25.341
+<v Matt Wilkinson>we used it initially,
+but that's in workload 3, so.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/547-0
+00:07:26.341 --> 00:07:26.861
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/566-0
+00:07:30.061 --> 00:07:36.073
+<v Matt Wilkinson>Nikolay, I just open up Cloud SQL. Sorry,
+not Cloud SQL, Cloud Shell.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/566-1
+00:07:36.073 --> 00:07:38.821
+<v Matt Wilkinson>You could run a ping from there.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/561-0
+00:07:36.581 --> 00:07:36.701
+<v Nikolay Hristov>So.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/567-0
+00:07:40.501 --> 00:07:40.941
+<v Nikolay Hristov>She.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/581-0
+00:08:17.141 --> 00:08:18.981
+<v Nikolay Hristov>Why so slow today?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/582-0
+00:08:28.341 --> 00:08:28.461
+<v Nikolay Hristov>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/583-0
+00:08:31.941 --> 00:08:32.341
+<v Nikolay Hristov>And.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/586-0
+00:08:40.301 --> 00:08:41.701
+<v Yosif Mihaylov>Can you add the port as well?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/592-0
+00:08:42.101 --> 00:08:46.381
+<v Nikolay Hristov>You cannot have ports with pink,
+but I can't do that.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/597-0
+00:09:04.061 --> 00:09:04.621
+<v Nikolay Hristov>No.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/600-0
+00:09:07.941 --> 00:09:10.381
+<v Nikolay Hristov>No, it's the.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/626-0
+00:09:24.621 --> 00:09:29.991
+<v Yosif Mihaylov>So Are we sure that this should be
+available in first place? Thanks,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/621-0
+00:09:28.661 --> 00:09:31.261
+<v Matt Wilkinson>Yeah, it should be.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/626-1
+00:09:29.991 --> 00:09:31.781
+<v Yosif Mihaylov>it's up and running OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/628-0
+00:09:32.621 --> 00:09:35.341
+<v Matt Wilkinson>Yeah, it's up and running.
+It's definitely there.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/632-0
+00:09:37.941 --> 00:09:40.141
+<v Matthias Max>Is this something Ron could help?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/641-0
+00:09:41.941 --> 00:09:45.244
+<v Matt Wilkinson>Yeah,
+I'm just wondering now if we need to have</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/637-0
+00:09:42.261 --> 00:09:42.301
+<v Matthias Max>Oh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/641-1
+00:09:45.244 --> 00:09:45.381
+<v Matt Wilkinson>a.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/644-0
+00:09:46.541 --> 00:09:47.421
+<v Matt Wilkinson>The port opening.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/648-0
+00:09:49.821 --> 00:09:50.301
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/652-0
+00:09:50.541 --> 00:09:52.261
+<v Matt Wilkinson>It's connecting to 1515.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/653-0
+00:09:53.981 --> 00:09:54.301
+<v Nikolay Hristov>Do on.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/654-0
+00:09:55.661 --> 00:09:55.821
+<v Matt Wilkinson>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/656-0
+00:10:13.181 --> 00:10:13.381
+<v Matthias Max>Mm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/658-0
+00:10:15.021 --> 00:10:16.221
+<v Nikolay Hristov>It's closed.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/659-0
+00:10:18.981 --> 00:10:19.141
+<v Matthias Max>Mm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/668-0
+00:10:23.581 --> 00:10:27.901
+<v Matt Wilkinson>Which one were you accessing on Nikolay
+Network VPC subnet?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/671-0
+00:10:29.101 --> 00:10:29.141
+<v Nikolay Hristov>Uh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/673-0
+00:10:30.181 --> 00:10:32.701
+<v Matt Wilkinson>Do you remember which window it was?
+Go down.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/678-0
+00:10:36.021 --> 00:10:40.421
+<v Matt Wilkinson>No ST10I329.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/719-0
+00:11:50.021 --> 00:11:57.732
+<v Matt Wilkinson>If we can put the Oracle user on it,
+it should connect because there is a an</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/719-1
+00:11:57.732 --> 00:12:04.941
+<v Matt Wilkinson>egress rule on the firewall that says the
+port can open up to TCP 1521.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/720-0
+00:12:05.261 --> 00:12:05.301
+<v Matt Wilkinson>Uh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/729-0
+00:12:06.821 --> 00:12:11.421
+<v Matt Wilkinson>You're definitely on the test network VPC,
+aren't you?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/728-0
+00:12:12.461 --> 00:12:12.621
+<v Nikolay Hristov>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/730-0
+00:12:13.501 --> 00:12:13.741
+<v Matt Wilkinson>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/733-0
+00:12:15.781 --> 00:12:18.221
+<v Matt Wilkinson>Why is he not picking you up then?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/736-0
+00:12:26.541 --> 00:12:26.981
+<v Matt Wilkinson>05.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/741-0
+00:12:29.141 --> 00:12:30.021
+<v Nikolay Hristov>Sorry, oh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/744-0
+00:12:29.381 --> 00:12:33.461
+<v Matt Wilkinson>This is work on five, isn't it? Yeah,
+good.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/743-0
+00:12:31.701 --> 00:12:31.981
+<v Nikolay Hristov>Yes.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/757-0
+00:13:28.861 --> 00:13:28.901
+<v Matt Wilkinson>Oh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/768-0
+00:13:32.981 --> 00:13:38.541
+<v Matthias Max>Organizational question we plan to
+continue beyond.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/771-0
+00:13:39.741 --> 00:13:39.781
+<v Matthias Max>2:30.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/783-0
+00:13:42.701 --> 00:13:47.039
+<v Matthias Max>And if so,
+maybe just a subset of the audience and</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/783-1
+00:13:47.039 --> 00:13:50.101
+<v Matthias Max>should we pull in Ron if that helps?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/802-0
+00:13:50.501 --> 00:13:53.247
+<v Matt Wilkinson>Yeah, Ron's free at 1:30.
+We've got a daily though.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/802-1
+00:13:53.247 --> 00:13:56.625
+<v Matt Wilkinson>That's what I just need to speak to the
+guys about. That's all.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/802-2
+00:13:56.625 --> 00:13:58.261
+<v Matt Wilkinson>That's why I've had to move it.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/834-0
+00:14:06.421 --> 00:14:10.805
+<v Matt Wilkinson>What I can do is there's two rules,
+there's two firewall rules that we can</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/834-1
+00:14:10.805 --> 00:14:14.429
+<v Matt Wilkinson>open up so I can apply officially to
+directly to the project.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/834-2
+00:14:14.429 --> 00:14:18.461
+<v Matt Wilkinson>I don't understand why it's not picking
+them up. That's the problem.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/851-0
+00:14:20.501 --> 00:14:26.604
+<v Matt Wilkinson>If I just go back to the what the data
+stream connected? Go, go. I Scroll down,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/835-0
+00:14:20.701 --> 00:14:21.021
+<v Matthias Max>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/851-1
+00:14:26.604 --> 00:14:31.181
+<v Matt Wilkinson>down, down, down, down, down. Whoa, whoa,
+whoa. VPC net St.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/853-0
+00:14:33.741 --> 00:14:34.541
+<v Matt Wilkinson>Uh, OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/860-0
+00:14:39.221 --> 00:14:42.381
+<v Matt Wilkinson>I'm just looking at where the rules are
+applied to you. So sorry, one second.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/861-0
+00:14:42.501 --> 00:14:43.381
+<v Nikolay Hristov>Mm-hmm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/869-0
+00:15:08.381 --> 00:15:09.021
+<v Matt Wilkinson>53.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/905-0
+00:16:54.261 --> 00:16:57.381
+<v Matt Wilkinson>Hey, I'm just editing the roll,
+trying to give a go before I finish.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/906-0
+00:16:58.021 --> 00:16:58.581
+<v Matt Wilkinson>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/909-0
+00:16:59.861 --> 00:17:00.821
+<v Matt Wilkinson>Retry.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/927-0
+00:17:25.541 --> 00:17:30.997
+<v Matthias Max>In case this succeed at some stage, Matt,
+this is not going through a proxy, right?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/927-1
+00:17:30.997 --> 00:17:32.101
+<v Matthias Max>It's it's direct.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/956-0
+00:17:34.901 --> 00:17:38.911
+<v Matt Wilkinson>To the database. Yeah,
+it's direct to the database, yes.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/930-0
+00:17:35.101 --> 00:17:35.901
+<v Nikolay Hristov>This one.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/932-0
+00:17:36.821 --> 00:17:37.301
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/956-1
+00:17:38.911 --> 00:17:43.201
+<v Matt Wilkinson>But this proxy thing is not a
+conversation. It's irrelevant.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/956-2
+00:17:43.201 --> 00:17:45.381
+<v Matt Wilkinson>Doesn't matter how it corrects.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/975-0
+00:17:44.141 --> 00:17:50.375
+<v Matthias Max>Yeah, I get it. I get it.
+I just wanna make sure we collect all the</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/975-1
+00:17:50.375 --> 00:17:52.941
+<v Matthias Max>info regarding the two data.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/985-0
+00:17:51.381 --> 00:17:54.810
+<v Matt Wilkinson>Yeah, the setup, yeah, yeah, yeah.
+So it's it's direct,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/985-1
+00:17:54.810 --> 00:17:59.341
+<v Matt Wilkinson>it's it's the Oracle infrastructure is
+cost and it's a direct connection.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/987-0
+00:18:11.981 --> 00:18:12.141
+<v Matthias Max>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/992-0
+00:18:14.061 --> 00:18:15.381
+<v Matt Wilkinson>They should have returned by now.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/995-0
+00:18:15.461 --> 00:18:17.581
+<v Nikolay Hristov>Yeah, probably time out again.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/996-0
+00:18:18.061 --> 00:18:18.221
+<v Matt Wilkinson>Mm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1006-0
+00:18:53.821 --> 00:18:54.261
+<v Nikolay Hristov>Yes.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1017-0
+00:18:54.981 --> 00:18:59.741
+<v Matt Wilkinson>OK. Yeah, I'll have to wait till Ron.
+I'll speak to Ron in 10 minutes about it.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1018-0
+00:19:01.101 --> 00:19:01.581
+<v Matthias Max>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1057-0
+00:21:06.261 --> 00:21:08.381
+<v Matt Wilkinson>Just click cancel Nikolay and try again.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1058-0
+00:21:09.541 --> 00:21:10.181
+<v Matt Wilkinson>Alright.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1060-0
+00:21:16.541 --> 00:21:16.981
+<v Nikolay Hristov>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1070-0
+00:21:16.541 --> 00:21:19.198
+<v Yosif Mihaylov>Yeah, by the way,
+my pink started working just just right</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1070-1
+00:21:19.198 --> 00:21:19.381
+<v Yosif Mihaylov>now.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1081-0
+00:21:20.661 --> 00:21:23.996
+<v Matt Wilkinson>Yeah, I've just turned.
+I did the egress and the ingress.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1081-1
+00:21:23.996 --> 00:21:26.181
+<v Matt Wilkinson>I've just added the direct port on to.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1085-0
+00:21:27.221 --> 00:21:29.901
+<v Matt Wilkinson>That's what I was just saying,
+reaching out to it.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1087-0
+00:21:31.141 --> 00:21:32.301
+<v Nikolay Hristov>Yeah, but.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1095-0
+00:21:35.381 --> 00:21:38.993
+<v Matt Wilkinson>Joseph, where are you?
+Where is your Cloud Run running from?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1095-1
+00:21:38.993 --> 00:21:39.821
+<v Matt Wilkinson>Which project?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1100-0
+00:21:41.101 --> 00:21:43.261
+<v Yosif Mihaylov>Actually, I'm pinging quickly.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1106-0
+00:21:43.661 --> 00:21:46.861
+<v Matt Wilkinson>OK, fine. OK. OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1105-0
+00:21:45.181 --> 00:21:45.861
+<v Yosif Mihaylov>My VPN.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1149-0
+00:21:51.621 --> 00:21:55.829
+<v Yosif Mihaylov>I think actually the cloud shell from the
+cloud is not meant to work anyway.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1149-1
+00:21:55.829 --> 00:22:00.255
+<v Yosif Mihaylov>I tried it with some instances that we
+are able to connect to and still not able</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1149-2
+00:22:00.255 --> 00:22:04.736
+<v Yosif Mihaylov>to ping probably because we are not going
+through the VPC or something like that.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1149-3
+00:22:04.736 --> 00:22:05.501
+<v Yosif Mihaylov>Not sure well.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1164-0
+00:22:04.741 --> 00:22:08.571
+<v Matt Wilkinson>Yeah, maybe.
+Usually Cloud Shell is pretty good at</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1164-1
+00:22:08.571 --> 00:22:12.701
+<v Matt Wilkinson>anyway. Yeah, OK,
+usually you can tell it to go. Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1165-0
+00:22:12.101 --> 00:22:14.988
+<v Yosif Mihaylov>I mean,
+it's just not the measurement whether</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1165-1
+00:22:14.988 --> 00:22:15.301
+<v Yosif Mihaylov>it's.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1166-0
+00:22:15.981 --> 00:22:16.221
+<v Matt Wilkinson>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1167-0
+00:22:16.381 --> 00:22:17.581
+<v Yosif Mihaylov>Yeah, or not.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1168-0
+00:22:21.621 --> 00:22:21.821
+<v Nikolay Hristov>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1169-0
+00:22:30.141 --> 00:22:30.301
+<v Nikolay Hristov>Inc.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1173-0
+00:22:31.861 --> 00:22:33.101
+<v Nikolay Hristov>It was created. Why?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1176-0
+00:22:42.941 --> 00:22:43.741
+<v Nikolay Hristov>Strange.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1181-0
+00:22:55.981 --> 00:22:57.661
+<v Nikolay Hristov>OK, it's the V.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1195-0
+00:22:59.221 --> 00:23:02.581
+<v Matt Wilkinson>I think it's one of the ones in the
+middle, wasn't it? It was a big,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1192-0
+00:23:01.501 --> 00:23:02.061
+<v Nikolay Hristov>Sorry.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1195-1
+00:23:02.581 --> 00:23:04.821
+<v Matt Wilkinson>it was a big chunk of the ones in the
+middle.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1230-0
+00:23:06.821 --> 00:23:11.886
+<v Matt Wilkinson>I think you just got them cut off.
+So is it not one of these top three ones?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1230-1
+00:23:11.886 --> 00:23:16.293
+<v Matt Wilkinson>Second, second, third and 4th down?
+Is it not one of them? ABN OK,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1215-0
+00:23:12.341 --> 00:23:13.941
+<v Nikolay Hristov>I don't know.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1230-2
+00:23:16.293 --> 00:23:18.661
+<v Matt Wilkinson>has it not 1034 third, 4th one down?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1235-0
+00:23:19.541 --> 00:23:25.021
+<v Nikolay Hristov>I I was just creating with the name
+Oracle, but let's let's check.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1234-0
+00:23:23.301 --> 00:23:23.421
+<v Matt Wilkinson>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1236-0
+00:23:34.301 --> 00:23:34.461
+<v Nikolay Hristov>Um.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1255-0
+00:24:33.221 --> 00:24:33.341
+<v Nikolay Hristov>Yes.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1256-0
+00:24:41.301 --> 00:24:41.421
+<v Nikolay Hristov>So.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1264-0
+00:24:58.821 --> 00:25:01.461
+<v Matt Wilkinson>I'll speak to Ron in 5 minutes.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1287-0
+00:25:02.501 --> 00:25:07.791
+<v Matt Wilkinson>There's there is A tag called Oracle user
+and that effectively opens up,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1287-1
+00:25:07.791 --> 00:25:11.341
+<v Matt Wilkinson>but because we can't add it prior to
+connecting.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1296-0
+00:25:13.381 --> 00:25:16.951
+<v Matt Wilkinson>What happens when you click create now,
+Nikolay?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1296-1
+00:25:16.951 --> 00:25:19.501
+<v Matt Wilkinson>What happens when you click create?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1293-0
+00:25:17.341 --> 00:25:17.461
+<v Nikolay Hristov>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1308-0
+00:25:22.861 --> 00:25:26.621
+<v Nikolay Hristov>OK, I will create but.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1310-0
+00:25:25.381 --> 00:25:28.981
+<v Matt Wilkinson>OK. No, that's OK.
+So I was just wondering what happened.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1318-0
+00:25:28.901 --> 00:25:31.461
+<v Nikolay Hristov>Why there is connection profile with that
+name?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1319-0
+00:25:33.101 --> 00:25:33.181
+<v Nikolay Hristov>Uh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1320-0
+00:25:34.301 --> 00:25:34.541
+<v Matthias Max>Hmm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1322-0
+00:25:34.661 --> 00:25:36.061
+<v Nikolay Hristov>What's happening?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1332-0
+00:26:06.581 --> 00:26:07.261
+<v Nikolay Hristov>About again.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1339-0
+00:26:13.941 --> 00:26:17.261
+<v Matt Wilkinson>It's OK, leave it. We'll have to.
+I'll have to speak to him.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1343-0
+00:26:19.981 --> 00:26:22.021
+<v Nikolay Hristov>OK, it's created.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1351-0
+00:26:24.261 --> 00:26:27.821
+<v Nikolay Hristov>You cannot tag here.
+Is that a network tag?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1357-0
+00:26:28.501 --> 00:26:31.221
+<v Matt Wilkinson>Give it a go. Let's say edit.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1367-0
+00:26:36.181 --> 00:26:40.461
+<v Matt Wilkinson>I think it's just the tags.
+There's a label. Are you going down?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1373-0
+00:26:42.501 --> 00:26:44.621
+<v Matthias Max>It's more organizational.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1371-0
+00:26:42.661 --> 00:26:43.261
+<v Matt Wilkinson>Oh my God.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1404-0
+00:26:44.901 --> 00:26:47.806
+<v Matt Wilkinson>Yeah,
+that that was that was just the that tags.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1404-1
+00:26:47.806 --> 00:26:52.311
+<v Matt Wilkinson>The labels and tags are different.
+I think if the tags something we can add</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1404-2
+00:26:52.311 --> 00:26:55.098
+<v Matt Wilkinson>it on.
+I just don't know where that is in this</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1388-0
+00:26:52.821 --> 00:26:53.341
+<v Nikolay Hristov>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1404-3
+00:26:55.098 --> 00:26:58.061
+<v Matt Wilkinson>this screen.
+I've never done one of these before.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1409-0
+00:27:00.101 --> 00:27:04.461
+<v Nikolay Hristov>I can't see where it's added, but uh,
+it definitely says here at.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1426-0
+00:27:09.061 --> 00:27:14.381
+<v Matthias Max>But do we need some kind of wrapper
+around data stream? I don't know.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1430-0
+00:27:12.941 --> 00:27:16.281
+<v Yosif Mihaylov>Uh,
+you have tax as a separate button on the</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1430-1
+00:27:16.281 --> 00:27:18.061
+<v Yosif Mihaylov>top right. What is that?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1431-0
+00:27:18.261 --> 00:27:18.381
+<v Nikolay Hristov>Uh huh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1433-0
+00:27:23.021 --> 00:27:24.581
+<v Nikolay Hristov>Oh, yes, and.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1439-0
+00:27:26.261 --> 00:27:30.701
+<v Matt Wilkinson>Select select that current select current
+project.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1440-0
+00:27:31.581 --> 00:27:31.821
+<v Nikolay Hristov>Well.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1442-0
+00:27:33.861 --> 00:27:34.661
+<v Nikolay Hristov>Oh, that was.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1443-0
+00:27:35.781 --> 00:27:36.381
+<v Matt Wilkinson>Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1444-0
+00:27:41.301 --> 00:27:42.261
+<v Nikolay Hristov>It's.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1452-0
+00:27:45.141 --> 00:27:48.026
+<v Yosif Mihaylov>Uh,
+you had the option to select tax from the</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1452-1
+00:27:48.026 --> 00:27:50.221
+<v Yosif Mihaylov>current project. Would that pop up?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1453-0
+00:27:52.301 --> 00:27:52.381
+<v Nikolay Hristov>Um.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1454-0
+00:27:57.421 --> 00:27:57.461
+<v Nikolay Hristov>Oh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1484-0
+00:28:09.061 --> 00:28:12.037
+<v Matthias Max>Well,
+couldn't you select a tag right there</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1484-1
+00:28:12.037 --> 00:28:16.840
+<v Matthias Max>where you where you've been?
+I think it doesn't automatically pull all</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1484-2
+00:28:16.840 --> 00:28:20.221
+<v Matthias Max>tags. It's it looked OK,
+no keys available. Good.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1483-0
+00:28:21.221 --> 00:28:21.781
+<v Yosif Mihaylov>Yeah, it's.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1495-0
+00:28:24.541 --> 00:28:27.941
+<v Nikolay Hristov>It's something different. It's not.
+It's not a network tech.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1492-0
+00:28:26.301 --> 00:28:26.461
+<v Matthias Max>Um.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1493-0
+00:28:28.421 --> 00:28:28.901
+<v Yosif Mihaylov>Mhm.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1497-0
+00:28:28.821 --> 00:28:31.741
+<v Matt Wilkinson>Yeah, it's different. Yeah. Yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1498-0
+00:28:34.941 --> 00:28:34.981
+<v Nikolay Hristov>Oh.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1524-0
+00:28:57.381 --> 00:29:00.944
+<v Yosif Mihaylov>What about the the user?
+Like I would assume that if the user</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1524-1
+00:29:00.944 --> 00:29:04.392
+<v Yosif Mihaylov>credentials are not correct,
+it would be a different error,</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1524-2
+00:29:04.392 --> 00:29:05.541
+<v Yosif Mihaylov>not time out, right?</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1534-0
+00:29:04.901 --> 00:29:10.501
+<v Nikolay Hristov>Yeah, yeah. When it's time out, it's not,
+it can't connect at all to the port, so.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1533-0
+00:29:07.621 --> 00:29:09.581
+<v Yosif Mihaylov>Yeah, yeah.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1543-0
+00:29:18.341 --> 00:29:21.111
+<v Matt Wilkinson>Leave it with me,
+I'll jump on with Ron now and we can have</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1543-1
+00:29:21.111 --> 00:29:21.941
+<v Matt Wilkinson>a look through it.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1557-0
+00:29:25.181 --> 00:29:30.886
+<v Matthias Max>OK. Yeah, I mean,
+all good as long as we stick working on</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1557-1
+00:29:30.886 --> 00:29:31.181
+<v Matthias Max>it.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1573-0
+00:29:32.661 --> 00:29:37.821
+<v Matthias Max>We can come back together in a meeting if
+you want. You can also ping us, whatever.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1583-0
+00:29:36.781 --> 00:29:42.461
+<v Nikolay Hristov>Yeah, Matt,
+just ping me and I will test again.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1601-0
+00:29:42.341 --> 00:29:48.011
+<v Matt Wilkinson>Yeah, it's all good, Nikolay.
+I can see I've got it off as well on here.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1588-0
+00:29:46.301 --> 00:29:46.421
+<v Nikolay Hristov>OK.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1601-1
+00:29:48.011 --> 00:29:52.981
+<v Matt Wilkinson>So yeah, best, best endeavours here.
+We'll try and get started.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1595-0
+00:29:48.421 --> 00:29:49.221
+<v Matthias Max>All right, cool.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1599-0
+00:29:53.421 --> 00:29:53.661
+<v Matthias Max>Right.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1604-0
+00:29:54.421 --> 00:29:56.981
+<v Matthias Max>All right. Thanks a lot.
+See you in the chat.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1608-0
+00:29:58.061 --> 00:29:58.701
+<v Nikolay Hristov>Thank you guys.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1615-0
+00:29:59.341 --> 00:30:00.061
+<v Yosif Mihaylov>Goodbye.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1614-0
+00:29:59.461 --> 00:29:59.901
+<v Matthias Max>Well.</v>
+
+a0207861-1634-4f6f-ab53-b7c4b5a4f116/1618-0
+00:29:59.461 --> 00:30:00.221
+<v Matt Wilkinson>Bye, bye guys. Bye bye.</v>
