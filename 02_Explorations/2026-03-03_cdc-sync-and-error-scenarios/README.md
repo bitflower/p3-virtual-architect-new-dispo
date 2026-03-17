@@ -10,6 +10,8 @@
 
 This exploration addresses synchronization challenges between New Dispo and TMS Database, focusing on CDC event processing failures.
 
+**Project Status:** [PROJECT-STATUS.md](PROJECT-STATUS.md) - Live project tracking document
+
 ---
 
 ## Documents
