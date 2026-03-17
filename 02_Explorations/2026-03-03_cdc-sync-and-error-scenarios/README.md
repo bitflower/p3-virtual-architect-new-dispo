@@ -26,6 +26,12 @@ This exploration addresses synchronization challenges between New Dispo and TMS 
 
 - `document-separation-analysis.md` - Analysis and rationale for splitting the original mega-document
 
+### Backlog
+
+- `Backlog/current-story.md` - Original PO-drafted user story (generic)
+- `Backlog/refined-story.md` - **Technical user story** for Problem 2 (ready for refinement)
+- `Backlog/refinement-comparison.md` - Comparison showing improvements from PO draft to technical story
+
 ### Archive
 
 - `_archive/matthias-input.md` - Original exploration request (no longer relevant)
@@ -47,6 +53,10 @@ This exploration addresses synchronization challenges between New Dispo and TMS 
 
 ### I want to understand why documents were split
 👉 Read: `document-separation-analysis.md`
+
+### I need the user story for team refinement
+👉 **User Story:** `Backlog/refined-story.md` (technical, ready for refinement)
+👉 **Comparison:** `Backlog/refinement-comparison.md` (shows what changed from PO draft)
 
 ---
 
