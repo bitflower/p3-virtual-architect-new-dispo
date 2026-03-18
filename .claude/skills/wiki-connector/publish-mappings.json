@@ -176,6 +176,26 @@
         },
         "notes": "Living project document - sync from exploration folder to wiki, remove internal exploration links, clean for stakeholder visibility"
       }
+    },
+    {
+      "id": "project-transport-order-creation",
+      "source": "02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/PROJECT-STATUS.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow.md",
+      "description": "Transport Order Creation Flow - Complete documentation including TMS sync, error handling, and idempotency",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "template": "wiki",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Living project document - sync from exploration folder to wiki, remove internal exploration links for stakeholder visibility"
+      }
     }
   ]
 }
