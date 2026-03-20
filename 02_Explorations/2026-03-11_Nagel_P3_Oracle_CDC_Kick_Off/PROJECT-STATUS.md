@@ -7,6 +7,7 @@
 1. Datastream connectivity setup
 2. Datastream single record CDC event received
 3. Striim load test with OMS prod data
+
 **Go-Live Target:** June 2026
 
 ---
@@ -71,7 +72,7 @@
 | Load Testing   | March 23-30  | ⏳ Planned     | 1-week stress test with order duplication |
 | Evaluation     | End of March | ⏳ Planned     | Option selection, cost analysis           |
 | Decision       | Early April  | ⏳ Planned     | Final architecture decision               |
-| Implementation | April-May    | ⏳ Planned     | Production rollout preparation            |
+| Production-Readiness | April-May    | ⏳ Planned     | Rollout document creation, go-live prep   |
 | Go-Live        | June 2026    | 🎯 Target      | P3 branches production deployment         |
 
 ---
