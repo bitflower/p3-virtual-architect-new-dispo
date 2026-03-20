@@ -1,9 +1,12 @@
 # Project: Oracle CDC Solution for TMS Branch Databases
 
-**Status:** 🔄 In Progress - POC Phase
+**Status:** 🔄 In Progress - POC Active
 **Author:** Virtual Architect
-**Last Updated:** 2026-03-13
-**Next Milestone:** Workshop on 2026-03-16
+**Last Updated:** 2026-03-20
+**Next Milestones:**
+1. Datastream connectivity setup
+2. Datastream single record CDC event received
+3. Striim load test with OMS prod data
 **Go-Live Target:** June 2026
 
 ---
@@ -28,6 +31,11 @@
 ## Current Status
 
 ### ✅ Completed (CW 11)
+- [x] Workshop executed on March 16 (Technical walkthrough, POC kickoff)
+- [x] Service account configured for Striim Cloud Storage access (wl5-cloudrun@prj-cal-w-wl5-t-6c00-53ad.iam.gserviceaccount.com)
+- [x] UAT bucket created (oracle-striim-bucket-poc-1060uat) for order duplication testing
+- [x] First CDC event successfully captured from Oracle TMS1034.SENDUNG table - [2026-03-18_first_striim_cdc_event.json]
+- [x] Striim instance setup completed and configured
 - [x] GCP storage buckets provisioned (oracle-striim-bucket-poc, oracle-datastream-bucket-poc)
 - [x] Workshop scheduled for Monday, March 16, 14:30-15:00
 - [x] Initial gap analysis completed - [Analysis](2026-03-13_meeting-coverage-analysis.md)
@@ -37,14 +45,17 @@
 - [x] Database selection confirmed (1034 ABN, 1060 UAT)
 
 ### 🔄 In Progress
-- [ ] Datastream setup in WL5 (P3 responsibility)
+- [ ] Request for Dominik support raised with Christian Lang by Martin Dittmann
+- [ ] Striim licensing extension request submitted to Google by Matt Wilkinson
 - [ ] Oracle prerequisites setup (ARCHIVELOG, LogMiner, CDC user, Nagel IT responsibility)
 
+### 🚫 Blocked
+- [ ] Datastream setup in WL5 (P3 responsibility) - **Blocked by:** Oracle prerequisites and network configuration
+
 ### ⏳ Next Up
-- Workshop execution (March 16)
+- Next workshop (March 20, 14:30)
 - Manual insert trigger into sending table (post-datastream enablement)
 - Character set compatibility investigation
-- Parallel POC testing (Striim + Datastream)
 - Load testing with OMS order duplication (1 week duration)
 
 ---
@@ -54,9 +65,9 @@
 | Phase          | Period       | Status        | Key Activities                            |
 | -------------- | ------------ | ------------- | ----------------------------------------- |
 | Kick-Off       | March 11     | ✅ Complete    | Initial alignment, option presentation    |
-| Preparation    | March 11-15  | 🔄 In Progress | GCP setup, Oracle prerequisites           |
-| Workshop       | March 16     | ⏳ Scheduled   | Technical walkthrough, POC kickoff        |
-| POC Execution  | March 16-20  | ⏳ Planned     | Manual validation, setup confirmation     |
+| Preparation    | March 11-15  | ✅ Complete    | GCP setup, Oracle prerequisites           |
+| Workshop       | March 16     | ✅ Complete    | Technical walkthrough, POC kickoff        |
+| POC Execution  | March 16-20  | 🔄 In Progress | Manual validation, setup confirmation     |
 | Load Testing   | March 23-30  | ⏳ Planned     | 1-week stress test with order duplication |
 | Evaluation     | End of March | ⏳ Planned     | Option selection, cost analysis           |
 | Decision       | Early April  | ⏳ Planned     | Final architecture decision               |
@@ -108,7 +119,8 @@
 
 ### Meeting History
 - **2026-03-11:** Kick-Off Meeting (56 min) - [Teams Link](https://teams.microsoft.com/meet/39050326979606?p=6txN2RVcQCVGEmqpuZ)
-- **2026-03-16:** Follow-up Workshop (30 min) - _Scheduled_
+- **2026-03-16:** Follow-up Workshop (30 min) - _Completed_
+- **2026-03-20:** Workshop (14:30) - _Scheduled_
 
 ### Discussion Channels
 - **Teams Chat:** [Oracle CDC POC Discussion](https://teams.microsoft.com/l/chat/19:c11215f85805443396007013fbbbff97@thread.v2/conversations?context=%7B%22contextType%22%3A%22chat%22%7D)
@@ -154,6 +166,14 @@ _To be defined in workshop - pending alignment with stakeholders_
 
 | Date       | Update                                                                                                                                                             | Updated By             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| 2026-03-20 | Added item to completed: Workshop executed on March 16 (Technical walkthrough, POC kickoff) | Matthias |
+| 2026-03-20 | Added item to in-progress: Request for Dominik support raised with Christian Lang | Matthias |
+| 2026-03-20 | Added item to in-progress: Striim licensing extension request submitted to Google | Matthias |
+| 2026-03-20 | Status updated to: In Progress - POC Active | Matthias |
+| 2026-03-20 | Added item to completed: Service account configured for Striim Cloud Storage access (wl5-cloudrun@prj-cal-w-wl5-t-6c00-53ad.iam.gserviceaccount.com) | Matthias |
+| 2026-03-20 | Added item to completed: UAT bucket created (oracle-striim-bucket-poc-1060uat) for order duplication testing | Matthias |
+| 2026-03-20 | Added item to completed: First CDC event successfully captured from Oracle TMS1034.SENDUNG table | Matthias |
+| 2026-03-20 | Added item to completed: Striim instance setup completed and configured | Matthias |
 | 2026-03-13 | POC scope clarified - intentionally ends at Cloud Storage, Cloud SQL harmonization post-POC                                                                       | Virtual Architect      |
 | 2026-03-13 | Project status synced to wiki, all updates from Matt's communication reflected                                                                                     | Virtual Architect      |
 | 2026-03-13 | TMS1034 (ABN) Oracle connection ready, UAT databases (1034, 1060) ready for order duplication, Datastream setup assigned to WL5, Cloud SQL/Storage assigned to WL4 | Virtual Architect      |
