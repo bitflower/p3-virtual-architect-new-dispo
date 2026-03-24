@@ -8,6 +8,32 @@ The New Dispo infrastructure uses Google Cloud's Shared VPC architecture with se
 
 ## VPC Architecture
 
+### Hub VPC and VPN Connectivity
+
+The infrastructure uses a Hub VPC architecture with VPN connections to both CAL and Nagel on-premises networks.
+
+> **Note:** This diagram and information is the result of an investigation by Dominik Landau and might contain mistakes. Please verify details before using in production configurations.
+
+![GCP Workloads Architecture](../../07_Diagrams/GCP-workloads.svg)
+
+**Hub VPC:** `prj-cal-net-h-5332-53ad`
+
+**VPN Gateways:**
+
+**CAL VPN Connections:**
+- VPN1 (GCP): `34.157.54.59` ↔ VPN1 (On-Prem): `212.123.105.148`
+- VPN2 (GCP): `34.157.191.34` ↔ VPN2 (On-Prem): `212.123.105.148`
+- Peering VPC: `vpc-c-peer-vpn-cal` (`10.100.127.0/28`)
+
+**Nagel VPN Connections:**
+- VPN1: `35.242.18.84`
+- VPN2: `34.157.189.239`
+- Peering VPC: `vpc-c-peer-vpn-nagel` (`10.100.127.16/28`)
+
+**On-Premises Network (CAL):** `10.32.0.0/11`
+
+**Network Cloud Router (NCC):** Hub configuration in the Hub VPC for centralized routing
+
 ### Test Environment
 
 **VPC Network:** `projects/prj-cal-net-s-t-e004-53ad/global/networks/vpc-c-shared-vpc-c-net-s-t`

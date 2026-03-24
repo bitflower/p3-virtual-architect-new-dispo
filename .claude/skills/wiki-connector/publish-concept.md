@@ -39,6 +39,17 @@ All syncs use a **git-like diff approach** - only changed content is updated:
 - Read target file (WIKI)
 - If target doesn't exist, this is an initial publish (create new file)
 
+#### Step 4.1b: Handle Attachments (if enabled)
+If `attachmentHandling.enabled: true` in syncStrategy:
+- Parse source markdown for image references: `![alt](path/to/image.ext)`
+- For each image reference:
+  1. Resolve relative path from source file location
+  2. Check if image file exists
+  3. Determine target filename (basename or with hash if needed)
+  4. Copy to `WIKI/.attachments/filename`
+  5. Store mapping: original path → `/.attachments/filename`
+- Apply mappings when writing target content (rewrite all image paths)
+
 #### Step 4.2: Identify Sync Scope
 
 **For `scope: "sections"`** (partial sync):
@@ -103,6 +114,15 @@ All syncs use a **git-like diff approach** - only changed content is updated:
 - Content between `*(Added: YYYY-MM-DD)*` and `*(End Added: YYYY-MM-DD)*` is tracked
 - Untracked content in target is never modified
 - Automatically update date markers if content changes
+
+### Attachment Management
+When `attachmentHandling.enabled: true` in syncStrategy:
+- **Detect** image/diagram references in source markdown (e.g., `![](../../07_Diagrams/file.svg)`)
+- **Copy** referenced files to wiki's `.attachments/` folder
+- **Rewrite** links in target to use `/.attachments/filename` path
+- **Preserve** original file in source location (don't modify source)
+- **Skip** if file already exists in `.attachments/` (unless `forceUpdate: true`)
+- **Supported formats**: .svg, .png, .jpg, .jpeg, .gif, .pdf
 
 ### Conflict Detection
 - Track last sync timestamp (could use git-like approach with hash)

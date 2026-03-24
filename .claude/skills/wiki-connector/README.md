@@ -48,6 +48,13 @@ Edit `publish-mappings.json` and add a new entry:
       "format": "*(Added: YYYY-MM-DD)*",
       "endFormat": "*(End Added: YYYY-MM-DD)*"
     },
+    "attachmentHandling": {
+      "enabled": true,
+      "sourceBasePath": "07_Diagrams",
+      "targetPath": ".attachments",
+      "supportedFormats": [".svg", ".png", ".jpg", ".jpeg", ".gif", ".pdf"],
+      "forceUpdate": false
+    },
     "notes": "Additional notes"
   }
 }
@@ -108,6 +115,44 @@ The plugin uses a git-like approach to synchronization:
 ```
 
 Only the changed lines are updated - everything else in the WIKI remains untouched.
+
+## Attachment Handling
+
+When `attachmentHandling.enabled: true`, the plugin automatically:
+
+1. **Detects** image references in source markdown (e.g., `![diagram](../../07_Diagrams/network.svg)`)
+2. **Resolves** the actual file path relative to the source document
+3. **Copies** the file to the wiki's `.attachments/` folder
+4. **Rewrites** the link in the target to `/.attachments/network.svg`
+
+### Configuration Options
+
+```json
+"attachmentHandling": {
+  "enabled": true,
+  "sourceBasePath": "07_Diagrams",  // Optional: common base path hint
+  "targetPath": ".attachments",     // Wiki attachments folder
+  "supportedFormats": [".svg", ".png", ".jpg", ".jpeg", ".gif", ".pdf"],
+  "forceUpdate": false              // Re-copy even if file exists
+}
+```
+
+### Example
+
+**Source** (`08_Documentation/Infrastructure/network-configuration.md`):
+```markdown
+![Network Diagram](../../07_Diagrams/GCP-workloads.svg)
+```
+
+**After publish**, file copied to:
+```
+WIKI/Nagel-CAL-Disposition.wiki/.attachments/GCP-workloads.svg
+```
+
+**Target** (`WIKI/.../Network-Configuration.md`):
+```markdown
+![Network Diagram](/.attachments/GCP-workloads.svg)
+```
 
 ## Current Mappings
 

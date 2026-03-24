@@ -56,7 +56,7 @@
     {
       "id": "infrastructure-main",
       "source": "08_Documentation/Infrastructure.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Documentation/Infrastructure.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/Infrastructure.md",
       "description": "Infrastructure overview and architecture documentation",
       "syncStrategy": {
         "type": "diff-sync",
@@ -70,7 +70,7 @@
     {
       "id": "infrastructure-deployment",
       "source": "08_Documentation/Infrastructure/deployment-mapping.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Documentation/Infrastructure/deployment-mapping.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/Infrastructure/Deployment-Mapping.md",
       "description": "Component deployment mapping and configuration",
       "syncStrategy": {
         "type": "diff-sync",
@@ -84,7 +84,7 @@
     {
       "id": "infrastructure-cicd",
       "source": "08_Documentation/Infrastructure/cicd-pipelines.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Documentation/Infrastructure/cicd-pipelines.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/Infrastructure/CICD-Pipelines.md",
       "description": "CI/CD pipeline configuration and deployment workflows",
       "syncStrategy": {
         "type": "diff-sync",
@@ -98,7 +98,7 @@
     {
       "id": "infrastructure-gcp",
       "source": "08_Documentation/Infrastructure/gcp-resources.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Documentation/Infrastructure/gcp-resources.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/Infrastructure/GCP-Resources.md",
       "description": "GCP resources including storage, databases, and functions",
       "syncStrategy": {
         "type": "diff-sync",
@@ -112,7 +112,7 @@
     {
       "id": "infrastructure-network",
       "source": "08_Documentation/Infrastructure/network-configuration.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Documentation/Infrastructure/network-configuration.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/Infrastructure/Network-Configuration.md",
       "description": "Network configuration including VPC, firewall, and connectivity",
       "syncStrategy": {
         "type": "diff-sync",
@@ -120,13 +120,20 @@
         "dateMarkers": {
           "enabled": false
         },
-        "notes": "Track entire document, apply line-by-line diffs"
+        "attachmentHandling": {
+          "enabled": true,
+          "sourceBasePath": "07_Diagrams",
+          "targetPath": ".attachments",
+          "supportedFormats": [".svg", ".png", ".jpg", ".jpeg", ".gif", ".pdf"],
+          "forceUpdate": false
+        },
+        "notes": "Track entire document, apply line-by-line diffs. Automatically handles diagram attachments."
       }
     },
     {
       "id": "infrastructure-external",
       "source": "08_Documentation/Infrastructure/external-integrations.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Documentation/Infrastructure/external-integrations.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/Infrastructure/External-Integrations.md",
       "description": "External system integrations (Keycloak, Azure Service Bus, DigiLiS, etc.)",
       "syncStrategy": {
         "type": "diff-sync",
