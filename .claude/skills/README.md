@@ -8,10 +8,6 @@ This directory contains custom skills for Claude Code to help automate common wo
 
 Creates a new exploration with proper folder structure and markdown template.
 
-### `/extract-trace` - Extract Tour Calculation Trace
-
-Extracts and consolidates trace logs from all three components (Frontend, Backend, TMS Bridge) after a tour calculation. Creates a timestamped folder with complete JSON analysis and README.
-
 **Usage:**
 ```bash
 /explore <topic description>
@@ -42,6 +38,54 @@ Extracts and consolidates trace logs from all three components (Frontend, Backen
 1. Replace the "Original User Input" section with your actual input/context
 2. Keep the original input at the top of the document
 3. Fill in the relevant sections as you conduct the exploration
+
+---
+
+### `/extract-diagram` - Extract Mermaid Diagrams to Versioned SVG
+
+Extracts Mermaid diagrams from markdown documentation and creates versioned SVG diagrams in `07_Diagrams/Architecture/`.
+
+**Usage:**
+```bash
+/extract-diagram <source-markdown-file>
+/extract-diagram -n <custom-name> -t "<custom-title>" <source-file>
+```
+
+**Examples:**
+```bash
+# Extract diagram with auto-generated name
+/extract-diagram 02_Explorations/2026-03-24_My-Analysis/flow-diagram.md
+
+# Extract with custom name and title
+/extract-diagram -n auth-flow -t "Authentication Flow" path/to/file.md
+```
+
+**What it does:**
+1. Extracts the first Mermaid diagram from a source markdown file
+2. Creates a new markdown file in `07_Diagrams/Architecture/` with diagram + metadata
+3. Generates an SVG from the Mermaid diagram using `mmdc`
+4. Updates the original file to replace the Mermaid code block with an SVG reference
+
+**Benefits:**
+- ✅ Single source of truth for diagrams
+- ✅ Versioned SVG assets (committed to git)
+- ✅ Universal rendering (SVG works everywhere)
+- ✅ Easy to update (edit .md, regenerate SVG)
+- ✅ Text-based source (good git diffs)
+
+**Requirements:**
+- Mermaid CLI: `npm install -g @mermaid-js/mermaid-cli`
+- Source file must contain at least one Mermaid code block (` ```mermaid `)
+
+**Output:**
+- Creates `07_Diagrams/Architecture/{diagram-name}.md` (source)
+- Creates `07_Diagrams/Architecture/{diagram-name}.svg` (generated)
+- Updates source file to reference SVG
+- Creates `.bak` backup of original file
+
+**Related docs:**
+- See `.claude/skills/extract-diagram/README.md` for detailed usage
+- See `README.md` in project root for diagram generation requirements
 
 ---
 
