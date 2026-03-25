@@ -1,8 +1,8 @@
 # Transport Order Creation via Drag and Drop Flow
 
 **Date:** 2026-03-16
-**Version:** 1.0
-**Status:** Verified
+**Version:** 1.1
+**Status:** Verified (Deep code check: 2026-03-25)
 **Source:** [02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/01-overview-and-flow.md](../../02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/01-overview-and-flow.md)
 
 ---
@@ -74,10 +74,10 @@ sequenceDiagram
     deactivate TMS
 
     loop For each additional leg
-        Bridge->>TMS: Call pdis_transportorder.addshipment()
+        Bridge->>TMS: Call pdis_transportorder.createandaddleg()
         activate TMS
         TMS->>TMS: Add leg to transport order
-        TMS-->>Bridge: Return legId, tourPointIds
+        TMS-->>Bridge: Return pickupPointId, isNewPickupPoint, deliveryPointId, isNewDeliveryPoint, legId
         deactivate TMS
     end
 
@@ -142,6 +142,8 @@ sequenceDiagram
 
 ### 4. Batch Processing Strategy 📦
 - Single GraphQL mutation with multiple operations
+- First leg: `createtransportorderfromleg()`
+- Additional legs: `createandaddleg()` (internally calls `addleg()`)
 - Transactional integrity across all leg additions
 - Efficient network usage
 - Variable export/import between operations
