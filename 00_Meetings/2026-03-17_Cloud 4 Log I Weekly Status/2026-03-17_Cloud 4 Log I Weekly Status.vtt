@@ -1,0 +1,1900 @@
+WEBVTT
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/31-0
+00:00:04.750 --> 00:00:07.269
+<v Martin Dittmann>I am.
+So after after we were in Birmingham</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/31-1
+00:00:07.269 --> 00:00:08.910
+<v Martin Dittmann>together. Yeah, that's true.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/32-0
+00:00:07.830 --> 00:00:07.950
+<v Ivailo Pashov>OK.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/33-0
+00:00:09.870 --> 00:00:11.270
+<v Martin Dittmann>Hey, Marius. Hey, John.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/38-0
+00:00:11.350 --> 00:00:17.643
+<v Cem Karaman>Hi Marius. Hi Martin. Hi Ivo again.
+So we sorry for my lateness.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/34-0
+00:00:15.990 --> 00:00:16.990
+<v Ivailo Pashov>Hello everybody.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/38-1
+00:00:17.643 --> 00:00:24.420
+<v Cem Karaman>We were in the refinement fault.
+So before Ivo was showing us the new</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/38-2
+00:00:24.420 --> 00:00:26.550
+<v Cem Karaman>architecture and also.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/44-0
+00:00:26.750 --> 00:00:32.905
+<v Cem Karaman>It gave us the information.
+I want to show you what we have reached</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/44-1
+00:00:32.905 --> 00:00:38.155
+<v Cem Karaman>in the last call.
+So we already have created the show for</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/44-2
+00:00:38.155 --> 00:00:42.590
+<v Cem Karaman>Macant.
+We have for the integration we have our.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/49-0
+00:00:42.830 --> 00:00:48.700
+<v Cem Karaman>Technical enablers we have created in all
+our viewers for the delivery note upload</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/49-1
+00:00:48.700 --> 00:00:53.722
+<v Cem Karaman>integration and also for the downloads
+proof of delivery integrations.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/49-2
+00:00:53.722 --> 00:00:57.399
+<v Cem Karaman>We have features for the performance
+optimizations.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/49-3
+00:00:57.399 --> 00:01:02.350
+<v Cem Karaman>We will add some technical PPIs on that
+way so that we can have some.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/54-0
+00:01:02.350 --> 00:01:05.574
+<v Cem Karaman>Optimization,
+like performance optimization tasks,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/54-1
+00:01:05.574 --> 00:01:10.569
+<v Cem Karaman>we have the guaranteed delivery which we
+already put some tasks from the leads</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/54-2
+00:01:10.569 --> 00:01:15.816
+<v Cem Karaman>like from the developers and also we are
+still continuing creating our backlog for</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/54-3
+00:01:15.816 --> 00:01:20.178
+<v Cem Karaman>Mac Hunt and for Cloud Vlock.
+As you know we will do the refactoring</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/54-4
+00:01:20.178 --> 00:01:21.190
+<v Cem Karaman>for Cloud Vlock.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/59-0
+00:01:21.870 --> 00:01:26.493
+<v Cem Karaman>We will show you the architecture,
+how we will do that and then we will</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/59-1
+00:01:26.493 --> 00:01:30.089
+<v Cem Karaman>continue with the marcant implementation
+parallel wise.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/59-2
+00:01:30.089 --> 00:01:35.226
+<v Cem Karaman>We just the API flow from Macant as I
+already mentioned before Marius maybe and</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/59-3
+00:01:35.226 --> 00:01:40.363
+<v Cem Karaman>also they mentioned that the business
+flow can be different than Cloudflow log.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/59-4
+00:01:40.363 --> 00:01:41.390
+<v Cem Karaman>So maybe having.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/63-0
+00:01:41.550 --> 00:01:49.166
+<v Cem Karaman>Make the business flow for us in how the
+upload and download scenarios are working.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/63-1
+00:01:49.166 --> 00:01:54.425
+<v Cem Karaman>This is our goal,
+like our plan and as you see we already</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/63-2
+00:01:54.425 --> 00:01:57.870
+<v Cem Karaman>have created improved observabilities.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/67-0
+00:01:58.430 --> 00:02:02.028
+<v Cem Karaman>And the refactoring of the code
+duplications.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/67-1
+00:02:02.028 --> 00:02:06.722
+<v Cem Karaman>We already add some technical PPIs and
+we'll estimate them.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/67-2
+00:02:06.722 --> 00:02:13.058
+<v Cem Karaman>Hopefully tomorrow when we are done with
+creating all the technical PPIs for us,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/67-3
+00:02:13.058 --> 00:02:14.310
+<v Cem Karaman>then we will do.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/73-0
+00:02:14.590 --> 00:02:20.169
+<v Cem Karaman>The estimation with our lead Joseph with
+Ivo and Stanislav together.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/73-1
+00:02:20.169 --> 00:02:26.152
+<v Cem Karaman>So this is the plan for the upcoming days
+for us and also I want to show,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/73-2
+00:02:26.152 --> 00:02:32.459
+<v Cem Karaman>I wanted to show you in our backlog
+structure for the features for Macant and</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/73-3
+00:02:32.459 --> 00:02:33.510
+<v Cem Karaman>also we have.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/76-0
+00:02:33.710 --> 00:02:38.608
+<v Cem Karaman>Have some new features like the
+refactoring delivery notes pipeline and</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/76-1
+00:02:38.608 --> 00:02:43.030
+<v Cem Karaman>also the refactoring of the proof of
+delivery download pipeline.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/80-0
+00:02:44.630 --> 00:02:49.152
+<v Cem Karaman>From here,
+maybe we will show you the architecture,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/80-1
+00:02:49.152 --> 00:02:54.456
+<v Cem Karaman>what we will do implement.
+Therefore I give the word to Ivo.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/80-2
+00:02:54.456 --> 00:02:58.630
+<v Cem Karaman>If you have any questions,
+feel free to ask it.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/81-0
+00:02:59.630 --> 00:03:02.350
+<v Cem Karaman>Let's go into the architectural site.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/86-0
+00:03:04.270 --> 00:03:09.616
+<v Ivailo Pashov>OK, so let me share my screen.
+Just a quick update here.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/86-1
+00:03:09.616 --> 00:03:14.305
+<v Ivailo Pashov>Why do we have these updates on the
+architecture?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/86-2
+00:03:14.305 --> 00:03:20.870
+<v Ivailo Pashov>Because we believe this would obviously
+provide a bit simplification.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/90-0
+00:03:21.310 --> 00:03:25.679
+<v Ivailo Pashov>While still guaranteeing that reliability
+concerns on one end,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/90-1
+00:03:25.679 --> 00:03:30.186
+<v Ivailo Pashov>we also managed to analyze one scenario
+with potential failures,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/90-2
+00:03:30.186 --> 00:03:35.248
+<v Ivailo Pashov>which I'll be discussing and also managed
+to address that as part of the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/90-3
+00:03:35.248 --> 00:03:36.150
+<v Ivailo Pashov>architecture.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/94-0
+00:03:36.750 --> 00:03:43.495
+<v Ivailo Pashov>So this is getting a bit refined from
+that perspective rather than</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/94-1
+00:03:43.495 --> 00:03:48.025
+<v Ivailo Pashov>significantly changing the overall
+approach.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/94-2
+00:03:48.025 --> 00:03:51.750
+<v Ivailo Pashov>It's more of a refinement to address.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/98-0
+00:03:52.230 --> 00:03:57.047
+<v Ivailo Pashov>Some additional,
+let's say reliability concerns and like</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/98-1
+00:03:57.047 --> 00:04:03.133
+<v Ivailo Pashov>do it in the most simplest maintainable
+way. So the idea is as follows.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/98-2
+00:04:03.133 --> 00:04:07.950
+<v Ivailo Pashov>We will be preserving that single Cloud
+Function that's.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/104-0
+00:04:09.110 --> 00:04:14.845
+<v Ivailo Pashov>That we would be responsible for
+maintaining these integrations over cloud</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/104-1
+00:04:14.845 --> 00:04:18.285
+<v Ivailo Pashov>for lock and both mark on as well in
+future.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/104-2
+00:04:18.285 --> 00:04:24.249
+<v Ivailo Pashov>But what's changing is actually the way
+how we trigger these tasks because in</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/104-3
+00:04:24.249 --> 00:04:28.990
+<v Ivailo Pashov>theory also the workflow could fail
+sporadically. Nothing is.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/109-0
+00:04:29.070 --> 00:04:35.525
+<v Ivailo Pashov>100% available. From that perspective,
+we've taken care that this kind of</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/109-1
+00:04:35.525 --> 00:04:41.805
+<v Ivailo Pashov>scheduling of the items here would be
+performed in a reliable manner by</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/109-2
+00:04:41.805 --> 00:04:47.125
+<v Ivailo Pashov>preserving this offset,
+but actually changing the trigger to</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/109-3
+00:04:47.125 --> 00:04:48.870
+<v Ivailo Pashov>invoke the workflow.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/113-0
+00:04:49.190 --> 00:04:54.513
+<v Ivailo Pashov>Let's say every few seconds and from that
+on we'll be just checking his time</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/113-1
+00:04:54.513 --> 00:05:00.182
+<v Ivailo Pashov>elapsed to let's say schedule a new task,
+maybe then we'll have another interval,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/113-2
+00:05:00.182 --> 00:05:04.745
+<v Ivailo Pashov>let's say 30 seconds, etc.
+So we can also cover this kind of high</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/113-3
+00:05:04.745 --> 00:05:06.750
+<v Ivailo Pashov>throughput scenarios without.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/116-0
+00:05:07.670 --> 00:05:14.288
+<v Ivailo Pashov>Overly introducing overhead of frequent
+polling to the underlying internal Nagio</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/116-1
+00:05:14.288 --> 00:05:15.350
+<v Ivailo Pashov>applications.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/120-0
+00:05:16.510 --> 00:05:22.984
+<v Ivailo Pashov>And then we we actually decided to switch
+the the overall messaging approach to</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/120-1
+00:05:22.984 --> 00:05:27.678
+<v Ivailo Pashov>cloud task queue.
+The idea is that it would also provides</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/120-2
+00:05:27.678 --> 00:05:33.990
+<v Ivailo Pashov>better guarantees around this reliability
+concerns and the ability for us to.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/125-0
+00:05:34.150 --> 00:05:39.513
+<v Ivailo Pashov>Delay some messages at at some point of
+future in time when we know that we need</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/125-1
+00:05:39.513 --> 00:05:43.551
+<v Ivailo Pashov>to retry with the back off instead of
+trying to immediately,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/125-2
+00:05:43.551 --> 00:05:47.987
+<v Ivailo Pashov>let's say reprocess the message etcetera,
+or holding it in memory.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/125-3
+00:05:47.987 --> 00:05:51.430
+<v Ivailo Pashov>It's just more efficient from resource
+perspective.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/130-0
+00:05:52.390 --> 00:05:56.469
+<v Ivailo Pashov>Because of that delay capability of the
+cloud task. In addition,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/130-1
+00:05:56.469 --> 00:06:00.863
+<v Ivailo Pashov>there is another capability supported
+here, the duplication of tasks.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/130-2
+00:06:00.863 --> 00:06:05.444
+<v Ivailo Pashov>So when we have let's say multiple
+retries over here or potentially some</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/130-3
+00:06:05.444 --> 00:06:09.963
+<v Ivailo Pashov>overlapping invocations of the cron
+scheduler and the GCP workflow that</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/130-4
+00:06:09.963 --> 00:06:11.030
+<v Ivailo Pashov>wouldn't lead to.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/132-0
+00:06:11.750 --> 00:06:16.367
+<v Ivailo Pashov>Let's say trying to duplicate the work
+and submissions anyway.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/132-1
+00:06:16.367 --> 00:06:20.910
+<v Ivailo Pashov>Currently there is a um.
+There will be ongoing, let's say um.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/137-0
+00:06:22.430 --> 00:06:28.502
+<v Ivailo Pashov>I can think of all of these scenarios
+around temple temps and we don't really</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/137-1
+00:06:28.502 --> 00:06:34.807
+<v Ivailo Pashov>want to trigger let's say these checks
+and then of inserts that frequently if we</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/137-2
+00:06:34.807 --> 00:06:41.190
+<v Ivailo Pashov>do it less often and we still have this
+guaranteed delivery that would be better.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/143-0
+00:06:42.750 --> 00:06:46.846
+<v Ivailo Pashov>So apart from that,
+we also address one scenario with the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/143-1
+00:06:46.846 --> 00:06:51.506
+<v Ivailo Pashov>architecture that may seem important.
+We've been discussing that,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/143-2
+00:06:51.506 --> 00:06:56.873
+<v Ivailo Pashov>let's say once trucks are being loaded,
+they they would be waiting for some</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/143-3
+00:06:56.873 --> 00:07:01.533
+<v Ivailo Pashov>particular amount of time,
+let's say several minutes if something</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/143-4
+00:07:01.533 --> 00:07:02.310
+<v Ivailo Pashov>goes wrong.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/144-0
+00:07:02.510 --> 00:07:05.788
+<v Ivailo Pashov>They will need to fall back to a paper
+based approach.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/144-1
+00:07:05.788 --> 00:07:08.590
+<v Ivailo Pashov>Let's say cloud for lock or mark hunt is
+down.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/149-0
+00:07:09.310 --> 00:07:13.615
+<v Ivailo Pashov>From that perspective,
+this means some some of these trucks</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/149-1
+00:07:13.615 --> 00:07:18.708
+<v Ivailo Pashov>would already be switching to a
+paper-based approach because obviously</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/149-2
+00:07:18.708 --> 00:07:23.085
+<v Ivailo Pashov>the the system is not available,
+this QR scanning, scanning,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/149-3
+00:07:23.085 --> 00:07:24.950
+<v Ivailo Pashov>etcetera is not available.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/154-0
+00:07:25.230 --> 00:07:31.641
+<v Ivailo Pashov>And what would happen next from our
+perspective is we're accumulating some</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/154-1
+00:07:31.641 --> 00:07:38.138
+<v Ivailo Pashov>backlog of items to be synchronized.
+Now we don't really want to prioritize</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/154-2
+00:07:38.138 --> 00:07:44.550
+<v Ivailo Pashov>back filling the historical data because
+once Mark and let's say or Cloud.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/158-0
+00:07:45.230 --> 00:07:49.420
+<v Ivailo Pashov>Comes back up.
+We will need to actually switching</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/158-1
+00:07:49.420 --> 00:07:56.124
+<v Ivailo Pashov>immediately for the trucks that still
+need to be like loaded with the necessary</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/158-2
+00:07:56.124 --> 00:07:59.392
+<v Ivailo Pashov>data,
+with the necessary documents and</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/158-3
+00:07:59.392 --> 00:08:01.990
+<v Ivailo Pashov>corresponding QR scanning code.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/162-0
+00:08:02.590 --> 00:08:06.864
+<v Ivailo Pashov>And from that perspective,
+we actually want to prioritize newest</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/162-1
+00:08:06.864 --> 00:08:12.124
+<v Ivailo Pashov>items first and that approach actually
+manages that because we actually put all</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/162-2
+00:08:12.124 --> 00:08:17.383
+<v Ivailo Pashov>the rest of the work in a separate queue
+and that's still pending while the new</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/162-3
+00:08:17.383 --> 00:08:18.830
+<v Ivailo Pashov>ones is kind of freed.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/164-0
+00:08:20.110 --> 00:08:25.089
+<v Ivailo Pashov>And can could be taken immediately
+concurrently to the ones to the items</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/164-1
+00:08:25.089 --> 00:08:26.590
+<v Ivailo Pashov>that we need to retry.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/169-0
+00:08:27.550 --> 00:08:32.312
+<v Ivailo Pashov>So that being said,
+we are introducing less components that</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/169-1
+00:08:32.312 --> 00:08:38.662
+<v Ivailo Pashov>need to be hosted and we are offloading
+more of these capabilities to the Cloud</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/169-2
+00:08:38.662 --> 00:08:42.630
+<v Ivailo Pashov>Tasks queues.
+That's the overall improvement for.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/173-0
+00:08:42.670 --> 00:08:47.297
+<v Ivailo Pashov>For this upload process,
+the download is also simpler.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/173-1
+00:08:47.297 --> 00:08:53.186
+<v Ivailo Pashov>We don't need another storage,
+we don't need some locking mechanisms,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/173-2
+00:08:53.186 --> 00:08:57.393
+<v Ivailo Pashov>etc. Again,
+we are using the same cloud task view</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/173-3
+00:08:57.393 --> 00:08:58.150
+<v Ivailo Pashov>approach.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/175-0
+00:08:58.590 --> 00:09:04.190
+<v Ivailo Pashov>And then potentially retrying the task
+indefinitely until the download completes.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/180-0
+00:09:07.950 --> 00:09:11.452
+<v Ivailo Pashov>That's that's it really.
+From architecture perspective,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/180-1
+00:09:11.452 --> 00:09:16.205
+<v Ivailo Pashov>I can go back to the previous diagram
+which is more complex and maybe you'd</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/180-2
+00:09:16.205 --> 00:09:20.770
+<v Ivailo Pashov>have some questions that you want to
+raise or something that you want to</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/180-3
+00:09:20.770 --> 00:09:21.270
+<v Ivailo Pashov>discuss.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/186-0
+00:09:27.070 --> 00:09:31.600
+<v Ivailo Pashov>In addition,
+something that I wanted to notice like</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/186-1
+00:09:31.600 --> 00:09:37.872
+<v Ivailo Pashov>what would be our our overall approach
+for making sure this reliability</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/186-2
+00:09:37.872 --> 00:09:44.405
+<v Ivailo Pashov>enhancements are really addressed.
+So a reliability testing is really hard</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/186-3
+00:09:44.405 --> 00:09:46.670
+<v Ivailo Pashov>to let's say approve with.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/191-0
+00:09:46.750 --> 00:09:52.660
+<v Ivailo Pashov>Achieve with manual testing and our idea
+is actually to simulate this with fully</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/191-1
+00:09:52.660 --> 00:09:58.498
+<v Ivailo Pashov>automated tests. We'll be covering this.
+Most of the logic would be around this</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/191-2
+00:09:58.498 --> 00:10:02.584
+<v Ivailo Pashov>service here,
+so we'll be covering this completely with</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/191-3
+00:10:02.584 --> 00:10:06.670
+<v Ivailo Pashov>component integration tests,
+meaning that all of these.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/195-0
+00:10:06.670 --> 00:10:12.261
+<v Ivailo Pashov>External systems they will be stopped.
+They will be made as dummy servers as</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/195-1
+00:10:12.261 --> 00:10:18.069
+<v Ivailo Pashov>part of component integration tests and
+this one will be tested as a black box.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/195-2
+00:10:18.069 --> 00:10:23.660
+<v Ivailo Pashov>Also this kind of queue over here.
+So we will be testing this as a black box</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/195-3
+00:10:23.660 --> 00:10:23.950
+<v Ivailo Pashov>and.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/199-0
+00:10:24.030 --> 00:10:30.031
+<v Ivailo Pashov>We'll be just validating the end result,
+so we'll be providing some task. We would,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/199-1
+00:10:30.031 --> 00:10:33.746
+<v Ivailo Pashov>let's say,
+specify what kind of data is returned by</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/199-2
+00:10:33.746 --> 00:10:37.390
+<v Ivailo Pashov>corresponding internal Nagel systems and
+we'll be.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/204-0
+00:10:38.670 --> 00:10:43.149
+<v Ivailo Pashov>Checking the outcome,
+what kind of data has been synchronized</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/204-1
+00:10:43.149 --> 00:10:48.566
+<v Ivailo Pashov>and we will be simulating all these
+various scenarios, including recovery,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/204-2
+00:10:48.566 --> 00:10:53.189
+<v Ivailo Pashov>including idempotent handling as part of
+these component tests,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/204-3
+00:10:53.189 --> 00:10:55.790
+<v Ivailo Pashov>but bringing this up as a framework.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/209-0
+00:10:56.110 --> 00:11:01.687
+<v Ivailo Pashov>Would probably be the most significant
+amount of time to, let's say,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/209-1
+00:11:01.687 --> 00:11:07.264
+<v Ivailo Pashov>provide these capabilities of studying
+all of these dependencies and</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/209-2
+00:11:07.264 --> 00:11:13.002
+<v Ivailo Pashov>orchestrating the entire flow,
+and from that on we'll be like creating</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/209-3
+00:11:13.002 --> 00:11:15.750
+<v Ivailo Pashov>various different scenarios where.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/211-0
+00:11:16.150 --> 00:11:21.273
+<v Ivailo Pashov>Both uh positive scenarios and negative
+ones where there's some uh either</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/211-1
+00:11:21.273 --> 00:11:23.350
+<v Ivailo Pashov>transient or permanent errors.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/213-0
+00:11:24.910 --> 00:11:28.830
+<v Ivailo Pashov>And the overall outcome of these handling
+approaches.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/218-0
+00:11:30.510 --> 00:11:33.624
+<v Ivailo Pashov>With that,
+we believe we will be having a</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/218-1
+00:11:33.624 --> 00:11:36.887
+<v Ivailo Pashov>significant amount of degree of
+confidence,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/218-2
+00:11:36.887 --> 00:11:41.484
+<v Ivailo Pashov>not introducing any regressions with the
+overall refactoring.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/218-3
+00:11:41.484 --> 00:11:47.416
+<v Ivailo Pashov>So cloud for lock functionality would
+fully work as expected with all these new</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/218-4
+00:11:47.416 --> 00:11:49.270
+<v Ivailo Pashov>reliability advancements.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/220-0
+00:11:50.070 --> 00:11:57.150
+<v Ivailo Pashov>While we are also introducing the Markon
+DBA integration capability.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/223-0
+00:11:59.790 --> 00:12:06.630
+<v Ivailo Pashov>That's that's it really from the overall
+architecture approach.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/228-0
+00:12:08.830 --> 00:12:14.034
+<v H&#252;tig, Marius>Yeah, thanks Ivailo. First of all,
+I think it's good to have the newest</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/228-1
+00:12:14.034 --> 00:12:19.817
+<v H&#252;tig, Marius>first logic with the uploads because of
+course it's it's more important for the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/228-2
+00:12:19.817 --> 00:12:25.889
+<v H&#252;tig, Marius>people in the branch to have the the next
+truck coming in via cloud for lock if the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/228-3
+00:12:25.889 --> 00:12:27.190
+<v H&#252;tig, Marius>system is back up.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/234-0
+00:12:27.390 --> 00:12:32.038
+<v H&#252;tig, Marius>To have this in a digital format than to
+put in the data, yeah,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/234-1
+00:12:32.038 --> 00:12:36.759
+<v H&#252;tig, Marius>we are not using anymore.
+That could change with the driver app,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/234-2
+00:12:36.759 --> 00:12:40.318
+<v H&#252;tig, Marius>for example,
+when we can reach out to the driver</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/232-0
+00:12:38.910 --> 00:12:39.990
+<v Ivailo Pashov>Mm-hmm.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/234-3
+00:12:40.318 --> 00:12:43.950
+<v H&#252;tig, Marius>afterwards,
+even if he's already left our branch.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/238-0
+00:12:44.830 --> 00:12:48.426
+<v H&#252;tig, Marius>But for now,
+it's definitely more important to to be</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/238-1
+00:12:48.426 --> 00:12:53.379
+<v H&#252;tig, Marius>able to upload the next truck than the
+the ones before that has not been</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/236-0
+00:12:51.590 --> 00:12:51.750
+<v Ivailo Pashov>Mm.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/244-0
+00:12:53.230 --> 00:12:58.357
+<v Ivailo Pashov>Even if the behavior, yeah,
+even if the behavior changes with the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/238-2
+00:12:53.379 --> 00:12:53.990
+<v H&#252;tig, Marius>uploaded.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/239-0
+00:12:55.070 --> 00:12:56.150
+<v H&#252;tig, Marius>So that sounds good.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/244-1
+00:12:58.357 --> 00:13:02.474
+<v Ivailo Pashov>mobile app,
+still we have fine grain control here on</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/244-2
+00:13:02.474 --> 00:13:07.990
+<v Ivailo Pashov>how to prioritize the items so we can
+also flip that that later point.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/242-0
+00:13:04.710 --> 00:13:04.950
+<v H&#252;tig, Marius>Milk.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/245-0
+00:13:09.070 --> 00:13:12.150
+<v H&#252;tig, Marius>Yeah, yeah, sounds good.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/252-0
+00:13:15.510 --> 00:13:19.842
+<v H&#252;tig, Marius>OK. And maybe Jim,
+you mentioned already you need some</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/247-0
+00:13:16.150 --> 00:13:16.390
+<v Cem Karaman>And.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/252-1
+00:13:19.842 --> 00:13:25.984
+<v H&#252;tig, Marius>questions to be answered by Mehrkan.
+I just sent out a reminder to them a few</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/252-2
+00:13:25.984 --> 00:13:32.442
+<v H&#252;tig, Marius>minutes ago with you and Martin and copy.
+So that should come as soon as possible</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/252-3
+00:13:32.442 --> 00:13:33.230
+<v H&#252;tig, Marius>hopefully.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/256-0
+00:13:34.310 --> 00:13:38.366
+<v H&#252;tig, Marius>And we can add you in the demo system as
+users.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/256-1
+00:13:38.366 --> 00:13:45.125
+<v H&#252;tig, Marius>I know I have a user for prod and demo
+environments from my account and I would</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/256-2
+00:13:45.125 --> 00:13:49.350
+<v H&#252;tig, Marius>assume that they would also give maybe
+let's say.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/261-0
+00:13:49.950 --> 00:13:55.983
+<v H&#252;tig, Marius>One introduction meeting to show the
+front and maybe if you need that or want</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/261-1
+00:13:55.983 --> 00:14:02.016
+<v H&#252;tig, Marius>that, that should be possible as well.
+And then for the demo environment I am</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/258-0
+00:13:56.750 --> 00:13:57.030
+<v Cem Karaman>Yes.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/261-2
+00:14:02.016 --> 00:14:03.950
+<v H&#252;tig, Marius>now able to to add users.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/264-0
+00:14:05.790 --> 00:14:10.925
+<v Cem Karaman>Great.
+Would be great to have a flow of the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/262-0
+00:14:07.750 --> 00:14:07.910
+<v Ivailo Pashov>Great.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/264-1
+00:14:10.925 --> 00:14:14.310
+<v Cem Karaman>front end flow from them, so.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/269-0
+00:14:14.190 --> 00:14:19.382
+<v H&#252;tig, Marius>Yeah, I will reach out to them.
+My contact person, Hannah Harter,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/269-1
+00:14:19.382 --> 00:14:23.237
+<v H&#252;tig, Marius>you already met before,
+I think did this for us,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/269-2
+00:14:23.237 --> 00:14:28.665
+<v H&#252;tig, Marius>for for me and my colleague,
+but I think they have a account or user</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/269-3
+00:14:28.665 --> 00:14:30.710
+<v H&#252;tig, Marius>management team, whatever.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/272-0
+00:14:30.910 --> 00:14:34.110
+<v H&#252;tig, Marius>And to do this,
+I will reach out to them that we can</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/272-1
+00:14:34.110 --> 00:14:37.551
+<v H&#252;tig, Marius>schedule one meeting, maybe, maybe,
+maybe with you, Jim,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/271-0
+00:14:37.550 --> 00:14:37.670
+<v Cem Karaman>Good.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/272-2
+00:14:37.551 --> 00:14:40.630
+<v H&#252;tig, Marius>for the rest of the team to find a good
+time slot.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/277-0
+00:14:41.590 --> 00:14:45.052
+<v Cem Karaman>Great.
+Of course we will find the right slot so</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/277-1
+00:14:45.052 --> 00:14:50.317
+<v Cem Karaman>we can have all the information.
+Also one of the question like right now</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/277-2
+00:14:50.317 --> 00:14:54.789
+<v Cem Karaman>for the architecture,
+Matthias is confirming this and also do</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/277-3
+00:14:54.789 --> 00:14:59.910
+<v Cem Karaman>we have to show this Christian and get
+his approval again for for any?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/278-0
+00:14:59.950 --> 00:15:02.950
+<v Cem Karaman>Directions Matthias or Marius.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/283-0
+00:15:04.750 --> 00:15:09.897
+<v H&#252;tig, Marius>I would say yes, Matthias, correct me,
+but just just send it over to him and let</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/283-1
+00:15:09.897 --> 00:15:13.519
+<v H&#252;tig, Marius>him answer real quick.
+Should not be a long showstopper.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/281-0
+00:15:12.790 --> 00:15:12.950
+<v Matthias Max>Um.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/283-2
+00:15:13.519 --> 00:15:15.870
+<v H&#252;tig, Marius>Just send it out to him, I would say.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/286-0
+00:15:16.350 --> 00:15:20.390
+<v Matthias Max>Yes, I will do that.
+Or if I learn me can do that.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/292-0
+00:15:19.990 --> 00:15:23.906
+<v Ivailo Pashov>Yeah, I can.
+I'll finish the providing all of this</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/292-1
+00:15:23.906 --> 00:15:28.052
+<v Ivailo Pashov>documentation.
+I mean the texture show description of</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/292-2
+00:15:28.052 --> 00:15:32.736
+<v Ivailo Pashov>the solution as well as part of the
+diagrams in the weekend.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/288-0
+00:15:30.790 --> 00:15:30.910
+<v Matthias Max>OK.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/292-3
+00:15:32.736 --> 00:15:37.190
+<v Ivailo Pashov>Then maybe he can we can send that for an
+offline review.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/291-0
+00:15:39.670 --> 00:15:39.870
+<v H&#252;tig, Marius>Yeah.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/293-0
+00:15:40.030 --> 00:15:40.150
+<v Ivailo Pashov>OK.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/298-0
+00:15:42.150 --> 00:15:46.027
+<v H&#252;tig, Marius>Perfect. Uh,
+maybe send it to Christian and Pascal. Um,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/298-1
+00:15:46.027 --> 00:15:47.550
+<v H&#252;tig, Marius>that they are aligned.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/296-0
+00:15:47.190 --> 00:15:47.430
+<v Ivailo Pashov>Alright.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/297-0
+00:15:48.550 --> 00:15:49.030
+<v Matthias Max>Yes.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/299-0
+00:15:49.390 --> 00:15:51.750
+<v Cem Karaman>Yosef is raising his hand.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/305-0
+00:15:52.910 --> 00:15:56.697
+<v Yosif Mihaylov>Yeah,
+on the Mercant demo playground topic,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/305-1
+00:15:56.697 --> 00:16:03.325
+<v Yosif Mihaylov>first great news because it's very
+critical for us to to get start with this</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/305-2
+00:16:03.325 --> 00:16:09.177
+<v Yosif Mihaylov>topic. And on the other hand,
+like do we have any progress with the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/305-3
+00:16:09.177 --> 00:16:12.190
+<v Yosif Mihaylov>business for itself around Mercant?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/310-0
+00:16:13.110 --> 00:16:18.371
+<v Yosif Mihaylov>Because obviously Cloud for work and
+Mercant have different set of APIs,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/310-1
+00:16:18.371 --> 00:16:23.920
+<v Yosif Mihaylov>we have some some endpoints. Sorry,
+we have some endpoints in Cloud for work</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/310-2
+00:16:23.920 --> 00:16:28.749
+<v Yosif Mihaylov>that are not existing for Mercant,
+for example the fetching of the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/310-3
+00:16:28.749 --> 00:16:29.830
+<v Yosif Mihaylov>organizational.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/313-0
+00:16:30.270 --> 00:16:33.754
+<v Yosif Mihaylov>Sites, etc.
+Also the sequence of how the different</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/313-1
+00:16:33.754 --> 00:16:38.945
+<v Yosif Mihaylov>endpoints will be called like we need
+this information about how exactly we</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/313-2
+00:16:38.945 --> 00:16:43.590
+<v Yosif Mihaylov>will be interacting with Mercant API,
+know which endpoints exactly.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/317-0
+00:16:45.390 --> 00:16:51.037
+<v Yosif Mihaylov>We are going to use and in which order so
+we can start playing with them and</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/317-1
+00:16:51.037 --> 00:16:55.950
+<v Yosif Mihaylov>investigating the payload and just start
+the whole implementation.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/317-2
+00:16:55.950 --> 00:16:59.910
+<v Yosif Mihaylov>So not sure who should be providing this
+information.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/321-0
+00:17:04.150 --> 00:17:09.324
+<v H&#252;tig, Marius>You said business flow.
+This sounds more like a technical thing</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/321-1
+00:17:09.324 --> 00:17:15.710
+<v H&#252;tig, Marius>to me. From a business perspective,
+it is completely identical to Cloud Vlock.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/325-0
+00:17:17.070 --> 00:17:20.590
+<v Ivailo Pashov>Yes,
+we're more referring to the technical</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/325-1
+00:17:20.590 --> 00:17:25.093
+<v Ivailo Pashov>perspective,
+how the APIs would be involved and what's</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/325-2
+00:17:25.093 --> 00:17:28.777
+<v Ivailo Pashov>the overall data model, let's say,
+etcetera.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/325-3
+00:17:28.777 --> 00:17:32.870
+<v Ivailo Pashov>Just some open questions on that and
+potentially.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/330-0
+00:17:31.150 --> 00:17:36.407
+<v H&#252;tig, Marius>Jem, sorry, Ivano, Jem,
+those questions are the ones you provided</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/327-0
+00:17:33.070 --> 00:17:34.310
+<v Ivailo Pashov>Um, yeah.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/330-1
+00:17:36.407 --> 00:17:40.470
+<v H&#252;tig, Marius>me that I just reminded Makan to answer
+us, right?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/328-0
+00:17:37.830 --> 00:17:38.030
+<v Martin Dittmann>No.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/331-0
+00:17:41.150 --> 00:17:43.790
+<v Cem Karaman>Exact these are the request.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/332-0
+00:17:42.350 --> 00:17:45.030
+<v H&#252;tig, Marius>So that's ongoing, yeah.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/340-0
+00:17:46.230 --> 00:17:50.432
+<v Cem Karaman>Yeah, I have created this with Yosif,
+Stanley and Ivo together.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/335-0
+00:17:46.350 --> 00:17:49.950
+<v H&#252;tig, Marius>We assume to get those answers back as
+soon as possible.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/334-0
+00:17:46.630 --> 00:17:46.990
+<v Ivailo Pashov>M.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/340-1
+00:17:50.432 --> 00:17:55.816
+<v Cem Karaman>So all the input I will again recheck if
+there is any missing part what we didn't</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/337-0
+00:17:51.950 --> 00:17:53.910
+<v H&#252;tig, Marius>Mm-hmm. Perfect.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/340-2
+00:17:55.816 --> 00:17:58.771
+<v Cem Karaman>ask.
+So I will directly inform you about it,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/341-0
+00:17:58.670 --> 00:18:01.983
+<v H&#252;tig, Marius>Yeah.
+But then those questions are raised and I</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/340-3
+00:17:58.771 --> 00:18:00.150
+<v Cem Karaman>but these are mostly.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/341-1
+00:18:01.983 --> 00:18:05.710
+<v H&#252;tig, Marius>just sent out a reminder like 50 minutes
+ago to them.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/342-0
+00:18:06.630 --> 00:18:06.750
+<v Cem Karaman>Yes.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/348-0
+00:18:08.670 --> 00:18:11.867
+<v Martin Dittmann>Jim,
+one question from my side would be from a</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/344-0
+00:18:09.790 --> 00:18:10.030
+<v Cem Karaman>Bridge.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/348-1
+00:18:11.867 --> 00:18:16.696
+<v Martin Dittmann>more project management organizational
+standpoint. Do we have a clear,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/348-2
+00:18:16.696 --> 00:18:22.069
+<v Martin Dittmann>let's say timeline that we can also maybe
+next time show to Marius what is our</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/348-3
+00:18:22.069 --> 00:18:24.790
+<v Martin Dittmann>implementation work? When can we expect?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/352-0
+00:18:25.070 --> 00:18:30.735
+<v Martin Dittmann>What delivery? Which delivery?
+Do we have it already or is that in</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/349-0
+00:18:26.710 --> 00:18:27.670
+<v Cem Karaman>Exit.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/351-0
+00:18:28.910 --> 00:18:29.830
+<v Cem Karaman>This was us.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/352-1
+00:18:30.735 --> 00:18:31.750
+<v Martin Dittmann>preparation?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/359-0
+00:18:32.070 --> 00:18:35.856
+<v Cem Karaman>It is in preparation.
+It was the feature and the backlog what I</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/359-1
+00:18:35.856 --> 00:18:39.702
+<v Cem Karaman>showed just in the start.
+We are creating right now our backlog.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/359-2
+00:18:39.702 --> 00:18:43.015
+<v Cem Karaman>We are doing the restructuring and then
+the refinement.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/359-3
+00:18:43.015 --> 00:18:47.629
+<v Cem Karaman>Christian also needs like Marius also
+needs the times for when we will do the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/359-4
+00:18:47.629 --> 00:18:51.830
+<v Cem Karaman>implementation. We are now on it.
+This week we will do our estimation.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/363-0
+00:18:53.270 --> 00:18:58.641
+<v Cem Karaman>And hopefully until Thursday,
+I'm trying to get all like the important</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/363-1
+00:18:58.641 --> 00:19:04.466
+<v Cem Karaman>first step estimation so that we know
+what we will do in the upcoming weeks.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/363-2
+00:19:04.466 --> 00:19:10.215
+<v Cem Karaman>And of course we are on it and as soon as
+we have all estimations under our</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/363-3
+00:19:10.215 --> 00:19:11.350
+<v Cem Karaman>technical PPIs.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/366-0
+00:19:11.710 --> 00:19:18.370
+<v Cem Karaman>I will be delivering this information to
+you and also Marius and to Christian that</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/366-1
+00:19:18.370 --> 00:19:24.388
+<v Cem Karaman>we have a timeline where we will like
+what we are reaching in the upcoming</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/366-2
+00:19:24.388 --> 00:19:24.870
+<v Cem Karaman>weeks.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/372-0
+00:19:25.710 --> 00:19:29.513
+<v Cem Karaman>It isn't planning.
+I will do my best to finalize this and</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/372-1
+00:19:29.513 --> 00:19:32.726
+<v Cem Karaman>this is also my priority to share this
+with you,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/372-2
+00:19:32.726 --> 00:19:36.070
+<v Cem Karaman>what we will do in the upcoming days in
+two weeks.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/370-0
+00:19:37.030 --> 00:19:37.190
+<v Martin Dittmann>OK.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/373-0
+00:19:37.390 --> 00:19:40.150
+<v Cem Karaman>And when we will go a plan to go live.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/378-0
+00:19:41.310 --> 00:19:44.713
+<v Cem Karaman>But as I mentioned,
+we still are waiting for Macant input.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/378-1
+00:19:44.713 --> 00:19:49.154
+<v Cem Karaman>We are now with Marius together to have a
+dev environment for cloud for log.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/378-2
+00:19:49.154 --> 00:19:52.615
+<v Cem Karaman>There he is also.
+He mentioned that today and there is like</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/378-3
+00:19:52.615 --> 00:19:57.229
+<v Cem Karaman>we had a conversation that we need to
+find a way how we can handle these depots</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/378-4
+00:19:57.229 --> 00:19:59.190
+<v Cem Karaman>because these are all real depots.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/382-0
+00:19:59.630 --> 00:20:04.223
+<v Cem Karaman>And we want a dev environment like how
+can we create it?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/382-1
+00:20:04.223 --> 00:20:08.253
+<v Cem Karaman>I'm not sure a GLM just for us or create
+a depot.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/382-2
+00:20:08.253 --> 00:20:13.975
+<v Cem Karaman>Is it possible to create a test depot
+with a test GLM to have this dev</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/382-3
+00:20:13.975 --> 00:20:16.070
+<v Cem Karaman>environment or how can we?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/386-0
+00:20:16.350 --> 00:20:19.888
+<v Cem Karaman>Use or how can we create the staff
+environment?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/386-1
+00:20:19.888 --> 00:20:23.573
+<v Cem Karaman>We already have created the technical PPI
+for it,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/386-2
+00:20:23.573 --> 00:20:29.543
+<v Cem Karaman>but I think we need to discuss how we can
+how we can create these GL entity pose</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/386-3
+00:20:29.543 --> 00:20:30.870
+<v Cem Karaman>for the test site.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/388-0
+00:20:31.390 --> 00:20:35.816
+<v Martin Dittmann>Maybe here Matthias is isn't there
+something in place that we can use from</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/388-1
+00:20:35.816 --> 00:20:38.590
+<v Martin Dittmann>the new dispo project like if it's just
+about?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/392-0
+00:20:39.550 --> 00:20:43.742
+<v Martin Dittmann>The GLN like a a a branch with demo data.
+I I I think that's existing right?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/392-1
+00:20:43.742 --> 00:20:46.790
+<v Martin Dittmann>Or is the cloud for log set up slightly
+different here?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/400-0
+00:20:47.230 --> 00:20:52.280
+<v Matthias Max>I mean,
+cloud for log always needs Digilist,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/394-0
+00:20:51.870 --> 00:20:52.790
+<v Martin Dittmann>Yeah, OK.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/400-1
+00:20:52.280 --> 00:20:57.443
+<v Matthias Max>right?
+It must line between TMS and Digilist.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/395-0
+00:20:53.990 --> 00:20:54.870
+<v Cem Karaman>No.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/397-0
+00:20:56.830 --> 00:20:57.110
+<v Martin Dittmann>Hmm.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/400-2
+00:20:57.443 --> 00:21:02.830
+<v Matthias Max>That's the challenge,
+but of course it's solid.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/405-0
+00:21:01.550 --> 00:21:05.995
+<v Cem Karaman>But exact. Yeah,
+this was also my plan to discuss with</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/399-0
+00:21:02.150 --> 00:21:02.310
+<v H&#252;tig, Marius>No.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/405-1
+00:21:05.995 --> 00:21:10.925
+<v Cem Karaman>Matthias and Ivailo.
+How can we figure out is it possible to</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/405-2
+00:21:10.925 --> 00:21:16.905
+<v Cem Karaman>create these like dummy depots?
+GLN is like it's not a question right now</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/405-3
+00:21:16.905 --> 00:21:21.350
+<v Cem Karaman>in the call,
+but this is also my plan to have it with.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/406-0
+00:21:21.390 --> 00:21:27.230
+<v Cem Karaman>Together and with Matthias and Hilo if
+there is any formations.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/410-0
+00:21:25.790 --> 00:21:29.108
+<v Martin Dittmann>I mean, could we,
+could we not just like mock the diggilis</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/410-1
+00:21:29.108 --> 00:21:32.089
+<v Martin Dittmann>part? I mean,
+it's about getting the delivery notes,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/408-0
+00:21:30.030 --> 00:21:30.550
+<v Matthias Max>Mhm.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/410-2
+00:21:32.089 --> 00:21:33.270
+<v Martin Dittmann>right? The documents.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/411-0
+00:21:35.030 --> 00:21:35.990
+<v Matthias Max>Correct.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/413-0
+00:21:38.030 --> 00:21:38.150
+<v Matthias Max>Um.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/414-0
+00:21:38.350 --> 00:21:41.630
+<v Martin Dittmann>So, OK, but but let's, yeah,
+let's discuss that then.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/421-0
+00:21:40.590 --> 00:21:44.622
+<v H&#252;tig, Marius>Martin,
+maybe maybe from my side the difficulties</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/421-1
+00:21:44.622 --> 00:21:48.574
+<v H&#252;tig, Marius>are currently that we want a real test
+scenario,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/421-2
+00:21:48.574 --> 00:21:54.946
+<v H&#252;tig, Marius>but this always includes a consignee GLN
+and if I and we need the data in TMS,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/418-0
+00:21:52.590 --> 00:21:53.830
+<v Martin Dittmann>Yeah, OK.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/421-3
+00:21:54.946 --> 00:22:00.430
+<v H&#252;tig, Marius>we could mock that in TMS for sure.
+The diglas problem would still.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/426-0
+00:22:00.510 --> 00:22:05.225
+<v H&#252;tig, Marius>Still be there,
+but for me the problem is which GLNS are</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/426-1
+00:22:05.225 --> 00:22:09.277
+<v H&#252;tig, Marius>we using?
+Because if we select a real consignee,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/426-2
+00:22:09.277 --> 00:22:13.661
+<v H&#252;tig, Marius>GLN, ID, Idica,
+whatever and just put it in our test</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/426-3
+00:22:13.661 --> 00:22:20.030
+<v H&#252;tig, Marius>consignee for example as the GLN,
+then everyone else in the supply chain of.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/429-0
+00:22:20.110 --> 00:22:25.832
+<v H&#252;tig, Marius>ADCA ID whatever that though if they are
+currently using the test system they</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/429-1
+00:22:25.832 --> 00:22:31.775
+<v H&#252;tig, Marius>would see the GLN twice then for our test
+consignee and for the real in the test</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/429-2
+00:22:31.775 --> 00:22:35.150
+<v H&#252;tig, Marius>environment real ID suite branch for
+example.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/434-0
+00:22:36.390 --> 00:22:42.809
+<v H&#252;tig, Marius>So I need to find a branch from a real
+consignee that is currently not in the</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/434-1
+00:22:42.809 --> 00:22:48.652
+<v H&#252;tig, Marius>test environment that I can use in their
+name for our for our testing.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/434-2
+00:22:48.652 --> 00:22:50.710
+<v H&#252;tig, Marius>That's the way I want it.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/433-0
+00:22:49.510 --> 00:22:49.670
+<v Martin Dittmann>OK.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/438-0
+00:22:50.990 --> 00:22:56.796
+<v H&#252;tig, Marius>To do it now and I'm talking to to Ali in
+the afternoon today because they are not</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/438-1
+00:22:56.796 --> 00:23:01.972
+<v H&#252;tig, Marius>using the test system as much as we do
+and do not implement all branches.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/438-2
+00:23:01.972 --> 00:23:05.470
+<v H&#252;tig, Marius>So there are a few real consignees from
+our side.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/443-0
+00:23:06.430 --> 00:23:09.989
+<v H&#252;tig, Marius>Yeah,
+maybe that we can use their GLN for our</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/443-1
+00:23:09.989 --> 00:23:14.167
+<v H&#252;tig, Marius>test consignee.
+Then you could use real TMS data with</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/443-2
+00:23:14.167 --> 00:23:19.351
+<v H&#252;tig, Marius>Digilus and upload it to the real GLN in
+cloud log test. But yeah,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/443-3
+00:23:19.351 --> 00:23:21.750
+<v H&#252;tig, Marius>I need to find out the perfect.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/441-0
+00:23:19.430 --> 00:23:19.910
+<v Matthias Max>Mhm.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/446-0
+00:23:22.590 --> 00:23:27.083
+<v H&#252;tig, Marius>ID branch for that.
+That's why I talked to the consignee and</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/446-1
+00:23:27.083 --> 00:23:32.975
+<v H&#252;tig, Marius>they need to allow us to do that because
+they are paying for the GLNS by the GS</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/446-2
+00:23:32.975 --> 00:23:33.270
+<v H&#252;tig, Marius>one.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/450-0
+00:23:35.230 --> 00:23:39.361
+<v H&#252;tig, Marius>So not that easy,
+but hopefully I have three to four</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/450-1
+00:23:39.361 --> 00:23:44.427
+<v H&#252;tig, Marius>branches in mind from ID that I want to
+use. If they allow this,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/450-2
+00:23:44.427 --> 00:23:45.830
+<v H&#252;tig, Marius>we could use them.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/451-0
+00:23:48.950 --> 00:23:49.110
+<v Martin Dittmann>Right.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/452-0
+00:23:48.990 --> 00:23:49.430
+<v Cem Karaman>Great.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/453-0
+00:23:53.110 --> 00:23:54.510
+<v Cem Karaman>So this is awesome.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/454-0
+00:23:53.110 --> 00:23:58.334
+<v Martin Dittmann>Overall, I mean Jim, just to to confirm,
+we have the code refactoring that we also</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/454-1
+00:23:58.334 --> 00:24:01.984
+<v Martin Dittmann>want to start.
+Even though Mac Hunt has some open topics,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/454-2
+00:24:01.984 --> 00:24:06.390
+<v Martin Dittmann>we are not blocked, right?
+We can progress, we can work on our stuff.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/456-0
+00:24:08.590 --> 00:24:12.025
+<v Cem Karaman>Exactly.
+We are already working on the extraction</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/456-1
+00:24:12.025 --> 00:24:14.911
+<v Cem Karaman>logic.
+We are having like we are close to</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/456-2
+00:24:14.911 --> 00:24:20.269
+<v Cem Karaman>finished the change request for we have.
+So we have still work and we are not</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/456-3
+00:24:20.269 --> 00:24:23.704
+<v Cem Karaman>stopping.
+So we we are just waiting to start with</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/455-0
+00:24:21.550 --> 00:24:21.830
+<v Martin Dittmann>Good.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/456-4
+00:24:23.704 --> 00:24:26.590
+<v Cem Karaman>the Macan site. So on Macan site there is.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/457-0
+00:24:26.670 --> 00:24:31.816
+<v Cem Karaman>Like a technical flow,
+what we need and also the patients,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/457-1
+00:24:31.816 --> 00:24:33.910
+<v Cem Karaman>but we still have to do.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/458-0
+00:24:35.510 --> 00:24:35.830
+<v Martin Dittmann>OK.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/459-0
+00:24:36.190 --> 00:24:39.405
+<v Cem Karaman>And my now my priority is now for the
+architecture side.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/459-1
+00:24:39.405 --> 00:24:43.634
+<v Cem Karaman>Ivo and Matthias are confident with it.
+Just to share that with Christian,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/459-2
+00:24:43.634 --> 00:24:47.695
+<v Cem Karaman>that Christian says, OK guys,
+this is the architecture what we need and</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/459-3
+00:24:47.695 --> 00:24:52.320
+<v Cem Karaman>you can just work on that because working
+on the architecture and then getting an</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/459-4
+00:24:52.320 --> 00:24:54.350
+<v Cem Karaman>update from Christian would be just.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/460-0
+00:24:54.510 --> 00:24:57.210
+<v Cem Karaman>Bringing us to the same point where we
+were.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/460-1
+00:24:57.210 --> 00:25:00.150
+<v Cem Karaman>Maybe it is good that Ivo Matthias can
+directly.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/461-0
+00:25:01.230 --> 00:25:01.670
+<v Martin Dittmann>Yeah.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/463-0
+00:25:01.830 --> 00:25:03.230
+<v Matthias Max>Yeah, we'll.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/462-0
+00:25:01.870 --> 00:25:03.230
+<v Cem Karaman>Get this approval.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/464-0
+00:25:04.190 --> 00:25:04.310
+<v Martin Dittmann>OK.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/465-0
+00:25:07.190 --> 00:25:07.350
+<v Cem Karaman>Great.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/466-0
+00:25:09.590 --> 00:25:12.630
+<v Cem Karaman>Any other open questions, open topics?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/469-0
+00:25:20.750 --> 00:25:28.070
+<v H&#252;tig, Marius>Only one gem. Maybe the meeting next week.
+Could we do Thursday instead of Friday?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/468-0
+00:25:20.830 --> 00:25:21.030
+<v H&#252;tig, Marius>Fine.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/470-0
+00:25:28.350 --> 00:25:31.726
+<v Cem Karaman>Thursday, of course. OK,
+you are on Friday, not there.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/470-1
+00:25:31.726 --> 00:25:36.390
+<v Cem Karaman>You already mentioned that and and for
+next week I will put it on Thursday.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/472-0
+00:25:37.710 --> 00:25:40.150
+<v Cem Karaman>At the same time, is it OK for you?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/471-0
+00:25:39.030 --> 00:25:39.310
+<v H&#252;tig, Marius>Perfect.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/473-0
+00:25:39.990 --> 00:25:43.550
+<v H&#252;tig, Marius>Could we do between 8:00 and 11:00 AM?</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/474-0
+00:25:44.950 --> 00:25:47.230
+<v Cem Karaman>8:00 and 11:00 AM, of course.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/475-0
+00:25:49.390 --> 00:25:51.670
+<v Cem Karaman>Eight will be 11K.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/477-0
+00:25:52.110 --> 00:25:57.431
+<v H&#252;tig, Marius>We do not need to do it this early.
+I I just want to give you a a bigger time</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/477-1
+00:25:57.431 --> 00:25:59.750
+<v H&#252;tig, Marius>frame because of three hours free.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/476-0
+00:25:57.670 --> 00:25:59.350
+<v Cem Karaman>It's totally fine for me.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/478-0
+00:26:00.510 --> 00:26:02.950
+<v Cem Karaman>Of course I I'm then putting it on 10:00
+on.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/480-0
+00:26:06.310 --> 00:26:13.542
+<v Cem Karaman>Because Bulgarian time is also different
+and it will be on the 26th, 26th March,</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/479-0
+00:26:08.870 --> 00:26:10.630
+<v H&#252;tig, Marius>Yeah.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/480-1
+00:26:13.542 --> 00:26:16.310
+<v Cem Karaman>we will have the call at 10:30.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/481-0
+00:26:17.710 --> 00:26:21.710
+<v Cem Karaman>I'm sending you right now invitation.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/482-0
+00:26:20.910 --> 00:26:21.750
+<v H&#252;tig, Marius>Perfect. Thanks.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/483-0
+00:26:23.150 --> 00:26:28.257
+<v Cem Karaman>Always welcome. If there is anything,
+feel free to reach out from your side.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/483-1
+00:26:28.257 --> 00:26:32.701
+<v Cem Karaman>If I have any information,
+I will reach out to you. Also the team.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/483-2
+00:26:32.701 --> 00:26:36.150
+<v Cem Karaman>If you have anything,
+feel free to reach out to me.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/484-0
+00:26:38.150 --> 00:26:39.790
+<v Martin Dittmann>All right. Thank you guys.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/485-0
+00:26:39.150 --> 00:26:40.150
+<v Matthias Max>All good. Thanks.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/486-0
+00:26:40.350 --> 00:26:40.870
+<v Martin Dittmann>Mhm.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/491-0
+00:26:40.550 --> 00:26:43.510
+<v Cem Karaman>Thank you everyone for taking time.
+Have a nice day.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/489-0
+00:26:41.510 --> 00:26:42.470
+<v Martin Dittmann>Talk to you. Bye.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/490-0
+00:26:42.910 --> 00:26:43.110
+<v H&#252;tig, Marius>Thanks.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/493-0
+00:26:43.910 --> 00:26:44.550
+<v Yosif Mihaylov>Thanks man.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/498-0
+00:26:44.830 --> 00:26:45.510
+<v Cem Karaman>See you. Bye.</v>
+
+f4e22ef8-4dcf-4eeb-ad41-efb067c5cc9f/496-0
+00:26:45.590 --> 00:26:45.950
+<v Ivailo Pashov>Thank you. Bye.</v>
