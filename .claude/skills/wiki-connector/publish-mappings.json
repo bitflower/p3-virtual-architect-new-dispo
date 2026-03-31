@@ -203,6 +203,38 @@
         },
         "notes": "Living project document - sync from exploration folder to wiki, remove internal exploration links for stakeholder visibility"
       }
+    },
+    {
+      "id": "versioning-strategy-main",
+      "source": "02_Explorations/2026-02-25_versioning-branching-marko/holistic-deployment-strategy.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Versioning-Strategy.md",
+      "description": "Holistic Deployment Strategy - Main page (Concept by Marko Mijailović)",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Versioning strategy from Marko consultation - rewrite internal links to wiki paths"
+      }
+    },
+    {
+      "id": "versioning-strategy-best-practices",
+      "source": "02_Explorations/2026-02-25_versioning-branching-marko/best-practices-extracted.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Versioning-Strategy/Best-Practices.md",
+      "description": "Versioning Best Practices - Child page (Concept by Marko Mijailović)",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Best practices extracted from Marko consultation"
+      }
     }
   ]
 }
