@@ -1,7 +1,9 @@
 # Transactional State Verification - CreateTransportOrderFromLeg
 
 **Date:** 2026-04-08
+<!-- internal -->
 **Status:** Exploration
+<!-- /internal -->
 
 ---
 
