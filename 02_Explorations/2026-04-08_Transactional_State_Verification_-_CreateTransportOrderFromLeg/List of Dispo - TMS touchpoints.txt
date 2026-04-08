@@ -1,0 +1,96 @@
+CreateTransportOrderFromLegCommandHandler:
+	* CreateTransportOrderFromLegSubHandler - responsible for executing the TMS bridge CallCreateTransportOrderFromLeg GraphQL request
+
+DISPO DB: Creates LotAssignmentEntity and LotAssignmentLegLinkEntity
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CreateTransportOrderFromLotCommandHandler
+	* CreateTransportOrderFromLotSubHandler - responsible for executing the TMS bridge callCreateTransportOrderFromLeg and callCreateAndAddLeg GraphQL requests
+	* The SubHandler is calling callCreateTransportOrderFromLeg for the first leg and then callCreateAndAddLeg for the remaining legs	
+
+DISPO DB: Creates LotAssignmentEntity and LotAssignmentLegLinkEntity
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AssignLegToTransportOrderCommandHandler
+	* AssignLegToTransportOrderSubHandler - responsible for executing the TMS bridge GraphQL CallCreateAndAddLeg request
+	* AssignLegAndMoveTourPointsSubHandler - responsible for executing the TMS bridge GraphQL CallCreateAndAddLeg and CallMoveTourPoint requests through the Batch API
+
+DISPO DB: Creates / Updates LotAssignmentEntity and LotAssignmentLegLinkEntity
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+AssignLotToTransportOrderCommandHandler
+	* AssignLotToTransportOrderSubHandler - responsible for executing the TMS bridge CallCreateAndAddLeg GraphQL request for n-number of legs thorugh the Batch API
+	* AssignLotAndMoveTourPointsSubHandler - responsible for executing the TMS bridge CallCreateAndAddLeg and CallMoveTourPoint GraphQL requests for n-number of legs thorugh the Batch API
+
+DISPO DB: Creates LotAssignmentEntity and LotAssignmentLegLinkEntity
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UnassignLotsSubHandler
+	* RemoveTmsLotsSubHandler - responsible for executing the TMS bridge CallRemoveLeg GraphQL request for n-number of legs thorugh the Batch API
+
+DISPO DB: Removes LotAssignmentEntity
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UnassignLegsSubHandler
+	* RemoveTmsLegsSubHandler - responsible for executing the TMS bridge CallRemoveLeg GraphQL request for n-number of legs
+
+DISPO DB: Removes LotAssignmentLegLinkEntity
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DeleteTransportOrderCommandHandler
+	* DeleteTransportOrderSubHandler - responsible for executing the TMS bridge CallDeleteTransportOrder GraphQL request
+
+DISPO DB: 
+1. Moves the leg to a suitable lot (potentially changes the leglotlink table)
+2. Removes LotAssignmentEntity and LotAssignmentLegLinkEntity
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MUTATIONS:
+	* CallCreateTransportOrderFromLeg mutation:
+		Input: 
+			company
+			branch
+			performanceDate
+			transportMode
+			regionId  
+			shipmentId
+			legType
+	
+		Output:
+			TransportOrderId 
+			LegId 
+			PickupPointId 
+			IsNewPickupPoint 
+			DeliveryPointId
+			IsNewDeliveryPoint
+			
+	* CallCreateAndAddLeg mutation:
+		Input:
+			transportOrderId
+               shipmentId
+               legType
+		Output:
+			PickupPointId
+			IsNewPickupPoint
+			DeliveryPointId
+			IsNewDeliveryPoint
+			LegId 
+			
+	* CallMoveTourPoint mutation:
+		Input:
+			mode
+			relationType
+			destinationTourpointId
+			sourceTourpointId
+			sourceTransportOrderTix
+		Output:
+			isTourpointMoved
+	
+	* CallRemoveLeg mutation:
+		Input:
+			transportOrderId
+			legId
+			mode
+		Output:
+			isLegRemoved
+	
+	* CallDeleteTransportOrder mutation:
+		Input:
+			transportOrderId
+			Output:
+			isDeleted
+			transportOrderId

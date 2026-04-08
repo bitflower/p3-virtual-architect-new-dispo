@@ -124,6 +124,31 @@ When `attachmentHandling.enabled: true` in syncStrategy:
 - **Skip** if file already exists in `.attachments/` (unless `forceUpdate: true`)
 - **Supported formats**: .svg, .png, .jpg, .jpeg, .gif, .pdf
 
+### Content Exclusion (Internal-Only Sections)
+Support for marking sections as "internal only" that should be stripped when publishing to wiki:
+
+**Marker Syntax:**
+```markdown
+<!-- internal -->
+## Original User Input
+> This is internal working context that stakeholders don't need to see...
+<!-- /internal -->
+```
+
+**Behavior:**
+- Everything between `<!-- internal -->` and `<!-- /internal -->` markers is **removed** from wiki output
+- Markers must be on their own lines
+- Can wrap entire sections (headers + content) or just specific paragraphs
+- Nested markers are not supported (keep it simple)
+- Source file is never modified - exclusion only applies to wiki target
+
+**Use Cases:**
+- Raw user input / original German text that was translated
+- Internal discussion notes
+- Working hypotheses not yet validated
+- Links to internal exploration files
+- Debug information or trace analysis
+
 ### Conflict Detection
 - Track last sync timestamp (could use git-like approach with hash)
 - Warn if target file has been modified since last sync

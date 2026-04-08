@@ -235,6 +235,64 @@
         },
         "notes": "Best practices extracted from Marko consultation"
       }
+    },
+    {
+      "id": "flow-createtransportorderfromleg",
+      "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/01-CreateTransportOrderFromLeg.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/01-CreateTransportOrderFromLeg.md",
+      "description": "Transactional State Verification for CreateTransportOrderFromLeg - Flow documentation",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Flow documentation for CreateTransportOrderFromLeg function analysis - part of Transport Order Creation project"
+      }
+    },
+    {
+      "id": "transactional-state-verification-flows",
+      "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/PROJECT-STATUS.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows.md",
+      "description": "Transactional State Verification - All Flows Overview and Progress Tracker",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "template": "wiki",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Living project document - tracks progress of transactional state verification analysis for all Dispo-TMS flows"
+      }
+    },
+    {
+      "id": "flow-createtransportorderfromlot",
+      "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/02-CreateTransportOrderFromLot.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/02-CreateTransportOrderFromLot.md",
+      "description": "Transactional State Verification for CreateTransportOrderFromLot - Flow documentation",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Flow documentation for CreateTransportOrderFromLot function analysis - part of Transport Order Creation project"
+      }
     }
   ]
 }

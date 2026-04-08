@@ -1,9 +1,7 @@
 # Transactional State Verification - CreateTransportOrderFromLeg
 
-**Date:** 2026-04-08
-<!-- internal -->
-**Status:** Exploration
-<!-- /internal -->
+**Date:** 2026-04-08  
+**Status:** Pending Approval
 
 ---
 
@@ -52,14 +50,14 @@ CreateTransportOrderFromLeg(Company, Branch, PerformanceDate, TransportMode, Reg
             |
             +-> [LegType = 'HL' (LongHaul)] pTA.AddSen()
             |       -> Writes: Sen_Zuord         -> resolved via: V_TA_Sen7, V_DIS_Leg
-            |       -> Writes: Res_Hst           -> resolved via: V_DIS_TO_Tourpoint
+            |       -> Creates/Reuses: Res_Hst   -> resolved via: V_DIS_TO_Tourpoint
             |       -> Writes: TA_Sen_Lst_B      -> resolved via: (loading list views)
             |       -> LegId = ShipmentId (for LongHaul legs)
             |
             +-> [LegType = 'VL' (PreCarriage)] pTA_VL.AddLeg()
                     -> May create new Leg via pDIS_Shipment.CreateLeg()
                     -> Writes: Sen_Zuord         -> resolved via: V_TA_Sen7, V_DIS_Leg
-                    -> Writes: Res_Hst           -> resolved via: V_DIS_TO_Tourpoint
+                    -> Creates/Reuses: Res_Hst   -> resolved via: V_DIS_TO_Tourpoint
 ```
 
 ### Function Signature
@@ -197,37 +195,37 @@ ELSE
 
 ---
 
-## Open Questions (for Business)
+## Answered Questions (from Joachim, 2026-04-08)
 
 ### Q1: Business Invariant - Leg Assignment Cardinality
-**Question:** Can a Shipment+LegType combination be assigned to multiple Transport Orders (e.g., different PerformanceDates)?
+**Question:** Can a Shipment+LegType combination be assigned to multiple Transport Orders?
 
-**Hypothesis:** Based on `limit 1` in V_DIS_Leg, it appears to be a 1:1 relationship - a leg can only be on ONE Transport Order at a time.
+**Answer:** Yes, a leg of a shipment can be assigned to multiple Transport Orders. This enables splitting a large shipment across multiple TOs. These are technically separate legs. However, 2 legs of the same shipment cannot be assigned to the same TO. The interface assigns "free" legs indirectly via ShipmentId + LegType, not by LegId.
 
-**Action:** Verify with business stakeholders.
+**Implication for verification:** The `limit 1` in V_DIS_Leg should be sufficient - we only need to know if ANY TO exists for this leg. (Pending final approval)
 
-### Q2: Verification Depth
-**Question:** Should the agent check only "operation completed" state, or also intermediate states for partial failure recovery?
+### Q2: Verification Depth - Intermediate States
+**Question:** Should we check intermediate states for partial failure recovery?
 
-**Options:**
-- A) Only final state (TransportOrderId + LegId both exist)
-- B) Intermediate states (TO created but leg not yet assigned)
+**Answer:** No intermediate states exist. Transaction control (COMMIT/ROLLBACK) is handled in NewDispo, not in the TMS kernel. It's all-or-nothing. Only exception: the kernel throws an exception if the action is not possible in the current business object state.
 
-### Q3: Scope of Agent
-**Question:** Start with `pDIS_TransportOrder` functions only, or include other packages?
+**Implication:** Only need to check final state (TransportOrderId exists or not).
 
-**Candidates:**
-- `pDIS_Shipment` (Shipment operations)
-- `pDIS_TourPoint` (Tour point operations)
-- `pDIS_Tour` (Tour operations)
+### Q3: Applicable Packages
+**Question:** Which packages can be used for verification?
 
-### Q4: Conflict Handling Strategy
-**Question:** When a retry detects "leg already assigned to TO with DIFFERENT parameters" - what should happen?
+**Answer:** Any wrapper package or view with "DIS" in the name.
 
-**Options:**
-- A) FAIL with error (strict idempotency)
-- B) Return existing TO anyway (loose idempotency)
-- C) Depends on specific parameter differences
+**Scope:** `pDIS_*` packages and `V_DIS_*` views.
+
+### Q4: Idempotency Behavior
+**Question:** Is CreateTransportOrderFromLeg idempotent?
+
+**Answer:** 
+- `CreateTransportOrderFromLeg` is **NOT idempotent** - will create a new TO each time with the same parameters
+- `AddLeg` is **effectively idempotent** due to business rule: only 1 leg per shipment can be assigned to a TO (regardless of leg type)
+
+**Implication:** NewDispo MUST check state before calling `CreateTransportOrderFromLeg` to prevent duplicate TOs.
 
 ---
 
@@ -326,9 +324,38 @@ RETURN f, called, t, v
 
 ## Next Steps
 
-1. [ ] Verify business invariant (Q1) with stakeholders
-2. [ ] Decide on verification depth (Q2)
-3. [ ] Define agent scope (Q3)
-4. [ ] Define conflict handling strategy (Q4)
-5. [ ] Prototype agent with Neo4j router + Claude Code reader
+1. [x] ~~Verify business invariant (Q1) with stakeholders~~ - Answered by Joachim
+2. [x] ~~Decide on verification depth (Q2)~~ - No intermediate states, check final only
+3. [x] ~~Define applicable packages (Q3)~~ - All pDIS_* packages
+4. [x] ~~Define idempotency behavior (Q4)~~ - Must pre-check, function is not idempotent
+5. [ ] Implement verification check in NewDispo before calling CreateTransportOrderFromLeg
 6. [ ] Test with CreateTransportOrderFromLeg as first case
+
+---
+
+<!-- internal -->
+## Session Context (2026-04-08)
+
+### Pending Decisions (Non-Neo4j)
+
+All open questions (Q1-Q4) require business/architecture input, not Neo4j:
+- **Q1** needs business stakeholder confirmation on leg assignment cardinality
+- **Q2-Q4** are design decisions for the resilience pattern
+
+### Neo4j Integration (Deferred)
+
+Future optimization - current agent works without it via native code browsing.
+
+Questions for later:
+- What entities/relationships does the existing Neo4j AST capture?
+- Does it have CALLS, WRITES, READS relationships?
+- Does it link views to underlying tables?
+
+### Agent Status
+
+**Ready for use** in current state with native code browsing. Can analyze:
+- Entry point: DIS-wrapper function name
+- Output: State changes, verification queries, table-to-view mappings
+
+**6 additional flows to analyze** - agent can be applied to each.
+<!-- /internal -->
