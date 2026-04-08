@@ -51,13 +51,15 @@ CreateTransportOrderFromLeg(Company, Branch, PerformanceDate, TransportMode, Reg
     +-> CreateAndAddLeg() -> AddLeg()
             |
             +-> [LegType = 'HL' (LongHaul)] pTA.AddSen()
-            |       -> Creates: Assignment in V_TA_Sen7
-            |       -> Creates: TourPoints in Res_Hst (Pickup + Delivery)
+            |       -> Writes: Sen_Zuord         -> resolved via: V_TA_Sen7, V_DIS_Leg
+            |       -> Writes: Res_Hst           -> resolved via: V_DIS_TO_Tourpoint
+            |       -> Writes: TA_Sen_Lst_B      -> resolved via: (loading list views)
             |       -> LegId = ShipmentId (for LongHaul legs)
             |
             +-> [LegType = 'VL' (PreCarriage)] pTA_VL.AddLeg()
                     -> May create new Leg via pDIS_Shipment.CreateLeg()
-                    -> Creates: TourPoints
+                    -> Writes: Sen_Zuord         -> resolved via: V_TA_Sen7, V_DIS_Leg
+                    -> Writes: Res_Hst           -> resolved via: V_DIS_TO_Tourpoint
 ```
 
 ### Function Signature
