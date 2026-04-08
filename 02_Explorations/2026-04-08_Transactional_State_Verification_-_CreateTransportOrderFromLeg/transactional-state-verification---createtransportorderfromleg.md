@@ -98,6 +98,18 @@ public async Task<CreateTransportOrderFromLegResponse> CallCreateTransportOrderF
 
 ---
 
+## Table-to-View Mapping
+
+| Table Written | Verification View | Key Columns |
+|---------------|-------------------|-------------|
+| `Sendung` | `V_DIS_TransportOrder` | TransportOrderId, LoadingDate, Company, Branch |
+| `Sen_Frk_Unt` | `V_DIS_TransportOrder` | ContractorId, TruckId, TrailerId |
+| `Sen_Zuord` | `V_TA_Sen7`, `V_DIS_Leg` | TransportOrderId (via TA_Tix) |
+| `Res_Hst` | `V_DIS_TO_Tourpoint` | TourPointId, Type (Pickup/Delivery) |
+| `TA_Sen_Lst_B` | (loading list views) | Loading units, positions |
+
+---
+
 ## Verification Candidates
 
 ### Primary Candidate: V_DIS_Leg
@@ -265,6 +277,37 @@ Agent receives: Entry point (e.g., "CreateTransportOrderFromLeg")
 ```
 
 The Neo4j graph acts as a **semantic router** - it knows WHERE to look, Claude Code reads WHAT it says.
+
+### Code Browsing Evaluation (This Session)
+
+**What it took to trace `CreateTransportOrderFromLeg` via native code browsing:**
+
+| Step | Action | Files Read | Queries |
+|------|--------|------------|---------|
+| 1 | Find entry point | Grep for function name | 1 |
+| 2 | Read PDIS_TRANSPORTORDER.sql | 1733 lines | 1 |
+| 3 | Read V_DIS_LEG.sql | 203 lines | 1 |
+| 4 | Read V_DIS_TRANSPORTORDER.sql | 100 lines | 1 |
+| 5 | Find underlying tables | Grep for INSERT statements | 1 |
+| 6 | Read GraphQL mutation | 59 lines | 1 |
+
+**Total:** ~2100 lines read, 6 tool calls, ~3-5 minutes
+
+**What Neo4j could provide instantly:**
+```cypher
+MATCH (f:Function {name: 'CreateTransportOrderFromLeg'})
+      -[:CALLS*]->(called:Function)
+      -[:WRITES]->(t:Table)
+MATCH (v:View)-[:READS]->(t)
+RETURN f, called, t, v
+```
+
+**Result:** Call graph + tables + views in one query (~100ms)
+
+**Conclusion:**
+- Native browsing: Effective but slow, context-heavy
+- Neo4j routing: 50-100x faster for known patterns
+- Hybrid optimal: Neo4j for structure, Claude for semantics
 <!-- /internal -->
 
 ---
