@@ -293,6 +293,101 @@
         },
         "notes": "Flow documentation for CreateTransportOrderFromLot function analysis - part of Transport Order Creation project"
       }
+    },
+    {
+      "id": "flow-assignlegtotransportorder",
+      "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/03-AssignLegToTransportOrder.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/03-AssignLegToTransportOrder.md",
+      "description": "Transactional State Verification for AssignLegToTransportOrder - Flow documentation",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Flow documentation for AssignLegToTransportOrder function analysis - part of Transport Order Creation project"
+      }
+    },
+    {
+      "id": "flow-assignlottotransportorder",
+      "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/04-AssignLotToTransportOrder.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/04-AssignLotToTransportOrder.md",
+      "description": "Transactional State Verification for AssignLotToTransportOrder - Flow documentation",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Flow documentation for AssignLotToTransportOrder function analysis - part of Transport Order Creation project"
+      }
+    },
+    {
+      "id": "flow-unassignlots",
+      "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/05-UnassignLots.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/05-UnassignLots.md",
+      "description": "Transactional State Verification for UnassignLots - Flow documentation",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Flow documentation for UnassignLots function analysis - part of Transport Order Creation project"
+      }
+    },
+    {
+      "id": "flow-unassignlegs",
+      "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/06-UnassignLegs.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/06-UnassignLegs.md",
+      "description": "Transactional State Verification for UnassignLegs - Flow documentation",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Flow documentation for UnassignLegs function analysis - part of Transport Order Creation project"
+      }
+    },
+    {
+      "id": "flow-deletetransportorder",
+      "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/07-DeleteTransportOrder.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/07-DeleteTransportOrder.md",
+      "description": "Transactional State Verification for DeleteTransportOrder - Flow documentation",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Flow documentation for DeleteTransportOrder function analysis - part of Transport Order Creation project"
+      }
     }
   ]
 }

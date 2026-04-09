@@ -1,7 +1,7 @@
 # Transactional State Verification - Project Status
 
 **Start Date:** 2026-04-08  
-**Last Updated:** 2026-04-08
+**Last Updated:** 2026-04-09
 
 ---
 
@@ -17,15 +17,15 @@ Systematic analysis of all Dispo-TMS touchpoints to identify state changes and g
 
 | # | Command Handler / Flow | Status | Analysis Document | Date Completed |
 |---|------------------------|--------|-------------------|----------------|
-| 1 | CreateTransportOrderFromLegCommandHandler | :hourglass: Pending Approval | [01-CreateTransportOrderFromLeg.md](./01-CreateTransportOrderFromLeg.md) | - |
-| 2 | CreateTransportOrderFromLotCommandHandler | :hourglass: Pending Approval | [02-CreateTransportOrderFromLot.md](./02-CreateTransportOrderFromLot.md) | - |
-| 3 | AssignLegToTransportOrderCommandHandler | :hourglass: Pending Analysis | - | - |
-| 4 | AssignLotToTransportOrderCommandHandler | :hourglass: Pending Analysis | - | - |
-| 5 | UnassignLotsSubHandler | :hourglass: Pending Analysis | - | - |
-| 6 | UnassignLegsSubHandler | :hourglass: Pending Analysis | - | - |
-| 7 | DeleteTransportOrderCommandHandler | :hourglass: Pending Analysis | - | - |
+| 1 | CreateTransportOrderFromLegCommandHandler | :hourglass: Pending Approval | [01-CreateTransportOrderFromLeg.md](./01-CreateTransportOrderFromLeg.md) | 2026-04-08 |
+| 2 | CreateTransportOrderFromLotCommandHandler | :hourglass: Pending Approval | [02-CreateTransportOrderFromLot.md](./02-CreateTransportOrderFromLot.md) | 2026-04-08 |
+| 3 | AssignLegToTransportOrderCommandHandler | :hourglass: Pending Approval | [03-AssignLegToTransportOrder.md](./03-AssignLegToTransportOrder.md) | 2026-04-09 |
+| 4 | AssignLotToTransportOrderCommandHandler | :hourglass: Pending Approval | [04-AssignLotToTransportOrder.md](./04-AssignLotToTransportOrder.md) | 2026-04-09 |
+| 5 | UnassignLotsSubHandler | :hourglass: Pending Approval | [05-UnassignLots.md](./05-UnassignLots.md) | 2026-04-09 |
+| 6 | UnassignLegsSubHandler | :hourglass: Pending Approval | [06-UnassignLegs.md](./06-UnassignLegs.md) | 2026-04-09 |
+| 7 | DeleteTransportOrderCommandHandler | :hourglass: Pending Approval | [07-DeleteTransportOrder.md](./07-DeleteTransportOrder.md) | 2026-04-09 |
 
-**Progress:** 2 / 7 flows analyzed (29%) - pending approval
+**Progress:** 7 / 7 flows analyzed (100%) - all pending approval
 
 ---
 
