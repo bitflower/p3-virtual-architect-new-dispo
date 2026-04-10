@@ -1,7 +1,7 @@
 # Transactional State Verification - DeleteTransportOrder
 
 **Date:** 2026-04-09  
-**Status:** Draft
+**Status:** Approved (Joachim, 2026-04-09)
 
 ---
 
