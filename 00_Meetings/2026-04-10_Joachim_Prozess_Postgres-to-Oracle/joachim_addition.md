@@ -1,0 +1,5 @@
+Hi Matthias, ich habe heute Morgen mit Bernd Friedewald und Thomas Paulus diskutiert, dass wir eine 10/60-Niederlassung für die ABN neu bereitstellen. Die kann auch mit Live-Daten aus dem Produktivsystem versorgt werden. In der ENT-Umgebung wird es wahrscheinlich keine neue Niederlassung geben. Ich teste aktuell in der ENT1.
+Der Entwicklungsprozess sieht unter ORA aktuell so aus:
+Die Entwickler entwickeln und testen in einer der ENT-Niederlassungen. Die Änderungen werden ins Azure Repo eingecheckt. Gleichzeitig wird im QS Tool eine Version mit einer Liste der geänderten DB-Objekte erstellt. Diese Version wird mit den Objekten aus dem Repo durch 2 Kommandozeilen-Aufrufe in alle anderen ENT-Niederlassungen und in alle ABN-Niederlassungen eingespielt.
+In den ABN-Niederlassungen, insb. in der neuen 10/60-Niederlassung, hast du und Max Zugriff auf die geänderte Funktionalität.
+Wenn ihr OK gebt, wird die Version in die Kunden-Abnahme (UAT) eingespielt. In der UAT-Niederlassung 10/60 testen anschließend Max B. und Patrick U..
