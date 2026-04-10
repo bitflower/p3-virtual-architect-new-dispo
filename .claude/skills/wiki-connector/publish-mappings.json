@@ -388,6 +388,45 @@
         },
         "notes": "Flow documentation for DeleteTransportOrder function analysis - part of Transport Order Creation project"
       }
+    },
+    {
+      "id": "project-oracle-testing",
+      "source": "02_Explorations/2026-04-10_Oracle_DEV_ABN_UAT_Instances_for_Branch_1060/PROJECT-STATUS.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Oracle-Testing.md",
+      "description": "Oracle Testing - Establishing Oracle DEV/ABN/UAT environments for branch 1060",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "template": "wiki",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Living project document - sync from exploration folder to wiki, remove internal exploration links for stakeholder visibility"
+      }
+    },
+    {
+      "id": "oracle-testing-step1-assessment",
+      "source": "02_Explorations/2026-04-10_Oracle_DEV_ABN_UAT_Instances_for_Branch_1060/oracle-dev-abn-uat-instances-for-branch-1060.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Oracle-Testing/Step-1-Environment-Gap-Assessment.md",
+      "description": "Oracle Testing Step 1: Environment gap assessment and proposal for Oracle DEV/ABN/UAT instances",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Step 1 sub-page of Oracle Testing project - assessment and PO proposal"
+      }
     }
   ]
 }
