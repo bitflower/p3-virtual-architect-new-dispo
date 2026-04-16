@@ -1,0 +1,2732 @@
+[
+  {
+    "insertId": "ea8a67cc-3071-426b-9f51-e4abe7cc80df",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_30/thread_1_seq_4094.2877.1229258541 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-03-30T10:43:38.221423Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-30T10:43:38.644204870Z"
+  },
+  {
+    "insertId": "fbb69978-8757-4204-b1f6-a801f08b4177",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_30/thread_1_seq_4095.6158.1229266633 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-03-30T12:58:41.130409Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-30T12:58:42.172637472Z"
+  },
+  {
+    "insertId": "9639def0-62eb-44c6-b0f5-6f6a4e3c0806",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_30/thread_1_seq_4096.1587.1229274015 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-03-30T15:01:41.204885Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-30T15:01:42.265386916Z"
+  },
+  {
+    "insertId": "9de8b62d-3a9b-433c-89f3-04600c93de56",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_30/thread_1_seq_4097.981.1229283117 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-03-30T17:33:00.486179Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-30T17:33:01.423634319Z"
+  },
+  {
+    "insertId": "4d99afc4-cb64-40dc-9aa4-400d4047333a",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_30/thread_1_seq_4098.2903.1229292073 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-03-30T20:01:59.918032Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-30T20:02:00.597891039Z"
+  },
+  {
+    "insertId": "747864c5-1d36-4251-9b5b-eb8cfdd32486",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4099.6111.1229301289 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-03-30T22:35:37.576020Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-30T22:35:38.547369368Z"
+  },
+  {
+    "insertId": "75d92fcd-dca8-4a52-ab6d-294beec9e3e6",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4100.1108.1229306419 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-03-31T00:00:47.837272Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T00:00:47.934633488Z"
+  },
+  {
+    "insertId": "e6e17aba-eb89-466f-ae39-5134ff5764e3",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4101.2071.1229315703 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-03-31T02:35:38.202179Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T02:35:39.134378310Z"
+  },
+  {
+    "insertId": "10719bde-acd3-4e3b-8986-bc709022c458",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4102.2801.1229324957 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-03-31T05:10:28.711270Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T05:10:28.833677912Z"
+  },
+  {
+    "insertId": "b4f5eeb1-93cd-4433-a125-432a3a2de975",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4103.2812.1229333971 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-03-31T07:40:39.939406Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T07:40:40.613215977Z"
+  },
+  {
+    "insertId": "c7a5520a-f6eb-46c9-b3f6-1589c73a9caf",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4104.2500.1229338811 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-03-31T09:01:10.036640Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T09:01:10.912278819Z"
+  },
+  {
+    "insertId": "f2d55774-98cf-4c2b-9356-262685d6f946",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4105.605.1229347231 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-03-31T11:21:56.833138Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T11:21:57.533347827Z"
+  },
+  {
+    "insertId": "e5f6a5b4-cf00-4cfc-8121-4a43b5d8cab4",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4106.5529.1229355855 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-03-31T13:45:02.715828Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T13:45:03.044632487Z"
+  },
+  {
+    "insertId": "b9268e03-d8fc-483d-8c5a-295f8f348591",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4107.2917.1229365163 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-03-31T16:19:56.371611Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T16:19:57.104242164Z"
+  },
+  {
+    "insertId": "84555742-a82d-4dc4-9378-c370d56d5efa",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4108.838.1229374673 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-03-31T18:58:22.068356Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T18:58:22.885123073Z"
+  },
+  {
+    "insertId": "291d1eac-f756-4ae2-b869-24faa53cc60c",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_03_31/thread_1_seq_4110.1825.1229384005 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-03-31T21:34:22.734610Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T21:34:23.058816459Z"
+  },
+  {
+    "insertId": "5cf4c6a8-f26d-4e0f-9852-7c1a56b019ca",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4111.1852.1229391457 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-03-31T23:38:19.159846Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-03-31T23:38:19.260099782Z"
+  },
+  {
+    "insertId": "ebac35ae-918c-4730-bbb5-a570fce15e1a",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4112.2421.1229397585 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-01T01:21:11.685665Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T01:21:11.979350095Z"
+  },
+  {
+    "insertId": "a2275a21-1ef3-4e38-a6d4-a8993259a4d6",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4113.2194.1229407205 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-01T04:00:44.467229Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T04:00:45.336841503Z"
+  },
+  {
+    "insertId": "b1aec670-250c-49b8-ba10-6288e3ef6e1e",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4114.2550.1229410835 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-01T05:01:07.740359Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T05:01:08.597503637Z"
+  },
+  {
+    "insertId": "8ca318d7-0635-4ac9-b3fb-fe077c46b02c",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4115.1597.1229420013 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-01T07:34:50.516027Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T07:34:50.619532620Z"
+  },
+  {
+    "insertId": "f50f0c76-e83a-4cb5-b8a5-b3aba6a0b883",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4116.4131.1229427977 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-01T09:47:21.017524Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T09:47:21.926868884Z"
+  },
+  {
+    "insertId": "f8174153-01e1-4909-becb-4a669fc4c04d",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4117.731.1229436073 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-01T12:02:23.140321Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T12:02:23.488622983Z"
+  },
+  {
+    "insertId": "88de3eb2-1431-4f38-a2e7-d1db032b87c9",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4118.949.1229445051 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-01T14:31:38.100221Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T14:31:38.484333950Z"
+  },
+  {
+    "insertId": "a233d4a0-a93f-453e-8754-e777e09668f8",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4120.289.1229456381 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-01T17:40:56.595318Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T17:40:57.440474390Z"
+  },
+  {
+    "insertId": "373ee1ff-937a-46a8-90a7-8ec9725f8e15",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_01/thread_1_seq_4121.1093.1229465753 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-01T20:16:59.996625Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T20:17:00.730085272Z"
+  },
+  {
+    "insertId": "27a04772-26ec-4b5e-a524-3f91afd279ed",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4122.2394.1229474987 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-01T22:50:36.755808Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-01T22:50:37.279374282Z"
+  },
+  {
+    "insertId": "499aba26-d55e-4619-9bdd-a4913c2558e7",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4123.3298.1229479219 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-02T00:01:30.082311Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T00:01:30.952474506Z"
+  },
+  {
+    "insertId": "ba6de800-360f-4635-82d2-32da28f359cf",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4124.5206.1229487531 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-02T02:19:50.183657Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T02:19:50.544345405Z"
+  },
+  {
+    "insertId": "32cfff5d-d90f-4621-b357-b987e4353295",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4125.2047.1229497223 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-02T05:01:57.820867Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T05:01:58.065111995Z"
+  },
+  {
+    "insertId": "b3eaacc5-aa2f-4d94-bb20-a334f4bcabb3",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4126.3108.1229506615 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-02T07:38:04.545053Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T07:38:05.285362686Z"
+  },
+  {
+    "insertId": "10366c5e-5ca2-47fd-aac3-def481060209",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4127.4978.1229514785 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-02T09:54:09.388968Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T09:54:09.537769087Z"
+  },
+  {
+    "insertId": "945c6436-401c-4efd-8ce9-ddd59e073d7a",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4129.3441.1229523365 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-02T12:16:27.244323Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T12:16:27.450575689Z"
+  },
+  {
+    "insertId": "2ecf12be-91f4-427f-9d84-5d1212e41b11",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4130.4276.1229532387 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-02T14:47:51.365547Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T14:47:52.302388069Z"
+  },
+  {
+    "insertId": "6cb1e34c-e5f6-4928-8e7a-b58e3f949499",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4131.1514.1229541963 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-02T17:27:29.239410Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T17:27:30.211822657Z"
+  },
+  {
+    "insertId": "49c90ad6-43bf-4d9c-9017-407dfea0fdcb",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4132.2437.1229547617 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-02T19:00:56.587408Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T19:00:56.908998130Z"
+  },
+  {
+    "insertId": "220bafe5-f4f1-45c8-a170-7b24896bf0ca",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_02/thread_1_seq_4133.2121.1229556989 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-02T21:36:56.898031Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T21:36:56.958505876Z"
+  },
+  {
+    "insertId": "a8ffd4f6-84e7-4c16-b9ab-770119386523",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4134.2724.1229564525 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-02T23:43:26.756316Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-02T23:43:26.896541676Z"
+  },
+  {
+    "insertId": "ed4ada36-3591-4027-8a6e-569de78aaf44",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4135.1637.1229572803 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-03T02:00:36.888323Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T02:00:37.109081092Z"
+  },
+  {
+    "insertId": "6084f5f7-5beb-4c22-b15c-ba734a20aa1b",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4136.10772.1229580013 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-03T04:01:14.699296Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T04:01:15.620927684Z"
+  },
+  {
+    "insertId": "d02259ae-96b9-4b70-9154-df3c6cde50ea",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4137.9854.1229589579 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-03T06:40:54.941426Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T06:40:55.360497614Z"
+  },
+  {
+    "insertId": "08820741-c29e-474e-81ab-b96828e610f0",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4138.1247.1229598441 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-03T09:07:41.000724Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T09:07:41.136887478Z"
+  },
+  {
+    "insertId": "27e46909-ac6e-4286-95a5-92ad4be06bb8",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4139.665.1229607297 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-03T11:35:24.001430Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T11:35:24.868811237Z"
+  },
+  {
+    "insertId": "df75757e-bc6f-41ed-b9ec-331e5dda24d1",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4140.2119.1229612417 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-03T13:00:44.604712Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T13:00:45.093937401Z"
+  },
+  {
+    "insertId": "7420ee21-10ae-4ae5-b921-6c2b0a74ac6c",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4141.2550.1229621539 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-03T15:33:00.839890Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T15:33:01.630072353Z"
+  },
+  {
+    "insertId": "8087e5f2-f424-4852-a9d8-b533c74e6dcb",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4142.732.1229631253 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-03T18:14:57.817729Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T18:14:58.390718487Z"
+  },
+  {
+    "insertId": "d2c6928a-96c8-438b-9553-5fd1c23e12c4",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_03/thread_1_seq_4143.837.1229640483 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-03T20:49:07.673144Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T20:49:08.177013740Z"
+  },
+  {
+    "insertId": "6a26a2d3-d7d2-4b8d-9207-ed911b4f3576",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4144.4978.1229644837 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-03T22:01:18.720375Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-03T22:01:19.378478465Z"
+  },
+  {
+    "insertId": "381d5dcd-bef6-4c8b-af15-c810597d3701",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4145.1632.1229653183 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-04T00:20:47.184807Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T00:20:47.465810173Z"
+  },
+  {
+    "insertId": "2b5bd058-8e5f-45f0-989c-1943d34ac361",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4146.2150.1229662183 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-04T02:50:52.735763Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T02:50:53.584756301Z"
+  },
+  {
+    "insertId": "0c420b11-b18a-4f21-a0d0-4d06f13bfd60",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4147.2809.1229671567 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-04T05:26:51.681353Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T05:26:52.690823933Z"
+  },
+  {
+    "insertId": "a7b9f14d-a251-484e-aa1a-cf20cf2aad30",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4148.2606.1229673641 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-04T06:01:15.683060Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T06:01:16.184444001Z"
+  },
+  {
+    "insertId": "9629fd65-2a59-4778-a49f-97054234ec1e",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4149.2382.1229682873 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-04T08:34:55.780629Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T08:34:55.934132294Z"
+  },
+  {
+    "insertId": "daac5966-4c55-4eb4-a423-0a58d24b07cc",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4150.2016.1229691565 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-04T11:00:19.292965Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T11:00:19.854347618Z"
+  },
+  {
+    "insertId": "b406db42-7f18-43b9-a50a-dd67f23ed2fd",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4151.6078.1229699821 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-04T13:17:28.332306Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T13:17:28.384966631Z"
+  },
+  {
+    "insertId": "85ff46a6-a5be-4ab4-bbcb-349007c197ee",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4152.858.1229702419 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-04T14:01:19.737695Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T14:01:20.647451169Z"
+  },
+  {
+    "insertId": "84f6d584-08b5-4ef6-9939-6e2a58f463e9",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4153.965.1229711403 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-04T16:31:25.787714Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T16:31:26.935313521Z"
+  },
+  {
+    "insertId": "e279d7dc-5ee8-467e-a4b3-1f4faa386a75",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4154.2907.1229720483 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-04T19:02:44.964043Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T19:02:45.259317668Z"
+  },
+  {
+    "insertId": "063d8e49-182d-4d06-9810-31ace9a9a88b",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_04/thread_1_seq_4155.2314.1229730515 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-04T21:49:18.733963Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-04T21:49:19.171424638Z"
+  },
+  {
+    "insertId": "fe1e2248-3435-4310-874e-748b7dc2fe07",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4156.10562.1229738413 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:01:42.476887Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:01:43.340957461Z"
+  },
+  {
+    "insertId": "5f4da362-6d91-44e6-83a0-937069e6d6d8",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4157.2524.1229738519 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:03:03.319862Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:03:03.563645211Z"
+  },
+  {
+    "insertId": "5d99dedc-3439-477e-9113-cbe741373cd9",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4159.1179.1229738627 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:04:24.057443Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:04:24.218682104Z"
+  },
+  {
+    "insertId": "aefd49a4-3c55-43cf-80f3-048a7596d92d",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4158.1118.1229738571 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:04:24.298742Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:04:24.843825127Z"
+  },
+  {
+    "insertId": "87db9580-6718-4b0b-96f9-5844c942762c",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4160.656.1229738711 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-05T00:05:45.403973Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:05:45.805627093Z"
+  },
+  {
+    "insertId": "fd544c0f-a015-483b-82fa-e6a78a4976b1",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4161.8751.1229738795 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:07:06.058551Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:07:06.532799705Z"
+  },
+  {
+    "insertId": "60245d64-e276-4ba9-973a-4b4d36631917",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4162.837.1229738871 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:08:26.612728Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:08:27.312791525Z"
+  },
+  {
+    "insertId": "072829b8-ddf8-429b-92dc-5dabc535e29e",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4163.1783.1229738935 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:09:48.250999Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:09:48.875307195Z"
+  },
+  {
+    "insertId": "fbba0572-a58c-47dc-a3ea-27d3cd987700",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4164.1054.1229738997 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-05T00:11:09.724636Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:11:10.049263246Z"
+  },
+  {
+    "insertId": "e2ed84d0-4277-40ad-a885-5501506e0728",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4165.716.1229739063 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:12:29.756579Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:12:29.991867975Z"
+  },
+  {
+    "insertId": "9c9edcd2-c8a3-48ef-b485-55ac1c3472d1",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4166.2706.1229739119 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:12:29.970946Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:12:30.282499299Z"
+  },
+  {
+    "insertId": "8674dec1-9c65-4505-bcee-738625fc6440",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4167.1758.1229739169 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-05T00:13:51.143319Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:13:52.079771214Z"
+  },
+  {
+    "insertId": "3b35eb51-c1a1-486e-b6cb-8fcb86cceca4",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4168.2078.1229739227 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-05T00:15:11.852036Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:15:12.546000123Z"
+  },
+  {
+    "insertId": "750f2918-ca21-432b-8e6f-62acb5ddb3b5",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4169.3120.1229739287 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T00:15:12.137026Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:15:12.654995667Z"
+  },
+  {
+    "insertId": "160091ad-4ef8-4bcf-80de-271edae70874",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4170.2252.1229739345 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-05T00:16:32.864663Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:16:33.193552774Z"
+  },
+  {
+    "insertId": "e9d5517c-ae2a-4be1-b5b1-2b52a79ffb35",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4171.9083.1229739469 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-05T00:19:04.619404Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T00:19:04.846605169Z"
+  },
+  {
+    "insertId": "67aefecd-b4dd-44bd-a0ab-84711d31680a",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4172.3206.1229742667 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T01:12:22.346469Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T01:12:22.659513244Z"
+  },
+  {
+    "insertId": "b40e230c-81de-45f7-8c46-8f7ed7badb6a",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4173.1802.1229751933 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T03:47:00.887305Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T03:47:00.915971889Z"
+  },
+  {
+    "insertId": "db26360a-4e12-489f-9fc1-ddc7b10c22c0",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4174.6115.1229760623 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-05T06:11:04.436325Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T06:11:05.049118596Z"
+  },
+  {
+    "insertId": "1116a76f-6375-4a73-9d52-635b64478ed9",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4175.2720.1229769459 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-05T08:38:40.003738Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T08:38:40.872591540Z"
+  },
+  {
+    "insertId": "578cf6e4-62dc-4461-b8b1-3f7acd3e04fb",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4177.1921.1229779207 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-05T11:20:41.837328Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T11:20:42.406025875Z"
+  },
+  {
+    "insertId": "58436a64-8095-404a-adc1-126da7fb00c3",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4178.1128.1229787231 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-05T13:34:13.127408Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T13:34:14.105368722Z"
+  },
+  {
+    "insertId": "6df5e2d7-59f6-4c57-8f56-3205e06c3a66",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4179.645.1229795813 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-05T15:58:15.501698Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T15:58:15.710679152Z"
+  },
+  {
+    "insertId": "2e297a76-1bc9-4ed9-bb1e-4f1552b536e9",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4180.1997.1229803223 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-05T18:01:13.217584Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T18:01:13.745023086Z"
+  },
+  {
+    "insertId": "8a8effcf-dcac-432f-bc09-42b6632ea659",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_05/thread_1_seq_4181.5483.1229811871 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-05T20:25:29.461768Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T20:25:29.906515182Z"
+  },
+  {
+    "insertId": "c1a99493-5161-40a2-8875-2fb420c7a04d",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4182.7264.1229821175 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-05T23:00:12.005691Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-05T23:00:12.440096027Z"
+  },
+  {
+    "insertId": "6020defa-2454-4ed8-88b6-24053e94685a",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4183.1696.1229829219 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-06T01:14:50.449140Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T01:14:51.235499200Z"
+  },
+  {
+    "insertId": "a3ad56b1-0a01-434f-a753-c4da21242d74",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4184.3197.1229832019 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-06T02:01:03.076049Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T02:01:03.189843365Z"
+  },
+  {
+    "insertId": "a90b7729-9b3a-4f82-b85b-5d42a97c8a02",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4185.2572.1229841173 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-06T04:33:34.718846Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T04:33:35.417450486Z"
+  },
+  {
+    "insertId": "24d6a61d-4618-4bf3-a2c8-3eb956d46c44",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4186.428.1229850245 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-06T07:04:47.410183Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T07:04:48.102892700Z"
+  },
+  {
+    "insertId": "db5bef77-678e-4149-813e-d4576ae11567",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4187.1612.1229858463 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-06T09:21:51.087965Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T09:21:51.295539742Z"
+  },
+  {
+    "insertId": "10a2e2a2-a75f-4304-8cd0-7031709eafd0",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4188.2877.1229860819 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-06T10:00:59.030581Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T10:00:59.219866852Z"
+  },
+  {
+    "insertId": "7868d955-8cdf-4d60-8b6a-b55c5d6d5e83",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4189.8924.1229868787 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-06T12:14:29.094683Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T12:14:29.243477284Z"
+  },
+  {
+    "insertId": "d73599a5-f73f-435d-8f77-e123a04fff3b",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4190.2791.1229877291 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-06T14:35:37.001841Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T14:35:37.860927394Z"
+  },
+  {
+    "insertId": "c6164b74-51e0-44d6-bf46-a61a83e4553f",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4191.671.1229885997 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-06T17:01:01.103168Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T17:01:01.553176385Z"
+  },
+  {
+    "insertId": "d76d13a0-1865-45ea-9f3d-8eb89ae271a5",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4193.2730.1229894847 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-06T19:28:47.228999Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T19:28:47.760361575Z"
+  },
+  {
+    "insertId": "08a63dc6-f6f2-4ba3-88ae-4c49363de2ae",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_06/thread_1_seq_4194.1989.1229903631 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-06T21:54:11.230010Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-06T21:54:11.744709693Z"
+  },
+  {
+    "insertId": "5ca43a95-223f-4e5f-b0e8-c62c2b841ab5",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4195.1580.1229912257 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-07T00:18:17.232081Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T00:18:17.765420320Z"
+  },
+  {
+    "insertId": "c65b44ef-60d8-42e5-99b1-6c0629b13f35",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4196.6115.1229914813 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-07T01:00:52.167834Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T01:00:53.470573622Z"
+  },
+  {
+    "insertId": "da3dc6d9-a552-4955-9508-d858d97c8347",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4197.1732.1229923803 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-07T03:30:54.070311Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T03:30:55.295563729Z"
+  },
+  {
+    "insertId": "a4646d7e-4910-4862-8470-7963d1ce8f1c",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4198.798.1229932839 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-07T06:01:03.714658Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T06:01:04.575377313Z"
+  },
+  {
+    "insertId": "a55712e9-2735-4f87-a8aa-9c6eba185d7b",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4199.2851.1229941375 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-07T08:24:11.623330Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T08:24:12.265076299Z"
+  },
+  {
+    "insertId": "0171b664-9dc4-4cab-a4c6-074009ce4aaf",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4200.919.1229947219 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-07T10:01:14.189776Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T10:01:14.275287685Z"
+  },
+  {
+    "insertId": "4b919ae9-3bf0-4b68-b442-1f8aedae41d2",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4201.3120.1229954749 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-07T12:06:38.121601Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T12:06:39.240453003Z"
+  },
+  {
+    "insertId": "50c35bb3-cf78-41fd-a260-47bb1533b62a",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4202.3539.1229962799 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-07T14:20:18.894039Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T14:20:19.466189051Z"
+  },
+  {
+    "insertId": "882f9e66-a70d-4419-a048-5b666fe66a5c",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4203.6228.1229971555 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-07T16:46:50.967385Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T16:46:52.010806802Z"
+  },
+  {
+    "insertId": "113f0e77-db3c-4c32-84bc-a3529030a577",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4204.1852.1229976021 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-07T18:01:25.307315Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T18:01:26.086713018Z"
+  },
+  {
+    "insertId": "0d447fe0-fb33-44cc-9718-324768c8f38a",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_07/thread_1_seq_4205.605.1229984711 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-07T20:25:39.610237Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T20:25:40.208490724Z"
+  },
+  {
+    "insertId": "ea14d449-62c5-44f0-8ea8-fb56213104ba",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4206.4978.1229993649 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-07T22:54:35.646253Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-07T22:54:36.585542180Z"
+  },
+  {
+    "insertId": "bc76ab88-9e90-4710-9c77-12c1bf930e77",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4207.838.1230001127 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-08T00:59:54.717061Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T00:59:54.964688296Z"
+  },
+  {
+    "insertId": "02b1b28c-8666-4f0f-b9b7-6f64086c1f3b",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4208.2038.1230009861 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-08T03:25:16.296356Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T03:25:16.785597293Z"
+  },
+  {
+    "insertId": "df1621aa-b611-4935-b27d-2bfa2671b839",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4209.3564.1230012017 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-08T04:00:47.533923Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T04:00:47.984009389Z"
+  },
+  {
+    "insertId": "23f0bf52-3845-4f04-91a7-cf85c7cd6f4e",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4210.814.1230020921 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-08T06:30:01.084723Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T06:30:01.316620318Z"
+  },
+  {
+    "insertId": "61f1d54e-a8a3-4b9f-805a-ad5dad26f99a",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4211.875.1230029421 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-08T08:50:56.184537Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T08:50:56.722003519Z"
+  },
+  {
+    "insertId": "5e0075e2-33f9-44c5-b2e8-35e62d80443e",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4212.2475.1230037183 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-08T11:00:06.960274Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T11:00:07.276231309Z"
+  },
+  {
+    "insertId": "e2533c8a-04f0-4498-8f96-161a3a6bf4a2",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4213.5223.1230044845 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-08T13:08:05.015665Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T13:08:05.224944311Z"
+  },
+  {
+    "insertId": "cfa34409-9e60-4682-a85b-54eb7f0c9687",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4214.3369.1230048017 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-08T14:01:23.990368Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T14:01:24.578675695Z"
+  },
+  {
+    "insertId": "35b1fa33-8714-4089-ad97-06b8e5bef39b",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4215.5232.1230056795 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-08T16:27:06.078764Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T16:27:06.586711564Z"
+  },
+  {
+    "insertId": "db502aca-a5b8-4fd7-928a-24d759a3c1b0",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4216.2423.1230065675 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-08T18:55:16.311628Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T18:55:17.347798314Z"
+  },
+  {
+    "insertId": "3db0c594-2879-4809-8619-8ed26a9117af",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_08/thread_1_seq_4217.981.1230074373 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-08T21:20:48.827973Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T21:20:49.538815702Z"
+  },
+  {
+    "insertId": "c98d942a-1989-4630-b1dd-fe05db366439",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4218.7181.1230076811 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-08T22:01:11.930533Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-08T22:01:11.972536888Z"
+  },
+  {
+    "insertId": "691d4623-77d9-4c9a-ace5-c93e772239be",
+    "jsonPayload": {
+      "context": "CDC",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4219.2280.1230084339 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-09T00:06:46.116031Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T00:06:46.244254232Z"
+  },
+  {
+    "insertId": "8cf2fa90-6c54-445e-b3fe-d1db173ef988",
+    "jsonPayload": {
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4220.3607.1230093275 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-09T02:35:56.509289Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T02:35:57.245548351Z"
+  },
+  {
+    "insertId": "5b6d8e26-ed3c-4909-aade-b0f0563b5e80",
+    "jsonPayload": {
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4221.2620.1230102251 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3"
+      }
+    },
+    "timestamp": "2026-04-09T05:05:10.015267Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T05:05:10.466777021Z"
+  },
+  {
+    "insertId": "5436d743-73ff-45d5-87ef-5eea611c6e83",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4222.3504.1230110889 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-09T07:29:14.597289Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T07:29:15.538538694Z"
+  },
+  {
+    "insertId": "c6a8560d-4a47-492a-97b6-90d3f8ec8a6c",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4223.6740.1230112811 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "resource_container": "projects/840030134620",
+        "location": "europe-west3",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-09T08:01:22.608731Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T08:01:22.767961562Z"
+  },
+  {
+    "insertId": "04ccc8a6-64f9-48af-ac01-f38c8deafef5",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4224.875.1230121343 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620",
+        "stream_id": "orauat-1060-bucket"
+      }
+    },
+    "timestamp": "2026-04-09T10:23:09.156164Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T10:23:09.634398950Z"
+  },
+  {
+    "insertId": "9288bfda-bfac-40bf-959b-3bbf998fd397",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4225.2756.1230129647 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-09T12:41:52.222998Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T12:41:53.110915561Z"
+  },
+  {
+    "insertId": "dbaf11dc-b722-4b58-bd80-3f0f848d891d",
+    "jsonPayload": {
+      "context": "CDC",
+      "read_method": "oracle-cdc-logminer",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4226.10562.1230138533 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-09T15:10:10.797540Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T15:10:11.231609441Z"
+  },
+  {
+    "insertId": "d90e048e-3b83-4297-8715-fff3b5df6661",
+    "jsonPayload": {
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4227.732.1230145217 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error.",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "context": "CDC"
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-09T17:01:36.849124Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T17:01:37.351855888Z"
+  },
+  {
+    "insertId": "aedf37df-34c6-4fe0-88b7-2c35cded3b3b",
+    "jsonPayload": {
+      "context": "CDC",
+      "event_code": "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG",
+      "read_method": "oracle-cdc-logminer",
+      "message": "The log file +DG1/CTMSA_DG1/ARCHIVELOG/2026_04_09/thread_1_seq_4228.2150.1230154157 size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."
+    },
+    "resource": {
+      "type": "datastream.googleapis.com/Stream",
+      "labels": {
+        "stream_id": "orauat-1060-bucket",
+        "location": "europe-west3",
+        "resource_container": "projects/840030134620"
+      }
+    },
+    "timestamp": "2026-04-09T19:29:42.383073Z",
+    "severity": "WARNING",
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/datastream.googleapis.com%2Fstream_activity",
+    "receiveTimestamp": "2026-04-09T19:29:43.238798237Z"
+  }
+]

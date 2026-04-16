@@ -1,0 +1,130 @@
+{
+  "stream": "orauat-1060-bucket",
+  "source": "Oracle UAT (TMS1060_SENDUNG)",
+  "target": "gs://tms-alloydb-datastream-bucket-wl5-t-t//UATDataStream",
+  "filter": "2026-03-30 13:00 \u2014 2026-04-02 12:00",
+  "gcp_documentation": {
+    "metric_definitions": "https://cloud.google.com/datastream/docs/monitor-a-stream",
+    "best_practices": "https://cloud.google.com/datastream/docs/best-practices-general",
+    "oracle_redo_logs": "https://cloud.google.com/datastream/docs/work-with-oracle-database-redo-log-files",
+    "e2e_latency_deep_dive": "https://medium.com/google-cloud/understand-end-to-end-latency-for-oracle-to-bigquery-replication-with-datastream-and-dataflow-55f350526eb1",
+    "oracle_cdc_after_logminer": "https://expertbeacon.com/life-after-logminer-implementing-oracle-cdc-with-datastream-on-google-cloud/"
+  },
+  "throughput": {
+    "log_entries": 1271,
+    "total_records_written": 23751,
+    "errors": 0,
+    "delivery_rate": "100.00%",
+    "records_per_batch": {
+      "min": 1,
+      "max": 1098,
+      "avg": 18.7
+    }
+  },
+  "end_to_end_latency": {
+    "metric": "datastream.googleapis.com/stream/total_latencies",
+    "description": "Total Latency: time from when data is written to the source until it is written to the destination (GCP official definition)",
+    "p50": {
+      "min_s": 290.6,
+      "max_s": 9467.1,
+      "avg_s": 3990.4,
+      "min_min": 4.8,
+      "max_min": 157.8,
+      "avg_min": 66.5
+    },
+    "p95": {
+      "min_s": 1817.9,
+      "max_s": 9946.7,
+      "avg_s": 6810.9,
+      "min_min": 30.3,
+      "max_min": 165.8,
+      "avg_min": 113.5
+    },
+    "p99": {
+      "min_s": 1963.6,
+      "max_s": 9989.3,
+      "avg_s": 7660.8,
+      "min_min": 32.7,
+      "max_min": 166.5,
+      "avg_min": 127.7
+    }
+  },
+  "stream_processing_latency": {
+    "metric": "datastream.googleapis.com/stream/latencies",
+    "description": "Stream Latency: time from when Datastream reads the event until it writes to the destination (GCP official definition)",
+    "p50": {
+      "min_s": 5.7,
+      "max_s": 75.0,
+      "avg_s": 22.9,
+      "min_min": 0.1,
+      "max_min": 1.2,
+      "avg_min": 0.4
+    },
+    "p95": {
+      "min_s": 18.9,
+      "max_s": 88.5,
+      "avg_s": 42.1,
+      "min_min": 0.3,
+      "max_min": 1.5,
+      "avg_min": 0.7
+    },
+    "p99": {
+      "min_s": 19.8,
+      "max_s": 102.5,
+      "avg_s": 51.4,
+      "min_min": 0.3,
+      "max_min": 1.7,
+      "avg_min": 0.9
+    }
+  },
+  "system_latency": {
+    "metric": "datastream.googleapis.com/stream/system_latencies",
+    "description": "System Latency: time from when Datastream reads the event until it writes to the destination — similar to stream latency (GCP official definition)",
+    "p50": {
+      "min_s": 5.0,
+      "max_s": 75.0,
+      "avg_s": 22.7,
+      "min_min": 0.1,
+      "max_min": 1.2,
+      "avg_min": 0.4
+    },
+    "p95": {
+      "min_s": 9.5,
+      "max_s": 88.5,
+      "avg_s": 41.2,
+      "min_min": 0.2,
+      "max_min": 1.5,
+      "avg_min": 0.7
+    },
+    "p99": {
+      "min_s": 9.9,
+      "max_s": 102.1,
+      "avg_s": 50.9,
+      "min_min": 0.2,
+      "max_min": 1.7,
+      "avg_min": 0.8
+    }
+  },
+  "freshness": {
+    "metric": "datastream.googleapis.com/stream/freshness",
+    "description": "Freshness: difference between when data was committed to source and when Datastream reads it. 0 if caught up. Formula: Total Latency = Freshness + System Latency (GCP official definition)",
+    "non_zero_data_points": 1,
+    "total_data_points": 709,
+    "note": "Almost entirely 0 \u2014 stream is keeping up with source"
+  },
+  "latency_breakdown": {
+    "note": "Total Latency = Freshness + System Latency (per GCP docs). 99.4% of total latency is Freshness (read lag from Oracle LogMiner archived redo logs), only 0.6% is Datastream processing.",
+    "avg_total_p50_min": 66.5,
+    "avg_processing_p50_s": 22.9,
+    "avg_read_lag_min": "~66",
+    "key_factors_affecting_read_lag": [
+      "Oracle redo log archival frequency (primary factor — aim for 10-20 min switches)",
+      "LogMiner is single-threaded (consider Binary log reader if available)",
+      "maxConcurrentCdcTasks parameter in Datastream",
+      "Redo log file size (smaller = more frequent switches = lower latency)",
+      "Oracle source health (CPU, SGA/PGA sizing, disk I/O)",
+      "Oracle 19c deprecated CONTINUOUS_MINE — archived log mode only"
+    ],
+    "gcp_expected_latency": "Up to 30 min end-to-end (per GCP docs). Observed avg of 66 min suggests redo log switch frequency can be optimized."
+  }
+}

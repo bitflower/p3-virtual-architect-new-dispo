@@ -1,0 +1,1232 @@
+WEBVTT
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/13-0
+00:00:04.062 --> 00:00:08.626
+<v Matt Wilkinson>That contains everything in and it's got
+a.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/11-0
+00:00:04.262 --> 00:00:04.382
+OK.
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/12-0
+00:00:04.462 --> 00:00:04.582
+<v Matthias Max>OK.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/13-1
+00:00:08.626 --> 00:00:13.189
+<v Matt Wilkinson>I've also done done a just a bit of a
+well,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/13-2
+00:00:13.189 --> 00:00:21.382
+<v Matt Wilkinson>a write up of comparison between both
+Claude, both GCP data stream and stream.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/14-0
+00:00:21.422 --> 00:00:22.102
+<v Matt Wilkinson>Stream, basically.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/15-0
+00:00:21.902 --> 00:00:25.742
+<v Matthias Max>OK, mm-hmm. Awesome.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/16-0
+00:00:27.302 --> 00:00:29.102
+<v Matthias Max>Awesome. So I guess.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/17-0
+00:00:28.662 --> 00:00:31.777
+<v Matt Wilkinson>So there's a, there is a development,
+it's got the cost in there,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/17-1
+00:00:31.777 --> 00:00:35.222
+<v Matt Wilkinson>it's got the latencies. Just for context,
+we've seen a latency of about.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/22-0
+00:00:36.862 --> 00:00:42.928
+<v Matt Wilkinson>15 seconds, 10 seconds.
+On average it was 6 seconds. Yeah,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/19-0
+00:00:41.462 --> 00:00:42.302
+<v Matthias Max>Oh, wow.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/22-1
+00:00:42.928 --> 00:00:50.742
+<v Matt Wilkinson>so streams a little bit quicker.
+It handles it a bit better, I think, yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/20-0
+00:00:45.822 --> 00:00:49.262
+<v Matthias Max>Is that OK? Uh huh.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/23-0
+00:00:51.142 --> 00:00:52.742
+<v Matthias Max>That's that's great stuff.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/24-0
+00:00:51.222 --> 00:00:54.702
+<v Vervenne, Ron>Or somewhat more expensive.
+So that's that's the point I think.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/25-0
+00:00:54.422 --> 00:00:59.389
+<v Matthias Max>OK.
+And that is like consistent or every day</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/25-1
+00:00:59.389 --> 00:01:06.342
+<v Matthias Max>the same or was it slower on some days or
+slower on high load?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/27-0
+00:01:12.782 --> 00:01:15.782
+<v Matt Wilkinson>Sorry, Matthias,
+just say that question again for me.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/29-0
+00:01:15.542 --> 00:01:21.502
+<v Matthias Max>I just said is it like very consistent?
+Is it the same average every day and is</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/28-0
+00:01:18.342 --> 00:01:18.502
+<v Matt Wilkinson>OK.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/29-1
+00:01:21.502 --> 00:01:27.462
+<v Matthias Max>it the same on peak times in the morning
+on load or does it vary based on load?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/33-0
+00:01:28.622 --> 00:01:33.086
+<v Matt Wilkinson>It doesn't vary on load,
+so it seems to be around timings and</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/33-1
+00:01:33.086 --> 00:01:37.838
+<v Matt Wilkinson>stream. It's not, it's not constant.
+That's the other side to it.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/30-0
+00:01:34.382 --> 00:01:34.862
+<v Matthias Max>Mhm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/33-2
+00:01:37.838 --> 00:01:41.942
+<v Matt Wilkinson>It lands in and it gets it.
+So there was no consistency.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/31-0
+00:01:39.662 --> 00:01:41.022
+<v Matthias Max>Mhm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/33-3
+00:01:41.942 --> 00:01:46.982
+<v Matt Wilkinson>The difference is I could only get stream
+data for the last two days.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/34-0
+00:01:48.462 --> 00:01:54.667
+<v Matt Wilkinson>But data stream I've got for the last
+like for the entirety that we've run it</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/32-0
+00:01:48.822 --> 00:01:49.822
+<v Matthias Max>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/36-0
+00:01:53.822 --> 00:01:59.021
+<v Matthias Max>OK, cool.
+So how quick regarding business</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/34-1
+00:01:54.667 --> 00:01:55.462
+<v Matt Wilkinson>basically.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/35-0
+00:01:56.542 --> 00:01:57.222
+<v Matt Wilkinson>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/36-1
+00:01:59.021 --> 00:02:02.982
+<v Matthias Max>expectation, is that acceptable?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/37-0
+00:02:05.182 --> 00:02:11.522
+<v Matthias Max>Like if we take the six seconds for now,
+do you know what that delay means?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/37-1
+00:02:11.522 --> 00:02:17.277
+<v Matthias Max>It's literally detecting the change or
+new send, for example, sorry,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/37-2
+00:02:17.277 --> 00:02:22.782
+<v Matthias Max>a shipment that's coming from OMS and
+would show up in new dispo.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/38-0
+00:02:23.662 --> 00:02:25.982
+<v Matthias Max>Probably like after 10 seconds.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/39-0
+00:02:28.022 --> 00:02:30.982
+<v Matthias Max>Once we've done our work with all the
+legs.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/41-0
+00:02:33.062 --> 00:02:38.742
+<v Matthias Max>Has there been some statement from your
+side about this? Uh huh.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/40-0
+00:02:33.542 --> 00:02:37.302
+<v Uschmann, Patrick>The OK so far, yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/42-0
+00:02:41.022 --> 00:02:44.170
+<v Matthias Max>OK.
+So did or did you write that somewhere in</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/42-1
+00:02:44.170 --> 00:02:49.782
+<v Matthias Max>a PBI or the expectation of business or
+should we collect this information still?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/44-0
+00:02:51.062 --> 00:02:58.662
+<v Uschmann, Patrick>Or how long it should take that we have
+shipment updates and so on.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/43-0
+00:02:54.782 --> 00:02:55.062
+<v Matthias Max>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/45-0
+00:02:59.422 --> 00:02:59.862
+<v Matthias Max>Correct.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/46-0
+00:03:00.182 --> 00:03:03.022
+<v Uschmann, Patrick>Uh, it's not written down yet, no.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/47-0
+00:03:03.902 --> 00:03:09.709
+<v Matthias Max>OK, then we should do that. I mean,
+I was really just interested in a yeah,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/47-1
+00:03:09.709 --> 00:03:15.286
+<v Matthias Max>first reaction. Like if you say,
+Oh my God, that's so fast or Oh my God,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/47-2
+00:03:15.286 --> 00:03:20.022
+<v Matthias Max>that's way too slow.
+So just trying to find the the spectrum.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/49-0
+00:03:20.142 --> 00:03:27.471
+<v Uschmann, Patrick>No, I guess 1010 seconds that that's OK.
+The the thing is problematic.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/48-0
+00:03:21.942 --> 00:03:22.262
+<v Matthias Max>Literally.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/49-1
+00:03:27.471 --> 00:03:35.523
+<v Uschmann, Patrick>It would be if if we run in delays or in
+queues or something like that and it</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/49-2
+00:03:35.523 --> 00:03:36.142
+<v Uschmann, Patrick>takes.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/51-0
+00:03:37.462 --> 00:03:41.862
+<v Uschmann, Patrick>Minutes to to see updates on on the
+system and so on.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/50-0
+00:03:41.102 --> 00:03:41.582
+<v Matthias Max>Mhm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/52-0
+00:03:42.582 --> 00:03:46.608
+<v Matthias Max>Yeah, OK,
+then let's tackle that separately to get</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/52-1
+00:03:46.608 --> 00:03:52.606
+<v Matthias Max>down the requirement first of all,
+and then align the technical solution in</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/52-2
+00:03:52.606 --> 00:03:54.342
+<v Matthias Max>the best possible way.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/53-0
+00:03:57.582 --> 00:03:58.982
+<v Matthias Max>OK, Joseph.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/54-0
+00:03:59.462 --> 00:04:02.615
+<v Yosif Mihaylov>And so just to confirm,
+like these 10 seconds,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/54-1
+00:04:02.615 --> 00:04:05.902
+<v Yosif Mihaylov>were they for the stream or for the data
+stream?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/56-0
+00:04:08.382 --> 00:04:13.542
+<v Matt Wilkinson>Both. So they have. Yeah. Go. No, go,
+Matthias. You go ahead.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/55-0
+00:04:08.782 --> 00:04:10.942
+<v Matthias Max>It's understood, Matt. Sorry.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/57-0
+00:04:13.782 --> 00:04:18.002
+<v Matthias Max>As I understood,
+stream was slightly faster in general.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/57-1
+00:04:18.002 --> 00:04:24.181
+<v Matthias Max>The six seconds were for data stream on
+average and I just made-up the 10 seconds</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/57-2
+00:04:24.181 --> 00:04:28.702
+<v Matthias Max>to like add a little bit of new dispo
+side processing time.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/58-0
+00:04:28.862 --> 00:04:29.462
+<v Matthias Max>Of four seconds.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/59-0
+00:04:32.702 --> 00:04:34.902
+<v Yosif Mihaylov>And for stream is a bit quicker.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/60-0
+00:04:35.742 --> 00:04:37.582
+<v Matthias Max>Stream is quicker, yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/61-0
+00:04:38.862 --> 00:04:41.702
+<v Yosif Mihaylov>So by the way,
+if we actually made the decision.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/63-0
+00:04:43.262 --> 00:04:45.422
+<v Yosif Mihaylov>We which one will you go like?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/65-0
+00:04:45.302 --> 00:04:48.822
+<v Matthias Max>No,
+that's the that's the ultimate end boss</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/65-1
+00:04:48.822 --> 00:04:51.382
+<v Matthias Max>of this POC phase, the decision.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/64-0
+00:04:50.702 --> 00:04:51.502
+<v Yosif Mihaylov>Yeah, yeah, I know.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/66-0
+00:04:52.662 --> 00:04:58.823
+<v Matthias Max>Including everything, cost, speed,
+performance, etcetera, reliability.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/66-1
+00:04:58.823 --> 00:05:03.422
+<v Matthias Max>So the thing I'm going to wrap up the
+next few days.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/67-0
+00:05:04.662 --> 00:05:08.982
+<v Matthias Max>Sounds like we have most of the
+information available now.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/68-0
+00:05:11.062 --> 00:05:17.742
+<v Matthias Max>So the both were running into workload 5,
+right?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/69-0
+00:05:18.222 --> 00:05:23.675
+<v Vervenne, Ron>I I must add something I I don't know for
+sure if if Martin also incorporated that</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/69-1
+00:05:23.675 --> 00:05:28.011
+<v Vervenne, Ron>in in the overview there,
+but there is a slight difference in how</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/69-2
+00:05:28.011 --> 00:05:33.004
+<v Vervenne, Ron>the stuff is also running because stream
+is running on a VM and that's also</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/69-3
+00:05:33.004 --> 00:05:38.062
+<v Vervenne, Ron>incorporates that you keep to need to
+keep the VM in intact and maintenance.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/70-0
+00:05:38.062 --> 00:05:40.422
+<v Vervenne, Ron>And that's also extra cost on it.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/71-0
+00:05:40.822 --> 00:05:41.302
+<v Matthias Max>Mhm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/72-0
+00:05:41.542 --> 00:05:41.622
+<v Vervenne, Ron>OM.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/73-0
+00:05:41.982 --> 00:05:46.577
+<v Yosif Mihaylov>Exactly like they they're they're not
+both running in workload 5, right?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/73-1
+00:05:46.577 --> 00:05:50.102
+<v Yosif Mihaylov>It's only the data stream that that it's
+working there.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/75-0
+00:05:52.662 --> 00:05:55.536
+<v Matthias Max>Yes,
+but the object store is in workflow 5,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/75-1
+00:05:55.536 --> 00:05:58.213
+<v Matthias Max>right?
+The workflow three thing was just</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/74-0
+00:05:56.742 --> 00:05:57.022
+<v Vervenne, Ron>Mm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/75-2
+00:05:58.213 --> 00:05:59.062
+<v Matthias Max>intermediate.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/78-0
+00:05:59.422 --> 00:06:04.102
+<v Vervenne, Ron>But basically it doesn't matter what what
+workload something is running.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/78-1
+00:06:04.102 --> 00:06:08.974
+<v Vervenne, Ron>It's on the staging area of where it's
+connecting to each other without any</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/78-2
+00:06:08.974 --> 00:06:09.422
+<v Vervenne, Ron>delays.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/77-0
+00:06:09.942 --> 00:06:10.302
+<v Matthias Max>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/79-0
+00:06:13.382 --> 00:06:13.742
+<v Matthias Max>Good.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/80-0
+00:06:14.222 --> 00:06:19.290
+<v Matt Wilkinson>Just just on,
+let's just say that the monthly running</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/80-1
+00:06:19.290 --> 00:06:24.263
+<v Matt Wilkinson>of stream,
+not including the licensing for stream is</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/80-2
+00:06:24.263 --> 00:06:29.142
+<v Matt Wilkinson>it's costing us about 2000 EUR a month to
+run that.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/83-0
+00:06:29.702 --> 00:06:36.839
+<v Matt Wilkinson>In comparison for the work we've done
+with Data Stream so far,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/83-1
+00:06:36.839 --> 00:06:44.542
+<v Matt Wilkinson>inclusive of the cloud storage bucket,
+it's cost us one year or 36.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/81-0
+00:06:43.942 --> 00:06:43.982
+<v Vervenne, Ron>Uh.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/85-0
+00:06:45.942 --> 00:06:51.360
+<v Matthias Max>Are you referring to total data to total
+stream costs for all the stuff with</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/82-0
+00:06:46.262 --> 00:06:46.662
+<v Yosif Mihaylov>You know.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/84-0
+00:06:46.742 --> 00:06:47.542
+<v Matt Wilkinson>It's me.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/85-1
+00:06:51.360 --> 00:06:53.822
+<v Matthias Max>prexel or just the syndromes table?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/87-0
+00:06:55.142 --> 00:06:58.797
+<v Matt Wilkinson>It's inclusive of pretzel that I couldn't
+split it out.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/87-1
+00:06:58.797 --> 00:07:02.582
+<v Matt Wilkinson>So but the the I'd say the cost,
+the cost of the running.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/86-0
+00:06:59.382 --> 00:06:59.622
+<v Matthias Max>Uh.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/88-0
+00:07:03.662 --> 00:07:07.247
+<v Matt Wilkinson>Would relatively be the same if we're
+going to propose it across all of the</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/88-1
+00:07:07.247 --> 00:07:08.662
+<v Matt Wilkinson>branches, if that makes sense.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/89-0
+00:07:08.862 --> 00:07:09.062
+<v Matthias Max>Mm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/90-0
+00:07:11.262 --> 00:07:11.702
+<v Matt Wilkinson>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/92-0
+00:07:11.382 --> 00:07:15.357
+<v Matthias Max>Yeah, I mean,
+that notion was clear from the beginning,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/92-1
+00:07:15.357 --> 00:07:17.982
+<v Matthias Max>right? The cost favorite data stream.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/91-0
+00:07:15.582 --> 00:07:17.862
+<v Matt Wilkinson>Correct. Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/93-0
+00:07:19.942 --> 00:07:28.520
+<v Matthias Max>So hopefully it becomes a quite easy
+decision of cheap but a bit slower versus</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/93-1
+00:07:28.520 --> 00:07:30.582
+<v Matthias Max>fast and expensive.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/95-0
+00:07:32.142 --> 00:07:38.298
+<v Matthias Max>I hope the reliability is not a miss on
+any of the sides and it boils down to</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/94-0
+00:07:32.222 --> 00:07:33.862
+<v Matt Wilkinson>Right. Yeah. Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/95-1
+00:07:38.298 --> 00:07:43.822
+<v Matthias Max>these two aspects that would be the best
+foundation for our decision.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/97-0
+00:07:44.942 --> 00:07:46.982
+<v Matt Wilkinson>Right, yeah, yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/100-0
+00:07:45.142 --> 00:07:52.221
+<v Yosif Mihaylov>Then and the stream like the stream like
+you mentioned working in some VM but like</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/96-0
+00:07:46.142 --> 00:07:46.502
+<v Matthias Max>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/100-1
+00:07:52.221 --> 00:07:59.044
+<v Yosif Mihaylov>is it on premise or or it's somewhere in
+the cloud like the last time I think I</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/98-0
+00:07:57.902 --> 00:07:58.342
+<v Vervenne, Ron>Cloud.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/99-0
+00:07:58.302 --> 00:07:59.782
+<v Matt Wilkinson>It's in. It's in.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/100-2
+00:07:59.044 --> 00:07:59.982
+<v Yosif Mihaylov>read about.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/103-0
+00:08:01.182 --> 00:08:07.462
+<v Matt Wilkinson>It's in GCP. Yeah, it's in workload 3.
+Yeah. So it it just it's it's the same.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/101-0
+00:08:01.382 --> 00:08:01.622
+<v Yosif Mihaylov>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/102-0
+00:08:02.902 --> 00:08:04.942
+<v Yosif Mihaylov>I just.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/104-0
+00:08:08.862 --> 00:08:13.051
+<v Matt Wilkinson>It's effectively the same,
+it's just an app rather than data stream,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/104-1
+00:08:13.051 --> 00:08:15.783
+<v Matt Wilkinson>if that makes sense.
+So it's it's it's both,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/104-2
+00:08:15.783 --> 00:08:20.154
+<v Matt Wilkinson>both are hosted and sourced and then
+they're connecting into the Oracle</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/104-3
+00:08:20.154 --> 00:08:24.221
+<v Matt Wilkinson>infrastructure. It's not,
+it's not the other way around where it's</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/104-4
+00:08:24.221 --> 00:08:27.742
+<v Matt Wilkinson>on Prem and then pushing up,
+it's with GCP is going down.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/105-0
+00:08:28.302 --> 00:08:31.702
+<v Matt Wilkinson>to the Oracle infrastructure and pulling
+up, if that makes sense.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/106-0
+00:08:31.462 --> 00:08:32.662
+<v Yosif Mihaylov>Mhm, mhm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/107-0
+00:08:31.502 --> 00:08:31.782
+<v Matthias Max>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/108-0
+00:08:33.902 --> 00:08:34.582
+<v Matthias Max>And.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/109-0
+00:08:35.982 --> 00:08:40.221
+<v Matthias Max>Good. So yeah,
+I think I don't have further questions</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/109-1
+00:08:40.221 --> 00:08:45.088
+<v Matthias Max>today. I need to wrap up,
+catch up on your mails and content.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/109-2
+00:08:45.088 --> 00:08:50.582
+<v Matthias Max>If I would have questions,
+I would reach out probably asynchronously.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/110-0
+00:08:52.222 --> 00:08:59.844
+<v Matthias Max>Question for me is do we need this stream
+or this series of events to be continued?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/110-1
+00:08:59.844 --> 00:09:03.382
+<v Matthias Max>Probably not. Sounds good to me so far.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/112-0
+00:09:04.582 --> 00:09:08.341
+<v Matt Wilkinson>Yeah, that that was.
+So the moment they all the OMS orders</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/112-1
+00:09:08.341 --> 00:09:12.482
+<v Matt Wilkinson>duplicating. So I was,
+I did want to get a confirmation before I</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/112-2
+00:09:12.482 --> 00:09:17.707
+<v Matt Wilkinson>stopped it so I can stop that today if we
+don't think we need it anymore for now,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/111-0
+00:09:14.662 --> 00:09:15.302
+<v Matthias Max>Mhm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/112-3
+00:09:17.707 --> 00:09:18.662
+<v Matt Wilkinson>for now anyway.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/115-0
+00:09:18.702 --> 00:09:23.570
+<v Matthias Max>I think it's safe to do that.
+We should have enough information.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/113-0
+00:09:23.502 --> 00:09:24.062
+<v Matt Wilkinson>Mhm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/115-1
+00:09:23.570 --> 00:09:28.962
+<v Matthias Max>I mean you you just said there's
+everything in it in the zip file or or</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/114-0
+00:09:27.462 --> 00:09:29.742
+<v Matt Wilkinson>Yeah, yeah, yeah, yeah, exactly.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/115-2
+00:09:28.962 --> 00:09:34.504
+<v Matthias Max>download and if we need further tests,
+probably with revised conflicts or</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/115-3
+00:09:34.504 --> 00:09:38.173
+<v Matthias Max>something,
+which I don't expect at this point we</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/115-4
+00:09:38.173 --> 00:09:38.622
+<v Matthias Max>could.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/116-0
+00:09:38.622 --> 00:09:41.982
+<v Matthias Max>Still activated again for a day or two,
+right?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/117-0
+00:09:41.702 --> 00:09:45.799
+<v Matt Wilkinson>Yeah, exactly. It's quite easy to do.
+I just need to coordinate it with some</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/117-1
+00:09:45.799 --> 00:09:47.022
+<v Matt Wilkinson>guys in the team, yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/119-0
+00:09:47.382 --> 00:09:51.502
+<v Matthias Max>Yeah,
+then let's stop it to avoid any issues</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/119-1
+00:09:51.502 --> 00:09:56.262
+<v Matthias Max>with this overflowing situation that we
+face, yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/118-0
+00:09:54.102 --> 00:09:54.462
+<v Matt Wilkinson>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/120-0
+00:09:56.022 --> 00:09:58.502
+<v Matt Wilkinson>Yeah, perfect. I'll get that done. OK,
+good.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/121-0
+00:09:58.862 --> 00:09:59.302
+<v Matthias Max>Good.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/122-0
+00:10:00.942 --> 00:10:06.022
+<v Matthias Max>Do I know, uh, Joseph,
+any question from your side, Nikolay?</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/124-0
+00:10:07.022 --> 00:10:08.982
+<v Yosif Mihaylov>No, no, no this point.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/123-0
+00:10:08.182 --> 00:10:09.462
+<v Nikolay Hristov>No, no.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/125-0
+00:10:10.422 --> 00:10:10.582
+<v Matthias Max>OK.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/127-0
+00:10:11.422 --> 00:10:14.642
+<v Matt Wilkinson>I did,
+I did drop through an e-mail as well</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/127-1
+00:10:14.642 --> 00:10:18.739
+<v Matt Wilkinson>Matthias just on I know we've had this is
+a side topic.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/127-2
+00:10:18.739 --> 00:10:24.520
+<v Matt Wilkinson>I know we had the like the Postgres topic
+of like it's we're going through the</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/127-3
+00:10:24.520 --> 00:10:26.422
+<v Matt Wilkinson>proxy and it's slower but.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/126-0
+00:10:25.102 --> 00:10:25.582
+<v Matthias Max>Mhm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/130-0
+00:10:26.862 --> 00:10:31.607
+<v Matt Wilkinson>Looking at the monitor in GCP for the AVN
+1034 Postgres database,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/130-1
+00:10:31.607 --> 00:10:37.431
+<v Matt Wilkinson>that's also saying that it's only seeing
+data stream is only seeing like latency</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/130-2
+00:10:37.431 --> 00:10:43.182
+<v Matt Wilkinson>of maybe 10 and 15 seconds on average,
+and that's over the course of the month.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/128-0
+00:10:41.862 --> 00:10:42.222
+<v Matthias Max>Hmm, OK.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/136-0
+00:10:43.302 --> 00:10:45.836
+<v Matt Wilkinson>So I just that was one thing I wanted to
+flag.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/129-0
+00:10:43.942 --> 00:10:44.062
+<v Matthias Max>OK.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/136-1
+00:10:45.836 --> 00:10:50.149
+<v Matt Wilkinson>I dropped you an e-mail about that as
+well and Nikolay you should you should be</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/131-0
+00:10:48.022 --> 00:10:48.142
+<v Matthias Max>OK.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/136-2
+00:10:50.149 --> 00:10:53.006
+<v Matt Wilkinson>able to see the logs for that in the in
+the monitor.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/136-3
+00:10:53.006 --> 00:10:56.510
+<v Matt Wilkinson>I sent you a link of what I could see and
+what I was looking at.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/133-0
+00:10:56.502 --> 00:10:56.662
+<v Matthias Max>And.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/136-4
+00:10:56.510 --> 00:10:59.637
+<v Matt Wilkinson>So Nikolay's got that information as well
+on this access.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/135-0
+00:10:57.942 --> 00:10:58.742
+<v Nikolay Hristov>OK.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/134-0
+00:10:58.062 --> 00:10:58.222
+<v Matthias Max>2.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/136-5
+00:10:59.637 --> 00:11:02.062
+<v Matt Wilkinson>So I just I just want to flag it because
+it.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/138-0
+00:11:03.542 --> 00:11:07.240
+<v Matt Wilkinson>It's not.
+I know we've said data stream is the the</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/138-1
+00:11:07.240 --> 00:11:11.590
+<v Matt Wilkinson>there's a latency with ABN at the moment,
+but ABN Postgres,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/137-0
+00:11:10.462 --> 00:11:11.022
+<v Matthias Max>Mm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/138-2
+00:11:11.590 --> 00:11:16.810
+<v Matt Wilkinson>the data stream isn't seeing that.
+So I just want to that's what I just</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/138-3
+00:11:16.810 --> 00:11:18.622
+<v Matt Wilkinson>wanted to work basically.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/139-0
+00:11:18.782 --> 00:11:22.141
+<v Matthias Max>OK,
+so we also don't have any drops or</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/139-1
+00:11:22.141 --> 00:11:26.103
+<v Matthias Max>outages.
+It's running since we chatted like 3</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/139-2
+00:11:26.103 --> 00:11:28.342
+<v Matthias Max>weeks ago in in that chat.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/140-0
+00:11:28.542 --> 00:11:33.928
+<v Matt Wilkinson>This is this is ABM Postgres,
+so this has been running for forever like</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/140-1
+00:11:33.928 --> 00:11:34.302
+<v Matt Wilkinson>ages.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/141-0
+00:11:34.222 --> 00:11:34.582
+<v Matthias Max>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/142-0
+00:11:36.502 --> 00:11:36.822
+<v Matt Wilkinson>Yep.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/143-0
+00:11:36.822 --> 00:11:37.062
+<v Matthias Max>OK.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/146-0
+00:11:38.702 --> 00:11:42.622
+<v Matthias Max>Yeah, also, sorry, um.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/145-0
+00:11:39.422 --> 00:11:41.062
+<v Matt Wilkinson>Go on your support question.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/144-0
+00:11:40.902 --> 00:11:42.102
+<v Yosif Mihaylov>So yeah, so the.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/148-0
+00:11:44.302 --> 00:11:49.359
+<v Yosif Mihaylov>I just wanted to mention about the proxy
+thing that the main concern there was not</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/148-1
+00:11:49.359 --> 00:11:52.406
+<v Yosif Mihaylov>the performance,
+but rather the resilience of the</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/148-2
+00:11:52.406 --> 00:11:56.427
+<v Yosif Mihaylov>connection there. I mean,
+I'm not sure how much the proxy affects</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/148-3
+00:11:56.427 --> 00:11:59.900
+<v Yosif Mihaylov>the performance.
+I think that there might be other stuff</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/148-4
+00:11:59.900 --> 00:12:03.982
+<v Yosif Mihaylov>in our current data stream implementation
+that might be affecting.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/149-0
+00:12:03.982 --> 00:12:10.652
+<v Yosif Mihaylov>Performance or maybe we improved on that.
+I mean the last time I discussed this</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/149-1
+00:12:10.652 --> 00:12:15.905
+<v Yosif Mihaylov>with Nikki for Postgres,
+it was taking like 5/10/15 minutes to</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/149-2
+00:12:15.905 --> 00:12:21.575
+<v Yosif Mihaylov>come some changes. But again,
+I don't think that that was about the</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/149-3
+00:12:21.575 --> 00:12:23.742
+<v Yosif Mihaylov>proxy that much the proxy.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/150-0
+00:12:24.102 --> 00:12:28.988
+<v Yosif Mihaylov>Obviously the the concern there is really
+the the resilience and like the</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/150-1
+00:12:28.988 --> 00:12:33.280
+<v Yosif Mihaylov>possibility of you know,
+breaking the connection and potentially</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/150-2
+00:12:33.280 --> 00:12:38.562
+<v Yosif Mihaylov>losing the the stream and having to do
+some manual stuff, resetting the stream,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/150-3
+00:12:38.562 --> 00:12:40.542
+<v Yosif Mihaylov>losing some changes and so on.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/151-0
+00:12:40.542 --> 00:12:45.012
+<v Yosif Mihaylov>Which in theory could happen when there's
+no direct connection. But yeah,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/151-1
+00:12:45.012 --> 00:12:46.582
+<v Yosif Mihaylov>we discussed this already.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/152-0
+00:12:48.582 --> 00:12:53.451
+<v Matthias Max>Yeah, I mean,
+I'm I just wanted to drive this test</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/152-1
+00:12:53.451 --> 00:12:59.942
+<v Matthias Max>without a proxy A to make the
+infrastructure as simple as possible.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/153-0
+00:13:02.622 --> 00:13:08.532
+<v Matthias Max>And we to know how it's done and that it
+is working just to have an option up the</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/153-1
+00:13:08.532 --> 00:13:14.009
+<v Matthias Max>sleeve later in case we would have to
+switch and then we would already have</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/153-2
+00:13:14.009 --> 00:13:18.981
+<v Matthias Max>built up experience with it.
+I also see and understand that it takes</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/153-3
+00:13:18.981 --> 00:13:20.422
+<v Matthias Max>effort on your side.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/154-0
+00:13:20.982 --> 00:13:27.375
+<v Matthias Max>Capacity we probably don't have.
+So if we see face good timings right now</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/154-1
+00:13:27.375 --> 00:13:31.522
+<v Matthias Max>and it works reliably,
+I'm fine with moving on.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/154-2
+00:13:31.522 --> 00:13:35.582
+<v Matthias Max>We probably just should document it
+somewhere.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/155-0
+00:13:36.062 --> 00:13:39.337
+<v Matthias Max>Why we are,
+why we stuck with it and did not try</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/155-1
+00:13:39.337 --> 00:13:44.083
+<v Matthias Max>these other things so that later when we
+are six months in the future,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/155-2
+00:13:44.083 --> 00:13:46.422
+<v Matthias Max>know what we did and why we did it.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/156-0
+00:13:47.502 --> 00:13:48.902
+<v Matthias Max>That's also way forward.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/157-0
+00:13:50.942 --> 00:13:52.942
+<v Matt Wilkinson>Yeah, I agree.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/160-0
+00:13:53.982 --> 00:13:57.276
+<v Vervenne, Ron>We can do that,
+but I want to emphasize that this was the</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/160-1
+00:13:57.276 --> 00:14:01.762
+<v Vervenne, Ron>normal way of connecting to a database
+from Google for years now and basically</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/160-2
+00:14:01.762 --> 00:14:04.374
+<v Vervenne, Ron>that there's nothing ever have been an
+issue.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/158-0
+00:14:02.342 --> 00:14:02.622
+<v Matthias Max>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/160-3
+00:14:04.374 --> 00:14:08.916
+<v Vervenne, Ron>So I don't expect that we now have an
+issue because they introduce a new way of</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/159-0
+00:14:06.742 --> 00:14:06.902
+<v Matthias Max>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/160-4
+00:14:08.916 --> 00:14:10.222
+<v Vervenne, Ron>possibilities for that.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/161-0
+00:14:11.342 --> 00:14:13.862
+<v Matthias Max>I I'm not with you.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/164-0
+00:14:12.382 --> 00:14:16.711
+<v Vervenne, Ron>And we are still having it.
+We having it on our list, on our,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/164-1
+00:14:16.711 --> 00:14:20.969
+<v Vervenne, Ron>on our wish list as well.
+But that's that needs to be, yeah,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/162-0
+00:14:18.742 --> 00:14:18.982
+<v Matthias Max>Yeah.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/164-2
+00:14:20.969 --> 00:14:23.622
+<v Vervenne, Ron>done when when we really are up to it.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/163-0
+00:14:21.302 --> 00:14:21.702
+<v Matthias Max>No.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/165-0
+00:14:23.942 --> 00:14:26.142
+<v Matthias Max>All good. All good. I just.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/166-0
+00:14:24.782 --> 00:14:29.410
+<v Vervenne, Ron>And I don't think there is that much
+change in it because there's just only</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/166-1
+00:14:29.410 --> 00:14:32.759
+<v Vervenne, Ron>changing the IP address what you are
+addressing there.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/166-2
+00:14:32.759 --> 00:14:36.900
+<v Vervenne, Ron>Your connection is changing a bit,
+but furthermore in the back end,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/166-3
+00:14:36.900 --> 00:14:38.422
+<v Vervenne, Ron>there's no changes in it.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/169-0
+00:14:38.422 --> 00:14:43.825
+<v Matthias Max>Yeah, let's let's handle it like that.
+I think we all want to move on with our</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/167-0
+00:14:42.182 --> 00:14:42.422
+<v Vervenne, Ron>Hmm.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/169-1
+00:14:43.825 --> 00:14:46.766
+<v Matthias Max>lives.
+Let's document the current state of</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/169-2
+00:14:46.766 --> 00:14:51.142
+<v Matthias Max>things and base the decision on that and
+come back to it later.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/168-0
+00:14:51.662 --> 00:14:51.782
+<v Vervenne, Ron>Yep.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/170-0
+00:14:53.302 --> 00:14:53.782
+<v Matthias Max>Good.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/171-0
+00:14:56.822 --> 00:14:59.422
+<v Matthias Max>Then I think that's it for today.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/172-0
+00:15:01.182 --> 00:15:07.530
+<v Matthias Max>Thanks a lot for the great effort as well.
+I'm really happy we have such a good</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/172-1
+00:15:07.530 --> 00:15:12.609
+<v Matthias Max>progress and all outcome.
+Looking forward to going through your</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/172-2
+00:15:12.609 --> 00:15:15.862
+<v Matthias Max>content, Matt. Thanks for providing that.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/173-0
+00:15:16.302 --> 00:15:20.161
+<v Matthias Max>And I'll be back with, yeah,
+I think the wrap up, uh,</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/173-1
+00:15:20.161 --> 00:15:22.662
+<v Matthias Max>document or whatever it's gonna be.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/175-0
+00:15:27.742 --> 00:15:30.182
+<v Matthias Max>Good. Thanks a lot. See you soon.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/176-0
+00:15:31.182 --> 00:15:32.142
+<v Vervenne, Ron>OK. Bye, bye.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/179-0
+00:15:33.702 --> 00:15:33.742
+<v Matthias Max>I.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/181-0
+00:15:33.782 --> 00:15:34.462
+<v Yosif Mihaylov>Thank you. Bye.</v>
+
+1ec86d5c-ae63-4818-9003-35cdfbfa272f/183-0
+00:15:34.822 --> 00:15:35.422
+<v Nikolay Hristov>Thank you. Bye.</v>

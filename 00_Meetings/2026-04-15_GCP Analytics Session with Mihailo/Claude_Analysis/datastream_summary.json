@@ -1,0 +1,34 @@
+{
+  "time_range": {
+    "from": "2026-03-30T13:01:32.002146Z",
+    "to": "2026-04-02T10:01:35.652868Z"
+  },
+  "totals": {
+    "log_entries": 1271,
+    "total_records_processed": 23751,
+    "error_entries": 0,
+    "successful_entries": 1271
+  },
+  "delivery_rate": {
+    "by_log_entries": "100.00%",
+    "errors_found": 0,
+    "note": "All log entries have severity=INFO, 0 errors detected"
+  },
+  "records_per_entry": {
+    "min": 1,
+    "max": 1098,
+    "avg": 18.7
+  },
+  "by_object_name": {
+    "TMS1060_SENDUNG": {
+      "log_entries": 1271,
+      "total_records": 23751
+    }
+  },
+  "by_stream_id": {
+    "orauat-1060-bucket": {
+      "log_entries": 1271,
+      "total_records": 23751
+    }
+  }
+}

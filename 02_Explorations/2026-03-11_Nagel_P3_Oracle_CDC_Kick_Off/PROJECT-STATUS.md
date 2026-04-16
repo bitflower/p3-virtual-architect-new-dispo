@@ -14,7 +14,7 @@
 
 ## Quick Overview
 
-**Problem:** P3 branches use Oracle TMS, but current CDC solution only supports Postgres. Need Oracle CDC to enable real-time data synchronization for New Dispo.
+**Problem:** Nagel branches use Oracle TMS, but current CDC solution only supports Postgres. Need Oracle CDC to enable real-time data synchronization for New Dispo.
 
 **Solution Approach:** Evaluate two CDC options in parallel POCs:
 - **Striim** (already deployed at Nagel, character set mapping capability)
