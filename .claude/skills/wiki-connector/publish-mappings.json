@@ -436,9 +436,47 @@
       }
     },
     {
+      "id": "adr-004-tms-bridge-database-identifier",
+      "source": "09_ADRs/ADR-004-tms-bridge-database-identifier/ADR-004-tms-bridge-database-identifier.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/ADRs/[ADR004]-TMS-Bridge-Database-Identifier-Naming-Convention.md",
+      "description": "ADR-004: TMS Bridge Database Identifier Naming Convention",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "ADR document - TMS Bridge database identifier naming convention, no attachments"
+      }
+    },
+    {
+      "id": "adr-006-oracle-cdc-solution-selection",
+      "source": "09_ADRs/ADR-006-oracle-cdc-solution-selection/ADR-006-oracle-cdc-solution-selection.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/ADRs/[ADR006]-Oracle-CDC-Solution-Selection-for-TMS-Branch-Databases.md",
+      "description": "ADR-006: Oracle CDC Solution Selection for TMS Branch Databases",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "ADR document - Oracle CDC solution selection, no attachments"
+      }
+    },
+    {
       "id": "adr-007-datastream-psc-proxy",
       "source": "09_ADRs/ADR-007-datastream-psc-proxy-retention/ADR-007-datastream-psc-proxy-retention.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Architecure/Decision-Log/ADRs/[ADR007]-Retain-PSC-Proxy-for-Datastream%2Dto%2DAlloyDB-Connectivity.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/ADRs/[ADR007]-Retain-PSC-Proxy-for-Datastream%2Dto%2DAlloyDB-Connectivity.md",
       "description": "ADR-007: Decision to retain PSC proxy for Datastream-to-AlloyDB connectivity",
       "syncStrategy": {
         "type": "full-sync",

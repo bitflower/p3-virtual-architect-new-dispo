@@ -140,9 +140,6 @@ Key requirements include:
 
 ## References
 
-* Internal communication thread (2026-01-08): Pascal Leicht, Nikolay, Matthias Max discussing database identifier patterns
-* Product Owner consultation: Max Kehder on naming convention decision
-
 **Code Implementation:**
 * TMS Bridge repository: Disposition-Abstraction-Layer
 * File: `CALConsult.TMSBridge.API/Data/DbContexts/BranchDbContextFactory.cs`
@@ -164,3 +161,11 @@ Key requirements include:
 * `P-A-01-01` (Postgres, Austria, Company 01, Branch 01)
 * `O-PL-04-30` (Oracle, Poland, Company 04, Branch 30)
 * `P-SE-28-20` (Postgres, Sweden, Company 28, Branch 20)
+
+## Document History
+
+| Date | Author | Change |
+|------|--------|--------|
+| 2026-01-08 | Pascal Leicht, Nikolay, Matthias Max | Internal discussion on database identifier patterns |
+
+| 2026-01-27 | Virtual Architect | ADR created |
