@@ -147,7 +147,7 @@
     {
       "id": "project-oracle-cdc",
       "source": "02_Explorations/2026-03-11_Nagel_P3_Oracle_CDC_Kick_Off/PROJECT-STATUS.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Oracle-CDC-Solution-for-TMS-Branch-Databases.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Oracle-CDC.md",
       "description": "Oracle CDC Solution for TMS Branch Databases - Living project status",
       "syncStrategy": {
         "type": "full-sync",
@@ -167,7 +167,7 @@
     {
       "id": "oracle-cdc-datastream-analysis-report",
       "source": "02_Explorations/2026-04-15_Oracle-CDC-PoC-Analysis/consolidated_report.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Oracle-CDC-Solution-for-TMS-Branch-Databases/Datastream-CDC-Analysis-Report.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Oracle-CDC/Datastream-CDC-Analysis-Report.md",
       "description": "Datastream CDC Analysis Report - Full GCP metrics analysis, root cause, tuning options (sub-page of Oracle CDC project)",
       "syncStrategy": {
         "type": "full-sync",
@@ -193,7 +193,7 @@
     {
       "id": "project-cdc-error-flow",
       "source": "02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/PROJECT-STATUS.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-CDC-Error-Flow-Solution-Design.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/CDC-Error-Flow.md",
       "description": "CDC Error Flow Solution Design - Implementing reliable CDC event processing retry mechanism",
       "syncStrategy": {
         "type": "full-sync",
@@ -213,7 +213,7 @@
     {
       "id": "project-transport-order-creation",
       "source": "02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/PROJECT-STATUS.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Transactional-Behaviour.md",
       "description": "Transport Order Creation Flow - Complete documentation including TMS sync, error handling, and idempotency",
       "syncStrategy": {
         "type": "full-sync",
@@ -265,7 +265,7 @@
     {
       "id": "flow-createtransportorderfromleg",
       "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/01-CreateTransportOrderFromLeg.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/01-CreateTransportOrderFromLeg.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Transactional-Behaviour/Flows/01-CreateTransportOrderFromLeg.md",
       "description": "Transactional State Verification for CreateTransportOrderFromLeg - Flow documentation",
       "syncStrategy": {
         "type": "full-sync",
@@ -284,7 +284,7 @@
     {
       "id": "transactional-state-verification-flows",
       "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/PROJECT-STATUS.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Transactional-Behaviour/Flows.md",
       "description": "Transactional State Verification - All Flows Overview and Progress Tracker",
       "syncStrategy": {
         "type": "full-sync",
@@ -304,7 +304,7 @@
     {
       "id": "flow-createtransportorderfromlot",
       "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/02-CreateTransportOrderFromLot.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/02-CreateTransportOrderFromLot.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Transactional-Behaviour/Flows/02-CreateTransportOrderFromLot.md",
       "description": "Transactional State Verification for CreateTransportOrderFromLot - Flow documentation",
       "syncStrategy": {
         "type": "full-sync",
@@ -323,7 +323,7 @@
     {
       "id": "flow-assignlegtotransportorder",
       "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/03-AssignLegToTransportOrder.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/03-AssignLegToTransportOrder.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Transactional-Behaviour/Flows/03-AssignLegToTransportOrder.md",
       "description": "Transactional State Verification for AssignLegToTransportOrder - Flow documentation",
       "syncStrategy": {
         "type": "full-sync",
@@ -342,7 +342,7 @@
     {
       "id": "flow-assignlottotransportorder",
       "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/04-AssignLotToTransportOrder.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/04-AssignLotToTransportOrder.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Transactional-Behaviour/Flows/04-AssignLotToTransportOrder.md",
       "description": "Transactional State Verification for AssignLotToTransportOrder - Flow documentation",
       "syncStrategy": {
         "type": "full-sync",
@@ -361,7 +361,7 @@
     {
       "id": "flow-unassignlots",
       "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/05-UnassignLots.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/05-UnassignLots.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Transactional-Behaviour/Flows/05-UnassignLots.md",
       "description": "Transactional State Verification for UnassignLots - Flow documentation",
       "syncStrategy": {
         "type": "full-sync",
@@ -380,7 +380,7 @@
     {
       "id": "flow-unassignlegs",
       "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/06-UnassignLegs.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/06-UnassignLegs.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Transactional-Behaviour/Flows/06-UnassignLegs.md",
       "description": "Transactional State Verification for UnassignLegs - Flow documentation",
       "syncStrategy": {
         "type": "full-sync",
@@ -399,7 +399,7 @@
     {
       "id": "flow-deletetransportorder",
       "source": "02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/07-DeleteTransportOrder.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/07-DeleteTransportOrder.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Transactional-Behaviour/Flows/07-DeleteTransportOrder.md",
       "description": "Transactional State Verification for DeleteTransportOrder - Flow documentation",
       "syncStrategy": {
         "type": "full-sync",

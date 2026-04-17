@@ -219,6 +219,7 @@ Team refinement scheduled to select from four solution options:
 
 ## Blockers
 
+- ⏳ **Status Update Required:** Awaiting status update from **Ivailo Pashov**
 - ⏳ **Solution Selection:** Team refinement required to choose approach
 - ⏳ **Timeline Commitment:** Cannot commit timeline until solution selected
 

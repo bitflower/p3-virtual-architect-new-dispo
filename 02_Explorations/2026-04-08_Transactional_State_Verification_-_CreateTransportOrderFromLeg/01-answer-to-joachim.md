@@ -18,7 +18,7 @@ Falls Ergebnis vorhanden (TransportOrderId NOT NULL) → Leg ist bereits einem T
 
 **Ist das korrekt?**
 
-Siehe: [Flow #1: Verification Candidates (Wiki)](/Projects/Active/Project%3A-Transport-Order-Creation-Flow/Flows/01-CreateTransportOrderFromLeg#verification-candidates)
+Siehe: [Flow #1: Verification Candidates (Wiki)](/Projects/Active/Transactional-Behaviour/Flows/01-CreateTransportOrderFromLeg#verification-candidates)
 
 ## Eine Frage bleibt
 
