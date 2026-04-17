@@ -1,0 +1,4855 @@
+WEBVTT
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/10-0
+00:00:04.136 --> 00:00:04.696
+<v Yosif Mihaylov>I assume.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/11-0
+00:00:04.736 --> 00:00:05.056
+<v Yosif Mihaylov>I assume.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/12-0
+00:00:06.216 --> 00:00:07.056
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/14-0
+00:00:08.136 --> 00:00:13.198
+<v Yosif Mihaylov>OK, so like this is in wiki.
+I can later send the links,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/14-1
+00:00:13.198 --> 00:00:19.859
+<v Yosif Mihaylov>but pretty much I created 2 documents,
+one for each option that we need to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/14-2
+00:00:19.859 --> 00:00:26.697
+<v Yosif Mihaylov>investigate and estimate and like I went
+through the whole document although</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/14-3
+00:00:26.697 --> 00:00:27.496
+<v Yosif Mihaylov>material.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/17-0
+00:00:27.776 --> 00:00:34.328
+<v Yosif Mihaylov>Just like you mentioned that probably not
+all of the content is irrelevant,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/15-0
+00:00:32.296 --> 00:00:33.056
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/17-1
+00:00:34.328 --> 00:00:40.622
+<v Yosif Mihaylov>but I decided to go through because this
+document implies lots of stuff.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/17-2
+00:00:40.622 --> 00:00:45.536
+<v Yosif Mihaylov>I split what I could and identified into
+into tasks and.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/19-0
+00:00:45.696 --> 00:00:51.371
+<v Yosif Mihaylov>Pretty much under each task I provided
+like 3 different estimations.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/16-0
+00:00:46.176 --> 00:00:46.736
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/18-0
+00:00:51.256 --> 00:00:52.216
+<v Matthias Max>Mm-hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/19-1
+00:00:51.371 --> 00:00:58.033
+<v Yosif Mihaylov>Like by the end of this meeting we could
+of course decide what's in the scope of</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/19-2
+00:00:58.033 --> 00:01:01.816
+<v Yosif Mihaylov>this POC and what it's not.
+Maybe some tasks.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/21-0
+00:01:02.096 --> 00:01:06.493
+<v Yosif Mihaylov>Are irrelevant or we don't need them at
+this point. But yeah,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/21-1
+00:01:06.493 --> 00:01:11.456
+<v Yosif Mihaylov>I decided that it's good to have them
+anyway. I already went through.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/20-0
+00:01:09.536 --> 00:01:10.016
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/22-0
+00:01:13.856 --> 00:01:20.335
+<v Yosif Mihaylov>Through this option in particular how the
+data stream would require he provided his</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/22-1
+00:01:20.335 --> 00:01:23.729
+<v Yosif Mihaylov>input,
+so we should be good to go with this</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/22-2
+00:01:23.729 --> 00:01:28.896
+<v Yosif Mihaylov>option for the other one.
+I think I'm done with it. It's far less.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/24-0
+00:01:30.096 --> 00:01:35.658
+<v Yosif Mihaylov>Complicated because some of the tasks are
+are let's say common and shared and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/24-1
+00:01:35.658 --> 00:01:40.935
+<v Yosif Mihaylov>they're part of this this option here.
+So they're redundant in the other.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/24-2
+00:01:40.935 --> 00:01:45.642
+<v Yosif Mihaylov>We haven't mentioned to go through the
+other document with Nikki,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/23-0
+00:01:42.216 --> 00:01:42.736
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/24-3
+00:01:45.642 --> 00:01:49.136
+<v Yosif Mihaylov>but I think we can we can do it in this
+meeting.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/25-0
+00:01:49.136 --> 00:01:50.496
+<v Yosif Mihaylov>It's really not that much.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/26-0
+00:01:52.536 --> 00:01:58.907
+<v Yosif Mihaylov>And OK, I think I'll start. First of all,
+first of all are the like the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/26-1
+00:01:58.907 --> 00:02:03.508
+<v Yosif Mihaylov>requirements,
+the dependencies that we are going to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/26-2
+00:02:03.508 --> 00:02:07.136
+<v Yosif Mihaylov>have and what do you expect from Nagel I.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/27-0
+00:02:07.336 --> 00:02:10.176
+<v Yosif Mihaylov>Think there are there are three main um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/28-0
+00:02:11.176 --> 00:02:16.906
+<v Yosif Mihaylov>Requirements and dependencies.
+One of them is this Oracle database that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/28-1
+00:02:16.906 --> 00:02:22.398
+<v Yosif Mihaylov>they will need to provide.
+This should be a development database and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/28-2
+00:02:22.398 --> 00:02:26.536
+<v Yosif Mihaylov>like database that we are going to use
+for testing.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/29-0
+00:02:26.896 --> 00:02:33.673
+<v Yosif Mihaylov>It will be on premise like they have it
+by their site and it will be configured</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/29-1
+00:02:33.673 --> 00:02:40.451
+<v Yosif Mihaylov>like it will be configured with all the
+configurations needed to enable CDC for</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/29-2
+00:02:40.451 --> 00:02:46.296
+<v Yosif Mihaylov>Oracle such as the archive work option
+enabled supplemental logging.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/30-0
+00:02:46.816 --> 00:02:53.279
+<v Yosif Mihaylov>I think they need to set up a dedicated
+CDC database user with all the grants and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/30-1
+00:02:53.279 --> 00:02:57.377
+<v Yosif Mihaylov>permissions.
+This is already stated in the document</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/30-2
+00:02:57.377 --> 00:03:00.056
+<v Yosif Mihaylov>that they are going to provide it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/31-0
+00:03:01.376 --> 00:03:07.696
+<v Yosif Mihaylov>Also like they need to make sure that we
+have access to this on-premise Oracle</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/31-1
+00:03:07.696 --> 00:03:14.256
+<v Yosif Mihaylov>database from our GCP environment and the
+third thing is that they will also need</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/31-2
+00:03:14.256 --> 00:03:19.296
+<v Yosif Mihaylov>to provide the GCP environment itself
+apart from the database.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/34-0
+00:03:20.176 --> 00:03:24.142
+<v Yosif Mihaylov>This should be like a brand new GCP
+environment.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/34-1
+00:03:24.142 --> 00:03:29.970
+<v Yosif Mihaylov>I would imagine because we don't want to
+to mess with our existing test</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/34-2
+00:03:29.970 --> 00:03:34.179
+<v Yosif Mihaylov>environment and mess up the test
+environment. Yeah,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/32-0
+00:03:31.376 --> 00:03:31.616
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/34-3
+00:03:34.179 --> 00:03:37.416
+<v Yosif Mihaylov>so this this is already stated in quite.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/33-0
+00:03:34.856 --> 00:03:35.336
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/35-0
+00:03:38.056 --> 00:03:40.816
+<v Yosif Mihaylov>I'm going from there.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/37-0
+00:03:41.856 --> 00:03:46.490
+<v Yosif Mihaylov>The first task is about the communication
+with the Nagia ID about these</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/37-1
+00:03:46.490 --> 00:03:50.093
+<v Yosif Mihaylov>requirements.
+I expect that I expect that there will be</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/36-0
+00:03:48.816 --> 00:03:49.296
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/37-2
+00:03:50.093 --> 00:03:55.049
+<v Yosif Mihaylov>some back and forth communication,
+for example about the configurations that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/37-3
+00:03:55.049 --> 00:03:59.103
+<v Yosif Mihaylov>needs to be enabled on the database.
+They might not be enough,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/37-4
+00:03:59.103 --> 00:04:00.776
+<v Yosif Mihaylov>they might not be working.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/39-0
+00:04:01.176 --> 00:04:04.601
+<v Yosif Mihaylov>Also about this user in the ideal
+situation,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/39-1
+00:04:04.601 --> 00:04:09.623
+<v Yosif Mihaylov>everything will be will be fine,
+like they will set up everything</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/39-2
+00:04:09.623 --> 00:04:14.875
+<v Yosif Mihaylov>correctly from the first try,
+but realistically I expect like two or</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/39-3
+00:04:14.875 --> 00:04:19.136
+<v Yosif Mihaylov>three hours effort in terms of
+communication with them.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/40-0
+00:04:19.216 --> 00:04:22.958
+<v Yosif Mihaylov>This is just about setting up these
+access requirements and making sure that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/38-0
+00:04:19.496 --> 00:04:20.256
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/40-1
+00:04:22.958 --> 00:04:24.416
+<v Yosif Mihaylov>they are existing and working.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/41-0
+00:04:25.176 --> 00:04:26.336
+<v Matthias Max>Mm-hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/42-0
+00:04:26.256 --> 00:04:32.052
+<v Yosif Mihaylov>Going from there, the second task,
+which is probably one of actually the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/42-1
+00:04:32.052 --> 00:04:37.769
+<v Yosif Mihaylov>biggest task I think is after they
+provide this this GCP environment we</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/42-2
+00:04:37.769 --> 00:04:42.136
+<v Yosif Mihaylov>should be empty.
+I would imagine we need to configure.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/44-0
+00:04:42.736 --> 00:04:48.733
+<v Yosif Mihaylov>All the infrastructure needed for the for
+the CDC such as we need to create the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/44-1
+00:04:48.733 --> 00:04:52.481
+<v Yosif Mihaylov>data stream,
+we need to create the cloud storage,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/44-2
+00:04:52.481 --> 00:04:55.929
+<v Yosif Mihaylov>the pub sub,
+the cloud function and also very</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/44-3
+00:04:55.929 --> 00:04:59.976
+<v Yosif Mihaylov>importantly apart from creating all these
+components.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/45-0
+00:05:00.376 --> 00:05:04.385
+<v Yosif Mihaylov>In the cloud,
+we will have to also make sure that we</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/45-1
+00:05:04.385 --> 00:05:08.847
+<v Yosif Mihaylov>integrate the data stream with existing
+Postgres database,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/45-2
+00:05:08.847 --> 00:05:14.897
+<v Yosif Mihaylov>because what will happen in reality in
+production is that capturing events from</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/45-3
+00:05:14.897 --> 00:05:18.376
+<v Yosif Mihaylov>Postgres and Oracle will work
+simultaneously.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/46-0
+00:05:18.656 --> 00:05:21.573
+<v Yosif Mihaylov>Meaning that now when we do the POC for
+Oracle,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/46-1
+00:05:21.573 --> 00:05:26.130
+<v Yosif Mihaylov>we need to make sure to simulate that we
+need to make sure that we have an</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/46-2
+00:05:26.130 --> 00:05:30.869
+<v Yosif Mihaylov>existing stream from for Postgres and
+then obviously like create the separate</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/46-3
+00:05:30.869 --> 00:05:35.608
+<v Yosif Mihaylov>stream from Oracle and make sure that
+they exist together and work correctly.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/46-4
+00:05:35.608 --> 00:05:37.856
+<v Yosif Mihaylov>So this is just about the setting up.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/47-0
+00:05:38.176 --> 00:05:42.256
+<v Yosif Mihaylov>Up of this GCP environment,
+creating the components and configuring</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/47-1
+00:05:42.256 --> 00:05:45.136
+<v Yosif Mihaylov>and integrating with some program dev
+database.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/48-0
+00:05:46.096 --> 00:05:46.576
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/51-0
+00:05:46.656 --> 00:05:55.247
+<v Yosif Mihaylov>These are the estimates that we gave like
+probably one full day of DevOps effort is</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/51-1
+00:05:55.247 --> 00:06:02.100
+<v Yosif Mihaylov>the optimistic scenario.
+Day and a half is the realistic and yeah,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/49-0
+00:05:57.816 --> 00:05:58.496
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/51-2
+00:06:02.100 --> 00:06:03.736
+<v Yosif Mihaylov>today's like if.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/52-0
+00:06:04.096 --> 00:06:07.774
+<v Yosif Mihaylov>Like if you have some some issues with
+the with the new environment uh for some</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/50-0
+00:06:04.216 --> 00:06:04.896
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/52-1
+00:06:07.774 --> 00:06:08.096
+<v Yosif Mihaylov>reason.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/55-0
+00:06:08.696 --> 00:06:14.533
+<v Matthias Max>Yeah, I think that's good.
+I also asked this guy, Dominik Landau.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/53-0
+00:06:10.416 --> 00:06:12.816
+<v Yosif Mihaylov>So yeah, sitting.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/55-1
+00:06:14.533 --> 00:06:21.784
+<v Matthias Max>I think I mentioned him his name already.
+He is currently documenting how the GCP</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/54-0
+00:06:16.016 --> 00:06:16.176
+<v Yosif Mihaylov>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/55-2
+00:06:21.784 --> 00:06:26.736
+<v Matthias Max>setup is working.
+I forwarded you the e-mail yesterday.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/56-0
+00:06:26.936 --> 00:06:32.024
+<v Matthias Max>He could also support here.
+I have asked him and he's fine with that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/58-0
+00:06:31.856 --> 00:06:34.641
+<v Yosif Mihaylov>Yeah,
+that's that's after all that's our</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/56-1
+00:06:32.024 --> 00:06:33.056
+<v Matthias Max>if that helps.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/58-1
+00:06:34.641 --> 00:06:39.464
+<v Yosif Mihaylov>environment like the current,
+the current CDC data stream is something</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/58-2
+00:06:39.464 --> 00:06:43.403
+<v Yosif Mihaylov>we implemented.
+Nikki has the knowledge to to to build it</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/57-0
+00:06:41.216 --> 00:06:41.856
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/58-3
+00:06:43.403 --> 00:06:46.256
+<v Yosif Mihaylov>up. So it's just about putting the effort.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/59-0
+00:06:46.536 --> 00:06:52.343
+<v Matthias Max>Yeah, but to be clear,
+we do this on Nagel GCP, not on P3 GCP,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/59-1
+00:06:52.343 --> 00:06:52.896
+<v Matthias Max>right?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/61-0
+00:06:53.736 --> 00:06:57.216
+<v Matthias Max>Otherwise we wouldn't have the on-premise
+connection anyway.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/60-0
+00:06:54.216 --> 00:06:55.496
+<v Yosif Mihaylov>Well, they will be.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/64-0
+00:06:57.776 --> 00:07:00.885
+<v Yosif Mihaylov>I assume so, yeah,
+they they they'll just provide,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/62-0
+00:06:59.336 --> 00:06:59.696
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/64-1
+00:07:00.885 --> 00:07:04.482
+<v Yosif Mihaylov>provide the environment like empty,
+empty and we'll build,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/63-0
+00:07:02.296 --> 00:07:03.696
+<v Matthias Max>All good.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/64-2
+00:07:04.482 --> 00:07:06.616
+<v Yosif Mihaylov>we'll build the the infrastructure.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/66-0
+00:07:08.656 --> 00:07:11.520
+<v Yosif Mihaylov>OK,
+so the next task I thought that there</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/66-1
+00:07:11.520 --> 00:07:17.043
+<v Yosif Mihaylov>were some configurations in GCP in terms
+of connection to the to this on premise</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/66-2
+00:07:17.043 --> 00:07:20.862
+<v Yosif Mihaylov>Oracle database.
+Nico I confirmed though that we should</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/66-3
+00:07:20.862 --> 00:07:25.976
+<v Yosif Mihaylov>not be spending any effort here like once
+they configured the the VPN and.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/65-0
+00:07:22.056 --> 00:07:22.496
+<v Matthias Max>Hmm, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/68-0
+00:07:26.536 --> 00:07:31.904
+<v Yosif Mihaylov>Connectivity to this on-premise database
+now also that you say that this GCP</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/68-1
+00:07:31.904 --> 00:07:37.271
+<v Yosif Mihaylov>environment like will be like on their
+side like we should not be having any</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/68-2
+00:07:37.271 --> 00:07:42.918
+<v Yosif Mihaylov>effort in terms of configuring connection
+to the to the Oracle database from the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/67-0
+00:07:42.856 --> 00:07:44.576
+<v Matthias Max>Yeah, mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/68-3
+00:07:42.918 --> 00:07:43.336
+<v Yosif Mihaylov>cloud.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/70-0
+00:07:43.816 --> 00:07:49.109
+<v Yosif Mihaylov>So this task is not needed.
+The next the next task after after we</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/69-0
+00:07:48.576 --> 00:07:48.816
+<v Matthias Max>Yep.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/70-1
+00:07:49.109 --> 00:07:55.044
+<v Yosif Mihaylov>created the the infrastructure,
+the basic infrastructure that we have now</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/70-2
+00:07:55.044 --> 00:08:00.016
+<v Yosif Mihaylov>is configuring the data stream itself for
+the for the Oracle.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/71-0
+00:08:00.896 --> 00:08:05.743
+<v Yosif Mihaylov>Like doing some some investigation,
+it seems that we need to perform tasks</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/71-1
+00:08:05.743 --> 00:08:10.784
+<v Yosif Mihaylov>such as creating connection profile.
+We need to set up the the the new stream</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/71-2
+00:08:10.784 --> 00:08:15.631
+<v Yosif Mihaylov>with its source and destination like
+being the Oracle database and the the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/71-3
+00:08:15.631 --> 00:08:19.896
+<v Yosif Mihaylov>bucket for example and pretty much all
+the configurations needed.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/73-0
+00:08:20.256 --> 00:08:25.572
+<v Yosif Mihaylov>For the data stream to actually start
+capturing these events from the Oracle</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/73-1
+00:08:25.572 --> 00:08:28.541
+<v Yosif Mihaylov>database,
+we expect this to be purely some</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/72-0
+00:08:27.696 --> 00:08:27.936
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/73-2
+00:08:28.541 --> 00:08:34.133
+<v Yosif Mihaylov>configurations like it should be two or
+three hours of configurations to for the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/73-3
+00:08:34.133 --> 00:08:35.376
+<v Yosif Mihaylov>data stream to to.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/74-0
+00:08:35.576 --> 00:08:37.136
+<v Yosif Mihaylov>To start capturing.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/75-0
+00:08:36.776 --> 00:08:37.856
+<v Matthias Max>Mm-hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/76-0
+00:08:39.936 --> 00:08:40.176
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/77-0
+00:08:40.296 --> 00:08:44.357
+<v Yosif Mihaylov>After we do this,
+the next the next step is to configure</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/77-1
+00:08:44.357 --> 00:08:49.059
+<v Yosif Mihaylov>the cloud storage, the bucket.
+What we need to configure there is</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/77-2
+00:08:49.059 --> 00:08:54.331
+<v Yosif Mihaylov>currently with our Postgres stream.
+The events are going into the bucket,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/77-3
+00:08:54.331 --> 00:08:59.816
+<v Yosif Mihaylov>but now when we are going to have another
+stream for the Oracle, we need to.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/79-0
+00:08:59.856 --> 00:09:05.618
+<v Yosif Mihaylov>Make prefixes like like making sure that
+these two streams together are going</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/79-1
+00:09:05.618 --> 00:09:11.159
+<v Yosif Mihaylov>separately and not being mixed up.
+We are going to be reused obviously the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/78-0
+00:09:09.376 --> 00:09:10.016
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/79-2
+00:09:11.159 --> 00:09:15.296
+<v Yosif Mihaylov>same data stream, the same bucket,
+but the bucket like.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/82-0
+00:09:15.936 --> 00:09:21.635
+<v Yosif Mihaylov>Like similarly to how a folder system
+works like if you imagine like two</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/82-1
+00:09:21.635 --> 00:09:27.647
+<v Yosif Mihaylov>different folders we need like such
+separation for for the for the different</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/80-0
+00:09:26.616 --> 00:09:27.136
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/82-2
+00:09:27.647 --> 00:09:31.316
+<v Yosif Mihaylov>streams.
+This is both both for monitoring also</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/81-0
+00:09:28.376 --> 00:09:28.656
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/82-3
+00:09:31.316 --> 00:09:35.376
+<v Yosif Mihaylov>troubleshooting and just see it looks
+like the the.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/84-0
+00:09:35.536 --> 00:09:39.781
+<v Yosif Mihaylov>Best practice here.
+So this should take like an hour or two.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/83-0
+00:09:37.896 --> 00:09:38.416
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/84-1
+00:09:39.781 --> 00:09:42.216
+<v Yosif Mihaylov>It should not be something complex.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/90-0
+00:09:43.096 --> 00:09:49.382
+<v Matthias Max>Yeah, one question here.
+I left that open intentionally because</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/85-0
+00:09:45.256 --> 00:09:45.496
+<v Yosif Mihaylov>After.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/90-1
+00:09:49.382 --> 00:09:56.945
+<v Matthias Max>you can also we can probably, yeah,
+we can review our current set up because</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/88-0
+00:09:51.776 --> 00:09:53.696
+<v Yosif Mihaylov>You can create another bucket.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/89-0
+00:09:54.696 --> 00:09:55.696
+<v Yosif Mihaylov>For example.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/90-2
+00:09:56.945 --> 00:10:02.936
+<v Matthias Max>I think you could also directly stream to
+pops up something.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/91-0
+00:10:02.976 --> 00:10:06.216
+<v Matthias Max>I read for data stream.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/95-0
+00:10:05.056 --> 00:10:10.352
+<v Yosif Mihaylov>I this is really I also investigated but
+it seems that this is not possible.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/95-1
+00:10:10.352 --> 00:10:15.579
+<v Yosif Mihaylov>This is actually why why we went with
+that approach from the beginning like</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/92-0
+00:10:11.016 --> 00:10:11.496
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/93-0
+00:10:13.896 --> 00:10:14.016
+<v Matthias Max>OK.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/95-2
+00:10:15.579 --> 00:10:20.255
+<v Yosif Mihaylov>seems that it's not possible.
+Usually usually like I think that the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/94-0
+00:10:16.656 --> 00:10:17.216
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/95-3
+00:10:20.255 --> 00:10:22.456
+<v Yosif Mihaylov>most common production setup is.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/101-0
+00:10:22.656 --> 00:10:27.504
+<v Yosif Mihaylov>After the data stream there there like
+there is a data flow pipe point which</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/96-0
+00:10:26.456 --> 00:10:26.616
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/101-1
+00:10:27.504 --> 00:10:31.093
+<v Yosif Mihaylov>from which from there like you can do all
+kind of stuff.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/101-2
+00:10:31.093 --> 00:10:36.192
+<v Yosif Mihaylov>It's I think very powerful too and but
+instead of this we have the bucket in the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/98-0
+00:10:32.016 --> 00:10:32.296
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/99-0
+00:10:35.456 --> 00:10:35.936
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/101-3
+00:10:36.192 --> 00:10:39.466
+<v Yosif Mihaylov>code function.
+But here yeah like ideally we should</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/100-0
+00:10:37.216 --> 00:10:37.736
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/101-4
+00:10:39.466 --> 00:10:40.536
+<v Yosif Mihaylov>reuse the bucket.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/102-0
+00:10:41.056 --> 00:10:44.521
+<v Yosif Mihaylov>For example,
+if something like like it's not working</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/102-1
+00:10:44.521 --> 00:10:47.464
+<v Yosif Mihaylov>there,
+I think that the we could also always</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/102-2
+00:10:47.464 --> 00:10:51.713
+<v Yosif Mihaylov>create another bucket,
+but I don't think that would be the case.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/102-3
+00:10:51.713 --> 00:10:53.936
+<v Yosif Mihaylov>Bobby, I see your hand raise that.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/106-0
+00:10:54.576 --> 00:10:59.280
+<v Boyan Valchev>Yeah, I mean for the data flow,
+I think we investigated this option and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/103-0
+00:10:59.056 --> 00:10:59.296
+<v Yosif Mihaylov>Maybe.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/106-1
+00:10:59.280 --> 00:11:03.200
+<v Boyan Valchev>we decided that it's like we won't use
+the full capability.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/105-0
+00:11:01.776 --> 00:11:03.936
+<v Yosif Mihaylov>Yeah, yeah, yeah, yeah, I remember.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/106-2
+00:11:03.200 --> 00:11:07.968
+<v Boyan Valchev>So This is why we don't need it.
+And also just because we mentioned like</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/104-0
+00:11:03.456 --> 00:11:03.936
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/106-3
+00:11:07.968 --> 00:11:11.496
+<v Boyan Valchev>the Oracle database,
+like do we need like some stuff?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/107-0
+00:11:12.136 --> 00:11:17.768
+<v Boyan Valchev>Allowed on this database before we can
+start connecting here with the data</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/109-0
+00:11:17.456 --> 00:11:21.504
+<v Yosif Mihaylov>Yeah, yeah, you missed this part Bobby.
+Like they're here. No, dear, no,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/107-1
+00:11:17.768 --> 00:11:20.696
+<v Boyan Valchev>stream because uh like the replication.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/109-1
+00:11:21.504 --> 00:11:25.442
+<v Yosif Mihaylov>no replication is Postgres specific.
+But for Oracle there are multiple</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/109-2
+00:11:25.442 --> 00:11:28.991
+<v Yosif Mihaylov>configurations that needs to be enabled,
+such as archive folks,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/109-3
+00:11:28.991 --> 00:11:32.429
+<v Yosif Mihaylov>supplemental logging.
+They need to create a CDC user with the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/109-4
+00:11:32.429 --> 00:11:35.091
+<v Yosif Mihaylov>rights,
+but this is all implied in the document</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/108-0
+00:11:34.376 --> 00:11:34.496
+<v Boyan Valchev>OK.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/109-5
+00:11:35.091 --> 00:11:36.976
+<v Yosif Mihaylov>that will be provided from the ID.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/111-0
+00:11:37.536 --> 00:11:40.281
+<v Boyan Valchev>Yeah, yeah.
+Because I remember that like for one of</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/111-1
+00:11:40.281 --> 00:11:43.501
+<v Boyan Valchev>the other projects,
+they had like some feature of the Oracle</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/111-2
+00:11:43.501 --> 00:11:47.988
+<v Boyan Valchev>database enabled to like they didn't know
+about it, but it was charging quite a lot.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/111-3
+00:11:47.988 --> 00:11:52.053
+<v Boyan Valchev>So just we need to make sure that like
+they're fine with this if we're going</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/111-4
+00:11:52.053 --> 00:11:53.056
+<v Boyan Valchev>with this approach.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/112-0
+00:11:52.656 --> 00:11:54.776
+<v Yosif Mihaylov>This is really on on their site.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/113-0
+00:11:53.136 --> 00:11:55.296
+<v Boyan Valchev>I mean the coasts around it, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/110-0
+00:11:54.216 --> 00:11:54.416
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/115-0
+00:11:56.416 --> 00:12:03.245
+<v Matthias Max>This is basically the bottom line we want
+to achieve that we have defined the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/115-1
+00:12:03.245 --> 00:12:10.336
+<v Matthias Max>requirements we expect from them. Yeah,
+but that's exactly the thinking we need.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/116-0
+00:12:10.656 --> 00:12:13.159
+<v Yosif Mihaylov>Yeah,
+we have the syncing process from the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/116-1
+00:12:13.159 --> 00:12:16.883
+<v Yosif Mihaylov>beginning. Like here,
+the first task is about any communication</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/116-2
+00:12:16.883 --> 00:12:21.423
+<v Yosif Mihaylov>which will happen around making sure that
+these access requirements and these</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/116-3
+00:12:21.423 --> 00:12:24.216
+<v Yosif Mihaylov>dependencies are met and are working
+correctly.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/118-0
+00:12:26.896 --> 00:12:32.095
+<v Yosif Mihaylov>Ideally they they they should have it
+everything wired up correctly and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/118-1
+00:12:32.095 --> 00:12:37.293
+<v Yosif Mihaylov>configured correctly, but yeah,
+there might be some communication going</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/118-2
+00:12:37.293 --> 00:12:38.376
+<v Yosif Mihaylov>back and forth.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/117-0
+00:12:38.736 --> 00:12:39.016
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/119-0
+00:12:39.136 --> 00:12:39.576
+<v Boyan Valchev>OK. OK. Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/120-0
+00:12:41.056 --> 00:12:47.745
+<v Matthias Max>I can also wrap up the meeting until here
+when you tag facilitator, facilitator,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/120-1
+00:12:47.745 --> 00:12:51.544
+<v Matthias Max>sorry,
+then you can probably quickly catch up</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/120-2
+00:12:51.544 --> 00:12:53.856
+<v Matthias Max>what we talked about so far.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/122-0
+00:12:54.056 --> 00:12:56.893
+<v Yosif Mihaylov>Uh,
+you want me to you want me to start from</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/121-0
+00:12:54.776 --> 00:12:56.256
+<v Matthias Max>In the chat.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/122-1
+00:12:56.893 --> 00:12:57.776
+<v Yosif Mihaylov>the beginning?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/123-0
+00:12:57.536 --> 00:12:59.976
+<v Matthias Max>No, no, no. For Boyan. For Boyan.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/127-0
+00:12:57.896 --> 00:13:01.605
+<v Boyan Valchev>No, no, no, no, no. I, I, yeah, yeah,
+I I called like from like 5,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/124-0
+00:13:00.536 --> 00:13:01.016
+<v Yosif Mihaylov>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/127-1
+00:13:01.605 --> 00:13:05.867
+<v Boyan Valchev>I joined 5 minutes later, but it's fine.
+It's fine. Sorry. You can go ahead.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/126-0
+00:13:04.256 --> 00:13:08.856
+<v Matthias Max>Mm-hmm. Yeah, Joseph is going fast.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/125-0
+00:13:04.496 --> 00:13:04.936
+<v Yosif Mihaylov>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/127-2
+00:13:05.867 --> 00:13:09.576
+<v Boyan Valchev>You can go ahead. You can go ahead. Yeah,
+you can go ahead. Sorry.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/129-0
+00:13:08.576 --> 00:13:12.456
+<v Yosif Mihaylov>OK,
+so after we configure the data stream and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/128-0
+00:13:10.176 --> 00:13:11.896
+<v Matthias Max>All good. Good.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/129-1
+00:13:12.456 --> 00:13:18.950
+<v Yosif Mihaylov>we make the changes over the bucket,
+the next thing which like the next task</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/129-2
+00:13:18.950 --> 00:13:25.697
+<v Yosif Mihaylov>potential task is we need to check if we
+need to make some changes in the cloud</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/129-3
+00:13:25.697 --> 00:13:26.456
+<v Yosif Mihaylov>function.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/130-0
+00:13:26.816 --> 00:13:32.056
+<v Yosif Mihaylov>I don't expect for us to make any changes
+there because whether we capture events</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/130-1
+00:13:32.056 --> 00:13:36.209
+<v Yosif Mihaylov>from Postgres or Oracle like we use data
+stream so so the event,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/130-2
+00:13:36.209 --> 00:13:41.321
+<v Yosif Mihaylov>so the envelope and the event type would
+be the same and I think that the cloud</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/130-3
+00:13:41.321 --> 00:13:46.496
+<v Yosif Mihaylov>function should just work out-of-the-box.
+That's why I said that optimistically.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/131-0
+00:13:46.736 --> 00:13:50.441
+<v Yosif Mihaylov>We should not be doing any changes in the
+quad function,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/131-1
+00:13:50.441 --> 00:13:54.731
+<v Yosif Mihaylov>but I read that although like the
+envelope structure is the same,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/131-2
+00:13:54.731 --> 00:13:59.541
+<v Yosif Mihaylov>there are some different in the values
+for like for example there is some</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/131-3
+00:13:59.541 --> 00:14:04.351
+<v Yosif Mihaylov>metadata that might be different.
+So just in case like there is something</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/131-4
+00:14:04.351 --> 00:14:05.456
+<v Yosif Mihaylov>that needs to be.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/133-0
+00:14:05.536 --> 00:14:11.310
+<v Yosif Mihaylov>Adjusted there like 2 hours buffer to
+make any potential changes in the quote</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/133-1
+00:14:11.310 --> 00:14:14.863
+<v Yosif Mihaylov>function.
+Ideally it should just start working.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/133-2
+00:14:14.863 --> 00:14:19.896
+<v Yosif Mihaylov>We should not care whether this event is
+an Oracle or Postgres one.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/132-0
+00:14:15.136 --> 00:14:15.736
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/135-0
+00:14:19.296 --> 00:14:24.861
+<v Matthias Max>Yeah. So just to be clear,
+you talk about our function that we have</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/135-1
+00:14:24.861 --> 00:14:28.625
+<v Matthias Max>for filtering shipments, is that correct?
+OK,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/134-0
+00:14:26.376 --> 00:14:28.336
+<v Yosif Mihaylov>Yes, yes, yes.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/135-2
+00:14:28.625 --> 00:14:33.616
+<v Matthias Max>because I think here we have a little
+mismatch of the scope.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/137-0
+00:14:34.736 --> 00:14:39.779
+<v Matthias Max>I said to myself,
+and I think I also said that to Christian,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/137-1
+00:14:39.779 --> 00:14:46.310
+<v Matthias Max>that we are happy once we see events
+coming in from data stream into the store</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/136-0
+00:14:44.296 --> 00:14:44.456
+<v Yosif Mihaylov>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/137-2
+00:14:46.310 --> 00:14:50.856
+<v Matthias Max>because from there it's literally only
+cloud specific.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/139-0
+00:14:50.936 --> 00:14:56.501
+<v Yosif Mihaylov>OK, we can cut, we can cut, cut this.
+That's fine. If you say we can cut it,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/138-0
+00:14:51.056 --> 00:14:52.376
+<v Matthias Max>Configuration.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/140-0
+00:14:54.576 --> 00:14:57.789
+<v Matthias Max>No,
+I I just want to discuss this because I</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/139-1
+00:14:56.501 --> 00:14:57.296
+<v Yosif Mihaylov>yeah, I am.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/140-1
+00:14:57.789 --> 00:15:02.607
+<v Matthias Max>by now I probably have changed my mind
+and think it's maybe good,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/140-2
+00:15:02.607 --> 00:15:08.667
+<v Matthias Max>but then it's also more complex. You know,
+we want to keep this POC small and when</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/140-3
+00:15:08.667 --> 00:15:12.099
+<v Matthias Max>we add such things,
+it adds of course quality,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/140-4
+00:15:12.099 --> 00:15:14.216
+<v Matthias Max>but it also raises the price.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/141-0
+00:15:14.256 --> 00:15:18.105
+<v Matthias Max>That's just what I what I have in my head
+and I wanted to share it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/145-0
+00:15:17.536 --> 00:15:21.403
+<v Yosif Mihaylov>To be honest, to be honest,
+knowing the full scope of the tasks I</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/141-1
+00:15:18.105 --> 00:15:19.576
+<v Matthias Max>We can discuss this later.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/145-1
+00:15:21.403 --> 00:15:24.568
+<v Yosif Mihaylov>have defined,
+I don't think that that would make that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/145-2
+00:15:24.568 --> 00:15:27.732
+<v Yosif Mihaylov>much of a difference,
+especially for the data stream.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/145-3
+00:15:27.732 --> 00:15:32.009
+<v Yosif Mihaylov>But really the cloud function is really
+the last component in the chain.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/142-0
+00:15:28.616 --> 00:15:28.856
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/143-0
+00:15:31.896 --> 00:15:32.056
+<v Matthias Max>OK.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/145-4
+00:15:32.009 --> 00:15:35.056
+<v Yosif Mihaylov>Like I mean after it is just the pops up,
+but like.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/144-0
+00:15:34.376 --> 00:15:34.896
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/148-0
+00:15:35.096 --> 00:15:39.015
+<v Yosif Mihaylov>Not much there.
+So it really with this task we wrap up</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/148-1
+00:15:39.015 --> 00:15:43.433
+<v Yosif Mihaylov>the the the quality infrastructure and we
+make the cut there.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/146-0
+00:15:41.536 --> 00:15:42.016
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/148-2
+00:15:43.433 --> 00:15:46.853
+<v Yosif Mihaylov>We can make the cut earlier at the the
+storage,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/148-3
+00:15:46.853 --> 00:15:50.416
+<v Yosif Mihaylov>but like as you will see there's not much
+effort.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/147-0
+00:15:47.016 --> 00:15:47.296
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/150-0
+00:15:50.536 --> 00:15:54.089
+<v Yosif Mihaylov>Um, dedicated for this.
+So like it's a friend,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/150-1
+00:15:54.089 --> 00:15:58.776
+<v Yosif Mihaylov>it's someone raised hand because like I'm
+not looking at the.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/149-0
+00:15:55.016 --> 00:15:55.176
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/151-0
+00:15:59.296 --> 00:16:01.496
+<v Matthias Max>No, no, no one else.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/153-0
+00:15:59.936 --> 00:16:04.683
+<v Yosif Mihaylov>I think OK, yeah,
+so going from there at this point here up</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/152-0
+00:16:02.896 --> 00:16:03.016
+<v Matthias Max>OK.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/153-1
+00:16:04.683 --> 00:16:09.192
+<v Yosif Mihaylov>until task six,
+like the basic heavy 4 should be working</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/153-2
+00:16:09.192 --> 00:16:15.046
+<v Yosif Mihaylov>at least at least we should expect so.
+So the next task is just about dev</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/153-3
+00:16:15.046 --> 00:16:17.656
+<v Yosif Mihaylov>testing which actually will help.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/154-0
+00:16:19.616 --> 00:16:25.216
+<v Yosif Mihaylov>To happen along the way that that we
+pretty much.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/156-0
+00:16:26.176 --> 00:16:31.403
+<v Yosif Mihaylov>I received the events and we covered the
+HP4 and the functionality is working.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/156-1
+00:16:31.403 --> 00:16:36.696
+<v Yosif Mihaylov>It's just like one or two hours for this
+effort just just going back and forth.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/155-0
+00:16:36.416 --> 00:16:37.656
+<v Matthias Max>Mm-hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/157-0
+00:16:38.056 --> 00:16:38.136
+<v Yosif Mihaylov>Um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/158-0
+00:16:41.456 --> 00:16:49.094
+<v Yosif Mihaylov>Now the next the next task after we like
+have this all set up and running.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/158-1
+00:16:49.094 --> 00:16:57.038
+<v Yosif Mihaylov>Ideally we like this task is about
+measuring the the latency and performance.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/158-2
+00:16:57.038 --> 00:16:59.176
+<v Yosif Mihaylov>This is a bit tricky.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/160-0
+00:16:59.456 --> 00:17:03.274
+<v Yosif Mihaylov>Because the document you provided,
+Matthias,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/160-1
+00:17:03.274 --> 00:17:08.196
+<v Yosif Mihaylov>implies that we need to simulate
+production like traffic,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/160-2
+00:17:08.196 --> 00:17:15.068
+<v Yosif Mihaylov>meaning because we have the CDC set up,
+we have the database which they provided</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/159-0
+00:17:10.576 --> 00:17:11.056
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/160-3
+00:17:15.068 --> 00:17:19.056
+<v Yosif Mihaylov>for us,
+but no one is actually making changes.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/162-0
+00:17:19.136 --> 00:17:23.079
+<v Yosif Mihaylov>Changes on this database,
+it's not a production database.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/162-1
+00:17:23.079 --> 00:17:28.448
+<v Yosif Mihaylov>So it would it would be us that we make
+these changes and somehow see how like</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/162-2
+00:17:28.448 --> 00:17:32.459
+<v Yosif Mihaylov>how the CDC reacts and like what's the
+what's the latency,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/161-0
+00:17:29.616 --> 00:17:30.136
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/162-3
+00:17:32.459 --> 00:17:37.081
+<v Yosif Mihaylov>what's the throughput and so on.
+And in order to simulate this this</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/162-4
+00:17:37.081 --> 00:17:38.576
+<v Yosif Mihaylov>traffic I think first.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/163-0
+00:17:38.896 --> 00:17:44.749
+<v Yosif Mihaylov>We need to write the some some some DB
+script like there are different options</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/163-1
+00:17:44.749 --> 00:17:50.380
+<v Yosif Mihaylov>there how this could be simulated.
+I think the most naive would be would be</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/163-2
+00:17:50.380 --> 00:17:53.936
+<v Yosif Mihaylov>just to simulate it with some with some
+script.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/164-0
+00:17:54.336 --> 00:17:54.856
+<v Yosif Mihaylov>Yes, well.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/165-0
+00:17:56.896 --> 00:18:00.526
+<v Boyan Valchev>In that regard,
+I checked because if you remember we had</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/165-1
+00:18:00.526 --> 00:18:05.556
+<v Boyan Valchev>like a topic going on with the QS about
+the load test for exactly for the CDC.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/165-2
+00:18:05.556 --> 00:18:10.714
+<v Boyan Valchev>I think that those tests are uploaded and
+we have like AJ metascript I think for</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/165-3
+00:18:10.714 --> 00:18:14.216
+<v Boyan Valchev>those exactly for load tests when it
+comes to the CDC.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/167-0
+00:18:14.416 --> 00:18:20.711
+<v Boyan Valchev>Of course it's made for Postgres,
+but I think it that if it's there and if</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/166-0
+00:18:18.656 --> 00:18:19.216
+<v Yosif Mihaylov>Thank you.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/167-1
+00:18:20.711 --> 00:18:27.090
+<v Boyan Valchev>if Jmeter is like a at least from your
+perspective is good enough option to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/167-2
+00:18:27.090 --> 00:18:28.936
+<v Boyan Valchev>simulate this traffic.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/169-0
+00:18:27.296 --> 00:18:30.188
+<v Yosif Mihaylov>Oh, it doesn't. I think it's good enough.
+Yes,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/169-1
+00:18:30.188 --> 00:18:35.110
+<v Yosif Mihaylov>especially for the POCI think it doesn't
+matter like we can choose even the the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/169-2
+00:18:35.110 --> 00:18:38.864
+<v Yosif Mihaylov>most naive option.
+Like I don't think that we should go like</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/169-3
+00:18:38.864 --> 00:18:41.694
+<v Yosif Mihaylov>very big in terms of simulating this
+traffic.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/169-4
+00:18:41.694 --> 00:18:46.616
+<v Yosif Mihaylov>I think we just need something that that
+that will give us some some certainty.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/168-0
+00:18:43.136 --> 00:18:44.616
+<v Boyan Valchev>Mm-hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/171-0
+00:18:46.816 --> 00:18:52.024
+<v Yosif Mihaylov>It would be very nice if we can reuse
+such script. You say that it exists.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/171-1
+00:18:52.024 --> 00:18:55.843
+<v Yosif Mihaylov>If it exists,
+of course we should be easy to adjust to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/170-0
+00:18:52.696 --> 00:18:53.416
+<v Boyan Valchev>Yeah, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/171-2
+00:18:55.843 --> 00:19:01.399
+<v Yosif Mihaylov>the Oracle syntax so we can reuse it.
+But the second part, like the first part,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/171-3
+00:19:01.399 --> 00:19:04.176
+<v Yosif Mihaylov>is having the script or having the tool.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/172-0
+00:19:04.416 --> 00:19:09.749
+<v Yosif Mihaylov>That will actually perform this this
+simulations and the next part is exactly</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/172-1
+00:19:09.749 --> 00:19:13.646
+<v Yosif Mihaylov>how how do we how do we execute it
+against the database?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/172-2
+00:19:13.646 --> 00:19:19.252
+<v Yosif Mihaylov>Because the database is is an on premise
+database, it's not for example our OIDB,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/172-3
+00:19:19.252 --> 00:19:21.576
+<v Yosif Mihaylov>it's not it's not a GCP component.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/173-0
+00:19:22.176 --> 00:19:28.003
+<v Yosif Mihaylov>So after quick investigation,
+like in order to to to obtain such access</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/173-1
+00:19:28.003 --> 00:19:33.750
+<v Yosif Mihaylov>where you can execute the queries
+directly against the database in the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/173-2
+00:19:33.750 --> 00:19:37.635
+<v Yosif Mihaylov>cloud,
+most often you need to create a resource</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/173-3
+00:19:37.635 --> 00:19:39.496
+<v Yosif Mihaylov>in the platform itself.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/174-0
+00:19:40.736 --> 00:19:46.624
+<v Yosif Mihaylov>It that could be either some some
+dedicated small dedicated virtual machine</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/174-1
+00:19:46.624 --> 00:19:52.203
+<v Yosif Mihaylov>or cloud function or pretty much
+component that has this networking can</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/174-2
+00:19:52.203 --> 00:19:57.549
+<v Yosif Mihaylov>accessibility to the database.
+So you can connect this component and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/174-3
+00:19:57.549 --> 00:19:57.936
+<v Yosif Mihaylov>just.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/175-0
+00:19:58.216 --> 00:20:03.350
+<v Yosif Mihaylov>Do the execution from there.
+I sync sync with Nikolay about this and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/175-1
+00:20:03.350 --> 00:20:09.153
+<v Yosif Mihaylov>the realistic here is like 6 hours.
+This is meaning 2 hours for preparing the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/175-2
+00:20:09.153 --> 00:20:15.031
+<v Yosif Mihaylov>the scripts which as we discussed might
+be relevant. If you already have them,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/175-3
+00:20:15.031 --> 00:20:16.816
+<v Yosif Mihaylov>this could be just like.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/177-0
+00:20:17.056 --> 00:20:22.988
+<v Yosif Mihaylov>It could be skipped and then we have
+these four hours DevOps work where we</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/177-1
+00:20:22.988 --> 00:20:29.078
+<v Yosif Mihaylov>need to make sure that we set up the
+components or do the investigation like</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/177-2
+00:20:29.078 --> 00:20:30.976
+<v Yosif Mihaylov>how to actually execute.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/176-0
+00:20:32.136 --> 00:20:32.736
+<v Matthias Max>Mm-hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/178-0
+00:20:32.896 --> 00:20:34.256
+<v Yosif Mihaylov>Execute this performance test.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/181-0
+00:20:35.176 --> 00:20:39.352
+<v Matthias Max>Yeah, that's that's a great preparation.
+However,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/179-0
+00:20:35.376 --> 00:20:35.456
+<v Yosif Mihaylov>So.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/181-1
+00:20:39.352 --> 00:20:45.281
+<v Matthias Max>I'm thinking about bringing in another
+option, which is Thomas Krause,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/181-2
+00:20:45.281 --> 00:20:49.456
+<v Matthias Max>who could be able to help us with
+real-time data.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/182-0
+00:20:50.376 --> 00:20:52.736
+<v Matthias Max>Branched off from Ormes.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/183-0
+00:20:54.056 --> 00:20:57.113
+<v Matthias Max>Um,
+that would actually be preferred if it's</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/183-1
+00:20:57.113 --> 00:21:00.442
+<v Matthias Max>possible,
+and make it a requirement on their end</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/183-2
+00:21:00.442 --> 00:21:02.616
+<v Matthias Max>instead of an effort on our end.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/184-0
+00:21:02.136 --> 00:21:06.201
+<v Yosif Mihaylov>But this is not about seeding data.
+You you understand, right?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/184-1
+00:21:06.201 --> 00:21:08.136
+<v Yosif Mihaylov>It's about making the updates.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/188-0
+00:21:08.896 --> 00:21:15.900
+<v Matthias Max>Updates on Sendum, right?
+So he could provide real new incoming</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/185-0
+00:21:11.016 --> 00:21:13.296
+<v Yosif Mihaylov>Mm-hmm. Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/188-1
+00:21:15.900 --> 00:21:21.043
+<v Matthias Max>Sendum's records. Is this?
+That's what I mean.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/186-0
+00:21:17.936 --> 00:21:18.056
+<v Yosif Mihaylov>OK.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/187-0
+00:21:20.416 --> 00:21:20.696
+<v Boyan Valchev>Yeah, but.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/188-2
+00:21:21.043 --> 00:21:24.216
+<v Matthias Max>It's most realistic and prod.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/189-0
+00:21:24.256 --> 00:21:24.856
+<v Matthias Max>Near.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/193-0
+00:21:26.176 --> 00:21:28.704
+<v Boyan Valchev>Yeah,
+but like much we also have like those</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/193-1
+00:21:28.704 --> 00:21:31.404
+<v Boyan Valchev>changes,
+it's not only the incoming of the new</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/193-2
+00:21:31.404 --> 00:21:34.850
+<v Boyan Valchev>shipments from OMS,
+we also have the like the capability of</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/193-3
+00:21:34.850 --> 00:21:38.240
+<v Boyan Valchev>changing those shipments and we should
+also react to this.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/191-0
+00:21:35.216 --> 00:21:40.016
+<v Matthias Max>True. True. True. True. True. Yeah, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/193-4
+00:21:38.240 --> 00:21:42.548
+<v Boyan Valchev>So essentially that would probably be
+good for providing new shipments and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/193-5
+00:21:42.548 --> 00:21:44.616
+<v Boyan Valchev>checking how we react to those, but.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/194-0
+00:21:45.416 --> 00:21:50.416
+<v Boyan Valchev>Like we have two more use cases where we
+edit or delete such shipments.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/192-0
+00:21:45.576 --> 00:21:46.256
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/195-0
+00:21:48.536 --> 00:21:55.416
+<v Matthias Max>See. Yeah, yeah, good point. All right,
+let's move on.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/196-0
+00:21:55.096 --> 00:21:59.646
+<v Yosif Mihaylov>So this is this task is about execution
+of this performance testing.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/196-1
+00:21:59.646 --> 00:22:03.866
+<v Yosif Mihaylov>It's not about collecting it just to to
+to make the line there.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/196-2
+00:22:03.866 --> 00:22:09.339
+<v Yosif Mihaylov>So this task eight is about execution and
+the next the next task is actually about</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/196-3
+00:22:09.339 --> 00:22:11.976
+<v Yosif Mihaylov>connecting the this performance metrics.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/198-0
+00:22:12.616 --> 00:22:17.818
+<v Yosif Mihaylov>And like we discussed with Nik why is
+that at least from what this document</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/198-1
+00:22:17.818 --> 00:22:21.309
+<v Yosif Mihaylov>applies,
+there's quite a lot to be collected there</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/198-2
+00:22:21.309 --> 00:22:26.442
+<v Yosif Mihaylov>and it is really time consuming.
+We need to 1st measure measure the end to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/198-3
+00:22:26.442 --> 00:22:29.864
+<v Yosif Mihaylov>end latency,
+meaning that we make a change in the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/198-4
+00:22:29.864 --> 00:22:31.096
+<v Yosif Mihaylov>database and just.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/199-0
+00:22:31.616 --> 00:22:35.941
+<v Yosif Mihaylov>Just capture how long did it take to to
+come to the storage.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/199-1
+00:22:35.941 --> 00:22:39.415
+<v Yosif Mihaylov>This is probably the easier type of
+measurement,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/199-2
+00:22:39.415 --> 00:22:44.733
+<v Yosif Mihaylov>but then like we need to to monitor some
+some data stream metrics that are</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/199-3
+00:22:44.733 --> 00:22:49.271
+<v Yosif Mihaylov>available out-of-the-box,
+but we need to somehow like aggregate</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/199-4
+00:22:49.271 --> 00:22:51.256
+<v Yosif Mihaylov>them and make sense of them.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/200-0
+00:22:51.336 --> 00:22:56.679
+<v Yosif Mihaylov>We need to measure throughput which is
+which is I think tricky.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/200-1
+00:22:56.679 --> 00:23:03.357
+<v Yosif Mihaylov>Like for example we need to to let's say
+let's say update 1000 shipments at the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/200-2
+00:23:03.357 --> 00:23:09.284
+<v Yosif Mihaylov>same time in the Oracle database and just
+pretty much observe how this</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/200-3
+00:23:09.284 --> 00:23:10.536
+<v Yosif Mihaylov>simultaneously.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/202-0
+00:23:10.616 --> 00:23:16.269
+<v Yosif Mihaylov>Inserted, let's say 1000 shipments,
+how they actually are being throttled and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/202-1
+00:23:16.269 --> 00:23:22.212
+<v Yosif Mihaylov>through through the through the pipeline
+and whether there is an issue with that.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/201-0
+00:23:20.416 --> 00:23:20.656
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/202-2
+00:23:22.212 --> 00:23:27.865
+<v Yosif Mihaylov>We also need to monitor as per the
+document this archive for generation rate.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/202-3
+00:23:27.865 --> 00:23:30.256
+<v Yosif Mihaylov>This is Oracle database specific.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/203-0
+00:23:30.616 --> 00:23:36.212
+<v Yosif Mihaylov>This is pretty much like you make a query
+against the Oracle database to obtain</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/203-1
+00:23:36.212 --> 00:23:39.990
+<v Yosif Mihaylov>this metric,
+but we need to to to to observe there to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/203-2
+00:23:39.990 --> 00:23:45.376
+<v Yosif Mihaylov>see if there are some like how how
+quickly it behaves if there is some luck.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/205-0
+00:23:46.016 --> 00:23:51.542
+<v Yosif Mihaylov>When we do the different operations,
+we also need to measure some resource</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/204-0
+00:23:49.496 --> 00:23:50.016
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/205-1
+00:23:51.542 --> 00:23:56.183
+<v Yosif Mihaylov>utilization like this.
+This should be simple like it should be</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/205-2
+00:23:56.183 --> 00:23:59.056
+<v Yosif Mihaylov>coming out-of-the-box. We just need to.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/206-0
+00:23:59.656 --> 00:24:06.513
+<v Yosif Mihaylov>To measure it along the way and I think
+also one tricky point is identifying this</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/206-1
+00:24:06.513 --> 00:24:13.370
+<v Yosif Mihaylov>this breaking point like meaning that we
+we start with some some moderate traffic</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/206-2
+00:24:13.370 --> 00:24:16.296
+<v Yosif Mihaylov>and then we just increase it until.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/208-0
+00:24:17.336 --> 00:24:21.856
+<v Yosif Mihaylov>Actually we start seeing luck or we start
+seeing some some issues.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/207-0
+00:24:22.056 --> 00:24:22.216
+<v Matthias Max>M.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/209-0
+00:24:22.856 --> 00:24:27.230
+<v Yosif Mihaylov>And doing this along the way,
+we're actually will be we'll be observing</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/209-1
+00:24:27.230 --> 00:24:30.813
+<v Yosif Mihaylov>each of these metrics and see how it
+behaves. For example,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/209-2
+00:24:30.813 --> 00:24:34.701
+<v Yosif Mihaylov>starting with moderate traffic,
+we observe the generation rate,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/209-3
+00:24:34.701 --> 00:24:37.981
+<v Yosif Mihaylov>we observe the throughput,
+we observe the metric CPU,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/209-4
+00:24:37.981 --> 00:24:42.536
+<v Yosif Mihaylov>then we increase and every time with each
+step we just monitor everything.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/212-0
+00:24:42.776 --> 00:24:49.607
+<v Yosif Mihaylov>That's why like me and Nikki like
+estimate this with nearly a day to to to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/212-1
+00:24:49.607 --> 00:24:56.256
+<v Yosif Mihaylov>pretty much collect everything.
+It could be done obviously quicker like.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/210-0
+00:24:50.096 --> 00:24:50.696
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/211-0
+00:24:52.336 --> 00:24:52.576
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/213-0
+00:24:57.816 --> 00:24:59.536
+<v Matthias Max>Yeah, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/214-0
+00:25:00.576 --> 00:25:04.617
+<v Yosif Mihaylov>So we collect the metrics.
+Then this is probably one of the most</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/214-1
+00:25:04.617 --> 00:25:05.736
+<v Yosif Mihaylov>interesting parts.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/215-0
+00:25:07.296 --> 00:25:12.778
+<v Yosif Mihaylov>This is the the redo lock.
+So like this is again Oracle database</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/215-1
+00:25:12.778 --> 00:25:17.078
+<v Yosif Mihaylov>specific.
+This is pretty much something similar to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/215-2
+00:25:17.078 --> 00:25:23.319
+<v Yosif Mihaylov>the wall that we have in Postgres.
+This is pretty much the the locks that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/215-3
+00:25:23.319 --> 00:25:26.776
+<v Yosif Mihaylov>are sharing the history of what has been.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/216-0
+00:25:27.296 --> 00:25:33.063
+<v Yosif Mihaylov>Changed in the Oracle database.
+This lock has this configuration of</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/216-1
+00:25:33.063 --> 00:25:39.678
+<v Yosif Mihaylov>expiry. In the document you provided,
+the client said that there are specific</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/216-2
+00:25:39.678 --> 00:25:42.816
+<v Yosif Mihaylov>branches, for example the D33 branch.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/217-0
+00:25:43.256 --> 00:25:50.536
+<v Yosif Mihaylov>Which has this one hour redo lock
+retention set, meaning that.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/219-0
+00:25:51.496 --> 00:25:57.338
+<v Yosif Mihaylov>The the Oracle database persist this
+locks for one hour and if we don't read</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/219-1
+00:25:57.338 --> 00:26:03.408
+<v Yosif Mihaylov>it within this one hour they are deleted
+so we lose the history like doing some</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/218-0
+00:26:00.176 --> 00:26:00.656
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/219-2
+00:26:03.408 --> 00:26:07.656
+<v Yosif Mihaylov>quick investigations.
+This is like really really small.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/221-0
+00:26:08.056 --> 00:26:15.030
+<v Yosif Mihaylov>Small constraint the one hour.
+Usually usually databases have like like</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/220-0
+00:26:10.696 --> 00:26:12.336
+<v Matthias Max>Mhm. Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/221-1
+00:26:15.030 --> 00:26:22.876
+<v Yosif Mihaylov>48 to to to to 76 hours expiration set.
+One hour is really small and actually in</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/221-2
+00:26:22.876 --> 00:26:27.816
+<v Yosif Mihaylov>the in the real world scenarios this
+could be hit.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/224-0
+00:26:27.896 --> 00:26:32.803
+<v Yosif Mihaylov>Very easily either by some operations
+running on the database,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/224-1
+00:26:32.803 --> 00:26:38.567
+<v Yosif Mihaylov>some heavy operations which will induce
+lag or for example the on premise</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/224-2
+00:26:38.567 --> 00:26:44.953
+<v Yosif Mihaylov>database is not accessible or something
+else happens like really this is really a</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/222-0
+00:26:42.136 --> 00:26:42.456
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/224-3
+00:26:44.953 --> 00:26:45.576
+<v Yosif Mihaylov>concern.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/225-0
+00:26:45.616 --> 00:26:45.696
+<v Yosif Mihaylov>Um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/223-0
+00:26:46.056 --> 00:26:46.936
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/227-0
+00:26:48.936 --> 00:26:53.400
+<v Matthias Max>Yeah,
+I I I I noticed that it wasn't answered</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/226-0
+00:26:48.976 --> 00:26:50.576
+<v Yosif Mihaylov>So here this part.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/227-1
+00:26:53.400 --> 00:26:57.671
+<v Matthias Max>by some of the database responsibles.
+Yeah,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/227-2
+00:26:57.671 --> 00:27:04.076
+<v Matthias Max>I'm I'm just thinking how and if we
+should include it in the POC,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/227-3
+00:27:04.076 --> 00:27:06.696
+<v Matthias Max>of course we must raise it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/229-0
+00:27:05.336 --> 00:27:12.051
+<v Yosif Mihaylov>I'll I'll continue continue with that
+just yeah just like the first part which</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/228-0
+00:27:06.976 --> 00:27:11.136
+<v Matthias Max>But yeah, just continue, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/229-1
+00:27:12.051 --> 00:27:18.341
+<v Yosif Mihaylov>I'm not sure like because this the
+document says that we need to test the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/229-2
+00:27:18.341 --> 00:27:23.016
+<v Yosif Mihaylov>the redo log gap scenario and document
+recovery steps.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/231-0
+00:27:23.336 --> 00:27:27.194
+<v Yosif Mihaylov>Really like when you think about it,
+I don't see the point of this.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/231-1
+00:27:27.194 --> 00:27:31.561
+<v Yosif Mihaylov>I mean we can very easily test this like
+we can just make sure that the data</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/231-2
+00:27:31.561 --> 00:27:35.816
+<v Yosif Mihaylov>stream is soft line and like this
+expiration like expires like the the the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/231-3
+00:27:35.816 --> 00:27:40.467
+<v Yosif Mihaylov>walks expire and they're being deleted.
+But what would what actually we are doing</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/230-0
+00:27:35.896 --> 00:27:36.216
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/231-4
+00:27:40.467 --> 00:27:42.736
+<v Yosif Mihaylov>from there. This is pretty much a point.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/232-0
+00:27:43.096 --> 00:27:48.597
+<v Yosif Mihaylov>From which there is a,
+let's say after they expire, expire.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/232-1
+00:27:48.597 --> 00:27:55.749
+<v Yosif Mihaylov>At least the way how we use this CDC,
+it's actually a point of no return kind</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/232-2
+00:27:55.749 --> 00:27:57.216
+<v Yosif Mihaylov>of because like.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/233-0
+00:27:58.856 --> 00:28:02.873
+<v Yosif Mihaylov>We we can't, we can't really do much.
+First when this happens,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/233-1
+00:28:02.873 --> 00:28:06.380
+<v Yosif Mihaylov>we need to restart,
+restart the the the stream and the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/233-2
+00:28:06.380 --> 00:28:09.632
+<v Yosif Mihaylov>connection profile.
+Pretty much when this happens,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/233-3
+00:28:09.632 --> 00:28:14.797
+<v Yosif Mihaylov>the data stream is broken and it needs to
+be manually like restarted like DevOps</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/233-4
+00:28:14.797 --> 00:28:18.176
+<v Yosif Mihaylov>work just to make sure that that it's
+working again.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/234-0
+00:28:18.536 --> 00:28:22.404
+<v Yosif Mihaylov>For the new changes,
+but these these these changes which have</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/234-1
+00:28:22.404 --> 00:28:25.773
+<v Yosif Mihaylov>been deleted,
+really we cannot restore them even with</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/234-2
+00:28:25.773 --> 00:28:29.641
+<v Yosif Mihaylov>backfill or whatever.
+Like the backfill actually doesn't work</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/234-3
+00:28:29.641 --> 00:28:34.319
+<v Yosif Mihaylov>for our scenario because we are not using
+the CDC in sense of replication,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/234-4
+00:28:34.319 --> 00:28:37.376
+<v Yosif Mihaylov>we are using it in the sense of event
+streaming.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/236-0
+00:28:38.336 --> 00:28:42.565
+<v Yosif Mihaylov>So really what we can do here is just
+document these recovery steps,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/236-1
+00:28:42.565 --> 00:28:45.936
+<v Yosif Mihaylov>pretty much saying that when this happens,
+the stream,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/236-2
+00:28:45.936 --> 00:28:50.717
+<v Yosif Mihaylov>the DevOps needs to restart the stream
+just so it's live and at least working</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/236-3
+00:28:50.717 --> 00:28:54.456
+<v Yosif Mihaylov>for the new events.
+And we should also document and say that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/235-0
+00:28:53.616 --> 00:28:53.696
+<v Matthias Max>Huh.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/236-4
+00:28:54.456 --> 00:28:57.336
+<v Yosif Mihaylov>there's not really much that it could be
+done.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/238-0
+00:28:57.576 --> 00:29:01.595
+<v Yosif Mihaylov>At least,
+at least with our current implementation.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/238-1
+00:29:01.595 --> 00:29:05.150
+<v Yosif Mihaylov>And yeah,
+here like the first part design CDC</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/237-0
+00:29:02.616 --> 00:29:03.136
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/238-2
+00:29:05.150 --> 00:29:08.627
+<v Yosif Mihaylov>solution with recovery releasing
+capability.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/238-3
+00:29:08.627 --> 00:29:12.028
+<v Yosif Mihaylov>I'm not even sure like how to address
+this.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/238-4
+00:29:12.028 --> 00:29:16.896
+<v Yosif Mihaylov>I think that's this is a very big topic
+and I think we should.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/239-0
+00:29:17.376 --> 00:29:21.896
+<v Yosif Mihaylov>Pretty much discopied from the POC. Ivo,
+I saw your hand.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/241-0
+00:29:23.256 --> 00:29:27.582
+<v Ivailo Pashov>Yeah,
+so usually these kind of replications,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/241-1
+00:29:27.582 --> 00:29:33.062
+<v Ivailo Pashov>they kind of include both real time and
+batching layers,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/241-2
+00:29:33.062 --> 00:29:40.656
+<v Ivailo Pashov>which are usually like implemented with a
+separate, let's say, implementation.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/243-0
+00:29:41.176 --> 00:29:46.277
+<v Ivailo Pashov>What I mean, for example,
+there could be one process that's</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/240-0
+00:29:42.376 --> 00:29:42.456
+<v Yosif Mihaylov>Hey.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/243-1
+00:29:46.277 --> 00:29:52.824
+<v Ivailo Pashov>utilized for initial data synchronization
+or for fixing the data replication</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/243-2
+00:29:52.824 --> 00:29:56.565
+<v Ivailo Pashov>process.
+If there's such kind of a process,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/243-3
+00:29:56.565 --> 00:30:00.816
+<v Ivailo Pashov>of course,
+if it's only like notify the end user.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/246-0
+00:30:01.176 --> 00:30:05.447
+<v Ivailo Pashov>That's one thing,
+but if any derived data based on the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/244-0
+00:30:03.856 --> 00:30:04.096
+<v Yosif Mihaylov>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/246-1
+00:30:05.447 --> 00:30:09.097
+<v Ivailo Pashov>initial one was placed in some other
+database,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/246-2
+00:30:09.097 --> 00:30:14.766
+<v Ivailo Pashov>this means there's additional data
+transformation process that let's say</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/246-3
+00:30:14.766 --> 00:30:18.416
+<v Ivailo Pashov>might be causing some bugs and if if the
+data.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/245-0
+00:30:16.816 --> 00:30:17.296
+<v Yosif Mihaylov>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/247-0
+00:30:18.616 --> 00:30:25.366
+<v Ivailo Pashov>Has sufficient, let's say,
+requirements about a retention or like it</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/247-1
+00:30:25.366 --> 00:30:32.606
+<v Ivailo Pashov>doesn't decay over time or it's
+meaningful to have this data captured for</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/247-2
+00:30:32.606 --> 00:30:35.736
+<v Ivailo Pashov>a longer period than this means.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/249-0
+00:30:35.776 --> 00:30:40.491
+<v Ivailo Pashov>There is a need for reprocessing some of
+these historical data,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/249-1
+00:30:40.491 --> 00:30:45.280
+<v Ivailo Pashov>so it's fixed at some point.
+And the third thing is like against</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/248-0
+00:30:42.296 --> 00:30:42.376
+Hey.
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/249-2
+00:30:45.280 --> 00:30:51.174
+<v Ivailo Pashov>protecting against such kind of issues
+like some systems being down and buffers</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/249-3
+00:30:51.174 --> 00:30:51.616
+<v Ivailo Pashov>being.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/251-0
+00:30:51.896 --> 00:30:58.968
+<v Ivailo Pashov>Filled in in a way that they cannot be
+recovered unless a full resynchronization</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/251-1
+00:30:58.968 --> 00:31:00.016
+<v Ivailo Pashov>takes place.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/252-0
+00:31:01.296 --> 00:31:01.816
+<v Yosif Mihaylov>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/254-0
+00:31:02.096 --> 00:31:05.822
+<v Yosif Mihaylov>This is really the reconciliation process,
+right?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/254-1
+00:31:05.822 --> 00:31:11.410
+<v Yosif Mihaylov>This is pretty much the process where
+where you just after this expiration</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/253-0
+00:31:07.936 --> 00:31:08.296
+<v Ivailo Pashov>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/254-2
+00:31:11.410 --> 00:31:17.147
+<v Yosif Mihaylov>happens that this is just a process of
+recovering from that like for example</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/254-3
+00:31:17.147 --> 00:31:21.096
+<v Yosif Mihaylov>that like this, this,
+this walks could be backed up.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/256-0
+00:31:21.216 --> 00:31:26.790
+<v Yosif Mihaylov>If we have such process like they they
+could be backed up something somewhere</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/256-1
+00:31:26.790 --> 00:31:32.506
+<v Yosif Mihaylov>permanently and for example when this
+expiration happens for some reason we are</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/256-2
+00:31:32.506 --> 00:31:35.936
+<v Yosif Mihaylov>able to to read this lock. But yeah,
+I mean we.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/259-0
+00:31:34.216 --> 00:31:39.896
+<v Ivailo Pashov>Depends on what the operations are.
+There might be different solution,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/257-0
+00:31:39.376 --> 00:31:39.936
+<v Yosif Mihaylov>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/259-1
+00:31:39.896 --> 00:31:44.936
+<v Ivailo Pashov>but end of the day we there must be like
+for a robust process.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/259-2
+00:31:44.936 --> 00:31:51.656
+<v Ivailo Pashov>It would always happen that data like it
+would happen something to the replication.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/262-0
+00:31:53.096 --> 00:31:57.847
+<v Ivailo Pashov>And there must be a process to reconcile
+again the data reprocess again.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/258-0
+00:31:53.296 --> 00:31:53.856
+<v Yosif Mihaylov>Thank you.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/262-1
+00:31:57.847 --> 00:32:03.053
+<v Ivailo Pashov>This should be incorporated in a target
+solution. Might not be part of the PUC,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/260-0
+00:31:58.216 --> 00:31:58.416
+<v Ivailo Pashov>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/262-2
+00:32:03.053 --> 00:32:05.656
+<v Ivailo Pashov>but should be part of a target solution.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/261-0
+00:32:03.496 --> 00:32:03.616
+<v Matthias Max>OK.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/263-0
+00:32:06.256 --> 00:32:07.856
+<v Matthias Max>Yeah, I mean.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/265-0
+00:32:06.256 --> 00:32:10.392
+<v Yosif Mihaylov>Yeah, for sure we don't.
+We don't even have that for the CDC as</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/265-1
+00:32:10.392 --> 00:32:12.136
+<v Yosif Mihaylov>well. Uh, for the Postgres.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/264-0
+00:32:10.896 --> 00:32:11.256
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/267-0
+00:32:12.816 --> 00:32:19.443
+<v Matthias Max>We we see from the discussion that we're
+heading towards detail while we're still</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/267-1
+00:32:19.443 --> 00:32:25.100
+<v Matthias Max>at the very beginning where we need to
+decide which solution to pick.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/267-2
+00:32:25.100 --> 00:32:28.656
+<v Matthias Max>So this for me is our edge cases
+currently.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/268-0
+00:32:29.136 --> 00:32:31.296
+<v Matthias Max>We will bring it up.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/269-0
+00:32:32.256 --> 00:32:37.460
+<v Matthias Max>Say that we de scope this from the POC
+for the sake of getting the decision</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/269-1
+00:32:37.460 --> 00:32:41.842
+<v Matthias Max>first for which tool we use,
+because the root cause for this is</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/269-2
+00:32:41.842 --> 00:32:46.430
+<v Matthias Max>something completely different.
+It's limited space on some machine</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/269-3
+00:32:46.430 --> 00:32:47.936
+<v Matthias Max>licensing or whatever.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/270-0
+00:32:48.496 --> 00:32:55.297
+<v Matthias Max>I don't even would say it must be solved
+with a new mechanism from our side.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/270-1
+00:32:55.297 --> 00:33:02.010
+<v Matthias Max>Could also be solved by increasing
+memories or whatever is required to make</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/270-2
+00:33:02.010 --> 00:33:03.776
+<v Matthias Max>this lock bigger so.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/272-0
+00:33:03.856 --> 00:33:07.336
+<v Matthias Max>I think that's too big for the POC.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/271-0
+00:33:06.456 --> 00:33:07.216
+<v Ivailo Pashov>Thank you.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/275-0
+00:33:08.416 --> 00:33:12.029
+<v Ivailo Pashov>Yeah, of course I'm.
+I'm not referring to the PUC,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/275-1
+00:33:12.029 --> 00:33:17.484
+<v Ivailo Pashov>I'm just referring to the final solution
+and the tools that we are trying to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/273-0
+00:33:13.976 --> 00:33:14.216
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/275-2
+00:33:17.484 --> 00:33:21.168
+<v Ivailo Pashov>evaluate.
+They in theory should be able to make our</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/275-3
+00:33:21.168 --> 00:33:23.576
+<v Ivailo Pashov>job easier for the final solution.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/276-0
+00:33:23.616 --> 00:33:31.378
+<v Ivailo Pashov>Which in in terms means if a tool can
+support both the real time layer and the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/274-0
+00:33:24.296 --> 00:33:24.576
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/276-1
+00:33:31.378 --> 00:33:33.736
+<v Ivailo Pashov>the historical backfill.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/279-0
+00:33:35.056 --> 00:33:40.562
+<v Ivailo Pashov>Then this is a priority compared to
+others that can only support one of those</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/277-0
+00:33:38.896 --> 00:33:39.416
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/279-1
+00:33:40.562 --> 00:33:41.056
+<v Ivailo Pashov>layers.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/282-0
+00:33:41.776 --> 00:33:46.742
+<v Matthias Max>Yeah,
+so the real take away here is then to add</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/282-1
+00:33:46.742 --> 00:33:52.536
+<v Matthias Max>this to our criteria list when evaluating
+the solution.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/281-0
+00:33:52.896 --> 00:33:53.496
+<v Ivailo Pashov>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/283-0
+00:33:58.456 --> 00:34:00.982
+<v Matthias Max>OK.
+Can you cover that somewhere or is it</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/283-1
+00:34:00.982 --> 00:34:04.108
+<v Matthias Max>written here,
+the building documentation in case of</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/283-2
+00:34:04.108 --> 00:34:07.776
+<v Matthias Max>redo links? Yeah. All right. Good, good.
+It's there. Thanks.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/285-0
+00:34:06.416 --> 00:34:11.572
+<v Yosif Mihaylov>This is about just just pretty much
+describing what we just said that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/285-1
+00:34:11.572 --> 00:34:17.392
+<v Yosif Mihaylov>currently like we like saying that when
+the expiration happens the data stream</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/284-0
+00:34:12.176 --> 00:34:12.776
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/285-2
+00:34:17.392 --> 00:34:22.695
+<v Yosif Mihaylov>needs to be restarted just to make it
+live again and also document that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/285-3
+00:34:22.695 --> 00:34:25.936
+<v Yosif Mihaylov>currently we don't have recovery steps
+and.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/288-0
+00:34:26.016 --> 00:34:32.111
+<v Yosif Mihaylov>This is out of the scope of the POC and
+pretty much that at this at this point of</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/288-1
+00:34:32.111 --> 00:34:36.570
+<v Yosif Mihaylov>our infrastructure,
+this is like a scenario which we cannot</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/288-2
+00:34:36.570 --> 00:34:37.536
+<v Yosif Mihaylov>recover from.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/287-0
+00:34:37.896 --> 00:34:38.376
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/289-0
+00:34:38.656 --> 00:34:44.056
+<v Yosif Mihaylov>So yeah, this is, uh,
+at this point is just about documentation.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/290-0
+00:34:45.816 --> 00:34:49.930
+<v Yosif Mihaylov>Uh, going from there,
+the next task is about collecting the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/290-1
+00:34:49.930 --> 00:34:50.616
+<v Yosif Mihaylov>costs. Um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/292-0
+00:34:51.616 --> 00:34:57.538
+<v Yosif Mihaylov>This should be simpler than performance
+than collecting performance like we</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/292-1
+00:34:57.538 --> 00:35:03.148
+<v Yosif Mihaylov>estimated like one to three hours,
+probably 2 hours for example just to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/291-0
+00:35:00.256 --> 00:35:00.776
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/292-2
+00:35:03.148 --> 00:35:07.824
+<v Yosif Mihaylov>collect this cost.
+Obviously to make to collect these costs</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/292-3
+00:35:07.824 --> 00:35:11.096
+<v Yosif Mihaylov>we need some some actual input from Nagio.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/295-0
+00:35:11.216 --> 00:35:17.010
+<v Yosif Mihaylov>For the volume that we they expect and
+this volume probably for the POC should</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/295-1
+00:35:17.010 --> 00:35:22.803
+<v Yosif Mihaylov>be volume per branch because we we can't
+like I mean yeah they need to provide</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/293-0
+00:35:18.256 --> 00:35:18.816
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/295-2
+00:35:22.803 --> 00:35:26.176
+<v Yosif Mihaylov>some some input so we can calculate this
+but.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/297-0
+00:35:26.256 --> 00:35:30.586
+<v Yosif Mihaylov>Apart from that,
+it should not be a problem here.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/294-0
+00:35:27.416 --> 00:35:27.536
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/296-0
+00:35:29.336 --> 00:35:29.936
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/297-1
+00:35:30.586 --> 00:35:36.822
+<v Yosif Mihaylov>But in terms of calculating the the data
+stream, it's a bit not tricky,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/297-2
+00:35:36.822 --> 00:35:43.663
+<v Yosif Mihaylov>but the data stream will be working both
+for Postgres and Oracle and it should</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/297-3
+00:35:43.663 --> 00:35:44.096
+<v Yosif Mihaylov>even.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/298-0
+00:35:44.496 --> 00:35:48.679
+<v Yosif Mihaylov>That that should be the way to go in
+almost all of the scenarios.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/298-1
+00:35:48.679 --> 00:35:53.368
+<v Yosif Mihaylov>Like you don't need separate data stream
+component for different streams,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/298-2
+00:35:53.368 --> 00:35:58.184
+<v Yosif Mihaylov>you just create different streams.
+So measuring the measuring the for it if</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/298-3
+00:35:58.184 --> 00:36:01.416
+<v Yosif Mihaylov>they want to measure the cost only for
+the Oracle.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/301-0
+00:36:01.776 --> 00:36:05.876
+<v Yosif Mihaylov>But actually right now we don't have
+production traffic like the the the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/301-1
+00:36:05.876 --> 00:36:10.482
+<v Yosif Mihaylov>events that we are listening for Postgres
+like there will be no events because no</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/301-2
+00:36:10.482 --> 00:36:14.077
+<v Yosif Mihaylov>one will be making changes.
+So I think that we would be able to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/301-3
+00:36:14.077 --> 00:36:16.885
+<v Yosif Mihaylov>isolate that.
+But what I mean is that we have two</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/299-0
+00:36:15.056 --> 00:36:15.296
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/301-4
+00:36:16.885 --> 00:36:17.896
+<v Yosif Mihaylov>different streams.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/300-0
+00:36:19.336 --> 00:36:19.496
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/302-0
+00:36:19.416 --> 00:36:19.536
+<v Yosif Mihaylov>OK.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/304-0
+00:36:23.616 --> 00:36:27.569
+<v Yosif Mihaylov>Next task is about this POC setup
+implementation guide.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/304-1
+00:36:27.569 --> 00:36:31.380
+<v Yosif Mihaylov>I think this is actually will take time
+to be honest.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/304-2
+00:36:31.380 --> 00:36:37.238
+<v Yosif Mihaylov>I think it will take more than four hours
+like pretty much we need to document the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/303-0
+00:36:34.896 --> 00:36:35.536
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/304-3
+00:36:37.238 --> 00:36:42.814
+<v Yosif Mihaylov>whole flow like starting from building
+the infrastructure like the data stream</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/304-4
+00:36:42.814 --> 00:36:43.096
+<v Yosif Mihaylov>the.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/307-0
+00:36:43.296 --> 00:36:50.040
+<v Yosif Mihaylov>That puts up all the configurations that
+that happened and to enable Oracle pretty</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/307-1
+00:36:50.040 --> 00:36:56.296
+<v Yosif Mihaylov>much document the whole thing like the
+documentations like I we put 246 but.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/305-0
+00:36:51.376 --> 00:36:51.816
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/310-0
+00:36:57.096 --> 00:37:00.009
+<v Yosif Mihaylov>To be honest,
+I think that it inquires more to the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/306-0
+00:36:57.416 --> 00:36:57.656
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/310-1
+00:37:00.009 --> 00:37:02.807
+<v Yosif Mihaylov>pessimistic side.
+Usually this stuff takes time.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/308-0
+00:37:01.976 --> 00:37:02.136
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/310-2
+00:37:02.807 --> 00:37:06.461
+<v Yosif Mihaylov>Here they mentioned Oracle database
+installation configuration.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/310-3
+00:37:06.461 --> 00:37:11.087
+<v Yosif Mihaylov>I assume that this is more of a mistake
+because it's something they will need to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/310-4
+00:37:11.087 --> 00:37:13.771
+<v Yosif Mihaylov>provide,
+so we will not be able to to actually</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/309-0
+00:37:13.216 --> 00:37:15.416
+<v Matthias Max>True. Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/310-5
+00:37:13.771 --> 00:37:14.456
+<v Yosif Mihaylov>document it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/311-0
+00:37:16.376 --> 00:37:19.102
+<v Yosif Mihaylov>OK,
+now the document was implying</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/311-1
+00:37:19.102 --> 00:37:24.072
+<v Yosif Mihaylov>implementing alerting,
+but I think and what we discussed with</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/311-2
+00:37:24.072 --> 00:37:27.760
+<v Yosif Mihaylov>Nico,
+it doesn't make sense to be part of the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/311-3
+00:37:27.760 --> 00:37:31.448
+<v Yosif Mihaylov>POC.
+Usually alerting is something first that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/311-4
+00:37:31.448 --> 00:37:35.376
+<v Yosif Mihaylov>it's not trivial and 2nd that it's
+implementing.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/312-0
+00:37:35.456 --> 00:37:38.736
+<v Yosif Mihaylov>At the very end of the whole process
+chain. Uh.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/313-0
+00:37:38.256 --> 00:37:38.456
+<v Ivailo Pashov>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/314-0
+00:37:40.336 --> 00:37:45.816
+<v Yosif Mihaylov>Because you set up some rules that are
+very business use case specific, so.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/315-0
+00:37:46.496 --> 00:37:47.896
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/316-0
+00:37:46.576 --> 00:37:51.558
+<v Yosif Mihaylov>In my opinion,
+I think we should scope our setup from</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/316-1
+00:37:51.558 --> 00:37:52.296
+<v Yosif Mihaylov>the POC.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/317-0
+00:37:53.376 --> 00:37:57.971
+<v Matthias Max>I think so too,
+specifically because there will be a new</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/317-1
+00:37:57.971 --> 00:38:03.292
+<v Matthias Max>completely new set up from P3 side
+including a whole new company.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/317-2
+00:38:03.292 --> 00:38:08.209
+<v Matthias Max>I think you've heard of it,
+the Mind Shoring X Cloud Experts</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/317-3
+00:38:08.209 --> 00:38:09.096
+<v Matthias Max>subcompany.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/318-0
+00:38:10.456 --> 00:38:19.256
+<v Matthias Max>Which will join P3 with people that are
+already working on the Nagel client and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/318-1
+00:38:19.256 --> 00:38:25.416
+<v Matthias Max>there will be a operational support
+service like fully.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/319-0
+00:38:25.616 --> 00:38:31.329
+<v Matthias Max>Managed service available where we can
+exactly put such application specific</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/319-1
+00:38:31.329 --> 00:38:36.227
+<v Matthias Max>monitoring and alerting and I agree it's
+it's totally individual.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/319-2
+00:38:36.227 --> 00:38:41.198
+<v Matthias Max>Like for example from the recent
+learnings of the replication slot</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/319-3
+00:38:41.198 --> 00:38:45.056
+<v Matthias Max>explosion,
+we probably would want to monitor those.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/320-0
+00:38:46.616 --> 00:38:53.196
+<v Matthias Max>So it really depends on the application
+and I would also not take this into the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/320-1
+00:38:53.196 --> 00:38:53.936
+<v Matthias Max>POC here.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/323-0
+00:38:54.736 --> 00:38:57.997
+<v Yosif Mihaylov>OK, to be honest,
+I think the same thing applies for the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/323-1
+00:38:57.997 --> 00:39:01.028
+<v Yosif Mihaylov>next task,
+which is documenting and writing down the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/323-2
+00:39:01.028 --> 00:39:03.831
+<v Yosif Mihaylov>day-to-day operations and troubleshooting
+guide.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/321-0
+00:39:03.376 --> 00:39:05.336
+<v Matthias Max>Mhm, mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/323-3
+00:39:03.831 --> 00:39:08.350
+<v Yosif Mihaylov>Usually this is again something that it's
+happened after the whole workflow is</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/323-4
+00:39:08.350 --> 00:39:11.896
+<v Yosif Mihaylov>implemented like I think this is
+something that we should do.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/322-0
+00:39:10.696 --> 00:39:10.816
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/326-0
+00:39:12.976 --> 00:39:17.912
+<v Yosif Mihaylov>Like when we actually implement the real,
+the real infrastructure on their side in</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/326-1
+00:39:17.912 --> 00:39:20.945
+<v Yosif Mihaylov>the end,
+providing these day-to-day operations and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/324-0
+00:39:19.536 --> 00:39:19.736
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/326-2
+00:39:20.945 --> 00:39:21.896
+<v Yosif Mihaylov>troubleshooting.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/325-0
+00:39:22.496 --> 00:39:23.016
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/327-0
+00:39:24.496 --> 00:39:25.416
+<v Matthias Max>Great.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/331-0
+00:39:25.576 --> 00:39:29.188
+<v Yosif Mihaylov>OK,
+our next task like is writing this area</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/331-1
+00:39:29.188 --> 00:39:34.112
+<v Yosif Mihaylov>document. To be honest,
+this looks really scary in terms of</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/328-0
+00:39:30.096 --> 00:39:30.616
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/331-2
+00:39:34.112 --> 00:39:40.350
+<v Yosif Mihaylov>content like like there's so much stuff
+like I put this here. To be honest,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/329-0
+00:39:34.776 --> 00:39:36.696
+<v Matthias Max>I don't think so.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/330-0
+00:39:39.176 --> 00:39:39.736
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/331-3
+00:39:40.350 --> 00:39:42.976
+<v Yosif Mihaylov>if you if you say Yosek, please.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/332-0
+00:39:43.056 --> 00:39:47.338
+<v Yosif Mihaylov>Write down the ADR for me. Uh,
+probably to take a week for me.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/333-0
+00:39:44.336 --> 00:39:50.138
+<v Matthias Max>No, no, that's that's more.
+That's on me and the develop. No, no, no,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/332-1
+00:39:47.338 --> 00:39:50.056
+<v Yosif Mihaylov>It probably would take a week, but yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/333-1
+00:39:50.138 --> 00:39:54.861
+<v Matthias Max>no, that's not developer work.
+That's architecture work.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/333-2
+00:39:54.861 --> 00:39:57.016
+<v Matthias Max>I also put a day, I think.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/336-0
+00:39:58.176 --> 00:40:03.243
+<v Yosif Mihaylov>Yeah, I mean there, there's a lot, there,
+there's a lot here like this risk</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/334-0
+00:39:58.336 --> 00:39:59.656
+<v Matthias Max>In my estimates.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/335-0
+00:40:01.856 --> 00:40:02.336
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/336-1
+00:40:03.243 --> 00:40:07.376
+<v Yosif Mihaylov>independence that is strategic alignments
+like this road map,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/337-0
+00:40:07.016 --> 00:40:11.103
+<v Matthias Max>Yeah,
+but you can also reference to other</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/336-2
+00:40:07.376 --> 00:40:09.576
+<v Yosif Mihaylov>this mitigation strategies, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/337-1
+00:40:11.103 --> 00:40:17.428
+<v Matthias Max>resources in such an ADR.
+The ADR is really just documenting the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/337-2
+00:40:17.428 --> 00:40:20.736
+<v Matthias Max>decision itself, as the name says.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/338-0
+00:40:22.136 --> 00:40:27.736
+<v Matthias Max>So yeah, it's fine. Keep,
+keep the the numbers here.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/339-0
+00:40:29.496 --> 00:40:33.118
+<v Yosif Mihaylov>OK,
+well then the next is this writing this</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/339-1
+00:40:33.118 --> 00:40:38.551
+<v Yosif Mihaylov>production rollout plan.
+This is also looking scary to be honest.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/341-0
+00:40:37.136 --> 00:40:42.453
+<v Matthias Max>Yeah, see,
+of course we need to probably think about</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/339-2
+00:40:38.551 --> 00:40:40.856
+<v Yosif Mihaylov>There's a lot of stuff here.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/341-1
+00:40:42.453 --> 00:40:49.776
+<v Matthias Max>that again. What is meant by it?
+It's probably also too big for the POC.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/340-0
+00:40:49.256 --> 00:40:50.456
+<v Yosif Mihaylov>I think yes.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/342-0
+00:40:51.896 --> 00:40:53.176
+<v Yosif Mihaylov>They have a lot of stuff here.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/343-0
+00:40:52.256 --> 00:40:56.513
+<v Matthias Max>I gave that direction when I wrote the
+other document,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/343-1
+00:40:56.513 --> 00:41:01.776
+<v Matthias Max>but by now I also think it's too big.
+We should really de-scope it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/345-0
+00:41:03.296 --> 00:41:06.721
+<v Yosif Mihaylov>Mm-hmm.
+And then the cost analysis document.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/344-0
+00:41:04.456 --> 00:41:05.336
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/345-1
+00:41:06.721 --> 00:41:12.809
+<v Yosif Mihaylov>This sounds relatively way more simpler
+like just document some some licensing.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/345-2
+00:41:12.809 --> 00:41:18.136
+<v Yosif Mihaylov>Pretty much we all at this point will be
+already collected the costs.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/346-0
+00:41:18.816 --> 00:41:23.376
+<v Yosif Mihaylov>And here like just need to build the
+document around them.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/350-0
+00:41:24.256 --> 00:41:28.739
+<v Yosif Mihaylov>That's pretty much it.
+I think I haven't calculated totals.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/347-0
+00:41:24.416 --> 00:41:24.816
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/348-0
+00:41:27.576 --> 00:41:31.456
+<v Matthias Max>OK, so this last one I what about?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/350-1
+00:41:28.739 --> 00:41:32.550
+<v Yosif Mihaylov>I mean I I can.
+I will share these links after the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/350-2
+00:41:32.550 --> 00:41:36.136
+<v Yosif Mihaylov>meeting in the chat.
+You can just feel free to.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/349-0
+00:41:37.176 --> 00:41:37.656
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/352-0
+00:41:38.816 --> 00:41:44.378
+<v Matthias Max>Maybe two things.
+The last task I don't understand.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/351-0
+00:41:39.016 --> 00:41:39.256
+<v Yosif Mihaylov>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/352-1
+00:41:44.378 --> 00:41:48.656
+<v Matthias Max>What do we? What is the work we do here?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/353-0
+00:41:49.736 --> 00:41:53.536
+<v Yosif Mihaylov>Writing down this cost analysis document
+they need.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/354-0
+00:41:53.936 --> 00:41:59.209
+<v Matthias Max>For upfront now,
+so they know what the PLC will cost or</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/354-1
+00:41:59.209 --> 00:42:00.056
+<v Matthias Max>what for.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/357-0
+00:42:00.176 --> 00:42:06.687
+<v Yosif Mihaylov>They they are a lot of a lot of stuff as
+you can see included here first like the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/357-1
+00:42:06.687 --> 00:42:09.546
+<v Yosif Mihaylov>effort,
+then the cost about the the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/357-2
+00:42:09.546 --> 00:42:16.216
+<v Yosif Mihaylov>infrastructure, yeah data stream options.
+So this 12 month total cost of ownership.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/355-0
+00:42:10.456 --> 00:42:10.936
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/360-0
+00:42:16.576 --> 00:42:20.210
+<v Yosif Mihaylov>And then some comparisons is pretty much
+the document.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/356-0
+00:42:16.776 --> 00:42:17.256
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/360-1
+00:42:20.210 --> 00:42:23.843
+<v Yosif Mihaylov>I mean not sure how much that makes sense
+for the POC,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/358-0
+00:42:20.296 --> 00:42:20.816
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/360-2
+00:42:23.843 --> 00:42:26.816
+<v Yosif Mihaylov>but it's mentioned in the document you
+said.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/359-0
+00:42:24.936 --> 00:42:25.176
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/361-0
+00:42:26.656 --> 00:42:30.591
+<v Matthias Max>Yes.
+What it boils down to in terms of costs</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/361-1
+00:42:30.591 --> 00:42:37.760
+<v Matthias Max>is obviously the licensing and operation
+costs for the two solutions based on the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/361-2
+00:42:37.760 --> 00:42:45.192
+<v Matthias Max>actual expected traffic and base fees per
+month, subscriptions and things like that.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/361-3
+00:42:45.192 --> 00:42:46.416
+<v Matthias Max>That's really.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/362-0
+00:42:46.416 --> 00:42:53.278
+<v Matthias Max>What is important to at least frame?
+I mean we cannot give completely</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/362-1
+00:42:53.278 --> 00:42:59.453
+<v Matthias Max>waterproof analysis here.
+It really depends on on real numbers</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/362-2
+00:42:59.453 --> 00:43:02.296
+<v Matthias Max>later on and and utilization.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/363-0
+00:43:02.816 --> 00:43:05.106
+<v Matthias Max>But I think we can.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/364-0
+00:43:06.656 --> 00:43:09.694
+<v Matthias Max>We can keep it.
+There will be some effort to produce</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/364-1
+00:43:09.694 --> 00:43:10.496
+<v Matthias Max>these numbers.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/365-0
+00:43:13.536 --> 00:43:14.056
+<v Yosif Mihaylov>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/367-0
+00:43:16.256 --> 00:43:19.691
+<v Boyan Valchev>Just a brief question when it comes to
+cost and everything,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/366-0
+00:43:16.376 --> 00:43:16.776
+<v Yosif Mihaylov>We.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/367-1
+00:43:19.691 --> 00:43:23.183
+<v Boyan Valchev>something which came to my mind which I
+don't think I could.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/367-2
+00:43:23.183 --> 00:43:26.275
+<v Boyan Valchev>It's not directly related with the POC at
+this point,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/367-3
+00:43:26.275 --> 00:43:30.855
+<v Boyan Valchev>but it's think it's quite important topic
+which could also be important for the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/367-4
+00:43:30.855 --> 00:43:31.656
+<v Boyan Valchev>cost analysis.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/370-0
+00:43:31.696 --> 00:43:35.536
+<v Boyan Valchev>For the cost analysis,
+how do they stand in terms of the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/370-1
+00:43:35.536 --> 00:43:39.779
+<v Boyan Valchev>operation support topic?
+Because like even not for new for new</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/370-2
+00:43:39.779 --> 00:43:44.966
+<v Boyan Valchev>dispo but like all of for all of the
+other project we need to have operation</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/370-3
+00:43:44.966 --> 00:43:49.816
+<v Boyan Valchev>someone who is able to support those
+system in cases some things occur.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/368-0
+00:43:46.976 --> 00:43:48.056
+<v Yosif Mihaylov>Mm-hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/372-0
+00:43:50.096 --> 00:43:52.739
+<v Boyan Valchev>I mean,
+this is a topic we have not discussed,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/369-0
+00:43:50.536 --> 00:43:50.976
+<v Matthias Max>Yeah, that's.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/372-1
+00:43:52.739 --> 00:43:55.776
+<v Boyan Valchev>I believe,
+but it's quite an important topic I think.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/371-0
+00:43:53.616 --> 00:43:54.336
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/374-0
+00:43:55.536 --> 00:44:02.026
+<v Matthias Max>That's what I tried to say earlier.
+A huge initiative is coming up there with</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/374-1
+00:44:02.026 --> 00:44:07.600
+<v Matthias Max>total new people joining the company and
+providing these services.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/374-2
+00:44:07.600 --> 00:44:14.256
+<v Matthias Max>Also handing handoffs between development
+and operations would be part of that.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/375-0
+00:44:15.336 --> 00:44:23.421
+<v Matthias Max>Probably a dedicated team that is 24/7 or
+whatever service time available and so on.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/375-1
+00:44:23.421 --> 00:44:31.505
+<v Matthias Max>This is all coming in my opinion too late.
+Should have started planning that already</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/375-2
+00:44:31.505 --> 00:44:32.456
+<v Matthias Max>last year.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/377-0
+00:44:33.416 --> 00:44:38.411
+<v Matthias Max>But unfortunately,
+some management decisions prevented us</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/376-0
+00:44:35.736 --> 00:44:37.256
+<v Yosif Mihaylov>So.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/377-1
+00:44:38.411 --> 00:44:39.616
+<v Matthias Max>from doing so.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/378-0
+00:44:42.736 --> 00:44:45.176
+<v Matthias Max>But that's that's what's going on in the
+background.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/381-0
+00:44:43.656 --> 00:44:47.643
+<v Yosif Mihaylov>Then one more thing,
+one more thing which I forgot to add into</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/381-1
+00:44:47.643 --> 00:44:51.061
+<v Yosif Mihaylov>this document like I saw in in the
+document you sent.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/381-2
+00:44:51.061 --> 00:44:55.934
+<v Yosif Mihaylov>I saw this timeline which represents
+actual days not working time and it was</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/379-0
+00:44:54.536 --> 00:44:54.576
+<v Matthias Max>Uh.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/381-3
+00:44:55.934 --> 00:45:00.618
+<v Yosif Mihaylov>saying three to four weeks and like I'm
+just wanted to make sure that you</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/381-4
+00:45:00.618 --> 00:45:02.896
+<v Yosif Mihaylov>consider the capacity of the people.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/385-0
+00:45:02.976 --> 00:45:08.149
+<v Yosif Mihaylov>That are going to be involved here
+because for example if something we said</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/380-0
+00:45:04.816 --> 00:45:05.096
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/385-1
+00:45:08.149 --> 00:45:11.212
+<v Yosif Mihaylov>that it took two days of development
+effort,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/385-2
+00:45:11.212 --> 00:45:16.316
+<v Yosif Mihaylov>obviously the person who will be
+developing this will have other tasks and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/385-3
+00:45:16.316 --> 00:45:20.536
+<v Yosif Mihaylov>like and it might actually take four or
+five days for him to.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/383-0
+00:45:16.936 --> 00:45:17.176
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/384-0
+00:45:19.536 --> 00:45:19.736
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/386-0
+00:45:20.696 --> 00:45:23.936
+<v Yosif Mihaylov>Yeah, I just.
+I'm pretty sure you you know this, but.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/388-0
+00:45:22.576 --> 00:45:29.764
+<v Matthias Max>Remove that. I I will take that out.
+This was just based on some assumptions.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/387-0
+00:45:25.976 --> 00:45:26.656
+<v Yosif Mihaylov>Just.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/388-1
+00:45:29.764 --> 00:45:37.320
+<v Matthias Max>It totally depends on how the client will,
+yeah, put the deal. They want it fast.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/388-2
+00:45:37.320 --> 00:45:40.176
+<v Matthias Max>We need to bring in new people.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/389-0
+00:45:40.656 --> 00:45:46.805
+<v Matthias Max>If it's fine to do it somehow on the side
+with people who probably also work on</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/389-1
+00:45:46.805 --> 00:45:51.109
+<v Matthias Max>other topics,
+it's going to extend to a bigger timeline</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/389-2
+00:45:51.109 --> 00:45:55.336
+<v Matthias Max>that will not be in our offer.
+I think I'll remove it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/390-0
+00:45:56.496 --> 00:45:57.896
+<v Matthias Max>Well, first just.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/392-0
+00:45:57.256 --> 00:46:02.216
+<v Yosif Mihaylov>Do you want to go to this one?
+I think it's quite smaller actually.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/391-0
+00:45:59.936 --> 00:46:02.536
+<v Matthias Max>Yeah, we should. We are also.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/393-0
+00:46:04.256 --> 00:46:08.736
+<v Matthias Max>Do I close in time? Yeah, let's go there.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/395-0
+00:46:07.136 --> 00:46:11.830
+<v Yosif Mihaylov>Yeah, it's smaller.
+I think it will be quick. So again,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/395-1
+00:46:11.830 --> 00:46:18.536
+<v Yosif Mihaylov>starting from the prerequisites and the
+requirements like at this point we will</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/394-0
+00:46:11.856 --> 00:46:12.376
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/395-2
+00:46:18.536 --> 00:46:22.056
+<v Yosif Mihaylov>have already the GCP environment provided.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/396-0
+00:46:22.616 --> 00:46:28.643
+<v Yosif Mihaylov>And like set up with our like if you
+start let's say with the with the data</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/396-1
+00:46:28.643 --> 00:46:32.607
+<v Yosif Mihaylov>stream.
+At this point we have the environment set</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/396-2
+00:46:32.607 --> 00:46:36.255
+<v Yosif Mihaylov>up.
+They need to provide this Oracle database</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/396-3
+00:46:36.255 --> 00:46:40.616
+<v Yosif Mihaylov>that will be connected with the stream
+and integrated.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/397-0
+00:46:41.016 --> 00:46:41.096
+<v Yosif Mihaylov>Um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/398-0
+00:46:43.856 --> 00:46:47.509
+<v Yosif Mihaylov>Yeah,
+I think from from from this point knowing</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/398-1
+00:46:47.509 --> 00:46:53.596
+<v Yosif Mihaylov>this again we have some communication in
+terms of like we need some information</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/398-2
+00:46:53.596 --> 00:46:58.010
+<v Yosif Mihaylov>around the stream.
+For example what version it is because</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/398-3
+00:46:58.010 --> 00:47:03.336
+<v Yosif Mihaylov>like it it makes a difference like what
+features it support it makes.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/400-0
+00:47:03.456 --> 00:47:03.856
+<v Yosif Mihaylov>Transport.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/401-0
+00:47:03.936 --> 00:47:09.543
+<v Yosif Mihaylov>The envelope structure we need to
+understand exactly what is the deployment</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/401-1
+00:47:09.543 --> 00:47:13.822
+<v Yosif Mihaylov>type. Is it in Kubernetes?
+Is it on some virtual machine?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/399-0
+00:47:12.976 --> 00:47:13.496
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/401-2
+00:47:13.822 --> 00:47:19.725
+<v Yosif Mihaylov>And we need to pretty much align on the
+strategy with Nagio IT how we are going</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/401-3
+00:47:19.725 --> 00:47:23.856
+<v Yosif Mihaylov>to configure this stream because in order
+to enable it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/402-0
+00:47:23.976 --> 00:47:29.678
+<v Yosif Mihaylov>And connected to our Google cloud,
+we need to make configurations such as</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/402-1
+00:47:29.678 --> 00:47:34.840
+<v Yosif Mihaylov>the authentication like we need to create
+service account service.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/402-2
+00:47:34.840 --> 00:47:41.158
+<v Yosif Mihaylov>Sorry in GCP obviously then we need to to
+apply some configurations on the stream</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/402-3
+00:47:41.158 --> 00:47:42.776
+<v Yosif Mihaylov>component itself, so.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/403-0
+00:47:43.216 --> 00:47:48.061
+<v Yosif Mihaylov>We need to understand how exactly we're
+going to access their on premise stream.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/403-1
+00:47:48.061 --> 00:47:51.470
+<v Yosif Mihaylov>Who will is it then who will apply these
+configurations?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/403-2
+00:47:51.470 --> 00:47:54.401
+<v Yosif Mihaylov>We just say what they need to do and they
+do it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/403-3
+00:47:54.401 --> 00:47:59.366
+<v Yosif Mihaylov>Should they just give it the give us some
+access and we apply these configurations</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/403-4
+00:47:59.366 --> 00:48:02.416
+<v Yosif Mihaylov>which I think it would be a better option
+because.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/405-0
+00:48:02.936 --> 00:48:05.735
+<v Yosif Mihaylov>Because after all this is a development
+process,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/405-1
+00:48:05.735 --> 00:48:10.362
+<v Yosif Mihaylov>it can go back and forth and if we if we
+are in this loop of us saying what they</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/405-2
+00:48:10.362 --> 00:48:15.103
+<v Yosif Mihaylov>need to do, it might take time. But yeah,
+this is this is about some communication</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/404-0
+00:48:12.776 --> 00:48:13.016
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/405-3
+00:48:15.103 --> 00:48:19.616
+<v Yosif Mihaylov>and configurations like not the not the
+configuration cell but communications.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/406-0
+00:48:20.296 --> 00:48:23.816
+<v Yosif Mihaylov>And um, just I want on the strategy. Um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/408-0
+00:48:25.136 --> 00:48:29.656
+<v Matthias Max>Yeah, that's definitely a good task,
+a needed task.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/407-0
+00:48:26.136 --> 00:48:26.416
+<v Yosif Mihaylov>About.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/410-0
+00:48:30.656 --> 00:48:36.052
+<v Yosif Mihaylov>Mm-hmm. After we align this,
+we will have again some tasks like some</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/410-1
+00:48:36.052 --> 00:48:40.118
+<v Yosif Mihaylov>configurations that we need to apply to
+the bucket.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/409-0
+00:48:39.696 --> 00:48:40.176
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/410-2
+00:48:40.118 --> 00:48:46.139
+<v Yosif Mihaylov>Because now I previously said that if we
+imagine this is a folder structure,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/410-3
+00:48:46.139 --> 00:48:49.736
+<v Yosif Mihaylov>we have two different streams for Oracle
+and.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/411-0
+00:48:50.456 --> 00:48:56.845
+<v Yosif Mihaylov>But now I think that for the scope of the
+POC we want to implement one level above</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/411-1
+00:48:56.845 --> 00:49:00.232
+<v Yosif Mihaylov>that.
+We want to implement a level where we</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/411-2
+00:49:00.232 --> 00:49:04.773
+<v Yosif Mihaylov>have data stream,
+for example Postgres and Oracle and then</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/411-3
+00:49:04.773 --> 00:49:09.776
+<v Yosif Mihaylov>then we have like stream Oracle.
+This is needed in order to not.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/413-0
+00:49:10.096 --> 00:49:16.261
+<v Yosif Mihaylov>Scratch from the beginning and also to
+keep the the previous POC existing.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/413-1
+00:49:16.261 --> 00:49:22.098
+<v Yosif Mihaylov>I mean we want to ideally I think
+implement the two POCs and have them</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/413-2
+00:49:22.098 --> 00:49:28.839
+<v Yosif Mihaylov>leave simultaneously because otherwise we
+have to repeat this process of first we</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/412-0
+00:49:24.336 --> 00:49:25.496
+<v Ivailo Pashov>Mm-hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/413-3
+00:49:28.839 --> 00:49:29.496
+<v Yosif Mihaylov>have to.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/414-0
+00:49:29.856 --> 00:49:36.649
+<v Yosif Mihaylov>To to pretty much delete the the the old
+POC like just just remove it and also you</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/414-1
+00:49:36.649 --> 00:49:43.196
+<v Yosif Mihaylov>have to reconfigure and recreate some
+components which I think is not ideal and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/414-2
+00:49:43.196 --> 00:49:45.896
+<v Yosif Mihaylov>also I think that we want to see.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/417-0
+00:49:46.176 --> 00:49:51.894
+<v Yosif Mihaylov>Both of them working together in parallel,
+probably compare and we have a single</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/415-0
+00:49:48.656 --> 00:49:48.936
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/417-1
+00:49:51.894 --> 00:49:56.835
+<v Yosif Mihaylov>environment, single GCP environment.
+So this is really the way to go.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/417-2
+00:49:56.835 --> 00:50:01.776
+<v Yosif Mihaylov>So we need to configure this bucket
+pretty much in something similar.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/416-0
+00:49:58.616 --> 00:49:58.776
+<v Matthias Max>Uh huh.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/420-0
+00:50:02.256 --> 00:50:07.725
+<v Yosif Mihaylov>So this should not be again,
+should not be something complicated,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/418-0
+00:50:02.656 --> 00:50:02.936
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/420-1
+00:50:07.725 --> 00:50:14.270
+<v Yosif Mihaylov>like one or two hours should be enough.
+Then it's about the authentication and</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/419-0
+00:50:12.016 --> 00:50:12.536
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/420-2
+00:50:14.270 --> 00:50:16.176
+<v Yosif Mihaylov>authorization like the.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/421-0
+00:50:17.536 --> 00:50:20.857
+<v Yosif Mihaylov>This stream component that they have on
+premise.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/421-1
+00:50:20.857 --> 00:50:26.551
+<v Yosif Mihaylov>This is an external to GCP component like
+it's on premise which means that in order</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/421-2
+00:50:26.551 --> 00:50:30.753
+<v Yosif Mihaylov>to set up the identity we need to create
+the service account.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/421-3
+00:50:30.753 --> 00:50:36.040
+<v Yosif Mihaylov>We need to set up some permissions.
+We need to generate this this account key</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/421-4
+00:50:36.040 --> 00:50:37.056
+<v Yosif Mihaylov>for the stream.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/423-0
+00:50:37.816 --> 00:50:42.038
+<v Yosif Mihaylov>Yeah,
+so this is about setting up the identity</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/423-1
+00:50:42.038 --> 00:50:48.504
+<v Yosif Mihaylov>in GCP for the stream. Nikki,
+I haven't said this like we need to to to</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/422-0
+00:50:44.456 --> 00:50:44.616
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/423-2
+00:50:48.504 --> 00:50:52.456
+<v Yosif Mihaylov>set these estimates now.
+What do you think?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/424-0
+00:50:51.496 --> 00:50:57.008
+<v Nikolay Hristov>So as far as I know,
+on the Google cloud there is service</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/424-1
+00:50:57.008 --> 00:51:02.711
+<v Nikolay Hristov>account keys are disabled,
+so we should find another way of</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/424-2
+00:51:02.711 --> 00:51:04.136
+<v Nikolay Hristov>authentication.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/426-0
+00:51:04.336 --> 00:51:10.296
+<v Matthias Max>Is this what we discussed with Matt back
+then? I think, yeah, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/425-0
+00:51:08.816 --> 00:51:09.336
+<v Nikolay Hristov>Yes.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/427-0
+00:51:11.336 --> 00:51:17.416
+<v Yosif Mihaylov>So if you have to estimate this having in
+mind what you just said.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/428-0
+00:51:18.936 --> 00:51:22.416
+<v Yosif Mihaylov>What would you put in estimates for the
+three scenarios?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/429-0
+00:51:24.056 --> 00:51:24.136
+<v Nikolay Hristov>Oh.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/430-0
+00:51:26.336 --> 00:51:33.845
+<v Nikolay Hristov>I don't know exactly,
+but so the the authentication should be</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/430-1
+00:51:33.845 --> 00:51:35.056
+<v Nikolay Hristov>different.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/431-0
+00:51:36.696 --> 00:51:38.816
+<v Nikolay Hristov>As for the other things, uh.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/434-0
+00:51:40.576 --> 00:51:47.856
+<v Nikolay Hristov>If if it is a service account key,
+it's just one hour, but.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/433-0
+00:51:40.656 --> 00:51:44.456
+<v Yosif Mihaylov>This is about the authentication like the
+it's not about being.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/438-0
+00:51:47.616 --> 00:51:50.531
+<v Yosif Mihaylov>Let's put that as an optimistic, right?
+That's fine.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/435-0
+00:51:50.376 --> 00:51:50.576
+<v Nikolay Hristov>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/438-1
+00:51:50.531 --> 00:51:53.776
+<v Yosif Mihaylov>I think it should be as optimistic.
+What if it's not like?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/436-0
+00:51:52.296 --> 00:51:52.456
+<v Nikolay Hristov>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/437-0
+00:51:53.696 --> 00:51:54.096
+<v Nikolay Hristov>2.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/438-2
+00:51:53.776 --> 00:51:56.856
+<v Yosif Mihaylov>What do you think is the the other end of
+the spectrum?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/440-0
+00:51:57.536 --> 00:52:06.416
+<v Nikolay Hristov>One day, let's see.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/439-0
+00:51:59.696 --> 00:52:01.296
+<v Matthias Max>Two days.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/442-0
+00:52:04.656 --> 00:52:10.680
+<v Yosif Mihaylov>So let the 8 hours and if we have this
+like in in between should be like this</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/442-1
+00:52:10.680 --> 00:52:12.456
+<v Yosif Mihaylov>that that this is fine.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/441-0
+00:52:12.816 --> 00:52:13.216
+<v Nikolay Hristov>Yes.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/443-0
+00:52:15.336 --> 00:52:15.416
+<v Nikolay Hristov>Uh.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/444-0
+00:52:15.496 --> 00:52:17.416
+<v Yosif Mihaylov>OK then.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/445-0
+00:52:18.896 --> 00:52:22.833
+<v Yosif Mihaylov>The next task after we set up the
+identity in terms of GCP,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/445-1
+00:52:22.833 --> 00:52:28.147
+<v Yosif Mihaylov>we need to actually configure this this
+identity in the stream component itself.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/445-2
+00:52:28.147 --> 00:52:33.331
+<v Yosif Mihaylov>So this task is about setting up and
+configuring the the stream like from what</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/445-3
+00:52:33.331 --> 00:52:38.776
+<v Yosif Mihaylov>I have read like I haven't touched this
+stream before, but we need to create some.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/446-0
+00:52:38.896 --> 00:52:44.305
+<v Yosif Mihaylov>New client in in the stream echo space in
+the stream environment like new app</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/446-1
+00:52:44.305 --> 00:52:47.980
+<v Yosif Mihaylov>that'd be essentially our GCP and our CDC
+mechanism.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/446-2
+00:52:47.980 --> 00:52:53.458
+<v Yosif Mihaylov>We need to configure the output target
+for the stream like saying that we need</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/446-3
+00:52:53.458 --> 00:52:57.896
+<v Yosif Mihaylov>to publish in the bucket,
+we need to set up the authentication.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/447-0
+00:52:58.256 --> 00:53:03.062
+<v Yosif Mihaylov>Pretty much the identity that we just
+created in the previous step we need to.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/447-1
+00:53:03.062 --> 00:53:07.442
+<v Yosif Mihaylov>There are also some configurations there
+in terms of the output format,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/447-2
+00:53:07.442 --> 00:53:11.153
+<v Yosif Mihaylov>which is like it could be Jason,
+it could be something else,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/447-3
+00:53:11.153 --> 00:53:16.203
+<v Yosif Mihaylov>but we need to to probably do some quick
+investigation there because later this is</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/447-4
+00:53:16.203 --> 00:53:17.176
+<v Yosif Mihaylov>also a question.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/448-0
+00:53:17.776 --> 00:53:23.422
+<v Yosif Mihaylov>Mark whether we need this task,
+but we need to make this adapter because</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/448-1
+00:53:23.422 --> 00:53:28.836
+<v Yosif Mihaylov>data stream and this stream.
+Obviously there are different tools that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/448-2
+00:53:28.836 --> 00:53:34.792
+<v Yosif Mihaylov>they have different output formats.
+What we should do in theory is we should</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/448-3
+00:53:34.792 --> 00:53:36.416
+<v Yosif Mihaylov>make some interfaces.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/449-0
+00:53:36.656 --> 00:53:42.071
+<v Yosif Mihaylov>Where we normalize the the event,
+the envelope structures from these two</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/449-1
+00:53:42.071 --> 00:53:47.486
+<v Yosif Mihaylov>different tools into one unified
+interface so that we can reuse then the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/449-2
+00:53:47.486 --> 00:53:52.456
+<v Yosif Mihaylov>the cloud function and the whole pipeline.
+So what I mean is that.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/450-0
+00:53:52.536 --> 00:53:56.841
+<v Yosif Mihaylov>Probably this like a very quick
+investigation about this this form of</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/450-1
+00:53:56.841 --> 00:53:57.456
+<v Yosif Mihaylov>types. Um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/451-0
+00:53:58.376 --> 00:53:58.936
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/455-0
+00:53:59.616 --> 00:54:04.128
+<v Yosif Mihaylov>So this is this is just about setting up
+the stream component,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/455-1
+00:54:04.128 --> 00:54:07.852
+<v Yosif Mihaylov>just cooking it up to our to our cloud
+environment.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/453-0
+00:54:07.016 --> 00:54:07.616
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/455-2
+00:54:07.852 --> 00:54:11.361
+<v Yosif Mihaylov>I'm not sure how much effort that would
+be here.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/455-3
+00:54:11.361 --> 00:54:16.875
+<v Yosif Mihaylov>I think no one actually we know that no
+one here has worked with with stream</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/455-4
+00:54:16.875 --> 00:54:17.376
+<v Yosif Mihaylov>before.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/454-0
+00:54:17.056 --> 00:54:17.576
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/457-0
+00:54:17.896 --> 00:54:26.056
+<v Yosif Mihaylov>But I would expect that that this should
+be like 4 hours. I don't think that if I.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/456-0
+00:54:24.976 --> 00:54:25.256
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/458-0
+00:54:27.016 --> 00:54:30.792
+<v Yosif Mihaylov>The way how I feel,
+we feel it now is something like this.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/458-1
+00:54:30.792 --> 00:54:32.776
+<v Yosif Mihaylov>It shouldn't be that that hard.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/459-0
+00:54:31.176 --> 00:54:34.740
+<v Matthias Max>You could also argue that it's out of
+scope.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/459-1
+00:54:34.740 --> 00:54:39.887
+<v Matthias Max>You say the PO CS goal is to see events
+in the cloud. That's it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/459-2
+00:54:39.887 --> 00:54:42.896
+<v Matthias Max>Harmonization could be something else.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/464-0
+00:54:42.136 --> 00:54:45.112
+<v Yosif Mihaylov>Yes, yes,
+but the the harmonization is only the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/464-1
+00:54:45.112 --> 00:54:49.018
+<v Yosif Mihaylov>last part here. I mean,
+I mean we need this for the anyway for</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/460-0
+00:54:46.136 --> 00:54:47.776
+<v Matthias Max>Hmm, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/464-2
+00:54:49.018 --> 00:54:52.180
+<v Yosif Mihaylov>the POC.
+The harmonization in terms on the context</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/461-0
+00:54:51.736 --> 00:54:52.336
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/464-3
+00:54:52.180 --> 00:54:56.520
+<v Yosif Mihaylov>of this task is about this quick
+investigations about the formal type</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/464-4
+00:54:56.520 --> 00:55:00.302
+<v Yosif Mihaylov>which you can skip,
+but I don't think that it makes a change</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/462-0
+00:54:58.576 --> 00:54:58.816
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/464-5
+00:55:00.302 --> 00:55:00.736
+<v Yosif Mihaylov>on the.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/463-0
+00:55:01.136 --> 00:55:01.616
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/465-0
+00:55:01.976 --> 00:55:02.976
+<v Yosif Mihaylov>Estimations.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/468-0
+00:55:02.696 --> 00:55:07.979
+<v Matthias Max>All right. Looking at the time,
+let's go a bit quicker. I mean,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/468-1
+00:55:07.979 --> 00:55:14.912
+<v Matthias Max>we also just need a total in the end and
+we will always apply a buffer anyway, 10%,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/467-0
+00:55:12.736 --> 00:55:13.216
+<v Yosif Mihaylov>Gabe.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/468-2
+00:55:14.912 --> 00:55:19.616
+<v Matthias Max>20, whatever. So what's coming up next,
+the five task 5?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/471-0
+00:55:16.376 --> 00:55:21.708
+<v Yosif Mihaylov>Next next up next types is is a is a is a
+dev testing.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/471-1
+00:55:21.708 --> 00:55:26.652
+<v Yosif Mihaylov>Yeah then this is this is pretty much the
+adapter.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/469-0
+00:55:21.976 --> 00:55:24.416
+<v Matthias Max>Have testing good. Also fine.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/471-2
+00:55:26.652 --> 00:55:34.408
+<v Yosif Mihaylov>Task six is the adapter which is probably
+the biggest the the biggest task with</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/470-0
+00:55:27.216 --> 00:55:27.496
+<v Matthias Max>6.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/471-3
+00:55:34.408 --> 00:55:36.056
+<v Yosif Mihaylov>with this option.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/474-0
+00:55:36.056 --> 00:55:40.067
+<v Yosif Mihaylov>I think though that we can skip,
+I think that it would be enough that we</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/472-0
+00:55:38.496 --> 00:55:38.656
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/474-1
+00:55:40.067 --> 00:55:43.198
+<v Yosif Mihaylov>just make sure that the events are coming
+in the bucket,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/473-0
+00:55:42.416 --> 00:55:42.656
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/474-2
+00:55:43.198 --> 00:55:45.176
+<v Yosif Mihaylov>although with a different structure.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/475-0
+00:55:44.776 --> 00:55:46.896
+<v Matthias Max>I think so too.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/476-0
+00:55:47.176 --> 00:55:50.616
+<v Yosif Mihaylov>OK. And then, uh, we.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/477-0
+00:55:52.816 --> 00:55:53.336
+<v Yosif Mihaylov>The.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/479-0
+00:55:56.696 --> 00:56:01.696
+<v Yosif Mihaylov>I'm not sure I put put this dev testing
+twice. Um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/478-0
+00:55:57.176 --> 00:55:58.176
+<v Matthias Max>Ulicit.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/480-0
+00:56:03.976 --> 00:56:04.416
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/485-0
+00:56:04.536 --> 00:56:10.470
+<v Yosif Mihaylov>OK. Either way we we we go from there.
+So we collect performance metrics.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/481-0
+00:56:05.856 --> 00:56:08.096
+<v Matthias Max>Same. Yeah, skip that one.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/485-1
+00:56:10.470 --> 00:56:15.763
+<v Yosif Mihaylov>This is pretty much the the same task
+that we have from the last.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/482-0
+00:56:12.216 --> 00:56:12.736
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/485-2
+00:56:15.763 --> 00:56:21.536
+<v Yosif Mihaylov>I think I actually just copied over
+collecting then the cost the again.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/483-0
+00:56:16.216 --> 00:56:16.496
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/484-0
+00:56:18.536 --> 00:56:19.056
+<v Matthias Max>Makes sense.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/489-0
+00:56:22.336 --> 00:56:28.359
+<v Yosif Mihaylov>Collecting the costs and then writing
+this implementation or guide and all the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/486-0
+00:56:23.576 --> 00:56:24.216
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/487-0
+00:56:26.736 --> 00:56:27.416
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/489-1
+00:56:28.359 --> 00:56:32.856
+<v Yosif Mihaylov>rest of the steps are already covered in
+the other POC so.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/488-0
+00:56:33.616 --> 00:56:33.816
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/490-0
+00:56:33.936 --> 00:56:35.336
+<v Yosif Mihaylov>It's delete.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/491-0
+00:56:36.016 --> 00:56:40.061
+<v Matthias Max>Good.
+Then can we quickly somehow get the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/491-1
+00:56:40.061 --> 00:56:41.216
+<v Matthias Max>totals here?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/492-0
+00:56:42.296 --> 00:56:47.216
+<v Matthias Max>Just need a feeling where we are.
+So this is marked on right?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/493-0
+00:56:54.216 --> 00:56:54.576
+<v Yosif Mihaylov>I will.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/494-0
+00:56:55.896 --> 00:56:56.576
+<v Matthias Max>Maybe.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/495-0
+00:56:56.936 --> 00:57:00.376
+<v Yosif Mihaylov>Our good almighty will help.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/496-0
+00:57:02.176 --> 00:57:02.336
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/498-0
+00:57:08.776 --> 00:57:12.816
+<v Yosif Mihaylov>Then you never,
+never start with the next question.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/499-0
+00:57:15.976 --> 00:57:20.776
+<v Matthias Max>I don't even understand the question here
+at the top and the middle.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/500-0
+00:57:23.616 --> 00:57:23.696
+<v Matthias Max>Um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/501-0
+00:57:27.296 --> 00:57:28.976
+<v Matthias Max>So this is A or B?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/503-0
+00:57:29.456 --> 00:57:34.950
+<v Yosif Mihaylov>So this is the data stream,
+but keep in mind that here they are the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/502-0
+00:57:31.936 --> 00:57:32.536
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/503-1
+00:57:34.950 --> 00:57:37.616
+<v Yosif Mihaylov>the the ADRS and everything else.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/504-0
+00:57:38.136 --> 00:57:39.376
+<v Matthias Max>Is in in B.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/507-0
+00:57:41.096 --> 00:57:46.150
+<v Yosif Mihaylov>No, the IDs are here. Yeah,
+this is the BI mean this is the data</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/505-0
+00:57:41.536 --> 00:57:41.776
+<v Matthias Max>Alright.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/507-1
+00:57:46.150 --> 00:57:48.016
+<v Yosif Mihaylov>stream option, option B.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/506-0
+00:57:47.216 --> 00:57:47.696
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/508-0
+00:57:49.456 --> 00:57:49.776
+<v Yosif Mihaylov>Um.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/509-0
+00:57:52.056 --> 00:57:52.416
+<v Yosif Mihaylov>3.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/510-0
+00:57:55.136 --> 00:57:55.216
+<v Yosif Mihaylov>So.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/512-0
+00:57:58.856 --> 00:57:59.936
+<v Yosif Mihaylov>I actually like it.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/511-0
+00:57:59.216 --> 00:57:59.736
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/513-0
+00:58:13.016 --> 00:58:15.136
+<v Yosif Mihaylov>I just want to put it like this.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/514-0
+00:58:16.496 --> 00:58:17.576
+<v Yosif Mihaylov>We clean.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/515-0
+00:58:17.496 --> 00:58:17.656
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/516-0
+00:58:21.296 --> 00:58:24.256
+<v Matthias Max>So this is ours, right? Yeah, yeah, yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/521-0
+00:58:50.416 --> 00:58:50.456
+<v Yosif Mihaylov>Uh.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/522-0
+00:58:56.416 --> 00:58:58.856
+<v Yosif Mihaylov>This should be ignored though.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/524-0
+00:58:59.816 --> 00:59:01.976
+<v Yosif Mihaylov>In the calculation this step.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/523-0
+00:59:01.176 --> 00:59:01.336
+<v Matthias Max>Hello.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/525-0
+00:59:02.936 --> 00:59:05.456
+<v Yosif Mihaylov>And also we have the duplicate dev
+testing.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/526-0
+00:59:06.256 --> 00:59:06.936
+<v Matthias Max>Mhm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/527-0
+00:59:08.696 --> 00:59:09.496
+<v Yosif Mihaylov>Actually, if you will.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/528-0
+00:59:10.776 --> 00:59:13.936
+<v Matthias Max>So it's about how much less.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/535-0
+00:59:43.096 --> 00:59:43.336
+<v Matthias Max>Hmm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/536-0
+00:59:45.776 --> 00:59:47.936
+<v Matthias Max>OK, so yeah, I need to.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/537-0
+00:59:49.496 --> 00:59:55.736
+<v Matthias Max>Check them now again with regards to the
+days and compare it to what I had.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/540-0
+00:59:56.776 --> 00:59:59.267
+<v Yosif Mihaylov>Well,
+of course this is just like our</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/538-0
+00:59:57.896 --> 00:59:58.336
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/540-1
+00:59:59.267 --> 01:00:04.512
+<v Yosif Mihaylov>estimations like that's the idea that
+everyone like just shares the estimations</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/540-2
+01:00:04.512 --> 01:00:08.576
+<v Yosif Mihaylov>from his point of view and decision of
+course something else.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/539-0
+01:00:05.856 --> 01:00:06.016
+<v Matthias Max>Sure.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/541-0
+01:00:09.456 --> 01:00:13.743
+<v Matthias Max>Yeah,
+I think we have to play a bit with the,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/541-1
+01:00:13.743 --> 01:00:21.104
+<v Matthias Max>how did you say the cut where we cut off
+the POC? This gives us lower efforts.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/541-2
+01:00:21.104 --> 01:00:26.136
+<v Matthias Max>I think that's probably what what the
+client expects.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/542-0
+01:00:27.736 --> 01:00:33.720
+<v Matthias Max>I don't have a number in my head.
+What would be OK or would be too much or</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/542-1
+01:00:33.720 --> 01:00:38.826
+<v Matthias Max>I need to talk to Martin.
+He has the better client access here,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/542-2
+01:00:38.826 --> 01:00:42.416
+<v Matthias Max>but it's great to have these things,
+I mean.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/543-0
+01:00:42.856 --> 01:00:48.310
+<v Matthias Max>It's basically now a really good
+foundation of what actually needs to be</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/543-1
+01:00:48.310 --> 01:00:51.896
+<v Matthias Max>done and what is expected to be provided
+to us.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/543-2
+01:00:51.896 --> 01:00:55.856
+<v Matthias Max>So it's a great resource to write this
+actual offer.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/544-0
+01:00:58.936 --> 01:00:59.256
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/545-0
+01:01:00.976 --> 01:01:03.896
+<v Matthias Max>Good. Thanks a lot. That's very,
+very good output.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/546-0
+01:01:08.096 --> 01:01:08.456
+<v Yosif Mihaylov>Sure.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/547-0
+01:01:09.776 --> 01:01:14.921
+<v Matthias Max>And I'll pass it on to Martin so we can
+send it out, I don't know,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/547-1
+01:01:14.921 --> 01:01:16.456
+<v Matthias Max>as soon as possible.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/549-0
+01:01:17.296 --> 01:01:20.998
+<v Yosif Mihaylov>Also, I think like, yeah, I'm not, well,
+I'm not sure about buffer.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/549-1
+01:01:20.998 --> 01:01:25.190
+<v Yosif Mihaylov>So everything's like bug fixing and stuff,
+but there's no bug fixing, right?</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/548-0
+01:01:23.616 --> 01:01:24.056
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/549-2
+01:01:25.190 --> 01:01:28.456
+<v Yosif Mihaylov>Because this is just the POC,
+so I think we should be fine.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/550-0
+01:01:26.456 --> 01:01:33.915
+<v Matthias Max>Yeah, yeah, yeah, yeah. It's just also,
+I think it feels a bit weird that we'd</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/550-1
+01:01:33.915 --> 01:01:41.374
+<v Matthias Max>have to do this in detail for POC because
+of this new process. But in the end,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/550-2
+01:01:41.374 --> 01:01:45.056
+<v Matthias Max>I think it helps everybody, both sides.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/552-0
+01:01:45.696 --> 01:01:50.056
+<v Matthias Max>To get better, yeah, timelines as well.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/551-0
+01:01:48.096 --> 01:01:48.136
+<v Yosif Mihaylov>Oh.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/555-0
+01:01:50.136 --> 01:01:53.652
+<v Yosif Mihaylov>To be honest,
+I think that like it's the only way that</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/555-1
+01:01:53.652 --> 01:01:58.191
+<v Yosif Mihaylov>we like provide somewhat proper
+estimations because otherwise we might</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/555-2
+01:01:58.191 --> 01:02:03.305
+<v Yosif Mihaylov>skip some very big and important tasks
+and end up like taking twice much of the</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/553-0
+01:01:59.936 --> 01:02:00.376
+<v Matthias Max>Mm.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/555-3
+01:02:03.305 --> 01:02:04.136
+<v Yosif Mihaylov>time that we.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/554-0
+01:02:04.256 --> 01:02:04.536
+<v Matthias Max>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/557-0
+01:02:05.496 --> 01:02:12.156
+<v Matthias Max>Either that or you charge too much.
+There have also been ideas about T-shirt</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/556-0
+01:02:09.176 --> 01:02:09.976
+<v Yosif Mihaylov>Yeah.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/557-1
+01:02:12.156 --> 01:02:17.432
+<v Matthias Max>sized concepts like you would.
+You can pull a 5 day, 10 day,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/557-2
+01:02:17.432 --> 01:02:21.411
+<v Matthias Max>15 day PRC and just do it from a gut
+feeling.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/557-3
+01:02:21.411 --> 01:02:25.216
+<v Matthias Max>But the first reaction from the client
+was.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/558-0
+01:02:25.496 --> 01:02:31.969
+<v Matthias Max>That's too rough because then you
+probably sometimes he overpays or we</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/558-1
+01:02:31.969 --> 01:02:35.616
+<v Matthias Max>underestimate and it doesn't make sense.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/559-0
+01:02:37.256 --> 01:02:42.280
+<v Matthias Max>So it's gonna be individual in my opinion,
+like we did it here,</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/559-1
+01:02:42.280 --> 01:02:48.795
+<v Matthias Max>and I think we will also become faster if
+we do this more often because the format</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/559-2
+01:02:48.795 --> 01:02:51.856
+<v Matthias Max>will establish what we need to deliver.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/560-0
+01:02:52.296 --> 01:02:57.263
+<v Matthias Max>For example,
+if we do it that deep like you did as in</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/560-1
+01:02:57.263 --> 01:03:03.885
+<v Matthias Max>on task level or not and so on.
+So I think it's it's the process we can</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/560-2
+01:03:03.885 --> 01:03:04.896
+<v Matthias Max>streamline.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/561-0
+01:03:07.296 --> 01:03:07.696
+<v Yosif Mihaylov>OK.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/562-0
+01:03:07.616 --> 01:03:07.736
+<v Matthias Max>OK.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/563-0
+01:03:09.416 --> 01:03:14.176
+<v Matthias Max>Thanks a lot.
+I need to jump and we'll get feedback.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/565-0
+01:03:15.936 --> 01:03:19.376
+<v Yosif Mihaylov>Hey, sure. Thank you.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/570-0
+01:03:18.176 --> 01:03:19.056
+<v Matthias Max>Thanks. Bye.</v>
+
+49b233c5-a2cc-4afc-8030-39ef9e77c254/568-0
+01:03:19.336 --> 01:03:20.336
+<v Boyan Valchev>Thank you. Bye.</v>

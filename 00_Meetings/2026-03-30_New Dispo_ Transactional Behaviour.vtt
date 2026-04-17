@@ -1,0 +1,3850 @@
+WEBVTT
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/41-0
+00:00:04.747 --> 00:00:06.467
+<v Matthias Max>Good should be running.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/43-0
+00:00:07.907 --> 00:00:08.227
+<v Matthias Max>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/47-0
+00:00:10.307 --> 00:00:16.612
+<v Matthias Max>So yeah, thanks for putting this together.
+I think we we're coming closer.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/47-1
+00:00:16.612 --> 00:00:20.311
+<v Matthias Max>Details are becoming more and more
+visible.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/47-2
+00:00:20.311 --> 00:00:26.027
+<v Matthias Max>I had a bit of trouble checking what's up
+heading belongs to which.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/51-0
+00:00:26.387 --> 00:00:32.934
+<v Matthias Max>High-level headings,
+but maybe let's go from top to bottom.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/51-1
+00:00:32.934 --> 00:00:40.027
+<v Matthias Max>So when we refer to option one,
+it's this column, right? Evaluo.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/53-0
+00:00:41.747 --> 00:00:42.187
+<v Yosif Mihaylov>Yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/57-0
+00:00:43.187 --> 00:00:47.191
+<v Matthias Max>But option two is this and option three
+is this,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/57-1
+00:00:47.191 --> 00:00:51.685
+<v Matthias Max>which is not really deep and further down
+in the file.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/57-2
+00:00:51.685 --> 00:00:56.587
+<v Matthias Max>So we mainly discuss these two things in
+this page. That's.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/64-0
+00:00:55.107 --> 00:01:00.468
+<v Ivailo Pashov>Yes,
+the third one was proposed by Yosef some</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/58-0
+00:00:59.147 --> 00:00:59.627
+<v Matthias Max>Yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/64-1
+00:01:00.468 --> 00:01:09.791
+<v Ivailo Pashov>time ago. It's very relatively, let's say,
+similar to the outbox one. Slightly,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/64-2
+00:01:09.791 --> 00:01:13.987
+<v Ivailo Pashov>let's say, easier to implement, but.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/66-0
+00:01:14.187 --> 00:01:19.547
+<v Ivailo Pashov>Has some like drawbacks around
+synchronous integration flow.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/70-0
+00:01:21.027 --> 00:01:25.787
+<v Ivailo Pashov>But that being said, anyway,
+we've been deciding to go with option one.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/67-0
+00:01:21.147 --> 00:01:22.067
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/76-0
+00:01:26.987 --> 00:01:31.498
+<v Ivailo Pashov>Over the previous discussions,
+so just wanted to show you,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/71-0
+00:01:27.667 --> 00:01:27.987
+<v Matthias Max>Correct.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/76-1
+00:01:31.498 --> 00:01:37.080
+<v Ivailo Pashov>let's say the solution. Matthias,
+does it make sense for me to take over</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/76-2
+00:01:37.080 --> 00:01:38.227
+<v Ivailo Pashov>the screen and?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/74-0
+00:01:37.707 --> 00:01:38.907
+<v Matthias Max>Of course.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/77-0
+00:01:39.347 --> 00:01:39.987
+<v Ivailo Pashov>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/79-0
+00:01:45.467 --> 00:01:47.707
+<v Ivailo Pashov>Let me know once you can see my screen.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/80-0
+00:01:48.667 --> 00:01:49.507
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/87-0
+00:01:50.627 --> 00:01:57.238
+<v Ivailo Pashov>So so for for the purpose of this we have
+let's say the the end user,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/82-0
+00:01:51.227 --> 00:01:52.187
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/87-1
+00:01:57.238 --> 00:02:04.415
+<v Ivailo Pashov>new dispro front end, the service,
+the database in this external dependency</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/87-2
+00:02:04.415 --> 00:02:09.515
+<v Ivailo Pashov>TMS bridge.
+Again it's relatively restructed in a way</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/87-3
+00:02:09.515 --> 00:02:09.987
+<v Ivailo Pashov>that.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/91-0
+00:02:10.587 --> 00:02:15.299
+<v Ivailo Pashov>Potentially could be implemented in
+another way with other,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/91-1
+00:02:15.299 --> 00:02:21.502
+<v Ivailo Pashov>let's say external dependencies if we
+have any in future and we won't see your</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/91-2
+00:02:21.502 --> 00:02:25.507
+<v Ivailo Pashov>transactional behavior. But like how?
+How does it?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/95-0
+00:02:25.667 --> 00:02:31.918
+<v Ivailo Pashov>Start from the end user like everything
+is hidden beneath potentially apart from</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/95-1
+00:02:31.918 --> 00:02:38.169
+<v Ivailo Pashov>the the fact that potentially if there
+any transient errors etcetera or any data</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/95-2
+00:02:38.169 --> 00:02:42.027
+<v Ivailo Pashov>quality errors that are propagated,
+let's say we.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/97-0
+00:02:42.307 --> 00:02:48.627
+<v Ivailo Pashov>Exhaust any retries for some reason or we
+are not able to.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/101-0
+00:02:49.587 --> 00:02:58.113
+<v Ivailo Pashov>Let's say progress because of some data
+quality concern, some misconfiguration,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/101-1
+00:02:58.113 --> 00:03:03.762
+<v Ivailo Pashov>et cetera.
+Potentially this may require for the user</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/101-2
+00:03:03.762 --> 00:03:05.147
+<v Ivailo Pashov>to again try.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/103-0
+00:03:06.347 --> 00:03:08.307
+<v Ivailo Pashov>Um, retry that operation.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/107-0
+00:03:09.187 --> 00:03:17.674
+<v Ivailo Pashov>But how does it look like? For example,
+we'll have any modification requests that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/107-1
+00:03:17.674 --> 00:03:25.747
+<v Ivailo Pashov>comes from new dispro front end as part
+of user and user, let's say activity.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/112-0
+00:03:26.387 --> 00:03:30.220
+<v Ivailo Pashov>And in in that regard, there would be,
+let's say,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/112-1
+00:03:30.220 --> 00:03:35.969
+<v Ivailo Pashov>retryable logic here to retry on
+recoverable errors that that's how we are</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/112-2
+00:03:35.969 --> 00:03:39.878
+<v Ivailo Pashov>protecting, let's say,
+against some some temporary</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/112-3
+00:03:39.878 --> 00:03:44.707
+<v Ivailo Pashov>unavailability that's potentially not
+visible to the end user.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/116-0
+00:03:45.827 --> 00:03:49.981
+<v Ivailo Pashov>This should be configurable with some
+exponential backup,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/116-1
+00:03:49.981 --> 00:03:55.352
+<v Ivailo Pashov>but relatively limited in total duration
+so that the user doesn't need to,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/116-2
+00:03:55.352 --> 00:04:00.079
+<v Ivailo Pashov>let's say, wait for minutes,
+for example to for that operation to</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/116-3
+00:04:00.079 --> 00:04:02.227
+<v Ivailo Pashov>complete. Anyway, we have the.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/121-0
+00:04:03.147 --> 00:04:08.363
+<v Ivailo Pashov>Recovery mechanism that the use the end
+user can trigger and from that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/121-1
+00:04:08.363 --> 00:04:14.388
+<v Ivailo Pashov>perspective on we should be also trying
+to get some existing data like try to get</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/121-2
+00:04:14.388 --> 00:04:20.559
+<v Ivailo Pashov>that relevant record or many records like
+this operation could be retried in a loop</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/121-3
+00:04:20.559 --> 00:04:21.147
+<v Ivailo Pashov>as well.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/122-0
+00:04:21.467 --> 00:04:24.347
+<v Ivailo Pashov>And then um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/128-0
+00:04:26.147 --> 00:04:33.517
+<v Ivailo Pashov>Like if there is a create operation with
+an existing record or we we can just</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/128-1
+00:04:33.517 --> 00:04:41.170
+<v Ivailo Pashov>switch the operation to to update rather
+than actually inserting any data and we</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/128-2
+00:04:41.170 --> 00:04:43.627
+<v Ivailo Pashov>just supply these changes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/131-0
+00:04:44.387 --> 00:04:48.466
+<v Ivailo Pashov>Basically this is called absurd.
+If that's a delete and the record is</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/131-1
+00:04:48.466 --> 00:04:51.147
+<v Ivailo Pashov>missing,
+obviously we skip doing any changes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/135-0
+00:04:55.667 --> 00:05:01.315
+<v Ivailo Pashov>Other than that, if there's no,
+let's say conflict, for example,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/135-1
+00:05:01.315 --> 00:05:08.441
+<v Ivailo Pashov>the record is is existing and we intend
+to delete it or the record is not present</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/135-2
+00:05:08.441 --> 00:05:10.787
+<v Ivailo Pashov>and we intend to create it.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/136-0
+00:05:10.787 --> 00:05:16.427
+<v Ivailo Pashov>Or the record is present and we intend to
+update it. We just do that.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/139-0
+00:05:17.827 --> 00:05:24.432
+<v Ivailo Pashov>I have a separate table on that regard to
+explain further this item potency logic.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/139-1
+00:05:24.432 --> 00:05:25.307
+<v Ivailo Pashov>Yes, Yosif.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/142-0
+00:05:25.387 --> 00:05:30.447
+<v Yosif Mihaylov>Just question about if if I have any
+questions like do do you prefer to to</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/142-1
+00:05:30.447 --> 00:05:34.427
+<v Yosif Mihaylov>leave them for when you finish or just
+straight ahead ask?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/147-0
+00:05:34.027 --> 00:05:36.864
+<v Ivailo Pashov>Yeah,
+keep in mind that I also created some</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/147-1
+00:05:36.864 --> 00:05:41.441
+<v Ivailo Pashov>decision table over here about this
+important processing, for example,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/147-2
+00:05:41.441 --> 00:05:46.276
+<v Ivailo Pashov>based on what kind of operation we
+perform and what's the current state of</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/147-3
+00:05:46.276 --> 00:05:50.080
+<v Ivailo Pashov>the particular record is.
+If you have a related questions,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/147-4
+00:05:50.080 --> 00:05:51.627
+<v Ivailo Pashov>we can go to that table.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/152-0
+00:05:52.027 --> 00:05:55.513
+<v Yosif Mihaylov>No, it's about this retry.
+So are you talking about some</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/148-0
+00:05:52.187 --> 00:05:53.067
+<v Ivailo Pashov>Later on.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/149-0
+00:05:55.227 --> 00:05:55.547
+<v Ivailo Pashov>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/152-1
+00:05:55.513 --> 00:05:59.427
+<v Yosif Mihaylov>automatically retry here like the system
+automatically retries?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/150-0
+00:05:58.427 --> 00:05:58.587
+<v Ivailo Pashov>Yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/159-0
+00:06:00.347 --> 00:06:04.707
+<v Ivailo Pashov>Yes, but very short.
+I mean for example first retry could be</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/159-1
+00:06:04.707 --> 00:06:09.996
+<v Ivailo Pashov>100 millisecond and then second one maybe
+in one second and I don't know,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/159-2
+00:06:09.996 --> 00:06:15.428
+<v Ivailo Pashov>maybe we don't retry further because that
+would like impact user behaviour.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/155-0
+00:06:14.427 --> 00:06:15.107
+<v Matthias Max>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/159-3
+00:06:15.428 --> 00:06:17.787
+<v Ivailo Pashov>I mean the user would be blocked.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/162-0
+00:06:19.307 --> 00:06:25.559
+<v Ivailo Pashov>For a lot of time and blocking the front
+end is usually a bad idea unless we have</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/157-0
+00:06:20.147 --> 00:06:20.347
+<v Matthias Max>No.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/162-1
+00:06:25.559 --> 00:06:30.133
+<v Ivailo Pashov>some screen with some,
+let's say with the loading screen et</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/162-2
+00:06:30.133 --> 00:06:30.667
+<v Ivailo Pashov>cetera.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/167-0
+00:06:32.387 --> 00:06:38.470
+<v Ivailo Pashov>That appears and potentially prepares the
+end user to wait for some potentially</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/167-1
+00:06:38.470 --> 00:06:42.120
+<v Ivailo Pashov>long running cooperation.
+If that's very short,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/167-2
+00:06:42.120 --> 00:06:47.518
+<v Ivailo Pashov>potentially the screen is not doesn't not
+even appear. If it's longer,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/167-3
+00:06:47.518 --> 00:06:49.267
+<v Ivailo Pashov>maybe we can show that.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/170-0
+00:06:51.707 --> 00:06:57.972
+<v Ivailo Pashov>Discussion, but in my opinion,
+let's try to keep that retry duration</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/170-1
+00:06:57.972 --> 00:07:00.787
+<v Ivailo Pashov>short, several seconds at most.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/169-0
+00:06:59.187 --> 00:06:59.907
+<v Matthias Max>Mm-hmm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/175-0
+00:07:01.427 --> 00:07:08.272
+<v Yosif Mihaylov>So in short we implement some some some
+retry logic like in memory retry logic on</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/175-1
+00:07:08.272 --> 00:07:15.116
+<v Yosif Mihaylov>the server side and we make sure that the
+the operation that you that the user is</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/175-2
+00:07:15.116 --> 00:07:17.787
+<v Yosif Mihaylov>trying to perform is indepotent.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/176-0
+00:07:18.147 --> 00:07:20.387
+<v Yosif Mihaylov>Like in order to be retried.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/177-0
+00:07:18.907 --> 00:07:21.587
+<v Ivailo Pashov>Yeah, yeah, yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/181-0
+00:07:21.267 --> 00:07:26.268
+<v Matthias Max>That answers my question.
+I I asked you if there's no Outlook table</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/181-1
+00:07:26.268 --> 00:07:32.151
+<v Matthias Max>because the document headings were a bit
+off. This means we don't have a table.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/181-2
+00:07:32.151 --> 00:07:37.079
+<v Matthias Max>Obviously, as Joseph said,
+it's in memory and within the same HTTP</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/181-3
+00:07:37.079 --> 00:07:37.667
+<v Matthias Max>request.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/189-0
+00:07:42.467 --> 00:07:46.214
+<v Matthias Max>OK,
+meaning also if it is transient but still</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/189-1
+00:07:46.214 --> 00:07:49.799
+<v Matthias Max>not resolved, it's lost.
+The state is lost.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/189-2
+00:07:49.799 --> 00:07:56.398
+<v Matthias Max>We cannot pick up from there because we
+don't have a record that's a compromise,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/185-0
+00:07:54.107 --> 00:07:54.747
+<v Ivailo Pashov>Yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/189-3
+00:07:56.398 --> 00:07:58.027
+<v Matthias Max>let's say like that.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/187-0
+00:07:58.707 --> 00:07:58.787
+<v Ivailo Pashov>He.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/188-0
+00:07:59.987 --> 00:08:00.227
+<v Ivailo Pashov>Yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/191-0
+00:08:01.147 --> 00:08:02.867
+<v Matthias Max>Yes, yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/194-0
+00:08:04.027 --> 00:08:07.387
+<v Ivailo Pashov>So if that previous operation was.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/192-0
+00:08:04.107 --> 00:08:04.227
+<v Matthias Max>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/196-0
+00:08:09.587 --> 00:08:12.507
+<v Ivailo Pashov>Um, a rather a success.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/201-0
+00:08:13.467 --> 00:08:20.136
+<v Ivailo Pashov>For that, which means like retries,
+like maximum amount of retries was not</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/197-0
+00:08:14.147 --> 00:08:14.267
+<v Matthias Max>And.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/201-1
+00:08:20.136 --> 00:08:25.027
+<v Ivailo Pashov>reached and we didn't receive any
+unrecoverable error.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/207-0
+00:08:26.507 --> 00:08:30.274
+<v Ivailo Pashov>Then we go to the database,
+update that local data.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/207-1
+00:08:30.274 --> 00:08:35.345
+<v Ivailo Pashov>Eventually we may need to be prepared
+that this data is also present.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/207-2
+00:08:35.345 --> 00:08:40.271
+<v Ivailo Pashov>For example, we didn't just,
+we just didn't manage to return back a</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/207-3
+00:08:40.271 --> 00:08:45.560
+<v Ivailo Pashov>result to the front end and but this
+operation was actually successfully</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/207-4
+00:08:45.560 --> 00:08:46.067
+<v Ivailo Pashov>stored.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/210-0
+00:08:46.427 --> 00:08:55.505
+<v Ivailo Pashov>Then we should also be able to, let's say,
+handle data that's potentially not that's</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/210-1
+00:08:55.505 --> 00:08:57.427
+<v Ivailo Pashov>already available.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/212-0
+00:08:59.227 --> 00:09:04.307
+<v Ivailo Pashov>In the database again similar behavior
+for idempotent processing.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/217-0
+00:09:07.307 --> 00:09:13.626
+<v Ivailo Pashov>And then we commit the transaction and
+return the response on the incoming HTTP</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/217-1
+00:09:13.626 --> 00:09:18.840
+<v Ivailo Pashov>request from the front end.
+And then for the end user it's either</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/217-2
+00:09:18.840 --> 00:09:25.238
+<v Ivailo Pashov>handle a success or some print the error
+that occurred with some instructions on</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/217-3
+00:09:25.238 --> 00:09:26.107
+<v Ivailo Pashov>what to do.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/221-0
+00:09:26.187 --> 00:09:31.319
+<v Ivailo Pashov>Like if we know that's or in the
+recoverable error for example,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/221-1
+00:09:31.319 --> 00:09:37.573
+<v Ivailo Pashov>we can advise the user to try a bit later.
+If it's let's say not recoverable,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/221-2
+00:09:37.573 --> 00:09:43.667
+<v Ivailo Pashov>we might just inform the user hey that
+that was not recoverable error, but.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/224-0
+00:09:44.187 --> 00:09:51.261
+<v Ivailo Pashov>And but you should let's change check
+with support on let's say what's wrong</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/224-1
+00:09:51.261 --> 00:09:52.547
+<v Ivailo Pashov>with the data.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/225-0
+00:09:56.347 --> 00:09:56.467
+<v Ivailo Pashov>Yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/228-0
+00:09:57.667 --> 00:10:00.801
+<v Yosif Mihaylov>Yes,
+so about the translator like how this</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/228-1
+00:10:00.801 --> 00:10:02.987
+<v Yosif Mihaylov>will work for example because.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/233-0
+00:10:04.107 --> 00:10:10.054
+<v Yosif Mihaylov>Let's say that we we change the state in
+new dispo like as a part of a</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/233-1
+00:10:10.054 --> 00:10:14.493
+<v Yosif Mihaylov>transactional flow.
+There are pretty much two steps.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/233-2
+00:10:14.493 --> 00:10:19.267
+<v Yosif Mihaylov>First we you know first we sorry we we do
+the new dispo.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/237-0
+00:10:19.627 --> 00:10:24.801
+<v Yosif Mihaylov>The the TMS sorry operation and then the
+the new dispo operation.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/237-1
+00:10:24.801 --> 00:10:29.818
+<v Yosif Mihaylov>So let's say the TMS operation succeeded.
+The new dispo failed.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/237-2
+00:10:29.818 --> 00:10:35.227
+<v Yosif Mihaylov>We retried a couple of times the new
+dispo operation, but it failed.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/241-0
+00:10:36.427 --> 00:10:43.122
+<v Yosif Mihaylov>Then then OK, so then when the user tries,
+we need to make sure that also the new</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/241-1
+00:10:43.122 --> 00:10:48.347
+<v Yosif Mihaylov>the the TMS call is also in them so he
+can retry safely, right?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/245-0
+00:10:48.987 --> 00:10:54.622
+<v Ivailo Pashov>Yes, exactly. So in in in this case,
+we also need to make sure that the new</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/242-0
+00:10:51.027 --> 00:10:51.147
+<v Yosif Mihaylov>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/245-1
+00:10:54.622 --> 00:10:57.587
+<v Ivailo Pashov>dispo DB operations are also idempotent.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/244-0
+00:10:57.467 --> 00:10:57.507
+<v Matthias Max>Uh.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/251-0
+00:10:59.067 --> 00:11:02.457
+<v Ivailo Pashov>In theory,
+we're introducing everything with a</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/251-1
+00:11:02.457 --> 00:11:06.785
+<v Ivailo Pashov>single transaction,
+but it might happen that let's say that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/251-2
+00:11:06.785 --> 00:11:11.402
+<v Ivailo Pashov>transaction was applied,
+but the response response was just not</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/251-3
+00:11:11.402 --> 00:11:16.307
+<v Ivailo Pashov>returned back to the user on time.
+Maybe that instance died before.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/249-0
+00:11:13.467 --> 00:11:13.667
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/253-0
+00:11:17.067 --> 00:11:24.170
+<v Ivailo Pashov>This it received the response from the
+database that the transaction commit was</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/253-1
+00:11:24.170 --> 00:11:25.147
+<v Ivailo Pashov>successful.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/258-0
+00:11:25.147 --> 00:11:30.338
+<v Yosif Mihaylov>So we pretty much we are going,
+we will have to notify the user that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/258-1
+00:11:30.338 --> 00:11:36.207
+<v Yosif Mihaylov>there are some some some data consistency
+that occurred that the state is now</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/258-2
+00:11:36.207 --> 00:11:40.947
+<v Yosif Mihaylov>unsynchronized and he needs and the user
+needs to retry later.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/263-0
+00:11:42.787 --> 00:11:49.364
+<v Ivailo Pashov>Yes, exactly. So in the if that happens,
+we can also provide some kind of a status</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/263-1
+00:11:49.364 --> 00:11:55.544
+<v Ivailo Pashov>that we didn't manage to, let's say,
+store some some changes consistently and</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/263-2
+00:11:55.544 --> 00:11:59.427
+<v Ivailo Pashov>then the user will need to retry that
+operation.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/262-0
+00:12:00.027 --> 00:12:00.587
+<v Yosif Mihaylov>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/267-0
+00:12:01.867 --> 00:12:09.602
+<v Matthias Max>So sorry if I have my hand up already.
+What we don't have is any state that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/267-1
+00:12:09.602 --> 00:12:12.147
+<v Matthias Max>tells us there is a miss.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/272-0
+00:12:13.227 --> 00:12:18.388
+<v Matthias Max>Sync state between the systems because
+it's all in memory.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/272-1
+00:12:18.388 --> 00:12:24.598
+<v Matthias Max>We we know the state on TMS side is
+different than on a disposal side,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/272-2
+00:12:24.598 --> 00:12:29.147
+<v Matthias Max>but we cannot recover that state after
+the request.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/273-0
+00:12:30.667 --> 00:12:34.421
+<v Matthias Max>It's lost,
+so with someone else close to the same</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/273-1
+00:12:34.421 --> 00:12:34.947
+<v Matthias Max>record.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/277-0
+00:12:36.267 --> 00:12:41.322
+<v Matthias Max>He doesn't see that there's currently a
+discrepancy, right?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/277-1
+00:12:41.322 --> 00:12:47.387
+<v Matthias Max>Because we cannot read that from any
+state because we don't persist it.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/280-0
+00:12:47.147 --> 00:12:50.562
+<v Ivailo Pashov>Yes,
+this is the limitation of the overall</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/278-0
+00:12:48.947 --> 00:12:49.187
+<v Matthias Max>No.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/280-1
+00:12:50.562 --> 00:12:52.547
+<v Ivailo Pashov>approach like option one.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/282-0
+00:12:53.347 --> 00:12:58.507
+<v Matthias Max>Yeah, is that also? I mean,
+why did you choose to go without a table?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/287-0
+00:13:00.867 --> 00:13:06.518
+<v Matthias Max>Is the overhead of adding the table for
+you making it already very big the</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/284-0
+00:13:04.067 --> 00:13:04.787
+<v Ivailo Pashov>In my opinion.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/285-0
+00:13:06.187 --> 00:13:06.467
+<v Ivailo Pashov>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/287-1
+00:13:06.518 --> 00:13:07.347
+<v Matthias Max>complexity?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/294-0
+00:13:10.227 --> 00:13:13.563
+<v Ivailo Pashov>In my opinion,
+this would increase the complexity and</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/288-0
+00:13:12.747 --> 00:13:13.107
+<v Matthias Max>Hmm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/294-1
+00:13:13.563 --> 00:13:18.321
+<v Ivailo Pashov>last time we discussed we don't want to
+go with that like local intermediate</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/294-2
+00:13:18.321 --> 00:13:22.770
+<v Ivailo Pashov>changes that we somehow report,
+let's say visually to the end user that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/291-0
+00:13:21.987 --> 00:13:23.147
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/294-3
+00:13:22.770 --> 00:13:24.067
+<v Ivailo Pashov>these are half baked.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/293-0
+00:13:24.507 --> 00:13:24.627
+<v Matthias Max>Um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/295-0
+00:13:26.547 --> 00:13:26.627
+<v Ivailo Pashov>Um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/296-0
+00:13:26.947 --> 00:13:28.387
+<v Matthias Max>No.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/298-0
+00:13:28.467 --> 00:13:29.787
+<v Yosif Mihaylov>Just to recap.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/303-0
+00:13:28.667 --> 00:13:31.995
+<v Ivailo Pashov>Otherwise, otherwise we will need to,
+let's say,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/303-1
+00:13:31.995 --> 00:13:37.021
+<v Ivailo Pashov>change the flow in that case and we will
+first need to do a local change.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/303-2
+00:13:37.021 --> 00:13:41.368
+<v Ivailo Pashov>Then we synchronize attempt to
+synchronize the change remotely.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/303-3
+00:13:41.368 --> 00:13:45.307
+<v Ivailo Pashov>If everything is fine,
+we just update the status on that.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/301-0
+00:13:42.987 --> 00:13:43.587
+<v Matthias Max>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/307-0
+00:13:45.547 --> 00:13:49.807
+<v Ivailo Pashov>Local data.
+Otherwise we we rather let's say not</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/307-1
+00:13:49.807 --> 00:13:55.806
+<v Ivailo Pashov>update it and it stays indefinitely until
+the end user retries that.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/307-2
+00:13:55.806 --> 00:14:00.587
+<v Ivailo Pashov>But then what happens is like because
+there's a local.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/311-0
+00:14:02.907 --> 00:14:07.978
+<v Ivailo Pashov>Change already introduced then
+potentially this uh local change would</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/311-1
+00:14:07.978 --> 00:14:14.137
+<v Ivailo Pashov>need to somehow either to be like retried.
+There must be some kind of a UI option to</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/311-2
+00:14:14.137 --> 00:14:17.107
+<v Ivailo Pashov>retry that non sync change from end user.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/312-0
+00:14:18.187 --> 00:14:21.787
+<v Ivailo Pashov>And this is where it get complex in my
+opinion.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/314-0
+00:14:23.307 --> 00:14:23.667
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/319-0
+00:14:23.507 --> 00:14:28.992
+<v Ivailo Pashov>It's almost like half of the work for the
+outbox pattern,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/316-0
+00:14:28.107 --> 00:14:28.307
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/319-1
+00:14:28.992 --> 00:14:35.801
+<v Ivailo Pashov>while with with this approach we're
+rather reducing the effort to in my</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/319-2
+00:14:35.801 --> 00:14:38.827
+<v Ivailo Pashov>opinion to let's say 20% of the.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/320-0
+00:14:38.947 --> 00:14:40.907
+<v Ivailo Pashov>Outbox pattern work.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/322-0
+00:14:40.227 --> 00:14:43.094
+<v Matthias Max>Yeah,
+and still we don't build anything that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/322-1
+00:14:43.094 --> 00:14:45.387
+<v Matthias Max>cannot be extended into full outbox.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/324-0
+00:14:47.707 --> 00:14:52.667
+<v Matthias Max>I think that's maybe also the case.
+Need to check in detail.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/331-0
+00:14:54.227 --> 00:14:58.125
+<v Ivailo Pashov>Yes,
+we don't build any outbox related pattern</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/326-0
+00:14:56.867 --> 00:14:57.347
+<v Matthias Max>No.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/331-1
+00:14:58.125 --> 00:15:03.434
+<v Ivailo Pashov>in this case and that's fine.
+I mean the outbox pattern itself,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/331-2
+00:15:03.434 --> 00:15:08.991
+<v Ivailo Pashov>it's the hardest one to achieve.
+It's not the integration with DMS</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/329-0
+00:15:07.107 --> 00:15:07.427
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/331-3
+00:15:08.991 --> 00:15:11.147
+<v Ivailo Pashov>etcetera, it's more about.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/334-0
+00:15:11.147 --> 00:15:16.627
+<v Ivailo Pashov>Running successfully like concurrently
+the outbox table pattern.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/332-0
+00:15:13.267 --> 00:15:13.507
+<v Matthias Max>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/338-0
+00:15:17.227 --> 00:15:22.101
+<v Matthias Max>Yeah, no.
+What I meant is if we build this solution</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/338-1
+00:15:22.101 --> 00:15:27.161
+<v Matthias Max>MVP style and want to extend it to full
+outbox later,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/338-2
+00:15:27.161 --> 00:15:33.347
+<v Matthias Max>we don't build anything unnecessary
+because the flows would just.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/341-0
+00:15:33.627 --> 00:15:38.576
+<v Matthias Max>Extend the memory solution will be
+replaced by the table,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/341-1
+00:15:38.576 --> 00:15:41.307
+<v Matthias Max>so nothing to throw away really.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/343-0
+00:15:42.827 --> 00:15:46.077
+<v Matthias Max>Later on,
+I mean a bit of waste is always there I</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/343-1
+00:15:46.077 --> 00:15:46.467
+<v Matthias Max>guess.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/347-0
+00:15:51.707 --> 00:15:59.587
+<v Matthias Max>I'm just saying I think this this needs
+again heavy feedback with the business.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/345-0
+00:15:52.187 --> 00:15:53.747
+<v Ivailo Pashov>So so.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/350-0
+00:15:58.427 --> 00:16:04.867
+<v Ivailo Pashov>So this kind of thing I called it already
+observable local non sync,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/350-1
+00:16:04.867 --> 00:16:09.347
+<v Ivailo Pashov>non sync changes.
+Sorry I have a typo and it's.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/353-0
+00:16:10.907 --> 00:16:17.939
+<v Ivailo Pashov>Observable synced O this kind of change
+like this kind of feature here I would</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/353-1
+00:16:17.939 --> 00:16:20.787
+<v Ivailo Pashov>say is supported in all options.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/355-0
+00:16:25.627 --> 00:16:27.987
+<v Ivailo Pashov>Someone did a modification probably.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/357-0
+00:16:30.347 --> 00:16:30.627
+<v Ivailo Pashov>Anyway.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/362-0
+00:16:32.987 --> 00:16:39.388
+<v Ivailo Pashov>So this this feature is supported in all
+options like we can always insert somehow</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/362-1
+00:16:39.388 --> 00:16:45.480
+<v Ivailo Pashov>big changes that so that the user is
+aware hey I have a pending change on that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/362-2
+00:16:45.480 --> 00:16:49.027
+<v Ivailo Pashov>and it it's kind of supported by all
+options.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/363-0
+00:16:50.707 --> 00:16:53.147
+<v Matthias Max>But only in that moment, of course.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/366-0
+00:16:53.627 --> 00:16:59.427
+<v Ivailo Pashov>This capabilities is more or less
+sortable now to what approach we select.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/367-0
+00:17:01.147 --> 00:17:02.067
+<v Ivailo Pashov>Yeah, yes, Yosef.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/371-0
+00:17:03.627 --> 00:17:06.998
+<v Yosif Mihaylov>Oh,
+I was just want to to provide some input</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/371-1
+00:17:06.998 --> 00:17:10.969
+<v Yosif Mihaylov>over like the the what we discussed with
+the outbox.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/371-2
+00:17:10.969 --> 00:17:16.513
+<v Yosif Mihaylov>I'm not sure if like you if I and
+Matthias was on the same topic or maybe</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/371-3
+00:17:16.513 --> 00:17:17.187
+<v Yosif Mihaylov>you were.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/376-0
+00:17:19.227 --> 00:17:25.519
+<v Yosif Mihaylov>I think what Matthias was suggesting was
+to just to like in case of these failures,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/376-1
+00:17:25.519 --> 00:17:31.436
+<v Yosif Mihaylov>just to walk some data either in outbox
+table or somewhere else and show it to</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/376-2
+00:17:31.436 --> 00:17:35.106
+<v Yosif Mihaylov>the user.
+But I just wanted to to tell that this</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/376-3
+00:17:35.106 --> 00:17:38.027
+<v Yosif Mihaylov>this this has complications on its own.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/380-0
+00:17:38.027 --> 00:17:43.545
+<v Yosif Mihaylov>Like for example these issues will most
+likely arise when there is some some some</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/380-1
+00:17:43.545 --> 00:17:48.659
+<v Yosif Mihaylov>some long long long transient outage and
+what would happen is that we'll be</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/380-2
+00:17:48.659 --> 00:17:52.427
+<v Yosif Mihaylov>generating a lot of errors in this for
+example 10 or 5.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/385-0
+00:17:52.467 --> 00:17:57.736
+<v Yosif Mihaylov>For example 10 or 515 minutes.
+So for example when the user walks in</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/385-1
+00:17:57.736 --> 00:18:03.311
+<v Yosif Mihaylov>some other user and wants to see errors,
+he'll be seeing a lot of errors</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/385-2
+00:18:03.311 --> 00:18:06.671
+<v Yosif Mihaylov>potentially.
+Also like there are some other</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/385-3
+00:18:06.671 --> 00:18:11.787
+<v Yosif Mihaylov>complexities such as if we have an outbox
+table, usually the case.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/391-0
+00:18:12.187 --> 00:18:14.952
+<v Yosif Mihaylov>The case of failure will be our database,
+right?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/391-1
+00:18:14.952 --> 00:18:19.411
+<v Yosif Mihaylov>Because we first implemented the TMS
+logic and then the new dispo logic in the</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/391-2
+00:18:19.411 --> 00:18:23.700
+<v Yosif Mihaylov>stable will be new dispo database.
+So we won't be able to update the outbox</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/388-0
+00:18:21.067 --> 00:18:21.627
+<v Ivailo Pashov>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/391-3
+00:18:23.700 --> 00:18:26.409
+<v Yosif Mihaylov>state,
+meaning that we have to in the beginning</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/391-4
+00:18:26.409 --> 00:18:31.037
+<v Yosif Mihaylov>insert some outbox record which will be
+in some indefinite state such as started,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/391-5
+00:18:31.037 --> 00:18:31.827
+<v Yosif Mihaylov>we don't know.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/394-0
+00:18:31.907 --> 00:18:36.857
+<v Yosif Mihaylov>It might succeed, it might fail.
+Then what I just meant is that there are</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/394-1
+00:18:36.857 --> 00:18:40.067
+<v Yosif Mihaylov>totally implications in introducing such
+layer.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/399-0
+00:18:41.587 --> 00:18:47.037
+<v Ivailo Pashov>Yeah, yeah, yeah. I agree with that.
+Like potentially if we want to have these</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/395-0
+00:18:41.907 --> 00:18:42.547
+<v Yosif Mihaylov>Anyway.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/399-1
+00:18:47.037 --> 00:18:51.796
+<v Ivailo Pashov>changes observable in theory,
+we can also build a view around outbox</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/399-2
+00:18:51.796 --> 00:18:55.245
+<v Ivailo Pashov>table,
+but it's not really intended for end user.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/399-3
+00:18:55.245 --> 00:18:58.280
+<v Ivailo Pashov>Yeah,
+we can always always have a dedicated</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/399-4
+00:18:58.280 --> 00:18:59.867
+<v Ivailo Pashov>view like this is your.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/405-0
+00:19:00.507 --> 00:19:06.892
+<v Ivailo Pashov>Outbox similar to let's say Outlook's
+outbox where you see a messages that are</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/405-1
+00:19:06.892 --> 00:19:12.629
+<v Ivailo Pashov>still pending to be, let's say synced,
+haven't been sent successfully,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/405-2
+00:19:12.629 --> 00:19:16.347
+<v Ivailo Pashov>but are retried on behalf of the
+application.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/404-0
+00:19:17.307 --> 00:19:17.587
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/411-0
+00:19:17.907 --> 00:19:22.640
+<v Ivailo Pashov>But still, in my opinion,
+this is additional layer of complexity</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/407-0
+00:19:21.387 --> 00:19:21.627
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/411-1
+00:19:22.640 --> 00:19:26.572
+<v Ivailo Pashov>and it usually implies outbox and this
+feature about,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/411-2
+00:19:26.572 --> 00:19:31.960
+<v Ivailo Pashov>let's say these changes being observable,
+but let's say not synchronized.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/411-3
+00:19:31.960 --> 00:19:33.707
+<v Ivailo Pashov>This is related more to.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/415-0
+00:19:35.827 --> 00:19:42.014
+<v Ivailo Pashov>Towards let's say introducing the data,
+like having a three-step operation here,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/415-1
+00:19:42.014 --> 00:19:46.138
+<v Ivailo Pashov>like inserting locally a business record
+that's very,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/415-2
+00:19:46.138 --> 00:19:51.867
+<v Ivailo Pashov>very similar to the ones that have been
+successfully synced with with TMS.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/419-0
+00:19:52.147 --> 00:19:57.309
+<v Ivailo Pashov>But just with the difference with let's
+say having some status and then have some</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/419-1
+00:19:57.309 --> 00:20:02.409
+<v Ivailo Pashov>kind of visual representation to end user
+that these changes haven't been synced</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/419-2
+00:20:02.409 --> 00:20:03.227
+<v Ivailo Pashov>successfully.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/423-0
+00:20:04.947 --> 00:20:09.241
+<v Ivailo Pashov>For some reason,
+but otherwise it's treated more or less</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/423-1
+00:20:09.241 --> 00:20:13.309
+<v Ivailo Pashov>in similar manner to the existing,
+let's say records,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/423-2
+00:20:13.309 --> 00:20:17.001
+<v Ivailo Pashov>existing data like like etcetera being
+arranged,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/423-3
+00:20:17.001 --> 00:20:21.747
+<v Ivailo Pashov>but maybe there is a different color like
+somewhat grayed out.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/424-0
+00:20:23.587 --> 00:20:24.827
+<v Ivailo Pashov>So someone observes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/427-0
+00:20:26.787 --> 00:20:31.867
+<v Ivailo Pashov>This is like how big changed change. Yep,
+yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/432-0
+00:20:30.987 --> 00:20:36.149
+<v Yosif Mihaylov>Just a quick question,
+like wouldn't be fine optimization to in</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/432-1
+00:20:36.149 --> 00:20:41.633
+<v Yosif Mihaylov>case of these failures. For example, yeah,
+we do the TMS operation,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/432-2
+00:20:41.633 --> 00:20:46.956
+<v Yosif Mihaylov>we try the new dispo, it fails.
+So we quickly try to resolve some</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/432-3
+00:20:46.956 --> 00:20:50.747
+<v Yosif Mihaylov>transient errors by by some quick retries
+and.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/433-0
+00:20:50.867 --> 00:20:55.667
+<v Yosif Mihaylov>This felt like try to pretty much um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/436-0
+00:20:56.627 --> 00:21:03.259
+<v Yosif Mihaylov>To do the saga for the TMS,
+like to to to undo our operation on the</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/436-1
+00:21:03.259 --> 00:21:05.307
+<v Yosif Mihaylov>TMS, you might, yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/439-0
+00:21:03.427 --> 00:21:08.188
+<v Ivailo Pashov>Yosef, Yosef,
+let's not overcomplicate that. I mean,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/439-1
+00:21:08.188 --> 00:21:14.027
+<v Ivailo Pashov>again, I'm hearing saga.
+Do you know where saga is used? I mean.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/444-0
+00:21:12.307 --> 00:21:16.645
+<v Yosif Mihaylov>No, no, no saga. Sorry, no, no.
+I'm not talking like full,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/444-1
+00:21:16.645 --> 00:21:20.469
+<v Yosif Mihaylov>full complicated saga.
+Like I'm talking about very,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/444-2
+00:21:20.469 --> 00:21:24.439
+<v Yosif Mihaylov>very straightforward. For example,
+we inserted, yeah,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/441-0
+00:21:22.067 --> 00:21:23.587
+<v Matthias Max>Like an undo.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/444-3
+00:21:24.439 --> 00:21:27.307
+<v Yosif Mihaylov>we inserted the transport order on TMS.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/449-0
+00:21:27.747 --> 00:21:32.599
+<v Yosif Mihaylov>We then want to do on new this point we
+just try to to delete it and if it</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/443-0
+00:21:28.267 --> 00:21:28.707
+<v Ivailo Pashov>Like.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/449-1
+00:21:32.599 --> 00:21:37.321
+<v Yosif Mihaylov>succeeds we say the whole we say to the
+user the whole operation failed.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/449-2
+00:21:37.321 --> 00:21:42.431
+<v Yosif Mihaylov>Please retry later and if it doesn't
+succeed for some edge case like we we did</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/449-3
+00:21:42.431 --> 00:21:47.347
+<v Yosif Mihaylov>the creation of the transport order on
+the TMS but somehow we failed to to.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/453-0
+00:21:47.467 --> 00:21:51.216
+<v Yosif Mihaylov>Don't do it.
+We then we go into this flow which is uh</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/453-1
+00:21:51.216 --> 00:21:54.270
+<v Yosif Mihaylov>hey,
+you have like some some unsynchronized</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/453-2
+00:21:54.270 --> 00:21:55.867
+<v Yosif Mihaylov>date is happening like.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/457-0
+00:21:56.787 --> 00:22:04.053
+<v Ivailo Pashov>Yes, yes, I agree. In theory that's fine.
+But again, you we we usually, let's say,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/452-0
+00:21:57.427 --> 00:21:57.747
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/457-1
+00:22:04.053 --> 00:22:10.880
+<v Ivailo Pashov>have the database much more reliable
+compared to any application layer that's</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/457-2
+00:22:10.880 --> 00:22:14.907
+<v Ivailo Pashov>proxying color tables such as the TMS
+bridge.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/461-0
+00:22:15.187 --> 00:22:19.032
+<v Ivailo Pashov>So for example,
+someone could release a new version of</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/461-1
+00:22:19.032 --> 00:22:22.597
+<v Ivailo Pashov>TMS bridge and let's say make it
+unavailable, etc.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/461-2
+00:22:22.597 --> 00:22:27.981
+<v Ivailo Pashov>But we actually rely much more on the
+database being available and from that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/461-3
+00:22:27.981 --> 00:22:30.707
+<v Ivailo Pashov>priority perspective, I mean the local.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/467-0
+00:22:30.707 --> 00:22:36.513
+<v Ivailo Pashov>New dispo DB and from that perspective on
+we can still have a rollback operation,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/467-1
+00:22:36.513 --> 00:22:42.460
+<v Ivailo Pashov>but this rollback operation is expensive.
+This needs to also be tested and it could</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/467-2
+00:22:42.460 --> 00:22:46.071
+<v Ivailo Pashov>also fail.
+So we also need to recognize that there</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/467-3
+00:22:46.071 --> 00:22:50.107
+<v Ivailo Pashov>would be additional cases around rollback
+being failing.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/466-0
+00:22:50.427 --> 00:22:50.627
+<v Yosif Mihaylov>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/469-0
+00:22:50.707 --> 00:22:55.747
+<v Yosif Mihaylov>But we don't need the rollback for the
+new disk site because.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/470-0
+00:22:55.387 --> 00:22:56.787
+<v Matthias Max>It put a TMS side.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/474-0
+00:22:57.787 --> 00:23:03.877
+<v Yosif Mihaylov>Because the because we execute for the
+TMS operation and and even if we we even</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/474-1
+00:23:03.877 --> 00:23:09.968
+<v Yosif Mihaylov>if for example we are unable to undo it,
+we didn't do more harm that we already</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/474-2
+00:23:09.968 --> 00:23:14.307
+<v Yosif Mihaylov>did that that's what I'm meaning we just
+we just try to.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/478-0
+00:23:14.387 --> 00:23:20.127
+<v Yosif Mihaylov>We just try to fix ourselves,
+like in some naive way. And if we succeed,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/478-1
+00:23:20.127 --> 00:23:24.058
+<v Yosif Mihaylov>we succeed. If we don't,
+we we are as much wrong.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/478-2
+00:23:24.058 --> 00:23:28.147
+<v Yosif Mihaylov>We did as much wrong as we already did.
+I mean, we.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/483-0
+00:23:26.787 --> 00:23:33.204
+<v Ivailo Pashov>Yeah, yeah, I know. But this is kind of a,
+let's say, enhancement. Let's, let's,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/480-0
+00:23:31.267 --> 00:23:33.867
+<v Yosif Mihaylov>Exactly.
+That's why I said optimization exactly.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/483-1
+00:23:33.204 --> 00:23:38.353
+<v Ivailo Pashov>let's prioritize it later.
+Let's try to introduce first the main</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/483-2
+00:23:38.353 --> 00:23:42.393
+<v Ivailo Pashov>scenario,
+because we cannot like the main scenario</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/483-3
+00:23:42.393 --> 00:23:43.027
+<v Ivailo Pashov>here is.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/487-0
+00:23:43.507 --> 00:23:52.932
+<v Ivailo Pashov>There would be manual user driven like
+even with that optimization we cannot</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/487-1
+00:23:52.932 --> 00:23:59.787
+<v Ivailo Pashov>avoid not having it and then we decide if
+we if we can.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/490-0
+00:23:59.907 --> 00:24:06.599
+<v Ivailo Pashov>Let's introduce at a later point like
+this kind of optimization. We do it,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/490-1
+00:24:06.599 --> 00:24:09.187
+<v Ivailo Pashov>but first let's focus on the.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/491-0
+00:24:10.507 --> 00:24:13.627
+<v Ivailo Pashov>Most, let's say, important case.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/493-0
+00:24:15.227 --> 00:24:15.307
+<v Matthias Max>Um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/497-0
+00:24:17.107 --> 00:24:24.698
+<v Matthias Max>I mean, it's great in the MVP sense.
+What is left is discussing with business</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/497-1
+00:24:24.698 --> 00:24:32.387
+<v Matthias Max>what is the minimal acceptable target
+state at some time in the future, but I.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/501-0
+00:24:32.387 --> 00:24:39.839
+<v Matthias Max>I really like going little steps because
+I think we all miss experience of how TMS</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/501-1
+00:24:39.839 --> 00:24:46.304
+<v Matthias Max>behaves in the field in a go live
+situation with a few people using it.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/501-2
+00:24:46.304 --> 00:24:49.267
+<v Matthias Max>We we don't have this experience.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/505-0
+00:24:49.347 --> 00:24:55.732
+<v Matthias Max>So it's a bit difficult to think any
+further than this very limited option one</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/505-1
+00:24:55.732 --> 00:25:01.147
+<v Matthias Max>here. I I I think it's great,
+but it needs business communication.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/510-0
+00:25:02.787 --> 00:25:08.886
+<v Matthias Max>That's one aspect I wanted to say and why
+I had my hand up. The second one is,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/510-1
+00:25:08.886 --> 00:25:15.139
+<v Matthias Max>are we aware if this really covers the
+nested looping we have when, for example,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/510-2
+00:25:15.139 --> 00:25:20.543
+<v Matthias Max>adding a lot? You're right,
+we have some more going on here than just</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/510-3
+00:25:20.543 --> 00:25:22.627
+<v Matthias Max>one simple CMS interaction.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/513-0
+00:25:22.627 --> 00:25:26.582
+<v Matthias Max>I can.
+Sometimes we create a transport order,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/513-1
+00:25:26.582 --> 00:25:32.772
+<v Matthias Max>we add a leg, we add several legs,
+but it's all considered one business</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/513-2
+00:25:32.772 --> 00:25:35.867
+<v Matthias Max>interaction in that sense that must.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/516-0
+00:25:34.547 --> 00:25:39.907
+<v Yosif Mihaylov>Are you are you talking about the the
+great transport order from lot operation?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/514-0
+00:25:37.347 --> 00:25:37.747
+<v Matthias Max>Thank you.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/517-0
+00:25:39.107 --> 00:25:40.627
+<v Matthias Max>Mhm, yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/520-0
+00:25:41.827 --> 00:25:48.067
+<v Matthias Max>Is this on back end the loop or on the
+TMS database?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/518-0
+00:25:42.147 --> 00:25:42.547
+<v Yosif Mihaylov>Well, that's.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/525-0
+00:25:46.307 --> 00:25:52.293
+<v Yosif Mihaylov>Yes, it will. It will be, it could be,
+it could we could do and do because on</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/525-1
+00:25:52.293 --> 00:25:56.974
+<v Yosif Mihaylov>the TMS we can we can do transactions.
+So for example, yeah,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/525-2
+00:25:56.974 --> 00:26:00.428
+<v Yosif Mihaylov>we try to create a log from transport
+order,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/525-3
+00:26:00.428 --> 00:26:06.107
+<v Yosif Mihaylov>we succeed and then we fail to update the
+state to new dispo then we can.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/530-0
+00:26:06.307 --> 00:26:09.842
+<v Yosif Mihaylov>Like yeah,
+I tried the the transaction and do in a</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/530-1
+00:26:09.842 --> 00:26:14.624
+<v Yosif Mihaylov>transaction that that just covers covers
+these these multiple steps.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/530-2
+00:26:14.624 --> 00:26:20.308
+<v Yosif Mihaylov>I suggested this again as enhancement and
+optimization and it's something that we</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/528-0
+00:26:15.827 --> 00:26:17.467
+<v Matthias Max>In in the TMS.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/530-3
+00:26:20.308 --> 00:26:23.427
+<v Yosif Mihaylov>will be we will be able to easily
+implement.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/536-0
+00:26:23.507 --> 00:26:30.576
+<v Yosif Mihaylov>That's why that's why I suggested it.
+I'm fine to to to leave it for later.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/531-0
+00:26:26.147 --> 00:26:26.747
+<v Matthias Max>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/536-1
+00:26:30.576 --> 00:26:36.622
+<v Yosif Mihaylov>But to me really this brings value
+because because like it will,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/536-2
+00:26:36.622 --> 00:26:42.947
+<v Yosif Mihaylov>it will actually very often,
+very often recover us from this, this.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/538-0
+00:26:43.067 --> 00:26:45.747
+<v Yosif Mihaylov>Synchronization when this happens,
+to be honest.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/541-0
+00:26:46.787 --> 00:26:52.072
+<v Matthias Max>So when you say this,
+you mean the option one minimum or what</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/539-0
+00:26:47.867 --> 00:26:48.027
+<v Yosif Mihaylov>Um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/541-1
+00:26:52.072 --> 00:26:53.947
+<v Matthias Max>do you mean with this?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/547-0
+00:26:52.627 --> 00:26:56.651
+<v Yosif Mihaylov>No, no. Option one,
+it's option one like it's confirmed.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/547-1
+00:26:56.651 --> 00:27:01.451
+<v Yosif Mihaylov>We are talking about option one.
+What I'm referring to is this undo</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/545-0
+00:27:00.627 --> 00:27:03.587
+<v Matthias Max>Mm-hmm. Uh, OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/547-2
+00:27:01.451 --> 00:27:07.027
+<v Yosif Mihaylov>operation that we try to do to me the way
+I see it it that's I mean given the.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/544-0
+00:27:02.307 --> 00:27:03.307
+<v Ivailo Pashov>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/549-0
+00:27:05.027 --> 00:27:08.669
+<v Ivailo Pashov>But again, Yosef,
+let's put it in the backlog. I mean,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/549-1
+00:27:08.669 --> 00:27:12.377
+<v Ivailo Pashov>we already agreed on that.
+Let's put it in the backlog.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/549-2
+00:27:12.377 --> 00:27:14.827
+<v Ivailo Pashov>If time we can introduce that change.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/552-0
+00:27:14.907 --> 00:27:17.797
+<v Yosif Mihaylov>Hey, it's just Matthias.
+Matthias asked about this.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/552-1
+00:27:17.797 --> 00:27:19.187
+<v Yosif Mihaylov>That's why I'm answering.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/551-0
+00:27:18.067 --> 00:27:18.307
+<v Matthias Max>Hmm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/555-0
+00:27:18.307 --> 00:27:24.020
+<v Ivailo Pashov>Mm-hmm. Mm-hmm. But again,
+it's it's something that needs to be like</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/555-1
+00:27:24.020 --> 00:27:28.987
+<v Ivailo Pashov>carefully tested as well,
+because if we're also wrong like.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/559-0
+00:27:30.387 --> 00:27:34.930
+<v Ivailo Pashov>How frequent this kind of,
+let's say rollback would happen.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/559-1
+00:27:34.930 --> 00:27:38.717
+<v Ivailo Pashov>This would be very infrequent.
+So in that regard,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/559-2
+00:27:38.717 --> 00:27:42.427
+<v Ivailo Pashov>testing it would be also very,
+very complicated.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/558-0
+00:27:44.027 --> 00:27:44.187
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/564-0
+00:28:02.347 --> 00:28:02.427
+<v Matthias Max>Huh.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/570-0
+00:28:02.467 --> 00:28:05.824
+<v Ivailo Pashov>Exactly.
+So we also need some automated testing</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/565-0
+00:28:03.067 --> 00:28:03.267
+<v Matthias Max>No.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/570-1
+00:28:05.824 --> 00:28:10.998
+<v Ivailo Pashov>similar to cloud for look in mapping and
+to validate all these scenarios.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/567-0
+00:28:06.147 --> 00:28:06.827
+<v Matthias Max>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/568-0
+00:28:07.907 --> 00:28:09.747
+<v Matthias Max>Absolutely.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/570-2
+00:28:10.998 --> 00:28:12.187
+<v Ivailo Pashov>But The thing is.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/571-0
+00:28:11.107 --> 00:28:13.627
+<v Matthias Max>Yeah, it's a very good big overlap.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/574-0
+00:28:14.467 --> 00:28:18.085
+<v Ivailo Pashov>But The thing is,
+we like the more cases we start</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/574-1
+00:28:18.085 --> 00:28:20.907
+<v Ivailo Pashov>accumulating, the more complex it gets.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/580-0
+00:28:21.987 --> 00:28:26.607
+<v Ivailo Pashov>And at the end of the day,
+we also need to test against real data</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/575-0
+00:28:22.187 --> 00:28:22.347
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/580-1
+00:28:26.607 --> 00:28:30.737
+<v Ivailo Pashov>because we don't know what kind of codes
+will be throwing,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/580-2
+00:28:30.737 --> 00:28:35.707
+<v Ivailo Pashov>TMS would be actually throwing.
+We first need to capture this and then</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/580-3
+00:28:35.707 --> 00:28:37.387
+<v Ivailo Pashov>put it as part of tests.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/581-0
+00:28:40.587 --> 00:28:40.707
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/583-0
+00:28:42.187 --> 00:28:43.107
+<v Ivailo Pashov>I'm here.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/586-0
+00:28:42.787 --> 00:28:46.687
+<v Matthias Max>I also think it's an issue that we don't
+own the full stack.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/586-1
+00:28:46.687 --> 00:28:50.587
+<v Matthias Max>We should probably really start having
+our own TMS instance.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/588-0
+00:28:53.387 --> 00:28:56.707
+<v Matthias Max>It's not great to be always dependent on
+them.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/591-0
+00:28:57.027 --> 00:29:01.679
+<v Ivailo Pashov>Yes,
+definitely we will need some some EMS</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/591-1
+00:29:01.679 --> 00:29:03.627
+<v Ivailo Pashov>database instance.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/594-0
+00:29:03.427 --> 00:29:08.309
+<v Matthias Max>I mean, you can. I I tried it.
+There's a script in the database.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/594-1
+00:29:08.309 --> 00:29:11.689
+<v Matthias Max>You can run it in Postgres instead of
+Alloy.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/594-2
+00:29:11.689 --> 00:29:17.547
+<v Matthias Max>Still it has a lot of dependencies
+regarding any data dependencies and so on.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/596-0
+00:29:18.827 --> 00:29:23.027
+<v Matthias Max>To get it into a state where it really
+makes sense and is.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/601-0
+00:29:23.907 --> 00:29:27.814
+<v Matthias Max>Into, yeah,
+has integrity from a data logic point of</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/601-1
+00:29:27.814 --> 00:29:31.427
+<v Matthias Max>view.
+It's really hard to get it up and running,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/601-2
+00:29:31.427 --> 00:29:36.735
+<v Matthias Max>but it would be really necessary
+specifically in an automated test case</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/601-3
+00:29:36.735 --> 00:29:40.347
+<v Matthias Max>scenario where you want to spin these
+things up.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/603-0
+00:29:40.547 --> 00:29:47.321
+<v Matthias Max>Automatically as well from a clean state,
+then make it dirty with tests,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/603-1
+00:29:47.321 --> 00:29:49.827
+<v Matthias Max>throw it away and continue.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/606-0
+00:29:57.267 --> 00:29:59.587
+<v Matthias Max>Good, but we are over time.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/610-0
+00:30:01.147 --> 00:30:06.235
+<v Matthias Max>Then I think let's take away the decision
+that we go with option one. For me,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/610-1
+00:30:06.235 --> 00:30:10.280
+<v Matthias Max>it's even smaller option one than I had
+considered, but fine,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/610-2
+00:30:10.280 --> 00:30:15.368
+<v Matthias Max>we can go into discussions with the
+client with this and that's also required</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/610-3
+00:30:15.368 --> 00:30:16.347
+<v Matthias Max>to get this go.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/612-0
+00:30:16.587 --> 00:30:19.547
+<v Matthias Max>Um, still, yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/613-0
+00:30:18.787 --> 00:30:22.547
+<v Ivailo Pashov>There's some still something that I
+wanted to discuss.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/614-0
+00:30:23.027 --> 00:30:23.587
+<v Matthias Max>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/616-0
+00:30:23.187 --> 00:30:25.827
+<v Ivailo Pashov>Like this classification of errors.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/620-0
+00:30:27.587 --> 00:30:31.476
+<v Ivailo Pashov>And overall behavior,
+like how do we treat that?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/620-1
+00:30:31.476 --> 00:30:36.000
+<v Ivailo Pashov>And obviously we have some outcomes like
+HTP 200 or 201.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/620-2
+00:30:36.000 --> 00:30:42.667
+<v Ivailo Pashov>This is obviously something that has been
+successful, let's say when we have an IO.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/625-0
+00:30:43.107 --> 00:30:47.889
+<v Ivailo Pashov>Related integration,
+but these are just examples of course</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/625-1
+00:30:47.889 --> 00:30:54.049
+<v Ivailo Pashov>like recoverables means that there might
+be a disconnect on the TCP socket.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/625-2
+00:30:54.049 --> 00:30:58.507
+<v Ivailo Pashov>Usually 500 error codes they fall under
+this category.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/626-0
+00:30:59.107 --> 00:30:59.787
+<v Ivailo Pashov>But sometimes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/631-0
+00:31:02.067 --> 00:31:10.866
+<v Ivailo Pashov>Sometimes they do not like 500 to one not
+implemented, so obviously not recoverable.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/631-1
+00:31:10.866 --> 00:31:19.147
+<v Ivailo Pashov>And then we have some 400 errors that
+potentially might fall under recoverable.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/633-0
+00:31:19.907 --> 00:31:23.307
+<v Ivailo Pashov>Like too many requests or request time
+out.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/634-0
+00:31:24.867 --> 00:31:25.067
+<v Ivailo Pashov>And.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/637-0
+00:31:27.787 --> 00:31:32.307
+<v Ivailo Pashov>For unrecoverable, we also have,
+let's say, usually 400 codes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/642-0
+00:31:34.427 --> 00:31:40.185
+<v Ivailo Pashov>But sometimes 501 for example isn't a
+good example of of a cause that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/642-1
+00:31:40.185 --> 00:31:44.133
+<v Ivailo Pashov>potentially should be candled as
+unrecoverable.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/642-2
+00:31:44.133 --> 00:31:50.795
+<v Ivailo Pashov>And then for for recoverable we just give
+a like some retry in memory and so for</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/642-3
+00:31:50.795 --> 00:31:51.947
+<v Ivailo Pashov>unrecoverable.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/644-0
+00:31:52.387 --> 00:31:57.427
+<v Ivailo Pashov>We just obviously returned an error.
+There is nothing we can do about it.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/650-0
+00:31:59.787 --> 00:32:07.477
+<v Ivailo Pashov>Potentially someone may need to act on on
+some data on some applications to let's</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/646-0
+00:32:07.347 --> 00:32:07.867
+<v Matthias Max>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/650-1
+00:32:07.477 --> 00:32:13.947
+<v Ivailo Pashov>say redeploy a fix and only then this
+this could be fixed later for.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/648-0
+00:32:09.107 --> 00:32:09.707
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/652-0
+00:32:12.307 --> 00:32:16.267
+<v Matthias Max>But this has a direct implication on what
+we lock,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/652-1
+00:32:16.267 --> 00:32:21.547
+<v Matthias Max>all right to make the information
+available to service desk people.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/654-0
+00:32:23.947 --> 00:32:26.907
+<v Ivailo Pashov>And this part of identical time
+processing.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/656-0
+00:32:28.947 --> 00:32:31.227
+<v Ivailo Pashov>So I've listed all these cases like.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/661-0
+00:32:33.387 --> 00:32:40.048
+<v Ivailo Pashov>For different operations like create,
+update and delete and what should we do</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/661-1
+00:32:40.048 --> 00:32:47.307
+<v Ivailo Pashov>if let's say in different scenarios where
+the record either exists or doesn't exist?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/666-0
+00:32:48.547 --> 00:32:53.407
+<v Ivailo Pashov>And the question is,
+do we have any means of versioning,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/666-1
+00:32:53.407 --> 00:32:57.755
+<v Ivailo Pashov>let's say comparing against timestamp.
+So we also,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/666-2
+00:32:57.755 --> 00:33:04.065
+<v Ivailo Pashov>let's say involve that concurrency
+concept because if different users are</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/666-3
+00:33:04.065 --> 00:33:07.987
+<v Ivailo Pashov>also trying to perform concurrent
+operations.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/669-0
+00:33:08.747 --> 00:33:12.144
+<v Ivailo Pashov>On the same data set,
+it's complicated enough,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/669-1
+00:33:12.144 --> 00:33:17.276
+<v Ivailo Pashov>but when we also have multiple
+applications where we need to sync that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/669-2
+00:33:17.276 --> 00:33:21.034
+<v Ivailo Pashov>data across,
+it's getting even more complex because</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/669-3
+00:33:21.034 --> 00:33:23.347
+<v Ivailo Pashov>user A might overwrite user B's.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/673-0
+00:33:23.587 --> 00:33:28.459
+<v Ivailo Pashov>Change in system A,
+but then if there is no concurrency</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/673-1
+00:33:28.459 --> 00:33:32.636
+<v Ivailo Pashov>control,
+then obviously that operation could be</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/673-2
+00:33:32.636 --> 00:33:38.987
+<v Ivailo Pashov>interleaved and then user A overrides
+user B, let's say changes locally.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/677-0
+00:33:40.107 --> 00:33:43.382
+<v Ivailo Pashov>And then we again end up with
+inconsistent state,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/677-1
+00:33:43.382 --> 00:33:48.295
+<v Ivailo Pashov>even though with like from application
+perspective everything seemed to be</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/677-2
+00:33:48.295 --> 00:33:49.147
+<v Ivailo Pashov>working fine.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/676-0
+00:33:49.227 --> 00:33:49.707
+<v Matthias Max>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/680-0
+00:33:52.067 --> 00:33:55.067
+<v Matthias Max>Yeah, this is this is a huge.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/679-0
+00:33:52.587 --> 00:33:52.987
+<v Ivailo Pashov>And.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/682-0
+00:33:56.747 --> 00:34:00.227
+<v Matthias Max>Come discussion I have of us with TMS.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/689-0
+00:33:59.827 --> 00:34:05.108
+<v Ivailo Pashov>If we have some like timestamps,
+potentially we can check these timestamps.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/689-1
+00:34:05.108 --> 00:34:10.598
+<v Ivailo Pashov>Of course if we're sure that these these
+are always automatically incremented.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/689-2
+00:34:10.598 --> 00:34:14.767
+<v Ivailo Pashov>So if these are not automatically
+incremented in all cases,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/685-0
+00:34:10.747 --> 00:34:11.107
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/689-3
+00:34:14.767 --> 00:34:18.867
+<v Ivailo Pashov>then potentially might they might get
+somewhat unreliable.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/688-0
+00:34:20.107 --> 00:34:20.907
+<v Matthias Max>No.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/694-0
+00:34:20.467 --> 00:34:23.892
+<v Ivailo Pashov>But still it's some sort of a protection
+and yeah,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/690-0
+00:34:22.547 --> 00:34:22.667
+<v Matthias Max>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/694-1
+00:34:23.892 --> 00:34:28.191
+<v Ivailo Pashov>we need to confirm if let's say record
+exists or doesn't exist.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/694-2
+00:34:28.191 --> 00:34:31.683
+<v Ivailo Pashov>I've created some guidelines on the
+implementation.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/694-3
+00:34:31.683 --> 00:34:34.907
+<v Ivailo Pashov>What should we do about this type of
+conflicts?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/700-0
+00:34:40.707 --> 00:34:45.223
+<v Matthias Max>Yeah,
+so I think this justifies even more going</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/700-1
+00:34:45.223 --> 00:34:50.114
+<v Matthias Max>with option one,
+accepting the compromise there and</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/700-2
+00:34:50.114 --> 00:34:50.867
+<v Matthias Max>instead.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/705-0
+00:34:52.467 --> 00:34:57.979
+<v Matthias Max>Holistically cover all these topics with
+idempotency,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/705-1
+00:34:57.979 --> 00:35:01.347
+<v Matthias Max>which will be complex by its own.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/704-0
+00:34:59.307 --> 00:35:00.747
+<v Yosif Mihaylov>This is so.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/703-0
+00:35:00.747 --> 00:35:00.867
+<v Ivailo Pashov>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/709-0
+00:35:03.667 --> 00:35:10.900
+<v Yosif Mihaylov>This is so also true for the option one.
+I mean this is this is the potency</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/709-1
+00:35:10.900 --> 00:35:11.947
+<v Yosif Mihaylov>challenges.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/711-0
+00:35:11.147 --> 00:35:16.987
+<v Matthias Max>Yeah, that's what I mean.
+This is making option one even complex.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/715-0
+00:35:15.587 --> 00:35:21.847
+<v Yosif Mihaylov>But to be honest, to be honest,
+I don't think that they're that much</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/715-1
+00:35:21.847 --> 00:35:25.838
+<v Yosif Mihaylov>valid.
+I mean for the big case because once</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/715-2
+00:35:25.838 --> 00:35:33.096
+<v Yosif Mihaylov>again we do the TMS operation first and
+like this either succeeds or it failed.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/715-3
+00:35:33.096 --> 00:35:34.547
+<v Yosif Mihaylov>So actually the.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/720-0
+00:35:35.107 --> 00:35:39.190
+<v Yosif Mihaylov>The indempotency like is mainly valid for
+the for the new dispo.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/720-1
+00:35:39.190 --> 00:35:44.153
+<v Yosif Mihaylov>Now it depends how we implement that.
+Obviously when the user retries he wants</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/720-2
+00:35:44.153 --> 00:35:47.671
+<v Yosif Mihaylov>to retry the TMS operation as well.
+But but still yeah,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/720-3
+00:35:47.671 --> 00:35:52.445
+<v Yosif Mihaylov>I think the good thing is that we have
+some some time stamps there which we</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/720-4
+00:35:52.445 --> 00:35:54.707
+<v Yosif Mihaylov>could be checking and we also don't.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/725-0
+00:35:54.787 --> 00:36:00.291
+<v Yosif Mihaylov>We have update operations in the sense of
+some fields being updated as part of</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/725-1
+00:36:00.291 --> 00:36:03.635
+<v Yosif Mihaylov>these falls.
+Most of them are create or delete,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/725-2
+00:36:03.635 --> 00:36:07.467
+<v Yosif Mihaylov>so I think that's actually alleviates a
+bit the issue.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/731-0
+00:36:05.867 --> 00:36:10.552
+<v Ivailo Pashov>Yeah, usually updates are the most,
+let's say,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/723-0
+00:36:06.947 --> 00:36:07.387
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/726-0
+00:36:10.347 --> 00:36:10.587
+<v Matthias Max>Hmm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/731-1
+00:36:10.552 --> 00:36:18.327
+<v Ivailo Pashov>prone to this kind of race condition,
+but still there is some sequence around</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/728-0
+00:36:17.227 --> 00:36:17.307
+<v Matthias Max>Um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/731-2
+00:36:18.327 --> 00:36:24.707
+<v Ivailo Pashov>recreating a record that has been just
+deleted by another user.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/733-0
+00:36:24.627 --> 00:36:30.057
+<v Matthias Max>Yeah,
+or creating duplicates with too many</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/733-1
+00:36:30.057 --> 00:36:31.067
+<v Matthias Max>inserts.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/737-0
+00:36:34.747 --> 00:36:41.942
+<v Matthias Max>So I think we need a dedicated list of
+item potency check for all touch points</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/737-1
+00:36:41.942 --> 00:36:46.587
+<v Matthias Max>that we have,
+which Ivailo prepared Ivailo bit of.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/739-0
+00:36:47.827 --> 00:36:52.987
+<v Matthias Max>We need to look at them individually and
+together with Joachim.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/740-0
+00:36:59.867 --> 00:36:59.987
+<v Matthias Max>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/741-0
+00:37:03.947 --> 00:37:07.187
+<v Matthias Max>Good. So next steps.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/742-0
+00:37:09.907 --> 00:37:14.987
+<v Matthias Max>It's mostly gonna be back end
+implementation work.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/743-0
+00:37:17.107 --> 00:37:22.820
+<v Matthias Max>It's more concept, more alignment work.
+If we think about tests,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/743-1
+00:37:22.820 --> 00:37:28.708
+<v Matthias Max>we would need testing DVIs.
+I'm just thinking about how to move on</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/743-2
+00:37:28.708 --> 00:37:35.387
+<v Matthias Max>with actual work that is refined and can
+go into the backlog of our Sprint.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/744-0
+00:37:36.947 --> 00:37:42.987
+<v Matthias Max>How do we move on here?
+Yosef also looking looking at you.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/745-0
+00:37:43.267 --> 00:37:46.591
+<v Yosif Mihaylov>Yeah,
+so I think we just need to create some</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/745-1
+00:37:46.591 --> 00:37:51.170
+<v Yosif Mihaylov>some technical items.
+I think this is fairly simple approach.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/745-2
+00:37:51.170 --> 00:37:57.005
+<v Yosif Mihaylov>It should not be something very hard.
+We need to introduce this retry logic on</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/745-3
+00:37:57.005 --> 00:38:01.214
+<v Yosif Mihaylov>transient issues.
+We need to do some work over this then</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/745-4
+00:38:01.214 --> 00:38:02.987
+<v Yosif Mihaylov>potency probably decide.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/747-0
+00:38:03.027 --> 00:38:09.682
+<v Yosif Mihaylov>About this enhancement that I mentioned
+in terms of the component testing and the</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/746-0
+00:38:05.947 --> 00:38:06.347
+<v Ivailo Pashov>No.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/747-1
+00:38:09.682 --> 00:38:14.227
+<v Yosif Mihaylov>automated testing,
+I think that we need to really think</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/747-2
+00:38:14.227 --> 00:38:18.123
+<v Yosif Mihaylov>about this like obviously it's good to
+have it,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/747-3
+00:38:18.123 --> 00:38:22.587
+<v Yosif Mihaylov>but we don't have a component test
+framework in place.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/749-0
+00:38:23.947 --> 00:38:27.889
+<v Yosif Mihaylov>And building such framework for this use
+case,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/749-1
+00:38:27.889 --> 00:38:33.257
+<v Yosif Mihaylov>I mean I'm not sure it could end up
+taking more effort than the</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/749-2
+00:38:33.257 --> 00:38:39.547
+<v Yosif Mihaylov>implementation itself and maybe if
+there's a way to to somehow dev test it</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/749-3
+00:38:39.547 --> 00:38:42.147
+<v Yosif Mihaylov>or simulate it in some in some.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/750-0
+00:38:42.907 --> 00:38:46.107
+<v Yosif Mihaylov>Manual fashion.
+I think it might be better.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/752-0
+00:38:50.387 --> 00:38:55.651
+<v Ivailo Pashov>If a manual is needed,
+then obviously there must be a way for us</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/752-1
+00:38:55.651 --> 00:38:59.862
+<v Ivailo Pashov>to control,
+let's say the database state on the TMS</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/752-2
+00:38:59.862 --> 00:39:00.267
+<v Ivailo Pashov>side.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/754-0
+00:39:01.587 --> 00:39:06.523
+<v Ivailo Pashov>Or like do it with some remote debugging
+where we, let's say,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/754-1
+00:39:06.523 --> 00:39:09.787
+<v Ivailo Pashov>kill the instance while it's in progress.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/757-0
+00:39:12.787 --> 00:39:17.022
+<v Yosif Mihaylov>I think we can simulate this fairly easy
+to be honest.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/755-0
+00:39:14.347 --> 00:39:14.467
+<v Ivailo Pashov>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/757-1
+00:39:17.022 --> 00:39:23.337
+<v Yosif Mihaylov>Like we just configure configure some for
+example wrong configuration for our TMS</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/757-2
+00:39:23.337 --> 00:39:28.728
+<v Yosif Mihaylov>for our new dispo database,
+making sure that we we can connect to the</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/757-3
+00:39:28.728 --> 00:39:32.347
+<v Yosif Mihaylov>TMS but some wrong configuration from the
+new.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/758-0
+00:39:32.467 --> 00:39:37.377
+<v Yosif Mihaylov>Database and just simulating the new
+dispo database not available and and</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/756-0
+00:39:33.107 --> 00:39:33.547
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/762-0
+00:39:37.107 --> 00:39:40.937
+<v Ivailo Pashov>This is not exhausting.
+This is not exhausting.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/758-1
+00:39:37.377 --> 00:39:38.107
+<v Yosif Mihaylov>check them.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/759-0
+00:39:40.707 --> 00:39:42.307
+<v Yosif Mihaylov>No, I know.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/762-1
+00:39:40.937 --> 00:39:47.241
+<v Ivailo Pashov>Let's say the all the different types of
+errors that potentially new this like</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/760-0
+00:39:44.867 --> 00:39:46.387
+<v Yosif Mihaylov>I know, yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/762-2
+00:39:47.241 --> 00:39:51.630
+<v Ivailo Pashov>TTMS control.
+So we are looking at extensively testing</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/762-3
+00:39:51.630 --> 00:39:52.667
+<v Ivailo Pashov>what kind of.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/763-0
+00:39:52.947 --> 00:39:57.758
+<v Ivailo Pashov>Things can go wrong over TMS and then
+what kind of status is?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/761-0
+00:39:53.067 --> 00:39:53.227
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/763-1
+00:39:57.758 --> 00:40:00.707
+<v Ivailo Pashov>What kind of errors could be returned?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/764-0
+00:40:01.387 --> 00:40:04.907
+<v Matthias Max>Wouldn't we be good off mocking bridge?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/766-0
+00:40:07.187 --> 00:40:10.187
+<v Yosif Mihaylov>But again, the mocking of the bridge.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/767-0
+00:40:07.387 --> 00:40:13.611
+<v Matthias Max>And literally we don't have database
+activities here with you as we have API</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/767-1
+00:40:13.611 --> 00:40:19.430
+<v Matthias Max>and HTTP traffic with the bridge from the
+back end. That's all we have.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/767-2
+00:40:19.430 --> 00:40:23.067
+<v Matthias Max>We could as well mock it including
+timeouts.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/770-0
+00:40:21.587 --> 00:40:26.200
+<v Yosif Mihaylov>But it's not the bridge that will be
+failing. I mean, this is the first step,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/768-0
+00:40:23.427 --> 00:40:23.467
+<v Matthias Max>I</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/769-0
+00:40:25.667 --> 00:40:25.947
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/770-1
+00:40:26.200 --> 00:40:28.507
+<v Yosif Mihaylov>like we continue only when it succeeds.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/771-0
+00:40:29.907 --> 00:40:32.988
+<v Matthias Max>Of course,
+but the back end doesn't know about</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/771-1
+00:40:32.988 --> 00:40:35.872
+<v Matthias Max>databases of TMS,
+it just knows the bridge,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/771-2
+00:40:35.872 --> 00:40:37.707
+<v Matthias Max>so it is its main interface.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/772-0
+00:40:37.587 --> 00:40:42.941
+<v Ivailo Pashov>We have all of these scenarios about that
+input and processing.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/772-1
+00:40:42.941 --> 00:40:49.048
+<v Ivailo Pashov>So how do we check like these are
+implemented appropriately if we cannot</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/772-2
+00:40:49.048 --> 00:40:54.987
+<v Ivailo Pashov>manipulate the data and like leave TMS
+with some intermediate changes?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/773-0
+00:40:57.907 --> 00:40:59.467
+<v Ivailo Pashov>Like out of sync with new disco.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/774-0
+00:41:01.587 --> 00:41:08.920
+<v Matthias Max>For that it's of course a database topic,
+but you were I was just referring to your</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/774-1
+00:41:08.920 --> 00:41:14.507
+<v Matthias Max>HTTP arrows and types which could maybe
+some of them be mocked.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/775-0
+00:41:17.147 --> 00:41:18.747
+<v Matthias Max>Not all of them, of course.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/777-0
+00:41:22.787 --> 00:41:25.006
+<v Yosif Mihaylov>Yeah,
+but the mocking should be should be on</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/776-0
+00:41:23.707 --> 00:41:24.427
+<v Matthias Max>So we.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/777-1
+00:41:25.006 --> 00:41:28.507
+<v Yosif Mihaylov>the side of the new dispo database,
+not on the side of the TMS bridge.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/778-0
+00:41:31.267 --> 00:41:33.067
+<v Yosif Mihaylov>That's what I was trying to say.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/779-0
+00:41:33.187 --> 00:41:33.667
+<v Matthias Max>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/780-0
+00:41:35.907 --> 00:41:40.667
+<v Matthias Max>Yeah,
+so it's definitely worth having another.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/781-0
+00:41:42.347 --> 00:41:43.947
+<v Matthias Max>Round with QA.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/782-0
+00:41:45.427 --> 00:41:51.236
+<v Matthias Max>And back end to come up with a proper
+test concept and also define what is</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/782-1
+00:41:51.236 --> 00:41:53.947
+<v Matthias Max>feasible at all in this time range.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/783-0
+00:41:55.507 --> 00:41:58.507
+<v Matthias Max>As always, it's it's a compromise,
+I guess.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/784-0
+00:41:59.947 --> 00:42:00.307
+<v Matthias Max>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/785-0
+00:42:01.747 --> 00:42:06.247
+<v Yosif Mihaylov>Because I think that we tend to mix up a
+bit to be honest,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/785-1
+00:42:06.247 --> 00:42:11.816
+<v Yosif Mihaylov>the topics about about the the TMS and
+the bridge and then the new dispo</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/785-2
+00:42:11.816 --> 00:42:18.147
+<v Yosif Mihaylov>database really because like indempetency
+is one thing we should have it for both.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/786-0
+00:42:19.027 --> 00:42:24.403
+<v Yosif Mihaylov>But in terms of failure scenarios,
+the failure scenarios is entirely on the</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/786-1
+00:42:24.403 --> 00:42:25.747
+<v Yosif Mihaylov>new dispo database.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/787-0
+00:42:33.067 --> 00:42:37.860
+<v Yosif Mihaylov>Just because if there's a failure on the
+TMS side and the bridge side,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/787-1
+00:42:37.860 --> 00:42:39.547
+<v Yosif Mihaylov>we simply don't continue.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/788-0
+00:42:39.507 --> 00:42:39.627
+<v Matthias Max>Um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/791-0
+00:42:48.987 --> 00:42:53.067
+<v Matthias Max>OK, so Yosef, would you be able to?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/792-0
+00:42:54.307 --> 00:43:01.301
+<v Matthias Max>Go into PEIs already or do we need one
+more revision of the concept paper?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/792-1
+00:43:01.301 --> 00:43:05.591
+<v Matthias Max>Also ditching option two and three and so
+on,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/792-2
+00:43:05.591 --> 00:43:09.787
+<v Matthias Max>making it really focus on option one and
+in.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/793-0
+00:43:09.987 --> 00:43:12.787
+<v Matthias Max>Corporate what we've discussed just now.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/794-0
+00:43:13.907 --> 00:43:18.355
+<v Yosif Mihaylov>To me the part,
+the to me the part that is unclear like</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/794-1
+00:43:18.355 --> 00:43:24.551
+<v Yosif Mihaylov>for me is about this around the testing
+and around the what we just discussed</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/794-2
+00:43:24.551 --> 00:43:30.667
+<v Yosif Mihaylov>like simulating these failures like if I
+will just once again because maybe.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/795-0
+00:43:30.947 --> 00:43:35.707
+<v Yosif Mihaylov>Maybe it's me not understanding something,
+but we should not be really.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/796-0
+00:43:36.787 --> 00:43:40.920
+<v Yosif Mihaylov>Testing failures against the TMS breach
+and the TMS databases.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/796-1
+00:43:40.920 --> 00:43:46.233
+<v Yosif Mihaylov>We should be testing all these scenarios
+that you mentioned that we need to test</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/796-2
+00:43:46.233 --> 00:43:50.957
+<v Yosif Mihaylov>the different kind of errors.
+This should be really again the new dispo</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/796-3
+00:43:50.957 --> 00:43:51.547
+<v Yosif Mihaylov>database.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/797-0
+00:43:53.187 --> 00:43:57.814
+<v Ivailo Pashov>Not really. I mean,
+we have a demo them processing, right?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/797-1
+00:43:57.814 --> 00:44:01.579
+<v Ivailo Pashov>Let's say we already have that data,
+et cetera.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/797-2
+00:44:01.579 --> 00:44:05.187
+<v Ivailo Pashov>How do we test against these kind of
+changes?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/798-0
+00:44:06.627 --> 00:44:10.250
+<v Yosif Mihaylov>I mean that that's what I said in that
+potency is, yeah,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/798-1
+00:44:10.250 --> 00:44:12.347
+<v Yosif Mihaylov>it's it's it's one thing, I mean.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/799-0
+00:44:13.107 --> 00:44:18.411
+<v Ivailo Pashov>Then we also have recoverable errors.
+Like if we if you're able to, let's say,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/799-1
+00:44:18.411 --> 00:44:22.641
+<v Ivailo Pashov>simulate a variety of these somehow,
+this this would be great.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/799-2
+00:44:22.641 --> 00:44:26.267
+<v Ivailo Pashov>Otherwise you're just blindly
+implementing something.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/800-0
+00:44:27.987 --> 00:44:33.281
+<v Yosif Mihaylov>Yeah, I mean these are recoverable errors.
+This will be again in the case that new</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/800-1
+00:44:33.281 --> 00:44:36.981
+<v Yosif Mihaylov>dispro failed, right?
+New dispro database failed for some</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/800-2
+00:44:36.981 --> 00:44:37.427
+<v Yosif Mihaylov>reason.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/801-0
+00:44:38.027 --> 00:44:42.500
+<v Ivailo Pashov>No, it could be also TMS breach.
+Like again as as I said,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/801-1
+00:44:42.500 --> 00:44:48.594
+<v Ivailo Pashov>the probability that there would be a
+favor on TMS side would be in my opinion</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/801-2
+00:44:48.594 --> 00:44:53.067
+<v Ivailo Pashov>bigger than the one for the internal
+Neogis for database.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/802-0
+00:44:50.467 --> 00:44:55.891
+<v Yosif Mihaylov>That's for sure, that's for sure,
+but but if for example the TMS fails,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/802-1
+00:44:55.891 --> 00:45:01.842
+<v Yosif Mihaylov>what exactly we need to test when in this
+case we we simply don't continue and</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/802-2
+00:45:01.842 --> 00:45:04.027
+<v Yosif Mihaylov>return the error to the user?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/803-0
+00:45:05.427 --> 00:45:07.627
+<v Yosif Mihaylov>I mean, this is our straightforward for.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/804-0
+00:45:07.427 --> 00:45:12.179
+<v Ivailo Pashov>Still, we don't know like what happened.
+Just because it failed doesn't mean it</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/804-1
+00:45:12.179 --> 00:45:15.387
+<v Ivailo Pashov>didn't introduce any data inside the
+database, right?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/805-0
+00:45:17.387 --> 00:45:22.543
+<v Yosif Mihaylov>What? What do you mean? Why?
+Why we're not sure? Like for example,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/805-1
+00:45:22.543 --> 00:45:26.083
+<v Yosif Mihaylov>like we make the request to to TMS,
+it fails.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/805-2
+00:45:26.083 --> 00:45:30.700
+<v Yosif Mihaylov>We we never execute anything further on
+our new dispo site,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/805-3
+00:45:30.700 --> 00:45:33.547
+<v Yosif Mihaylov>we just return the error to the user.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/806-0
+00:45:34.147 --> 00:45:38.233
+<v Yosif Mihaylov>This is, uh,
+this is our prerequisite to to continue</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/807-0
+00:45:37.507 --> 00:45:40.628
+<v Ivailo Pashov>Yeah, I can.
+I can give you a number of examples,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/806-1
+00:45:38.233 --> 00:45:39.467
+<v Yosif Mihaylov>further the TMS.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/807-1
+00:45:40.628 --> 00:45:43.998
+<v Ivailo Pashov>but in theory we should be also trying to,
+let's say,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/807-2
+00:45:43.998 --> 00:45:46.932
+<v Ivailo Pashov>classify the errors so we can give it a
+retry.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/807-3
+00:45:46.932 --> 00:45:51.426
+<v Ivailo Pashov>If we say we propagate immediately the
+the error, that's another thing.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/807-4
+00:45:51.426 --> 00:45:56.107
+<v Ivailo Pashov>Maybe we can make such a decision.
+We don't attempt any retries in memory.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/809-0
+00:45:56.907 --> 00:46:01.010
+<v Ivailo Pashov>For several seconds,
+we don't classify any errors,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/809-1
+00:46:01.010 --> 00:46:07.606
+<v Ivailo Pashov>we just return back a result to the user
+and we decide we delegate to the user to</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/809-2
+00:46:07.606 --> 00:46:11.307
+<v Ivailo Pashov>to let's say do a retry attempt.
+That's also.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/808-0
+00:46:10.227 --> 00:46:12.467
+<v Yosif Mihaylov>That's what we currently do.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/810-0
+00:46:12.747 --> 00:46:13.547
+<v Ivailo Pashov>OK, so.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/811-0
+00:46:13.427 --> 00:46:18.778
+<v Yosif Mihaylov>If TMS fails, if TMS, if TMS operation,
+if the TMS operation failed,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/811-1
+00:46:18.778 --> 00:46:24.594
+<v Yosif Mihaylov>we just return the the response from the
+operation to the user. We didn't.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/811-2
+00:46:24.594 --> 00:46:29.867
+<v Yosif Mihaylov>We never tried to introduce any state to
+new dispo really that the.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/813-0
+00:46:29.267 --> 00:46:33.509
+<v Ivailo Pashov>Yeah, but but let's say,
+and let me give you some examples that</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/812-0
+00:46:30.027 --> 00:46:31.187
+<v Yosif Mihaylov>Problematic.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/813-1
+00:46:33.509 --> 00:46:39.077
+<v Ivailo Pashov>potentially might, let's say, be harmful.
+I'm not sure whether these are present at</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/813-2
+00:46:39.077 --> 00:46:43.054
+<v Ivailo Pashov>the minute or not,
+but let's say you're introducing several</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/813-3
+00:46:43.054 --> 00:46:47.627
+<v Ivailo Pashov>changes on TMS side like you invoke
+several mutations over Graph QL.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/814-0
+00:46:48.227 --> 00:46:50.747
+<v Ivailo Pashov>You know one, let's say,
+business operation.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/815-0
+00:46:50.227 --> 00:46:54.507
+<v Yosif Mihaylov>They are always transactional,
+always 40 for teams.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/818-0
+00:46:52.947 --> 00:46:59.145
+<v Ivailo Pashov>If if these are, let's say,
+let's say introduced with a single HTTPS</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/818-1
+00:46:59.145 --> 00:47:04.086
+<v Ivailo Pashov>call, that's fine.
+And then and there is a transaction</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/816-0
+00:47:02.587 --> 00:47:03.787
+<v Yosif Mihaylov>Yes, they are.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/818-2
+00:47:04.086 --> 00:47:08.667
+<v Ivailo Pashov>spawning across them. Yeah,
+that's fine and still.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/817-0
+00:47:05.907 --> 00:47:06.187
+<v Yosif Mihaylov>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/819-0
+00:47:08.947 --> 00:47:14.128
+<v Ivailo Pashov>Let me remind you that potentially there
+might be issues even after changes have</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/819-1
+00:47:14.128 --> 00:47:18.605
+<v Ivailo Pashov>been introduced on TMS database,
+for example some serialization buck,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/819-2
+00:47:18.605 --> 00:47:21.932
+<v Ivailo Pashov>etcetera.
+So let's say wrap again the data and send</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/819-3
+00:47:21.932 --> 00:47:22.827
+<v Ivailo Pashov>that response.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/820-0
+00:47:24.227 --> 00:47:25.547
+<v Ivailo Pashov>Or otentially.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/821-0
+00:47:27.107 --> 00:47:31.681
+<v Ivailo Pashov>Some,
+let's say just the response being closed</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/821-1
+00:47:31.681 --> 00:47:35.963
+<v Ivailo Pashov>over,
+let's say some just temporary network</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/821-2
+00:47:35.963 --> 00:47:36.547
+<v Ivailo Pashov>issue.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/822-0
+00:47:38.587 --> 00:47:42.520
+<v Ivailo Pashov>So in in in that case that change might
+be introduced,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/822-1
+00:47:42.520 --> 00:47:47.383
+<v Ivailo Pashov>but you still won't know it.
+So if we decide let's we can also skip</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/822-2
+00:47:47.383 --> 00:47:52.747
+<v Ivailo Pashov>this retry mechanism to save some time
+and we always delegate to the user.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/824-0
+00:47:56.387 --> 00:48:02.384
+<v Ivailo Pashov>That's also perfectly fine by me,
+but we just need to agree on that.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/823-0
+00:47:57.627 --> 00:47:57.787
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/824-1
+00:48:02.384 --> 00:48:08.469
+<v Ivailo Pashov>Let's say we don't do any attempts.
+So let's say if TMS is temporary,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/824-2
+00:48:08.469 --> 00:48:12.467
+<v Ivailo Pashov>unavailable, etcetera,
+we do not do anything.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/826-0
+00:48:12.507 --> 00:48:15.872
+<v Yosif Mihaylov>I mean that it tries.
+I mean that it tries are fine like</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/826-1
+00:48:15.872 --> 00:48:19.474
+<v Yosif Mihaylov>because we have two scenarios like we
+mentioned 2 scenarios.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/825-0
+00:48:17.867 --> 00:48:17.987
+<v Ivailo Pashov>But.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/826-2
+00:48:19.474 --> 00:48:24.020
+<v Yosif Mihaylov>First scenarios we have a for example
+serialization issue or some bug in our</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/826-3
+00:48:24.020 --> 00:48:27.622
+<v Yosif Mihaylov>code after after the successful executing
+the TMS operation.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/826-4
+00:48:27.622 --> 00:48:32.227
+<v Yosif Mihaylov>This means that no matter how much we
+retry we will never be able to recover.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/827-0
+00:48:32.427 --> 00:48:36.387
+<v Yosif Mihaylov>Uh, in in uh, the other scenario.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/828-0
+00:48:32.827 --> 00:48:36.603
+<v Ivailo Pashov>In theory, in theory, yes.
+But in practice,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/828-1
+00:48:36.603 --> 00:48:41.924
+<v Ivailo Pashov>if let's say we retrieve the data that
+was on the next retry,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/828-2
+00:48:41.924 --> 00:48:48.961
+<v Ivailo Pashov>when the then we obviously continue with
+the further execution because we already</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/828-3
+00:48:48.961 --> 00:48:51.107
+<v Ivailo Pashov>see that data is present.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/829-0
+00:48:52.787 --> 00:48:55.827
+<v Ivailo Pashov>And we just keep all the underlying
+operations.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/831-0
+00:48:58.627 --> 00:49:02.587
+<v Yosif Mihaylov>But how could we skip some some logic
+even if it does?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/832-0
+00:49:01.907 --> 00:49:06.522
+<v Ivailo Pashov>Because we already observed that the
+change is present on TMS side and this is</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/832-1
+00:49:06.522 --> 00:49:09.267
+<v Ivailo Pashov>part of our then put and processing
+potential.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/833-0
+00:49:09.467 --> 00:49:11.942
+<v Yosif Mihaylov>Yeah, but I mean,
+usually these logical changes,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/833-1
+00:49:11.942 --> 00:49:16.133
+<v Yosif Mihaylov>they're not related to the TMS operation.
+The example you gave, the serialization,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/833-2
+00:49:16.133 --> 00:49:17.547
+<v Yosif Mihaylov>we can never skip it, right?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/834-0
+00:49:17.067 --> 00:49:21.022
+<v Ivailo Pashov>Josef,
+let's remove the retry so we can save</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/834-1
+00:49:21.022 --> 00:49:23.747
+<v Ivailo Pashov>some time. Do we agree on that?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/836-0
+00:49:26.027 --> 00:49:29.107
+<v Yosif Mihaylov>Uh, you mean the the automatic retry?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/835-0
+00:49:26.187 --> 00:49:26.467
+<v Yosif Mihaylov>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/837-0
+00:49:28.947 --> 00:49:29.387
+<v Ivailo Pashov>Yes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/838-0
+00:49:30.187 --> 00:49:34.667
+<v Yosif Mihaylov>But if we remove the automatic retry,
+what is left really?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/839-0
+00:49:35.307 --> 00:49:38.507
+<v Ivailo Pashov>I mean the automatic retry on the TMS
+side.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/840-0
+00:49:39.507 --> 00:49:42.707
+<v Yosif Mihaylov>Oh, sure, sure. Uh, I mean, uh, I mean,
+yeah, like.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/841-0
+00:49:41.827 --> 00:49:45.394
+<v Ivailo Pashov>Once we have the change written to the
+TMS,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/841-1
+00:49:45.394 --> 00:49:51.960
+<v Ivailo Pashov>we need to give it at least several goals
+on the new dispo database to make sure</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/841-2
+00:49:51.960 --> 00:49:53.987
+<v Ivailo Pashov>that we apply the change.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/843-0
+00:49:54.187 --> 00:49:58.622
+<v Yosif Mihaylov>I mean, it's fine to be honest.
+I like whether we have it or not,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/843-1
+00:49:58.622 --> 00:50:03.662
+<v Yosif Mihaylov>wouldn't that much effect effort.
+It's it's fine. Like whatever we decide,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/843-2
+00:50:03.662 --> 00:50:04.267
+<v Yosif Mihaylov>I'm fine.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/842-0
+00:50:03.747 --> 00:50:03.867
+<v Ivailo Pashov>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/844-0
+00:50:05.747 --> 00:50:06.187
+<v Ivailo Pashov>Alright.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/846-0
+00:50:08.907 --> 00:50:11.938
+<v Yosif Mihaylov>Yeah,
+I think the what we what we need to agree</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/845-0
+00:50:10.467 --> 00:50:10.787
+<v Matthias Max>Oh.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/846-1
+00:50:11.938 --> 00:50:16.106
+<v Yosif Mihaylov>on is really the testing and what what's
+in the scope of testing.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/846-2
+00:50:16.106 --> 00:50:21.285
+<v Yosif Mihaylov>That's at least the unclear part for me
+because any kind of automation testing to</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/846-3
+00:50:21.285 --> 00:50:24.632
+<v Yosif Mihaylov>be honest,
+we did try automation testing before this</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/846-4
+00:50:24.632 --> 00:50:28.547
+<v Yosif Mihaylov>is obviously we will not be able to
+delegate this to the QAS.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/848-0
+00:50:28.827 --> 00:50:35.160
+<v Yosif Mihaylov>At all, and furthermore,
+the bigger problem is that we don't have</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/848-1
+00:50:35.160 --> 00:50:43.317
+<v Yosif Mihaylov>anything set up for such automation tests.
+So my concern is that that this will take</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/847-0
+00:50:38.627 --> 00:50:38.787
+<v Matthias Max>Um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/848-2
+00:50:43.317 --> 00:50:48.307
+<v Yosif Mihaylov>probably significantly more effort than
+the actual.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/849-0
+00:50:48.427 --> 00:50:54.257
+<v Yosif Mihaylov>Implementation and like it's if this is
+something that it's a must do and we</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/849-1
+00:50:54.257 --> 00:50:54.787
+<v Yosif Mihaylov>cannot.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/850-0
+00:50:56.267 --> 00:51:01.547
+<v Yosif Mihaylov>Stay away from, then fine. But otherwise,
+yeah, I just want to.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/851-0
+00:51:02.627 --> 00:51:06.547
+<v Yosif Mihaylov>To to make sure that it's visible that
+this will take.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/852-0
+00:51:07.347 --> 00:51:07.427
+<v Matthias Max>Um.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/853-0
+00:51:07.507 --> 00:51:11.107
+<v Yosif Mihaylov>Effort because we don't have anything set
+up for such tests.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/854-0
+00:51:15.707 --> 00:51:20.987
+<v Matthias Max>OK. Um, Yosif,
+maybe we can have a smaller call later.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/855-0
+00:51:21.827 --> 00:51:22.267
+<v Yosif Mihaylov>Sure.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/857-0
+00:51:22.507 --> 00:51:30.307
+<v Matthias Max>So giving Ivaylo back his lunch break and
+Christian and then see what what is</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/857-1
+00:51:30.307 --> 00:51:37.507
+<v Matthias Max>really decided and defined so that we can
+put that into the back of or.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/858-0
+00:51:38.467 --> 00:51:43.793
+<v Matthias Max>If we don't have anything yet,
+we can safely put into any backlog</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/858-1
+00:51:43.793 --> 00:51:49.925
+<v Matthias Max>because the pressure on my side is
+getting backlog work and work items done</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/858-2
+00:51:49.925 --> 00:51:54.283
+<v Matthias Max>because I'm off four days this week.
+Otherwise, yeah,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/858-3
+00:51:54.283 --> 00:51:57.107
+<v Matthias Max>of course it's left on you and Max.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/859-0
+00:51:58.267 --> 00:52:02.492
+<v Matthias Max>Get something up and running,
+but I would really want to have at least</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/859-1
+00:52:02.492 --> 00:52:05.467
+<v Matthias Max>a small package defined until the end of
+the day.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/860-0
+00:52:07.227 --> 00:52:10.827
+<v Matthias Max>Good. So if I know,
+what does your day look like?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/860-1
+00:52:10.827 --> 00:52:14.427
+<v Matthias Max>Are you kind available or is it rather
+difficult?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/861-0
+00:52:15.467 --> 00:52:16.867
+<v Ivailo Pashov>Not anymore.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/862-0
+00:52:18.107 --> 00:52:19.467
+<v Matthias Max>Not anymore. Good.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/863-0
+00:52:18.627 --> 00:52:24.627
+<v Yosif Mihaylov>What is the what?
+What do you need eval for later actually?</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/864-0
+00:52:23.987 --> 00:52:29.747
+<v Matthias Max>Just if we say we need a quick sparing
+session again for 15 minutes.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/865-0
+00:52:27.627 --> 00:52:31.747
+<v Ivailo Pashov>I I updated also the diagram based on our
+discussion.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/866-0
+00:52:32.707 --> 00:52:39.834
+<v Matthias Max>OK, good. Then let's talk later again,
+Yosif and you can make your thoughts,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/866-1
+00:52:39.834 --> 00:52:47.054
+<v Matthias Max>what you understand and what you would
+create in terms of PVIS and we can see</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/866-2
+00:52:47.054 --> 00:52:48.627
+<v Matthias Max>what's left open.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/867-0
+00:52:48.827 --> 00:52:52.465
+<v Yosif Mihaylov>OK,
+like just a final question I guess to</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/867-1
+00:52:52.465 --> 00:52:58.356
+<v Yosif Mihaylov>Ivailo while he we have him like again
+about this testing like Ivo,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/867-2
+00:52:58.356 --> 00:53:03.467
+<v Yosif Mihaylov>your opinion is that we cannot skip this
+automation tests.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/868-0
+00:53:06.067 --> 00:53:08.187
+<v Yosif Mihaylov>In any way or form.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/869-0
+00:53:10.107 --> 00:53:12.467
+<v Ivailo Pashov>We need to test this idempotent
+processing.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/873-0
+00:53:14.827 --> 00:53:18.257
+<v Ivailo Pashov>And at some point,
+if you encounter the need to do a</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/873-1
+00:53:18.257 --> 00:53:21.105
+<v Ivailo Pashov>rollback,
+this also needs to be let and you</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/873-2
+00:53:21.105 --> 00:53:24.599
+<v Ivailo Pashov>introduce this feature.
+This also needs to be tested.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/870-0
+00:53:23.907 --> 00:53:24.387
+<v Yosif Mihaylov>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/873-3
+00:53:24.599 --> 00:53:27.771
+<v Ivailo Pashov>Now how it's tested? To be honest,
+I'm not sure,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/873-4
+00:53:27.771 --> 00:53:33.013
+<v Ivailo Pashov>but we need to make sure that we test all
+these scenarios that we go through the</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/871-0
+00:53:31.587 --> 00:53:31.747
+<v Yosif Mihaylov>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/873-5
+00:53:33.013 --> 00:53:34.307
+<v Ivailo Pashov>data demo temp flow.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/872-0
+00:53:34.427 --> 00:53:34.627
+<v Matthias Max>Mm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/874-0
+00:53:34.507 --> 00:53:40.040
+<v Ivailo Pashov>Let's say we we are want to introduce a,
+let's say a create but operation,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/874-1
+00:53:40.040 --> 00:53:45.720
+<v Ivailo Pashov>but then we the the record is existing or
+we want to delete something but it</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/874-2
+00:53:45.720 --> 00:53:49.187
+<v Ivailo Pashov>already like it's already deleted.
+We need to.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/877-0
+00:53:50.907 --> 00:53:57.529
+<v Ivailo Pashov>Make sure that all of this is actually
+all these cases are tested and not just</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/875-0
+00:53:56.707 --> 00:53:56.947
+<v Yosif Mihaylov>Hmm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/877-1
+00:53:57.529 --> 00:54:04.486
+<v Ivailo Pashov>let's say be implemented and never let's
+say leave them to to go to production and</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/876-0
+00:54:04.187 --> 00:54:04.547
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/877-2
+00:54:04.486 --> 00:54:07.587
+<v Ivailo Pashov>fingers crossed that this would work.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/878-0
+00:54:08.107 --> 00:54:10.147
+<v Matthias Max>Yeah, and not.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/879-0
+00:54:08.987 --> 00:54:13.388
+<v Ivailo Pashov>And how we do that?
+Like whether whether we do that with</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/879-1
+00:54:13.388 --> 00:54:17.711
+<v Ivailo Pashov>debugging and then like to to leave
+intermediate state,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/879-2
+00:54:17.711 --> 00:54:23.269
+<v Ivailo Pashov>let's say present in TMS but never
+written to new this pool like we can</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/879-3
+00:54:23.269 --> 00:54:26.975
+<v Ivailo Pashov>debug,
+we can kill the application while we are</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/879-4
+00:54:26.975 --> 00:54:27.747
+<v Ivailo Pashov>debugging.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/880-0
+00:54:29.107 --> 00:54:34.547
+<v Ivailo Pashov>That's one of the options, for example,
+but we need to do it somehow.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/881-0
+00:54:34.427 --> 00:54:39.804
+<v Yosif Mihaylov>OK, that's fine.
+I mean that that I think works if if like</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/881-1
+00:54:39.804 --> 00:54:46.547
+<v Yosif Mihaylov>I mean we just need to cover the end goal
+of testing and not necessarily.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/883-0
+00:54:47.707 --> 00:54:49.827
+<v Yosif Mihaylov>Go to.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/882-0
+00:54:48.027 --> 00:54:48.547
+<v Matthias Max>Yeah.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/886-0
+00:54:50.267 --> 00:54:55.445
+<v Ivailo Pashov>And see similar ways for the similar way
+for the database again as well.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/884-0
+00:54:50.387 --> 00:54:53.067
+<v Matthias Max>So for me it's clear it must be part of.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/886-1
+00:54:55.445 --> 00:55:00.269
+<v Ivailo Pashov>Like if the database is failing,
+we need to simulate this favor the</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/886-2
+00:55:00.269 --> 00:55:00.907
+<v Ivailo Pashov>database.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/885-0
+00:55:02.027 --> 00:55:02.547
+<v Yosif Mihaylov>Mhm.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/887-0
+00:55:02.507 --> 00:55:03.907
+<v Ivailo Pashov>For the new dispo.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/888-0
+00:55:04.387 --> 00:55:08.250
+<v Matthias Max>Yeah,
+I think we should make the tests part of</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/888-1
+00:55:08.250 --> 00:55:13.675
+<v Matthias Max>the deliverable really.
+It also showcases how this complexity and</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/888-2
+00:55:13.675 --> 00:55:16.387
+<v Matthias Max>the client must be aware of this.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/889-0
+00:55:18.147 --> 00:55:23.052
+<v Matthias Max>Otherwise we don't win anything.
+And later on they will say why did you</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/889-1
+00:55:23.052 --> 00:55:28.501
+<v Matthias Max>leave this untested in an automated way?
+So we must make art of the deliverable</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/889-2
+00:55:28.501 --> 00:55:32.929
+<v Matthias Max>because they will also pay for it and if
+they pay for something,</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/889-3
+00:55:32.929 --> 00:55:36.267
+<v Matthias Max>they want to see what was done with that
+budget.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/890-0
+00:55:36.867 --> 00:55:41.858
+<v Matthias Max>And this will be an automated,
+at least the beginning of a small</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/890-1
+00:55:41.858 --> 00:55:46.773
+<v Matthias Max>automated test solution,
+which also assures later down the road</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/890-2
+00:55:46.773 --> 00:55:51.227
+<v Matthias Max>that regression don't get introduced and
+stuff like that.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/891-0
+00:55:54.507 --> 00:56:00.347
+<v Matthias Max>So we I I'm of the it should be part of
+the deliverables therefore we need.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/892-0
+00:56:01.187 --> 00:56:03.027
+<v Matthias Max>Real PVIs for that.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/893-0
+00:56:04.027 --> 00:56:09.013
+<v Matthias Max>And we need to define the preconditions
+that must be meant to be even able to</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/893-1
+00:56:09.013 --> 00:56:10.227
+<v Matthias Max>build such tooling.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/894-0
+00:56:18.947 --> 00:56:19.667
+<v Matthias Max>All right.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/895-0
+00:56:20.827 --> 00:56:24.227
+<v Matthias Max>Then let's stay in touch and talk later
+again.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/896-0
+00:56:27.747 --> 00:56:28.147
+<v Yosif Mihaylov>OK.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/897-0
+00:56:28.107 --> 00:56:31.667
+<v Matthias Max>I will. I will set something up, Joseph.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/898-0
+00:56:31.827 --> 00:56:32.067
+<v Yosif Mihaylov>Sorry.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/899-0
+00:56:33.547 --> 00:56:35.347
+<v Matthias Max>I will set a meeting out for us.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/900-0
+00:56:35.587 --> 00:56:35.907
+<v Yosif Mihaylov>Sure.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/901-0
+00:56:37.347 --> 00:56:38.787
+<v Ivailo Pashov>Thanks everybody. Bye.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/904-0
+00:56:38.307 --> 00:56:38.787
+<v Yosif Mihaylov>Thank you. Bye bye.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/906-0
+00:56:38.547 --> 00:56:39.667
+<v Matthias Max>Thanks. Bye, bye.</v>
+
+5958be8c-c4d0-4d8f-8ae7-59417ff36d0c/908-0
+00:56:40.587 --> 00:56:40.667
+Bye.

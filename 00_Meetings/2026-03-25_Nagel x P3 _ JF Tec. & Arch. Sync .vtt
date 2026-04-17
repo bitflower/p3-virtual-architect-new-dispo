@@ -1,0 +1,2272 @@
+WEBVTT
+
+c4438f43-48ff-4571-9093-c30cea54b603/9-0
+00:00:04.708 --> 00:00:08.178
+<v Matthias Max>Viel über diesen Chat.
+Am Ende ist aber nichts dokumentiert und</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/9-1
+00:00:08.178 --> 00:00:10.726
+<v Matthias Max>ich nehme jetzt immer diese
+Chatinformationen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/9-2
+00:00:10.726 --> 00:00:13.654
+<v Matthias Max>sowohl interne Meetings, Notes,
+lass sie über diesen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/9-3
+00:00:13.654 --> 00:00:17.286
+<v Matthias Max>über dieses Tool laufen,
+was ich entwickelt hab und dann kommt 'ne</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/9-4
+00:00:17.286 --> 00:00:21.623
+<v Matthias Max>schöne Projektübersicht raus und das ist
+letztendlich hier so 'ne so 'ne Seite,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/9-5
+00:00:21.623 --> 00:00:21.948
+<v Matthias Max>wo man</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/12-0
+00:00:22.188 --> 00:00:25.479
+<v Matthias Max>Halt, sieht wo stehen wir gerade?
+Es ist in Progress.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/12-1
+00:00:25.479 --> 00:00:29.135
+<v Matthias Max>Wann wurde es das letzte Mal upgedatet
+und vor allem unten,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/12-2
+00:00:29.135 --> 00:00:31.877
+<v Matthias Max>was wurde abgeschlossen?
+Und das Schöne ist,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/12-3
+00:00:31.877 --> 00:00:36.021
+<v Matthias Max>das ist dann auch unsere inhaltliche
+Sammlung für den späteren ADR,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/12-4
+00:00:36.021 --> 00:00:37.788
+<v Matthias Max>den ich daraus ableiten kann.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/15-0
+00:00:37.868 --> 00:00:41.636
+<v Matthias Max>Und wir haben alles dokumentiert.
+Es gibt nichts verloren.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/11-0
+00:00:38.308 --> 00:00:38.468
+<v Christian Lang>Tell.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/13-0
+00:00:39.708 --> 00:00:40.508
+<v Christian Lang>OK.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/15-1
+00:00:41.636 --> 00:00:46.297
+<v Matthias Max>Wir haben auch Verlinkungen drin zu
+anderen technischen Dokumentationen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/15-2
+00:00:46.297 --> 00:00:49.682
+<v Matthias Max>die ich jetzt angefangen habe zu sammeln.
+Das heißt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/15-3
+00:00:49.682 --> 00:00:52.108
+<v Matthias Max>da kriegt man auch die Querverlinkung.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/16-0
+00:00:53.708 --> 00:00:56.391
+<v Matthias Max>Zum Beispiel,
+alles was Architektur betrifft,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/14-0
+00:00:54.068 --> 00:00:54.668
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/16-1
+00:00:56.391 --> 00:01:00.008
+<v Matthias Max>war ja immer so ein Blindspot.
+Dominik hat da jetzt ganz viel</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/16-2
+00:01:00.008 --> 00:01:03.041
+<v Matthias Max>aufgearbeitet.
+Nikolaj hat mir viel bereitgestellt.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/16-3
+00:01:03.041 --> 00:01:07.824
+<v Matthias Max>Jetzt kommen aus diesen Meetings mit Matt
+viel Wissen hoch und man kann dann viel</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/16-4
+00:01:07.824 --> 00:01:11.148
+<v Matthias Max>konkreter drüber sprechen,
+wo läuft denn was in welchen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/17-0
+00:01:11.228 --> 00:01:15.788
+<v Matthias Max>In Workload,
+wie heißen diese ganzen Netzwerke?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/18-0
+00:01:16.068 --> 00:01:16.708
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/21-0
+00:01:17.388 --> 00:01:21.718
+<v Matthias Max>Welcher Workload kann überhaupt in
+welcher Environment auf welches Netzwerk</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/21-1
+00:01:21.718 --> 00:01:25.763
+<v Matthias Max>zugreifen? Das ist ja alles wichtig,
+wenn man holistisch solche P.O.C.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/19-0
+00:01:24.548 --> 00:01:25.148
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/21-2
+00:01:25.763 --> 00:01:30.036
+<v Matthias Max>s oder Projekte fährt. Ich war einfach,
+ich hatte die Schnauze voll davon,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/20-0
+00:01:26.868 --> 00:01:27.468
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/21-3
+00:01:30.036 --> 00:01:32.428
+<v Matthias Max>dass es nicht holistisch stattfinden kann.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/24-0
+00:01:32.828 --> 00:01:36.188
+<v Matthias Max>jetzt kann es stattfinden.
+Und wir kriegen halt auch pro Projekt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/24-1
+00:01:36.188 --> 00:01:38.785
+<v Matthias Max>pro Maßnahme,
+wo Initiative quasi for free so eine</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/24-2
+00:01:38.785 --> 00:01:41.127
+<v Matthias Max>Projektübersicht hier,
+das ist auch echt gut.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/24-3
+00:01:41.127 --> 00:01:45.199
+<v Matthias Max>Und die verlege ich dann immer zurück in
+den Chat. Also jeder, der Zugriff hat,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/22-0
+00:01:42.828 --> 00:01:43.508
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/24-4
+00:01:45.199 --> 00:01:47.948
+<v Matthias Max>kann einfach klicken und sehen,
+wo stehen wir gerade.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/23-0
+00:01:48.308 --> 00:01:49.108
+<v Christian Lang>Mhm, mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/25-0
+00:01:48.668 --> 00:01:52.894
+<v Matthias Max>Also auch für dich eigentlich,
+wenn du Freitagabend wissen willst: "Hey,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/25-1
+00:01:52.894 --> 00:01:57.640
+<v Matthias Max>was ist denn mit CDC und dies und das?",
+dann kann man hier drauf gehen und sieht</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/25-2
+00:01:57.640 --> 00:02:01.228
+<v Matthias Max>wirklich im besten Fall tagesgenau,
+was ist gerade der Stand.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/26-0
+00:02:01.508 --> 00:02:03.148
+<v Christian Lang>Mhm, OK.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/28-0
+00:02:03.468 --> 00:02:09.157
+<v Matthias Max>So, aber zusammengefasst: Oracle.
+Wir sind mit Stream im Load Test.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/27-0
+00:02:09.068 --> 00:02:09.348
+<v Martin Dittmann>T.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/28-1
+00:02:09.157 --> 00:02:14.176
+<v Matthias Max>Da laufen seit Montag, glaube ich,
+Prottdaten rein von OMS.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/28-2
+00:02:14.176 --> 00:02:19.948
+<v Matthias Max>Am ersten Tag hat Matt von 4.
+100 Dokumenten gesprochen, die sowohl.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/30-0
+00:02:20.348 --> 00:02:25.431
+<v Matthias Max>in der Tabelle getrackt wurden,
+als auch deckungsgleich im Object Store</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/30-1
+00:02:25.431 --> 00:02:28.819
+<v Matthias Max>in Google.
+Von daher erstmal ein gutes Zeichen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/29-0
+00:02:26.708 --> 00:02:27.268
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/30-2
+00:02:28.819 --> 00:02:34.043
+<v Matthias Max>Datastream hat jetzt Mad und Ron die
+Tasten gehauen, habe ich das Gefühl,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/30-3
+00:02:34.043 --> 00:02:39.548
+<v Matthias Max>und eigenmächtig in Workload 3 erstmal,
+was ja nicht unser Ziel Workload ist.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/31-0
+00:02:40.428 --> 00:02:45.845
+<v Matthias Max>'n Datastream aufgesetzt und sich da
+reingefuchst in die Netzwerkkonfiguration.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/31-1
+00:02:45.845 --> 00:02:50.787
+<v Matthias Max>Und sie haben es dann geschafft,
+Daten fließen zu lassen zwischen Oracle</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/31-2
+00:02:50.787 --> 00:02:55.188
+<v Matthias Max>und Object Store über Datastream. So,
+das war der Stand gestern.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/32-0
+00:02:56.588 --> 00:03:01.330
+<v Matthias Max>Probleme gibt es jetzt allerdings,
+das Gleiche in Workload 5 zu realisieren.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/32-1
+00:03:01.330 --> 00:03:05.826
+<v Matthias Max>Das sieht man halt auch wieder dran,
+wie brüchig manchmal das Ganze ist,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/32-2
+00:03:05.826 --> 00:03:10.136
+<v Matthias Max>weil man hätte jetzt natürlich angenommen,
+gerade von der Grafik her,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/32-3
+00:03:10.136 --> 00:03:14.508
+<v Matthias Max>dass Workload 5 genau den gleichen
+Netzwerkzugriff hat wie Workload 3.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/33-0
+00:03:14.908 --> 00:03:17.495
+<v Matthias Max>ist aber leider nicht der Fall. So,
+das heißt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/33-1
+00:03:17.495 --> 00:03:21.787
+<v Matthias Max>da stecken wir gerade im Datastream
+Bereich fest und sind auch noch gar nicht</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/33-2
+00:03:21.787 --> 00:03:24.869
+<v Matthias Max>im Load Test drin.
+Da geht es immer noch um initial die</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/33-3
+00:03:24.869 --> 00:03:29.271
+<v Matthias Max>Verbindung und dann im ersten Change,
+den wir von Hand auslösen auf der Tabelle</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/33-4
+00:03:29.271 --> 00:03:32.187
+<v Matthias Max>Sendung und den empfangen wollen. Also,
+da sind wir,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/33-5
+00:03:32.187 --> 00:03:33.948
+<v Matthias Max>da liegen wir eigentlich zurück.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/34-0
+00:03:34.428 --> 00:03:35.628
+<v Matthias Max>Muss man ganz offen sagen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/35-0
+00:03:35.948 --> 00:03:36.548
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/36-0
+00:03:37.948 --> 00:03:40.805
+<v Matthias Max>Aber die sind dran im Chat.
+Die tauschen sich da aus.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/36-1
+00:03:40.805 --> 00:03:44.508
+<v Matthias Max>Heut Mittag haben wir, glaub ich,
+auch einen Sönke Martin wieder oder</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/37-0
+00:03:44.468 --> 00:03:48.151
+<v Martin Dittmann>14:00 Uhr so wie Freitag abgestimmt genau
+Christian hat ja einen Terminkonflikt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/37-1
+00:03:48.151 --> 00:03:50.788
+<v Martin Dittmann>deswegen ganz gut,
+dass wir jetzt gerade drüber sprechen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/38-0
+00:03:50.428 --> 00:03:54.534
+<v Matthias Max>Ja genau, also das funktioniert,
+glaube ich, auch gut, Martin.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/38-1
+00:03:54.534 --> 00:03:59.357
+<v Matthias Max>Oder kann ich in deinem Namen sagen,
+diese zwei dreitägigen Sync-Termine,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/38-2
+00:03:59.357 --> 00:04:02.028
+<v Matthias Max>wirklich Call, alle drin, es ist wichtig.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/39-0
+00:04:03.068 --> 00:04:04.988
+<v Matthias Max>Gib dem ganzen Fokus.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/40-0
+00:04:05.188 --> 00:04:05.668
+<v Martin Dittmann>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/42-0
+00:04:07.308 --> 00:04:14.828
+<v Matthias Max>So genau, das wäre Thema Oracle CDC.
+Ob du dazu oder hast du dazu Fragen?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/41-0
+00:04:07.508 --> 00:04:08.068
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/46-0
+00:04:14.588 --> 00:04:18.808
+<v Christian Lang>Hast du so ein Bauchgefühl,
+was das Umsetzungszeit anbelangt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/46-1
+00:04:18.808 --> 00:04:24.321
+<v Christian Lang>weil ist ja schon recht lange unterwegs
+und irgendwie Zeitdruck ist ja schon da,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/43-0
+00:04:23.948 --> 00:04:24.508
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/46-2
+00:04:24.321 --> 00:04:29.766
+<v Christian Lang>was ja ein Key Baustein ist für für 'n
+Dispolife Gang in Anführungszeichen, ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/44-0
+00:04:29.148 --> 00:04:29.708
+<v Matthias Max>Yeah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/46-3
+00:04:29.766 --> 00:04:32.148
+<v Christian Lang>Ich möchte ungern verkünsteln, also</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/50-0
+00:04:32.388 --> 00:04:36.404
+<v Christian Lang>wenn wir jetzt eine Tabelle zoomen können,
+ne von von Oracle nach sonst wo,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/45-0
+00:04:32.428 --> 00:04:33.148
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/50-1
+00:04:36.404 --> 00:04:38.782
+<v Christian Lang>dann sollte irgendwie pragmatisch auch
+sein.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/47-0
+00:04:37.468 --> 00:04:37.948
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/50-2
+00:04:38.782 --> 00:04:41.319
+<v Christian Lang>Also wir können da kein System Setup
+aufsetzen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/48-0
+00:04:40.148 --> 00:04:40.748
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/50-3
+00:04:41.319 --> 00:04:44.383
+<v Christian Lang>was uns irgendwie pro Jahr irgendwie
+richtig Geld kostet,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/50-4
+00:04:44.383 --> 00:04:46.708
+<v Christian Lang>nur dass wir eine Tabelle gesoomt
+bekommen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/49-0
+00:04:47.228 --> 00:04:47.628
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/52-0
+00:04:47.748 --> 00:04:51.627
+<v Christian Lang>kriegen wir auch mit einem mit einem
+Trigger auf die Tabelle hin,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/52-1
+00:04:51.627 --> 00:04:55.271
+<v Christian Lang>letzten Endes ja. Also ich da jetzt,
+ich finde das alles gut,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/52-2
+00:04:55.271 --> 00:04:58.797
+<v Christian Lang>das holistische Bild vor allem natürlich.
+Wichtig ist auch,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/52-3
+00:04:58.797 --> 00:05:03.028
+<v Christian Lang>dass wir die Umsetzung auch entsprechend
+zeitnah an den Start bekommen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/51-0
+00:05:00.908 --> 00:05:01.508
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/54-0
+00:05:02.908 --> 00:05:06.841
+<v Matthias Max>Also, ich denke, es klingt erstmal,
+muss man unterscheiden: Laufzeit und</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/54-1
+00:05:06.841 --> 00:05:10.611
+<v Matthias Max>echter Aufwand. Ich glaube,
+der Aufwand hält sich noch in Grenzen und</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/54-2
+00:05:10.611 --> 00:05:15.244
+<v Matthias Max>ist ja auch abgesteckt über die Schätzung,
+Martin. Das ist, denke ich, so in Ordnung,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/53-0
+00:05:13.188 --> 00:05:13.588
+<v Christian Lang>Uh.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/54-3
+00:05:15.244 --> 00:05:18.153
+<v Matthias Max>aber dadurch,
+dass es halt immer wieder Blogger gibt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/54-4
+00:05:18.153 --> 00:05:19.068
+<v Matthias Max>zieht es sich so.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/56-0
+00:05:19.228 --> 00:05:23.252
+<v Matthias Max>ist dein Gefühl auch langwierig.
+Grundsätzlich haben wir ja gesagt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/56-1
+00:05:23.252 --> 00:05:26.802
+<v Matthias Max>wir wollen diese 2 Varianten prüfen,
+Stream und Datastream,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/56-2
+00:05:26.802 --> 00:05:29.465
+<v Matthias Max>'n Trigger haben wir jetzt nicht
+vorgesehen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/55-0
+00:05:27.428 --> 00:05:27.868
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/56-3
+00:05:29.465 --> 00:05:34.198
+<v Matthias Max>Da müsste man ja auch wieder schauen,
+wie kriege ich es vom Trigger hoch in die</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/56-4
+00:05:34.198 --> 00:05:34.908
+<v Matthias Max>Cloud, also.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/58-0
+00:05:35.308 --> 00:05:38.983
+<v Matthias Max>Soweit bin ich persönlich noch nicht,
+dass ich sag, wir brechen hier ab,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/58-1
+00:05:38.983 --> 00:05:42.608
+<v Matthias Max>das funktioniert alles nicht,
+weil erstens funktioniert der Stream echt</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/58-2
+00:05:42.608 --> 00:05:46.081
+<v Matthias Max>sauber und war schnell aufgesetzt.
+Der Knackpunkt hier wird ja sein,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/58-3
+00:05:46.081 --> 00:05:48.699
+<v Matthias Max>dass es recht teuer ist.
+Also eigentlich genau das,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/58-4
+00:05:48.699 --> 00:05:51.719
+<v Matthias Max>was du nicht willst.
+Und Datastream wäre ja die präferierte</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/57-0
+00:05:50.028 --> 00:05:50.508
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/58-5
+00:05:51.719 --> 00:05:53.984
+<v Matthias Max>Lösung,
+weil wir das schon haben und weil es</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/58-6
+00:05:53.984 --> 00:05:54.588
+<v Matthias Max>günstig ist.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/59-0
+00:05:54.908 --> 00:05:57.761
+<v Matthias Max>Das heißt,
+es muss jetzt gar irgendwann sich der</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/59-1
+00:05:57.761 --> 00:06:01.078
+<v Matthias Max>Knoten lösen, heute oder morgen,
+dass wir sagen, jawoll,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/59-2
+00:06:01.078 --> 00:06:05.560
+<v Matthias Max>auch in Workload Five funktioniert das
+mit Datastream und auch die Low Tests</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/59-3
+00:06:05.560 --> 00:06:08.820
+<v Matthias Max>funktionieren,
+dass wir diese 4 5000 Testdokumente auch</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/59-4
+00:06:08.820 --> 00:06:11.148
+<v Matthias Max>in der Cloud sehen. Das ist das Ziel für</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/60-0
+00:06:11.308 --> 00:06:13.228
+<v Matthias Max>Heute oder morgen aus meiner Sicht.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/64-0
+00:06:13.508 --> 00:06:16.849
+<v Christian Lang>Ja, genau, das ist genau komisch.
+Ich mein jetzt halt merken, O. K.,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/61-0
+00:06:14.148 --> 00:06:15.148
+<v Matthias Max>Und dann werden wir.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/64-1
+00:06:16.849 --> 00:06:19.802
+<v Christian Lang>es dauert zu lang oder Stream ist falsch
+oder wird zu teuer,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/64-2
+00:06:19.802 --> 00:06:23.868
+<v Christian Lang>dann sollten wir jetzt nicht irgendwie zu
+viel rein investieren und einfach merken,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/64-3
+00:06:23.868 --> 00:06:27.063
+<v Christian Lang>ja, Stream kostenlos pro Jahr, weiß ich,
+zweihunderttausend Euro.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/64-4
+00:06:27.063 --> 00:06:30.113
+<v Christian Lang>Ist irgendeine Tabelle,
+steht es halt in keinem Verhältnis für</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/62-0
+00:06:27.468 --> 00:06:28.028
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/64-5
+00:06:30.113 --> 00:06:30.548
+<v Christian Lang>mich, ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/67-0
+00:06:30.868 --> 00:06:36.625
+<v Christian Lang>Das muss man halt schon quasi auch in der
+Konzeptphase recht schnell erörtern und</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/63-0
+00:06:30.908 --> 00:06:31.548
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/65-0
+00:06:33.068 --> 00:06:33.708
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/66-0
+00:06:36.348 --> 00:06:37.108
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/67-1
+00:06:36.625 --> 00:06:37.748
+<v Christian Lang>merken, dann ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/68-0
+00:06:37.668 --> 00:06:40.418
+<v Martin Dittmann>Haben wir diese Kostenaussage denn schon?
+Also, wir sagen immer,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/68-1
+00:06:40.418 --> 00:06:43.633
+<v Martin Dittmann>Stream ist teuer und Matt hatte das ja
+auch als initiales Feedback gegeben.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/68-2
+00:06:43.633 --> 00:06:46.341
+<v Martin Dittmann>Aber jetzt konkret aus dem POC,
+kann man da irgendwas ableiten?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/68-3
+00:06:46.341 --> 00:06:48.964
+<v Martin Dittmann>Können wir irgendwo schon Kosten sehen
+nach einer Woche? Ich,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/68-4
+00:06:48.964 --> 00:06:50.148
+<v Martin Dittmann>wie läuft das da bei Stream?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/70-0
+00:06:50.428 --> 00:06:55.005
+<v Matthias Max>Das müssten wir mit Matt besprechen.
+Wir haben ja keinen Zugang zu Stream.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/70-1
+00:06:55.005 --> 00:06:58.118
+<v Matthias Max>Das wäre vielleicht eine Sache,
+die sinnvoll wäre,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/69-0
+00:06:55.908 --> 00:06:56.028
+<v Martin Dittmann>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/70-2
+00:06:58.118 --> 00:07:01.352
+<v Matthias Max>dass wir da selber drauf können und sowas
+zu prüfen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/70-3
+00:07:01.352 --> 00:07:04.708
+<v Matthias Max>Das beschleunigt auch den Fortgang und
+entlastet Matt.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/71-0
+00:07:05.948 --> 00:07:10.424
+<v Matthias Max>Und dann ist da jetzt bekannt geworden,
+dass Stream ausläuft Ende des Monats.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/71-1
+00:07:10.424 --> 00:07:14.555
+<v Matthias Max>Warum wir Stream ja in Abstimmung mit dir
+überhaupt reingenommen haben,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/71-2
+00:07:14.555 --> 00:07:17.481
+<v Matthias Max>war der Grund.
+Es ist schon im Einsatz für diese 5</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/71-3
+00:07:17.481 --> 00:07:20.292
+<v Matthias Max>Pretzel Datenbanken,
+aber es klingt jetzt ja so,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/71-4
+00:07:20.292 --> 00:07:24.308
+<v Matthias Max>als wäre würde man da gar nicht dran
+festhalten. Das heißt, streamen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/73-0
+00:07:25.228 --> 00:07:27.569
+<v Matthias Max>Müsste man wirklich jetzt prüfen und
+sagen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/73-1
+00:07:27.569 --> 00:07:31.293
+<v Matthias Max>was wird es für eine Tabelle kosten?
+Ist es dann billiger als mit dem</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/73-2
+00:07:31.293 --> 00:07:34.006
+<v Matthias Max>Lüskästchen, den ihr bisher härtet?
+Das würde ich,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/73-3
+00:07:34.006 --> 00:07:35.548
+<v Matthias Max>das können wir direkt machen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/72-0
+00:07:35.668 --> 00:07:36.228
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/74-0
+00:07:37.708 --> 00:07:39.940
+<v Matthias Max>Weil,
+wenn es dann teurer ist und so viel</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/74-1
+00:07:39.940 --> 00:07:43.871
+<v Matthias Max>kostet wie für alle 700 Tabellen,
+dann ist es aus meiner Sicht ökonomisch</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/74-2
+00:07:43.871 --> 00:07:44.668
+<v Matthias Max>ausgeschlossen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/78-0
+00:07:45.908 --> 00:07:48.092
+<v Christian Lang>Ja,
+also wir werden eine gute Lösung</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/78-1
+00:07:48.092 --> 00:07:51.102
+<v Christian Lang>hinbekommen,
+wo wir auch Polizei nach vorne haben,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/78-2
+00:07:51.102 --> 00:07:53.994
+<v Christian Lang>fair enough, alles coole,
+aber ich meine Stream,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/75-0
+00:07:51.868 --> 00:07:52.428
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/78-3
+00:07:53.994 --> 00:07:57.359
+<v Christian Lang>ich habe auch nur das Wording im Kopf,
+es ist teuer. Ja,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/76-0
+00:07:57.228 --> 00:07:57.908
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/78-4
+00:07:57.359 --> 00:07:59.188
+<v Christian Lang>muss man einfach schauen, also.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/77-0
+00:07:59.308 --> 00:07:59.708
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/79-0
+00:08:00.708 --> 00:08:01.828
+<v Christian Lang>Lass mal per se offen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/80-0
+00:08:00.828 --> 00:08:03.760
+<v Matthias Max>Also,
+dann wär da ein kleiner Task Zugriff uns</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/80-1
+00:08:03.760 --> 00:08:07.378
+<v Matthias Max>gewähren zu streamen,
+dass wir da selber kurz reinschauen</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/80-2
+00:08:07.378 --> 00:08:11.868
+<v Matthias Max>können in die Konsole und dann auch
+hoffentlich die Kosten da ableiten.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/83-0
+00:08:14.028 --> 00:08:16.721
+<v Matthias Max>Genau, Datastream, denk ich,
+ist immer klar.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/83-1
+00:08:16.721 --> 00:08:21.567
+<v Matthias Max>Da muss die Zahl der Durchstich kommen.
+In Workload 5 seh ich aber kein Problem,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/83-2
+00:08:21.567 --> 00:08:25.277
+<v Matthias Max>weil es funktioniert ja in 3.
+Warum soll es in 5 nicht gehen?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/81-0
+00:08:24.148 --> 00:08:24.708
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/83-3
+00:08:25.277 --> 00:08:28.268
+<v Matthias Max>Reine Cloud-Konfiguration darf kein
+Blocker sein.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/82-0
+00:08:26.148 --> 00:08:26.668
+<v Christian Lang>Yep.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/85-0
+00:08:29.148 --> 00:08:33.524
+<v Matthias Max>Und dann, wenn es dort funktioniert,
+hätten wir eh den präferierten Setup,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/85-1
+00:08:33.524 --> 00:08:36.908
+<v Matthias Max>nämlich Deckungsgleichheit zwischen
+Postpress und Oracle.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/84-0
+00:08:34.308 --> 00:08:34.868
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/86-0
+00:08:37.028 --> 00:08:38.388
+<v Christian Lang>Ja, genau, genau.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/89-0
+00:08:38.828 --> 00:08:42.616
+<v Matthias Max>Dann kommt im Prinzip nur noch die Frage,
+aber das gilt für alle</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/89-1
+00:08:42.616 --> 00:08:46.344
+<v Matthias Max>Synchronisationsmechanismen.
+Wie gehen wir mit Ausfällen dieser</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/89-2
+00:08:46.344 --> 00:08:49.607
+<v Matthias Max>Synchronisation um,
+gerade im Kontext dieser zu kleinen</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/87-0
+00:08:48.548 --> 00:08:49.188
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/89-3
+00:08:49.607 --> 00:08:52.812
+<v Matthias Max>Replication Slots?
+Das hatten wir jetzt auch als Thema</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/89-4
+00:08:52.812 --> 00:08:54.268
+<v Matthias Max>letzte Woche im Workshop.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/88-0
+00:08:53.508 --> 00:08:54.948
+<v Christian Lang>Yeah, yeah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/92-0
+00:08:55.468 --> 00:08:59.551
+<v Matthias Max>Eine Stunde ist halt wenig.
+Wenn du Netzwerk-Autage hast zwischen</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/92-1
+00:08:59.551 --> 00:09:03.263
+<v Matthias Max>Cloud und On-Crime oder auch innerhalb
+der Cloud mit Alloy,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/90-0
+00:09:00.748 --> 00:09:01.548
+<v Christian Lang>I.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/92-2
+00:09:03.263 --> 00:09:07.222
+<v Matthias Max>dann sind die Daten weg.
+Dann müssten wir von Hand nachher beim</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/92-3
+00:09:07.222 --> 00:09:10.686
+<v Matthias Max>Recovern schauen,
+wo haben wir denn den Faden verloren.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/91-0
+00:09:07.908 --> 00:09:08.148
+<v Christian Lang>R.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/92-4
+00:09:10.686 --> 00:09:12.108
+<v Matthias Max>Ich hätte jetzt gesagt.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/93-0
+00:09:12.508 --> 00:09:19.068
+<v Matthias Max>Der 1060 hat glaub ich 24 oder gar 48
+Stunden Replikationspuffer.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/94-0
+00:09:19.428 --> 00:09:20.068
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/95-0
+00:09:20.388 --> 00:09:24.484
+<v Matthias Max>Man könnte es nochmal scopen und einfach
+sagen: "Damit leben wir jetzt mit dem</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/95-1
+00:09:24.484 --> 00:09:26.869
+<v Matthias Max>Risiko.
+" Und erst wenn wir in diese Branches</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/95-2
+00:09:26.869 --> 00:09:29.306
+<v Matthias Max>reingehen,
+die wirklich nur eine Stunde haben,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/95-3
+00:09:29.306 --> 00:09:31.068
+<v Matthias Max>dann müssen wir uns darum kümmern.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/96-0
+00:09:32.268 --> 00:09:34.428
+<v Matthias Max>Ah, wie wäre da dein?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/99-0
+00:09:32.948 --> 00:09:35.159
+<v Christian Lang>Ja,
+aber Solution soll ja schon irgendwie</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/99-1
+00:09:35.159 --> 00:09:37.896
+<v Christian Lang>jetzt immer das das Worst Case neu
+abdeckeln. Also,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/99-2
+00:09:37.896 --> 00:09:42.212
+<v Christian Lang>wenn es keine große Niederlassung haben
+und aufgrund des Datenvolumens hast du da</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/97-0
+00:09:41.148 --> 00:09:41.628
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/99-3
+00:09:42.212 --> 00:09:45.791
+<v Christian Lang>'ne maximale Recovery Zeit von von einer
+Stunde, wo du Puffer hast.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/99-4
+00:09:45.791 --> 00:09:50.159
+<v Christian Lang>Würde ich jetzt schon 'ne Lösung ablehnen,
+weil ich mein, das eben richtig gesagt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/98-0
+00:09:48.908 --> 00:09:49.388
+<v Matthias Max>Yeah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/99-5
+00:09:50.159 --> 00:09:51.948
+<v Christian Lang>zwischen On-Prem und Cloud Outage.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/100-0
+00:09:55.308 --> 00:09:55.868
+<v Matthias Max>Genau.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/101-0
+00:10:00.508 --> 00:10:00.988
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/102-0
+00:10:04.268 --> 00:10:04.908
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/106-0
+00:10:04.948 --> 00:10:08.405
+<v Christian Lang>die Lösung per se nicht nutzbar,
+weil also ich sag mal so,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/103-0
+00:10:07.468 --> 00:10:07.868
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/106-1
+00:10:08.405 --> 00:10:11.099
+<v Christian Lang>12 Stunden würde ich als Minimum ansehen,
+ja,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/106-2
+00:10:11.099 --> 00:10:14.087
+<v Christian Lang>dass du da mal 12 Stunden keine
+Connectivity hast,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/106-3
+00:10:14.087 --> 00:10:17.954
+<v Christian Lang>aus welchen Gründen auch immer,
+weil wir auch den Use Case haben,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/104-0
+00:10:16.668 --> 00:10:17.068
+<v Martin Dittmann>Up.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/105-0
+00:10:17.228 --> 00:10:17.708
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/106-4
+00:10:17.954 --> 00:10:21.468
+<v Christian Lang>dass wir ja auch Wartungsfenster am
+Wochenende haben, also.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/107-0
+00:10:21.828 --> 00:10:24.785
+<v Christian Lang>Wenn wir jetzt gerade die Oracle
+runterfahren am Wochenende,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/107-1
+00:10:24.785 --> 00:10:27.548
+<v Christian Lang>dann ist da ja auch entsprechend eine
+Downtime am Start.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/108-0
+00:10:27.868 --> 00:10:28.548
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/111-0
+00:10:28.348 --> 00:10:30.745
+<v Christian Lang>Da will ich nicht bespielen,
+das ist mir rum egal,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/111-1
+00:10:30.745 --> 00:10:33.658
+<v Christian Lang>fällt mir gerade ein,
+aber also irgendwie 12 Stunden find ich</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/110-0
+00:10:32.908 --> 00:10:33.388
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/111-2
+00:10:33.658 --> 00:10:34.268
+<v Christian Lang>minimum also.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/114-0
+00:10:34.508 --> 00:10:39.106
+<v Matthias Max>Ja, ja, also das ist genau der Punkt,
+der jetzt sich noch aufgetan hat,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/112-0
+00:10:35.228 --> 00:10:35.708
+<v Christian Lang>Umm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/114-1
+00:10:39.106 --> 00:10:43.129
+<v Matthias Max>aber ist, glaube ich,
+relativ einfach auch zu lösen. Man muss,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/114-2
+00:10:43.129 --> 00:10:46.194
+<v Matthias Max>man braucht halt diesen eindeutigen
+Identifier.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/114-3
+00:10:46.194 --> 00:10:51.047
+<v Matthias Max>Wann wurde die der Record geändert?
+Das haben wir auch schon mal besprochen</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/114-4
+00:10:51.047 --> 00:10:52.068
+<v Matthias Max>mit der Youtime.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/115-0
+00:10:52.588 --> 00:10:56.134
+<v Matthias Max>Das würde ich jetzt einmal mit Joachim
+besprechen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/115-1
+00:10:56.134 --> 00:11:01.626
+<v Matthias Max>weil dann könnten wir uns da dranhängen
+und quasi bin im Recovery State sagen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/115-2
+00:11:01.626 --> 00:11:06.562
+<v Matthias Max>geh zurück zu diesem Datum und hol von
+Hand jetzt einmalig alle Sätze,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/115-3
+00:11:06.562 --> 00:11:08.508
+<v Matthias Max>die seither geändert wurden.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/118-0
+00:11:08.828 --> 00:11:13.251
+<v Matthias Max>und dann sind wir zurück im normalen C. D.
+D. C. D. C. Stream,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/118-1
+00:11:13.251 --> 00:11:17.392
+<v Matthias Max>so so wäre die Lösung quasi aus dem im
+Groben beschrieben.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/116-0
+00:11:15.068 --> 00:11:15.548
+<v Christian Lang>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/118-2
+00:11:17.392 --> 00:11:23.148
+<v Matthias Max>Aber muss man natürlich jetzt im Detail
+einmal skizzieren und mit dem Team refine</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/117-0
+00:11:23.628 --> 00:11:24.108
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/119-0
+00:11:24.188 --> 00:11:28.024
+<v Matthias Max>Und dann für die Umsetzung planen.
+Aber wie gesagt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/119-1
+00:11:28.024 --> 00:11:32.670
+<v Matthias Max>ich bin halt gerade im Go-Life-Modus und
+wenn wir jetzt sagen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/119-2
+00:11:32.670 --> 00:11:36.063
+<v Matthias Max>der Go-Life-Branch hat da 48 Stunden oder
+24,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/119-3
+00:11:36.063 --> 00:11:39.308
+<v Matthias Max>dann nimmt das ja ein bisschen Risiko
+raus.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/120-0
+00:11:39.668 --> 00:11:43.948
+<v Matthias Max>Dann müsste man diese Resilienz nicht
+direkt zum Jetzt haben.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/122-0
+00:11:44.348 --> 00:11:46.188
+<v Christian Lang>gut bei Schweden ist, meinst du das, oder?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/121-0
+00:11:45.068 --> 00:11:45.548
+<v Matthias Max>And.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/123-0
+00:11:47.788 --> 00:11:48.828
+<v Christian Lang>Oder was regt sie?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/124-0
+00:11:48.028 --> 00:11:52.728
+<v Matthias Max>Bei Schweden ist es, glaub auch nicht.
+Und wenn wir aber den anderen nehmen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/124-1
+00:11:52.728 --> 00:11:56.268
+<v Matthias Max>Groß-Gerau, der hat auch, glaub ich,
+mehr als die Stunde.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/126-0
+00:11:56.988 --> 00:12:00.427
+<v Martin Dittmann>Ja Christian, das kommt daher,
+der Gedanke war in dem Workshop in</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/125-0
+00:11:57.548 --> 00:11:58.068
+<v Matthias Max>This.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/126-1
+00:12:00.427 --> 00:12:03.084
+<v Martin Dittmann>Nürnberg,
+dass wir jetzt nicht mit dem Big Bang da</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/126-2
+00:12:03.084 --> 00:12:05.845
+<v Martin Dittmann>alle Niederlassungen direkt bei Dispo
+live schalten,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/126-3
+00:12:05.845 --> 00:12:09.961
+<v Martin Dittmann>sondern das leicht gestaffelt machen.
+Deswegen sagt Matthias gerade Groß-Gerau</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/126-4
+00:12:09.961 --> 00:12:11.628
+<v Martin Dittmann>auch in Kombination zu W. M. S.,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/128-0
+00:12:12.108 --> 00:12:14.593
+<v Martin Dittmann>Go live,
+weil da die Kollegen wohl dann in der</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/128-1
+00:12:14.593 --> 00:12:18.188
+<v Martin Dittmann>Vorholplanung die New Dispo gut
+gebrauchen können, laut Max Beisal.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/131-0
+00:12:18.348 --> 00:12:20.471
+<v Christian Lang>Ja,
+aber du musst ja die ganze Fläche</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/131-1
+00:12:20.471 --> 00:12:24.996
+<v Christian Lang>ausrollen. Wenn wir jetzt schon wissen,
+Borgholzhausen wird nicht funktionieren,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/129-0
+00:12:21.148 --> 00:12:21.708
+<v Martin Dittmann>Ja, klar.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/131-2
+00:12:24.996 --> 00:12:29.074
+<v Christian Lang>brauch ich gar nicht weiter gucken.
+Also Max kann das Ding nicht nutzen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/131-3
+00:12:29.074 --> 00:12:33.599
+<v Christian Lang>wenn wir es nicht in der in der breiten
+Masse ausrollen und von daher muss jeden</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/130-0
+00:12:32.348 --> 00:12:32.668
+<v Martin Dittmann>Ciao.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/131-4
+00:12:33.599 --> 00:12:34.828
+<v Christian Lang>Use Case abdeckeln und</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/132-0
+00:12:35.228 --> 00:12:35.948
+<v Christian Lang>Ähm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/133-0
+00:12:37.148 --> 00:12:39.780
+<v Christian Lang>Groß-Gerau ist auch nicht klein,
+aber beileibe nicht so große</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/133-1
+00:12:39.780 --> 00:12:42.666
+<v Christian Lang>Borgholzhausen. Muss man gucken,
+aber wir können jetzt nicht sagen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/133-2
+00:12:42.666 --> 00:12:46.018
+<v Christian Lang>jetzt gehen wir mit dem ersten Wurf mal
+live und wissen aber eigentlich schon,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/133-3
+00:12:46.018 --> 00:12:48.098
+<v Christian Lang>dass es nicht für die Großen
+funktionieren wird,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/133-4
+00:12:48.098 --> 00:12:51.408
+<v Christian Lang>weil da habe ich ja noch mal Aufwand,
+noch mal Umstellung unter Umständen und</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/133-5
+00:12:51.408 --> 00:12:53.148
+<v Christian Lang>vielleicht auch Waste the Time und Money.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/134-0
+00:12:53.948 --> 00:12:56.984
+<v Christian Lang>Was ich jetzt schon irgendwie abhaken
+könnte, die Lösung,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/134-1
+00:12:56.984 --> 00:12:59.548
+<v Christian Lang>die wir da jetzt sehen,
+die muss überall laufen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/135-0
+00:13:00.668 --> 00:13:04.790
+<v Matthias Max>Mhm, es ist nicht so,
+dass wir dann was ändern müssen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/135-1
+00:13:04.790 --> 00:13:09.285
+<v Matthias Max>Das ist was Zusätzliches.
+Also hier brauchen wir aber schon</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/135-2
+00:13:09.285 --> 00:13:14.381
+<v Matthias Max>Abstimmungsklarheit meiner Meinung nach,
+weil Max B. sagt jetzt ja,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/135-3
+00:13:14.381 --> 00:13:16.628
+<v Matthias Max>Big Bang ist ihm auch zu heiß.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/136-0
+00:13:17.548 --> 00:13:19.108
+<v Matthias Max>Beginnen mit einem Branch live.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/138-0
+00:13:21.388 --> 00:13:24.468
+<v Matthias Max>Ist es das gemeinsame Verständnis oder
+nicht?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/137-0
+00:13:21.548 --> 00:13:22.028
+<v Christian Lang>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/143-0
+00:13:24.588 --> 00:13:27.853
+<v Christian Lang>Ja, ja, also klar,
+wir werden jetzt immer die Dispo an einem,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/139-0
+00:13:25.908 --> 00:13:26.708
+<v Matthias Max>OK.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/143-1
+00:13:27.853 --> 00:13:31.750
+<v Christian Lang>sagen wir, Standort aufschalten.
+Das wird dann Groß-Gerau sein oder sonst</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/140-0
+00:13:29.468 --> 00:13:30.108
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/143-2
+00:13:31.750 --> 00:13:35.384
+<v Christian Lang>was, ist ja erstmal Wumpe,
+aber da hast du dann die Connectivity auf</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/141-0
+00:13:32.428 --> 00:13:32.908
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/143-3
+00:13:35.384 --> 00:13:38.912
+<v Christian Lang>Alt-Welt und gut ist, ja.
+Trotzdem will er es ja auch dann für die</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/142-0
+00:13:35.668 --> 00:13:36.268
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/143-4
+00:13:38.912 --> 00:13:40.228
+<v Christian Lang>Gesamtorga ausrollen, ne.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/144-0
+00:13:40.748 --> 00:13:44.518
+<v Matthias Max>Ja, das ist das passt. Ich,
+ich hab halt immer nur 2 Hüte auf.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/144-1
+00:13:44.518 --> 00:13:49.066
+<v Matthias Max>Jetzt gerade hab ich den Hut auf,
+was ist bis zum ersten Go Live des ersten</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/144-2
+00:13:49.066 --> 00:13:52.537
+<v Matthias Max>Brands ist schaffbar und wenn da was
+descope werden kann,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/144-3
+00:13:52.537 --> 00:13:55.708
+<v Matthias Max>würde ich das präferieren.
+Dann ist es ohnehin schon</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/145-0
+00:13:55.868 --> 00:13:59.707
+<v Matthias Max>Viel Arbeit und dann ziehen wir das
+einfach nach, wenn wir wissen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/145-1
+00:13:59.707 --> 00:14:04.348
+<v Matthias Max>jetzt kommen noch mal 3 Brandes oder 10
+oder alle 64, aber dass es da sein muss.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/146-0
+00:14:02.748 --> 00:14:06.086
+<v Christian Lang>Ja, wenn es, wenn es denn geht.
+Also ist halt das Ding,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/146-1
+00:14:06.086 --> 00:14:10.021
+<v Christian Lang>wenn wir jetzt schon merken,
+die technische Lösung ist nicht das,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/146-2
+00:14:10.021 --> 00:14:11.868
+<v Christian Lang>was uns da nachhaltig, sag mal.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/147-0
+00:14:13.628 --> 00:14:16.663
+<v Christian Lang>Bestätigen wir in der Lösung, ja,
+dann brauch ich da jetzt nicht weiter</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/147-1
+00:14:16.663 --> 00:14:19.191
+<v Christian Lang>investigieren. Also,
+wenn wir jetzt Stream oder Data Stream</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/147-2
+00:14:19.191 --> 00:14:22.183
+<v Christian Lang>anschaffen und wissen genau,
+das wird aber nicht funktionieren für Use</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/147-3
+00:14:22.183 --> 00:14:24.417
+<v Christian Lang>Case Borgelshausen,
+brauch ich da jetzt nicht weiter</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/147-4
+00:14:24.417 --> 00:14:26.735
+<v Christian Lang>wurschteln, ja,
+weil wir können jetzt nicht mit Stream</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/147-5
+00:14:26.735 --> 00:14:28.716
+<v Christian Lang>oder Data Stream live gehen für,
+was weiß ich,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/147-6
+00:14:28.716 --> 00:14:32.213
+<v Christian Lang>10% der Niederlassung und dann sagen, ja,
+jetzt müssen wir noch mal an an 'n Tisch</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/147-7
+00:14:32.213 --> 00:14:32.508
+<v Christian Lang>zurück.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/148-0
+00:14:32.908 --> 00:14:36.268
+<v Christian Lang>Um Data Stream 3 zu initiieren, ne?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/149-0
+00:14:35.948 --> 00:14:38.268
+<v Matthias Max>Mhm, ich verstehe also.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/150-0
+00:14:39.788 --> 00:14:43.474
+<v Matthias Max>Ich sehe nicht,
+dass wir ganz abkommen von einem CDC,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/150-1
+00:14:43.474 --> 00:14:47.228
+<v Matthias Max>weil wir müssen ja irgendwie die Änderung
+hochkriegen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/152-0
+00:14:49.268 --> 00:14:52.893
+<v Matthias Max>Es ist halt so,
+dass in ein paar Standorten das nur eine</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/152-1
+00:14:52.893 --> 00:14:55.882
+<v Matthias Max>Stunde ist. Das heißt,
+in dem Ausfallszenario,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/152-2
+00:14:55.882 --> 00:15:00.779
+<v Matthias Max>was ja auch nicht der tägliche Umstand
+ist, brauchen wir eine Backup-Lösung,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/152-3
+00:15:00.779 --> 00:15:05.548
+<v Matthias Max>die dann recovered und zurückgeht in C. D.
+C., sobald alles recovered ist.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/151-0
+00:15:04.508 --> 00:15:04.708
+<v Christian Lang>Hey.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/153-0
+00:15:05.708 --> 00:15:11.314
+<v Matthias Max>Das ist on top eine Absicherung,
+aber jetzt zu sagen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/153-1
+00:15:11.314 --> 00:15:14.428
+<v Matthias Max>wir kommen ganz weg von C.D.C.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/154-0
+00:15:16.028 --> 00:15:20.357
+<v Matthias Max>Das sehe ich hier eigentlich nicht,
+weil was gibt es denn für Alternativen?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/154-1
+00:15:20.357 --> 00:15:22.748
+<v Matthias Max>Dann gibt es immer nur Pull aus der Cloud.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/155-0
+00:15:23.868 --> 00:15:26.828
+<v Matthias Max>Das ist schwierig, time-basiert.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/158-0
+00:15:25.708 --> 00:15:27.457
+<v Christian Lang>Nee,
+also hier an sich können wir auch gerne</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/158-1
+00:15:27.457 --> 00:15:30.216
+<v Christian Lang>lassen, aber das muss halt das Tool sein,
+was halt auch für die großen</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/156-0
+00:15:28.268 --> 00:15:28.748
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/158-2
+00:15:30.216 --> 00:15:32.508
+<v Christian Lang>Niederlassung funktioniert.
+Das würde ich damit sagen, ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/157-0
+00:15:32.828 --> 00:15:33.388
+<v Matthias Max>Yeah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/161-0
+00:15:36.508 --> 00:15:40.195
+<v Martin Dittmann>Matthias, mit Blick auf die Zeit,
+du wolltest glaub voll locker anzeigen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/159-0
+00:15:37.948 --> 00:15:38.508
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/160-0
+00:15:40.028 --> 00:15:41.468
+<v Matthias Max>Ja, lass uns das kurz machen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/161-1
+00:15:40.195 --> 00:15:42.188
+<v Martin Dittmann>Christian, hast du noch 10 Minuten oder?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/162-0
+00:15:45.228 --> 00:15:46.428
+<v Christian Lang>Yeah, yeah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/163-0
+00:15:47.308 --> 00:15:47.628
+<v Matthias Max>Pille.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/166-0
+00:15:47.948 --> 00:15:50.388
+<v Martin Dittmann>Ich meine,
+wir haben das den Termin heute Nachmittag.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/166-1
+00:15:50.388 --> 00:15:53.597
+<v Martin Dittmann>Matthias, wir nehmen das noch mal mit,
+besprechen das da in der Runde.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/164-0
+00:15:53.388 --> 00:15:53.948
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/166-2
+00:15:53.597 --> 00:15:56.805
+<v Martin Dittmann>Da ist Kosten für Streaming,
+als auch dann Replication Slots und diese</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/166-3
+00:15:56.805 --> 00:15:57.708
+<v Martin Dittmann>Recovery-Geschichte.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/165-0
+00:15:58.988 --> 00:15:59.468
+<v Matthias Max>Yeah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/167-0
+00:15:59.508 --> 00:16:00.988
+<v Martin Dittmann>Dann lass zu Cloud Voloc wechseln.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/168-0
+00:16:01.548 --> 00:16:02.068
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/169-0
+00:16:02.588 --> 00:16:05.948
+<v Matthias Max>Yo, so.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/170-0
+00:16:07.308 --> 00:16:12.313
+<v Matthias Max>Also,
+Cloud Verlock ist ja jetzt die Änderung</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/170-1
+00:16:12.313 --> 00:16:12.748
+<v Matthias Max>via.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/172-0
+00:16:15.548 --> 00:16:21.496
+<v Matthias Max>bauen die komplett ausfallsichere Lösung.
+Und zwar ist damit verbunden,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/171-0
+00:16:19.868 --> 00:16:20.348
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/172-1
+00:16:21.496 --> 00:16:25.708
+<v Matthias Max>dass wir weggehen von der synchronen
+Verarbeitung.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/174-0
+00:16:27.068 --> 00:16:31.516
+<v Matthias Max>Das war letztendlich der, ja,
+vielleicht Trugschluss,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/174-1
+00:16:31.516 --> 00:16:38.105
+<v Matthias Max>dass das so 1 zu 1 umgesetzt werden kann
+wie mit Python. Das ist halt nicht so.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/174-2
+00:16:38.105 --> 00:16:43.212
+<v Matthias Max>distributierte, ja,
+distributierten Charakter der Lösung gibt</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/174-3
+00:16:43.212 --> 00:16:46.588
+<v Matthias Max>es halt Netzwerke dazwischen und Ausfall.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/177-0
+00:16:46.748 --> 00:16:50.568
+<v Matthias Max>Möglichkeiten,
+die es on on Prime in einem Thread nicht</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/173-0
+00:16:48.188 --> 00:16:48.748
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/177-1
+00:16:50.568 --> 00:16:55.412
+<v Matthias Max>gibt. So, deshalb wird aus synchron,
+asynchron. Was heißt das konkret?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/175-0
+00:16:50.908 --> 00:16:51.388
+<v Christian Lang>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/177-2
+00:16:55.412 --> 00:16:58.686
+<v Matthias Max>Es bleibt dabei,
+dass 'n 'n Cronjob oben läuft.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/177-3
+00:16:58.686 --> 00:17:02.028
+<v Matthias Max>Der läuft jetzt allerdings nicht mehr
+minütlich.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/180-0
+00:17:02.508 --> 00:17:07.891
+<v Matthias Max>sondern viel schneller alle 5 Sekunden
+zum Beispiel, guck,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/176-0
+00:17:02.588 --> 00:17:03.148
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/180-1
+00:17:07.891 --> 00:17:15.007
+<v Matthias Max>gibt es neue Dinge zu verarbeiten und
+pack diese Tasks, haben wir es genannt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/178-0
+00:17:10.428 --> 00:17:10.988
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/180-2
+00:17:15.007 --> 00:17:18.108
+<v Matthias Max>erst mal in einen in einen Puffer.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/179-0
+00:17:18.668 --> 00:17:19.228
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/183-0
+00:17:19.308 --> 00:17:23.337
+<v Matthias Max>Und das ist quasi dieser,
+dieser zweite Schritt hier,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/181-0
+00:17:23.228 --> 00:17:23.948
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/183-1
+00:17:23.337 --> 00:17:27.365
+<v Matthias Max>dieses Config-Backet,
+und dann läuft in der in der Q,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/183-2
+00:17:27.365 --> 00:17:31.766
+<v Matthias Max>laufen diese Tasks auf. So,
+und die können jetzt asynchron</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/183-3
+00:17:31.766 --> 00:17:35.868
+<v Matthias Max>verarbeitet werden und puffern damit das
+Aufkommen ab.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/182-0
+00:17:33.868 --> 00:17:34.308
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/186-0
+00:17:35.948 --> 00:17:38.708
+<v Matthias Max>Das heißt,
+wenn ich morgens eine Rushhour hab oder</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/186-1
+00:17:38.708 --> 00:17:41.738
+<v Matthias Max>an Ostern mehr hab,
+läuft die Cue ein bisschen voll als</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/184-0
+00:17:40.028 --> 00:17:40.668
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/186-2
+00:17:41.738 --> 00:17:46.228
+<v Matthias Max>Puffer und der Uploadservice rödelt wie
+blöd, solange bis die Cue wieder leer ist.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/185-0
+00:17:42.508 --> 00:17:43.068
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/187-0
+00:17:47.628 --> 00:17:48.148
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/191-0
+00:17:47.868 --> 00:17:52.625
+<v Matthias Max>Das ist die massive Änderung.
+Gleichzeitig gibt es hier drüben eine</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/191-1
+00:17:52.625 --> 00:17:58.011
+<v Matthias Max>eine Fail Cute, eine fehlgeschlagene.
+Wenn zum Beispiel Markant nicht da ist</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/188-0
+00:17:53.628 --> 00:17:54.108
+<v Christian Lang>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/189-0
+00:17:57.708 --> 00:17:58.108
+<v Christian Lang>Yeah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/191-2
+00:17:58.011 --> 00:18:01.228
+<v Matthias Max>oder Cloud for Lock,
+gehen die dort rein und.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/190-0
+00:17:59.388 --> 00:17:59.948
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/195-0
+00:18:02.428 --> 00:18:06.164
+<v Matthias Max>Werden gesammelt,
+so lang bis die Plattform zum Beispiel</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/192-0
+00:18:03.468 --> 00:18:04.028
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/195-1
+00:18:06.164 --> 00:18:11.146
+<v Matthias Max>wieder da ist. Aber hier ist wichtig,
+die neu ankommenden Tasks haben immer</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/193-0
+00:18:10.588 --> 00:18:11.148
+<v Christian Lang>Yeah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/195-2
+00:18:11.146 --> 00:18:14.226
+<v Matthias Max>Prio. Das heißt,
+wenn jetzt mal Countdown ist,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/195-3
+00:18:14.226 --> 00:18:18.748
+<v Matthias Max>gehen Cloud for Lock Tasks trotzdem raus
+und Trucks da drauf warten.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/194-0
+00:18:16.428 --> 00:18:17.148
+<v Christian Lang>Mhm, bitte.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/196-0
+00:18:19.388 --> 00:18:20.908
+<v Christian Lang>Ja, ja, OK, verstanden.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/197-0
+00:18:20.028 --> 00:18:23.732
+<v Matthias Max>Das ist die massive Änderung und
+letztendlich ist hier die Logik,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/197-1
+00:18:23.732 --> 00:18:26.593
+<v Matthias Max>wie wir Daten besorgen. Links,
+die grünen Quellen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/197-2
+00:18:26.593 --> 00:18:28.108
+<v Matthias Max>dieses ist alles identisch.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/198-0
+00:18:28.428 --> 00:18:29.148
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/200-0
+00:18:29.228 --> 00:18:34.722
+<v Matthias Max>Daran hat sich ja nichts geändert und
+auch der Weg bis hierhin war ja wertvoll.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/200-1
+00:18:34.722 --> 00:18:39.322
+<v Matthias Max>Diese ganzen Zugriffe auf Files über S. N.
+B. wurde ja erarbeitet,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/200-2
+00:18:39.322 --> 00:18:42.755
+<v Matthias Max>Digilis und so weiter.
+Also viel Learnings dabei,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/199-0
+00:18:40.828 --> 00:18:41.308
+<v Christian Lang>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/200-3
+00:18:42.755 --> 00:18:46.188
+<v Matthias Max>die jetzt hier in die saubere Lösung
+reinfließen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/202-0
+00:18:46.908 --> 00:18:52.103
+<v Matthias Max>Und dann gibt es letztendlich eigentlich
+so, wie du es immer gesagt hast,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/202-1
+00:18:52.103 --> 00:18:55.261
+<v Matthias Max>halt 2 If Then Else.
+Es ist nicht so simpel,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/202-2
+00:18:55.261 --> 00:19:00.806
+<v Matthias Max>aber in dem gleichen Upload Service
+bedienen wir einfach beide Output Targets.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/201-0
+00:18:58.988 --> 00:18:59.788
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/202-3
+00:19:00.806 --> 00:19:01.508
+<v Matthias Max>That's it.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/203-0
+00:19:02.188 --> 00:19:03.908
+<v Christian Lang>Ja, find ich gut, find ich gut.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/207-0
+00:19:03.308 --> 00:19:06.735
+<v Matthias Max>So,
+Download ist eigentlich deckungsgleich.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/204-0
+00:19:06.428 --> 00:19:06.748
+<v Christian Lang>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/207-1
+00:19:06.735 --> 00:19:12.108
+<v Matthias Max>Der macht das gleich View rein und von
+dort wird dann runtergespult.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/205-0
+00:19:09.948 --> 00:19:10.428
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/206-0
+00:19:11.308 --> 00:19:11.788
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/211-0
+00:19:12.668 --> 00:19:15.700
+<v Martin Dittmann>Genau, Download Matthias,
+da würde ich aber gerne ergänzen.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/211-1
+00:19:15.700 --> 00:19:19.388
+<v Martin Dittmann>Wir hatten gestern 'n Techcall mit den
+Macant Kollegen und es gibt keine</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/208-0
+00:19:17.868 --> 00:19:18.348
+<v Christian Lang>Hey.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/209-0
+00:19:18.708 --> 00:19:19.308
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/211-2
+00:19:19.388 --> 00:19:23.025
+<v Martin Dittmann>dedizierten Endpunkt für den Download der
+Proof of Delivery bei Macant,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/211-3
+00:19:23.025 --> 00:19:26.915
+<v Martin Dittmann>sondern aktuell ist das Setup wohl so,
+dass sie von Macant an Cloud for Lock</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/210-0
+00:19:23.868 --> 00:19:24.308
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/211-4
+00:19:26.915 --> 00:19:29.188
+<v Martin Dittmann>gesendet werden und man sie dort
+runterlädt.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/212-0
+00:19:30.988 --> 00:19:34.825
+<v Martin Dittmann>Das war so bisher keinem klar und sie
+arbeiten auf Markant Seite an einem</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/212-1
+00:19:34.825 --> 00:19:38.507
+<v Martin Dittmann>dedizierten Endpunkt für den Download.
+Sie haben aber jetzt von Wochen</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/212-2
+00:19:38.507 --> 00:19:40.788
+<v Martin Dittmann>gesprochen,
+bis der wirklich verfügbar ist.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/213-0
+00:19:41.828 --> 00:19:45.270
+<v Martin Dittmann>Jetzt muss man sich entscheiden,
+geht man auf den quasi aktuellen Prozess,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/213-1
+00:19:45.270 --> 00:19:47.748
+<v Martin Dittmann>der dann in sechs Wochen eher der
+Legacy-Prozess ist.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/215-0
+00:19:48.748 --> 00:19:51.825
+<v Martin Dittmann>Oder passt es vielleicht vom Zeitablauf
+her, dass man dann,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/214-0
+00:19:48.908 --> 00:19:49.508
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/215-1
+00:19:51.825 --> 00:19:55.159
+<v Martin Dittmann>sobald dieser Download-Endpunkt bei
+Markant zur Verfügung steht,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/215-2
+00:19:55.159 --> 00:19:56.748
+<v Martin Dittmann>ihn dann auch initial anbindet?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/216-0
+00:19:57.788 --> 00:20:00.028
+<v Martin Dittmann>das muss,
+das muss man jetzt noch entscheiden,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/216-1
+00:20:00.028 --> 00:20:03.698
+<v Martin Dittmann>muss man auch einmal noch mal bewerten,
+was das jetzt bedeutet fürs Projekt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/216-2
+00:20:03.698 --> 00:20:07.272
+<v Martin Dittmann>aber die Info gab es jetzt gestern,
+hatte ich so vorher noch nicht gehört,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/216-3
+00:20:07.272 --> 00:20:09.464
+<v Martin Dittmann>jetzt bin ich nicht von Anfang an im
+Projekt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/216-4
+00:20:09.464 --> 00:20:13.228
+<v Martin Dittmann>aber er hatte jetzt auch nicht rausgehört,
+dass das irgendwem bewusst war. Ja,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/217-0
+00:20:13.268 --> 00:20:16.668
+<v Christian Lang>Du kannst ja über die Bestands Download
+Funktion wahrscheinlich runter, oder?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/218-0
+00:20:17.628 --> 00:20:18.748
+<v Christian Lang>Mach dir noch einfacher.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/219-0
+00:20:17.948 --> 00:20:20.028
+<v Martin Dittmann>Gesagt, sag noch mal.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/221-0
+00:20:20.548 --> 00:20:24.099
+<v Christian Lang>Dann kommt es ja über die Bestands
+Download Funktion von Cloud Verlock mit</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/221-1
+00:20:24.099 --> 00:20:25.708
+<v Christian Lang>runter macht es ja noch einfacher.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/225-0
+00:20:26.108 --> 00:20:28.870
+<v Martin Dittmann>So sollte man meinen,
+man müsste jetzt dann aber auf Cloud for</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/225-1
+00:20:28.870 --> 00:20:32.200
+<v Martin Dittmann>Lock natürlich schauen, für welche G.L.M.
+s lad ich die Dinger denn runter,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/225-2
+00:20:32.200 --> 00:20:34.260
+<v Martin Dittmann>weil die anders,
+die die sind anders geflaggt,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/225-3
+00:20:34.260 --> 00:20:37.416
+<v Martin Dittmann>also die sind jetzt einfach nicht in,
+die sind nicht im gleichen Bucket</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/222-0
+00:20:35.228 --> 00:20:35.788
+<v Christian Lang>Yeah, yeah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/225-4
+00:20:37.416 --> 00:20:39.519
+<v Martin Dittmann>irgendwie drin, im gleichen Ding. Ja,
+das muss,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/223-0
+00:20:38.268 --> 00:20:38.668
+<v Christian Lang>Yep.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/225-5
+00:20:39.519 --> 00:20:42.719
+<v Martin Dittmann>das muss man sich jetzt halt einmal
+anschauen, gerade hat man die A.P.I.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/225-6
+00:20:42.719 --> 00:20:45.348
+<v Martin Dittmann>Doku sich angeguckt und dachte so, hä,
+wo ist denn hier der</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/229-0
+00:20:45.428 --> 00:20:49.418
+<v Martin Dittmann>Download für den Proof of Delivery. Ja,
+von daher das vielleicht noch als</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/224-0
+00:20:47.548 --> 00:20:48.108
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/229-1
+00:20:49.418 --> 00:20:52.599
+<v Martin Dittmann>Ergänzung. Klar,
+Zielbild ist aber exakt das, was es hier,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/229-2
+00:20:52.599 --> 00:20:56.427
+<v Martin Dittmann>was, was hier dargestellt ist.
+Das mal kurz als Ergänzung von gestern.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/227-0
+00:20:54.308 --> 00:20:56.668
+<v Christian Lang>Mhm, OK, OK, OK.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/229-3
+00:20:56.427 --> 00:20:56.588
+<v Martin Dittmann>Ja,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/228-0
+00:20:57.748 --> 00:20:58.188
+<v Christian Lang>Verstanden.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/234-0
+00:20:59.548 --> 00:21:04.509
+<v Matthias Max>Ja, muss man jetzt halt auflösen. Logisch,
+im Ende uns interessiert es ja nicht,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/230-0
+00:21:01.468 --> 00:21:01.868
+<v Martin Dittmann>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/234-1
+00:21:04.509 --> 00:21:09.348
+<v Matthias Max>welche Plattform es jetzt war. Hauptsache,
+es ist erfolgreich ausgeliefert und</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/231-0
+00:21:08.428 --> 00:21:08.828
+<v Christian Lang>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/234-2
+00:21:09.348 --> 00:21:12.594
+<v Matthias Max>downgeloadet.
+Aber diesen logischen Rückschluss muss</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/232-0
+00:21:10.708 --> 00:21:11.308
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/234-3
+00:21:12.594 --> 00:21:14.308
+<v Matthias Max>man einmal kurz durchdenken.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/233-0
+00:21:14.268 --> 00:21:15.588
+<v Christian Lang>Yep, OK.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/237-0
+00:21:17.868 --> 00:21:20.188
+<v Matthias Max>Genau, gut.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/235-0
+00:21:17.948 --> 00:21:18.428
+<v Christian Lang>Who?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/236-0
+00:21:19.388 --> 00:21:19.788
+<v Martin Dittmann>So.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/239-0
+00:21:21.628 --> 00:21:23.148
+<v Matthias Max>Hatten wir sonst noch was, Martin?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/242-0
+00:21:24.348 --> 00:21:26.535
+<v Martin Dittmann>Aber wir hatten noch das Thema,
+aber ich weiß nicht,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/242-1
+00:21:26.535 --> 00:21:28.638
+<v Martin Dittmann>ob es jetzt zu weit geht. Hier T&amp;
+A-Shipments,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/240-0
+00:21:28.588 --> 00:21:29.068
+<v Matthias Max>Ah.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/242-2
+00:21:28.638 --> 00:21:30.866
+<v Martin Dittmann>da hast du jetzt gleich eine Session mit
+Joachim. Ja,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/242-3
+00:21:30.866 --> 00:21:32.268
+<v Martin Dittmann>das Thema ist dann doch wieder ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/241-0
+00:21:32.028 --> 00:21:32.748
+<v Matthias Max>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/244-0
+00:21:33.788 --> 00:21:37.138
+<v Martin Dittmann>Was umfangreicher als als man man denkt,
+wenn man es von der Business Seite sich</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/243-0
+00:21:34.188 --> 00:21:34.668
+<v Matthias Max>Ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/244-1
+00:21:37.138 --> 00:21:37.468
+<v Martin Dittmann>anguckt.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/245-0
+00:21:38.588 --> 00:21:39.028
+<v Matthias Max>Yep.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/246-0
+00:21:39.388 --> 00:21:40.927
+<v Martin Dittmann>Aber ich weiß nicht,
+ob die Zeit jetzt reicht,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/246-1
+00:21:40.927 --> 00:21:42.727
+<v Martin Dittmann>das noch kurz anzuschneiden. Matthias,
+musst du sagen,</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/247-0
+00:21:42.268 --> 00:21:46.268
+<v Christian Lang>Ich muss leider weiter. Also,
+wir geben einen anderen Termin dafür, ne?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/249-0
+00:21:42.508 --> 00:21:47.052
+<v Matthias Max>Ist glaub ich zu viel. Ja,
+ich hab da auch selber zu wenig Klarheit.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/246-2
+00:21:42.727 --> 00:21:43.708
+<v Martin Dittmann>wenn du da gerade mitschlägst.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/248-0
+00:21:45.948 --> 00:21:46.828
+<v Martin Dittmann>Ja, ja.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/249-1
+00:21:47.052 --> 00:21:51.068
+<v Matthias Max>Ich würd gern einmal von Joachim hören,
+was da schon da ist.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/250-0
+00:21:52.188 --> 00:21:52.708
+<v Christian Lang>Mhm.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/251-0
+00:21:52.748 --> 00:21:53.708
+<v Martin Dittmann>Ja, gut.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/252-0
+00:21:54.348 --> 00:21:55.748
+<v Christian Lang>Gut, finde ich cool. Ja, passt.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/253-0
+00:21:55.788 --> 00:21:56.508
+<v Matthias Max>Alles klar.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/254-0
+00:21:56.948 --> 00:21:57.468
+<v Christian Lang>Perfect.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/255-0
+00:21:58.268 --> 00:21:59.708
+<v Matthias Max>Gut, dann.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/257-0
+00:21:58.268 --> 00:22:01.326
+<v Martin Dittmann>Dann, Christian,
+vielen Dank und wir geben den Update</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/256-0
+00:21:59.868 --> 00:22:00.588
+<v Christian Lang>Danke euch.</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/257-1
+00:22:01.326 --> 00:22:01.948
+<v Martin Dittmann>später, ne?</v>
+
+c4438f43-48ff-4571-9093-c30cea54b603/260-0
+00:22:01.708 --> 00:22:02.828
+<v Christian Lang>Danke. Ciao, ciao.</v>
