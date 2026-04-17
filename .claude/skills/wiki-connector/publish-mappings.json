@@ -517,6 +517,27 @@
         },
         "notes": "Step 1 sub-page of Oracle Testing project - assessment and PO proposal"
       }
+    },
+    {
+      "id": "project-golive-1060-oracle",
+      "source": "02_Explorations/2026-04-17_New_Dispo_GoLive_1060_Oracle/new-dispo-golive-1060-oracle.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/GoLive-1060-Oracle.md",
+      "description": "GoLive 1060 (Oracle) - Architecture, infrastructure, environments, and ownership overview",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "excludeSections": ["Related Resources"],
+        "mermaidSyntax": "azure-devops",
+        "notes": "GoLive 1060 stakeholder alignment document - exclude Section 11 (Related Resources) which contains internal file paths. Mermaid blocks must use :::mermaid/:::: syntax for Azure DevOps wiki."
+      }
     }
   ]
 }

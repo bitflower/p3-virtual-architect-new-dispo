@@ -1,0 +1,441 @@
+Received: from VI2P189MB3683.EURP189.PROD.OUTLOOK.COM (2603:10a6:800:297::21)
+ by DB9P189MB1931.EURP189.PROD.OUTLOOK.COM with HTTPS; Mon, 30 Mar 2026
+ 09:48:17 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=KZ7qK957PFKq7Z+kxG/qKgpKClFjGI10bjVN6lGUx/ushhswFXx6dbHsSk4eJ76Tkk3QAMR+mgRQi9ZMJduobgFaBSXLSKzTx/vnJUeWEJZSDslmpkPMVVD3uwgUR427LhO2k2V6o8HRDx43Dj6eHHSSsrcUG4SRYpXNFZbibsIuXu/WsTTnKFFr2b6hJ6DQ9BP3Lm7oUb+JRoIHPGDVfKzqkNoq5dlVapqOC4L1+hVhKOobvG0qQLMZFVauAgoTOzLfOZhfEIJIZvsjTM5vnUHebpNEduuvNnLqXh6qYvMvCq6vzJEsYHYX3nl9wig03MH383PaZ1Yx5QUvnUqgYg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=IiaUhVlJk3Wh3p9PcgNj5q8S4qSJ634Z1fxJ1T56g/M=;
+ b=YJiFZwzz4L8OAMpnObuC1meQnHTQNpkY5BJ+tO3gqN1e1ud8hW468/h+4b0NZRl+neWGokteX51dSB7ELs0jmGoAxCk9fmKeWu9d6Z+FVJu3rEmNG/P6uV8G9d0UQ3cbTicC3uj/yRYr7Stzm664nQ5Ja3gy39IzZwBYOTVgalMfmZHB6uWaesMPFn/5fhhsK43jitVpU5Jo7fBUL2ys+d0FTVoIfnWYbp3Y83mrSKjCtnOxX+/67eY15cUzhmiEWWhWRnM9TA0sqW9hbUd5crz2VqAqvW7b+fXQF2Q2vy0ZoLRxEUpPq7JecjdNyTKjDoXJJESdSMnmlfZyq7CjqA==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 52.101.169.27) smtp.rcpttodomain=p3-group.com smtp.mailfrom=cal-consult.de;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=cal-consult.de;
+ dkim=pass (signature was verified) header.d=nagelgroup.onmicrosoft.com;
+ arc=pass (0 oda=1 ltdi=1 spf=[1,1,smtp.mailfrom=cal-consult.de]
+ dkim=[1,1,header.d=cal-consult.de] dmarc=[1,1,header.from=cal-consult.de])
+Received: from CWLP265CA0498.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:18b::12)
+ by VI2P189MB3683.EURP189.PROD.OUTLOOK.COM (2603:10a6:800:297::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.27; Mon, 30 Mar
+ 2026 09:48:08 +0000
+Received: from AM1PEPF000252E1.eurprd07.prod.outlook.com
+ (2603:10a6:400:18b:cafe::88) by CWLP265CA0498.outlook.office365.com
+ (2603:10a6:400:18b::12) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9745.28 via Frontend Transport; Mon,
+ 30 Mar 2026 09:47:39 +0000
+Authentication-Results: spf=pass (sender IP is 52.101.169.27)
+ smtp.mailfrom=cal-consult.de; dkim=pass (signature was verified)
+ header.d=nagelgroup.onmicrosoft.com;dmarc=pass action=none
+ header.from=cal-consult.de;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of cal-consult.de
+ designates 52.101.169.27 as permitted sender)
+ receiver=protection.outlook.com; client-ip=52.101.169.27;
+ helo=BEUP281CU002.outbound.protection.outlook.com; pr=C
+Received: from BEUP281CU002.outbound.protection.outlook.com (52.101.169.27) by
+ AM1PEPF000252E1.mail.protection.outlook.com (10.167.16.59) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9745.21
+ via Frontend Transport; Mon, 30 Mar 2026 09:48:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=cQ8ps0UdAIapSlvoKilFAGQliudXkJfkiRBTbqpNRrtZiRS9EC7AFRQGZbV8cisdjdbg/SpXFxz8JNTCEuwbs85tGe8k1u5iRVzVOQbMhWXtklPRCVW1RUstKFbSSTiUmiKin4pWasHddAx0NoIBrMLoo+zIUe7H1cNoZKa3924fFPzx68/eEa/auUB3/A7EKtClmwbrUsNPETO7KPy1bDzOvhKaoTLbfia3Z4G48Ls6XeKW+D1ao5dU0GsUyiIDrRrrJ6cJPAHdCa5NZUc4vSHqOw2g79Km+I3kkfA1uqOuiQ8V0nBG1L3D/TWxLksUJmdXDrWxZz8pdH9bTH2Qmw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=IiaUhVlJk3Wh3p9PcgNj5q8S4qSJ634Z1fxJ1T56g/M=;
+ b=KzQwSwoLfa2opYd2cWRxVllOJX5loWTE0+eZHp0NtVkzfk7r+hUgBJa07AxttvFD2WqnzXJGFSIncdZugdFcS2eBveqotboTDnGaMQHKMGwB66f1qUZ3SwOcI62Ec5UFs9T5PDH0N1lXQy5zfIppLcl790H2se3hdDww/g6r4EzwMcUtzCCdBGpUob2FjAcX62LarxPu6sz5+1WvEGOQrcDAO69zE/CuaGjpp5IyslCPxdrzcbcrGm/IE5oJCseOfpNVuDz+TLUobcNcX+gvCoXF0/JkQf2NsG3IzXE/WhkAjU+z4MUOOC3sxz7ymUCNEi8LAORHhYlbpBZqIkFCRw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cal-consult.de; dmarc=pass action=none
+ header.from=cal-consult.de; dkim=pass header.d=cal-consult.de; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=nagelgroup.onmicrosoft.com; s=selector1-nagelgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IiaUhVlJk3Wh3p9PcgNj5q8S4qSJ634Z1fxJ1T56g/M=;
+ b=2AMNXWMqaa6i8Yqolr3/vuT3YJHYhjifZ0t/YFNjG732AcW8FQGUqplx+cyK/zPQvbMdTmEL6TLPiQNNTV8/ytFhcY1Nsu8Cs+WcIw96EYvRSvHBR+d+jZTa48fm8YS9xB7rd/zR6oIcpXwrMtYYozavLKAMuFW/lSeBvMhFeXvyNNDcnj4v79X5MearmCXZPKJaJoMMCSEJyt96u0twMmVQT127kCv6SlfY8G2QuA+PeKRkWgb2w9bABsBUdYAmm+Xgjlmsn6xBCguevzJr3oVs1zVzzF2xS5hFQNWMmlpmhtyzyFbSXzrSxl6Yvf3Kbm1bJYucRwoOus4xb9uoJA==
+Received: from FR4P281MB3591.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d10:db::14)
+ by FR4P281MB4837.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d10:144::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.28; Mon, 30 Mar
+ 2026 09:48:04 +0000
+Received: from FR4P281MB3591.DEUP281.PROD.OUTLOOK.COM
+ ([fe80::252b:a146:840c:46f6]) by FR4P281MB3591.DEUP281.PROD.OUTLOOK.COM
+ ([fe80::252b:a146:840c:46f6%6]) with mapi id 15.20.9745.027; Mon, 30 Mar 2026
+ 09:48:04 +0000
+From: Matt Wilkinson <Matt.Wilkinson@cal-consult.de>
+To: Martin Dittmann <martin.dittmann@p3-group.com>, "Matthias Max (PARTNER)"
+	<matthias.max@p3-group.com>
+CC: "Vervenne, Ron" <ron.vervenne@cal-consult.nl>, Christian Lang
+	<Christian.Lang@cal-consult.de>, Sonja Petkovic
+	<x_sonja.petkovic@cal-consult.de>, Joachim Schreiner
+	<Joachim.Schreiner@cal-consult.de>
+Subject: New Dispo Alignment next 8 weeks. 
+Thread-Topic: New Dispo Alignment next 8 weeks. 
+Thread-Index: AQHcwCmFfje/hpTs0Eqcz8VscwpC7g==
+Date: Mon, 30 Mar 2026 09:48:04 +0000
+Message-ID: <FR4P281MB3591EFA35A1529C552D80217A452A@FR4P281MB3591.DEUP281.PROD.OUTLOOK.COM>
+Accept-Language: en-GB, en-US
+Content-Language: en-GB
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=cal-consult.de;
+x-ms-traffictypediagnostic: FR4P281MB3591:EE_|FR4P281MB4837:EE_|AM1PEPF000252E1:EE_|VI2P189MB3683:EE_|DB9P189MB1931:EE_
+X-MS-Office365-Filtering-Correlation-Id: 432955d6-5bdf-425a-8115-08de8e4172d0
+x-ld-processed: 1143b609-46fc-43ee-a1f8-a20ba405faf0,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|1800799024|6049299003|376014|366016|56012099003|18002099003|38070700021|13003099007|8096899003|4053099003;
+X-Microsoft-Antispam-Message-Info-Original: d+dp8b8z/kXatmPLIER1D1t2OHkxyKG+E8ZjcoqllzZjA2FmC8Gs3QaSQYggMnrQClEKMdTowFgd9ivKUslG0lqZjoFijYO/jqMUEt5MRn8rjvoD+AnKCwxD2hzDy4tk3ydSuRwIZyxSk4Vd1kSkmEv9nRIeUB73k90ZSysQF/mvrK8tk5SjGnqrzg7TI/9E1mYVmh+PfES3lIMY81qlufqWXdb6M9VNT217LZO4HHE+HxJLCA0v2YuaPj4sSSuzLUaOuA8uZ6/tUs5yRYryPoXBzIHTNpjuCEDldX5kw6iEL4tlXJYezRIAbTUi4bZLR2+SfvjgQe1aahY02Eyyf+Un76a2UBPD8StU+2Xfv/rNK6IRgS2PMiPlc7QB5jTdCwEtG/ZJ1k5r3QW3p8xfElop0cNi3/4eg7FZWmY0Gt4yoVsUjxUOciGDKOm/qJdT7Ywyk6Jde89QlJZvEAAV5Lg8EWmiqMhzEFIRkbrLBVa+sJF72rw9gQh0PqSUWizn5u+q8VBnN3qzqTMQ9pcGm4XMgV1CLr9uQ/QV116vL58d8UlYHOcnzrSvaLZskWyTy06bUiQLNKGd2Va5Cbbw2lh2DVe73ZZC/ka48vhs5X5i63SCIR5aIcKTf8olb/dWH4PSzidTIMY34xgFujNSF65hRY3Ee8B8/JQpGaI/Ny6T56bLggjIzMk2UQX8YzhZ12To2TQlYYfGQ6IrDFQ+mmCu0ZCr0fdEAmrM8YSgFj84sLg+x045CS7ojtsLGotaSfhd7xXWnxPItK9ZRQewJyPNe9jHg5F5njEqOIOlKLA=
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:FR4P281MB3591.DEUP281.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(6049299003)(376014)(366016)(56012099003)(18002099003)(38070700021)(13003099007)(8096899003)(4053099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-Original-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-Original-0: =?iso-8859-1?Q?85LOPjfGBUndm4Mk9QEOxSNjIiO9Gijz1DaAWC1Lch8w4cBLChR05/CAnW?=
+ =?iso-8859-1?Q?Zv9NYsizPEg5Mq6Bw0jtQeMahWVqdtt5fq06JMsIZw2DuDBn+pEjFJOigK?=
+ =?iso-8859-1?Q?xdlbkm0rDfkqQQNL4X/ySirF0MUHfvgml4PySHOLm17x1UVbSADJ7MOsjs?=
+ =?iso-8859-1?Q?ktQg+1gml+iuBIF8bOQuOARYJswuvF6DLFazCaGQA/N3bNqVYQnT3MaOZG?=
+ =?iso-8859-1?Q?s6xM8wNuRIYNTJhPMMNSTcokrNpPWn3lyKi/CtZDDYDUPxUOu0wCY4hxXB?=
+ =?iso-8859-1?Q?F5yjiI2t0z5YkGlJc8rFpk2xW1LSOSw869+qPj3JMgCqcutgLT5bnbolFs?=
+ =?iso-8859-1?Q?9tCR+cE4Djrg76HMwkz5/w6/LTQY8/K3UrVGg/UGx3sFHQQR2ljsDOU9g3?=
+ =?iso-8859-1?Q?KAJHqMa1w1gzhowN5h977mOhiUi3lR6jHFxJD3G57pkZPbeuuMSIa1KTxX?=
+ =?iso-8859-1?Q?BqNL2aVwmJZVHyaksqqYAT2t+oKy+p3+rXcNuIS4ps/HiCg3X0QRtifw6j?=
+ =?iso-8859-1?Q?gMzu97WaR2F6DXz3FlDxqkqC319NlnM4uMX3O/azDxCJgWT7NsAhqlu96D?=
+ =?iso-8859-1?Q?qHE6bUSIipdkFaJbhjzOw/zkKh54eZiUvAuniIS/yGn7zYVzigHcfA0zza?=
+ =?iso-8859-1?Q?D6d+nRMZz5tXODvvVBtm1ocAuUpmYMFIbnS+txrI/atrO9cX4nlVQ32Ue3?=
+ =?iso-8859-1?Q?I232daTlQhWbsgamMLNojMNPfU4wUlBCBkg4gY4a5PEhnAgPaGZ96os8nr?=
+ =?iso-8859-1?Q?SgDZ5pUanNvr4Nh7m8Au9CYY1NBEQ9gt06BtEzk/Dsoh+K/rdFbSjy+X07?=
+ =?iso-8859-1?Q?5EuSu7XWJqh9Qowcl/h+fd+B+toG3cQ0zpDZFtlh1jDzZTtM/utwHaU47d?=
+ =?iso-8859-1?Q?eLH9PC6KECNgl8TzYXfkSvMzpyn7VQFThavn7EqjzvL5bybV1BHgV7LVz7?=
+ =?iso-8859-1?Q?jgcUehg+cJt2CwE7hHbkAxVuURYwKiNVWmvfOjGmZaN6ED7uEQvrLbf4w3?=
+ =?iso-8859-1?Q?LJuloOWkdbPcY8I91sCm7kMHZ+/Y/m0I0nxz7inYTibrXbIFJQofVICnNn?=
+ =?iso-8859-1?Q?xCwnd++2Idov5HDovP+Hdesd2lGWnQkMXoAHBjldtPzRpyy2j73U6Xjj9j?=
+ =?iso-8859-1?Q?+5xQs35w9H1BNhE4XQOlfmAJ9rqomJfeny/FFzcL9BZfYNIdoI0vC8qId/?=
+ =?iso-8859-1?Q?vCvuR5bFVOwhtIDSXTODwqvS2jO02urndzSdH8dk4sMEZ9XAWEIxcCWLHz?=
+ =?iso-8859-1?Q?UKirpPK6y+JJCiS5zQFX7nhnhhQsWYXmdpKkCWk/e5RSynsCpju7B7Vqdy?=
+ =?iso-8859-1?Q?wf/zYr2y7wnJOhd9mIFTqwenv/ZBY8h600NEyfn5NgzkVbEULfWXkd3ayE?=
+ =?iso-8859-1?Q?LdwbGcOJA+Pyj0jV8bd7cB7T7koNzMlLLqfEbVdNWs8f5ZLi6NFqR8O8WE?=
+ =?iso-8859-1?Q?f7l8QRaOGgYmqQIXR5TvllxCyk/+xzyOYzWYvhhsupalJ/FDqQameMs0mM?=
+ =?iso-8859-1?Q?ED6fYZjKFUx5mAzm0nQu6LHOLh3xAti/mlRe79OSV97kohBsKSO0fBpd6S?=
+ =?iso-8859-1?Q?/7uLHpBtiKDDFjcd+xOqaU1LqYH7L7inCfF4P4yQxR0hCp+se3lJ4WGjWj?=
+ =?iso-8859-1?Q?aIs9ACsGhR9fft3onEJXko0i411OKsXXILJNq7UdSsRmLNInEK4s1UiGK/?=
+ =?iso-8859-1?Q?T1q0LySMRDqQ+JxtFLxfzmPzQc3dtVx/ZbHcaMFOJ5uhP47zpmfCdN0ldC?=
+ =?iso-8859-1?Q?DHd5COTeHWOw0Dg4b3ZeQPmBSJSQMv1Gafuaxtnjb4X881KXTaNuZWMByK?=
+ =?iso-8859-1?Q?e0rqdR/NMxRoKWX7YgtCxq5dRLorgFI=3D?=
+Content-Type: multipart/related;
+	boundary="_004_FR4P281MB3591EFA35A1529C552D80217A452AFR4P281MB3591DEUP_";
+	type="multipart/alternative"
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: FR4P281MB4837
+Return-Path: Matt.Wilkinson@cal-consult.de
+X-MS-Exchange-Organization-ExpirationStartTime: 30 Mar 2026 09:48:08.3474
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 432955d6-5bdf-425a-8115-08de8e4172d0
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 38ea53fb-9117-4764-adc6-31f828910b30:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM1PEPF000252E1.eurprd07.prod.outlook.com
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted: AM1PEPF000252E1.eurprd07.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource: AM1PEPF000252E1.eurprd07.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 915ba6ff-8567-406a-5988-08de8e4170ad
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7149299003|35042699022|6049299003|4076899003|8096899003|55112099003|57112099003|13003099007|4053099003|19002099003;
+X-Forefront-Antispam-Report: CIP:52.101.169.27;CTRY:DE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BEUP281CU002.outbound.protection.outlook.com;PTR:mail-germanynorthazon11010027.outbound.protection.outlook.com;CAT:NONE;SFS:(13230040)(7149299003)(35042699022)(6049299003)(4076899003)(8096899003)(55112099003)(57112099003)(13003099007)(4053099003)(19002099003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Mar 2026 09:48:08.2646
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 432955d6-5bdf-425a-8115-08de8e4172d0
+X-MS-Exchange-CrossTenant-Id: 38ea53fb-9117-4764-adc6-31f828910b30
+X-MS-Exchange-CrossTenant-AuthSource: AM1PEPF000252E1.eurprd07.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2P189MB3683
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:08.7655131
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9745.023
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930201)(20251009189)(140003)(1420198);
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?D+H81jwF+xo8WX46LqMIMlm8Syr7k5pGfxhmcnf4SA8FXi0I+YmpLZ+A1t?=
+ =?iso-8859-1?Q?F52aUsbMSUifpkXEbeij3VfF9tnSYvx4TvZ7EhXfZ3t5IcESZO89c+0Gdw?=
+ =?iso-8859-1?Q?4TeyeJ+ywv3Q+sr2kxdchiyMETxqjgr0N08XdHz+byzJiMhJ+2LZgWmcWm?=
+ =?iso-8859-1?Q?eiq7BHaVuWUM0YQ+SazCe0Js2+RvieZfYnSMrpkLMUii5fPrwuwj239OLZ?=
+ =?iso-8859-1?Q?bdFqKtSArNyRky0GKA+WkQ/Oxl4lZ/pmavAQDzWc8uNMDNYh3w527DZ/K+?=
+ =?iso-8859-1?Q?tmV0yWuP2xTgRyoc/1lF/SlyDmwkGYnA85LgYj5LYpJ/uBiUObPNuvHkHb?=
+ =?iso-8859-1?Q?M5yxFXKE2gylNbdQjZgYI+XA72N+4NAYOW05wkq8De112SmdBOC8U8p9NK?=
+ =?iso-8859-1?Q?uwae46kCemHbscx+/Ogd228UC0d1+kiBssug3b7joulVBCJHTNb3zhsYpm?=
+ =?iso-8859-1?Q?6cSYgVuUE5qNAF7/UskpDhJ2FQQB++fKQjcVse7A2ZfrwZbiSMcOjfqnMC?=
+ =?iso-8859-1?Q?le7CkCfKWM02frzRef56fCCxWMsnycmu+BWe0V9EMliNliRohi1iB6BTLL?=
+ =?iso-8859-1?Q?MUfGsR+bZMLkZkARHKbeGuSsSP+5/t1ef4wihr98PqQpOqD0YOion+Cf/h?=
+ =?iso-8859-1?Q?Hudrgnbz8TUMjPMhgLvC7l9uAAxSzcgXfAbh3pTBjnf1J8ex1EZXKlyNpp?=
+ =?iso-8859-1?Q?+A5wc124d9tRKwsKK/BiXbEC0qXkvaUidlldCA/y97V5Fp7x4tI/6L77ZV?=
+ =?iso-8859-1?Q?ywV4beiMiFLdCwFIg1/xn48GSlPFnVwcaTLxoQgn60mYr+SPcjOIm/jnv7?=
+ =?iso-8859-1?Q?Lod2jrwXv55UjFR6MZeTlmuHZPfYYfVJvnIyMQcS34df6Z/szqj01cmyAh?=
+ =?iso-8859-1?Q?Dsuz5jWjNOEWVf5uooR49M0RwniheUYfwN/jdIgR//8Tw8uWGN4M4J4YTy?=
+ =?iso-8859-1?Q?8MdgGcxfaZ9arL/yFLCCe1wtRyyoSinGP9h7IL6vKZgR6T+UukH4mjJZNS?=
+ =?iso-8859-1?Q?qTcNKNX9aSTViF2Ttus0oUcGSSvY2PrT38NYgtNxupud9JICdmvADz11aK?=
+ =?iso-8859-1?Q?bVYaS5QlhqsvaAfQ/JAtRQxBQ64i/gC9JqY3bhf4Qy5FZMi0H/N8dPnf57?=
+ =?iso-8859-1?Q?Qy0v3FMnvVzIIhFYeui4pHHWYfCGEurhAN4w4gmyK/OULzvDC+NLW5iLos?=
+ =?iso-8859-1?Q?id9P5uCGCmWHK8ZmjsTZF3Ls9Rxp+R5Ji8DYMOC+w7FPZyCW9YHjRoU9Hl?=
+ =?iso-8859-1?Q?b7OR7C91AWHMpS+VjTRMdlHpGxm4ZxTu0CPsh3e/WBimXfy+oE+uTIkjrP?=
+ =?iso-8859-1?Q?/wm93XwP1dJiXi1pef2cnHF6mZzgFpJJ9jmtZ84ddGpXFNSzDwsuPIxjTj?=
+ =?iso-8859-1?Q?/XfiLwLi1not6KBOvsMxkwMacF1JSNpogqBE+nIqWdplMLK/WLWbFOayRt?=
+ =?iso-8859-1?Q?HcA/pi31cIAEIwoQ3AUvcqSkPW8ijbpxof2dhOTrWuDZZ6yjTmQJcBXk77?=
+ =?iso-8859-1?Q?DFP16y+RaCb8fMYXgZUUmfM+hbFmbdpodJUMT+3j9gFFhmKAfLIeSgG1m2?=
+ =?iso-8859-1?Q?QdlqGDZR1tcRThPVICHH0zsYIQzTyv/IKKw/QZ8CXLBhgkGNRPRwQlAWhv?=
+ =?iso-8859-1?Q?G4Fiw29bQ/LClFbTG2j4KzLOloLaiOfoQ5vytIhQE04GcKEWmGHgj3ARVT?=
+ =?iso-8859-1?Q?Xhmp9TcYWpAwA8GZn7EJfWe3NNSaddCCuC4dlwWAcJxECYh/gDzra1Xxep?=
+ =?iso-8859-1?Q?HNbptZ/OL+0zmHEF72LlBcbJig47aFgh/ONT7YXAqnDibjUdlWc6a5P9ZW?=
+ =?iso-8859-1?Q?5NZw+zuEPL8l9S8s7WjJGpRSNBqKUU8nF8cq0nGuR4ecwQgpwPgx3gUB7s?=
+ =?iso-8859-1?Q?hZMT3AEy/91MME4ume69oeinu5QLl1IUwEQtAVdta2yxCCqEu/BIc8rgWU?=
+ =?iso-8859-1?Q?5ofVeYFTA1EZ9fet+hC3s9eclwz6NQUn0+XJUF7QoN8MrGMgliwmJJL0s/?=
+ =?iso-8859-1?Q?99vLjlBuAae2rboL9CLvAQRYXiu5DStK06mwYtSlqBGQsmP2mUDphXzLYe?=
+ =?iso-8859-1?Q?5KR0JWgxPM4Ctt39megk+LcKx0akKJoXrJxkMy4iN0DXr5QE6SD6EqwoBP?=
+ =?iso-8859-1?Q?4Ls+WySeouO2zzRmV4ZFsD6XNbJQILRL+BkYGjCHeAncr9AbiRGz/Ba4VE?=
+ =?iso-8859-1?Q?/pfcZkIJsyl8/BjXMtrn8TmAxMcf2yRbUxxg63efnrDPFLz5mNmvGr2LYF?=
+ =?iso-8859-1?Q?KTdgCK/qnt62z+IpN9q5vKm//7aKlWj7KmrsYkhC17o1gzTqMn1T+OQYvS?=
+ =?iso-8859-1?Q?6seOXpfQgFvBnJL9O7BwmP9onQJ14/mI5ahQDTX+i6BbxzcRH6H99NMQ4m?=
+ =?iso-8859-1?Q?zgi5kNUsdkAyxjmY7KWBfP30gYvlY0ik2U+pK5RSeF9jqkr+g8zd61ApFq?=
+ =?iso-8859-1?Q?qKdiRauTjn//owOS+OqtBLdemkJxXPeWZouFan9S0xfAnqoZOPOtQAxHIP?=
+ =?iso-8859-1?Q?HWeiTmZM5eJ11mufVvn5NV4t4aEYRQeEHkpGv5FlbvUV3YjOQ2w28Qf3si?=
+ =?iso-8859-1?Q?nw5mDPLZXGTiFMLMWSyNlghZDmUz0N9726vIAofTkQg74ZLzlagvPudMg/?=
+ =?iso-8859-1?Q?AFRMLHMwRYAI1g+AaEoW09zRxgzGclqIUSlfuag+6iiaXR0CqEfgfrRydx?=
+ =?iso-8859-1?Q?OHMVwQzTFSeFXqF1vP+174NMsSuImKmq+La/qEkfqhB1loxioZbJqE/WEn?=
+ =?iso-8859-1?Q?h2hq7OLHJ5aIwUHyIdpxq4L5Qm48cnZI5mvmkgimD5ZfHoDrk1n5fch8U?=
+ =?iso-8859-1?Q?=3D?=
+MIME-Version: 1.0
+
+--_004_FR4P281MB3591EFA35A1529C552D80217A452AFR4P281MB3591DEUP_
+Content-Type: multipart/alternative;
+	boundary="_000_FR4P281MB3591EFA35A1529C552D80217A452AFR4P281MB3591DEUP_"
+
+--_000_FR4P281MB3591EFA35A1529C552D80217A452AFR4P281MB3591DEUP_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+CAUTION: This email originated from outside of the organization. Do not cli=
+ck links or open attachments unless you recognize the sender and know the c=
+ontent is safe.
+
+
+Hi Both,
+
+I hope you've both had a good weekend, I wanted to reach out and ask for so=
+me alignment for the next 8 weeks and the road to the go live at 1060?
+
+Sonja has asked about the alignment of the postgres deployment for the new =
+versions of the code that need to be deployed. What dates do you need us to=
+ work towards for these releases.
+
+On the opposite side (Oracle) how is the conversion work going? I'm aware J=
+oachim is in progress but I'm not sure on the version he's converting again=
+st at the moment.
+
+I'm assuming any new changes are being priorities to be in Oracle SQL rathe=
+r than PostgresSQL because the branch is on Oracle.
+
+It would be good to get view/ a walkthrough of the next 8 weeks to align on=
+ making sure we are working together on hitting the milestones. As at the m=
+oment I'm not 100% clear on who needs to own what areas.
+
+Kind regards / Mit freundlichen Gr=FC=DFen / Met vriendelijke groet
+
+Matt Wilkinson
+
+External Delivery Consultant - Programme management
+Phone:  +44 7738438287
+E-Mail:  matt.wilkinson@cal-consult.de<mailto:matt.wilkinson@cal-consult.de=
+>
+UK Timezone
+[cid:5406f8f4-e4e6-4778-bb64-820cb669de1b]<https://outlook.office.com/bookw=
+ithme/user/e75a3f420dd340b8b5d61ac3bfb45823@cal-consult.de?anonymous&ep=3Db=
+wmEmailSignature>
+Book time to meet with me<https://outlook.office.com/bookwithme/user/e75a3f=
+420dd340b8b5d61ac3bfb45823@cal-consult.de?anonymous&ep=3DbwmEmailSignature>
+
+--_000_FR4P281MB3591EFA35A1529C552D80217A452AFR4P281MB3591DEUP_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"><style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin=
+-bottom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<p></p>
+<div style=3D"background-color:#fd1100; width:100%; border-style: solid; bo=
+rder-color:Black; border-width:1pt; padding:2pt; font-size:10pt; line-heigh=
+t:12pt; font-family:'Calibri'; color:Black; text-align: left;">
+<span style=3D"color:Black" ;=3D"" font-weight:bold;=3D"">CAUTION:</span> T=
+his email originated from outside of the organization. Do not click links o=
+r open attachments unless you recognize the sender and know the content is =
+safe.</div>
+<br>
+<p></p>
+<div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+Hi Both,</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<br>
+</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+I hope you've both had a good weekend, I wanted to reach out and ask for so=
+me alignment for the next 8 weeks and the road to the go live at 1060?&nbsp=
+;</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<br>
+</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+Sonja has asked about the alignment of the postgres deployment for the new =
+versions of the code that need to be deployed. What dates do you need us to=
+ work towards for these releases.</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<br>
+</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+On the opposite side (Oracle) how is the conversion work going? I'm aware J=
+oachim is in progress but I'm not sure on the version he's converting again=
+st at the moment.&nbsp;</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<br>
+</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+I'm assuming any new changes are being priorities to be in Oracle SQL rathe=
+r than PostgresSQL because the branch is on Oracle.&nbsp;</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<br>
+</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+It would be good to get view/ a walkthrough of the next 8 weeks to align on=
+ making sure we are working together on hitting the milestones. As at the m=
+oment I'm not 100% clear on who needs to own what areas.&nbsp;</div>
+<div class=3D"elementToProof" id=3D"Signature">
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<br>
+</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+Kind regards / Mit freundlichen Gr=FC=DFen / Met vriendelijke groet</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<br>
+</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(23, 78, 134);" =
+class=3D"elementToProof">
+<b>Matt Wilkinson</b></div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<br>
+</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+External Delivery Consultant - Programme management&nbsp;</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+Phone: &nbsp;+44 7738438287</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+E-Mail: &nbsp;<a title=3D"mailto:matt.wilkinson@cal-consult.de" href=3D"mai=
+lto:matt.wilkinson@cal-consult.de">matt.wilkinson@cal-consult.de</a></div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<span style=3D"background-color: rgb(255, 255, 255);">UK Timezone</span></d=
+iv>
+<table id=3D"pbpsiglinktable">
+<tbody>
+<tr>
+<td>
+<div class=3D"elementToProof"><a href=3D"https://eur05.safelinks.protection=
+.outlook.com/?url=3Dhttps%3A%2F%2Foutlook.office.com%2Fbookwithme%2Fuser%2F=
+e75a3f420dd340b8b5d61ac3bfb45823%40cal-consult.de%3Fanonymous%26ep%3DbwmEma=
+ilSignature&amp;data=3D05%7C02%7Cmatthias.max%40p3-group.com%7C432955d65bdf=
+425a811508de8e4172d0%7C38ea53fb91174764adc631f828910b30%7C1%7C0%7C639104608=
+973262755%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwM=
+CIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=
+=3D7FGTuujcT2cP6%2FdCM094mDo4OI99okVSzi28v6mhUX8%3D&amp;reserved=3D0" origi=
+nalsrc=3D"https://outlook.office.com/bookwithme/user/e75a3f420dd340b8b5d61a=
+c3bfb45823@cal-consult.de?anonymous&amp;ep=3DbwmEmailSignature"><img data-o=
+utlook-trace=3D"F:1|T:1" src=3D"cid:5406f8f4-e4e6-4778-bb64-820cb669de1b"><=
+/a></div>
+</td>
+<td></td>
+<td>
+<div style=3D"color: rgb(0, 120, 212);" class=3D"elementToProof"><a style=
+=3D"color: rgb(0, 120, 212); text-decoration: none;" href=3D"https://eur05.=
+safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Foutlook.office.com%2F=
+bookwithme%2Fuser%2Fe75a3f420dd340b8b5d61ac3bfb45823%40cal-consult.de%3Fano=
+nymous%26ep%3DbwmEmailSignature&amp;data=3D05%7C02%7Cmatthias.max%40p3-grou=
+p.com%7C432955d65bdf425a811508de8e4172d0%7C38ea53fb91174764adc631f828910b30=
+%7C1%7C0%7C639104608973298114%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRyd=
+WUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0=
+%7C%7C%7C&amp;sdata=3DE4E7lV9Qy1ovSVBV%2B41ThWdijIwKMIViu6KG%2Bw5YsJA%3D&am=
+p;reserved=3D0" originalsrc=3D"https://outlook.office.com/bookwithme/user/e=
+75a3f420dd340b8b5d61ac3bfb45823@cal-consult.de?anonymous&amp;ep=3DbwmEmailS=
+ignature">Book time
+ to meet with me</a></div>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
+
+--_000_FR4P281MB3591EFA35A1529C552D80217A452AFR4P281MB3591DEUP_--
+
+--_004_FR4P281MB3591EFA35A1529C552D80217A452AFR4P281MB3591DEUP_
+Content-Type: image/png; name="Outlook-votm5n3w.png"
+Content-Description: Outlook-votm5n3w.png
+Content-Disposition: inline; filename="Outlook-votm5n3w.png"; size=528;
+	creation-date="Mon, 30 Mar 2026 09:48:04 GMT";
+	modification-date="Mon, 30 Mar 2026 09:48:04 GMT"
+Content-ID: <5406f8f4-e4e6-4778-bb64-820cb669de1b>
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAcpJREFUOE9j
+ZAABr6aJDHqhuQwMDIxgPrHg19d3DLP91Bk+P3sD08IIN2x1hjPDy7NXiDWL4T8nM0NA33wGWRMP
+hg5NJgYGhv8gvYwMFdf/MYAMu3twP9GGISssv/qLYVdzMsP5FYthBv5nmO2pyfDzzVuyDEw/eJ3h
+xNyJDEenNSMMJMskJE2Hp9YxHJ2CZOBUM1GGz5/hAUuS+UVnXjOcXDCJygbOm4TqZUpcGDJjJcPz
+S1eoYyAvrzDD58/vGRgY/iHSYcX1/wykupBXWpghe89reEbY0RjNcGHFMkQsk2pgwYkXDBz84iiR
+16EJzmWghE26C8uv/mZgZGJBM5AZ5HXyDPRo7GMwCCuEG/jj40uGCRYS5LsQpNM6q4TBOLqE4emF
+gwxrs8NRI2WynSTD19cvSErQOBQzMhSdecvw8vophqWxngQNBCWTrBMvMMIPpnF7dQQjA6+UCEP2
+3tcM//7+Zvjx8QNOQydZizFk7bvNwCepgs9iWIHKyGAYEcPALaQEUQwq3mBplQmi5siUBoa0bRcZ
+hBT18Bj4n7QSWlhGmiF19xOcBh6aVEyagSCTQEEUNf8Ag6CcFjyn/Pz8hmF9cQjDg8MHAaiKxp0e
+iZJ4AAAAAElFTkSuQmCC
+
+--_004_FR4P281MB3591EFA35A1529C552D80217A452AFR4P281MB3591DEUP_--

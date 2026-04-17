@@ -1,0 +1,656 @@
+Received: from PAVP189MB2412.EURP189.PROD.OUTLOOK.COM (2603:10a6:102:30a::10)
+ by DB9P189MB1931.EURP189.PROD.OUTLOOK.COM with HTTPS; Wed, 8 Apr 2026
+ 09:24:15 +0000
+Received: from PRAP189MB1971.EURP189.PROD.OUTLOOK.COM (2603:10a6:102:297::10)
+ by PAVP189MB2412.EURP189.PROD.OUTLOOK.COM (2603:10a6:102:30a::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.17; Wed, 8 Apr
+ 2026 09:24:12 +0000
+Received: from PRAP189MB1971.EURP189.PROD.OUTLOOK.COM
+ ([fe80::1ce3:9ec0:30c5:9115]) by PRAP189MB1971.EURP189.PROD.OUTLOOK.COM
+ ([fe80::1ce3:9ec0:30c5:9115%6]) with mapi id 15.20.9769.018; Wed, 8 Apr 2026
+ 09:24:12 +0000
+From: Maximilian Kehder <Maximilian.Kehder@p3-group.com>
+To: Matt Wilkinson <matt.wilkinson@cal-consult.de>, "Uschmann, Patrick"
+	<patrick.uschmann@nagel-group.com>
+CC: "Vervenne, Ron" <ron.vervenne@cal-consult.nl>, Christian Lang
+	<christian.lang@cal-consult.de>, Sonja Petkovic
+	<x_sonja.petkovic@cal-consult.de>, Joachim Schreiner
+	<joachim.schreiner@cal-consult.de>, Matthias Max <matthias.max@p3-group.com>
+Subject: AW: New Dispo Alignment next 8 weeks. 
+Thread-Topic: New Dispo Alignment next 8 weeks. 
+Thread-Index: AQHcwCmFfje/hpTs0Eqcz8VscwpC7rXHVl8fgA2XloGAAAEp6g==
+Date: Wed, 8 Apr 2026 09:24:12 +0000
+Message-ID:
+	<PRAP189MB197187AB2B8F727BB01918A08C5BA@PRAP189MB1971.EURP189.PROD.OUTLOOK.COM>
+References:
+	<FR4P281MB3591EFA35A1529C552D80217A452A@FR4P281MB3591.DEUP281.PROD.OUTLOOK.COM>
+ <DB9P189MB1931DEF2634425CD5B09A17BE152A@DB9P189MB1931.EURP189.PROD.OUTLOOK.COM>
+ <FRVP281MB58635927887CBF40F7A33D2D835BA@FRVP281MB5863.DEUP281.PROD.OUTLOOK.COM>
+In-Reply-To:
+	<FRVP281MB58635927887CBF40F7A33D2D835BA@FRVP281MB5863.DEUP281.PROD.OUTLOOK.COM>
+Accept-Language: de-DE, en-US
+Content-Language: de-DE
+X-MS-Exchange-Organization-AuthAs: Internal
+X-MS-Exchange-Organization-AuthMechanism: 04
+X-MS-Exchange-Organization-AuthSource: PRAP189MB1971.EURP189.PROD.OUTLOOK.COM
+X-Mentions: patrick.uschmann@nagel-group.com
+X-MS-Has-Attach: yes
+X-MS-Exchange-Organization-Network-Message-Id:
+	06aa5bdc-40b5-4c22-8987-08de955098ca
+X-MS-Exchange-Organization-SCL: 1
+X-Message-Flag: Flag for follow up
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+msip_labels:
+x-ms-publictraffictype: Email
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=p3-group.com;
+x-ms-office365-filtering-correlation-id: 06aa5bdc-40b5-4c22-8987-08de955098ca
+x-ms-traffictypediagnostic:
+	PRAP189MB1971:EE_|PAVP189MB2412:EE_|DB9P189MB1931:EE_
+x-ms-exchange-atpmessageproperties: SA
+x-forefront-antispam-report:
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PRAP189MB1971.EURP189.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(39142699007)(31052699007)(366016)(6049299003)(55112099003)(8096899003)(13003099007)(18002099003)(22082099003)(56012099003)(41050700001);DIR:INT;
+x-microsoft-antispam:
+	BCL:0;ARA:13230040|39142699007|31052699007|366016|6049299003|55112099003|8096899003|13003099007|18002099003|22082099003|56012099003|41050700001;
+x-ms-exchange-crosstenant-originalarrivaltime: 08 Apr 2026 09:24:12.6062 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Hosted
+x-ms-exchange-crosstenant-id: 38ea53fb-9117-4764-adc6-31f828910b30
+x-ms-exchange-crosstenant-network-message-id:
+	06aa5bdc-40b5-4c22-8987-08de955098ca
+x-ms-exchange-crosstenant-mailboxtype: HOSTED
+x-ms-exchange-crosstenant-userprincipalname:
+	KPCP3ProQ3Qm0U8GV/CXQls3f8DoyScu9YK04PaJGGhVYdY4N/Hl6r6ubgYZ/6GGrcBEBJsBEwPVflRBTZZFkqsZDqsLzneK87pllJqbZOE=
+x-ms-exchange-transport-crosstenantheadersstamped: PAVP189MB2412
+x-ms-exchange-crosstenant-authsource: PRAP189MB1971.EURP189.PROD.OUTLOOK.COM
+x-ms-exchange-crosstenant-authas: Internal
+x-ms-exchange-transport-endtoendlatency: 00:00:02.5244027
+x-ms-exchange-processed-by-bccfoldering: 15.20.9769.018
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(425001)(930201)(20251009189)(140003);
+X-Microsoft-Antispam-Message-Info:
+	AwZstLcuThBQFxpnUm5yV2T1063enIZeFuTTS8gzWUFJWXHtHPwTKPkPNGY9s2KPp5r1B61j822Kff+kAYYVRtuChY6GPF0gu+sd0O30HKGV3y6E4Wtd69vTknFJiqN5ydpC6pUmiouIuoSYECaaKy9BNvvaEfvO3d0HGsibS2awnVoXxT2BNaQvjM9fS4vVAPduKC/sKtdDXvr+/2YzC4nL+xrTBcke4dq4vxYV4RwuxbfLEA/wdRogMHPpawVb+BWf+hH+9Im0VF9yzFvGbBDO6GrC1njiNXz7d4RYLNkszp45y1JnmMliG8Zs3jTChROGCbxnHfTpXrh+ufMWllS08FG9PDqXQqRWNVcQxHjaEth02e2bj5Xlh6oMSZtFMPjzyxzhRHLUJEFtXI7dWtRdEbCC2VUCFInGtFn8yLuYtmRK4f/Rn0qrUinbtL1Gc72stX8/jpHZuM+SwOSp6WFLROzxXX+tx6hejvt1AIi5p/w4+Q6nHY1ryxY9wWIr7g2EQrsvNrsJduTpG+cFKp4sZPlOf1J0alyo6fycSzL5sqT5ckaCV8VNNDKQNv9dhm6+aIfwmhC3a0GpHNiwVEHk5TBiEv5Y0E1Oj/+NfPMr4sUxN8oq586SaIErdRbdr2kOfuDLmWRl+b/4giAccZENdmHPz4iRA/29131Oux0ftc76K2k8RYwmkTSCBN/0p/1WEzG67gN9uGFliJsH+2iHhlvF3DQtW2+tBF8cJLWK8bcs7qs40QyV5zZSUEu9JzKng1UhpQ2li861D3IBY5LVX9/Hsu3Yyj9mYYeOzACgJ7FffNBAM90TIAvRTZCLfHO3kKPrspwVPeIljyOWuDbNTgBkegMDz3rJj53BtYo=
+Content-Type: multipart/related;
+	boundary="_004_PRAP189MB197187AB2B8F727BB01918A08C5BAPRAP189MB1971EURP_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+
+--_004_PRAP189MB197187AB2B8F727BB01918A08C5BAPRAP189MB1971EURP_
+Content-Type: multipart/alternative;
+	boundary="_000_PRAP189MB197187AB2B8F727BB01918A08C5BAPRAP189MB1971EURP_"
+
+--_000_PRAP189MB197187AB2B8F727BB01918A08C5BAPRAP189MB1971EURP_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Matt,
+as Matthias mentioned below, for roadmap relevant topics and business requi=
+rements please include @Uschmann, Patrick<mailto:patrick.uschmann@nagel-gro=
+up.com> and me.
+
+Regarding the needs of dates "What dates do you need us to work towards for=
+ these releases." , @Uschmann, Patrick<mailto:patrick.uschmann@nagel-group.=
+com> that is your call.
+To ensure a continuous development and deployment we expect a 2-week releas=
+e cycle of the databases of the abn1034 and uat1034 databases. And in the c=
+lose future including the 1060 DBs.
+
+Who will be in charge of the 1060 DBs, @Uschmann, Patrick<mailto:patrick.us=
+chmann@nagel-group.com>?
+
+Let's get this going and ensure a continuous development towards the GoLive=
+!
+Best regards, Max
+
+
+Maximilian Kehder
+
+Product Owner / Consultant
+
+M +49 174 8898 210
+
+E  Maximilian.Kehder@p3-group.com<mailto:Maximilian.Kehder@p3-group.com>
+W www.p3-group.com<http://www.p3-group.com/>
+
+
+
+P3 digital services GmbH | Heilbronner Str. 86 | 70191 Stuttgart
+
+
+
+
+
+Vertraulichkeitshinweis
+Diese Nachricht und jeder =FCbermittelte Anhang beinhaltet vertrauliche Inf=
+ormationen und ist nur f=FCr die Personen oder das Unternehmen bestimmt, an=
+ welche sie tats=E4chlich gerichtet ist. Sollten Sie nicht der Bestimmungse=
+mpf=E4nger sein, weisen wir Sie darauf hin, dass die Verbreitung, das (auch=
+ teilweise) Kopieren sowie der Gebrauch der empfangenen E-Mail und der dari=
+n enthaltenen Informationen gesetzlich verboten ist und gegebenenfalls Scha=
+densersatzpflichten ausl=F6sen kann. Sollten Sie diese Nachricht aufgrund e=
+ines =DCbermittlungsfehlers erhalten haben, bitten wir Sie den Sender unver=
+z=FCglich hiervon in Kenntnis zu setzen.
+
+Haftungsausschluss<https://www.p3-group.com/datenschutz-global/> | Verarbei=
+tung Ihrer pers=F6nlichen Daten<https://www.p3-group.com/wp-content/uploads=
+/2019/01/PSS-global.pdf>
+
+Confidentiality note
+This message (including any attachments) contains confidential information =
+intended for a specific individual or entity as the intended recipient. If =
+you are not the intended recipient, you are hereby notified that any distri=
+bution, any copying of this message in part or in whole, or any taking of a=
+ction based on it, is strictly prohibited by law and may cause liability. I=
+n case you have received this message due to an error in transmission, we a=
+sk you to notify the sender immediately.
+
+Legal disclaimer<https://www.p3-group.com/en/privacy-global/?action=3Dchang=
+e-language> | Processing of your personal data<https://www.p3-group.com/wp-=
+content/uploads/2019/01/PSS-global.pdf>
+
+
+
+
+
+
+
+________________________________
+From: Matthias Max <matthias.max@p3-group.com>
+Sent: Monday, March 30, 2026 7:34 PM
+To: Matt Wilkinson <Matt.Wilkinson@cal-consult.de>; Martin Dittmann <martin=
+.dittmann@p3-group.com>
+Cc: Vervenne, Ron <ron.vervenne@cal-consult.nl>; Christian Lang <Christian.=
+Lang@cal-consult.de>; Sonja Petkovic <x_sonja.petkovic@cal-consult.de>; Joa=
+chim Schreiner <Joachim.Schreiner@cal-consult.de>
+Subject: AW: New Dispo Alignment next 8 weeks.
+
+Hi Matt,
+
+Please keep Patrick Uschmann as the PO and Max Kehder as the TechPO in the =
+loop reg. timeline topics.
+
+Thanks!
+
+Von: Matt Wilkinson <Matt.Wilkinson@cal-consult.de>
+Datum: Montag, 30. M=E4rz 2026 um 11:48
+An: Martin Dittmann <martin.dittmann@p3-group.com>, Matthias Max <matthias.=
+max@p3-group.com>
+Cc: Vervenne, Ron <ron.vervenne@cal-consult.nl>, Christian Lang <Christian.=
+Lang@cal-consult.de>, Sonja Petkovic <x_sonja.petkovic@cal-consult.de>, Joa=
+chim Schreiner <Joachim.Schreiner@cal-consult.de>
+Betreff: New Dispo Alignment next 8 weeks.
+
+CAUTION: This email originated from outside of the organization. Do not cli=
+ck links or open attachments unless you recognize the sender and know the c=
+ontent is safe.
+
+Hi Both,
+
+I hope you've both had a good weekend, I wanted to reach out and ask for so=
+me alignment for the next 8 weeks and the road to the go live at 1060?
+
+Sonja has asked about the alignment of the postgres deployment for the new =
+versions of the code that need to be deployed. What dates do you need us to=
+ work towards for these releases.
+
+On the opposite side (Oracle) how is the conversion work going? I'm aware J=
+oachim is in progress but I'm not sure on the version he's converting again=
+st at the moment.
+
+I'm assuming any new changes are being priorities to be in Oracle SQL rathe=
+r than PostgresSQL because the branch is on Oracle.
+
+It would be good to get view/ a walkthrough of the next 8 weeks to align on=
+ making sure we are working together on hitting the milestones. As at the m=
+oment I'm not 100% clear on who needs to own what areas.
+
+Kind regards / Mit freundlichen Gr=FC=DFen / Met vriendelijke groet
+
+Matt Wilkinson
+
+External Delivery Consultant - Programme management
+Phone:  +44 7738438287
+E-Mail:  matt.wilkinson@cal-consult.de<mailto:matt.wilkinson@cal-consult.de=
+>
+UK Timezone
+[cid:5406f8f4-e4e6-4778-bb64-820cb669de1b]<https://outlook.office.com/bookw=
+ithme/user/e75a3f420dd340b8b5d61ac3bfb45823@cal-consult.de?anonymous&ep=3Db=
+wmEmailSignature>
+Book time to meet with me<https://outlook.office.com/bookwithme/user/e75a3f=
+420dd340b8b5d61ac3bfb45823@cal-consult.de?anonymous&ep=3DbwmEmailSignature>
+
+--_000_PRAP189MB197187AB2B8F727BB01918A08C5BAPRAP189MB1971EURP_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+Hi Matt,</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+as Matthias mentioned below, for roadmap relevant topics and business requi=
+rements please include
+<a href=3D"mailto:patrick.uschmann@nagel-group.com" id=3D"OWAAM495810" clas=
+s=3D"tWKOu mention ms-bgc-nlr ms-fcl-b">
+@Uschmann, Patrick</a>&nbsp;and me.</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; color: rgb(0, 0, 0=
+);">
+<span style=3D"font-size: 11pt;">Regarding the needs of dates &quot;</span>=
+<span style=3D"font-size: 12pt;">What dates do you need us to work towards =
+for these releases.&quot;
+</span><span style=3D"font-size: 11pt;">, <a href=3D"mailto:patrick.uschman=
+n@nagel-group.com" id=3D"OWAAM895798" class=3D"tWKOu mention ms-bgc-nlr ms-=
+fcl-b">
+@Uschmann, Patrick</a>&nbsp;that is your call.</span></div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+To ensure a continuous development and deployment we expect a 2-week releas=
+e cycle of the databases of the abn1034 and uat1034 databases. And in the c=
+lose future including the 1060 DBs.</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+Who will be in charge of the 1060 DBs, <a href=3D"mailto:patrick.uschmann@n=
+agel-group.com" id=3D"OWAAM422047" class=3D"tWKOu mention ms-bgc-nlr ms-fcl=
+-b">
+@Uschmann, Patrick</a>?</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+Let's get this going and ensure a continuous development towards the GoLive=
+!</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+Best regards, Max</div>
+<div id=3D"Signature" class=3D"elementToProof">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<table cellspacing=3D"0" cellpadding=3D"0" style=3D"width: 538.6pt; box-siz=
+ing: border-box; border-collapse: collapse; border-spacing: 0px;">
+<tbody>
+<tr>
+<td style=3D"padding: 0cm 5.4pt; vertical-align: top; width: 538.6pt; heigh=
+t: 105.2pt;">
+<p class=3D"elementToProof" style=3D"line-height: 11.55pt; margin: 0cm; fon=
+t-family: Calibri, sans-serif; font-size: 11pt;">
+<span style=3D"font-size: 10.5pt; color: rgb(26, 53, 94);"><b>Maximilian Ke=
+hder</b></span></p>
+<p class=3D"elementToProof" style=3D"line-height: 11.55pt; margin: 0cm; fon=
+t-family: Calibri, sans-serif; font-size: 11pt;">
+<span style=3D"font-size: 8pt; color: rgb(64, 64, 64);">Product Owner / Con=
+sultant</span></p>
+<p class=3D"elementToProof" style=3D"line-height: 11.55pt; margin: 0cm; fon=
+t-family: Calibri, sans-serif; font-size: 11pt;">
+<span style=3D"font-size: 10pt; color: rgb(38, 38, 38);"><br>
+</span><span style=3D"font-size: 8pt; color: rgb(0, 32, 96);"><b>M</b></spa=
+n><span style=3D"font-size: 8pt; color: rgb(59, 56, 56);">
+</span><span style=3D"font-size: 8pt; color: rgb(64, 64, 64);">+49 174 8898=
+ 210</span></p>
+<p class=3D"elementToProof" style=3D"line-height: 11.55pt; margin: 0cm; fon=
+t-family: Calibri, sans-serif; font-size: 11pt;">
+<span style=3D"font-size: 8pt; color: rgb(0, 32, 96);"><b>E</b></span><span=
+ style=3D"font-size: 8pt; color: rgb(59, 56, 56);">
+</span><span style=3D"font-size: 8pt; color: rgb(64, 64, 64);">&nbsp;</span=
+><span style=3D"font-size: 8pt; color: rgb(5, 99, 193);"><a href=3D"mailto:=
+Maximilian.Kehder@p3-group.com" id=3D"OWA3f1a5638-e94a-7346-3383-b58e317091=
+10" class=3D"OWAAutoLink" style=3D"color: rgb(5, 99, 193); margin-top: 0px;=
+ margin-bottom: 0px;"><u>Maximilian.Kehder@p3-group.com</u></a></span><span=
+ style=3D"color: rgb(64, 64, 64);"><u><br>
+</u></span><span style=3D"font-size: 8pt; color: rgb(26, 53, 94);"><b>W</b>=
+</span> <span style=3D"font-size: 8pt; color: rgb(64, 64, 64);">
+<a href=3D"http://www.p3-group.com/" id=3D"OWA1ce380b2-6662-0c3b-b60b-f4172=
+dfb03d2" class=3D"OWAAutoLink" style=3D"color: rgb(64, 64, 64); margin-top:=
+ 0px; margin-bottom: 0px;"><u>www.p3-group.com</u></a></span></p>
+<p class=3D"elementToProof" style=3D"margin: 0cm; font-family: Calibri, san=
+s-serif; font-size: 11pt;">
+<span style=3D"color: rgb(64, 64, 64);">&nbsp;</span></p>
+<p class=3D"elementToProof" style=3D"margin: 0cm; font-family: Calibri, san=
+s-serif; font-size: 11pt;">
+<span style=3D"font-size: 8pt; color: rgb(64, 64, 64);"><b>P3 digital servi=
+ces GmbH</b>&nbsp;| Heilbronner Str. 86 | 70191 Stuttgart</span></p>
+<p class=3D"elementToProof" style=3D"line-height: 11.55pt; margin: 0cm; fon=
+t-family: Calibri, sans-serif; font-size: 11pt;">
+&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"elementToProof" style=3D"margin: 0cm; font-family: Calibri, san=
+s-serif; font-size: 11pt;">
+<span style=3D"color: rgb(26, 53, 94);">&nbsp;</span></p>
+<table cellspacing=3D"0" cellpadding=3D"0" style=3D"width: 538.6pt; box-siz=
+ing: border-box; border-collapse: collapse; border-spacing: 0px;">
+<tbody>
+<tr>
+<td style=3D"border-top: 1.5pt solid rgb(191, 191, 191); padding: 0cm 5.4pt=
+; vertical-align: top; width: 538.6pt; height: 121.95pt;">
+<p class=3D"elementToProof" style=3D"margin: 0cm 0cm 12pt; font-family: Cal=
+ibri, sans-serif; font-size: 11pt;">
+<span style=3D"font-size: 6.5pt; color: rgb(89, 89, 89);"><b><br>
+Vertraulichkeitshinweis</b></span><span style=3D"font-size: 6.5pt; color: r=
+gb(127, 127, 127);"><b><br>
+</b>Diese Nachricht und jeder =FCbermittelte Anhang beinhaltet vertrauliche=
+ Informationen und ist nur f=FCr die Personen oder das Unternehmen bestimmt=
+, an welche sie tats=E4chlich gerichtet ist. Sollten Sie nicht der Bestimmu=
+ngsempf=E4nger sein, weisen wir Sie darauf
+ hin, dass die Verbreitung, das (auch teilweise) Kopieren sowie der Gebrauc=
+h der empfangenen E-Mail und der darin enthaltenen Informationen gesetzlich=
+ verboten ist und gegebenenfalls Schadensersatzpflichten ausl=F6sen kann. S=
+ollten Sie diese Nachricht aufgrund
+ eines =DCbermittlungsfehlers erhalten haben, bitten wir Sie den Sender unv=
+erz=FCglich hiervon in Kenntnis zu setzen.<b>&nbsp;<br>
+<br>
+</b></span><span style=3D"font-size: 6.5pt; color: rgb(26, 53, 94);"><a hre=
+f=3D"https://www.p3-group.com/datenschutz-global/" id=3D"OWAa4ac44c1-934a-c=
+166-6142-6e1eff36d931" class=3D"OWAAutoLink" style=3D"color: rgb(26, 53, 94=
+); margin-top: 0px; margin-bottom: 0px;"><u>Haftungsausschluss</u></a></spa=
+n><span style=3D"font-size: 6.5pt; color: rgb(127, 127, 127);">&nbsp;</span=
+><span style=3D"font-size: 6.5pt; color: rgb(127, 127, 127); background-col=
+or: white;">|</span><span style=3D"font-size: 6.5pt; color: rgb(26, 53, 94)=
+; background-color: white;">&nbsp;</span><span style=3D"font-size: 6.5pt; c=
+olor: rgb(26, 53, 94);"><a href=3D"https://www.p3-group.com/wp-content/uplo=
+ads/2019/01/PSS-global.pdf" id=3D"OWAeb6aa7f6-9a1b-5774-19e9-c4356f88f7f5" =
+class=3D"OWAAutoLink" style=3D"color: rgb(26, 53, 94); margin-top: 0px; mar=
+gin-bottom: 0px;"><u>Verarbeitung
+ Ihrer pers=F6nlichen Daten</u></a></span></p>
+<p class=3D"elementToProof" style=3D"margin: 0cm; font-family: Calibri, san=
+s-serif; font-size: 11pt;">
+<span style=3D"font-size: 6.5pt; color: rgb(89, 89, 89);"><b>Confidentialit=
+y note</b></span><span style=3D"font-size: 6.5pt; color: rgb(127, 127, 127)=
+;"><b><br>
+</b>This message (including any attachments) contains confidential informat=
+ion intended for a specific individual or entity as the intended recipient.=
+ If you are not the intended recipient, you are hereby notified that any di=
+stribution, any copying of this
+ message in part or in whole, or any taking of action based on it, is stric=
+tly prohibited by law and may cause liability. In case you have received th=
+is message due to an error in transmission, we ask you to notify the sender=
+ immediately.<b>&nbsp;<br>
+</b><br>
+</span><span style=3D"font-size: 6.5pt; color: rgb(26, 53, 94);"><a href=3D=
+"https://www.p3-group.com/en/privacy-global/?action=3Dchange-language" id=
+=3D"OWA4291a548-659f-2917-057f-ae735c425bc8" class=3D"OWAAutoLink" style=3D=
+"color: rgb(26, 53, 94); margin-top: 0px; margin-bottom: 0px;"><u>Legal
+ disclaimer</u></a></span><span style=3D"font-size: 6.5pt; color: rgb(127, =
+127, 127); background-color: white;">&nbsp;|
+</span><span style=3D"font-size: 6.5pt; color: rgb(26, 53, 94); background-=
+color: white;"><a href=3D"https://www.p3-group.com/wp-content/uploads/2019/=
+01/PSS-global.pdf" id=3D"OWAe4c346a6-8b7f-ff1b-18ed-69575ed31e0e" class=3D"=
+OWAAutoLink" style=3D"color: rgb(26, 53, 94); margin-top: 0px; margin-botto=
+m: 0px;"><u>Processing
+ of your personal data</u></a></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"elementToProof" style=3D"line-height: 16.5pt; margin: 0cm; font=
+-family: Calibri, sans-serif; font-size: 11pt;">
+<span style=3D"font-family: &quot;Calibri Light&quot;, sans-serif; font-siz=
+e: 10.5pt; color: rgb(87, 87, 87);">&nbsp;</span></p>
+<p class=3D"elementToProof" style=3D"margin: 0cm; font-family: Calibri, san=
+s-serif; font-size: 11pt;">
+&nbsp;</p>
+</div>
+<div><br>
+</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br=
+>
+</span>
+<hr style=3D"direction: ltr; display: inline-block; width: 98%;">
+<div id=3D"x_divRplyFwdMsg">
+<div style=3D"direction: ltr; font-family: Calibri, sans-serif; font-size: =
+11pt; color: rgb(0, 0, 0);">
+<b>From:</b>&nbsp;Matthias Max &lt;matthias.max@p3-group.com&gt;<br>
+<b>Sent:</b>&nbsp;Monday, March 30, 2026 7:34 PM<br>
+<b>To:</b>&nbsp;Matt Wilkinson &lt;Matt.Wilkinson@cal-consult.de&gt;; Marti=
+n Dittmann &lt;martin.dittmann@p3-group.com&gt;<br>
+<b>Cc:</b>&nbsp;Vervenne, Ron &lt;ron.vervenne@cal-consult.nl&gt;; Christia=
+n Lang &lt;Christian.Lang@cal-consult.de&gt;; Sonja Petkovic &lt;x_sonja.pe=
+tkovic@cal-consult.de&gt;; Joachim Schreiner &lt;Joachim.Schreiner@cal-cons=
+ult.de&gt;<br>
+<b>Subject:</b>&nbsp;AW: New Dispo Alignment next 8 weeks.</div>
+<div style=3D"direction: ltr;">&nbsp;</div>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+Hi Matt,</div>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+Please keep Patrick Uschmann as the PO and Max Kehder as the TechPO in the =
+loop reg. timeline topics.</div>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+Thanks!</div>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"x_x_mail-editor-reference-message-container">
+<div style=3D"direction: ltr; text-align: left; padding: 3pt 0in 0in; borde=
+r-width: 1pt medium medium; border-style: solid none none; border-color: rg=
+b(181, 196, 223) currentcolor currentcolor; font-family: Aptos; font-size: =
+12pt; color: black;">
+<b>Von: </b>Matt Wilkinson &lt;Matt.Wilkinson@cal-consult.de&gt;<br>
+<b>Datum: </b>Montag, 30. M=E4rz 2026 um 11:48<br>
+<b>An: </b>Martin Dittmann &lt;martin.dittmann@p3-group.com&gt;, Matthias M=
+ax &lt;matthias.max@p3-group.com&gt;<br>
+<b>Cc: </b>Vervenne, Ron &lt;ron.vervenne@cal-consult.nl&gt;, Christian Lan=
+g &lt;Christian.Lang@cal-consult.de&gt;, Sonja Petkovic &lt;x_sonja.petkovi=
+c@cal-consult.de&gt;, Joachim Schreiner &lt;Joachim.Schreiner@cal-consult.d=
+e&gt;<br>
+<b>Betreff: </b>New Dispo Alignment next 8 weeks.<br>
+<br>
+</div>
+<div style=3D"direction: ltr; text-align: left; line-height: 12pt; backgrou=
+nd-color: rgb(253, 17, 0); padding: 2pt; border-width: 1pt; border-style: s=
+olid; border-color: black; font-family: Calibri; font-size: 10pt; color: bl=
+ack;">
+CAUTION:&nbsp;This email originated from outside of the organization. Do no=
+t click links or open attachments unless you recognize the sender and know =
+the content is safe.</div>
+<div style=3D"direction: ltr;"><br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+Hi Both,</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+I hope you've both had a good weekend, I wanted to reach out and ask for so=
+me alignment for the next 8 weeks and the road to the go live at 1060?&nbsp=
+;</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+Sonja has asked about the alignment of the postgres deployment for the new =
+versions of the code that need to be deployed. What dates do you need us to=
+ work towards for these releases.</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+On the opposite side (Oracle) how is the conversion work going? I'm aware J=
+oachim is in progress but I'm not sure on the version he's converting again=
+st at the moment.&nbsp;</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+I'm assuming any new changes are being priorities to be in Oracle SQL rathe=
+r than PostgresSQL because the branch is on Oracle.&nbsp;</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+It would be good to get view/ a walkthrough of the next 8 weeks to align on=
+ making sure we are working together on hitting the milestones. As at the m=
+oment I'm not 100% clear on who needs to own what areas.&nbsp;</div>
+<div id=3D"x_x_Signature">
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+Kind regards / Mit freundlichen Gr=FC=DFen / Met vriendelijke groet</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(23, 78, 134);">
+<b>Matt Wilkinson</b></div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+External Delivery Consultant - Programme management&nbsp;</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+Phone: &nbsp;+44 7738438287</div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+E-Mail: &nbsp;<a href=3D"mailto:matt.wilkinson@cal-consult.de" id=3D"OWA3c0=
+f4e1b-c58e-ff2c-1f9e-e55abcb17ab2" class=3D"OWAAutoLink" title=3D"mailto:ma=
+tt.wilkinson@cal-consult.de" data-outlook-id=3D"88c3d6b9-ad3f-47fc-8e51-e90=
+4927df337">matt.wilkinson@cal-consult.de</a></div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 16px; color: rgb=
+(0, 0, 0);">
+<span style=3D"background-color: rgb(255, 255, 255);">UK Timezone</span></d=
+iv>
+<table id=3D"x_x_pbpsiglinktable" style=3D"direction: ltr;">
+<tbody>
+<tr>
+<td style=3D"direction: ltr;">
+<div style=3D"direction: ltr;"><a href=3D"https://outlook.office.com/bookwi=
+thme/user/e75a3f420dd340b8b5d61ac3bfb45823@cal-consult.de?anonymous&amp;ep=
+=3DbwmEmailSignature" id=3D"OWA14e07987-4b08-4790-5f51-3b71a5e198bd" class=
+=3D"OWAAutoLink" originalsrc=3D"https://outlook.office.com/bookwithme/user/=
+e75a3f420dd340b8b5d61ac3bfb45823@cal-consult.de?anonymous&amp;ep=3DbwmEmail=
+Signature" data-auth=3D"NotApplicable" data-outlook-id=3D"268aea24-d70b-42a=
+3-839b-bf3623d58151"><img size=3D"820" data-outlook-trace=3D"F:3|T:3" src=
+=3D"cid:5406f8f4-e4e6-4778-bb64-820cb669de1b"></a></div>
+</td>
+<td style=3D"direction: ltr;"></td>
+<td style=3D"direction: ltr;">
+<div style=3D"direction: ltr; color: rgb(0, 120, 212);"><a href=3D"https://=
+outlook.office.com/bookwithme/user/e75a3f420dd340b8b5d61ac3bfb45823@cal-con=
+sult.de?anonymous&amp;ep=3DbwmEmailSignature" id=3D"OWAfe630893-5b86-5a73-3=
+655-cfde32a034c2" class=3D"OWAAutoLink" originalsrc=3D"https://outlook.offi=
+ce.com/bookwithme/user/e75a3f420dd340b8b5d61ac3bfb45823@cal-consult.de?anon=
+ymous&amp;ep=3DbwmEmailSignature" data-auth=3D"NotApplicable" data-outlook-=
+id=3D"2b82806d-bcc8-4f92-98a3-be95e6f9d083" style=3D"color: rgb(0, 120, 212=
+); text-decoration: none;">Book
+ time to meet with me</a></div>
+</td>
+<td style=3D"direction: ltr;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
+
+--_000_PRAP189MB197187AB2B8F727BB01918A08C5BAPRAP189MB1971EURP_--
+
+--_004_PRAP189MB197187AB2B8F727BB01918A08C5BAPRAP189MB1971EURP_
+Content-Type: image/png; name="Outlook-votm5n3w.png"
+Content-Description: Outlook-votm5n3w.png
+Content-Disposition: inline; filename="Outlook-votm5n3w.png"; size=820;
+	creation-date="Mon, 30 Mar 2026 09:48:04 GMT";
+	modification-date="Wed, 08 Apr 2026 09:24:15 GMT"
+Content-ID: <5406f8f4-e4e6-4778-bb64-820cb669de1b>
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAcpJREFUOE9j
+ZAABr6aJDHqhuQwMDIxgPrHg19d3DLP91Bk+P3sD08IIN2x1hjPDy7NXiDWL4T8nM0NA33wGWRMP
+hg5NJgYGhv8gvYwMFdf/MYAMu3twP9GGISssv/qLYVdzMsP5FYthBv5nmO2pyfDzzVuyDEw/eJ3h
+xNyJDEenNSMMJMskJE2Hp9YxHJ2CZOBUM1GGz5/hAUuS+UVnXjOcXDCJygbOm4TqZUpcGDJjJcPz
+S1eoYyAvrzDD58/vGRgY/iHSYcX1/wykupBXWpghe89reEbY0RjNcGHFMkQsk2pgwYkXDBz84iiR
+16EJzmWghE26C8uv/mZgZGJBM5AZ5HXyDPRo7GMwCCuEG/jj40uGCRYS5LsQpNM6q4TBOLqE4emF
+gwxrs8NRI2WynSTD19cvSErQOBQzMhSdecvw8vophqWxngQNBCWTrBMvMMIPpnF7dQQjA6+UCEP2
+3tcM//7+Zvjx8QNOQydZizFk7bvNwCepgs9iWIHKyGAYEcPALaQEUQwq3mBplQmi5siUBoa0bRcZ
+hBT18Bj4n7QSWlhGmiF19xOcBh6aVEyagSCTQEEUNf8Ag6CcFjyn/Pz8hmF9cQjDg8MHAaiKxp0e
+iZJ4AAAAAElFTkSuQmCC
+
+--_004_PRAP189MB197187AB2B8F727BB01918A08C5BAPRAP189MB1971EURP_--

@@ -1,4 +1,4 @@
-# New Dispo GoLive 1060 (Oracle) - Architecture & Infrastructure Overview
+# New Dispo GoLive 1060 (Oracle)
 
 **Date:** 2026-04-17
 **Status:** Draft
@@ -114,8 +114,8 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 
 ### 4.1 Authentication Patterns by Context
 
-| Context                       | Method                           | Identity Provider                     | Status          |
-| ----------------------------- | -------------------------------- | ------------------------------------- | --------------- |
+| Context                       | Method                           | Identity Provider                     | Status           |
+| ----------------------------- | -------------------------------- | ------------------------------------- | ---------------- |
 | User login (Browser)          | OAuth2 Authorization Code + PKCE | Keycloak                              | * to be verified |
 | Service-to-Service (Cloud)    | Client Credentials (OAuth2)      | Keycloak                              | * to be verified |
 | CI/CD Pipeline                | Workload Identity Federation     | GCP IAM (Azure DevOps token exchange) | * to be verified |
@@ -156,11 +156,11 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 
 ### 4.4 Database Users
 
-| Database               | User                    | Context                    | Notes                                    |
-| ---------------------- | ----------------------- | -------------------------- | ---------------------------------------- |
-| ORA-ABN-1060       | TBD                     | TMS Bridge -> ORA-ABN-1060  | Pending: connection details from Joachim |
-| ORA-UAT-1060       | TBD                     | TMS Bridge -> ORA-UAT-1060  | Pending: after ABN sign-off              |
-| ORA-PROD-1060      | TBD                     | TMS Bridge -> ORA-PROD-1060 | Pending: after UAT sign-off              |
+| Database      | User (expected)         | Context                     | Notes                                    |
+| ------------- | ----------------------- | --------------------------- | ---------------------------------------- |
+| ORA-ABN-1060  | `TMS1060` / `TMSBR1060` | TMS Bridge -> ORA-ABN-1060  | Pending: connection details from Joachim |
+| ORA-UAT-1060  | `TMS1060` / `TMSBR1060` | TMS Bridge -> ORA-UAT-1060  | Pending: after ABN sign-off              |
+| ORA-PROD-1060 | `TMS1060` / `TMSBR1060` | TMS Bridge -> ORA-PROD-1060 | Pending: after UAT sign-off              |
 
 **Database Identifier Convention (ADR-004):**
 Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germany Company 10 Branch 60)
@@ -168,28 +168,28 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 
 ### 4.5 Secret Manager
 
-| Secret Name                                  | Purpose                       | Injected Into                  |
-| -------------------------------------------- | ----------------------------- | ------------------------------ |
-| `D-{COMPANY}-{BRANCH}`                       | PostgreSQL connection string  | TMS Bridge                     |
-| `O-{COMPANY}-{BRANCH}`                       | Oracle connection string      | TMS Bridge                     |
+| Secret Name            | Purpose                      | Injected Into |
+| ---------------------- | ---------------------------- | ------------- |
+| `D-{COMPANY}-{BRANCH}` | PostgreSQL connection string | TMS Bridge    |
+| `O-{COMPANY}-{BRANCH}` | Oracle connection string     | TMS Bridge    |
 
 ---
 
 ## 5. External Integrations
 
-| System                | Protocol          | Purpose                                      | Connected From                | Owner       |
-| --------------------- | ----------------- | -------------------------------------------- | ----------------------------- | ----------- |
-| **Keycloak**          | HTTPS (OIDC)      | Authentication & Authorization               | Frontend, Backend, TMS Bridge | CAL / Nagel |
-| **Azure Service Bus** | AMQP/TLS          | Event publishing for CALSuite                | CrossDock Publisher           | CAL         |
-| **TOP Service**       | HTTP              | Route optimization                           | Backend (on-prem)             | Nagel       |
-| **xServer**           | HTTP              | Routing calculations                         | TOP Service                   | PTV         |
-| **SMTP (Office 365)** | STARTTLS          | Email notifications                          | Backend                       | CAL         |
-| **Timocom**           | REST API          | Freight exchange                             | Backend                       | External    |
-| **Trans.eu**          | REST API (OAuth2) | Freight exchange                             | Backend                       | External    |
+| System                | Protocol          | Purpose                        | Connected From                | Owner       |
+| --------------------- | ----------------- | ------------------------------ | ----------------------------- | ----------- |
+| **Keycloak**          | HTTPS (OIDC)      | Authentication & Authorization | Frontend, Backend, TMS Bridge | CAL / Nagel |
+| **Azure Service Bus** | AMQP/TLS          | Event publishing for CALSuite  | CrossDock Publisher           | CAL         |
+| **TOP Service**       | HTTP              | Route optimization             | Backend (on-prem)             | Nagel       |
+| **xServer**           | HTTP              | Routing calculations           | TOP Service                   | PTV         |
+| **SMTP (Office 365)** | STARTTLS          | Email notifications            | Backend                       | CAL         |
+| **Timocom**           | REST API          | Freight exchange               | Backend                       | External    |
+| **Trans.eu**          | REST API (OAuth2) | Freight exchange               | Backend                       | External    |
 
 ---
 
-## 6. Ownership & Responsibility Matrix
+## 6. Ownership & Responsibility Matrix (WIP)
 
 ### 6.1 Go-Live 1060 -- Who Does What
 
@@ -212,33 +212,76 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 | 15  | **Oracle CDC pipeline (Striim/Datastream)**         | TBD                                     | --      | Open Question | Should CDC connect to ABN/UAT too?             |
 | 16  | **Dispo Filter function for 1060 CDC**              | P3                                      | --      | Pending       | New function instance per branch               |
 | 17  | **Pub/Sub topic for 1060 CDC**                      | P3 / CAL Infra                          | --      | Pending       | `WL5_CDC_TOPIC_1060`                           |
+| 18  | **Pipeline testing to Production WL4**              | P3                                      | --      | Open Question | Verify CI/CD pipelines deploy to Prod WL4      |
 
 ### 6.2 Standing Ownership
 
-| Area                                  | Owner                       | Backup      |
-| ------------------------------------- | --------------------------- | ----------- |
-| GCP Infrastructure (WL3/WL4/WL5)      | P3 (?)                      | --          |
-| New Dispo Frontend                    | P3                          | --          |
-| New Dispo Backend                     | P3                          | --          |
-| TMS Bridge                            | P3                          | --          |
-| TMS AlloyDB Schema                    | P3                          | --          |
-| TMS Oracle Schema / Wrappers          | Nagel (end-to-end)          | --          |
-| Oracle Dev & Deployment Pipeline      | Nagel (end-to-end)          | --          |
-| Oracle Instance Provisioning          | Nagel (end-to-end)          | --          |
-| Keycloak                              | P3                          | --          |
-| VPN / Network                         | Nagel Platform              | --          |
-| Azure DevOps Pipelines                | P3                          | --          |
-| Freight Exchanges (Timocom, Trans.eu) | P3                          | --          |
+| Area                                  | Owner              |
+| ------------------------------------- | ------------------ |
+| GCP Infrastructure (WL3/WL4/WL5)      | P3 (?)             |
+| New Dispo Frontend                    | P3                 |
+| New Dispo Backend                     | P3                 |
+| TMS Bridge                            | P3                 |
+| TMS AlloyDB Schema                    | P3                 |
+| TMS Oracle Schema / Wrappers          | Nagel (end-to-end) |
+| Oracle Dev & Deployment Pipeline      | Nagel (end-to-end) |
+| Oracle Instance Provisioning          | Nagel (end-to-end) |
+| Keycloak                              | P3                 |
+| VPN / Network                         | Nagel Platform     |
+| Azure DevOps Pipelines                | P3                 |
+| Freight Exchanges (Timocom, Trans.eu) | P3                 |
 
 ---
 
-## 7. CI/CD & Release Branches
+## 7. Roadmap*
+
+> To be created by Patrick U. and Max K.
+
+All dates are indicative and subject to alignment with Patrick U. (PO) and Max K. (TechPO).
+Database deployments follow a **2-week release cycle** (abn1034, uat1034, and 1060 DBs going forward).
+
+```mermaid
+gantt
+    title GoLive 1060 (Oracle) Roadmap
+    dateFormat YYYY-MM-DD
+    axisFormat %d %b
+
+    section Postgres -> Oracle Migration
+    Oracle wrapper development (Joachim)         :active, ora-dev, 2026-03-01, 2026-05-15
+    Functions & Procedures (Joachim)              :ora-funcs, 2026-03-01, 2026-05-15
+    Views (Joachim)                              :ora-views, 2026-03-01, 2026-05-15
+
+    section New Dispo Feature Development
+    New Dispo Resilience                         :active, feat-res, 2026-04-01, 2026-05-15
+    Feature 1                                    :feat-1, 2026-04-14, 2026-05-15
+    Feature 2                                    :feat-2, 2026-05-01, 2026-06-01
+    Branching & versioning concept               :feat-branch, 2026-04-14, 2026-04-30
+
+    section ABN Deployment
+    ORA-ABN-1060 provisioning (Nagel)            :active, abn-prov, 2026-04-01, 2026-04-30
+    Connection details & network verification    :abn-conn, after abn-prov, 7d
+    E2E integration testing (ABN 1060)           :abn-test, after abn-conn, 21d
+    ABN sign-off (Patrick U., Max K.)            :milestone, abn-sign, after abn-test, 0d
+
+    section UAT Deployment
+    ORA-UAT-1060 provisioning (Nagel)            :uat-prov, after abn-sign, 14d
+    UAT testing & TMS Pulse load test            :uat-test, after uat-prov, 14d
+    UAT sign-off (Max Beisheim, Patrick U.)      :milestone, uat-sign, after uat-test, 0d
+
+    section PROD Deployment
+    Production readiness review                  :prod-prep, after uat-sign, 7d
+    Go-Live 1060                                 :milestone, crit, go-live, after prod-prep, 0d
+```
+
+---
+
+## 8. CI/CD & Release Branches
 
 Branching & versioning concept currently in the making.
 
 ---
 
-## 8. Risks & Open Items
+## 9. Risks & Open Items (WIP)
 
 | #   | Risk / Open Item                            | Impact                               | Mitigation                                    | Owner        |
 | --- | ------------------------------------------- | ------------------------------------ | --------------------------------------------- | ------------ |
@@ -253,7 +296,7 @@ Branching & versioning concept currently in the making.
 
 ---
 
-## 9. Next Steps (Sequenced)
+## 10. Next Steps (WIP)
 
 1. **Obtain ORA-ABN-1060 connection details** from Joachim (host, port, user, network path)
 2. **Verify VPN/network connectivity** from GCP WL5 to Oracle 1060 on-prem
@@ -264,11 +307,12 @@ Branching & versioning concept currently in the making.
 7. **Scope Oracle CDC** for 1060 (Striim/Datastream decision)
 8. **TMS Pulse load test** against ABN 1060
 9. **ABN sign-off** -> proceed to UAT 1060
-10. **UAT sign-off** -> go-live
+10. **Clarify application access methods** per environment (Citrix for UAT, Cameyo for ABN, direct access in Nuremberg)
+11. **UAT sign-off** -> go-live
 
 ---
 
-## 10. Related Resources
+## 11. Related Resources
 
 | Resource                          | Location                                                                   |
 | --------------------------------- | -------------------------------------------------------------------------- |
