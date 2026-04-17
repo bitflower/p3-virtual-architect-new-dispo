@@ -1,12 +1,13 @@
 # Project: Oracle CDC Solution for TMS Branch Databases
 
-**Status:** 🔄 In Progress - POC Results Received, ADR In Progress
-**Author:** Virtual Architect
-**Last Updated:** 2026-04-15
+**Status:** 🔄 In Progress - Deep Analysis Complete, Second PoC Recommended
+**Author:** Matthias Max
+**Last Updated:** 2026-04-17
 **Next Milestones:**
-1. Resolve ADR-006 outstanding items (Striim license costs, Datastream WL5 retest, SE2 validation)
-2. Close ADR-006 with final technology decision
-3. Production readiness documentation
+1. Align on latency vs. cost trade-off with business stakeholders
+2. Align with technical stakeholders about decision to run second PoC (Option 1)
+3. Execute second PoC with Oracle redo log tuning (Option 1)
+4. Close ADR-006 with final technology decision
 
 **Go-Live Target:** June 2026
 
@@ -22,7 +23,7 @@
 
 **POC Scope:** Intentionally kept minimal - CDC replication ends at Cloud Storage (Object Store). Downstream Cloud SQL updates and event format harmonization (Oracle ↔ Postgres) are considered post-POC as preparation for business logic integration.
 
-**Decision Timeline:** End of March 2026 (POC completion)
+**Decision Timeline:** End of April 2026 (pending second PoC with Oracle tuning)
 
 **Related Work Items:**
 - [Feature 121925: TMS Pulse ORA Extension](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_workitems/edit/121925)
@@ -61,7 +62,7 @@
 ### ✅ Completed (CW 14-15)
 - [x] PoC results data package received from Matt Wilkinson (2026-04-02)
 - [x] Striim PoC: Sub-second latency (~100ms), 99.98% delivery (60,978 events), cross-workload WL3->WL5 confirmed
-- [x] Datastream PoC: 16-20s median latency, active from Mar 30 only (~3 days)
+- [x] Datastream PoC: ~16-20s **system latency** reported initially (actual end-to-end latency corrected in CW 16)
 - [x] Cost data received: Striim EUR 2,770.70/mo (shared WL3 platform), Datastream EUR 1.36/mo (inactive PoC)
 - [x] Technical evaluation document drafted (Oracle_GCP_CDC_Technical_Evaluation.docx) - incomplete, many [TBC] entries
 - [x] P3 comparison data package received (P3_CDC_Comparison_Data_Package.docx) - answers latency, completeness, cost questions
@@ -70,21 +71,44 @@
 - [x] Postgres Datastream baseline flagged: ABN 1034 Postgres also showing 10-15s latency (Matt Wilkinson, April 8)
 - [x] ADR-006 drafted - [ADR-006: Oracle CDC Solution Selection](../../09_ADRs/ADR-006-oracle-cdc-solution-selection/ADR-006-oracle-cdc-solution-selection.md)
 
+### ✅ Completed (CW 16)
+- [x] Full GCP metrics extracted by Nikolay for PoC period (Mar 30 - Apr 9): latencies, throughput, freshness, event counts
+- [x] Deep Datastream analysis completed - [Datastream CDC Analysis Report](../2026-04-15_Oracle-CDC-PoC-Analysis/consolidated_report.md)
+- [x] **Latency correction:** Actual Datastream end-to-end latency is **~42-66 min** (P50 avg 66.5 min), not 16-20s. The 16-20s was system processing latency only; 99.4% of total latency is read lag waiting for Oracle's archived redo logs
+- [x] Datastream delivery rate confirmed: **100% delivery (23,751 records), zero errors** — resolves prior "completeness TBD" blocker
+- [x] Root cause identified: Oracle UAT1060 has 1 GB redo logs (4x GCP max recommendation of 256 MB) and `ARCHIVE_LAG_TARGET = 0` (no forced log switch — switches only when 1 GB is full)
+- [x] GCP generated **130 `ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG` warnings** during entire PoC period
+- [x] DBA data received from Robert Zanter (2026-04-16): confirmed 5x 1 GB redo log groups, ARCHIVE_LAG_TARGET=0, log switch frequency varies with DB load (~30 min busy, 3-15 min overnight batches)
+- [x] Wider-range log switch data received from Robert (Mar 26 - Apr 9) covering actual PoC period
+- [x] Three latency improvement options documented with expected outcomes:
+  - Option 1: Oracle Redo Log Tuning (ARCHIVE_LAG_TARGET=900 + 256MB logs) → 5-20 min, low effort
+  - Option 2: Datastream Binary Log Reader (Preview, not GA) → 1-5 min, medium effort
+  - Option 3: Striim → sub-second, license cost
+- [x] Cost projection refined for 64 databases: Datastream EUR 344/mo vs. Striim EUR 11,671/mo (34x factor)
+- [x] Management summary email drafted (DE + EN) with recommendation: second PoC with Oracle tuning before accepting Striim costs
+- [x] Dual Datastream setup documented: two streams (WL3 + WL5) on same Oracle source — potential LogMiner contention flagged for PROD assessment
+
 ### 🔄 In Progress
-- [ ] ADR-006 outstanding items resolution (8 items, see ADR)
+- [ ] ADR-006 outstanding items resolution — updated with deep analysis findings
 - [ ] Request for Dominik support raised with Christian Lang by Martin Dittmann
 - [ ] Striim licensing extension request submitted to Google by Matt Wilkinson
+- [ ] Oracle redo log tuning feasibility assessment (Robert Zanter) — including aggressive values (5-10 min)
+- [ ] Sync meeting to discuss way forward (Owner: Martin Dittmann to schedule)
 
 ### 🚫 Blocked
-- [ ] **Striim license cost data** - required for fair cost comparison (Owner: Matt Wilkinson / Christian Lang)
-- [ ] **Datastream delivery rate / completeness** - PoC data only contains event counts and latencies from Datastream side; no source-vs-target comparison exists to calculate delivery rate (Striim has 99.98%). Requires retest with minimum 1 week duration and event count reconciliation against Oracle source. (Owner: Matt Wilkinson)
-- [ ] **Datastream WL5 network deployment** - required for like-for-like comparison (Owner: Ron Vervenne)
+- [ ] **Target latency definition** - business must define acceptable latency for CDC use case (0.1s vs 5-20 min vs 42-66 min). Patrick Uschmann's verbal "~10s acceptable, minutes problematic" needs formal sign-off given new numbers
+- [ ] **Striim license cost data** - required for fair cost comparison. EUR 2,771/mo compute is shared with "Pretzel" cluster — actual costs after Pretzel shutdown unknown (Owner: Matt Wilkinson / Christian Lang)
+- [ ] **Business alignment on latency vs. cost trade-off** - Datastream EUR 4K/yr vs. Striim EUR 140K/yr, but Datastream latency 5-20 min (with tuning) vs. Striim sub-second
 - [ ] **Datastream Oracle SE2 validation** - required to confirm viability at branch sites
+- [ ] **GCP Binary Log Reader GA timeline** - currently Preview (no SLA), would reduce Datastream latency to 1-5 min
 
 ### ⏳ Next Up
-- Define latency requirement for New Dispo use case (is 20s acceptable or must it be sub-second?)
-- Re-run Datastream PoC with WL5 connectivity (minimum 1 week duration)
-- Complete [TBC] entries in technical evaluation document
+- Schedule sync meeting to align on PoC findings and next steps
+- Execute second PoC with Oracle redo log tuning (Option 1: ARCHIVE_LAG_TARGET=900, redo log 256 MB)
+- Define formal latency requirement for New Dispo CDC use case
+- Business decision: latency vs. cost trade-off (EUR 4K vs. EUR 140K/year)
+- Evaluate Datastream Binary Log Reader if redo log tuning insufficient
+- Update ADR-006 with deep analysis findings and second PoC results
 - Close ADR-006 with final decision
 
 ---
@@ -98,9 +122,11 @@
 | Workshop       | March 16     | ✅ Complete    | Technical walkthrough, POC kickoff        |
 | POC Execution  | March 16 - April 2 | ✅ Complete | Striim + Datastream tested against TMS1060.SENDUNG |
 | POC Results    | April 2      | ✅ Complete    | Data package received from Matt Wilkinson |
-| Evaluation     | April 15     | 🔄 In Progress | ADR-006 drafted, outstanding items identified |
-| Decision       | April 2026   | ⏳ Planned     | Pending: Striim costs, Datastream WL5 retest, SE2 validation |
-| Production-Readiness | May 2026     | ⏳ Planned     | Rollout document creation, go-live prep   |
+| Deep Analysis  | April 15-17  | ✅ Complete    | GCP metrics extraction, root cause analysis, DBA data, management summary |
+| Stakeholder Alignment | April 2026 | 🔄 In Progress | Latency vs. cost trade-off decision, target latency definition |
+| Second PoC     | April 21-25, 2026 | ⏳ Planned   | Oracle redo log tuning + Datastream retest (3-4 days) |
+| Decision       | End of April 2026 | ⏳ Planned     | Close ADR-006 with final technology decision |
+| Production-Readiness | May/June 2026 | ⏳ Planned  | Rollout document creation, go-live prep   |
 | Go-Live        | June 2026    | 🎯 Target      | Nagel branches production deployment      |
 
 ---
@@ -121,6 +147,7 @@
 - **Matt Wilkinson** - Infrastructure Lead, Striim Setup
 - **Ron Vervenne** - Cloud Engineer, Infrastructure Platform
 - **Thomas Paulus** - TMS Database Developer, Oracle Configuration
+- **Robert Zanter** - Oracle DBA, Redo Log Configuration
 - **Eric Meijers** - Cloud Engineer, DBA Support
 - **Steve** - Additional Infrastructure Support
 
@@ -137,11 +164,12 @@
 - [Google Datastream: Configure Oracle Self-Managed Database](https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle) _(Official setup guide - confirmed by P3 on 2026-03-13)_
 
 ### Deliverables
-- [ADR-006: Oracle CDC Solution Selection](../../09_ADRs/ADR-006-oracle-cdc-solution-selection/ADR-006-oracle-cdc-solution-selection.md) _(Proposed - 8 outstanding items before closure)_
+- [ADR-006: Oracle CDC Solution Selection](../../09_ADRs/ADR-006-oracle-cdc-solution-selection/ADR-006-oracle-cdc-solution-selection.md) _(Proposed - outstanding items being updated with deep analysis)_
+- [Datastream CDC Analysis Report](../2026-04-15_Oracle-CDC-PoC-Analysis/consolidated_report.md) _(Complete - full GCP metrics analysis, root cause, tuning options)_
 - [PoC Results Data Package](../../00_Meetings/2026-04-13-Oracle%20POC%20Results%20from%20Matt%20Wilkinson/) _(Received 2026-04-02)_
 - **Rollout Plan: Oracle CDC Production Deployment** _(Pending - post-ADR closure)_
 - **Setup Guide: Oracle CDC Configuration** _(Partially documented in Technical Evaluation - needs [TBC] completion)_
-- **Cost Analysis: Striim vs Datastream** _(Partial - Striim license costs still unknown)_
+- **Cost Analysis: Striim vs Datastream** _(Refined: Datastream EUR 344/mo vs. Striim EUR 11,671/mo at 64 DBs. Striim license costs still TBD)_
 
 ---
 
@@ -196,6 +224,7 @@ _To be defined in workshop - pending alignment with stakeholders_
 
 | Date       | Update                                                                                                                                                             | Updated By             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| 2026-04-17 | Deep analysis findings integrated: Datastream end-to-end latency corrected to ~42-66 min (was 16-20s system latency only); root cause identified (1 GB redo logs, ARCHIVE_LAG_TARGET=0); DBA data from Robert Zanter received; three options documented; cost projection refined (34x factor); management summary drafted; second PoC with Oracle tuning recommended | Matthias Max |
 | 2026-04-15 | ADR-006 drafted from PoC results; project status updated with findings; 8 outstanding items identified | Virtual Architect |
 | 2026-04-15 | PoC results received from Matt Wilkinson (2026-04-02): Striim ~100ms latency/99.98% delivery; Datastream ~16-20s latency/completeness TBD | Virtual Architect |
 | 2026-03-20 | Added item to completed: Workshop executed on March 16 (Technical walkthrough, POC kickoff) | Matthias |
