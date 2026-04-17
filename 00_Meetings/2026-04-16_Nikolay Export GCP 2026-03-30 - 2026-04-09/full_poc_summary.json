@@ -1,0 +1,98 @@
+{
+  "stream": "orauat-1060-bucket",
+  "source": "Oracle UAT1060 (TMS1060_SENDUNG)",
+  "target": "gs://tms-alloydb-datastream-bucket-wl5-t-t/UATDataStream",
+  "period": "2026-03-30T10:15:12.353167+00:00 to 2026-04-09T08:02:20.557141+00:00",
+  "throughput": {
+    "write_events": 2484,
+    "total_records": 75043,
+    "errors": 0,
+    "delivery_rate": "100.00%",
+    "batch_size": {
+      "min": 1,
+      "avg": 30.2,
+      "max": 9920
+    }
+  },
+  "latency": {
+    "total_latency_seconds": {
+      "p50": {
+        "min": 5.0,
+        "avg": 2508.7146796389466,
+        "max": 9466.41074856046,
+        "count": 111
+      },
+      "p95": {
+        "min": 9.5,
+        "avg": 4225.60871091567,
+        "max": 9946.641074856047,
+        "count": 111
+      },
+      "p99": {
+        "min": 9.9,
+        "avg": 4811.510903693634,
+        "max": 9989.328214971209,
+        "count": 111
+      }
+    },
+    "system_latency_seconds": {
+      "p50": {
+        "min": 5.0,
+        "avg": 16.111943938852995,
+        "max": 71.92307692307692,
+        "count": 111
+      },
+      "p95": {
+        "min": 9.5,
+        "avg": 32.619014276965835,
+        "max": 88.1923076923077,
+        "count": 111
+      },
+      "p99": {
+        "min": 9.9,
+        "avg": 41.15370690591638,
+        "max": 108.82941176470588,
+        "count": 111
+      }
+    },
+    "stream_latency_seconds": {
+      "p50": {
+        "min": 5.0,
+        "avg": 16.436281301609423,
+        "max": 71.92307692307692,
+        "count": 108
+      },
+      "p95": {
+        "min": 9.5,
+        "avg": 33.03141574088415,
+        "max": 88.1923076923077,
+        "count": 108
+      },
+      "p99": {
+        "min": 9.899999999999999,
+        "avg": 42.013174166971396,
+        "max": 108.82941176470588,
+        "count": 108
+      }
+    }
+  },
+  "freshness": {
+    "min": 0.0,
+    "avg": 1.2888423429207325,
+    "max": 12.466666666666667,
+    "count": 264
+  },
+  "warnings": {
+    "total": 130,
+    "ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG": 130
+  },
+  "log_switches_poc_period": {
+    "count": 901,
+    "duration_min": {
+      "min": 0.1,
+      "avg": 16.0,
+      "max": 30.6
+    }
+  },
+  "dual_stream_note": "Two Datastream instances (orauat-1060-bucket WL5 + new-dispo-cdc-datastream-sendung-abn1034 WL3) connected to same Oracle UAT1060 source"
+}
