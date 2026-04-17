@@ -375,6 +375,32 @@ The ~66 min avg latency observed in this Datastream POC is **inherent to the Log
 
 ---
 
+## Dual Datastream Setup on Same Oracle Source
+
+During the POC, **two separate Datastream instances** — one for WL3 and one for WL5 — were connected to the same Oracle UAT1060 database simultaneously. Both streams read from Oracle's archived redo logs via LogMiner on the same source database.
+
+This is worth noting for further analysis — potential effects to investigate:
+
+- **LogMiner contention:** Two LogMiner sessions on the same source may compete for resources (CPU, SGA, redo log access)
+- **Supplemental logging overhead:** Both streams require supplemental logging on the source tables, which adds write amplification to the redo logs
+- **Redo log throughput:** More redo data generated = faster log switches (could actually reduce latency), but also more archive volume
+- **Oracle Streams Pool sizing:** Multiple concurrent mining sessions may require a larger Streams Pool
+- **Impact on observed metrics:** The latency and throughput numbers in this report reflect the `orauat-1060-bucket` (WL5) stream, but may have been influenced by the concurrent WL3 stream
+
+This configuration needs to be evaluated for PROD: running multiple Datastream instances against the same Oracle source is supported but has performance and reliability implications that should be assessed with the DBA.
+
+---
+
+## GCP Warnings: Redo Log File Size Too Big
+
+During the POC period (Mar 30 – Apr 9), GCP Datastream generated **130 `ORACLE_CDC_LOG_FILE_SIZE_TOO_BIG` warnings** for the `orauat-1060-bucket` stream:
+
+> *"The log file [...] size exceeds the recommended size of 1GB. Consider adjusting the log file size configuration to improve processing efficiency and reduce the risk of error."*
+
+This is GCP itself confirming that the current 1 GB redo log configuration on UAT1060 exceeds its recommended maximum. These warnings appeared consistently throughout the entire POC period — approximately 12 per day.
+
+---
+
 ## Documentation Sources
 
 ### GCP Datastream
