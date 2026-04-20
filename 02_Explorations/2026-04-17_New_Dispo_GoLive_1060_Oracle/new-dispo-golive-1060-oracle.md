@@ -295,7 +295,12 @@ Branching & versioning concept currently in the making.
 | 5   | VPN/Network path to Oracle 1060 from GCP    | TMS Bridge cannot reach Oracle       | Verify with CAL Infra                         | CAL Infra    |
 | 6   | Oracle CDC pipeline for 1060 not scoped     | CDC events missing for 1060 branches | Decide: Striim vs Datastream for Oracle CDC   | TBD          |
 | 7   | Sign-off criteria undefined                 | Unclear go/no-go gate                | Define criteria for ABN and UAT               | Patrick U.   |
-| 8   | Packet loss GCP <-> Nagel on-prem           | Intermittent failures                | Managed by Telekom/Arista -- monitor          | CAL Infra    |
+
+**Resolved:**
+
+| #   | Risk / Open Item                            | Resolution                                        | Resolved   |
+| --- | ------------------------------------------- | ------------------------------------------------- | ---------- |
+| 8   | Packet loss GCP <-> Nagel on-prem           | Managed by Telekom/Arista -- monitoring in place  | 2026-04-20 |
 
 ---
 
