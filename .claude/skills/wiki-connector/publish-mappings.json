@@ -500,6 +500,25 @@
       }
     },
     {
+      "id": "adr-008-wl4-dev-unavailable",
+      "source": "09_ADRs/ADR-008-wl4-dev-unavailable-use-wl4-tt/ADR-008-wl4-dev-unavailable-use-wl4-tt.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/ADRs/[ADR008]-Use-WL4%2DT%2DT-for-Development-Due-to-Missing-WL4%2DDEV-Environment.md",
+      "description": "ADR-008: Use WL4-T-T for development due to missing WL4-DEV environment",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "ADR document - WL4-DEV unavailable, use WL4-T-T for development, no attachments"
+      }
+    },
+    {
       "id": "oracle-testing-step1-assessment",
       "source": "02_Explorations/2026-04-10_Oracle_DEV_ABN_UAT_Instances_for_Branch_1060/oracle-dev-abn-uat-instances-for-branch-1060.md",
       "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Oracle-Testing/Step-1-Environment-Gap-Assessment.md",

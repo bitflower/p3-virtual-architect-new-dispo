@@ -89,3 +89,15 @@
 {Include or reference architecture diagrams that visualize the decided solution.}
 
 ![{Diagram description}]({path-to-image})
+
+## Document History
+
+| Date | Author | Change |
+|------|--------|--------|
+| {YYYY-MM-DD} | Virtual Architect | {Initial creation note} |
+
+---
+
+<div align="center">
+  <sub>Created and maintained by <strong>Virtual Architect</strong></sub>
+</div>

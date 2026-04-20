@@ -19,8 +19,10 @@ This section maps every environment stage across both the GCP (New Dispo) side a
  LOCAL    Developer Workstation                  --
           (Docker, localhost)
 
- DEV      WL4-DEV / WL5-DEV                     ENT1
+ DEV      WL5-DEV                                ENT1
           (development, feature testing)         (schema dev, unit testing)
+          Note: WL4-DEV does not exist
+          — use WL4-T-T (see ADR-008)
                     |                                      |
                     v                                      v
  TEST     WL4-T-T / WL5-T-T                     ABN 1060
@@ -37,13 +39,13 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 
 ### 1.2 Environment Mapping Matrix
 
-| Stage     | GCP Project (WL4)           | GCP Project (WL5)           | Oracle Instance  | Data Profile                | Sign-Off                 |
-| --------- | --------------------------- | --------------------------- | ---------------- | --------------------------- | ------------------------ |
-| **LOCAL** | --                          | --                          | --               | Seeded / empty              | Developer                |
-| **DEV**   | WL4-DEV (TBD)               | WL5-DEV (TBD)               | ENT1 (shared)    | Schema only, no branch data | Developer                |
-| **TEST**  | `prj-cal-w-wl4-t-4c48-53ad` | `prj-cal-w-wl5-t-6c00-53ad` | **ORA-ABN-1060** | Live production data (1060) | Patrick U., Max K. (P3)  |
-| **UAT**   | (shares TEST infra)         | (shares TEST infra)         | **ORA-UAT-1060** | Production data             | Max Beisheim, Patrick U. |
-| **PROD**  | `prj-cal-w-wl4-p-afad-53ad` | `prj-cal-w-wl5-p-3e5b-53ad` | PROD             | Production                  | --                       |
+| Stage     | GCP Project (WL4)                | GCP Project (WL5)           | Oracle Instance  | Data Profile                | Sign-Off                 |
+| --------- | -------------------------------- | --------------------------- | ---------------- | --------------------------- | ------------------------ |
+| **LOCAL** | --                               | --                          | --               | Seeded / empty              | Developer                |
+| **DEV**   | -- (does not exist, use WL4-T-T) | WL5-DEV (TBD)               | ENT1 (shared)    | Schema only, no branch data | Developer                |
+| **TEST**  | `prj-cal-w-wl4-t-4c48-53ad`      | `prj-cal-w-wl5-t-6c00-53ad` | **ORA-ABN-1060** | Live production data (1060) | Patrick U., Max K. (P3)  |
+| **UAT**   | (shares TEST infra)              | (shares TEST infra)         | **ORA-UAT-1060** | Production data             | Max Beisheim, Patrick U. |
+| **PROD**  | `prj-cal-w-wl4-p-afad-53ad`      | `prj-cal-w-wl5-p-3e5b-53ad` | PROD             | Production                  | --                       |
 
 ---
 
@@ -135,20 +137,21 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 
 **Keycloak Servers:**
 
-| Environment | URL                                             |
-| ----------- | ----------------------------------------------- |
-| Local       | `http://localhost:8080`                         |
-| Dev         | `https://dev.new-dispo.nagel.p3ds.net/keycloak` |
-| Production  | `https://nagel-staging.ddns.net:8081/keycloak`  |
+| Environment | URL                                               |
+| ----------- | ------------------------------------------------- |
+| Local       | `http://localhost:8080`                           |
+| Dev         | `https://dev.new-dispo.nagel.p3ds.net/keycloak`   |
+| Test        | `https://test.dispo.gcp.nagel-group.com/keycloak` |
+| Production  | `https://dispo.gcp.nagel-group.com/keycloak`      |
 
 ### 4.3 GCP Service Accounts
 
-| Service Account                                                  | Scope            | Purpose                                                        | Status            |
-| ---------------------------------------------------------------- | ---------------- | -------------------------------------------------------------- | ----------------- |
-| `wl-cicd@prj-cal-w-cicd-wl4-a1bc-53ad.iam.gserviceaccount.com`   | WL4 CI/CD        | Azure DevOps pipeline deployments (Frontend, Backend)          | * to be confirmed |
-| `wl-cicd@prj-cal-w-cicd-wl5-a591-53ad.iam.gserviceaccount.com`   | WL5 CI/CD        | Azure DevOps pipeline deployments (TMS Bridge, Cloud4Log, CDC) | * to be confirmed |
-| `wl5-cloudrun@prj-cal-w-wl5-t-6c00-53ad.iam.gserviceaccount.com` | WL5 Test Runtime | Cloud Run + Workflow execution (Test)                          | * to be confirmed |
-| `wl5-cloudrun@prj-cal-w-wl5-p-3e5b-53ad.iam.gserviceaccount.com` | WL5 Prod Runtime | Cloud Run + Workflow execution (Prod)                          | * to be confirmed |
+| Service Account                                                  | Scope            | Purpose                                                             | Status            |
+| ---------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------- | ----------------- |
+| `wl-cicd@prj-cal-w-cicd-wl4-a1bc-53ad.iam.gserviceaccount.com`   | WL4 CI/CD        | Azure DevOps (P3) pipeline deployments (Frontend, Backend)          | * to be confirmed |
+| `wl-cicd@prj-cal-w-cicd-wl5-a591-53ad.iam.gserviceaccount.com`   | WL5 CI/CD        | Azure DevOps (P3) pipeline deployments (TMS Bridge, Cloud4Log, CDC) | * to be confirmed |
+| `wl5-cloudrun@prj-cal-w-wl5-t-6c00-53ad.iam.gserviceaccount.com` | WL5 Test Runtime | Cloud Run + Workflow execution (Test)                               | * to be confirmed |
+| `wl5-cloudrun@prj-cal-w-wl5-p-3e5b-53ad.iam.gserviceaccount.com` | WL5 Prod Runtime | Cloud Run + Workflow execution (Prod)                               | * to be confirmed |
 
 **Workload Identity Pools (Azure DevOps Federation):**
 - WL4: `azure-devops` (project number: 607166292072)
@@ -218,7 +221,7 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 
 | Area                                  | Owner              |
 | ------------------------------------- | ------------------ |
-| GCP Infrastructure (WL3/WL4/WL5)      | P3 (?)             |
+| GCP Infrastructure (WL3/WL4/WL5)      | Nagel Platform Service              |
 | New Dispo Frontend                    | P3                 |
 | New Dispo Backend                     | P3                 |
 | TMS Bridge                            | P3                 |
@@ -228,7 +231,7 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 | Oracle Instance Provisioning          | Nagel (end-to-end) |
 | Keycloak                              | P3                 |
 | VPN / Network                         | Nagel Platform     |
-| Azure DevOps Pipelines                | P3                 |
+| Azure DevOps (P3) Pipelines           | P3                 |
 | Freight Exchanges (Timocom, Trans.eu) | P3                 |
 
 ---

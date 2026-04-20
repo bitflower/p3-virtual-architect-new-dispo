@@ -62,3 +62,9 @@ The direct PSC option remains on Nagel's wish list for future consideration.
 | Date | Author | Change |
 |------|--------|--------|
 | 2026-04-17 | Virtual Architect | Initial ADR created from 2026-04-08 meeting decision |
+
+---
+
+<div align="center">
+  <sub>Created and maintained by <strong>Virtual Architect</strong></sub>
+</div>

@@ -169,3 +169,9 @@ Key requirements include:
 | 2026-01-08 | Pascal Leicht, Nikolay, Matthias Max | Internal discussion on database identifier patterns |
 
 | 2026-01-27 | Virtual Architect | ADR created |
+
+---
+
+<div align="center">
+  <sub>Created and maintained by <strong>Virtual Architect</strong></sub>
+</div>
