@@ -1,21 +1,55 @@
-# Tone of Voice Examples for ADR Approval Request
+# Tone of Voice Examples for ADR Communication
 
-## Subject
+## 1. Approval Request
 
-New Dispo - ADR-007 - Approval Request
+### Subject
 
-## Body
+New Dispo - ADR-XXX - Approval Request
+
+### Body
 
 Hi Christian, hi Pascal,
 
-we are seeking approval on ADR-007 from your side.
+we are seeking approval on ADR-XXX from your side.
 
-A quick „confirmed“ is enough and I’ll mark the ADR as done.
+A quick „confirmed” is enough and I’ll mark the ADR as done.
 
 @All: Of course if you have questions/amendments we can discuss/add them.
 
 Link:
-https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_wiki/wikis/Nagel-CAL-Disposition.wiki/15839/-ADR007-Retain-PSC-Proxy-for-Datastream-to-AlloyDB-Connectivity
+{wiki-link}
 
 Thanks!
 Matthias
+
+---
+
+<div align=”center”>
+  <sub>Created by <strong>Virtual Architect</strong></sub>
+</div>
+
+## 2. Approved Notification
+
+### Subject
+
+New Dispo - ADR-XXX - Approved
+
+### Body
+
+Hi all,
+
+ADR-XXX has been approved by {approver}.
+
+The ADR is now marked as done in the wiki.
+
+Link:
+{wiki-link}
+
+Thanks!
+Matthias
+
+---
+
+<div align=”center”>
+  <sub>Created by <strong>Virtual Architect</strong></sub>
+</div>

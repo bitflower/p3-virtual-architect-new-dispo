@@ -1,6 +1,6 @@
 # [ADR007] Retain PSC Proxy for Datastream-to-AlloyDB Connectivity
 
-**Status:** Pending decision
+**Status:** Approved (by Christian, 2026-04-21)
 **Date:** 2026-04-08 (documented 2026-04-17)
 
 ## Context
@@ -40,6 +40,10 @@ The decision was reached in the Oracle CDC Follow-Up meeting on 2026-04-08. Four
 
 The direct PSC option remains on Nagel's wish list for future consideration.
 
+### Approval Note (Christian, 2026-04-21)
+
+Christian reported that he has connected to TMS databases directly without a proxy and confirmed it was "as easy as switching an IP." Long term, he wants the cleanest possible solution network-wise -- meaning if it is possible and recommended to operate without a proxy, we should remove it or skip it entirely. This reinforces that Option B should be revisited once the team has capacity, and the proxy should not be treated as a permanent fixture.
+
 **Why not Option B (direct connection)?** GCP documentation explicitly requires a TCP proxy for Datastream-to-AlloyDB connectivity: *"To enable Datastream to connect to the AlloyDB instance, you need to set up a TCP proxy in the consumer project"* ([source](https://cloud.google.com/datastream/docs/configure-alloydb-psql)). Removing the proxy would go against the documented architecture, not just be unproven. The PSC interfaces documentation for Datastream does not mention AlloyDB as a supported direct-connection target.
 
 ## Consequences
@@ -59,9 +63,10 @@ The direct PSC option remains on Nagel's wish list for future consideration.
 
 ## Document History
 
-| Date | Author | Change |
-|------|--------|--------|
-| 2026-04-17 | Virtual Architect | Initial ADR created from 2026-04-08 meeting decision |
+| Date       | Author       | Change                                               |
+| ---------- | ------------ | ---------------------------------------------------- |
+| 2026-04-17 | Matthias Max | Initial ADR created from 2026-04-08 meeting decision |
+| 2026-04-21 | Matthias Max | Status updated to Approved (approved by Christian); added approval note on long-term preference for proxy removal |
 
 ---
 

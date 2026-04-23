@@ -1,6 +1,6 @@
 # [ADR008] Use WL4-T-T for Development Due to Missing WL4-DEV Environment
 
-**Status:** Accepted
+**Status:** Approved (by Christian, 2026-04-21)
 **Date:** 2026-04-20
 
 ## Context
@@ -36,9 +36,10 @@ As of April 2026, **WL4-DEV does not exist and is blocked** (confirmed by Matt W
 
 ## Document History
 
-| Date | Author | Change |
-|------|--------|--------|
-| 2026-04-20 | Virtual Architect | Initial ADR created based on feedback from Matt Wilkinson |
+| Date       | Author       | Change                                                    |
+| ---------- | ------------ | --------------------------------------------------------- |
+| 2026-04-20 | Matthias Max | Initial ADR created based on feedback from Matt Wilkinson |
+| 2026-04-21 | Matthias Max | Status updated to Approved (approved by Christian)         |
 
 ---
 
