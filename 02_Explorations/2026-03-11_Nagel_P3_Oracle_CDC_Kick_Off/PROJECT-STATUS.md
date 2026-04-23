@@ -2,7 +2,7 @@
 
 **Status:** 🔄 In Progress - Deep Analysis Complete, Second PoC Recommended
 **Author:** Matthias Max
-**Last Updated:** 2026-04-17
+**Last Updated:** 2026-04-21
 **Next Milestones:**
 1. Align on latency vs. cost trade-off with business stakeholders
 2. Align with technical stakeholders about decision to run second PoC (Option 1)
@@ -82,11 +82,13 @@
 - [x] Wider-range log switch data received from Robert (Mar 26 - Apr 9) covering actual PoC period
 - [x] Three latency improvement options documented with expected outcomes:
   - Option 1: Oracle Redo Log Tuning (ARCHIVE_LAG_TARGET=900 + 256MB logs) → 5-20 min, low effort
-  - Option 2: Datastream Binary Log Reader (Preview, not GA) → 1-5 min, medium effort
+  - Option 2: Datastream Binary Log Reader (Preview, not GA) → 1-5 min — **Available in GCP console but Preview-only** (confirmed 2026-04-16). Next step: contact Google to clarify activation and GA timeline
   - Option 3: Striim → sub-second, license cost
 - [x] Cost projection refined for 64 databases: Datastream EUR 344/mo vs. Striim EUR 11,671/mo (34x factor)
 - [x] Management summary email drafted (DE + EN) with recommendation: second PoC with Oracle tuning before accepting Striim costs
 - [x] Dual Datastream setup documented: two streams (WL3 + WL5) on same Oracle source — potential LogMiner contention flagged for PROD assessment
+- [x] **Binary Log Reader (Preview) confirmed available** as Datastream config option in GCP — Nikolay verified via GCP console (2026-04-16). Option is selectable but remains **Preview (not GA)**, no production SLA. Matthias: "not really released publicly." — [Screenshot](../../00_Meetings/2026-04-16_DevOps_Oracle_Option/image.png)
+  ![Datastream CDC method config showing LogMiner (selected) and Binary reader (Preview)](../../00_Meetings/2026-04-16_DevOps_Oracle_Option/image.png)
 
 ### 🔄 In Progress
 - [ ] ADR-006 outstanding items resolution — updated with deep analysis findings
@@ -100,15 +102,15 @@
 - [ ] **Striim license cost data** - required for fair cost comparison. EUR 2,771/mo compute is shared with "Pretzel" cluster — actual costs after Pretzel shutdown unknown (Owner: Matt Wilkinson / Christian Lang)
 - [ ] **Business alignment on latency vs. cost trade-off** - Datastream EUR 4K/yr vs. Striim EUR 140K/yr, but Datastream latency 5-20 min (with tuning) vs. Striim sub-second
 - [ ] **Datastream Oracle SE2 validation** - required to confirm viability at branch sites
-- [ ] **GCP Binary Log Reader GA timeline** - currently Preview (no SLA), would reduce Datastream latency to 1-5 min
+- [ ] **GCP Binary Log Reader activation & GA timeline** — Preview option confirmed visible in GCP Datastream console (Nikolay, 2026-04-16) but not GA. **Next step: contact Google to clarify how to activate and get GA timeline/SLA information**
 
 ### ⏳ Next Up
 - Schedule sync meeting to align on PoC findings and next steps
 - Execute second PoC with Oracle redo log tuning (Option 1: ARCHIVE_LAG_TARGET=900, redo log 256 MB)
 - Define formal latency requirement for New Dispo CDC use case
 - Business decision: latency vs. cost trade-off (EUR 4K vs. EUR 140K/year)
-- Evaluate Datastream Binary Log Reader if redo log tuning insufficient
-- Update ADR-006 with deep analysis findings and second PoC results
+- Contact Google about Binary Log Reader activation and GA timeline — could bridge latency gap between Datastream LogMiner (5-20 min) and Striim (sub-second)
+- Update ADR-006 with deep analysis findings, Binary Log Reader status, and second PoC results
 - Close ADR-006 with final decision
 
 ---
@@ -224,6 +226,7 @@ _To be defined in workshop - pending alignment with stakeholders_
 
 | Date       | Update                                                                                                                                                             | Updated By             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| 2026-04-21 | Binary Log Reader (Preview) confirmed available in GCP Datastream console (Nikolay screenshot, 2026-04-16); not GA — next step: contact Google for activation details and GA timeline. Screenshot added to project status. | Virtual Architect |
 | 2026-04-17 | Deep analysis findings integrated: Datastream end-to-end latency corrected to ~42-66 min (was 16-20s system latency only); root cause identified (1 GB redo logs, ARCHIVE_LAG_TARGET=0); DBA data from Robert Zanter received; three options documented; cost projection refined (34x factor); management summary drafted; second PoC with Oracle tuning recommended | Matthias Max |
 | 2026-04-15 | ADR-006 drafted from PoC results; project status updated with findings; 8 outstanding items identified | Virtual Architect |
 | 2026-04-15 | PoC results received from Matt Wilkinson (2026-04-02): Striim ~100ms latency/99.98% delivery; Datastream ~16-20s latency/completeness TBD | Virtual Architect |
