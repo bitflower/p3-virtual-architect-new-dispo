@@ -1,13 +1,14 @@
 # Project: Oracle CDC Solution for TMS Branch Databases
 
-**Status:** 🔄 In Progress - Deep Analysis Complete, Second PoC Recommended
+**Status:** 🔄 In Progress - Datastream LogMiner Ruled Out, Two Options Remain (Binary Log Reader / Striim)
 **Author:** Matthias Max
-**Last Updated:** 2026-04-21
+**Last Updated:** 2026-04-23
 **Next Milestones:**
-1. Align on latency vs. cost trade-off with business stakeholders
-2. Align with technical stakeholders about decision to run second PoC (Option 1)
-3. Execute second PoC with Oracle redo log tuning (Option 1)
-4. Close ADR-006 with final technology decision
+1. Google response on Binary Log Reader (Preview) activation (Owner: Matt Wilkinson, ETA: 2026-04-25)
+2. Striim event format mapping assessment for TMS Pulse (Owner: Matthias Max)
+3. Oracle migration view completion and testing (Owner: Andrej/Reinhard, Nagel)
+4. Infrastructure skeleton check — fill gaps across all environments (Owner: Nikolay/P3 team)
+5. Close ADR-006 with final technology decision
 
 **Go-Live Target:** June 2026
 
@@ -23,7 +24,7 @@
 
 **POC Scope:** Intentionally kept minimal - CDC replication ends at Cloud Storage (Object Store). Downstream Cloud SQL updates and event format harmonization (Oracle ↔ Postgres) are considered post-POC as preparation for business logic integration.
 
-**Decision Timeline:** End of April 2026 (pending second PoC with Oracle tuning)
+**Decision Timeline:** End of April 2026 (pending Google response on Binary Log Reader)
 
 **Related Work Items:**
 - [Feature 121925: TMS Pulse ORA Extension](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_workitems/edit/121925)
@@ -90,28 +91,44 @@
 - [x] **Binary Log Reader (Preview) confirmed available** as Datastream config option in GCP — Nikolay verified via GCP console (2026-04-16). Option is selectable but remains **Preview (not GA)**, no production SLA. Matthias: "not really released publicly." — [Screenshot](../../00_Meetings/2026-04-16_DevOps_Oracle_Option/image.png)
   ![Datastream CDC method config showing LogMiner (selected) and Binary reader (Preview)](../../00_Meetings/2026-04-16_DevOps_Oracle_Option/image.png)
 
+### ✅ Completed (CW 17)
+- [x] **Key decision: Datastream LogMiner ruled out** — "not an option at all... we need events in real time" (April 21 meeting). Datastream with archived redo logs (~42-66 min latency) is unacceptable for CDC use case
+- [x] **Two remaining options identified** — Option A: Datastream Binary Log Reader (reads redo logs directly, like Striim — but currently in Preview, not available to Nagel). Option B: Striim (proven sub-second latency, currently free under borrowed Google license, expensive long-term). Matt Wilkinson escalating to Google account manager to request Binary Log Reader activation / trusted tester access
+- [x] Weekly sync meeting established — Patrick Uschmann to send recurring invite, same attendee group (April 21)
+- [x] Oracle migration tracker shared by Matt Wilkinson — [Live SharePoint tracker](https://nagelgroup-my.sharepoint.com/:x:/r/personal/x_matt_wilkinson_nagel-group_com/Documents/Anlagen/Dispo_POSTGRES_Oracle_Tracker%201.xlsx?d=weae5c4954eab449a8cff3bc20eee1b26&csf=1&web=1&e=v4o4Cx) for Postgres-to-Oracle conversion status (April 22)
+- [x] Database user strategy decided — separate users for CDC (log mining) vs. application (bridge), per Eric Meijers' recommendation. TMS owner account (TMS 1060) should NOT be used by application. Branch-specific usernames required (Postgres cluster isolation)
+- [x] Oracle DevOps branch created for New Dispo — Matt Wilkinson created dedicated branch off Oracle Master for converted code ("gold build")
+- [x] ENT1 environment set up for Oracle conversion development
+- [x] ABN 1060 Oracle DB confirmed ready and running
+- [x] ADR created for using TEST environment as DEV (no DEV environment exists) — Matthias Max
+- [x] Liquibase purchase expected imminently for automated database deployment pipelines
+
 ### 🔄 In Progress
+- [ ] **Binary Log Reader escalation to Google** — Matt Wilkinson contacting Google account manager to request Preview activation or trusted tester access. Expected answer by 2026-04-25. This determines which of the two remaining CDC options (Binary Log Reader vs. Striim) is viable
+- [ ] **Striim event format mapping** — Matthias checking Striim output format vs. Datastream to assess if mapping needed before TMS Pulse integration
+- [ ] **Oracle view conversion** — Andrej working on views; some not functional due to missing dependent packages/functions. Joachim on holiday. Matt meeting Andrej + Reinhard for status update (April 21 afternoon)
+- [ ] **Infrastructure skeleton check** — Nikolay/P3 team to verify all GCP infrastructure (Cloud Run, buckets, pipelines) exists for all environments (dev, test, UAT, prod). Fill gaps. Mark status on deployment matrix
+- [ ] **DB user permissions spec** — Yosif to document required tables/objects for TMS Bridge (least-privilege). P3 provides root objects; Nagel DBA team maps Oracle grants
+- [ ] **VDI access for P3 developers** — Ron investigating available virtual desktops for 7 P3 users to access Oracle environments
+- [x] **DevOps access for Matt Wilkinson** — Matthias got Matt access to P3 Azure DevOps (single source of truth for collaboration)
 - [ ] ADR-006 outstanding items resolution — updated with deep analysis findings
-- [ ] Request for Dominik support raised with Christian Lang by Martin Dittmann
 - [ ] Striim licensing extension request submitted to Google by Matt Wilkinson
-- [ ] Oracle redo log tuning feasibility assessment (Robert Zanter) — including aggressive values (5-10 min)
-- [ ] Sync meeting to discuss way forward (Owner: Martin Dittmann to schedule)
 
 ### 🚫 Blocked
-- [ ] **Target latency definition** - business must define acceptable latency for CDC use case (0.1s vs 5-20 min vs 42-66 min). Patrick Uschmann's verbal "~10s acceptable, minutes problematic" needs formal sign-off given new numbers
-- [ ] **Striim license cost data** - required for fair cost comparison. EUR 2,771/mo compute is shared with "Pretzel" cluster — actual costs after Pretzel shutdown unknown (Owner: Matt Wilkinson / Christian Lang)
-- [ ] **Business alignment on latency vs. cost trade-off** - Datastream EUR 4K/yr vs. Striim EUR 140K/yr, but Datastream latency 5-20 min (with tuning) vs. Striim sub-second
-- [ ] **Datastream Oracle SE2 validation** - required to confirm viability at branch sites
-- [ ] **GCP Binary Log Reader activation & GA timeline** — Preview option confirmed visible in GCP Datastream console (Nikolay, 2026-04-16) but not GA. **Next step: contact Google to clarify how to activate and get GA timeline/SLA information**
+- [ ] **CDC technology decision pending Google response** — Binary Log Reader availability from Google determines whether Datastream (cheaper) or Striim (proven, expensive) is the go-live solution. Decision blocked until Matt gets Google answer (~2026-04-25)
+- [ ] **Striim license cost negotiation** — currently free under borrowed Google license. Long-term costs unknown. Matt suggested approaching Striim directly for pricing; German team to negotiate. Only relevant if Striim becomes the final choice
+- [ ] **Datastream Oracle SE2 validation** — required to confirm viability at branch sites (only relevant if Binary Log Reader path is chosen)
 
 ### ⏳ Next Up
-- Schedule sync meeting to align on PoC findings and next steps
-- Execute second PoC with Oracle redo log tuning (Option 1: ARCHIVE_LAG_TARGET=900, redo log 256 MB)
-- Define formal latency requirement for New Dispo CDC use case
-- Business decision: latency vs. cost trade-off (EUR 4K vs. EUR 140K/year)
-- Contact Google about Binary Log Reader activation and GA timeline — could bridge latency gap between Datastream LogMiner (5-20 min) and Striim (sub-second)
-- Update ADR-006 with deep analysis findings, Binary Log Reader status, and second PoC results
-- Close ADR-006 with final decision
+- Await Google response on Binary Log Reader (by 2026-04-25)
+- If Binary Log Reader available: activate and retest Datastream with binary reader against same Oracle source
+- If Binary Log Reader unavailable: proceed with Striim as CDC solution for go-live
+- Complete Striim event format assessment and TMS Pulse mapping if needed
+- Prioritize Oracle view conversion with Andrej/Reinhard aligned to P3 testing buckets
+- Fill infrastructure gaps across all environments (dev/test/UAT/prod)
+- Create DB user specification (bridge user, CDC user) with least-privilege grants
+- Update ADR-006 with April 21 decision (LogMiner ruled out, two remaining options)
+- Close ADR-006 with final decision after Google response
 
 ---
 
@@ -125,11 +142,13 @@
 | POC Execution  | March 16 - April 2 | ✅ Complete | Striim + Datastream tested against TMS1060.SENDUNG |
 | POC Results    | April 2      | ✅ Complete    | Data package received from Matt Wilkinson |
 | Deep Analysis  | April 15-17  | ✅ Complete    | GCP metrics extraction, root cause analysis, DBA data, management summary |
-| Stakeholder Alignment | April 2026 | 🔄 In Progress | Latency vs. cost trade-off decision, target latency definition |
-| Second PoC     | April 21-25, 2026 | ⏳ Planned   | Oracle redo log tuning + Datastream retest (3-4 days) |
-| Decision       | End of April 2026 | ⏳ Planned     | Close ADR-006 with final technology decision |
+| Stakeholder Alignment | April 21, 2026 | ✅ Complete | Datastream LogMiner ruled out; two remaining options: Binary Log Reader / Striim |
+| Google Escalation | April 21-25, 2026 | 🔄 In Progress | Matt Wilkinson escalating Binary Log Reader to Google account manager |
+| Oracle Migration | April-May 2026 | 🔄 In Progress | Postgres-to-Oracle view/package conversion (Andrej, Reinhard, Joachim) |
+| Infrastructure Prep | April-May 2026 | 🔄 In Progress | GCP skeleton check, DB users, pipeline verification across all envs |
+| Decision       | End of April 2026 | ⏳ Planned     | Close ADR-006 — Striim confirmed, or pivot to Datastream Binary Reader |
 | Production-Readiness | May/June 2026 | ⏳ Planned  | Rollout document creation, go-live prep   |
-| Go-Live        | June 2026    | 🎯 Target      | Nagel branches production deployment      |
+| Go-Live        | June 2026    | 🎯 Target      | Nagel branches production deployment (~8 weeks from April 21) |
 
 ---
 
@@ -146,11 +165,14 @@
 ### Nagel Team
 - **Christian Lang** - CEO Nagel IT, Decision Authority
 - **Patrick Uschmann** - Product Owner
-- **Matt Wilkinson** - Infrastructure Lead, Striim Setup
-- **Ron Vervenne** - Cloud Engineer, Infrastructure Platform
+- **Matt Wilkinson** - Infrastructure Lead, Striim Setup, Google Account Escalation
+- **Ron Vervenne** - Cloud Engineer, Infrastructure Platform, VDI Access
 - **Thomas Paulus** - TMS Database Developer, Oracle Configuration
 - **Robert Zanter** - Oracle DBA, Redo Log Configuration
-- **Eric Meijers** - Cloud Engineer, DBA Support
+- **Eric Meijers** - Cloud Engineer, DBA Support, User Permissions Strategy
+- **Andrej** - Oracle Developer, View/Package Conversion
+- **Reinhard** - Oracle Developer, View/Package Conversion
+- **Joachim** - Oracle Developer
 - **Steve** - Additional Infrastructure Support
 
 ---
@@ -172,15 +194,17 @@
 - **Rollout Plan: Oracle CDC Production Deployment** _(Pending - post-ADR closure)_
 - **Setup Guide: Oracle CDC Configuration** _(Partially documented in Technical Evaluation - needs [TBC] completion)_
 - **Cost Analysis: Striim vs Datastream** _(Refined: Datastream EUR 344/mo vs. Striim EUR 11,671/mo at 64 DBs. Striim license costs still TBD)_
+- **Oracle Migration Tracker** _(Live SharePoint sheet — [Dispo Postgres Oracle Tracker](https://nagelgroup-my.sharepoint.com/:x:/r/personal/x_matt_wilkinson_nagel-group_com/Documents/Anlagen/Dispo_POSTGRES_Oracle_Tracker%201.xlsx?d=weae5c4954eab449a8cff3bc20eee1b26&csf=1&web=1&e=v4o4Cx), shared by Matt Wilkinson 2026-04-22)_
 
 ---
 
 ## Communication
 
 ### Meeting History
+- **2026-04-21:** Follow-Up Oracle CDC (72 min) - Key decisions: Datastream LogMiner ruled out, Binary Log Reader escalation to Google, DB user strategy, weekly sync established
 - **2026-03-11:** Kick-Off Meeting (56 min) - [Teams Link](https://teams.microsoft.com/meet/39050326979606?p=6txN2RVcQCVGEmqpuZ)
 - **2026-03-16:** Follow-up Workshop (30 min) - _Completed_
-- **2026-03-20:** Workshop (14:30) - _Scheduled_
+- **2026-03-20:** Workshop (14:30) - _Completed_
 
 ### Discussion Channels
 - **Teams Chat:** [Oracle CDC POC Discussion](https://teams.microsoft.com/l/chat/19:c11215f85805443396007013fbbbff97@thread.v2/conversations?context=%7B%22contextType%22%3A%22chat%22%7D)
@@ -226,10 +250,11 @@ _To be defined in workshop - pending alignment with stakeholders_
 
 | Date       | Update                                                                                                                                                             | Updated By             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
-| 2026-04-21 | Binary Log Reader (Preview) confirmed available in GCP Datastream console (Nikolay screenshot, 2026-04-16); not GA — next step: contact Google for activation details and GA timeline. Screenshot added to project status. | Virtual Architect |
+| 2026-04-23 | Major update from April 21 meeting + April 22 tracker: Datastream LogMiner ruled out (too slow). Two options remain: Binary Log Reader (pending Google activation) and Striim. Matt Wilkinson escalating to Google. Weekly sync established. Oracle migration tracker shared. DB user strategy decided (separate users, least-privilege). Andrej/Reinhard/Joachim working on Oracle view conversion. Infrastructure skeleton check initiated. Names corrected: Andrej, Reinhard. | Matthias Max |
+| 2026-04-21 | Binary Log Reader (Preview) confirmed available in GCP Datastream console (Nikolay screenshot, 2026-04-16); not GA — next step: contact Google for activation details and GA timeline. Screenshot added to project status. | Matthias Max |
 | 2026-04-17 | Deep analysis findings integrated: Datastream end-to-end latency corrected to ~42-66 min (was 16-20s system latency only); root cause identified (1 GB redo logs, ARCHIVE_LAG_TARGET=0); DBA data from Robert Zanter received; three options documented; cost projection refined (34x factor); management summary drafted; second PoC with Oracle tuning recommended | Matthias Max |
-| 2026-04-15 | ADR-006 drafted from PoC results; project status updated with findings; 8 outstanding items identified | Virtual Architect |
-| 2026-04-15 | PoC results received from Matt Wilkinson (2026-04-02): Striim ~100ms latency/99.98% delivery; Datastream ~16-20s latency/completeness TBD | Virtual Architect |
+| 2026-04-15 | ADR-006 drafted from PoC results; project status updated with findings; 8 outstanding items identified | Matthias Max |
+| 2026-04-15 | PoC results received from Matt Wilkinson (2026-04-02): Striim ~100ms latency/99.98% delivery; Datastream ~16-20s latency/completeness TBD | Matthias Max |
 | 2026-03-20 | Added item to completed: Workshop executed on March 16 (Technical walkthrough, POC kickoff) | Matthias |
 | 2026-03-20 | Added item to in-progress: Request for Dominik support raised with Christian Lang | Matthias |
 | 2026-03-20 | Added item to in-progress: Striim licensing extension request submitted to Google | Matthias |
