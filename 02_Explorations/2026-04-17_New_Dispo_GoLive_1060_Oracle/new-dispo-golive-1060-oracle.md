@@ -134,6 +134,8 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 | `client-credentials-test` | Machine-to-Machine      | Service accounts       | Test               | * to be verified |
 | `cloud-run-client`        | Machine-to-Machine      | Cloud Run functions    | Cloud environments | * to be verified |
 | `tms-cloud-service`       | Machine-to-Machine      | TMS Bridge             | Cloud environments | * to be verified |
+| `tmsng-client`            | Machine-to-Machine      | ?????                  | Test               | * to be verified |
+| `driverapp-client`        | Machine-to-Machine      | ?????                  | Test               | * to be verified |
 
 **Keycloak Servers:**
 
