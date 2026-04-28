@@ -2,7 +2,7 @@
 
 Dieses Dokument fasst die Backend- und Frontend-Dokumentation zur Fahranweisung in der New Dispo App zusammen. Es enthält Informationen zu Endpoints, Datenverträgen, Authentifizierung, Frontend-Darstellung sowie die Zuordnung der TMS-Bridge-Operationen zu den zugrunde liegenden Datenbank-Views, -Funktionen und -Prozeduren.
 
-> **Swagger / OpenAPI:** Die vollständige Backend API-Spezifikation liegt bei. Swagger UI ist in der lokalen Umgebung unter `/swagger` erreichbar und bietet Bearer-Token-Authentifizierung zum Testen.
+> **Swagger / OpenAPI:** Swagger UI ist in den Umgebungen `Local` und `Development` unter `/swagger` erreichbar und bietet Bearer-Token-Authentifizierung zum Testen.
 
 ---
 
@@ -47,52 +47,54 @@ Dieses Dokument fasst die Backend- und Frontend-Dokumentation zur Fahranweisung 
 ## 2. Backend API Endpoints
 
 Alle Endpoint-Konstanten sind definiert in:
-`apps/nagel-cal-disposition/src/app/configuration/consts/endpoints.ts`
+[`apps/nagel-cal-disposition/src/app/configuration/consts/endpoints.ts`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Frontend?path=/apps/nagel-cal-disposition/src/app/configuration/consts/endpoints.ts)
 
 Die Base-URL kommt aus der Environment-Config (z.B. `http://localhost:5101` für Dev).
 
 ### 2.1 Fahranweisung / Tourpunkte
 
-| Methode  | Endpoint                                                       | Beschreibung                                                    |
-| -------- | -------------------------------------------------------------- | --------------------------------------------------------------- |
-| `GET`    | `/api/pickup-planning/transportorders/{id}/drive-instructions` | Alle Tourpunkte (Fahranweisung) eines Transportauftrags abrufen |
-| `POST`   | `/api/pickup-planning/transportorders/tourpoint`               | Neuen Tourpunkt anlegen                                         |
-| `PUT`    | `/api/transportorders/tourpoints/{tourPointId}`                | Bestehenden Tourpunkt bearbeiten                                |
-| `DELETE` | `/api/pickup-planning/transportorders/tourpoint`               | Tourpunkt löschen                                               |
-| `PUT`    | `/api/pickup-planning/tourpoints/reorder`                      | Tourpunkte umsortieren (Drag & Drop)                            |
-| `PATCH`  | `/api/transportorders/tourpoint/{tourPointId}/tournumber`      | Kunden-Tournummer setzen                                        |
-| `POST`   | `/api/pickup-planning/transportorders/graph-tour-points`       | Graph-Tourpunkte für Visualisierung abrufen                     |
+| Methode  | Endpoint                                                              | Controller                                                                                                                                                                                                                                    | Beschreibung                                                    |
+| -------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `GET`    | `/api/pickup-drive-instructions`                                      | [`PickupDriveInstructionsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/PickupDriveInstructions/PickupDriveInstructionsController.cs)           | Alle Tourpunkte (Fahranweisung) eines Transportauftrags abrufen |
+| `POST`   | `/api/transportorders/{transportOrderId}/tourpoints`                  | [`TransportOrderTourpointsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Resources/TransportOrderTourpoints/TransportOrderTourpointsController.cs)       | Neuen Tourpunkt anlegen                                         |
+| `PUT`    | `/api/tourpoints/{tourpointId}`                                       | [`TourpointsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Resources/Tourpoints/TourpointsController.cs)                                                | Bestehenden Tourpunkt bearbeiten                                |
+| `DELETE` | `/api/transportorders/{transportOrderId}/tourpoints`                  | [`TransportOrderTourpointsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Resources/TransportOrderTourpoints/TransportOrderTourpointsController.cs)       | Tourpunkt löschen                                               |
+| `PUT`    | `/api/transportorders/{transportOrderId}/tourpoints/reorder`          | [`TransportOrderTourpointsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Resources/TransportOrderTourpoints/TransportOrderTourpointsController.cs)       | Tourpunkte umsortieren (Drag & Drop)                            |
+| `PATCH`  | `/api/tourpoints/{tourpointId}/tournumber`                            | [`TourpointsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Resources/Tourpoints/TourpointsController.cs)                                                | Kunden-Tournummer setzen                                        |
+| `POST`   | `/api/pickup-planning-view/transportorders/graph-tour-points`         | [`PickupPlanningViewController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/PickupPlanningView/PickupPlanningViewController.cs)                          | Graph-Tourpunkte für Visualisierung abrufen                     |
 
 ### 2.2 Ladeintervalle (Loading Intervals)
 
-| Methode  | Endpoint                                                         | Beschreibung                       |
-| -------- | ---------------------------------------------------------------- | ---------------------------------- |
-| `PUT`    | `/api/transportorders/tourpoints/{tourPointId}/loading-interval` | Ladeintervall (Zeitfenster) setzen |
-| `DELETE` | `/api/transportorders/tourpoints/{tourPointId}/loading-interval` | Ladeintervall entfernen            |
+| Methode  | Endpoint                                          | Controller                                                                                                                                                                                     | Beschreibung                       |
+| -------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| `PUT`    | `/api/tourpoints/{tourpointId}/loading-interval`  | [`TourpointsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Resources/Tourpoints/TourpointsController.cs) | Ladeintervall (Zeitfenster) setzen |
+| `DELETE` | `/api/tourpoints/{tourpointId}/loading-interval`  | [`TourpointsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Resources/Tourpoints/TourpointsController.cs) | Ladeintervall entfernen            |
 
 ### 2.3 Ladereferenz (Loading Reference)
 
-| Methode | Endpoint                                                          | Beschreibung        |
-| ------- | ----------------------------------------------------------------- | ------------------- |
-| `PUT`   | `/api/transportorders/tourpoints/{tourPointId}/loading-reference` | Ladereferenz setzen |
+| Methode | Endpoint                                           | Controller                                                                                                                                                                                     | Beschreibung        |
+| ------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| `PUT`   | `/api/tourpoints/{tourpointId}/loading-reference`  | [`TourpointsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Resources/Tourpoints/TourpointsController.cs) | Ladereferenz setzen |
 
 ### 2.4 Zuweisungen & Ladereihenfolge (Assignments / Loading Sequence)
 
-| Methode | Endpoint                                         | Beschreibung                                   |
-| ------- | ------------------------------------------------ | ---------------------------------------------- |
-| `POST`  | `/api/pickup-planning/lotassignments/from-leg`   | Sendung (Leg) einem Transportauftrag zuweisen  |
-| `POST`  | `/api/pickup-planning/lotassignments/from-lot`   | Partie (Lot) einem Transportauftrag zuweisen   |
-| `PUT`   | `/api/pickup-planning/lotassignments/reorder`    | Partien umsortieren (Ladereihenfolge der Lots) |
-| `PUT`   | `/api/pickup-planning/legs/reorder`              | Sendungen innerhalb einer Partie umsortieren   |
-| `PUT`   | `/api/pickup-planning/unassign`                  | Legs/Lots von einem Transportauftrag lösen     |
-| `PATCH` | `/api/pickup-planning/legs/{legId}/stays-loaded` | Sendung als "bleibt geladen" markieren         |
+| Methode | Endpoint                                                                 | Controller                                                                                                                                                                                                                              | Beschreibung                                   |
+| ------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `POST`  | `/api/transport-order-planning/transportorders/from-leg`                 | [`TransportOrderPlanningController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/TransportOrderPlanning/TransportOrderPlanningController.cs)        | Transportauftrag aus Sendung (Leg) erstellen   |
+| `POST`  | `/api/transport-order-planning/transportorders/from-lot`                 | [`TransportOrderPlanningController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/TransportOrderPlanning/TransportOrderPlanningController.cs)        | Transportauftrag aus Partie (Lot) erstellen    |
+| `PUT`   | `/api/transport-order-planning/transportorders/{transportOrderId}/legs/{legId}`  | [`TransportOrderPlanningController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/TransportOrderPlanning/TransportOrderPlanningController.cs) | Sendung (Leg) einem Transportauftrag zuweisen  |
+| `PUT`   | `/api/transport-order-planning/transportorders/{transportOrderId}/lots/{lotId}`  | [`TransportOrderPlanningController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/TransportOrderPlanning/TransportOrderPlanningController.cs) | Partie (Lot) einem Transportauftrag zuweisen   |
+| `PUT`   | `/api/pickup-drive-instructions/lotassignments/reorder`                  | [`PickupDriveInstructionsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/PickupDriveInstructions/PickupDriveInstructionsController.cs)     | Partien umsortieren (Ladereihenfolge der Lots) |
+| `PUT`   | `/api/pickup-drive-instructions/legs/reorder`                            | [`PickupDriveInstructionsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/PickupDriveInstructions/PickupDriveInstructionsController.cs)     | Sendungen innerhalb einer Partie umsortieren   |
+| `PUT`   | `/api/pickup-drive-instructions/lots-and-legs/unassign`                  | [`PickupDriveInstructionsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/PickupDriveInstructions/PickupDriveInstructionsController.cs)     | Legs/Lots von einem Transportauftrag lösen     |
+| `PATCH` | `/api/tmslegs/{legId}/stays-loaded`                                      | [`TMSLegsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Resources/TMSLegs/TMSLegsController.cs)                                                  | Sendung als "bleibt geladen" markieren         |
 
 ### 2.5 Transportauftrags-Details
 
-| Methode | Endpoint                             | Beschreibung                          |
-| ------- | ------------------------------------ | ------------------------------------- |
-| `GET`   | `/api/transportorders/{orderNumber}` | Vollständige Transportauftragsdetails |
-| `POST`  | `/api/transportorders/paged`         | Paginierte Transportauftragsliste     |
+| Methode | Endpoint                                                       | Controller                                                                                                                                                                                                                              | Beschreibung                          |
+| ------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `GET`   | `/api/transport-order-details/transportorders/{orderNumber}`   | [`TransportOrderDetailsController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/TransportOrderDetails/TransportOrderDetailsController.cs)           | Vollständige Transportauftragsdetails |
+| `POST`  | `/api/transport-order-list-view/transportorders/paged`         | [`TransportOrderListViewController`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend?path=/CALConsult.Disposition.API/Application/Features/TransportOrderListView/TransportOrderListViewController.cs)       | Paginierte Transportauftragsliste     |
 
 ---
 
@@ -137,7 +139,7 @@ Relation-Typen für Positionierung: `0`=first, `1`=last, `2`=after, `3`=before
 
 ### 3.3 Request/Response Bodies
 
-#### Tourpunkt anlegen (`POST /api/pickup-planning/transportorders/tourpoint`)
+#### Tourpunkt anlegen (`POST /api/transportorders/{transportOrderId}/tourpoints`)
 
 Request:
 ```json
@@ -167,7 +169,7 @@ Response:
 }
 ```
 
-#### Tourpunkt bearbeiten (`PUT /api/transportorders/tourpoints/{tourPointId}`)
+#### Tourpunkt bearbeiten (`PUT /api/tourpoints/{tourpointId}`)
 
 Request:
 ```json
@@ -189,7 +191,7 @@ Response:
 }
 ```
 
-#### Tourpunkt löschen (`DELETE /api/pickup-planning/transportorders/tourpoint`)
+#### Tourpunkt löschen (`DELETE /api/transportorders/{transportOrderId}/tourpoints`)
 
 Request:
 ```json
@@ -207,7 +209,7 @@ Response:
 }
 ```
 
-#### Tourpunkte umsortieren (`PUT /api/pickup-planning/tourpoints/reorder`)
+#### Tourpunkte umsortieren (`PUT /api/transportorders/{transportOrderId}/tourpoints/reorder`)
 
 Request:
 ```json
@@ -220,7 +222,7 @@ Request:
 }
 ```
 
-#### Kunden-Tournummer setzen (`PATCH /api/transportorders/tourpoint/{tourPointId}/tournumber`)
+#### Kunden-Tournummer setzen (`PATCH /api/tourpoints/{tourpointId}/tournumber`)
 
 Request:
 ```json
@@ -231,7 +233,7 @@ Request:
 }
 ```
 
-#### Ladeintervall setzen (`PUT /api/transportorders/tourpoints/{tourPointId}/loading-interval`)
+#### Ladeintervall setzen (`PUT /api/tourpoints/{tourpointId}/loading-interval`)
 
 Request:
 ```json
@@ -249,7 +251,7 @@ Response:
 }
 ```
 
-#### Ladeintervall entfernen (`DELETE /api/transportorders/tourpoints/{tourPointId}/loading-interval`)
+#### Ladeintervall entfernen (`DELETE /api/tourpoints/{tourpointId}/loading-interval`)
 
 Response:
 ```json
@@ -258,7 +260,7 @@ Response:
 }
 ```
 
-#### Ladereferenz setzen (`PUT /api/transportorders/tourpoints/{tourPointId}/loading-reference`)
+#### Ladereferenz setzen (`PUT /api/tourpoints/{tourpointId}/loading-reference`)
 
 Request:
 ```json
@@ -274,7 +276,7 @@ Response:
 }
 ```
 
-#### Partien umsortieren (`PUT /api/pickup-planning/lotassignments/reorder`)
+#### Partien umsortieren (`PUT /api/pickup-drive-instructions/lotassignments/reorder`)
 
 Request:
 ```json
@@ -285,7 +287,7 @@ Request:
 }
 ```
 
-#### Sendungen innerhalb Partie umsortieren (`PUT /api/pickup-planning/legs/reorder`)
+#### Sendungen innerhalb Partie umsortieren (`PUT /api/pickup-drive-instructions/legs/reorder`)
 
 Request:
 ```json
@@ -296,11 +298,11 @@ Request:
 }
 ```
 
-#### "Bleibt geladen" markieren (`PATCH /api/pickup-planning/legs/{legId}/stays-loaded`)
+#### "Bleibt geladen" markieren (`PATCH /api/tmslegs/{legId}/stays-loaded`)
 
 Query Parameter: `staysLoadedValue: bool`
 
-#### Sendung zuweisen (`POST /api/pickup-planning/lotassignments/from-leg`)
+#### Transportauftrag aus Sendung erstellen (`POST /api/transport-order-planning/transportorders/from-leg`)
 
 Request:
 ```json
@@ -313,7 +315,7 @@ Request:
 }
 ```
 
-#### Partie zuweisen (`POST /api/pickup-planning/lotassignments/from-lot`)
+#### Transportauftrag aus Partie erstellen (`POST /api/transport-order-planning/transportorders/from-lot`)
 
 Request:
 ```json
@@ -325,7 +327,7 @@ Request:
 }
 ```
 
-#### Legs/Lots lösen (`PUT /api/pickup-planning/unassign`)
+#### Legs/Lots lösen (`PUT /api/pickup-drive-instructions/lots-and-legs/unassign`)
 
 Request:
 ```json
@@ -347,7 +349,7 @@ Response:
 }
 ```
 
-#### Graph-Tourpunkte abrufen (`POST /api/pickup-planning/transportorders/graph-tour-points`)
+#### Graph-Tourpunkte abrufen (`POST /api/pickup-planning-view/transportorders/graph-tour-points`)
 
 Request:
 ```json
@@ -530,22 +532,22 @@ export interface LegTourPointConfig {
 
 ## 6. TMS Bridge — GraphQL Mutations & Queries
 
-Mehrere Backend-Endpoints delegieren Schreiboperationen an die TMS Bridge (Disposition-Abstraction-Layer) via GraphQL. Die Bridge-Base-URL ist pro Umgebung konfiguriert (z.B. `http://localhost:5158/bridge/`). Das Backend leitet den Bearer-Token des Aufrufers an die Bridge weiter.
+Mehrere Backend-Endpoints delegieren Schreiboperationen an die TMS Bridge ([Disposition-Abstraction-Layer](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Abstraction-Layer)) via GraphQL. Die Bridge-Base-URL ist pro Umgebung konfiguriert (z.B. `http://localhost:5158/bridge/`). Das Backend leitet den Bearer-Token des Aufrufers an die Bridge weiter.
 
 ### 6.1 Mutations-Übersicht (vom Backend aufgerufen)
 
-| GraphQL Mutation                | Backend Endpoint                                               | Response Field                    |
-| ------------------------------- | -------------------------------------------------------------- | --------------------------------- |
-| `callMoveTourpoint`             | `PUT /api/pickup-planning/tourpoints/reorder`                  | `isTourpointMoved`                |
-| `callAddTourpoint`              | `POST /api/pickup-planning/transportorders/tourpoint`          | `isTourpointAdded`, `tourpointId` |
-| `callDeleteTourpoint`           | `DELETE /api/pickup-planning/transportorders/tourpoint`        | `isTourpointDeleted`              |
-| `callEditTourpoint`             | `PUT /api/transportorders/tourpoints/{id}`                     | `isTourpointEdited`               |
-| `callSetLoadingReference`       | `PUT /api/transportorders/tourpoints/{id}/loading-reference`   | `isLoadingReferenceSet`           |
-| `callSetTargetLoadingStartTime` | `PUT /api/transportorders/tourpoints/{id}/loading-interval`    | `isStartTimeSet`                  |
-| `callSetTargetLoadingEndTime`   | `PUT /api/transportorders/tourpoints/{id}/loading-interval`    | `isEndTimeSet`                    |
-| `callRemoveLoadingIntervals`    | `DELETE /api/transportorders/tourpoints/{id}/loading-interval` | `isDeleted`                       |
-| `callStaysLoaded`               | `PATCH /api/pickup-planning/legs/{id}/stays-loaded`            | `isStaysLoadedSet`, `tmsLegId`    |
-| `callSetCustomerTourNumber`     | `PATCH /api/transportorders/tourpoint/{id}/tournumber`         | `isCustomerTourNumberSet`         |
+| GraphQL Mutation                | Backend Endpoint                                                       | Response Field                    |
+| ------------------------------- | ---------------------------------------------------------------------- | --------------------------------- |
+| `callMoveTourpoint`             | `PUT /api/transportorders/{id}/tourpoints/reorder`                     | `isTourpointMoved`                |
+| `callAddTourpoint`              | `POST /api/transportorders/{id}/tourpoints`                            | `isTourpointAdded`, `tourpointId` |
+| `callDeleteTourpoint`           | `DELETE /api/transportorders/{id}/tourpoints`                          | `isTourpointDeleted`              |
+| `callEditTourpoint`             | `PUT /api/tourpoints/{id}`                                             | `isTourpointEdited`               |
+| `callSetLoadingReference`       | `PUT /api/tourpoints/{id}/loading-reference`                           | `isLoadingReferenceSet`           |
+| `callSetTargetLoadingStartTime` | `PUT /api/tourpoints/{id}/loading-interval`                            | `isStartTimeSet`                  |
+| `callSetTargetLoadingEndTime`   | `PUT /api/tourpoints/{id}/loading-interval`                            | `isEndTimeSet`                    |
+| `callRemoveLoadingIntervals`    | `DELETE /api/tourpoints/{id}/loading-interval`                         | `isDeleted`                       |
+| `callStaysLoaded`               | `PATCH /api/tmslegs/{id}/stays-loaded`                                 | `isStaysLoadedSet`, `tmsLegId`    |
+| `callSetCustomerTourNumber`     | `PATCH /api/tourpoints/{id}/tournumber`                                | `isCustomerTourNumberSet`         |
 
 ### 6.2 Weitere TMS Bridge Mutations (vollständig)
 
@@ -684,26 +686,36 @@ Mehrere Backend-Endpoints delegieren Schreiboperationen an die TMS Bridge (Dispo
 
 ---
 
+## Repository-Links
+
+| Komponente    | Repository                                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Backend       | [Disposition-Backend](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend)                  |
+| Frontend      | [Disposition-Frontend](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Frontend)                |
+| TMS Bridge    | [Disposition-Abstraction-Layer](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Abstraction-Layer) |
+| TMS Database  | [tms-alloydb-schema](https://github.com/cal-consult/tms-alloydb-schema)                                            |
+
+---
+
 ## 8. Quellcode-Referenzen
 
-### Backend (Disposition-Backend)
+### Backend ([Disposition-Backend](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend))
 
-| Bereich                    | Pfad                                                                                                           |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **Controllers**            | `Features/PickupPlanning/PickupPlanningController.cs`, `Features/TransportOrders/TransportOrdersController.cs` |
-| **Drive Instructions**     | `Features/PickupPlanning/Requests/GetDriveInstructions/`                                                       |
-| **Tourpoint Reorder**      | `Features/PickupPlanning/Requests/ReorderTourpoint/`                                                           |
-| **Tourpoint Edit**         | `Features/TransportOrders/Requests/EditTourpoint/`                                                             |
-| **Leg Reorder**            | `Features/PickupPlanning/Requests/ReorderLeg/`                                                                 |
-| **Lot Assignment Reorder** | `Features/PickupPlanning/Requests/ReorderLotAssignment/`                                                       |
-| **Stays Loaded**           | `Features/PickupPlanning/Requests/MarkLegStaysLoaded/`                                                         |
-| **Loading Reference**      | `Features/TransportOrders/Requests/SetTourpointLoadingReference/`                                              |
-| **Loading Interval**       | `Features/TransportOrders/Requests/SetTourpointLoadingInterval/`                                               |
-| **Auth Config**            | `Infrastructure/ServiceSetupExtensions/KeyCloack/`                                                             |
-| **Swagger Config**         | `Infrastructure/ServiceSetupExtensions/Swagger/`                                                               |
-| **Domain Entities**        | `Domain/Entities/LotAssignment/`, `Domain/Entities/Leg/`, `Domain/Entities/LotAssignmentLegLink/`              |
+| Bereich                    | Pfad                                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------------------ |
+| **Drive Instructions**     | `Features/PickupDriveInstructions/PickupDriveInstructionsController.cs`                    |
+| **Tourpoint CRUD**         | `Resources/Tourpoints/TourpointsController.cs`                                             |
+| **Transport Order Tourpoints** | `Resources/TransportOrderTourpoints/TransportOrderTourpointsController.cs`             |
+| **Transport Order Planning** | `Features/TransportOrderPlanning/TransportOrderPlanningController.cs`                    |
+| **Pickup Planning View**   | `Features/PickupPlanningView/PickupPlanningViewController.cs`                              |
+| **Transport Order Details** | `Features/TransportOrderDetails/TransportOrderDetailsController.cs`                       |
+| **Transport Order List**   | `Features/TransportOrderListView/TransportOrderListViewController.cs`                      |
+| **TMS Legs**               | `Resources/TMSLegs/TMSLegsController.cs`                                                   |
+| **Auth Config**            | `Infrastructure/ServiceSetupExtensions/KeyCloack/`                                         |
+| **Swagger Config**         | `Infrastructure/ServiceSetupExtensions/Swagger/`                                           |
+| **Domain Entities**        | `Domain/Entities/LotAssignment/`, `Domain/Entities/Leg/`, `Domain/Entities/LotAssignmentLegLink/` |
 
-### TMS Bridge (Disposition-Abstraction-Layer)
+### TMS Bridge ([Disposition-Abstraction-Layer](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Abstraction-Layer))
 
 | Bereich                    | Beschreibung                                                                           |
 | -------------------------- | -------------------------------------------------------------------------------------- |
@@ -712,7 +724,7 @@ Mehrere Backend-Endpoints delegieren Schreiboperationen an die TMS Bridge (Dispo
 | **DbContext**              | `BranchDbContext.cs` — Entity Framework Core mit DbSet-Mappings auf Views und Tabellen |
 | **Stored Procedure Calls** | Via `IRoutineExecutor` mit `OperationType.Procedure` oder `OperationType.Function`     |
 
-### Frontend (Disposition-Frontend)
+### Frontend ([Disposition-Frontend](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Frontend))
 
 | Bereich             | Pfad                                                                   |
 | ------------------- | ---------------------------------------------------------------------- |
@@ -732,3 +744,37 @@ Mehrere Backend-Endpoints delegieren Schreiboperationen an die TMS Bridge (Dispo
 - **Lokale DB-Operationen** — Leg-Umsortierung und Lot-Assignment-Umsortierung schreiben direkt nach PostgreSQL via Entity Framework.
 - **Validierung** — Dedizierte `ICommandValidator` / `IQueryValidator` pro Operation.
 - **Dual-DB-Support** — Das System unterstützt sowohl Oracle- als auch PostgreSQL-Datenbanken (dialekt-spezifisches Handling im BranchDbContext).
+
+---
+
+## Versionshistorie
+
+| Version | Datum      | Autor         | Änderungen                                                                                                          |
+| ------- | ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | 2026-01-26 | Matthias Max  | Initiale Dokumentation                                                                                              |
+| 2.0     | 2026-04-24 | Matthias Max  | Alle Endpoint-Routen an aktuelle Backend-Struktur (master) angepasst; Repo-Links, Versionshistorie und Change Log ergänzt |
+
+### Change Log: Backend-Restructuring (Jan–Feb 2026)
+
+Die ursprüngliche Dokumentation (v1.0) basierte auf einer Controller-Struktur, die zeitgleich mit der Dokumentenerstellung umgebaut wurde. Folgende PRs und Commits im [Disposition-Backend](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend) dokumentieren die Umstrukturierung:
+
+| Datum      | Commit / PR                                                                                                          | Beschreibung                                                                       |
+| ---------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| 2026-01-16 | [`f6d5eca1`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/commit/f6d5eca1)            | Move RecalculateRoute slice to Resources/TransportOrders — erste Controller-Aufspaltung |
+| 2026-01-18 | [`472e0c6b`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/commit/472e0c6b)            | Move PickupPlanning and CustomerCommunication under Workflows                      |
+| 2026-01-19 | [`72eeafe6`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/commit/72eeafe6)            | Move ReorderLeg slice in Workflows/PickupPlanning/DriveInstructions                |
+| 2026-01-19 | [`450d5d28`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/commit/450d5d28)            | Move GetDriveInstructions, UnassignLegsAndLots, ReorderLotAssignment               |
+| 2026-01-19 | [`eca8937f`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/commit/eca8937f)            | Move AssignLeg, AssignLot, CreateTransportOrderFromLeg                             |
+| 2026-01-22 | [`181a64d8`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/commit/181a64d8)            | Move SetTourpointLoadingInterval and SetCustomerTourNumber to Resources/Tourpoints |
+| 2026-02-03 | [`bf9ab808`](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/commit/bf9ab808)            | PickupDriveInstructionsController erstellt                                         |
+| 2026-02-04 | [PR 32068](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/pullrequest/32068)            | **Refactor slices folder organization** — Hauptrestrukturierung                    |
+| 2026-02-05 | [PR 32071](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/pullrequest/32071)            | Add transport order fields new structure                                           |
+| 2026-02-05 | [PR 32072](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/pullrequest/32072)            | Change fields names new structure                                                  |
+| 2026-02-05 | [PR 32073–32076](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/pullrequest/32073)      | Assign trailer, set comment, set equipment hired — new structure                   |
+
+---
+
+<div align="center">
+  <sub>Created and maintained by <strong>Virtual Architect</strong></sub><br>
+  <sub>Living document - updates automatically as project progresses</sub>
+</div>
