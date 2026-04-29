@@ -162,15 +162,16 @@
 
 ## Team & Stakeholders
 
-### P3/CAL Team
+### P3 Team
 - **Matthias Max** - Enterprise Architect, Technical Lead, GCP Infrastructure, POC Coordination
 - **Martin Dittmann** - Project Manager, Project Coordination, Workshop Facilitation
 - **Maximilian Kehder** - Product Owner
 - **Nikolay Hristov** - DevOps Engineer, GCP Infrastructure Setup
 - **Yosif Mihaylov** - Lead Developer (Backend), Development Support
 - **Boyan Valchev** - Lead Developer (Frontend), Development Support
+- **Sonja Petkovic** - Postgres Developer, View Name Convention Implementation
 
-### Nagel Team
+### Nagel/CAL Team
 - **Christian Lang** - CEO Nagel IT, Decision Authority
 - **Patrick Uschmann** - Product Owner
 - **Matt Wilkinson** - Infrastructure Lead, Striim Setup, Google Account Escalation
@@ -178,7 +179,6 @@
 - **Thomas Paulus** - TMS Database Developer, Oracle Configuration
 - **Robert Zanter** - Oracle DBA, Redo Log Configuration
 - **Eric Meijers** - Cloud Engineer, DBA Support, User Permissions Strategy
-- **Sonja Petkovic** - Postgres Developer
 - **Andrej Chernov** - Oracle Developer, View/Package Conversion
 - **Reinhard Lechner** - Oracle Developer, View/Package Conversion
 - **Joachim Schreiner** - Oracle/Postgres Developer
