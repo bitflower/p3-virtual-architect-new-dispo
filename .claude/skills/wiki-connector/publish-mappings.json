@@ -557,6 +557,26 @@
         "mermaidSyntax": "azure-devops",
         "notes": "GoLive 1060 stakeholder alignment document - exclude Section 11 (Related Resources) which contains internal file paths. Mermaid blocks must use :::mermaid/:::: syntax for Azure DevOps wiki."
       }
+    },
+    {
+      "id": "tms-bridge-database-objects",
+      "source": "02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/Architecture/TMS-Bridge-Database-Objects.md",
+      "description": "TMS Bridge database object inventory - tables, views, functions, procedures, and custom types",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "stripTags": ["internal"],
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Database object reference for Nagel - strip <internal> tags on sync, no attachments"
+      }
     }
   ]
 }
