@@ -18,28 +18,33 @@
 
 ---
 
-## 1. Tables (10)
+## 1. Tables (11)
 
 All accessed READ-only via Entity Framework Core. No `SaveChanges` calls exist in the application layer.
 
-| # | Object Name | Type | Schema | Access | Required Permission |
-|---|-------------|------|--------|--------|---------------------|
-| 1 | `bordero` | TABLE | tms | READ | SELECT |
-| 2 | `fahrer` | TABLE | tms | READ | SELECT |
-| 3 | `ort` | TABLE | tms | READ | SELECT |
-| 4 | `person` | TABLE | tms | READ | SELECT |
-| 5 | `pst_hst` | TABLE | tms | READ | SELECT |
-| 6 | `rollkart` | TABLE | tms | READ | SELECT |
-| 7 | `sendung` | TABLE | tms | READ | SELECT |
-| 8 | `sen_ls_pst` | TABLE | tms | READ | SELECT |
-| 9 | `sen_ls_ref` | TABLE | tms | READ | SELECT |
-| 10 | `sen_zuord` | TABLE | tms | READ | SELECT |
+> **Classification principle:** Objects are classified by their **actual database type** (TABLE or VIEW), not by the EF Core mapping directive. `ToView()` in EF Core means "treat as read-only entity" — it does not imply the database object is a view. `ToTable()` means "treat as writable entity". When `ToView()` targets a database TABLE, the object is classified here as a TABLE with read-only access.
+
+| # | Object Name | Type | Schema | EF Mapping | Access | Required Permission |
+|---|-------------|------|--------|------------|--------|---------------------|
+| 1 | `bordero` | TABLE | tms | `ToTable` | READ | SELECT |
+| 2 | `fahrer` | TABLE | tms | `ToTable` | READ | SELECT |
+| 3 | `ort` | TABLE | tms | `ToTable` | READ | SELECT |
+| 4 | `person` | TABLE | tms | `ToTable` | READ | SELECT |
+| 5 | `pst_hst` | TABLE | tms | `ToTable` | READ | SELECT |
+| 6 | `rollkart` | TABLE | tms | `ToTable` | READ | SELECT |
+| 7 | `sendung` | TABLE | tms | `ToTable` | READ | SELECT |
+| 8 | `sen_ls_pst` | TABLE | tms | `ToTable` | READ | SELECT |
+| 9 | `sen_ls_ref` | TABLE | tms | `ToTable` | READ | SELECT |
+| 10 | `sen_zuord` | TABLE | tms | `ToTable` | READ | SELECT |
+| 11 | `sen_ref` | TABLE | tms | `ToView` | READ (read-only) | SELECT |
+
+> **Note on #11:** `sen_ref` is a TABLE in the TMS database, mapped via `ToView("sen_ref")` in `SenRefEntityConfiguration.cs`. The `ToView()` directive enforces read-only access at the EF level — it does not change the underlying database object type. A `v_sen_ref` VIEW exists in the database (unions `sen_ref` + `sen_ls_ref`) but is **not used** by the TMS Bridge.
 
 > **Note:** Entity configurations for `transportorder`, `shipment`, `tourpoint`, `presettemp`, `freightexchange_tourpoint`, `transportorder_pickupplanning`, and `transportordercut` declare `ToTable(...)` but `BranchDbContext.OnModelCreating` overrides all of them with `ToView(...)`. These are listed in section 2 (Views).
 
 ---
 
-## 2. Views (21)
+## 2. Views (20)
 
 All accessed READ-only via Entity Framework Core.
 
@@ -77,7 +82,6 @@ All accessed READ-only via Entity Framework Core.
 | # | Object Name | Type | Schema | Access | Required Permission | Notes |
 |---|-------------|------|--------|--------|---------------------|-------|
 | 20 | `v_sen_ls` | VIEW | tms | READ | SELECT | |
-| 21 | `sen_ref` | VIEW | tms | READ | SELECT | |
 
 ---
 
@@ -185,8 +189,8 @@ Called via `IRoutineExecutor`. All are WRITE operations (mutate database state).
 
 | Access | Count | Required Permission |
 |--------|-------|---------------------|
-| READ (Tables) | 10 | SELECT |
-| READ (Views) | 21 | SELECT |
+| READ (Tables) | 11 | SELECT |
+| READ (Views) | 20 | SELECT |
 | READ (Functions) | 5 | EXECUTE |
 | WRITE (Functions) | 4 | EXECUTE |
 | READ (Table Functions) | 1 | EXECUTE |
@@ -198,7 +202,7 @@ Called via `IRoutineExecutor`. All are WRITE operations (mutate database state).
 
 | Schema | SELECT | EXECUTE | USAGE | Total |
 |--------|--------|---------|-------|-------|
-| tms (tenant) | 16 (10 tables + 6 views) | — | — | 16 |
+| tms (tenant) | 16 (11 tables + 5 views) | — | — | 16 |
 | public | 9 (9 views) | — | — | 9 |
 | pdis_transportorder | — | 31 (9 functions + 22 procedures) | 1 (legtype) | 32 |
 | pdis_tourpoint | — | 6 procedures | — | 6 |
@@ -234,6 +238,7 @@ Not renamed: `v_dis_transportorder_count` -> `v_dis_to_count` (not used by TMS B
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2026-04-29 | Matthias Max | Initial inventory: 10 tables, 21 views, 11 functions, 35 procedures, 1 custom type. View names updated to post-rename state (7 views renamed in TMS DB commit 6543ffd9). |
+| 1.1 | 2026-04-29 | Matthias Max | Reclassified `sen_ref` from VIEW to TABLE (read-only via `ToView`). Added EF Mapping column to tables section. Added classification principle: objects classified by actual DB type, not EF mapping directive. Counts: 11 tables, 20 views. Triggered by Eric Meijers' review feedback. |
 
 ---
 
