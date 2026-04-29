@@ -1,14 +1,15 @@
 # Project: Oracle CDC Solution for TMS Branch Databases
 
-**Status:** 🔄 In Progress - Datastream LogMiner Ruled Out, Two Options Remain (Binary Log Reader / Striim)
+**Status:** 🔄 In Progress - Binary Log Reader Set Up but Permission Issues; Oracle Views Near Complete
 **Author:** Matthias Max
-**Last Updated:** 2026-04-23
+**Last Updated:** 2026-04-24
 **Next Milestones:**
-1. Google response on Binary Log Reader (Preview) activation (Owner: Matt Wilkinson, ETA: 2026-04-25)
-2. Striim event format mapping assessment for TMS Pulse (Owner: Matthias Max)
-3. Oracle migration view completion and testing (Owner: Andrej/Reinhard, Nagel)
-4. Infrastructure skeleton check — fill gaps across all environments (Owner: Nikolay/P3 team)
-5. Close ADR-006 with final technology decision
+1. Resolve Binary Log Reader permission mismatch — call Monday 2026-04-28 (Owner: Ron/Eric, Nagel)
+2. Deploy Oracle + Postgres views to ABN1060 — target Monday 2026-04-27 (Owner: Andrej/Sonja/P3 Dev)
+3. Striim event format mapping assessment for TMS Pulse (Owner: Matthias Max)
+4. DB user creation in ABN1060 after Yosif provides permission spec (Owner: Yosif/Nagel DBA)
+5. Infrastructure skeleton check — fill gaps across all environments (Owner: Nikolay/P3 team)
+6. Close ADR-006 with final technology decision
 
 **Go-Live Target:** June 2026
 
@@ -103,32 +104,39 @@
 - [x] ADR created for using TEST environment as DEV (no DEV environment exists) — Matthias Max
 - [x] Liquibase purchase expected imminently for automated database deployment pipelines
 
-### 🔄 In Progress
-- [ ] **Binary Log Reader escalation to Google** — Matt Wilkinson contacting Google account manager to request Preview activation or trusted tester access. Expected answer by 2026-04-25. This determines which of the two remaining CDC options (Binary Log Reader vs. Striim) is viable
-- [ ] **Striim event format mapping** — Matthias checking Striim output format vs. Datastream to assess if mapping needed before TMS Pulse integration
-- [ ] **Oracle view conversion** — Andrej working on views; some not functional due to missing dependent packages/functions. Joachim on holiday. Matt meeting Andrej + Reinhard for status update (April 21 afternoon)
-- [ ] **Infrastructure skeleton check** — Nikolay/P3 team to verify all GCP infrastructure (Cloud Run, buckets, pipelines) exists for all environments (dev, test, UAT, prod). Fill gaps. Mark status on deployment matrix
-- [ ] **DB user permissions spec** — Yosif to document required tables/objects for TMS Bridge (least-privilege). P3 provides root objects; Nagel DBA team maps Oracle grants
-- [ ] **VDI access for P3 developers** — Ron investigating available virtual desktops for 7 P3 users to access Oracle environments
+### ✅ Completed (CW 17, continued)
+- [x] **Binary Log Reader set up** — Ron and Eric successfully configured Datastream Binary Log Reader. However, permissions required far exceed what GCP documentation states — call scheduled Monday 2026-04-28 to discuss (April 24 email)
+- [x] **Striim license extended until October 2026** — Matt Wilkinson confirmed extension completed (April 24 email)
+- [x] **Oracle 30-character view name limit discovered** — Some view names exceed Oracle's 30-char limit. New naming convention agreed and being implemented across New Dispo code (P3 Dev team), Postgres (Sonja), and Oracle (Andrej) (April 24 email)
 - [x] **DevOps access for Matt Wilkinson** — Matthias got Matt access to P3 Azure DevOps (single source of truth for collaboration)
+
+### 🔄 In Progress
+- [ ] **DB user permissions spec** — Yosif to document required tables/objects for TMS Bridge (least-privilege). P3 provides root objects; Nagel DBA team maps Oracle grants. Needed before users can be created in ABN1060 for testing
+- [ ] **Binary Log Reader permission resolution** — Permissions required on Oracle account far exceed GCP documentation. Ron and Eric leading. Call Monday 2026-04-28 to discuss resolution
+- [ ] **Oracle view conversion** — Andrej expected to complete 2026-04-24. Target deployment to ABN1060: Monday 2026-04-27 (Postgres by Sonja, Oracle by Andrej)
+- [ ] **Striim event format mapping** — Matthias checking Striim output format vs. Datastream to assess if mapping needed before TMS Pulse integration
+- [ ] **Infrastructure skeleton check** — Nikolay/P3 team to verify all GCP infrastructure (Cloud Run, buckets, pipelines) exists for all environments (dev, test, UAT, prod). Fill gaps. Mark status on deployment matrix
+- [ ] **VDI access for P3 developers** — Platform Services still in progress for 7 P3 users (April 24 email)
 - [ ] ADR-006 outstanding items resolution — updated with deep analysis findings
-- [ ] Striim licensing extension request submitted to Google by Matt Wilkinson
 
 ### 🚫 Blocked
-- [ ] **CDC technology decision pending Google response** — Binary Log Reader availability from Google determines whether Datastream (cheaper) or Striim (proven, expensive) is the go-live solution. Decision blocked until Matt gets Google answer (~2026-04-25)
-- [ ] **Striim license cost negotiation** — currently free under borrowed Google license. Long-term costs unknown. Matt suggested approaching Striim directly for pricing; German team to negotiate. Only relevant if Striim becomes the final choice
+- [ ] **Binary Log Reader permission mismatch** — Binary Log Reader is technically set up, but Oracle account needs significantly more permissions than documented. Resolution call Monday 2026-04-28. This still blocks the CDC technology decision
+- [ ] **Striim license cost negotiation** — currently free under extended Google license (until October 2026). Long-term costs unknown. Matt suggested approaching Striim directly for pricing; German team to negotiate. Only relevant if Striim becomes the final choice
 - [ ] **Datastream Oracle SE2 validation** — required to confirm viability at branch sites (only relevant if Binary Log Reader path is chosen)
 
 ### ⏳ Next Up
-- Await Google response on Binary Log Reader (by 2026-04-25)
-- If Binary Log Reader available: activate and retest Datastream with binary reader against same Oracle source
-- If Binary Log Reader unavailable: proceed with Striim as CDC solution for go-live
+- Resolve Binary Log Reader permission issues (Monday 2026-04-28 call with Ron/Eric)
+- Deploy Oracle + Postgres views to ABN1060 (target Monday 2026-04-27)
+- If Binary Log Reader permissions resolved: retest Datastream with binary reader against same Oracle source
+- If Binary Log Reader unviable: proceed with Striim as CDC solution for go-live (license secured until Oct 2026)
 - Complete Striim event format assessment and TMS Pulse mapping if needed
-- Prioritize Oracle view conversion with Andrej/Reinhard aligned to P3 testing buckets
+- Provide keycloak/authentication technical drawing (Matt Wilkinson request)
+- Add 2 TMS testers to New Dispo application (Matt Wilkinson request)
+- Confirm test case design with Patrick Uschmann (Matt sending separate mail)
 - Fill infrastructure gaps across all environments (dev/test/UAT/prod)
-- Create DB user specification (bridge user, CDC user) with least-privilege grants
+- Create DB user specification (bridge user, CDC user) with least-privilege grants — Yosif to provide, then create users in ABN1060
 - Update ADR-006 with April 21 decision (LogMiner ruled out, two remaining options)
-- Close ADR-006 with final decision after Google response
+- Close ADR-006 with final decision after Binary Log Reader permission resolution
 
 ---
 
@@ -143,8 +151,8 @@
 | POC Results    | April 2      | ✅ Complete    | Data package received from Matt Wilkinson |
 | Deep Analysis  | April 15-17  | ✅ Complete    | GCP metrics extraction, root cause analysis, DBA data, management summary |
 | Stakeholder Alignment | April 21, 2026 | ✅ Complete | Datastream LogMiner ruled out; two remaining options: Binary Log Reader / Striim |
-| Google Escalation | April 21-25, 2026 | 🔄 In Progress | Matt Wilkinson escalating Binary Log Reader to Google account manager |
-| Oracle Migration | April-May 2026 | 🔄 In Progress | Postgres-to-Oracle view/package conversion (Andrej, Reinhard, Joachim) |
+| Google Escalation | April 21-28, 2026 | 🔄 In Progress | Binary Log Reader set up; permission mismatch discovered, call Mon Apr 28 |
+| Oracle Migration | April-May 2026 | 🔄 In Progress | View conversion near-complete (Andrej); 30-char name limit fix across all codebases; deploy ABN1060 target Mon Apr 27 |
 | Infrastructure Prep | April-May 2026 | 🔄 In Progress | GCP skeleton check, DB users, pipeline verification across all envs |
 | Decision       | End of April 2026 | ⏳ Planned     | Close ADR-006 — Striim confirmed, or pivot to Datastream Binary Reader |
 | Production-Readiness | May/June 2026 | ⏳ Planned  | Rollout document creation, go-live prep   |
@@ -170,9 +178,10 @@
 - **Thomas Paulus** - TMS Database Developer, Oracle Configuration
 - **Robert Zanter** - Oracle DBA, Redo Log Configuration
 - **Eric Meijers** - Cloud Engineer, DBA Support, User Permissions Strategy
-- **Andrej** - Oracle Developer, View/Package Conversion
-- **Reinhard** - Oracle Developer, View/Package Conversion
-- **Joachim** - Oracle Developer
+- **Sonja Petkovic** - Postgres Developer
+- **Andrej Chernov** - Oracle Developer, View/Package Conversion
+- **Reinhard Lechner** - Oracle Developer, View/Package Conversion
+- **Joachim Schreiner** - Oracle/Postgres Developer
 - **Steve** - Additional Infrastructure Support
 
 ---
@@ -201,6 +210,7 @@
 ## Communication
 
 ### Meeting History
+- **2026-04-24:** Go-Live 1060 Status Email (Matt Wilkinson) - Binary Log Reader set up but permission issues, Oracle views near-complete, 30-char naming fix, Striim license extended to Oct 2026, deployment target ABN1060 Mon Apr 27
 - **2026-04-21:** Follow-Up Oracle CDC (72 min) - Key decisions: Datastream LogMiner ruled out, Binary Log Reader escalation to Google, DB user strategy, weekly sync established
 - **2026-03-11:** Kick-Off Meeting (56 min) - [Teams Link](https://teams.microsoft.com/meet/39050326979606?p=6txN2RVcQCVGEmqpuZ)
 - **2026-03-16:** Follow-up Workshop (30 min) - _Completed_
@@ -250,6 +260,7 @@ _To be defined in workshop - pending alignment with stakeholders_
 
 | Date       | Update                                                                                                                                                             | Updated By             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| 2026-04-24 | Update from Matt Wilkinson Go-Live 1060 email: Binary Log Reader successfully set up by Ron/Eric but permissions far exceed documentation — call Mon Apr 28. Oracle view conversion near-complete (Andrej), 30-char Oracle view name limit discovered, new naming convention agreed, changes across New Dispo (P3), Postgres (Sonja), Oracle (Andrej). Target deploy ABN1060 Mon Apr 27. Striim license extended to Oct 2026. VDI still in progress. Matt requesting keycloak/auth drawing, 2 TMS testers need app access, test case planning with Patrick. "5 weeks to GO." | Matthias Max |
 | 2026-04-23 | Major update from April 21 meeting + April 22 tracker: Datastream LogMiner ruled out (too slow). Two options remain: Binary Log Reader (pending Google activation) and Striim. Matt Wilkinson escalating to Google. Weekly sync established. Oracle migration tracker shared. DB user strategy decided (separate users, least-privilege). Andrej/Reinhard/Joachim working on Oracle view conversion. Infrastructure skeleton check initiated. Names corrected: Andrej, Reinhard. | Matthias Max |
 | 2026-04-21 | Binary Log Reader (Preview) confirmed available in GCP Datastream console (Nikolay screenshot, 2026-04-16); not GA — next step: contact Google for activation details and GA timeline. Screenshot added to project status. | Matthias Max |
 | 2026-04-17 | Deep analysis findings integrated: Datastream end-to-end latency corrected to ~42-66 min (was 16-20s system latency only); root cause identified (1 GB redo logs, ARCHIVE_LAG_TARGET=0); DBA data from Robert Zanter received; three options documented; cost projection refined (34x factor); management summary drafted; second PoC with Oracle tuning recommended | Matthias Max |
