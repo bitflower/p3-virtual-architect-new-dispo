@@ -176,6 +176,7 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 
 | Database      | TMS Bridge  | Status Bridge                    | TMS Pulse | Status Pulse |
 | ------------- | ----------- | -------------------------------- | --------- | ------------ |
+| ENT1          | TBD         | --                               | TBD       | --           |
 | ORA-ABN-1060  | `TMSBR1060` | Provisioned (2026-05-04)         | TBD       | --           |
 | ORA-UAT-1060  | `TMSBR1060` | Pending: after ABN sign-off      | TBD       | --           |
 | ORA-PROD-1060 | `TMSBR1060` | Pending: after UAT sign-off      | TBD       | --           |
@@ -186,7 +187,20 @@ The exact permission scope required by the `TMSBR*` user (tables, views, functio
 Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germany Company 10 Branch 60)
 \* to be discussed in scope
 
-### 4.5 Secret Manager
+### 4.5 Azure Service Bus Mapping
+
+| Environment | ASB Namespace | Queue | Status |
+| ----------- | ------------- | ----- | ------ |
+| Test (ABN)  | TBD           | TBD   | TBD    |
+| UAT         | TBD           | TBD   | TBD    |
+| Prod        | TBD           | TBD   | TBD    |
+
+**Purpose:** Outbound EDI messages (invoice/shipment distribution) via AMQP/TLS.
+
+**Connection String Source:**
+- Backend: `EdiSettings.ConnectionString` in appsettings
+
+### 4.6 Secret Manager
 
 | Secret Name            | Purpose                      | Injected Into |
 | ---------------------- | ---------------------------- | ------------- |
@@ -203,7 +217,7 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 | **Entra ID**          | HTTPS (OIDC)      | Identity Provider (upstream)   | Keycloak                      | Nagel       |
 | **Azure Service Bus** | AMQP/TLS          | Event publishing for CALSuite  | New Dispo                     | CAL         |
 | **TOP Service**       | HTTP              | Route optimization             | Backend (on-prem)             | Nagel       |
-| **xServer**           | HTTP              | Routing calculations           | TOP Service                   | PTV         |
+| **xServer**           | HTTP              | Routing calculations           | TOP Service                   | Nagel       |
 | **Microsoft Graph**   | HTTPS (Graph API) | Email notifications            | Backend                       | P3          |
 | **Timocom**           | REST API          | Freight exchange               | Backend                       | External    |
 | **Trans.eu**          | REST API (OAuth2) | Freight exchange               | Backend                       | External    |
