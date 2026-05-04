@@ -161,11 +161,13 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 
 ### 4.4 Database Users
 
-| Database      | User (expected)         | Context                     | Notes                                    |
-| ------------- | ----------------------- | --------------------------- | ---------------------------------------- |
-| ORA-ABN-1060  | `TMS1060` / `TMSBR1060` | TMS Bridge -> ORA-ABN-1060  | Pending: connection details from Joachim |
-| ORA-UAT-1060  | `TMS1060` / `TMSBR1060` | TMS Bridge -> ORA-UAT-1060  | Pending: after ABN sign-off              |
-| ORA-PROD-1060 | `TMS1060` / `TMSBR1060` | TMS Bridge -> ORA-PROD-1060 | Pending: after UAT sign-off              |
+| Database      | TMS Bridge  | Status Bridge                    | TMS Pulse | Status Pulse |
+| ------------- | ----------- | -------------------------------- | --------- | ------------ |
+| ORA-ABN-1060  | `TMSBR1060` | Provisioned (2026-05-04)         | TBD       | --           |
+| ORA-UAT-1060  | `TMSBR1060` | Pending: after ABN sign-off      | TBD       | --           |
+| ORA-PROD-1060 | `TMSBR1060` | Pending: after UAT sign-off      | TBD       | --           |
+
+The exact permission scope required by the `TMSBR*` user (tables, views, functions, procedures) is defined in the [TMS Bridge Database Objects](02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md) inventory.
 
 **Database Identifier Convention (ADR-004):**
 Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germany Company 10 Branch 60)
@@ -335,3 +337,4 @@ Branching & versioning concept currently in the making.
 | GCP Workloads Diagram             | `07_Diagrams/GCP-workloads.svg`                                            |
 | Wiki: Environments                | `WIKI/Nagel-CAL-Disposition.wiki/Devops/Environments.md`                   |
 | ADR-004: DB Identifier Convention | `01_ADRs/`                                                                 |
+| TMS Bridge Database Objects       | `02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md` |
