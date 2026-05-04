@@ -1,7 +1,7 @@
 # New Dispo GoLive 1060 (Oracle)
 
-**Date:** 2026-04-17
-**Status:** Draft
+**Date:** 2026-05-04
+**Status:** Active
 **Purpose:** Holistic overview to align all stakeholders on the architecture, infrastructure, environments, and ownership for Branch 1060 on Oracle.
 
 ---
@@ -16,25 +16,38 @@ This section maps every environment stage across both the GCP (New Dispo) side a
                GCP (New Dispo)                         Oracle (TMS)
           ========================              ========================
 
- LOCAL    Developer Workstation                  --
-          (Docker, localhost)
+         +----------------------------+        +----------------------------+
+ LOCAL   | Developer Workstation      |        | --                         |
+         | (Docker, localhost)        |        |                            |
+         +----------------------------+        +----------------------------+
 
- DEV      WL5-DEV                                ENT1
-          (development, feature testing)         (schema dev, unit testing)
-          Note: WL4-DEV does not exist
-          — use WL4-T-T (see ADR-008)
-                    |                                      |
-                    v                                      v
- TEST     WL4-T-T / WL5-T-T                     ABN 1060
-          (integration, E2E)                     (acceptance, live prod data)
-                    |                                      |
-                    v                                      v
- UAT      (shares TEST infra,                   UAT 1060
-           dedicated TMS connection)             (customer acceptance)
-                    |                                      |
-                    v                                      v
- PROD     WL4-P-P / WL5-P-P                     PROD
-          (production)                           (production)
+         +----------------------------+        +----------------------------+
+ DEV     | WL5-DEV                    |        | ENT1                       |
+         | (development, feature      |        | (schema dev, unit testing) |
+         |  testing)                  |        |                            |
+         | Note: WL4-DEV does not     |        |                            |
+         |  exist — use WL4-T-T       |        |                            |
+         |  (see ADR-008)             |        |                            |
+         +-------------+--------------+        +-------------+--------------+
+                       |                                      |
+                       v                                      v
+         +----------------------------+        +----------------------------+
+ TEST    | WL4-T-T / WL5-T-T          |        | ABN 1060                   |
+         | (integration, E2E)         |        | (acceptance, live prod     |
+         |                            |        |  data)                     |
+         +-------------+--------------+        +-------------+--------------+
+                       |                                      |
+                       v                                      v
+         +----------------------------+        +----------------------------+
+ UAT     | (shares TEST infra,        |        | UAT 1060                   |
+         |  dedicated TMS connection) |        | (customer acceptance)      |
+         +-------------+--------------+        +-------------+--------------+
+                       |                                      |
+                       v                                      v
+         +----------------------------+        +----------------------------+
+ PROD    | WL4-P-P / WL5-P-P          |        | PROD                       |
+         | (production)               |        | (production)               |
+         +----------------------------+        +----------------------------+
 ```
 
 ### 1.2 Environment Mapping Matrix
@@ -186,11 +199,12 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 
 | System                | Protocol          | Purpose                        | Connected From                | Owner       |
 | --------------------- | ----------------- | ------------------------------ | ----------------------------- | ----------- |
-| **Keycloak**          | HTTPS (OIDC)      | Authentication & Authorization | Frontend, Backend, TMS Bridge | CAL / Nagel |
-| **Azure Service Bus** | AMQP/TLS          | Event publishing for CALSuite  | CrossDock Publisher           | CAL         |
+| **Keycloak**          | HTTPS (OIDC)      | Authentication & Authorization | Frontend, Backend, TMS Bridge | P3          |
+| **Entra ID**          | HTTPS (OIDC)      | Identity Provider (upstream)   | Keycloak                      | Nagel       |
+| **Azure Service Bus** | AMQP/TLS          | Event publishing for CALSuite  | New Dispo                     | CAL         |
 | **TOP Service**       | HTTP              | Route optimization             | Backend (on-prem)             | Nagel       |
 | **xServer**           | HTTP              | Routing calculations           | TOP Service                   | PTV         |
-| **SMTP (Office 365)** | STARTTLS          | Email notifications            | Backend                       | CAL         |
+| **Microsoft Graph**   | HTTPS (Graph API) | Email notifications            | Backend                       | P3          |
 | **Timocom**           | REST API          | Freight exchange               | Backend                       | External    |
 | **Trans.eu**          | REST API (OAuth2) | Freight exchange               | Backend                       | External    |
 
@@ -203,10 +217,10 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 | #   | Task                                                | Owner                                   | Support | Status        | Blocked by | Waiting on | Notes                                          |
 | --- | --------------------------------------------------- | --------------------------------------- | ------- | ------------- | ---------- | ---------- | ---------------------------------------------- |
 | 1   | **Oracle ENT1 schema development**                  | Joachim Schreiner (Nagel)               | --      | Active        | --         | --         | Wrapper procedures for 1060                    |
-| 2   | **Provision ORA-ABN-1060**                          | Bernd Friedewald, Thomas Paulus (Nagel) | Joachim | Done          | --         | --         | DB objects deployed by Eric (2026-05-01)       |
+| 2   | **Provision ORA-ABN-1060**                          | Bernd Friedewald, Thomas Paulus (Nagel) | Joachim | ✅ Done       | --         | --         | DB objects deployed by Eric (2026-05-01)       |
 | 3   | **Provision ORA-UAT-1060**                          | Bernd Friedewald, Thomas Paulus (Nagel) | Joachim | Pending       | #13        | CAL/Nagel  | After ABN sign-off                             |
 | 4   | **Oracle deployment pipeline (QS tool)**            | Joachim Schreiner (Nagel)               | --      | Operational   | --         | --         | ENT -> ABN -> UAT -> PROD                      |
-| 5   | **ORA-ABN-1060 connection details**                 | Joachim Schreiner (Nagel)               | --      | Done          | --         | --         | TMSBR1060 user provisioned by Eric (2026-05-01) |
+| 5   | **ORA-ABN-1060 connection details**                 | Joachim Schreiner (Nagel)               | --      | ✅ Done       | --         | --         | TMSBR1060 user provisioned by Eric (2026-05-01) |
 | 6   | **TMS Bridge config for ORA-ABN-1060**              | P3 (Matthias, Max K.)                   | Joachim | In Progress   | --         | --         | Secret created in WL5-T-T; WL4-T-T TBC        |
 | 7   | **Backend TEST env config for Oracle**              | P3 (Matthias, Max K.)                   | --      | Pending       | #6         | P3         |                                                |
 | 8   | **GCP Secret Manager: Oracle connection strings**   | P3 / CAL Infra (Matt W.)               | --      | In Progress   | --         | --         | TMSBR1060 secret in WL5-T-T (2026-05-01); WL4-T-T TBC |
