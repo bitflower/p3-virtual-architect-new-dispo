@@ -1,0 +1,338 @@
+From: Matthias Max <matthias.max@p3-group.com>
+To: Andrej Chernov <andrej.chernov@cal-consult.de>, Reinhard Lechner
+	<reinhard.lechner@cal-consult.de>, Joachim Schreiner
+	<joachim.schreiner@cal-consult.de>
+CC: Maximilian Kehder <Maximilian.Kehder@p3-group.com>, Martin Dittmann
+	<Martin.Dittmann@p3-group.com>
+Subject:
+	=?Windows-1252?Q?AW:_TMS_Timestamps_=97_Timezone-Kl=E4rung_f=FCr_New_Disp?=
+ =?Windows-1252?Q?o?=
+Thread-Topic:
+	=?Windows-1252?Q?TMS_Timestamps_=97_Timezone-Kl=E4rung_f=FCr_New_Dispo?=
+Thread-Index: AQHc0+M8cgYtl4vrqEiBw+OP3xV1J7X3r88U
+Date: Thu, 30 Apr 2026 14:22:34 +0000
+Message-ID:
+	<DB9P189MB1931DB3C09CE7C5E740C88FAE1352@DB9P189MB1931.EURP189.PROD.OUTLOOK.COM>
+References:
+	<AS4P189MB194343E49D6F3D0C8BE71A4DE12B2@AS4P189MB1943.EURP189.PROD.OUTLOOK.COM>
+In-Reply-To:
+	<AS4P189MB194343E49D6F3D0C8BE71A4DE12B2@AS4P189MB1943.EURP189.PROD.OUTLOOK.COM>
+Content-Language: de-DE
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-SCL: -1
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-reactions: allow
+Content-Type: multipart/alternative;
+	boundary="_000_DB9P189MB1931DB3C09CE7C5E740C88FAE1352DB9P189MB1931EURP_"
+MIME-Version: 1.0
+
+--_000_DB9P189MB1931DB3C09CE7C5E740C88FAE1352DB9P189MB1931EURP_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+Meeting 2026-04-30
+
+Antworten in gr=FCn
+
+admin_nl
+
+  *
+Enth=E4lt alle Niederlassungen (=FCber DB Link/FDW) auf "zentrale"
+
+Von: Matthias Max <matthias.max@p3-group.com>
+Datum: Freitag, 24. April 2026 um 14:10
+An: Andrej Chernov <andrej.chernov@cal-consult.de>; Reinhard Lechner <reinh=
+ard.lechner@cal-consult.de>; Joachim Schreiner <joachim.schreiner@cal-consu=
+lt.de>
+Cc: Maximilian Kehder <Maximilian.Kehder@p3-group.com>; Martin Dittmann <Ma=
+rtin.Dittmann@p3-group.com>
+Betreff: TMS Timestamps =97 Timezone-Kl=E4rung f=FCr New Dispo
+
+
+Hallo zusammen,
+
+Wir haben bei der Arbeit an New Dispo eine Timezone-Thematik identifiziert,=
+ bei der wir eure Best=E4tigung brauchen.
+
+Ausgangslage:
+
+  *   Joachim hatte am 09.04. best=E4tigt: Alle Zeitangaben in TMS sind in =
+lokaler Zeit gespeichert (4 Ausnahmen in UTC: SEN_HST.EREIGNIS_UTC, SEN_HST=
+_C_UTC, PST_HST.EREIGNIS_UTC). In Oracle als TIMESTAMP WITH TIME ZONE.
+  *   In AlloyDB/Postgres sind diese Felder als timestamp without time zone=
+ gespeichert =97 die Timezone-Information ist dort nicht vorhanden.
+  *   Unser Test: Eine Aktion um 12:00 Uhr bulgarischer Zeit wurde als 11:0=
+0 Uhr in der Datenbank gespeichert. Das deutet auf deutsche Zeitzone hin.
+
+Warum ist das relevant?
+New Dispo greift auf mehrere Branches zu, die potenziell in unterschiedlich=
+en Zeitzonen liegen k=F6nnten. Ohne Timezone-Information k=F6nnen wir die T=
+imestamps nicht zuverl=E4ssig interpretieren.
+
+Offene Fragen:
+
+  1.
+Sind alle Branch-Datenbanken in deutscher Zeitzone gehostet? Speziell auch =
+Branch 1060 (GoLive Branch)?
+     *
+Nein, in der lokalen Zeitzone des Standorts. F=FCr deutsche Standort also: =
+ja.
+  2.
+Ist die Speicherung ohne Timezone-Information in AlloyDB/Postgres (timestam=
+p without time zone) eine bewusste Designentscheidung oder ein =DCbertragun=
+gsartefakt?
+     *
+Historisch hat Oracle keine Zeitzonen unterst=FCtzt. Es wurde erst nachtr=
+=E4glich als Feature eingef=FChrt und dann taktisch an manchen Stellen genu=
+tzt. Viele Stellen sind aber noch ohne Timezone angelegt.
+  3.
+Ist die Timezone-Definition der Felder bei der Migration von Oracle zu Post=
+gres verloren gegangen?
+     *
+Nein, sie 2.
+
+Falls die Antwort auf (1) "ja" ist, k=F6nnen wir sicher mit der Annahme Eur=
+ope/Berlin arbeiten. Falls nicht, brauchen wir eine L=F6sung, um die Timezo=
+ne pro Branch zu konfigurieren.
+
+Danke & Gr=FC=DFe
+Matthias
+
+
+
+--_000_DB9P189MB1931DB3C09CE7C5E740C88FAE1352DB9P189MB1931EURP_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+</head>
+<body>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+<b>Meeting 2026-04-30</b></div>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+Antworten in <span style=3D"background-color: rgb(0, 255, 0);">gr=FCn</span=
+></div>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+<span style=3D"background-color: rgb(0, 255, 0);"><br>
+</span></div>
+<div style=3D"direction: ltr; text-align: left; text-indent: 0px; line-heig=
+ht: 18px; text-transform: none; background-color: rgb(18, 19, 20); font-fam=
+ily: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-size: 12px; co=
+lor: rgb(210, 168, 255);">
+admin_nl</div>
+<ul data-editing-info=3D"{&quot;applyListStyleFromLevel&quot;:false,&quot;u=
+norderedStyleType&quot;:6}" style=3D"direction: ltr; margin-top: 0px; margi=
+n-bottom: 0px;">
+<li style=3D"font-family: Aptos, Arial, Helvetica, sans-serif; font-size: 1=
+2pt; color: rgb(0, 0, 0); direction: ltr; list-style-type: &quot;&#10154; &=
+quot;;">
+<div role=3D"presentation" style=3D"direction: ltr;">Enth=E4lt alle Niederl=
+assungen (=FCber DB Link/FDW) auf &quot;zentrale&quot;</div>
+</li></ul>
+<div style=3D"direction: ltr; font-family: Aptos, Arial, Helvetica, sans-se=
+rif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"mail-editor-reference-message-container" style=3D"color: inherit=
+; background-color: inherit;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"di=
+rection: ltr;">
+</div>
+<div style=3D"padding: 3pt 0in 0in; border-width: 1pt medium medium; border=
+-style: solid none none; border-color: rgb(181, 196, 223) currentcolor curr=
+entcolor;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"te=
+xt-align: left; font-family: Aptos; font-size: 12pt; color: black;">
+<b>Von: </b>Matthias Max &lt;matthias.max@p3-group.com&gt;<br>
+<b>Datum: </b>Freitag, 24. April 2026 um 14:10<br>
+<b>An: </b>Andrej Chernov &lt;andrej.chernov@cal-consult.de&gt;; Reinhard L=
+echner &lt;reinhard.lechner@cal-consult.de&gt;; Joachim Schreiner &lt;joach=
+im.schreiner@cal-consult.de&gt;<br>
+<b>Cc: </b>Maximilian Kehder &lt;Maximilian.Kehder@p3-group.com&gt;; Martin=
+ Dittmann &lt;Martin.Dittmann@p3-group.com&gt;<br>
+<b>Betreff: </b>TMS Timestamps =97 Timezone-Kl=E4rung f=FCr New Dispo<br>
+<br>
+</div>
+</div>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"text=
+-align: left; text-indent: 0px; text-transform: none; background-color: rgb=
+(255, 255, 255); margin-top: 0px; margin-bottom: 16px;">
+<span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Se=
+goe UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, =
+51, 51);">Hallo zusammen,</span></p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"text=
+-align: left; text-indent: 0px; text-transform: none; background-color: rgb=
+(255, 255, 255); margin-top: 0px; margin-bottom: 16px;">
+<span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Se=
+goe UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, =
+51, 51);">Wir haben bei der Arbeit an New Dispo eine Timezone-Thematik iden=
+tifiziert, bei der wir eure Best=E4tigung brauchen.</span></p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"text=
+-align: left; text-indent: 0px; text-transform: none; background-color: rgb=
+(255, 255, 255); margin-top: 0px; margin-bottom: 16px;">
+<span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Se=
+goe UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(0, 0=
+, 0);"><b>Ausgangslage:</b></span></p>
+<ul data-source-line=3D"13" style=3D"text-align: left; margin-top: 0px; mar=
+gin-bottom: 16px; padding-left: 2em; list-style-position: outside; list-sty=
+le-type: disc; background-color: rgb(255, 255, 255);">
+<li style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Sego=
+e UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, 51=
+, 51); margin-bottom: 0px;">
+<span style=3D"text-transform: none;" role=3D"presentation">Joachim hatte a=
+m 09.04. best=E4tigt: Alle Zeitangaben in TMS sind in lokaler Zeit gespeich=
+ert (4 Ausnahmen in UTC: SEN_HST.EREIGNIS_UTC, SEN_HST_C_UTC, PST_HST.EREIG=
+NIS_UTC). In Oracle als
+</span><span style=3D"font-family: Menlo, Monaco, Consolas, &quot;Courier N=
+ew&quot;, monospace; font-size: 13.6px; color: rgb(0, 0, 0); background-col=
+or: rgb(240, 240, 240); text-transform: none;" role=3D"presentation"><code =
+style=3D"font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, mon=
+ospace;">TIMESTAMP
+ WITH TIME ZONE</code></span><span style=3D"text-transform: none;" role=3D"=
+presentation">.</span></li><li style=3D"font-family: &quot;Helvetica Neue&q=
+uot;, Helvetica, &quot;Segoe UI&quot;, Arial, freesans, sans-serif; font-si=
+ze: 16px; color: rgb(51, 51, 51); margin-bottom: 0px;">
+<span style=3D"text-transform: none;" role=3D"presentation">In AlloyDB/Post=
+gres sind diese Felder als
+</span><span style=3D"font-family: Menlo, Monaco, Consolas, &quot;Courier N=
+ew&quot;, monospace; font-size: 13.6px; color: rgb(0, 0, 0); background-col=
+or: rgb(240, 240, 240); text-transform: none;" role=3D"presentation"><code =
+style=3D"font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, mon=
+ospace;">timestamp
+ without time zone</code></span><span style=3D"text-transform: none;" role=
+=3D"presentation">&nbsp;gespeichert =97 die Timezone-Information ist dort n=
+icht vorhanden.</span></li><li style=3D"font-family: &quot;Helvetica Neue&q=
+uot;, Helvetica, &quot;Segoe UI&quot;, Arial, freesans, sans-serif; font-si=
+ze: 16px; color: rgb(51, 51, 51); margin-bottom: 0px;">
+<span style=3D"text-transform: none;" role=3D"presentation">Unser Test: Ein=
+e Aktion um 12:00 Uhr bulgarischer Zeit wurde als 11:00 Uhr in der Datenban=
+k gespeichert. Das deutet auf deutsche Zeitzone hin.</span></li></ul>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"text=
+-align: left; text-indent: 0px; text-transform: none; background-color: rgb=
+(255, 255, 255); margin-top: 0px; margin-bottom: 16px;">
+<span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Se=
+goe UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(0, 0=
+, 0);"><b>Warum ist das relevant?</b></span><span style=3D"font-family: &qu=
+ot;Helvetica Neue&quot;, Helvetica, &quot;Segoe UI&quot;, Arial, freesans, =
+sans-serif; font-size: 16px; color: rgb(51, 51, 51);"><br>
+New Dispo greift auf mehrere Branches zu, die potenziell in unterschiedlich=
+en Zeitzonen liegen k=F6nnten. Ohne Timezone-Information k=F6nnen wir die T=
+imestamps nicht zuverl=E4ssig interpretieren.</span></p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"text=
+-align: left; text-indent: 0px; text-transform: none; background-color: rgb=
+(255, 255, 255); margin-top: 0px; margin-bottom: 16px;">
+<span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Se=
+goe UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(0, 0=
+, 0);"><b>Offene Fragen:</b></span></p>
+<ol start=3D"1" data-source-line=3D"21" style=3D"text-align: left; margin-t=
+op: 0px; margin-bottom: 16px; padding-left: 2em; list-style-position: outsi=
+de; list-style-type: decimal; background-color: rgb(255, 255, 255);">
+<li style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Sego=
+e UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, 51=
+, 51); margin-bottom: 0px;">
+<div role=3D"presentation"><span style=3D"text-transform: none;">Sind alle =
+Branch-Datenbanken in deutscher Zeitzone gehostet? Speziell auch Branch 106=
+0 (GoLive Branch)?</span></div>
+</li><ol start=3D"1" data-editing-info=3D"{&quot;applyListStyleFromLevel&qu=
+ot;:true}" style=3D"text-align: left; margin-top: 0px; margin-bottom: 16px;=
+ padding-left: 2em; list-style-position: outside; list-style-type: lower-al=
+pha; background-color: rgb(255, 255, 255);">
+<li>
+<div role=3D"presentation" style=3D"direction: ltr; font-family: &quot;Helv=
+etica Neue&quot;, Helvetica, &quot;Segoe UI&quot;, Arial, freesans, sans-se=
+rif; color: rgb(51, 51, 51);">
+<span style=3D"font-size: 16px; background-color: rgb(0, 255, 0); text-tran=
+sform: none;">Nein, in der lokalen Zeitzone des
+</span><span style=3D"background-color: rgb(0, 255, 0);">Standorts. F=FCr d=
+eutsche Standort also: ja.</span></div>
+</li></ol>
+<li style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Sego=
+e UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, 51=
+, 51); margin-bottom: 0px;">
+<div role=3D"presentation"><span style=3D"text-transform: none;">Ist die Sp=
+eicherung ohne Timezone-Information in AlloyDB/Postgres (</span><span style=
+=3D"font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospac=
+e; font-size: 13.6px; color: rgb(0, 0, 0); background-color: rgb(240, 240, =
+240); text-transform: none;"><code style=3D"font-family: Menlo, Monaco, Con=
+solas, &quot;Courier New&quot;, monospace;">timestamp
+ without time zone</code></span><span style=3D"text-transform: none;">) ein=
+e bewusste Designentscheidung oder ein =DCbertragungsartefakt?</span></div>
+</li><ol start=3D"1" data-editing-info=3D"{&quot;applyListStyleFromLevel&qu=
+ot;:true}" style=3D"text-align: left; margin-top: 0px; margin-bottom: 16px;=
+ padding-left: 2em; list-style-position: outside; list-style-type: lower-al=
+pha; background-color: rgb(255, 255, 255);">
+<li style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Sego=
+e UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, 51=
+, 51);">
+<div role=3D"presentation" style=3D"direction: ltr;"><span style=3D"backgro=
+und-color: rgb(0, 255, 0); text-transform: none;">Historisch hat Oracle kei=
+ne Zeitzonen unterst=FCtzt. Es wurde erst nachtr=E4glich als Feature eingef=
+=FChrt und dann taktisch an manchen Stellen
+ genutzt. Viele Stellen sind aber noch ohne Timezone angelegt.</span></div>
+</li></ol>
+<li style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Sego=
+e UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, 51=
+, 51); margin-bottom: 0px;">
+<div role=3D"presentation"><span style=3D"text-transform: none;">Ist die Ti=
+mezone-Definition der Felder bei der Migration von Oracle zu Postgres verlo=
+ren gegangen?</span></div>
+</li><ol start=3D"1" data-editing-info=3D"{&quot;applyListStyleFromLevel&qu=
+ot;:true}" style=3D"text-align: left; margin-top: 0px; margin-bottom: 16px;=
+ padding-left: 2em; list-style-position: outside; list-style-type: lower-al=
+pha; background-color: rgb(255, 255, 255);">
+<li style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Sego=
+e UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, 51=
+, 51);">
+<div role=3D"presentation" style=3D"direction: ltr;"><span style=3D"backgro=
+und-color: rgb(0, 255, 0); text-transform: none;">Nein, sie 2.</span></div>
+</li></ol>
+</ol>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"text=
+-align: left; text-indent: 0px; text-transform: none; background-color: rgb=
+(255, 255, 255); margin-top: 0px; margin-bottom: 16px;">
+<span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Se=
+goe UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, =
+51, 51);">Falls die Antwort auf (1) &quot;ja&quot; ist, k=F6nnen wir sicher=
+ mit der Annahme
+</span><span style=3D"font-family: Menlo, Monaco, Consolas, &quot;Courier N=
+ew&quot;, monospace; font-size: 13.6px; color: rgb(0, 0, 0); background-col=
+or: rgb(240, 240, 240);"><code style=3D"font-family: Menlo, Monaco, Consola=
+s, &quot;Courier New&quot;, monospace;">Europe/Berlin</code></span><span st=
+yle=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Segoe UI&q=
+uot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, 51, 51);=
+">&nbsp;arbeiten.
+ Falls nicht, brauchen wir eine L=F6sung, um die Timezone pro Branch zu kon=
+figurieren.</span></p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"text=
+-align: left; text-indent: 0px; text-transform: none; background-color: rgb=
+(255, 255, 255); margin-top: 0px; margin-bottom: 16px;">
+<span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;Se=
+goe UI&quot;, Arial, freesans, sans-serif; font-size: 16px; color: rgb(51, =
+51, 51);">Danke &amp; Gr=FC=DFe<br>
+Matthias</span></p>
+<div class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"di=
+rection: ltr; font-family: Aptos, Arial, Helvetica, sans-serif; font-size: =
+12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"di=
+rection: ltr; font-family: Aptos, Arial, Helvetica, sans-serif; font-size: =
+12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+</div>
+</body>
+</html>
+
+--_000_DB9P189MB1931DB3C09CE7C5E740C88FAE1352DB9P189MB1931EURP_--

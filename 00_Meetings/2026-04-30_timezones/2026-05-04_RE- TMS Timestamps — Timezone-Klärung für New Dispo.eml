@@ -1,0 +1,228 @@
+Received: from DU2PPFAD49C772A.EURP189.PROD.OUTLOOK.COM (2603:10a6:18:3::a9c)
+ by DB9P189MB1931.EURP189.PROD.OUTLOOK.COM with HTTPS; Mon, 4 May 2026
+ 18:27:09 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=fail;
+ b=OtHJg+2sdr3w8KyE2BCPHKAfgPmtJHsUNOBGSoFBipOA7d7V4/TwUIeLl9ZZwwCL3Zsj41BQk9Bkx2aDL0xq9z6FfRiJzH5qtlRv/+OdDjYbbpTcpszaqjRclhoCTkC8xuBeU8d3FcCWjDwkJwTCFfQbVbqB1HmGJajY9Kl1PHYQsfI9d9rjeC/aS71s3eBo/JKadS/JfvR9cM3gxYE6fmSEX6WsGUocNAYyM15B0RxhUcDyQtH/UxR2upluHQow4N+Ko8+8DEJvmkHlb2v8+OZ4MOnyo741vF3nes87llanInvppAqVoleKv50XNKqtx5r0qZ+NRESwA37xQ41PJg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=2LkGAkMC8HqgyieHp9sYpyRrd39KACwOBjWoh5aLUc0=;
+ b=rEMSRhzgVtYGhsDt3WlbDc3JH/4xHDlHdAdzywjdIEdvdndjyM+h4k4R8jlD43+IpYIChnDR0PlbBylBwKHciKa7rQuRmP58eAJSr/JfLiS8c+O0fskyf/TAAG1ji7JXppaQ8VpEQK//JLvEs6BxvSnOM/rlzdHK0/OEVGHbvksbYRD9Z224rqU+wdX/5GYBwQp+6kZYCkkWhjK/XhJd12BCa8rgX5r7rUhdS/xwWUT0EzOcRVQgfsME+OBomRyWeLDD6EDYfn6KNlf0It/QQJnDwYkBDtbfZhe6v0zAU27tRd2zN3uBRfEWKCZ0FlTMqpCKRtoEUISeTiaaEEB6hg==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 52.101.171.27) smtp.rcpttodomain=p3-group.com smtp.mailfrom=cal-consult.de;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=cal-consult.de;
+ dkim=pass (signature was verified) header.d=nagelgroup.onmicrosoft.com;
+ arc=fail (48)
+Received: from CWLP265CA0506.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:18b::19)
+ by DU2PPFAD49C772A.EURP189.PROD.OUTLOOK.COM (2603:10a6:18:3::a9c) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9870.25; Mon, 4 May
+ 2026 18:27:04 +0000
+Received: from AM3PEPF0000A796.eurprd04.prod.outlook.com
+ (2603:10a6:400:18b:cafe::71) by CWLP265CA0506.outlook.office365.com
+ (2603:10a6:400:18b::19) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9870.25 via Frontend Transport; Mon,
+ 4 May 2026 18:27:04 +0000
+Authentication-Results: spf=pass (sender IP is 52.101.171.27)
+ smtp.mailfrom=cal-consult.de; dkim=pass (signature was verified)
+ header.d=nagelgroup.onmicrosoft.com;dmarc=pass action=none
+ header.from=cal-consult.de;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of cal-consult.de
+ designates 52.101.171.27 as permitted sender)
+ receiver=protection.outlook.com; client-ip=52.101.171.27;
+ helo=FR6P281CU001.outbound.protection.outlook.com; pr=C
+Received: from FR6P281CU001.outbound.protection.outlook.com (52.101.171.27) by
+ AM3PEPF0000A796.mail.protection.outlook.com (10.167.16.101) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9891.9
+ via Frontend Transport; Mon, 4 May 2026 18:27:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=L6P3WNgVno3BuadMU+GwnIobI8uoTElWoxvcMF00sVf+ySDfqniEvMFlRhEQJFW5O+MTTGAs+HMdzYX4WuAdLsqzkGw7Qc3AE6Pmox8bszZCVmCHNE9+sWkXAPDVZJYvN8yK9C2oHlhyKPqVw7dT5RmpMbukWKB0Q364ooswnIkMGWT9K/f5E+OyRQvGtJa7sQaxiw+DPXnMd4MdQ4LSog8MICYjYI2OCCsKXJ2HwW1wr5vDq/Xg8TSOy3s0m0dj/iZgXnUEyvju7MgP0641pAxQRedGvHCYbtjDoBjXgtIK5d8xYYqon0Bd/BHZyhopmV+oZJrB3eSznRvw3zyMaw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=2LkGAkMC8HqgyieHp9sYpyRrd39KACwOBjWoh5aLUc0=;
+ b=GR4NNtlrkT8GZdq74n8L5ltoGG/ZoY9mmBhc5vqPaZnGrlz81MSbfeyCFCeMSddLSpZnHaxbFHhF2bULuqug0ywVpMfIQkN+041ofYGsLkDtl+xy/REsshW/aAYi0HW+rUb2L2OUX5vtTOnIFtpRnUdzkucuJd9XMXeDik8LGngGxnuFgoR3xRG1WIB/gorAQxSg9cHyIbyMoV/91ns9+QMFQ6lAFTbv2G6e+Ua3B4F8KZxJGdsy7C2xwqUHpmYvfh5riCRlhs2MGd2GanlhnNBZ3lK25ivtSNAyz/TRC9ate/Ppb7lRer6+vHW4ZuXGxNg8boNo3pMTcYiC9Wtvpg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cal-consult.de; dmarc=pass action=none
+ header.from=cal-consult.de; dkim=pass header.d=cal-consult.de; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=nagelgroup.onmicrosoft.com; s=selector1-nagelgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=2LkGAkMC8HqgyieHp9sYpyRrd39KACwOBjWoh5aLUc0=;
+ b=rh+lOA/KrhwfQkEYwjDHPKXL72a4JTlnUB1AuNaPklCsKIoc1VKP56umfTFdagAnYmn81Fh5oVEgRbh/bzfeMqkj04Tv22lHL0wPshgzfM8NGIe11kvK3mJCOxHRmjbsEsCn9Qxcbxyyizu1+XImJoMclWe0hil1T2TZ1gGjMSh5zrR3/KiUc6jhgGcnIHtyDRKCPIs/V0Uuv3d3Cd1npMTg+d8z6WaK8Puba5xdRihUPTG5EItjD7QS9edwTvkNnu0Lp44jztOA6LVQaGze55QuLdh7/eXX8yu+TDF4Y0Gcbin/xKJgoffMYG2m2NyXOwKpYVJmrGaY8I8jCn7K5Q==
+Received: from BEZP281MB3061.DEUP281.PROD.OUTLOOK.COM (2603:10a6:b10:2e::9) by
+ FR5P281MB4681.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d10:14a::12) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9870.25; Mon, 4 May 2026 18:27:00 +0000
+Received: from BEZP281MB3061.DEUP281.PROD.OUTLOOK.COM
+ ([fe80::fcb0:7810:dab8:c985]) by BEZP281MB3061.DEUP281.PROD.OUTLOOK.COM
+ ([fe80::fcb0:7810:dab8:c985%4]) with mapi id 15.20.9870.023; Mon, 4 May 2026
+ 18:27:00 +0000
+From: Joachim Schreiner <Joachim.Schreiner@cal-consult.de>
+To: Matthias Max <matthias.max@p3-group.com>
+CC: Maximilian Kehder <Maximilian.Kehder@p3-group.com>, Martin Dittmann
+	<Martin.Dittmann@p3-group.com>, Andrej Chernov
+	<Andrej.Chernov@cal-consult.de>, Reinhard Lechner
+	<Reinhard.Lechner@cal-consult.de>
+Subject: =?Windows-1252?Q?RE:_TMS_Timestamps_=97_Timezone-Kl=E4rung_f=FCr_New_Disp?=
+ =?Windows-1252?Q?o?=
+Thread-Topic: =?Windows-1252?Q?TMS_Timestamps_=97_Timezone-Kl=E4rung_f=FCr_New_Dispo?=
+Thread-Index: AQHc0+M8cgYtl4vrqEiBw+OP3xV1J7X3r88UgAZoKyA=
+Date: Mon, 4 May 2026 18:26:59 +0000
+Message-ID: <BEZP281MB306105BDED4A03130A303B45D0312@BEZP281MB3061.DEUP281.PROD.OUTLOOK.COM>
+References: <AS4P189MB194343E49D6F3D0C8BE71A4DE12B2@AS4P189MB1943.EURP189.PROD.OUTLOOK.COM>
+ <DB9P189MB1931DB3C09CE7C5E740C88FAE1352@DB9P189MB1931.EURP189.PROD.OUTLOOK.COM>
+In-Reply-To: <DB9P189MB1931DB3C09CE7C5E740C88FAE1352@DB9P189MB1931.EURP189.PROD.OUTLOOK.COM>
+Accept-Language: de-DE, en-US
+Content-Language: de-DE
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=cal-consult.de;
+x-ms-traffictypediagnostic: BEZP281MB3061:EE_|FR5P281MB4681:EE_|AM3PEPF0000A796:EE_|DU2PPFAD49C772A:EE_|DB9P189MB1931:EE_
+X-MS-Office365-Filtering-Correlation-Id: ff74206c-f9e0-4933-56d4-08deaa0abdd6
+x-ld-processed: 1143b609-46fc-43ee-a1f8-a20ba405faf0,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|1800799024|366016|376014|10070799003|6049299003|8096899003|22082099003|18002099003|56012099003|4053099003|4013099003|38070700021;
+X-Microsoft-Antispam-Message-Info-Original: gkjzO1gqzbZ94+BOOl78fWr+VpD2WxvOoZyerSdKwQQu2uURit/yT7GD7jw8D3PL2c/+Rb25DLc8vg18ECwVC0DrHq3vNdHxA9/V0NkKMXMnMCLWteVu9802/kCwrO+wAyTLD+43Dt2h7vOkVlNM3U5brmeOAn6Utwy8ri1V8fVdKzNkx6LSoqSfndPVM6ufTRAtLNrjA3NslMGAR+85Xv7k0XRLd74qMfUZspkNvBHqwPfT9b9UHIjj9rXtcEBZTKCGkkWhJAtzkOfy3kC0E5439K+8fbX5MPXP4l7Xf7hE9n0p2Z5d85jaSmjTEQAJk5SkI/UxBHT4//KkJdsTDWBkPBe5grhN5WvGYW9LUFES1D48j4O0HJ/BUtJ9b/uydoy1Kjk81USbeMaCKO7UF1lNHJ9oZBLggROYnBk+eUPDYMZSLHZimvbDwlhdd4JdhAkmeeIeJcm5AN3ri8EC/Fia61IuzlDWIzG1zjFoWjq4lLROG0FfnMM1A1KJB5b5U3GucSzR+J+1S+MAA/WLv4x/4euLs8+DbX0mc5JT90NrDQ6ss9AwmxkbuYYK1Ehiy4VFfZzu1cX5wxiL17MxNSV+OIIVG5TQz6h6H/5eN9Z9Oq4njGZZd9WEgndEbc8grOnbwKgaTUzPHJV+ISWkG7AUNH0f3v35wf09yd6iIZMYoTmoWFqm6KlMTqUuOvq12/oUzlykYpJpN5vG06vwiqCqRdiSNEybmSYKxpbOZWmOT2FUHiIjsynJ2qiHITJu
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BEZP281MB3061.DEUP281.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(10070799003)(6049299003)(8096899003)(22082099003)(18002099003)(56012099003)(4053099003)(4013099003)(38070700021);DIR:OUT;SFP:1101;
+Content-Type: multipart/related;
+	boundary="_004_BEZP281MB306105BDED4A03130A303B45D0312BEZP281MB3061DEUP_";
+	type="multipart/alternative"
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: FR5P281MB4681
+Return-Path: Joachim.Schreiner@cal-consult.de
+X-MS-Exchange-Organization-ExpirationStartTime: 04 May 2026 18:27:04.4524
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: ff74206c-f9e0-4933-56d4-08deaa0abdd6
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 38ea53fb-9117-4764-adc6-31f828910b30:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM3PEPF0000A796.eurprd04.prod.outlook.com
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted: AM3PEPF0000A796.eurprd04.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource: AM3PEPF0000A796.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 69c6a6f5-174d-41d7-dc80-08deaa0abb3e
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|704160211799003|35042699022|6049299003|7149299003|4053099003|4013099003|8096899003|4076899003|22082099003|19002099003|55112099003|57112099003;
+X-Forefront-Antispam-Report: CIP:52.101.171.27;CTRY:DE;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:FR6P281CU001.outbound.protection.outlook.com;PTR:mail-germanywestcentralazon11010027.outbound.protection.outlook.com;CAT:NONE;SFS:(13230040)(704160211799003)(35042699022)(6049299003)(7149299003)(4053099003)(4013099003)(8096899003)(4076899003)(22082099003)(19002099003)(55112099003)(57112099003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 May 2026 18:27:04.3992
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ff74206c-f9e0-4933-56d4-08deaa0abdd6
+X-MS-Exchange-CrossTenant-Id: 38ea53fb-9117-4764-adc6-31f828910b30
+X-MS-Exchange-CrossTenant-AuthSource: AM3PEPF0000A796.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PPFAD49C772A
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.7647545
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9870.020
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930201)(20251009189)(140003)(1420198);
+X-Microsoft-Antispam-Message-Info:
+	=?Windows-1252?Q?FlMZ8NOMeCLwe5/CXlpJbsDvJMvvs8nq+UF05czhujN3wVUdWOY0IGfU?=
+ =?Windows-1252?Q?tq5vaokeHd4cwHsiRZ3ZsYdyUT56vHq10FonsR2r7a+bUftK4i9WO8Af?=
+ =?Windows-1252?Q?KZfJbpQh2V5jTNexOHQV6CdS6BNBsmZYa9PZVRj1ezsCqjZBnJ+1o+w8?=
+ =?Windows-1252?Q?kC6DnUmDThQJNFTxfJAY1z2o3EXZ9OapulUZeJnzulMbQ4uSW8yV5BCh?=
+ =?Windows-1252?Q?+npEl6W0HFpnHfgEGy+fl8QyZj9wa3vGXb0jjZD3df8GTuPHVgu1EXqr?=
+ =?Windows-1252?Q?jxVcvuDp9O0EhUXLh02ihTKqPqA8HA4TRC0HfjZWHqBnCL58hogUl/1P?=
+ =?Windows-1252?Q?A33F7tatDSIiO1EU978LxmnD5OPa+9OAsLfNrBtRoN3AR0ssgCZD2As8?=
+ =?Windows-1252?Q?bbW/XeBIW6HnzEUZbDBvqAsa0TXaENDVAndoHjkX3Ixs8xz7l5Za3vdn?=
+ =?Windows-1252?Q?57VqiTsFfL684RehdWtcVwCc8xAioPT2gb9AvpuOnSn1iRjWXgMktQFr?=
+ =?Windows-1252?Q?umBK39LFb6ZyXOhXQFKW+wMwN8O3TuMAn3+RAAjMeWcOmWDFzQYuOXVY?=
+ =?Windows-1252?Q?72U53ByXhuK+kxSeODKKywzx/tz0EBBCy9SFhonAoUBOPnx6I53yfi6i?=
+ =?Windows-1252?Q?uJNvz2mfMAUHcWfq88N25FNMJRPbW/7qm0JRlurFA36UKE9T8RYT9Sdg?=
+ =?Windows-1252?Q?ODHqbUgat/B26oGRdHeu+yJOQQKkxoOUc0y132wkfiHT5Tgg/fwQviJ6?=
+ =?Windows-1252?Q?uPdNRel3dwPeQz0dQto/0qDIk1ueFgB6wa3KMIJ/ltJv63iHYK9Xvm+t?=
+ =?Windows-1252?Q?eWTk8K5ecNTJ6GiZLOHV5LdQAvvwDAsLTul+jHLBa6qe6hHE+ho5QVJ3?=
+ =?Windows-1252?Q?uuC2i2KLYyAqe5vUrkMhoh5r6XUzd/J9Qah14+34viVR0VYJ0H92lrki?=
+ =?Windows-1252?Q?mwrzpXysUVAvn6/tB1OxGQa6J0aRxnWzLG3OMJ0/nF9HX/eEmANXbKMw?=
+ =?Windows-1252?Q?abs2pozHVd9aONqMPXm52n2N+6EwmwDJRg4d561ElISjb5+3ZtDdiaGs?=
+ =?Windows-1252?Q?2PJjecnczADlP95ivU+KRwb/gkZRUXx4HbdHsJHQ1wVoo32ArA5xQbeb?=
+ =?Windows-1252?Q?Pv2gCw3BIDz5LPFu/7fCMPZPjmz/fcsLMCJ0WzO8io50CvqUhJGo+aCm?=
+ =?Windows-1252?Q?48UDZwGgBhyXwBKc9msxX6Tp0g7zXOn6SFREoNIBIa+fTffXQC+TMXhf?=
+ =?Windows-1252?Q?TKZAw5g4bzBTcHvIX8RJ6131+grHirasH55i9ZlaZZiVcI1V2Ma4Il+a?=
+ =?Windows-1252?Q?kzTiCweV0MIsCb5XHXsHLLNi9wbBi4X2wNit5NUjdpNjc2bm2nV8MmMq?=
+ =?Windows-1252?Q?8sw2/us+nLbUG6NJWGY6IU0gUbcKCqE9o4RLpLcc+EHXBZw0M8UsiEa/?=
+ =?Windows-1252?Q?yLDABvhLqu/tGHMTkxCcZD3CSevhnVzvQV39479UKJmGDyR2Y1l8dQhd?=
+ =?Windows-1252?Q?YiAtAQI05KtGUIIHhPBtI/4j2GMslZ3QMVqUCOF/Bfutg/0hffM0UiEk?=
+ =?Windows-1252?Q?6MFIF1ZKr7+vPJHvzmHf7raJ4F7O8iq0X8UXikAR8CQNue6c8GmtSllc?=
+ =?Windows-1252?Q?TNeBkrwWZu34k499P+PTcQayr2bNP6CJZw4vzzmzQROYlx+2+zRY2EPd?=
+ =?Windows-1252?Q?6tZWEfg6jiJzKc326dNh3q7Zyv8nM9ySV4YmzwGaAieKKGOgAXliYJih?=
+ =?Windows-1252?Q?bTL+KHmfWBTTa55NQkh5QH53TmI5ZhbBpwNuhdiy0StkhZfcpM0aK6Te?=
+ =?Windows-1252?Q?YDPdjsibsNwPbC4kqv3MzFk0CAzyzIjXwFut4YSJX1kDvF17wtB0ceyq?=
+ =?Windows-1252?Q?oj1Hw//xnA3mQ2ebxAl1cPDEvzYCnOfjg517Y1Vz+2zOJyNeVcqrIZQs?=
+ =?Windows-1252?Q?5cuqutQuOtyHDyH87n9Rm0iKTY1yK++x7eAscQZTHNxBLv5srRH3JGue?=
+ =?Windows-1252?Q?+DXfvLqN+U3o1C24CCWqaJqI7bAXgFPbYJdiUiK0HBw1X4yCOAOCpmS0?=
+ =?Windows-1252?Q?NDsR2Pbi4oViNFzlGIsv/M540f4VgAAdwg39XH1VTivuT5j/ndxd6Gam?=
+ =?Windows-1252?Q?c5pFixZXafB0O+pj/eDhscdLkZ7d7OKL8qwc4qHQlSJ0TGFVPIXfWZ+u?=
+ =?Windows-1252?Q?S/2aXhfvVe/IHOYfELzy1yEM7n3hWgqsBEeXUqL6mMlVofbTHkSuKKpp?=
+ =?Windows-1252?Q?vKzJUZds8kRsKlehjnsJSX6/YWyeHOxr9M2nPls4tQ8MfRy/gtK7Y6Ou?=
+ =?Windows-1252?Q?No3Ll+Fh+EwfAksGX4jTFoBR1CETgD0N1qI5iPC3xErVcr72DVhyURTs?=
+ =?Windows-1252?Q?kbHk0zdNtt8SZBErLgjFoviNmU/HecadzyyvZJ+xPNMhIJXXgK9iNGVs?=
+ =?Windows-1252?Q?yYiNhLSThWm3bhLhXrE2CuNzUuZYQpL/QdqkQtaUr8xo5ymNop4tfEhA?=
+ =?Windows-1252?Q?wVFnyppNEsDr8PYmjlInpHRewK0c/H7B4Y5rZeHrcAei6PGThtnc7iOG?=
+ =?Windows-1252?Q?+MWMMF9jLhdda5QiQT2B0bCvL6sM1msqjy/J2K3r41+lWO0VkCCBfMXC?=
+ =?Windows-1252?Q?zPrqhPp0wXGXEWbtaXhIZVxuSyBIQW548fivlWNcaGvg+kqIhGVxCE3a?=
+ =?Windows-1252?Q?HBXxobKThyHro8ZjTLLuy/r7c46iCI3J6jMLO6/arZCoraSgKeah1z3p?=
+ =?Windows-1252?Q?Ni5qq9N7dKHAAld6DvTMyIqIZjjaWb3MXgnrIBXmSlDQCBACUCMiMPue?=
+ =?Windows-1252?Q?5jqw964H6GXCKeaBzBj6lQUc4Ks=3D?=
+MIME-Version: 1.0
+
+--_004_BEZP281MB306105BDED4A03130A303B45D0312BEZP281MB3061DEUP_
+Content-Type: multipart/alternative;
+	boundary="_000_BEZP281MB306105BDED4A03130A303B45D0312BEZP281MB3061DEUP_"
+
+--_000_BEZP281MB306105BDED4A03130A303B45D0312BEZP281MB3061DEUP_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+CAUTION: This email originated from outside of the organization. Do not cli=
+ck links or open attachments unless you recognize the sender and know the c=
+ontent is safe.
+
+Hallo zusammen,
+
+eine Anmerkung zur Ausgangslage:
+Die 4 UTC-Felder SEN_HST.C_UTC, SEN_HST.EREIGNIS_UTC, PST_HST.C_UTC, PST_HS=
+T.EREIGNIS_UTC sind sowohl in ORA als auch in PGS als TIMESTAMP WITH TIME Z=
+ONE definiert.
+[cid:image001.png@01DCDBF2.6A93EC40]
+
+Wie genau habt ihr getestet, dass ein Wert in Bulgarien mit der falschen Ze=
+itzone gespeichert wird?
+
+Aktuell wird die Zeitzone aus den aktuellen Einstellungen des Datenbank-Ser=
+vers gezogen.
+
+Eine TimeZone-Setting pro Branch bringt nichts. Bulgarien hat keine eigene =
+Niederlassung, Kunden k=F6nnen aber durchaus dort beliefert oder Transportg=
+ut an einen Partnerspediteur =FCbergeben werden.
+F=FCr unsere Target-Times, z.B. vereinbarte Liefer-Zeitfenster gilt, dass s=
+ie immer in der lokalen Zeit angegeben werden. Wenn daf=FCr allerdings Fahr=
+tdauern und Ankunftszeiten (in lokaler Zeit) kalkuliert werden sollen, muss=
+ die Zeitzone des Ziels bekannt sein oder ermittelt werden.
+W=E4re da nicht die Sommerzeit-Umstellung, k=F6nnte man die Zeitzone in Eur=
+opa am L=E4nderkennzeichen festmachen. (In Europa gibt es kein Land mit meh=
+r als 1 Zeitzone.)
+Ich pflichte euch bei: Sobald wir den ersten Transport =FCber eine Zeitzone=
+ngrenze haben, haben wir einen Fehler in der Routenberechnung.
+Deshalb schlage ich vor, wir =FCbergeben dann bei der Routenberechnung die =
+Zeitzone nicht mehr im DTO an den PTV-XServer, sondern =FCberlassen dem XSe=
+rver die Zeitzonen-Ermittlung anhand der Adresse und des Referenzdatums.
+
+Zu 2.: Die Zeitzonen-Information in PGS nicht zu erg=E4nzen war wegen der s=
+tarken Bindung an die Adresse aus dem Kontext eben auch eine bewusste Desig=
+n-Entscheidung. Wir hatten uns entschieden weiterhin wie in ORA nur die lok=
+ale Zeit zu speichern. Dass wir die UTC-Zeiten in die Ereignisse aufgenomme=
+n haben, hat den Grund, dass die Ereignisse (fast) ausnahmslos im Kontext e=
+iner Niederlassung entstehen und damit die Zeitzone leicht zu erg=E4nzen is=
+t.
+
+Viele Gr=FC=DFe
+Joachim
+
