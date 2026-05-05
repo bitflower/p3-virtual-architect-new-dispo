@@ -577,6 +577,33 @@
         },
         "notes": "Database object reference for Nagel - strip <internal> tags on sync, no attachments"
       }
+    },
+    {
+      "id": "timezone-handling-tms",
+      "source": "02_Explorations/2026-05-05_Handling_of_timezones_in_TMS_and_what_it_means_for_new_Dispo/handling-of-timezones-in-tms-and-what-it-means-for-new-dispo.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/TMS-Knowledge/Handling-of-Timezones-in-TMS.md",
+      "description": "Timezone handling in TMS and implications for New Dispo - storage model, business rules, xServer integration",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "stripTags": ["internal"],
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "attachmentHandling": {
+          "enabled": true,
+          "sourceBasePath": "02_Explorations/2026-05-05_Handling_of_timezones_in_TMS_and_what_it_means_for_new_Dispo",
+          "targetPath": ".attachments",
+          "supportedFormats": [".svg", ".png", ".jpg", ".jpeg", ".gif", ".pdf"],
+          "forceUpdate": false
+        },
+        "notes": "Timezone exploration - strip <internal> tags, copy sen_hst screenshot to .attachments"
+      }
     }
   ]
 }
