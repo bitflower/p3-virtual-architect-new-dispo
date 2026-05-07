@@ -239,3 +239,9 @@ Both options are equally viable from a technical standpoint. The choice is a nam
 | `CALConsult.TMSBridge.API/Services/DbConnectionStringProvider.cs` | Secret Manager config lookup |
 | `CALConsult.TMSBridge.API/Services/Caches/DbDataSourceCache.cs` | Connection pool cache |
 | `CALConsult.TMSBridge.API/Infrastructure/GoogleSecretManager/.../GoogleSecretManagerConfigurationProvider.cs` | Loads all secrets at startup |
+
+---
+
+<div align="center">
+  <sub>Created and maintained by <strong>Virtual Architect</strong></sub>
+</div>
