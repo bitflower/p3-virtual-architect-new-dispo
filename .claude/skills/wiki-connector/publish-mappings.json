@@ -519,6 +519,26 @@
       }
     },
     {
+      "id": "oracle-testing-step2-abn1060-review",
+      "source": "02_Explorations/2026-05-11_ABN1060_Oracle_TMS_Database_Review_-_First_Batch_Analysis/abn1060-oracle-tms-database-review---first-batch-analysis.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Oracle-Testing/Step-2-ABN1060-Database-Review.md",
+      "description": "Oracle Testing Step 2: ABN1060 database review - first batch analysis of missing objects, column issues, and queue infrastructure",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "stripTags": ["internal"],
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Step 2 sub-page of Oracle Testing project - strip <internal> tags on sync"
+      }
+    },
+    {
       "id": "oracle-testing-step1-assessment",
       "source": "02_Explorations/2026-04-10_Oracle_DEV_ABN_UAT_Instances_for_Branch_1060/oracle-dev-abn-uat-instances-for-branch-1060.md",
       "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Oracle-Testing/Step-1-Environment-Gap-Assessment.md",
@@ -576,6 +596,35 @@
           "rewriteToWikiPaths": true
         },
         "notes": "Database object reference for Nagel - strip <internal> tags on sync, no attachments"
+      }
+    },
+    {
+      "id": "tms-bridge-identifier-resolution",
+      "source": "08_Documentation/tms-bridge-database-identifier-resolution.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/Architecture/TMS-Bridge-Database-Identifier-Resolution.md",
+      "description": "TMS Bridge database identifier resolution chain - how identifiers map to Secret Manager entries and DB credentials",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Reference documentation - standalone explanation of the identifier resolution mechanism"
+      }
+    },
+    {
+      "id": "exploration-tms-bridge-db-user-selection",
+      "source": "02_Explorations/2026-05-07_TMS_Bridge_DB_User_Selection/tms-bridge-db-user-selection.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D07-TMS-Bridge-Credential-Selection.md",
+      "description": "TMS Bridge DB User Selection - prefix/postfix identifier options for per-system DB credentials",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "excludeSections": ["Original User Input", "Key Source Files"],
+        "notes": "Exploration document - exclude internal context and source file references when publishing to wiki"
       }
     },
     {
