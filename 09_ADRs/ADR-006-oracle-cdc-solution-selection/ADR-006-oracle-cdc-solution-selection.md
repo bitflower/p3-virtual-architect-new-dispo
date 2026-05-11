@@ -1,7 +1,8 @@
 # [ADR006] Oracle CDC Solution Selection for TMS Branch Databases
 
-**Status:** PoC / Project in progress
+**Status:** Accepted
 **Date:** 2026-04-15
+**Decision Date:** 2026-04-28
 
 ## Context
 
@@ -23,7 +24,16 @@ A parallel PoC was executed from March to April 2026, testing both Striim and Go
 
 ## Decision
 
-Pending — see [Oracle CDC Project](../../02_Explorations/2026-03-11_Nagel_P3_Oracle_CDC_Kick_Off/PROJECT-STATUS.md) for next steps and timeline.
+**Option A: Striim** — accepted for Go-Live 1060 (June 2026).
+
+Decided in the April 28, 2026 follow-up meeting. Striim is the CDC solution for the go-live timeline. The Datastream Binary Log Reader (Option B2) is being explored in parallel as a potential post-go-live optimization but is not blocking the go-live decision. The Datastream LogMiner approach (Option B3) was ruled out on April 21 due to unacceptable latency (~42-66 min).
+
+**Rationale for Striim over waiting for Binary Log Reader:**
+- Striim is production-proven (~2 years streaming Oracle to GCP at Nagel)
+- Sub-second latency confirmed in PoC (vs. Binary Log Reader's unproven performance at scale)
+- Striim license secured until October 2026 (borrowed Google license, extended by Matt Wilkinson)
+- Binary Log Reader is in GCP Preview (not GA), requires excessive Oracle permissions beyond documentation, and has not been validated under production load
+- Go-live deadline (June 2026) does not allow waiting for Binary Log Reader GA or further investigation
 
 ## Rationale
 
@@ -77,8 +87,9 @@ Patrick Uschmann (PO) verbally confirmed on 2026-04-08 that **~10 seconds is acc
 
 | Date | Author | Change |
 |------|--------|--------|
-| 2026-04-15 | Virtual Architect | Initial ADR created from PoC results |
-| 2026-04-17 | Virtual Architect | Complete rewrite: incorporated deep analysis (CW 16), corrected latency from 16-20s to 42-66 min, slimmed format |
+| 2026-04-15 | Matthias Max | Initial ADR created from PoC results |
+| 2026-05-11 | Matthias Max | ADR accepted: Striim selected (decided Apr 28 meeting). Decision rationale added. Binary Log Reader noted as parallel post-go-live track |
+| 2026-04-17 | Matthias Max | Complete rewrite: incorporated deep analysis (CW 16), corrected latency from 16-20s to 42-66 min, slimmed format |
 
 ---
 
