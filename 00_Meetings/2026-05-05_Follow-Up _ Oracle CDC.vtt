@@ -1,0 +1,3641 @@
+WEBVTT
+
+c2051207-9860-460f-8a4d-338ddc92a16c/9-0
+00:00:18.819 --> 00:00:19.379
+<v Matthias Max>All right.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/12-0
+00:00:21.299 --> 00:00:21.779
+<v Uschmann, Patrick>Hi.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/13-0
+00:00:21.699 --> 00:00:22.019
+<v Matthias Max>Feige.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/14-0
+00:00:21.779 --> 00:00:22.619
+<v Nikolay Hristov>Ohh, hello.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/16-0
+00:00:29.859 --> 00:00:30.339
+<v Meijers, Eric>Leicht.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/17-0
+00:00:31.059 --> 00:00:31.379
+<v Yosif Mihaylov>Hi.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/19-0
+00:00:36.840 --> 00:00:37.400
+<v Matt Wilkinson>Everyone.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/32-0
+00:02:00.440 --> 00:02:03.000
+<v Uschmann, Patrick>I think Matt Matthias.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/48-0
+00:02:04.760 --> 00:02:08.516
+<v Uschmann, Patrick>We want to start,
+so I don't think we need to wait for</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/48-1
+00:02:08.516 --> 00:02:10.360
+<v Uschmann, Patrick>Christian or Ron right now.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/50-0
+00:02:11.360 --> 00:02:12.680
+<v Matt Wilkinson>No, I agree, I agree.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/51-0
+00:02:14.520 --> 00:02:14.920
+<v Matthias Max>Yakup.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/52-0
+00:02:17.040 --> 00:02:17.720
+<v Matthias Max>K.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/53-0
+00:02:18.880 --> 00:02:19.320
+<v Matthias Max>In.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/60-0
+00:02:20.200 --> 00:02:22.680
+<v Matthias Max>First of all, maybe the bucket topic.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/67-0
+00:02:24.920 --> 00:02:29.880
+<v Matthias Max>Collider, we have the bucket by now,
+ABM 1060.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/69-0
+00:02:31.160 --> 00:02:31.720
+<v Matthias Max>Was it?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/70-0
+00:02:31.240 --> 00:02:31.960
+<v Nikolay Hristov>And.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/73-0
+00:02:32.800 --> 00:02:34.240
+<v Nikolay Hristov>Is that for the test?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/101-0
+00:02:35.320 --> 00:02:39.148
+<v Nikolay Hristov>I haven't created,
+I haven't created it yet,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/82-0
+00:02:35.560 --> 00:02:36.040
+<v Matt Wilkinson>A BLM.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/81-0
+00:02:36.960 --> 00:02:37.320
+<v Matthias Max>That's.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/101-1
+00:02:39.148 --> 00:02:45.698
+<v Nikolay Hristov>but Boyan told me that there is a
+possibility that we don't need the bucket,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/84-0
+00:02:39.880 --> 00:02:40.040
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/101-2
+00:02:45.698 --> 00:02:48.080
+<v Nikolay Hristov>and he needs to talk with...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/105-0
+00:02:49.560 --> 00:02:53.640
+<v Nikolay Hristov>Oh, what was his name?
+I'm our Bulgarian officer guy.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/113-0
+00:02:55.160 --> 00:02:57.240
+<v Nikolay Hristov>That helps with architecture, but...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/110-0
+00:02:55.560 --> 00:02:55.720
+<v Matthias Max>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/122-0
+00:02:58.520 --> 00:03:01.160
+<v Matthias Max>But we need the bucket, definitely.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/115-0
+00:02:58.560 --> 00:02:58.840
+<v Nikolay Hristov>No.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/124-0
+00:03:00.680 --> 00:03:01.640
+<v Yosif Mihaylov>Is it the vial?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/126-0
+00:03:03.080 --> 00:03:03.720
+<v Nikolay Hristov>Yahoo.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/169-0
+00:03:06.280 --> 00:03:10.670
+<v Yosif Mihaylov>I guess this is for the for the stream,
+right?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/141-0
+00:03:09.640 --> 00:03:10.200
+<v Nikolay Hristov>Yes.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/147-0
+00:03:09.960 --> 00:03:11.120
+<v Matthias Max>Yeah, this is those.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/169-1
+00:03:10.670 --> 00:03:17.769
+<v Yosif Mihaylov>Because the thing the thing was that,
+like previously with the data stream,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/145-0
+00:03:11.000 --> 00:03:11.160
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/169-2
+00:03:17.769 --> 00:03:23.560
+<v Yosif Mihaylov>we had this bucket because there there is
+like no option for.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/200-0
+00:03:24.760 --> 00:03:28.932
+<v Yosif Mihaylov>For the data stream to to publish
+directly to PubSub,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/200-1
+00:03:28.932 --> 00:03:35.267
+<v Yosif Mihaylov>so that's why we we had to to send from
+data stream to to the bucket, but now if,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/200-2
+00:03:35.267 --> 00:03:40.520
+<v Yosif Mihaylov>like, we are using stream,
+this this bucket might not be necessary.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/228-0
+00:03:43.160 --> 00:03:47.275
+<v Yosif Mihaylov>So, I guess that that's why,
+that that's why, like,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/228-1
+00:03:47.275 --> 00:03:51.706
+<v Yosif Mihaylov>Nikki has to talk with,
+but I think it's more of a POC,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/228-2
+00:03:51.706 --> 00:03:57.640
+<v Yosif Mihaylov>because I'm pretty sure that stream
+should be able to to send directly to.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/232-0
+00:03:58.920 --> 00:03:59.560
+<v Yosif Mihaylov>Two tops up.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/246-0
+00:04:00.040 --> 00:04:04.485
+<v Matt Wilkinson>Yeah, but just remember guys,
+we're only using stream for this testing</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/246-1
+00:04:04.485 --> 00:04:05.800
+<v Matt Wilkinson>phase and maybe 1060.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/253-0
+00:04:06.960 --> 00:04:09.480
+<v Matt Wilkinson>Like, we're not using stream for Postgres.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/270-0
+00:04:11.000 --> 00:04:14.606
+<v Matt Wilkinson>Just, just, just, yeah, don't, yeah,
+don't make any huge changes on the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/260-0
+00:04:11.880 --> 00:04:13.080
+<v Matthias Max>Yeah, also.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/270-1
+00:04:14.606 --> 00:04:17.160
+<v Matt Wilkinson>architecture without thinking about the
+whole lot.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/267-0
+00:04:15.000 --> 00:04:15.880
+<v Matthias Max>Business.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/282-0
+00:04:17.840 --> 00:04:22.093
+<v Matthias Max>Yeah, this is true.
+This is not a change we confirmed.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/282-1
+00:04:22.093 --> 00:04:23.640
+<v Matthias Max>Stick with the plan.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/279-0
+00:04:22.520 --> 00:04:22.880
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/283-0
+00:04:24.120 --> 00:04:25.080
+<v Matt Wilkinson>Yeah, OK.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/304-0
+00:04:25.880 --> 00:04:31.478
+<v Matthias Max>So we need the bucket name convention
+applied to ABN 1060,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/304-1
+00:04:31.478 --> 00:04:38.120
+<v Matthias Max>all other potential improvements, changes,
+et cetera, we need to 1st.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/306-0
+00:04:39.000 --> 00:04:41.080
+<v Matthias Max>We discussed, and so on.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/361-0
+00:04:45.720 --> 00:04:49.196
+<v Matt Wilkinson>Yeah, all good, all good. Well, as I said,
+we're ready to,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/361-1
+00:04:49.196 --> 00:04:52.790
+<v Matt Wilkinson>it will not take as long to set it up.
+That's the advantage.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/361-2
+00:04:52.790 --> 00:04:56.678
+<v Matt Wilkinson>I just need to know where we're pointing
+it to. It's just easier.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/361-3
+00:04:56.678 --> 00:05:00.507
+<v Matt Wilkinson>I can't just set up one-half.
+It's better to do it all in one go</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/361-4
+00:05:00.507 --> 00:05:04.807
+<v Matt Wilkinson>because then we pull it and then the
+stream service thing says, oh yeah,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/361-5
+00:05:04.807 --> 00:05:06.280
+<v Matt Wilkinson>I can definitely connect.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/369-0
+00:05:06.920 --> 00:05:12.360
+<v Matt Wilkinson>And then it's, yeah, okay.
+It makes it a bit more convoluted to...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/377-0
+00:05:13.400 --> 00:05:17.660
+<v Matt Wilkinson>I'll do the source connection,
+and then I'll do the bucket connection,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/377-1
+00:05:17.660 --> 00:05:17.960
+<v Matt Wilkinson>yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/386-0
+00:05:18.880 --> 00:05:21.480
+<v Matt Wilkinson>If you do it all in one go,
+it's easier to do so.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/381-0
+00:05:18.920 --> 00:05:19.240
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/390-0
+00:05:24.120 --> 00:05:25.720
+<v Matthias Max>Hey, good, so...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/395-0
+00:05:26.880 --> 00:05:29.520
+<v Matthias Max>Pending, we will provide it ASAP.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/396-0
+00:05:30.480 --> 00:05:30.600
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/436-0
+00:05:32.120 --> 00:05:39.737
+<v Matthias Max>Next thing, maybe the most important one,
+the secret manager credentials.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/436-1
+00:05:39.737 --> 00:05:45.089
+<v Matthias Max>We found one on WL5 as I sent you the
+mail, 401060.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/436-2
+00:05:45.089 --> 00:05:49.720
+<v Matthias Max>But you said that's not the one you
+created.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/451-0
+00:05:50.440 --> 00:05:55.048
+<v Matthias Max>So we were checking up to, is it the one?
+Is it not the one? Is it ABN?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/445-0
+00:05:50.760 --> 00:05:53.120
+<v Matt Wilkinson>Correct, so that that that's the that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/451-1
+00:05:55.048 --> 00:05:56.200
+<v Matthias Max>Is it another one?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/483-0
+00:05:58.360 --> 00:06:03.538
+<v Matt Wilkinson>The honest answer to that question is
+someone else in P3 is connected all of</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/483-1
+00:06:03.538 --> 00:06:07.640
+<v Matt Wilkinson>those up in workload 5 test for cloud for
+log, I'm assuming.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/487-0
+00:06:08.400 --> 00:06:11.560
+<v Nikolay Hristov>Yeah, it was me, by the way, I was there.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/532-0
+00:06:10.120 --> 00:06:14.956
+<v Matt Wilkinson>Yeah, yeah, yeah. So, yeah, that's fine.
+So, but the user that the O,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/532-1
+00:06:14.956 --> 00:06:19.653
+<v Matt Wilkinson>the cloud for log utilizes is the QM user.
+So that's just a legacy,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/532-2
+00:06:19.653 --> 00:06:25.248
+<v Matt Wilkinson>it's a legacy user that's only read-only,
+I think. It's supposed to be done for,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/532-3
+00:06:25.248 --> 00:06:30.360
+<v Matt Wilkinson>or that connectivity method was, I think,
+and I'm pretty confident on is.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/579-0
+00:06:30.760 --> 00:06:35.737
+<v Matt Wilkinson>is just for reporting to pull the reports.
+So for example, the BI data lake,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/579-1
+00:06:35.737 --> 00:06:39.939
+<v Matt Wilkinson>they use the QM user, the BI guys there.
+So as far as I'm aware,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/548-0
+00:06:37.720 --> 00:06:38.040
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/579-2
+00:06:39.939 --> 00:06:43.623
+<v Matt Wilkinson>that user should only has read access
+onto the database.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/579-3
+00:06:43.623 --> 00:06:48.600
+<v Matt Wilkinson>It wouldn't surprise me if someone
+somewhere has given it a little bit more.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/604-0
+00:06:49.520 --> 00:06:54.318
+<v Matt Wilkinson>because that's happened before.
+So the objective is for the bridge to</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/604-1
+00:06:54.318 --> 00:07:00.144
+<v Matt Wilkinson>actually connect to the using the BI user,
+because then it's clean with knowing what</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/596-0
+00:06:58.040 --> 00:06:58.360
+<v Matthias Max>Sure.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/604-2
+00:07:00.144 --> 00:07:01.720
+<v Matt Wilkinson>it is, basically. Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/600-0
+00:07:00.360 --> 00:07:01.720
+<v Matthias Max>Yeah, so...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/629-0
+00:07:03.000 --> 00:07:08.411
+<v Matthias Max>I just want to be clear on the process.
+You provide credentials to us in a</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/629-1
+00:07:08.411 --> 00:07:13.821
+<v Matthias Max>connection string, including passwords,
+and we put it into Secret Manager,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/629-2
+00:07:13.821 --> 00:07:15.480
+<v Matthias Max>or do you put it there?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/637-0
+00:07:15.880 --> 00:07:19.652
+<v Matt Wilkinson>Doesn't matter,
+it's as long as it's in there, really.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/635-0
+00:07:19.480 --> 00:07:20.040
+<v Matthias Max>Correct.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/637-1
+00:07:19.652 --> 00:07:20.680
+<v Matt Wilkinson>I'm easy for...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/645-0
+00:07:21.400 --> 00:07:25.480
+<v Matthias Max>Yeah, and can we add some post fix?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/653-0
+00:07:26.680 --> 00:07:29.880
+<v Matthias Max>Identifying what it is, I mean.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/685-0
+00:07:29.400 --> 00:07:32.800
+<v Matt Wilkinson>Yes,
+there's two labels on it that I've put on.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/685-1
+00:07:32.800 --> 00:07:37.828
+<v Matt Wilkinson>It says it's the user TMSBR 1060 and the
+name of it is the TMSBR 1060.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/685-2
+00:07:37.828 --> 00:07:42.360
+<v Matt Wilkinson>But we could put UDISPO on it as a label.
+That's not a problem.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/674-0
+00:07:39.080 --> 00:07:39.560
+<v Matthias Max>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/720-0
+00:07:43.640 --> 00:07:46.634
+<v Matthias Max>Oh,
+I think it's fine as long as we all</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/720-1
+00:07:46.634 --> 00:07:50.302
+<v Matthias Max>understand the tagging labeling system.
+Nikolay,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/720-2
+00:07:50.302 --> 00:07:55.017
+<v Matthias Max>can you see that secret manager item?
+Because once it's there,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/720-3
+00:07:55.017 --> 00:08:00.706
+<v Matthias Max>we're literally unblocked, right,
+and can connect the TMS bridge to the AVN</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/720-4
+00:08:00.706 --> 00:08:01.080
+<v Matthias Max>1060.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/722-0
+00:08:01.480 --> 00:08:04.120
+<v Nikolay Hristov>Yeah, but how's the name? What's the name?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/737-0
+00:08:06.640 --> 00:08:09.880
+<v Matthias Max>The link Matt shared should bring you
+there, right?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/739-0
+00:08:07.760 --> 00:08:11.400
+<v Nikolay Hristov>Aha, TMSBR 1060, is that?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/740-0
+00:08:12.440 --> 00:08:12.760
+<v Nikolay Hristov>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/744-0
+00:08:13.320 --> 00:08:14.360
+<v Matt Wilkinson>Yeah, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/757-0
+00:08:14.120 --> 00:08:19.880
+<v Nikolay Hristov>Okay, I can see, I can see it,
+I can do the secret value.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/748-0
+00:08:15.360 --> 00:08:15.800
+<v Matthias Max>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/762-0
+00:08:21.160 --> 00:08:23.000
+<v Nikolay Hristov>It's just a password, I think.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/761-0
+00:08:21.400 --> 00:08:21.880
+<v Matthias Max>Mhm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/787-0
+00:08:23.560 --> 00:08:26.501
+<v Matt Wilkinson>Right, Nikolay,
+so there's no string in there because I</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/787-1
+00:08:26.501 --> 00:08:30.702
+<v Matt Wilkinson>don't know how you guys or what string
+you guys need to call it if you if if at</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/787-2
+00:08:30.702 --> 00:08:32.120
+<v Matt Wilkinson>all you're calling it from.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/788-0
+00:08:34.040 --> 00:08:34.120
+<v Matt Wilkinson>Uhh...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/790-0
+00:08:35.400 --> 00:08:36.040
+<v Matt Wilkinson>from the app.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/804-0
+00:08:37.000 --> 00:08:39.559
+<v Matt Wilkinson>As in secret,
+or that you're connecting using the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/804-1
+00:08:39.559 --> 00:08:42.680
+<v Matt Wilkinson>password? I don't know,
+so this did the secrets there, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/824-0
+00:08:43.440 --> 00:08:47.230
+<v Matthias Max>So we, okay,
+that's a missing piece of information for</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/824-1
+00:08:47.230 --> 00:08:50.675
+<v Matthias Max>you, right?
+What content do we want in the Secret</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/824-2
+00:08:50.675 --> 00:08:51.640
+<v Matthias Max>Manager entry?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/871-0
+00:08:52.600 --> 00:08:56.504
+<v Matt Wilkinson>Yeah,
+so what's in there now is the password</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/871-1
+00:08:56.504 --> 00:09:03.271
+<v Matt Wilkinson>that Eric set on Friday for the BR user
+that then has access to the database.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/871-2
+00:09:03.271 --> 00:09:09.344
+<v Matt Wilkinson>So the bridge should be using the BR user
+to connect into the bridge.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/847-0
+00:09:03.320 --> 00:09:03.560
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/871-3
+00:09:09.344 --> 00:09:11.600
+<v Matt Wilkinson>And it's got write access.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/904-0
+00:09:11.720 --> 00:09:15.577
+<v Matt Wilkinson>It's sorry,
+connecting to the 1060 database on ABN.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/904-1
+00:09:15.577 --> 00:09:18.989
+<v Matt Wilkinson>Yeah,
+because we've what Eric's done is we've</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/904-2
+00:09:18.989 --> 00:09:25.146
+<v Matt Wilkinson>got the scripts now that, so for example,
+we know what objects need to be deployed</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/904-3
+00:09:25.146 --> 00:09:27.000
+<v Matt Wilkinson>to make new disk for run.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/948-0
+00:09:27.880 --> 00:09:33.139
+<v Matt Wilkinson>So the change that we deployed on Friday,
+so those all the objects. So for example,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/914-0
+00:09:30.960 --> 00:09:32.520
+<v Matthias Max>Yeah, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/948-1
+00:09:33.139 --> 00:09:37.710
+<v Matt Wilkinson>if you guys come to us and say, right,
+we need to roll this out to 1034,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/948-2
+00:09:37.710 --> 00:09:40.652
+<v Matt Wilkinson>we can just go, right, that is the,
+let's say,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/948-3
+00:09:40.652 --> 00:09:43.720
+<v Matt Wilkinson>script back that then needs to be run on
+Oracle.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/931-0
+00:09:40.800 --> 00:09:41.280
+<v Matthias Max>Mhm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/946-0
+00:09:44.440 --> 00:09:46.280
+<v Matthias Max>Cool, great stuff.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/965-0
+00:09:45.320 --> 00:09:48.312
+<v Matt Wilkinson>Yeah, yeah, so that,
+that's what we did on Friday,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/965-1
+00:09:48.312 --> 00:09:51.480
+<v Matt Wilkinson>and then the password we can set per user,
+basically.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/964-0
+00:09:51.880 --> 00:09:52.520
+<v Matthias Max>Awesome.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/984-0
+00:09:52.120 --> 00:09:55.536
+<v Nikolay Hristov>Yeah,
+I can show you how the secret string</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/984-1
+00:09:55.536 --> 00:09:59.667
+<v Nikolay Hristov>looks. We need the host name and database,
+I think.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/984-2
+00:09:59.667 --> 00:10:03.400
+<v Nikolay Hristov>I will paste in the chat without the
+password.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/988-0
+00:10:04.680 --> 00:10:06.320
+<v Matt Wilkinson>OKOKOK.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/987-0
+00:10:06.240 --> 00:10:06.440
+<v Matthias Max>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/994-0
+00:10:07.240 --> 00:10:08.680
+<v Matt Wilkinson>Well, Nikolay, you...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1015-0
+00:10:09.840 --> 00:10:12.543
+<v Matt Wilkinson>You should have those details.
+You put it into the string and then we</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1015-1
+00:10:12.543 --> 00:10:15.400
+<v Matt Wilkinson>can again take it and then we can make
+sure we do it right the next time.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1019-0
+00:10:17.160 --> 00:10:18.360
+<v Nikolay Hristov>It looks like this, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1030-0
+00:10:20.360 --> 00:10:23.800
+<v Matt Wilkinson>That's the QM user. Yeah, yeah, okay.
+So you need to follow the same.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1029-0
+00:10:22.600 --> 00:10:23.160
+<v Nikolay Hristov>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1042-0
+00:10:24.680 --> 00:10:30.878
+<v Nikolay Hristov>Yeah, the same string,
+but with different user and password and</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1037-0
+00:10:29.560 --> 00:10:30.040
+<v Matthias Max>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1042-1
+00:10:30.878 --> 00:10:32.040
+<v Nikolay Hristov>data source.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1040-0
+00:10:31.000 --> 00:10:31.480
+<v Matthias Max>Bühren.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1080-0
+00:10:33.080 --> 00:10:37.492
+<v Matthias Max>I'll add this to be completely
+transparent to the document.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1080-1
+00:10:37.492 --> 00:10:43.302
+<v Matthias Max>We'll need this for any further rollout.
+I think it's worth documenting all of</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1080-2
+00:10:43.302 --> 00:10:46.978
+<v Matthias Max>that now.
+But I think once we have the exact host</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1080-3
+00:10:46.978 --> 00:10:47.640
+<v Matthias Max>from you,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1083-0
+00:10:48.840 --> 00:10:51.000
+<v Matthias Max>and we have the password we can actually
+connect.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1085-0
+00:10:52.280 --> 00:10:52.760
+<v Matthias Max>Good.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1087-0
+00:10:54.520 --> 00:10:55.080
+<v Matthias Max>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1089-0
+00:10:56.680 --> 00:10:57.480
+<v Matthias Max>Great.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1097-0
+00:10:58.840 --> 00:11:03.000
+<v Matthias Max>You also requested the key cloak intra ID.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1103-0
+00:11:04.200 --> 00:11:07.880
+<v Matthias Max>Diagram or info, right?
+I'll add that as well.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1119-0
+00:11:09.080 --> 00:11:14.789
+<v Matthias Max>I also have been working on, yeah,
+just adding more information to the go</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1119-1
+00:11:14.789 --> 00:11:15.560
+<v Matthias Max>live page.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1123-0
+00:11:16.760 --> 00:11:18.520
+<v Matthias Max>Everything that's been a gap.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1125-0
+00:11:19.480 --> 00:11:21.440
+<v Matthias Max>Will be filled up.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1128-0
+00:11:23.320 --> 00:11:25.160
+<v Matthias Max>next one or two days.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1129-0
+00:11:27.360 --> 00:11:27.640
+<v Matthias Max>Um...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1137-0
+00:11:31.560 --> 00:11:35.560
+<v Matthias Max>That's really it from our point of view.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1139-0
+00:11:36.680 --> 00:11:37.480
+<v Matthias Max>Ah, no.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1143-0
+00:11:38.680 --> 00:11:40.760
+<v Matthias Max>The user for stream.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1185-0
+00:11:42.840 --> 00:11:48.237
+<v Matthias Max>Is that a discussion topic or is it
+something you can solve on your own</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1185-1
+00:11:48.237 --> 00:11:53.633
+<v Matthias Max>because you know what stream needs?
+For example, access to reader logs,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1185-2
+00:11:53.633 --> 00:11:57.680
+<v Matthias Max>table sending, and so on.
+Or do we need a discussion?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1197-0
+00:11:55.880 --> 00:11:58.932
+<v Matt Wilkinson>We can figure that out. No, no,
+we can figure that out.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1197-1
+00:11:58.932 --> 00:12:02.747
+<v Matt Wilkinson>We can figure that out. Yeah.
+There's a different config for streams,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1192-0
+00:12:00.520 --> 00:12:01.080
+<v Matthias Max>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1197-2
+00:12:02.747 --> 00:12:04.000
+<v Matt Wilkinson>different config for...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1209-0
+00:12:05.640 --> 00:12:09.365
+<v Matt Wilkinson>Data stream,
+because obviously they should use the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1201-0
+00:12:07.080 --> 00:12:07.560
+<v Matthias Max>Mhm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1209-1
+00:12:09.365 --> 00:12:10.680
+<v Matt Wilkinson>same things. Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1217-0
+00:12:11.640 --> 00:12:16.520
+<v Matthias Max>Would you mind sharing that info?
+I just want to put it all on that page.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1239-0
+00:12:17.400 --> 00:12:20.171
+<v Matt Wilkinson>Yeah, we can do, yeah, yeah.
+It's because they're connecting to</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1239-1
+00:12:20.171 --> 00:12:22.250
+<v Matt Wilkinson>different,
+they're connecting to the same logs,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1239-2
+00:12:22.250 --> 00:12:25.800
+<v Matt Wilkinson>but weirdly they're doing it a different
+way. So, yeah, we can document it, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1242-0
+00:12:26.600 --> 00:12:30.360
+<v Matthias Max>All right, that was something pending.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1243-0
+00:12:32.200 --> 00:12:33.080
+<v Matthias Max>Check.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1251-0
+00:12:36.840 --> 00:12:39.560
+<v Matt Wilkinson>Just one thing I wanted to check is just
+what...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1276-0
+00:12:40.640 --> 00:12:47.777
+<v Matt Wilkinson>Obviously WL5 has got test,
+has got already a new bridge in for test.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1276-1
+00:12:47.777 --> 00:12:54.200
+<v Matt Wilkinson>So is the plan to connect what is
+currently there to ABN 1060?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1277-0
+00:12:56.280 --> 00:12:57.320
+<v Nikolay Hristov>Yes, I think.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1281-0
+00:12:58.040 --> 00:12:59.160
+<v Matt Wilkinson>And then...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1282-0
+00:12:58.280 --> 00:12:59.560
+<v Matthias Max>So, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1299-0
+00:13:00.040 --> 00:13:04.533
+<v Matt Wilkinson>Yeah, okay. Then ABN 1034,
+which is the Postgres database,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1286-0
+00:13:00.920 --> 00:13:01.080
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1299-1
+00:13:04.533 --> 00:13:07.960
+<v Matt Wilkinson>will also remain connected.
+Is that correct?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1313-0
+00:13:09.560 --> 00:13:16.641
+<v Matthias Max>So we will resemble artificial
+environments all within the real workload</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1313-1
+00:13:16.641 --> 00:13:17.320
+<v Matthias Max>for TT.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1335-0
+00:13:18.360 --> 00:13:23.941
+<v Matthias Max>because there is no dev, for example,
+we would probably spin up dev containers</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1335-1
+00:13:23.941 --> 00:13:27.614
+<v Matthias Max>there as well.
+And we will spin up ABN and UAT mini</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1335-2
+00:13:27.614 --> 00:13:31.640
+<v Matthias Max>environment within the environment,
+if that makes sense.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1337-0
+00:13:33.320 --> 00:13:33.800
+<v Matthias Max>Cool.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1373-0
+00:13:34.680 --> 00:13:38.152
+<v Matt Wilkinson>No,
+I'm just asking because Patrick and Max,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1342-0
+00:13:35.000 --> 00:13:35.400
+<v Matthias Max>Töppe.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1373-1
+00:13:38.152 --> 00:13:42.394
+<v Matt Wilkinson>Max by Sam,
+are hoping to do a demonstration, I think,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1373-2
+00:13:42.394 --> 00:13:45.943
+<v Matt Wilkinson>with ABN Postgres.
+And that's why I'm asking.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1373-3
+00:13:45.943 --> 00:13:47.640
+<v Matt Wilkinson>Because if we kill it,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1376-0
+00:13:47.000 --> 00:13:51.480
+<v Matthias Max>But wait a second, we're mixing up topics.
+The one on the 19th of May.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1379-0
+00:13:52.640 --> 00:13:53.560
+<v Matthias Max>Because that's...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1383-0
+00:13:52.800 --> 00:13:55.320
+<v Matt Wilkinson>I have no idea, no, it's before anything.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1389-0
+00:13:55.080 --> 00:13:56.600
+<v Matthias Max>A management meeting is.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1398-0
+00:13:56.040 --> 00:14:00.440
+<v Uschmann, Patrick>No, that's the presentation on the 19th.
+Yeah, that's correct.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1409-0
+00:14:01.080 --> 00:14:04.600
+<v Matthias Max>So this is not on Oracle, right?
+This is on 1034.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1400-0
+00:14:01.560 --> 00:14:01.800
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1417-0
+00:14:05.480 --> 00:14:06.280
+<v Matt Wilkinson>Los Kraszewski.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1418-0
+00:14:05.560 --> 00:14:06.640
+<v Matthias Max>The presentation.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1427-0
+00:14:05.800 --> 00:14:08.920
+<v Uschmann, Patrick>We would like to use the ABN 1034, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1429-0
+00:14:10.120 --> 00:14:10.600
+<v Uschmann, Patrick>Correct.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1430-0
+00:14:10.200 --> 00:14:10.920
+<v Matthias Max>Correct.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1435-0
+00:14:11.720 --> 00:14:13.640
+<v Matthias Max>So not the 1060 Oracle.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1468-0
+00:14:16.600 --> 00:14:20.103
+<v Matthias Max>Good,
+but where did we stop regarding</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1468-1
+00:14:20.103 --> 00:14:25.265
+<v Matthias Max>environments?
+We will have two full environments within</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1468-2
+00:14:25.265 --> 00:14:32.915
+<v Matthias Max>workload 4 because there's only the test
+environment. So we will have two bridges,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1468-3
+00:14:32.915 --> 00:14:35.680
+<v Matthias Max>sorry, not bridges, back ends.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1504-0
+00:14:36.200 --> 00:14:41.930
+<v Matthias Max>and everything that's usually in workload
+4, and the same on workload 5,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1504-1
+00:14:41.930 --> 00:14:46.404
+<v Matthias Max>but there it will be distributed, I think,
+the same way,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1504-2
+00:14:46.404 --> 00:14:50.564
+<v Matthias Max>because we also need UAT and AVN
+environments there.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1504-3
+00:14:50.564 --> 00:14:52.840
+<v Matthias Max>But it will all be in the TT.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1507-0
+00:14:53.960 --> 00:14:54.680
+<v Matthias Max>Projects.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1523-0
+00:14:55.840 --> 00:15:00.224
+<v Matt Wilkinson>Yeah, yeah, yeah, that's fine.
+What I'm saying is, though, is that,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1523-1
+00:15:00.224 --> 00:15:03.640
+<v Matt Wilkinson>and correct me if I'm wrong,
+but I don't the bridge.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1527-0
+00:15:04.680 --> 00:15:06.880
+<v Matt Wilkinson>We've got WL4.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1528-0
+00:15:07.920 --> 00:15:08.440
+<v Matt Wilkinson>Test.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1543-0
+00:15:09.320 --> 00:15:14.491
+<v Matt Wilkinson>Cloud Run instance which is so that's
+running at the moment and that is a test</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1543-1
+00:15:14.491 --> 00:15:16.520
+<v Matt Wilkinson>one. So what I'm suggesting is.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1557-0
+00:15:18.760 --> 00:15:24.579
+<v Matt Wilkinson>Obviously, we'll connect Oracle 1060.
+I'll give you the credentials for that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1554-0
+00:15:23.680 --> 00:15:23.800
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1557-1
+00:15:24.579 --> 00:15:25.400
+<v Matt Wilkinson>And then...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1561-0
+00:15:27.000 --> 00:15:28.920
+<v Matt Wilkinson>You guys could leave Postgres.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1607-0
+00:15:30.120 --> 00:15:34.307
+<v Matt Wilkinson>Running and connected to the bridge as it
+is in, and then the current,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1607-1
+00:15:34.307 --> 00:15:38.553
+<v Matt Wilkinson>the current what is built in there would
+be then become ABN, basically.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1607-2
+00:15:38.553 --> 00:15:42.504
+<v Matt Wilkinson>That's what I'm suggesting,
+because then you guys don't have to do</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1607-3
+00:15:42.504 --> 00:15:45.807
+<v Matt Wilkinson>anything new for Patrick until we want to
+get into UAT,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1591-0
+00:15:44.120 --> 00:15:44.280
+<v Matthias Max>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1607-4
+00:15:45.807 --> 00:15:49.640
+<v Matt Wilkinson>which then then we need a new cloud or
+instance that will be in.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1610-0
+00:15:50.360 --> 00:15:52.840
+<v Matt Wilkinson>W04 test and W05 test.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1611-0
+00:15:54.200 --> 00:15:54.400
+<v Matthias Max>Wow.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1613-0
+00:15:55.720 --> 00:15:56.840
+<v Matthias Max>Could be done, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1614-0
+00:15:57.560 --> 00:15:57.880
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1622-0
+00:16:00.440 --> 00:16:03.080
+<v Matthias Max>Yeah, Nikolay, I think we need a quick...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1632-0
+00:16:04.160 --> 00:16:06.895
+<v Matthias Max>chat there, what to deploy,
+when and where,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1632-1
+00:16:06.895 --> 00:16:08.760
+<v Matthias Max>for which environment purpose.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1636-0
+00:16:09.360 --> 00:16:11.160
+<v Nikolay Hristov>Yes, we need to discuss this.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1653-0
+00:16:12.080 --> 00:16:16.439
+<v Matt Wilkinson>Yeah, because at the, but just at the,
+because at the moment we've got data</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1640-0
+00:16:12.120 --> 00:16:12.520
+<v Matthias Max>Good.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1653-1
+00:16:16.439 --> 00:16:16.840
+<v Matt Wilkinson>stream.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1671-0
+00:16:18.000 --> 00:16:22.986
+<v Matt Wilkinson>coming out of ABN 1034 on Postgres.
+So that's already set up and running.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1671-1
+00:16:22.986 --> 00:16:28.040
+<v Matt Wilkinson>I know we've had that latency chat,
+but that obviously wasn't seen within.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1717-0
+00:16:29.480 --> 00:16:33.941
+<v Matt Wilkinson>within the clusters. So yeah,
+because basically what I don't want</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1678-0
+00:16:33.000 --> 00:16:33.280
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1717-1
+00:16:33.941 --> 00:16:38.876
+<v Matt Wilkinson>Patrick and Max to do is go to this
+meeting and then it not work because</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1717-2
+00:16:38.876 --> 00:16:43.945
+<v Matt Wilkinson>we've missed something from a config
+perspective. So it should be working.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1717-3
+00:16:43.945 --> 00:16:48.948
+<v Matt Wilkinson>We have an issue on the TMS app,
+which Ron and Eric have been working and</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1717-4
+00:16:48.948 --> 00:16:50.840
+<v Matt Wilkinson>Thomas have been working on.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1720-0
+00:16:51.240 --> 00:16:54.440
+<v Matt Wilkinson>But, in reality...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1734-0
+00:16:55.880 --> 00:16:59.673
+<v Matt Wilkinson>All the new Dispo elements should be up
+and running and working from those</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1734-1
+00:16:59.673 --> 00:17:01.240
+<v Matt Wilkinson>databases, as far as I'm aware.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1736-0
+00:17:03.160 --> 00:17:03.320
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1763-0
+00:17:04.520 --> 00:17:09.362
+<v Matthias Max>So regarding the presentation,
+we are aligned. Max, in this call,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1763-1
+00:17:09.362 --> 00:17:15.379
+<v Matthias Max>Patrick, are aligned. The team is aligned.
+We'll make sure this presentation will</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1763-2
+00:17:15.379 --> 00:17:18.680
+<v Matthias Max>work, right, Max?
+I think that's guaranteed.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1765-0
+00:17:21.240 --> 00:17:22.600
+<v Matthias Max>We just need to.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1773-0
+00:17:23.800 --> 00:17:26.680
+<v Matthias Max>Prepare the deployments in the...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1772-0
+00:17:26.280 --> 00:17:26.760
+<v Matt Wilkinson>Mhm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1774-0
+00:17:28.040 --> 00:17:28.280
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1779-0
+00:17:28.080 --> 00:17:29.560
+<v Matthias Max>WL4T.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1798-0
+00:17:29.400 --> 00:17:31.519
+<v Matt Wilkinson>Well,
+let's look up here because there needs to</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1798-1
+00:17:31.519 --> 00:17:34.255
+<v Matt Wilkinson>be another column then.
+So there needs to be another Postgres</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1798-2
+00:17:34.255 --> 00:17:35.800
+<v Matt Wilkinson>column in this environment mapping.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1817-0
+00:17:36.520 --> 00:17:41.067
+<v Matthias Max>That's true.
+This is currently missing because it only</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1801-0
+00:17:37.680 --> 00:17:38.040
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1817-1
+00:17:41.067 --> 00:17:43.960
+<v Matthias Max>looks at the 1060 go live. Correct.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1814-0
+00:17:43.560 --> 00:17:43.960
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1823-0
+00:17:45.240 --> 00:17:48.920
+<v Matthias Max>It doesn't include any additional
+databases connected.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1824-0
+00:17:49.800 --> 00:17:50.200
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1832-0
+00:17:50.360 --> 00:17:53.400
+<v Matthias Max>I also wonder if it's a good idea to have.
+..</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1860-0
+00:17:54.760 --> 00:18:00.827
+<v Matthias Max>non 1060 things in that environment.
+If you look at it strictly,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1860-1
+00:18:00.827 --> 00:18:08.480
+<v Matthias Max>there should be the 1060 stream from dev
+to test to unit to props with just 1060.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1862-0
+00:18:09.560 --> 00:18:10.280
+<v Matthias Max>Connected.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1875-0
+00:18:11.080 --> 00:18:13.935
+<v Matt Wilkinson>Yeah,
+but your everything should work with</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1875-1
+00:18:13.935 --> 00:18:17.320
+<v Matt Wilkinson>multiple databases,
+so it's a good place to do it.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1881-0
+00:18:19.160 --> 00:18:19.960
+<v Matt Wilkinson>I know you wanna...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1918-0
+00:18:19.400 --> 00:18:26.743
+<v Matthias Max>It is, yeah. But for example,
+the highest priority for us is to have an</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1886-0
+00:18:21.120 --> 00:18:22.200
+<v Matt Wilkinson>Ten, yeah, so...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1918-1
+00:18:26.743 --> 00:18:32.353
+<v Matthias Max>efficient testing process on ABN with Max
+and Patrick.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1918-2
+00:18:32.353 --> 00:18:38.880
+<v Matthias Max>This is where the biggest achievements
+are made because we have</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1937-0
+00:18:39.480 --> 00:18:42.844
+<v Matthias Max>The logic knowledge,
+domain knowledge from Patrick,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1937-1
+00:18:42.844 --> 00:18:46.013
+<v Matthias Max>plus the quick iterations on the
+technical side.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1937-2
+00:18:46.013 --> 00:18:48.600
+<v Matthias Max>This is where we make the product great.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1962-0
+00:18:49.520 --> 00:18:57.471
+<v Matthias Max>and it should not have any interference
+from Postgres connectivity things, yeah,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1962-1
+00:18:57.471 --> 00:19:04.440
+<v Matthias Max>blowing it up and so on. My opinion,
+it would be best to keep it slim.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1964-0
+00:19:06.040 --> 00:19:07.640
+<v Matthias Max>And Oracle only for now.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1986-0
+00:19:09.000 --> 00:19:14.808
+<v Matthias Max>The purpose of this testing is not to
+support and make 100% bulletproof the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1986-1
+00:19:14.808 --> 00:19:19.240
+<v Matthias Max>dual database support.
+It's to go live on Oracle in June.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1989-0
+00:19:20.360 --> 00:19:21.880
+<v Matthias Max>That's different goals.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2004-0
+00:19:25.880 --> 00:19:30.275
+<v Matt Wilkinson>So, what were you? Well,
+then let me ask the question then: What</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/1993-0
+00:19:26.200 --> 00:19:26.920
+<v Maximilian Kehder>I agree.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2004-1
+00:19:30.275 --> 00:19:31.560
+<v Matt Wilkinson>are we focusing on?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2007-0
+00:19:34.120 --> 00:19:35.400
+<v Matt Wilkinson>For this management meeting, then.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2011-0
+00:19:36.280 --> 00:19:37.400
+<v Maximilian Kehder>management meeting.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2013-0
+00:19:36.480 --> 00:19:38.360
+<v Matt Wilkinson>Because that, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2025-0
+00:19:39.240 --> 00:19:43.800
+<v Uschmann, Patrick>For the for the management meeting,
+we just need a running.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2021-0
+00:19:39.640 --> 00:19:40.680
+<v Maximilian Kehder>Sorry, continue first.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2027-0
+00:19:44.680 --> 00:19:46.120
+<v Uschmann, Patrick>Test environment.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2066-0
+00:19:47.160 --> 00:19:55.310
+<v Uschmann, Patrick>that is also connected to the new Dispo
+app where we can just prepare some cases</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2066-1
+00:19:55.310 --> 00:20:02.052
+<v Uschmann, Patrick>to just showcase the system. That's all.
+If I have a running 1060,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2066-2
+00:20:02.052 --> 00:20:06.680
+<v Uschmann, Patrick>then I will take the 1060,
+but at the moment,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2073-0
+00:20:06.920 --> 00:20:13.000
+<v Uschmann, Patrick>I don't have a running 1060,
+so I tried to start the...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2085-0
+00:20:14.680 --> 00:20:19.880
+<v Uschmann, Patrick>1034 via Cameo and that is not available
+at the moment for me.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2088-0
+00:20:22.920 --> 00:20:24.600
+<v Matt Wilkinson>Correct, let me show that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2116-0
+00:20:25.760 --> 00:20:28.587
+<v Matt Wilkinson>So, that's the point. What I'm saying is,
+that's a well, Patrick,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2102-0
+00:20:25.800 --> 00:20:28.360
+<v Uschmann, Patrick>And I need the environment.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2116-1
+00:20:28.587 --> 00:20:31.542
+<v Matt Wilkinson>that's a that's a different database,
+that's a different technology,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2116-2
+00:20:31.542 --> 00:20:33.640
+<v Matt Wilkinson>that's a different everything than what
+is 1060.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2118-0
+00:20:35.640 --> 00:20:36.440
+<v Uschmann, Patrick>Yeah, but...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2117-0
+00:20:36.280 --> 00:20:36.600
+<v Matt Wilkinson>Töppe.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2153-0
+00:20:37.400 --> 00:20:42.310
+<v Uschmann, Patrick>I don't care about the technology here.
+I just need a running database,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2126-0
+00:20:39.920 --> 00:20:40.520
+<v Matt Wilkinson>No, I know that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2153-1
+00:20:42.310 --> 00:20:46.538
+<v Uschmann, Patrick>a running environment,
+and the connected new Disco app at the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2153-2
+00:20:46.538 --> 00:20:51.720
+<v Uschmann, Patrick>moment so that we just can prepare for
+our presentation on the 19th of May.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2169-0
+00:20:52.360 --> 00:20:57.320
+<v Matt Wilkinson>But all, all of that,
+all of that exists currently with 1034,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2156-0
+00:20:52.600 --> 00:20:53.320
+<v Uschmann, Patrick>That's all.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2169-1
+00:20:57.320 --> 00:20:59.000
+<v Matt Wilkinson>ABN 1034 in Postgres.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2179-0
+00:20:59.000 --> 00:21:03.985
+<v Uschmann, Patrick>Yes,
+but I can't start the application via</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2171-0
+00:21:00.240 --> 00:21:00.760
+<v Matt Wilkinson>Correct.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2179-1
+00:21:03.985 --> 00:21:04.680
+<v Uschmann, Patrick>Cameo.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2192-0
+00:21:04.200 --> 00:21:07.965
+<v Matt Wilkinson>Correct, correct,
+but he's working on the new discboard</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2192-1
+00:21:07.965 --> 00:21:10.520
+<v Matt Wilkinson>side, is that correct? We tested that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2198-0
+00:21:10.840 --> 00:21:11.880
+<v Uschmann, Patrick>That's correct.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2224-0
+00:21:12.440 --> 00:21:15.270
+<v Matt Wilkinson>Okay, so we,
+and what do you need for a useful test</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2224-1
+00:21:15.270 --> 00:21:17.827
+<v Matt Wilkinson>then?
+Do you need to go into the app or can we</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2224-2
+00:21:17.827 --> 00:21:20.657
+<v Matt Wilkinson>turn on some duplicate orders for a
+period of time?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2224-3
+00:21:20.657 --> 00:21:23.160
+<v Matt Wilkinson>And then they get sucked up with data
+stream.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2232-0
+00:21:23.720 --> 00:21:29.480
+<v Uschmann, Patrick>It would be the best case if I can access
+also the TMS via Cameo.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2238-0
+00:21:29.880 --> 00:21:33.074
+<v Matt Wilkinson>Okay, Ron,
+where did you guys get to in the last</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2238-1
+00:21:33.074 --> 00:21:33.400
+<v Matt Wilkinson>call?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2243-0
+00:21:36.360 --> 00:21:38.120
+<v Vervenne, Ron>Figuring out where it's stuck.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2260-0
+00:21:39.640 --> 00:21:42.647
+<v Matt Wilkinson>You figured it out. OK,
+so we should get an implementation.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2264-0
+00:21:41.000 --> 00:21:45.800
+<v Vervenne, Ron>No, figuring it out. There's not, not,
+not, yeah, let's, we're still on it.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2260-1
+00:21:42.647 --> 00:21:43.800
+<v Matt Wilkinson>I'll figure it out. OK.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2290-0
+00:21:46.880 --> 00:21:51.237
+<v Matt Wilkinson>OK, fine. OK, OK, OK, OK.
+So we should be able to get you solved,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2290-1
+00:21:51.237 --> 00:21:56.320
+<v Matt Wilkinson>Patrick. The ABN 1034 is working.
+That is not, but I think we can get there.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2293-0
+00:21:56.760 --> 00:21:58.840
+<v Vervenne, Ron>My today is not that long anymore,
+I think.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2295-0
+00:21:58.760 --> 00:22:00.120
+<v Matt Wilkinson>I know that one, but we should.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2315-0
+00:22:02.200 --> 00:22:08.848
+<v Vervenne, Ron>So basically, no, not today,
+but because I have some other task that I</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2305-0
+00:22:05.960 --> 00:22:06.440
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2315-1
+00:22:08.848 --> 00:22:10.440
+<v Vervenne, Ron>need to do today.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2314-0
+00:22:10.760 --> 00:22:11.160
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2318-0
+00:22:13.800 --> 00:22:14.600
+<v Matt Wilkinson>Tomorrow, Ron.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2322-0
+00:22:17.800 --> 00:22:19.880
+<v Vervenne, Ron>I will, uh, will try to do it, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2323-0
+00:22:20.280 --> 00:22:20.920
+<v Matt Wilkinson>Yeah, okay, okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2339-0
+00:22:21.080 --> 00:22:25.190
+<v Vervenne, Ron>At the moment,
+we are a little bit confused by why it's</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2339-1
+00:22:25.190 --> 00:22:29.960
+<v Vervenne, Ron>not working. Technically, it should work,
+but there's something.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2340-0
+00:22:30.920 --> 00:22:31.320
+<v Vervenne, Ron>Missing.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2350-0
+00:22:34.200 --> 00:22:35.240
+<v Vervenne, Ron>That we need to identify.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2363-0
+00:22:34.360 --> 00:22:38.607
+<v Matt Wilkinson>And have we tried going greenfield with
+it and just creating another app,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2363-1
+00:22:38.607 --> 00:22:39.640
+<v Matt Wilkinson>a new app with it?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2383-0
+00:22:39.400 --> 00:22:43.982
+<v Vervenne, Ron>That has nothing to do with the new app.
+That's just totally not because this in</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2383-1
+00:22:43.982 --> 00:22:47.375
+<v Vervenne, Ron>the network layer,
+there's something something mysteriously</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2383-2
+00:22:47.375 --> 00:22:48.280
+<v Vervenne, Ron>happening there.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2389-0
+00:22:49.640 --> 00:22:51.400
+<v Matt Wilkinson>OK, but we could, but Patrick.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2395-0
+00:22:50.680 --> 00:22:54.440
+<v Vervenne, Ron>Beck said, go to Nevada, and basically...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2394-0
+00:22:53.240 --> 00:22:54.440
+<v Matt Wilkinson>Yeah, yeah, Patrick.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2404-0
+00:22:55.960 --> 00:22:59.000
+<v Matt Wilkinson>You've still got access to your VDI,
+haven't you?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2399-0
+00:22:56.280 --> 00:22:56.680
+<v Uschmann, Patrick>Yakup.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2407-0
+00:23:00.680 --> 00:23:01.440
+<v Uschmann, Patrick>I have, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2420-0
+00:23:01.960 --> 00:23:05.390
+<v Matt Wilkinson>Yeah, so we can give that,
+so that's on the CALPATCHCO network,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2420-1
+00:23:05.390 --> 00:23:07.640
+<v Matt Wilkinson>so that's up and working, is that correct?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2427-0
+00:23:08.560 --> 00:23:13.320
+<v Uschmann, Patrick>But then, Max needs also access to the VM.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2429-0
+00:23:15.160 --> 00:23:17.480
+<v Matt Wilkinson>OK, OK, and OK.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2454-0
+00:23:25.160 --> 00:23:29.474
+<v Matt Wilkinson>Let me speak to Basti because there is an
+ABN 1034 that is hosted in Nuremberg that</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2454-1
+00:23:29.474 --> 00:23:32.504
+<v Matt Wilkinson>you guys should be able to access.
+It just won't be quick.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2454-2
+00:23:32.504 --> 00:23:36.356
+<v Matt Wilkinson>That's the problem because you'll be
+connecting into Postgres depending on</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2454-3
+00:23:36.356 --> 00:23:37.640
+<v Matt Wilkinson>what you're trying to do.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2478-0
+00:23:40.440 --> 00:23:43.290
+<v Matt Wilkinson>solve this problem. Okay,
+there's a couple of options.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2478-1
+00:23:43.290 --> 00:23:47.591
+<v Matt Wilkinson>Ron can work on the getting it fixed and
+I'll ask Basty if 1034 is working and get</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2478-2
+00:23:47.591 --> 00:23:49.560
+<v Matt Wilkinson>the URL for you to access via the VDI.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2488-0
+00:23:52.920 --> 00:23:56.811
+<v Matt Wilkinson>But then, Matthias,
+just on your point of what we need,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2488-1
+00:23:56.811 --> 00:23:58.200
+<v Matt Wilkinson>where if you guys...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2504-0
+00:24:00.600 --> 00:24:04.345
+<v Matt Wilkinson>If we're not going to connect Postgres to
+this, what's currently in place,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2504-1
+00:24:04.345 --> 00:24:07.640
+<v Matt Wilkinson>then we're going to need some new
+infrastructure before the 19th.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2513-0
+00:24:10.840 --> 00:24:13.800
+<v Matthias Max>Yeah, I guess that's exactly the point.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2577-0
+00:24:14.360 --> 00:24:16.574
+<v Matt Wilkinson>Yeah,
+we're going to need a new workload 4.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2527-0
+00:24:15.320 --> 00:24:17.560
+<v Matthias Max>Come separate things.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2577-1
+00:24:16.574 --> 00:24:20.095
+<v Matt Wilkinson>Yeah, workload 5. It's complete.
+If you're going to keep it separate.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2577-2
+00:24:20.095 --> 00:24:22.409
+<v Matt Wilkinson>Personally,
+I don't think you should do that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2577-3
+00:24:22.409 --> 00:24:26.182
+<v Matt Wilkinson>And I think the decision needs to be made
+higher up because realistically,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2577-4
+00:24:26.182 --> 00:24:30.157
+<v Matt Wilkinson>we should be testing multiple connections.
+I understand the objective is 1060,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2577-5
+00:24:30.157 --> 00:24:34.232
+<v Matt Wilkinson>but if we've got a problem that we can't
+roll this thing out because it can only</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2577-6
+00:24:34.232 --> 00:24:35.640
+<v Matt Wilkinson>handle multiple connections,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2580-0
+00:24:35.800 --> 00:24:37.920
+<v Matt Wilkinson>We're better off to find that earlier
+than later.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2591-0
+00:24:38.920 --> 00:24:42.200
+<v Matt Wilkinson>But I'll let you guys make that decision.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2584-0
+00:24:40.040 --> 00:24:40.840
+<v Maximilian Kehder>Yakup.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2611-0
+00:24:41.640 --> 00:24:45.769
+<v Vervenne, Ron>May I ask a question?
+Why are we doing to multiple workloads</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2589-0
+00:24:41.960 --> 00:24:42.360
+<v Maximilian Kehder>True.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2611-1
+00:24:45.769 --> 00:24:51.320
+<v Vervenne, Ron>and basically your resources you can also
+do multiple times in the same workload?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2625-0
+00:24:52.160 --> 00:24:54.104
+<v Matt Wilkinson>That's correct, Ron,
+that's what's gonna happen.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2613-0
+00:24:52.600 --> 00:24:53.000
+<v Vervenne, Ron>Good.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2625-1
+00:24:54.104 --> 00:24:56.168
+<v Matt Wilkinson>That is correct.
+The cloud instances will be there,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2618-0
+00:24:54.440 --> 00:24:54.840
+<v Vervenne, Ron>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2625-2
+00:24:56.168 --> 00:24:57.080
+<v Matt Wilkinson>they don't exist today.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2628-0
+00:24:58.600 --> 00:24:59.840
+<v Matt Wilkinson>if they want to separate them out.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2661-0
+00:25:01.160 --> 00:25:06.694
+<v Matthias Max>We literally have two rows here,
+basically. Within test,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2631-0
+00:25:01.720 --> 00:25:02.120
+<v Matt Wilkinson>If...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2661-1
+00:25:06.694 --> 00:25:12.228
+<v Matthias Max>we'll have the Oracle 1060 backend.
+In this put backend,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2642-0
+00:25:10.040 --> 00:25:10.520
+<v Vervenne, Ron>Mhm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2661-2
+00:25:12.228 --> 00:25:19.800
+<v Matthias Max>we'll have team as bridge in workload 5
+and the same set of components again.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2666-0
+00:25:20.360 --> 00:25:24.600
+<v Matthias Max>or 1034 Postgres, both in the test.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2668-0
+00:25:25.720 --> 00:25:25.880
+<v Vervenne, Ron>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2673-0
+00:25:25.960 --> 00:25:27.800
+<v Matthias Max>projects of the workloads.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2674-0
+00:25:28.320 --> 00:25:28.760
+<v Vervenne, Ron>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2688-0
+00:25:29.640 --> 00:25:34.985
+<v Vervenne, Ron>So, basically,
+a stack per Oracle type or by database</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2695-0
+00:25:34.920 --> 00:25:39.160
+<v Matthias Max>And then, and don't get me wrong, Matt,
+we are aware of that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2688-1
+00:25:34.985 --> 00:25:35.480
+<v Vervenne, Ron>type.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2707-0
+00:25:40.320 --> 00:25:43.775
+<v Matthias Max>But Oracle,
+New Disco has never seen Oracle,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2707-1
+00:25:43.775 --> 00:25:47.000
+<v Matthias Max>and we are four weeks away from a release.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2715-0
+00:25:48.280 --> 00:25:51.160
+<v Matthias Max>That's risk alone.
+I don't need another risk.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2709-0
+00:25:48.320 --> 00:25:48.920
+<v Matt Wilkinson>Mhm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2716-0
+00:25:52.520 --> 00:25:52.680
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2720-0
+00:25:53.800 --> 00:25:55.160
+<v Matt Wilkinson>I know, I know, I know.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2739-0
+00:25:57.080 --> 00:26:00.469
+<v Matt Wilkinson>Or A curveball of a management meeting
+that needs to have data and it needs to</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2725-0
+00:25:57.160 --> 00:25:57.880
+<v Matthias Max>So, let's...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2739-1
+00:26:00.469 --> 00:26:03.000
+<v Matt Wilkinson>have all these things. Yeah, yeah,
+I get it. I get it. But</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2740-0
+00:26:04.440 --> 00:26:04.840
+<v Matt Wilkinson>Blah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2747-0
+00:26:07.000 --> 00:26:09.960
+<v Matt Wilkinson>Because we're going to connect another AB,
+another Oracle to it at some point.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2748-0
+00:26:11.160 --> 00:26:11.400
+<v Matt Wilkinson>But.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2750-0
+00:26:12.160 --> 00:26:13.320
+<v Matthias Max>To which one?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2770-0
+00:26:14.280 --> 00:26:18.372
+<v Matt Wilkinson>I don't know, whatever, again,
+I don't know what the plan is here,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2770-1
+00:26:18.372 --> 00:26:23.257
+<v Matt Wilkinson>but I'm assuming we're going to try and
+connect another Oracle at some point to</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2766-0
+00:26:23.000 --> 00:26:23.360
+<v Matthias Max>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2770-2
+00:26:23.257 --> 00:26:24.600
+<v Matt Wilkinson>the bridge to read it.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2768-0
+00:26:24.120 --> 00:26:24.520
+<v Matthias Max>Yakup.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2771-0
+00:26:26.200 --> 00:26:26.920
+<v Matthias Max>Absolutely.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2772-0
+00:26:27.400 --> 00:26:27.720
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2779-0
+00:26:29.160 --> 00:26:32.200
+<v Matthias Max>All right, so maybe something worth.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2784-0
+00:26:34.240 --> 00:26:37.800
+<v Matthias Max>To make transparent, first of all,
+to Christian.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2791-0
+00:26:39.320 --> 00:26:42.600
+<v Matthias Max>and be early on the expectation
+management.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2798-0
+00:26:43.560 --> 00:26:46.040
+<v Matthias Max>rather than running into some
+disappointment.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2799-0
+00:26:47.800 --> 00:26:47.960
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2801-0
+00:26:48.680 --> 00:26:49.160
+<v Matthias Max>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2803-0
+00:26:51.640 --> 00:26:52.040
+<v Matt Wilkinson>Yakup.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2810-0
+00:26:51.640 --> 00:26:56.360
+<v Matthias Max>So,
+everything I had in mind was discussed.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2811-0
+00:26:58.600 --> 00:26:59.120
+<v Vervenne, Ron>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2827-0
+00:26:59.800 --> 00:27:06.040
+<v Matt Wilkinson>Another topic I've got is access.
+So we've got a list of the VDIs, but...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2823-0
+00:27:03.520 --> 00:27:03.720
+<v Matthias Max>Uh-huh.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2825-0
+00:27:05.400 --> 00:27:05.880
+<v Matthias Max>Mhm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2880-0
+00:27:07.720 --> 00:27:10.772
+<v Matt Wilkinson>I'll be honest,
+and Ron will second this because Ron's</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2880-1
+00:27:10.772 --> 00:27:15.379
+<v Matt Wilkinson>the one that's getting the heat from it,
+is we've had about probably six different</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2880-2
+00:27:15.379 --> 00:27:19.652
+<v Matt Wilkinson>requests from six different people from
+P3 requesting access for GCP without</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2880-3
+00:27:19.652 --> 00:27:24.369
+<v Matt Wilkinson>really explaining what or what they need.
+So there's cloud for logging here as well.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2880-4
+00:27:24.369 --> 00:27:26.200
+<v Matt Wilkinson>Let me just be honest on this. So</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2875-0
+00:27:25.960 --> 00:27:26.280
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2897-0
+00:27:26.520 --> 00:27:32.748
+<v Matt Wilkinson>We could do with if someone can pull us a
+list of everyone that needs access to GCP</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2897-1
+00:27:32.748 --> 00:27:35.640
+<v Matt Wilkinson>and then Ron and I can work through on.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2908-0
+00:27:36.840 --> 00:27:39.240
+<v Matt Wilkinson>At least what they need to get set up,
+basically.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2917-0
+00:27:38.360 --> 00:27:41.613
+<v Vervenne, Ron>And additionally,
+what roles they are going to play in,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2917-1
+00:27:41.613 --> 00:27:42.600
+<v Vervenne, Ron>because that's...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2915-0
+00:27:41.800 --> 00:27:42.200
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2927-0
+00:27:44.120 --> 00:27:47.400
+<v Vervenne, Ron>It's one of the major things that's now,
+yeah, mystified.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2943-0
+00:27:48.120 --> 00:27:51.832
+<v Maximilian Kehder>What kind of roles do they have?
+Do you have? Basically,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2931-0
+00:27:48.360 --> 00:27:48.760
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2943-1
+00:27:51.832 --> 00:27:53.720
+<v Maximilian Kehder>is there a set of roles we...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2951-0
+00:27:54.920 --> 00:27:58.200
+<v Maximilian Kehder>can tell you or is it just basically what
+kind of access we need?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2970-0
+00:27:59.720 --> 00:28:03.707
+<v Vervenne, Ron>Basically, what, what, yeah, yeah,
+what access they need,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2955-0
+00:27:59.840 --> 00:28:00.440
+<v Matt Wilkinson>The latter.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2970-1
+00:28:03.707 --> 00:28:09.000
+<v Vervenne, Ron>and then following the principle,
+least privileges and not taking the world.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2969-0
+00:28:10.640 --> 00:28:10.760
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/2980-0
+00:28:15.000 --> 00:28:20.280
+<v Matthias Max>Probably also different for Cloud for
+Lock folks versus Municipal folks.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3048-0
+00:28:21.240 --> 00:28:24.843
+<v Matt Wilkinson>I agree, and this is the problem.
+So it's just we're getting a mismatch of</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3048-1
+00:28:24.843 --> 00:28:28.734
+<v Matt Wilkinson>different people that say I need access
+to GCP, and this is like, unfortunately,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3048-2
+00:28:28.734 --> 00:28:32.721
+<v Matt Wilkinson>the bridge is obviously utilized in Cloud
+for Log. So they'll need access to that,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3048-3
+00:28:32.721 --> 00:28:35.556
+<v Matt Wilkinson>but not necessarily.
+So it'd be good to know what projects</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3016-0
+00:28:33.160 --> 00:28:33.320
+<v Matthias Max>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3048-4
+00:28:35.556 --> 00:28:37.957
+<v Matt Wilkinson>they're on. Again,
+I don't know if it's all good.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3048-5
+00:28:37.957 --> 00:28:41.320
+<v Matt Wilkinson>It seems to be coming through like six
+different ways. Like we've had</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3080-0
+00:28:41.640 --> 00:28:45.747
+<v Matt Wilkinson>developers literally reach out to us
+directly saying, I need access to this.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3041-0
+00:28:41.840 --> 00:28:42.000
+<v Matthias Max>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3052-0
+00:28:44.640 --> 00:28:44.840
+<v Matthias Max>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3080-1
+00:28:45.747 --> 00:28:48.627
+<v Matt Wilkinson>And the first question she asks is, okay,
+yeah, yeah,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3065-0
+00:28:46.600 --> 00:28:48.600
+<v Matthias Max>That's not good, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3080-2
+00:28:48.627 --> 00:28:52.360
+<v Matt Wilkinson>who are these people and why are they
+reaching out to us? So if we...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3090-0
+00:28:51.160 --> 00:28:57.960
+<v Matthias Max>So, can you do me a favor or ask a favor?
+Just post this back to Max, for example.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3092-0
+00:28:58.840 --> 00:28:59.080
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3100-0
+00:28:59.040 --> 00:29:03.240
+<v Matthias Max>Or Martin, and we will consolidate.
+You shouldn't have to do this.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3106-0
+00:29:04.680 --> 00:29:06.600
+<v Matt Wilkinson>Yeah, maybe just make it really easy,
+that's all.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3107-0
+00:29:07.400 --> 00:29:07.560
+<v Vervenne, Ron>No.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3108-0
+00:29:07.960 --> 00:29:08.240
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3150-0
+00:29:09.560 --> 00:29:13.061
+<v Matt Wilkinson>then we can get it actioned.
+Because some stuff we can give it where</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3114-0
+00:29:09.640 --> 00:29:10.040
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3150-1
+00:29:13.061 --> 00:29:16.460
+<v Matt Wilkinson>we can give them access to GCP directly
+and they won't need a VDI.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3150-2
+00:29:16.460 --> 00:29:20.518
+<v Matt Wilkinson>But for example, access to databases,
+they will need a VDI. So it's just, yeah,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3150-3
+00:29:20.518 --> 00:29:22.040
+<v Matt Wilkinson>trying to figure that bit out.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3158-0
+00:29:21.480 --> 00:29:26.680
+<v Matthias Max>It needs, it needs consolidation,
+consolidation on our side first, honestly.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3159-0
+00:29:26.120 --> 00:29:27.800
+<v Matt Wilkinson>Yeah, yeah, yeah, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3154-0
+00:29:26.440 --> 00:29:26.600
+<v Vervenne, Ron>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3160-0
+00:29:27.240 --> 00:29:28.440
+<v Maximilian Kehder>One 100%.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3162-0
+00:29:28.920 --> 00:29:29.320
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3177-0
+00:29:29.160 --> 00:29:32.319
+<v Vervenne, Ron>Yeah, would be great.
+Makes life easier for everybody,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3167-0
+00:29:30.920 --> 00:29:31.040
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3177-1
+00:29:32.319 --> 00:29:33.640
+<v Vervenne, Ron>but now is a kind of...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3193-0
+00:29:32.440 --> 00:29:36.468
+<v Maximilian Kehder>Yeah, of course,
+like it's the other way around as well.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3193-1
+00:29:36.468 --> 00:29:40.920
+<v Maximilian Kehder>Like we want to have consolidated
+information. So that's fine.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3183-0
+00:29:36.920 --> 00:29:37.080
+<v Vervenne, Ron>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3188-0
+00:29:39.720 --> 00:29:40.040
+<v Vervenne, Ron>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3248-0
+00:29:41.480 --> 00:29:45.920
+<v Matt Wilkinson>Yeah, perfect. OK, good. And Max, just,
+yeah, we don't have any specific roles,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3248-1
+00:29:45.920 --> 00:29:50.193
+<v Matt Wilkinson>so it's just the GCP only would be
+helpful if it, and if it's cloud for log,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3248-2
+00:29:50.193 --> 00:29:53.190
+<v Matt Wilkinson>is it WL4 or WL5? It's probably 5,
+but just with you,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3248-3
+00:29:53.190 --> 00:29:56.964
+<v Matt Wilkinson>what you guys know today on the
+infrastructure side is from our GCP</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3248-4
+00:29:56.964 --> 00:30:00.960
+<v Matt Wilkinson>perspective is just say this is what we
+need and it will go from there.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3249-0
+00:30:01.800 --> 00:30:02.080
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3255-0
+00:30:03.880 --> 00:30:07.960
+<v Matt Wilkinson>If you can give us the scopes that they
+want, even better in GCP.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3256-0
+00:30:09.800 --> 00:30:09.960
+<v Matthias Max>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3258-0
+00:30:10.360 --> 00:30:10.760
+<v Matt Wilkinson>Yakup.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3259-0
+00:30:14.280 --> 00:30:14.440
+<v Matt Wilkinson>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3260-0
+00:30:16.520 --> 00:30:16.600
+<v Matt Wilkinson>Uhh...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3295-0
+00:30:17.720 --> 00:30:21.594
+<v Matthias Max>Good,
+so question for me is this meeting here,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3295-1
+00:30:21.594 --> 00:30:25.549
+<v Matthias Max>is this weekly one?
+Because the title is wrong,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3295-2
+00:30:25.549 --> 00:30:31.483
+<v Matthias Max>we can make it a go-live meeting, I think.
+I think it's also very good.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3295-3
+00:30:31.483 --> 00:30:34.120
+<v Matthias Max>We need it at least once a week.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3302-0
+00:30:36.120 --> 00:30:39.720
+<v Matthias Max>Uh, public,
+do you take care of that recurring?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3307-0
+00:30:39.240 --> 00:30:43.476
+<v Uschmann, Patrick>Yeah,
+then I will set up a weekly until the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3307-1
+00:30:43.476 --> 00:30:44.920
+<v Uschmann, Patrick>middle of June.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3320-0
+00:30:46.560 --> 00:30:52.680
+<v Matthias Max>Yeah, if we run out of topics,
+that jokes are always on the shelf.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3324-0
+00:30:53.800 --> 00:30:56.200
+<v Matthias Max>So, we will fill up the slot.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3326-0
+00:30:57.320 --> 00:30:58.680
+<v Matt Wilkinson>Yeah, yeah, yeah, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3333-0
+00:31:00.760 --> 00:31:04.520
+<v Matthias Max>No one is laughing.
+I take a note regarding that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3335-0
+00:31:05.600 --> 00:31:06.480
+<v Matthias Max>For myself.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3336-0
+00:31:06.280 --> 00:31:06.440
+<v Vervenne, Ron>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3337-0
+00:31:07.000 --> 00:31:07.640
+<v Matt Wilkinson>Yes.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3340-0
+00:31:09.400 --> 00:31:10.520
+<v Matthias Max>Now they coming.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3347-0
+00:31:14.200 --> 00:31:19.000
+<v Matthias Max>Okay,
+are we done or do we have other topics?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3365-0
+00:31:20.280 --> 00:31:23.685
+<v Matt Wilkinson>I think I've got the connectivity IP
+address for the secret,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3365-1
+00:31:23.685 --> 00:31:27.480
+<v Matt Wilkinson>so they give me 10 minutes for that,
+just for Thomas to confirm it.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3366-0
+00:31:28.920 --> 00:31:29.080
+<v Matt Wilkinson>Um...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3383-0
+00:31:31.400 --> 00:31:36.606
+<v Matt Wilkinson>By fact, Eric's Eric,
+do you well do you think you could is the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3368-0
+00:31:31.800 --> 00:31:31.920
+<v Matthias Max>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3383-1
+00:31:36.606 --> 00:31:41.080
+<v Matt Wilkinson>ABN infrastructure in Nuremberg and the
+database name?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3385-0
+00:31:42.440 --> 00:31:43.320
+<v Matt Wilkinson>Is it this?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3393-0
+00:31:45.000 --> 00:31:45.960
+<v Matt Wilkinson>I think it's.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3396-0
+00:31:45.720 --> 00:31:47.640
+<v Meijers, Eric>A PN is in England account.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3407-0
+00:31:47.560 --> 00:31:50.786
+<v Matt Wilkinson>Correct, yeah.
+What's the connection string that we need</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3407-1
+00:31:50.786 --> 00:31:52.200
+<v Matt Wilkinson>the guys to connect with?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3408-0
+00:32:00.280 --> 00:32:00.440
+<v Matt Wilkinson>Mm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3411-0
+00:32:01.080 --> 00:32:02.360
+<v Meijers, Eric>Should not to.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3414-0
+00:32:07.560 --> 00:32:08.920
+<v Matt Wilkinson>Because I think it's this.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3422-0
+00:32:10.920 --> 00:32:14.280
+<v Matt Wilkinson>But I would just want to check before
+anyone starts to use it.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3431-0
+00:32:15.880 --> 00:32:20.200
+<v Meijers, Eric>I don't think that's the one you know.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3459-0
+00:32:20.120 --> 00:32:24.277
+<v Vervenne, Ron>That's not in Nuremberg,
+what you're now pointing out here.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3443-0
+00:32:23.160 --> 00:32:23.960
+<v Matt Wilkinson>Okay, fine.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3444-0
+00:32:23.800 --> 00:32:24.200
+<v Meijers, Eric>Nope.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3459-1
+00:32:24.277 --> 00:32:27.880
+<v Vervenne, Ron>Definitely not Nuremberg. Nuremberg is 10,
+32, 190.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3447-0
+00:32:24.920 --> 00:32:25.480
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3463-0
+00:32:28.360 --> 00:32:30.000
+<v Matt Wilkinson>Oh, okay,
+I'm gonna write 'em out of that one then.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3464-0
+00:32:28.960 --> 00:32:30.440
+<v Vervenne, Ron>This is Niederlassungsleiter, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3465-0
+00:32:31.640 --> 00:32:31.720
+<v Matt Wilkinson>The.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3470-0
+00:32:38.120 --> 00:32:40.200
+<v Maximilian Kehder>Yes, if you've got something to say.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3515-0
+00:32:41.160 --> 00:32:46.975
+<v Yosif Mihaylov>Yeah, I have one question. I mean,
+I'm not sure if like it's the right place</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3515-1
+00:32:46.975 --> 00:32:52.187
+<v Yosif Mihaylov>here, but about this user for 1060,
+like new display uses it, sorry,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3515-2
+00:32:52.187 --> 00:32:56.189
+<v Yosif Mihaylov>the bridge,
+but also the Cloud for Work project uses</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3515-3
+00:32:56.189 --> 00:33:01.627
+<v Yosif Mihaylov>the same, the same connection.
+So my question is for the Cloud for Work</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3515-4
+00:33:01.627 --> 00:33:02.080
+<v Yosif Mihaylov>scope.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3525-0
+00:33:02.840 --> 00:33:07.640
+<v Yosif Mihaylov>Should we be switching this as well with
+this user or we stick to using the old</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3525-1
+00:33:07.640 --> 00:33:07.880
+<v Yosif Mihaylov>one?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3531-0
+00:33:09.880 --> 00:33:10.760
+<v Yosif Mihaylov>Because, like...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3563-0
+00:33:10.200 --> 00:33:13.826
+<v Matt Wilkinson>Honest answer, Joseph,
+is I don't know because I can't advise</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3563-1
+00:33:13.826 --> 00:33:18.388
+<v Matt Wilkinson>you of what Cloud Frog need to do.
+The QM user is only supposed to read data,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3546-0
+00:33:15.560 --> 00:33:15.800
+<v Yosif Mihaylov>No.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3563-2
+00:33:18.388 --> 00:33:21.371
+<v Matt Wilkinson>pull it,
+but obviously it might be doing something</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3563-3
+00:33:21.371 --> 00:33:24.120
+<v Matt Wilkinson>different. I don't know,
+is the honest answer.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3564-0
+00:33:25.640 --> 00:33:26.000
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3572-0
+00:33:27.560 --> 00:33:30.560
+<v Matt Wilkinson>There's also, I think,
+I honestly think you've got all of the...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3580-0
+00:33:32.200 --> 00:33:36.440
+<v Matt Wilkinson>and Ron's gonna hate me, hate this,
+is we've got all the production.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3594-0
+00:33:38.360 --> 00:33:43.373
+<v Matt Wilkinson>TMS is in the test environment that you
+could connect to by accident. I think,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3594-1
+00:33:43.373 --> 00:33:43.880
+<v Matt Wilkinson>I think.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3626-0
+00:33:45.000 --> 00:33:49.999
+<v Matt Wilkinson>We've not got, let's take it this way,
+we don't have that many test environments</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3626-1
+00:33:49.999 --> 00:33:53.208
+<v Matt Wilkinson>that you guys have got secrets for in the
+WL5 test.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3626-2
+00:33:53.208 --> 00:33:57.960
+<v Matt Wilkinson>So I'm a little bit worried about that,
+but it's not a conversation for now.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3630-0
+00:33:59.560 --> 00:34:02.760
+<v Yosif Mihaylov>So the QM user has only read writes.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3649-0
+00:34:03.480 --> 00:34:06.177
+<v Matt Wilkinson>Should only have read writes, correct?
+Yes, yeah,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3649-1
+00:34:06.177 --> 00:34:10.545
+<v Matt Wilkinson>unless you're telling me otherwise, as in,
+I don't know what Cloud for Log does,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3649-2
+00:34:10.545 --> 00:34:13.080
+<v Matt Wilkinson>that's I can't advise you,
+that's the problem.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3672-0
+00:34:16.120 --> 00:34:21.295
+<v Vervenne, Ron>Shouldn't that be in the requirements of
+getting access that that's clearly stated</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3672-1
+00:34:21.295 --> 00:34:24.600
+<v Vervenne, Ron>that what kind of users the accounts you
+have there?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3684-0
+00:34:24.680 --> 00:34:27.054
+<v Matt Wilkinson>Ron, you again,
+this is users for the database,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3684-1
+00:34:27.054 --> 00:34:30.120
+<v Matt Wilkinson>not people, not people.
+This is users for the database, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3682-0
+00:34:28.840 --> 00:34:29.600
+<v Vervenne, Ron>Yeah, okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3683-0
+00:34:31.240 --> 00:34:31.480
+<v Vervenne, Ron>No.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3719-0
+00:34:32.280 --> 00:34:36.449
+<v Matt Wilkinson>If you are, yes, you correct,
+we do need to for people to what users</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3719-1
+00:34:36.449 --> 00:34:40.316
+<v Matt Wilkinson>what they need to do,
+but the QM user that is connected to with</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3705-0
+00:34:37.760 --> 00:34:38.120
+<v Meijers, Eric>Right.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3719-2
+00:34:40.316 --> 00:34:43.880
+<v Matt Wilkinson>Cloud for Log should be a read-only one,
+but I don't know.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3720-0
+00:34:43.760 --> 00:34:45.560
+<v Yosif Mihaylov>So, that that should be fine.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3718-0
+00:34:44.280 --> 00:34:45.240
+<v Meijers, Eric>I think, uh...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3721-0
+00:34:46.680 --> 00:34:46.960
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3729-0
+00:34:47.400 --> 00:34:50.205
+<v Meijers, Eric>What?
+I think this one was the one for the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3729-1
+00:34:50.205 --> 00:34:51.640
+<v Meijers, Eric>Nuremberg environment.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3733-0
+00:34:53.800 --> 00:34:55.000
+<v Matt Wilkinson>Nice. Thanks, Eric. Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3734-0
+00:34:57.800 --> 00:34:58.120
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3735-0
+00:35:00.840 --> 00:35:01.040
+<v Matt Wilkinson>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3742-0
+00:35:08.520 --> 00:35:10.926
+<v Matt Wilkinson>Okay, Nikolay,
+look at the string now because I've got</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3742-1
+00:35:10.926 --> 00:35:11.320
+<v Matt Wilkinson>that now.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3743-0
+00:35:15.040 --> 00:35:15.360
+<v Matt Wilkinson>And.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3750-0
+00:35:29.160 --> 00:35:32.120
+<v Matt Wilkinson>And we can try getting the bridge
+connected.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3754-0
+00:35:36.560 --> 00:35:37.720
+<v Matt Wilkinson>I think that will work.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3755-0
+00:35:49.800 --> 00:35:52.598
+<v Matt Wilkinson>Eric,
+do we want to utilize the DNS instead of</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3755-1
+00:35:52.598 --> 00:35:54.800
+<v Matt Wilkinson>the IP address? That would be better.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3764-0
+00:35:58.200 --> 00:36:01.960
+<v Meijers, Eric>If that's possible, then it's CL0025.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3766-0
+00:36:14.280 --> 00:36:14.760
+<v Matt Wilkinson>Thank you.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3787-0
+00:36:16.920 --> 00:36:25.103
+<v Maximilian Kehder>All right, I will be jumping as well.
+See you guys later and have a great rest</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3787-1
+00:36:25.103 --> 00:36:26.760
+<v Maximilian Kehder>of the day. Bye.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3784-0
+00:36:26.800 --> 00:36:27.160
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3785-0
+00:36:27.720 --> 00:36:28.120
+<v Vervenne, Ron>Yes.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3786-0
+00:36:28.160 --> 00:36:28.440
+<v Matt Wilkinson>Töppe.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3789-0
+00:36:29.600 --> 00:36:30.040
+<v Vervenne, Ron>Hold on.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3795-0
+00:36:37.480 --> 00:36:39.640
+<v Nikolay Hristov>Okay, so how's the what's the host name?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3803-0
+00:36:40.800 --> 00:36:43.720
+<v Nikolay Hristov>Tell 0025 dot something.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3799-0
+00:36:41.160 --> 00:36:41.640
+<v Matt Wilkinson>Matt.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3805-0
+00:36:44.840 --> 00:36:46.200
+<v Matt Wilkinson>Uh, forward slash.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3807-0
+00:36:48.000 --> 00:36:48.840
+<v Matt Wilkinson>Um...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3806-0
+00:36:48.280 --> 00:36:48.600
+<v Nikolay Hristov>Ohh.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3842-0
+00:36:49.800 --> 00:36:54.806
+<v Matt Wilkinson>So, sorry, let me, let me, I'm sorry,
+I'm creating the full string now, Nikolay,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3813-0
+00:36:50.440 --> 00:36:51.320
+<v Meijers, Eric>OK, just.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3842-1
+00:36:54.806 --> 00:36:59.627
+<v Matt Wilkinson>so just this is what it is. Yeah, yeah,
+sorry, just a little bit ahead of me.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3831-0
+00:36:55.720 --> 00:36:56.280
+<v Nikolay Hristov>Poppe.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3842-2
+00:36:59.627 --> 00:37:04.200
+<v Matt Wilkinson>It should be that is what Eric, I imagine,
+is going to write in a minute.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3844-0
+00:37:06.440 --> 00:37:06.840
+<v Meijers, Eric>Yakup.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3846-0
+00:37:07.640 --> 00:37:07.960
+<v Matt Wilkinson>Yep.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3852-0
+00:37:10.840 --> 00:37:13.320
+<v Nikolay Hristov>Is that address resolvable from?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3857-0
+00:37:13.880 --> 00:37:15.480
+<v Matt Wilkinson>Should be, yes, yes.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3859-0
+00:37:15.080 --> 00:37:16.680
+<v Nikolay Hristov>From the Google, Google calls.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3864-0
+00:37:17.040 --> 00:37:18.200
+<v Matt Wilkinson>Yeah, correct.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3865-0
+00:37:17.960 --> 00:37:19.160
+<v Nikolay Hristov>Okay. Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3876-0
+00:37:21.320 --> 00:37:24.840
+<v Matt Wilkinson>But it's doing it for the it's doing it
+for the QM user, so it should do it for...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3868-0
+00:37:21.560 --> 00:37:21.600
+<v Nikolay Hristov>Ahh.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3877-0
+00:37:26.320 --> 00:37:26.840
+<v Nikolay Hristov>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3880-0
+00:37:28.440 --> 00:37:29.640
+<v Nikolay Hristov>I will write this down.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3881-0
+00:37:31.160 --> 00:37:31.480
+<v Nikolay Hristov>Uh...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3910-0
+00:37:33.160 --> 00:37:37.185
+<v Matt Wilkinson>The challenge I've got is I cannot,
+I don't think I can go in and edit the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3910-1
+00:37:37.185 --> 00:37:41.586
+<v Matt Wilkinson>secret, the actual value of the secret,
+so I might have to create another one for</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3910-2
+00:37:41.586 --> 00:37:41.800
+<v Matt Wilkinson>you.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3924-0
+00:37:42.200 --> 00:37:46.608
+<v Nikolay Hristov>No, no, we will do this.
+We need to discuss first,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3914-0
+00:37:44.520 --> 00:37:44.920
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3924-1
+00:37:46.608 --> 00:37:51.880
+<v Nikolay Hristov>the first with Joseph and Bühren from the
+new dispute, so...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3923-0
+00:37:52.720 --> 00:37:53.400
+<v Matt Wilkinson>Yeah, okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3929-0
+00:37:55.400 --> 00:37:55.800
+<v Vervenne, Ron>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3937-0
+00:37:55.720 --> 00:37:59.948
+<v Nikolay Hristov>Just to say that tomorrow in Bulgaria is
+a national holiday,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3937-1
+00:37:59.948 --> 00:38:01.680
+<v Nikolay Hristov>so we won't be available.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3939-0
+00:38:03.800 --> 00:38:04.200
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3944-0
+00:38:09.080 --> 00:38:11.400
+<v Nikolay Hristov>Okay, so anything else?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3948-0
+00:38:13.320 --> 00:38:15.400
+<v Matt Wilkinson>No, I think.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3945-0
+00:38:13.560 --> 00:38:13.920
+<v Nikolay Hristov>Yes.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3972-0
+00:38:16.680 --> 00:38:20.473
+<v Matt Wilkinson>If you could try that, Nikolay,
+and then get if you could confirm that</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3953-0
+00:38:17.320 --> 00:38:17.520
+<v Vervenne, Ron>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3972-1
+00:38:20.473 --> 00:38:24.320
+<v Matt Wilkinson>the bridge is up and connecting,
+because I'm also acutely aware that no</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/3972-2
+00:38:24.320 --> 00:38:24.640
+<v Matt Wilkinson>one's.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4010-0
+00:38:25.520 --> 00:38:28.233
+<v Matt Wilkinson>Because we haven't connected it,
+it doesn't,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4010-1
+00:38:28.233 --> 00:38:31.790
+<v Matt Wilkinson>we don't know if it's going to work or
+not down to Oracle.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4010-2
+00:38:31.790 --> 00:38:34.442
+<v Matt Wilkinson>So if we can get that done today,
+like now,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4010-3
+00:38:34.442 --> 00:38:39.265
+<v Matt Wilkinson>then at least then we can see if the app
+is opening via the bridge onto Oracle,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4010-4
+00:38:39.265 --> 00:38:42.400
+<v Matt Wilkinson>because that's the biggest unknown right
+now. Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4003-0
+00:38:40.760 --> 00:38:41.240
+<v Nikolay Hristov>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4011-0
+00:38:42.440 --> 00:38:46.760
+<v Nikolay Hristov>Yes, Joseph,
+is it okay to edit the connection string?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4017-0
+00:38:48.880 --> 00:38:50.720
+<v Nikolay Hristov>For 10, for 10:16.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4020-0
+00:38:52.840 --> 00:38:53.880
+<v Yosif Mihaylov>I think so, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4025-0
+00:38:55.800 --> 00:38:57.360
+<v Nikolay Hristov>Okay, so just a second.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4026-0
+00:38:58.520 --> 00:38:58.760
+<v Nikolay Hristov>Ohh.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4053-0
+00:39:02.120 --> 00:39:06.406
+<v Matt Wilkinson>Because it all make us sleep a little bit
+easier tonight if you know that's working.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4053-1
+00:39:06.406 --> 00:39:09.279
+<v Matt Wilkinson>Because again,
+you've got to think all of these packages</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4053-2
+00:39:09.279 --> 00:39:11.800
+<v Matt Wilkinson>are all newly converted.
+I know they should work.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4061-0
+00:39:15.320 --> 00:39:18.440
+<v Matt Wilkinson>The English saying is proof,
+proof will being the pudding.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4057-0
+00:39:16.120 --> 00:39:16.600
+<v Nikolay Hristov>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4080-0
+00:39:19.080 --> 00:39:23.853
+<v Yosif Mihaylov>Actually, Nikki, can you, I think,
+let's do this after the meeting. I mean,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4080-1
+00:39:23.853 --> 00:39:25.800
+<v Yosif Mihaylov>we really need that discussion.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4081-0
+00:39:26.280 --> 00:39:27.160
+<v Nikolay Hristov>Okay, okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4083-0
+00:39:26.840 --> 00:39:27.720
+<v Yosif Mihaylov>To be honest.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4096-0
+00:39:29.800 --> 00:39:35.240
+<v Yosif Mihaylov>Let's let's follow up on that.
+The thing is that that, yeah, like.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4122-0
+00:39:37.960 --> 00:39:41.081
+<v Yosif Mihaylov>We need to be careful with the two
+applications,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4100-0
+00:39:38.600 --> 00:39:38.920
+<v Vervenne, Ron>Thank you.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4104-0
+00:39:40.320 --> 00:39:40.440
+<v Vervenne, Ron>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4122-1
+00:39:41.081 --> 00:39:46.177
+<v Yosif Mihaylov>pretty much what for working new dispo
+using these users just to make sure that</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4116-0
+00:39:45.400 --> 00:39:45.520
+<v Vervenne, Ron>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4122-2
+00:39:46.177 --> 00:39:47.960
+<v Yosif Mihaylov>we do everything right then.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4139-0
+00:39:49.240 --> 00:39:52.983
+<v Yosif Mihaylov>We don't end up using the wrong user,
+because, for example,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4139-1
+00:39:52.983 --> 00:39:56.600
+<v Yosif Mihaylov>if Cloud for Work stops working,
+keep you with some data.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4150-0
+00:39:57.480 --> 00:40:00.422
+<v Matt Wilkinson>Yos, if you're in test day,
+you're in test, you shouldn't,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4142-0
+00:39:57.640 --> 00:39:58.040
+<v Yosif Mihaylov>Ohh.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4150-1
+00:40:00.422 --> 00:40:01.120
+<v Matt Wilkinson>you shouldn't.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4169-0
+00:40:02.120 --> 00:40:05.318
+<v Matt Wilkinson>Shouldn't be.
+I am worried that you've got QM users</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4169-1
+00:40:05.318 --> 00:40:08.947
+<v Matt Wilkinson>that are connected to prod in test.
+That is a big problem.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4169-2
+00:40:08.947 --> 00:40:11.960
+<v Matt Wilkinson>There shouldn't be any nervousness here,
+really.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4197-0
+00:40:13.480 --> 00:40:18.893
+<v Yosif Mihaylov>It's I think it's a bit more complicated
+for the code for all project, because,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4197-1
+00:40:18.893 --> 00:40:22.141
+<v Yosif Mihaylov>like,
+the test test environment there is pretty</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4197-2
+00:40:22.141 --> 00:40:26.742
+<v Yosif Mihaylov>much being used as a UAT,
+but let's just let us just follow up with</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4197-3
+00:40:26.742 --> 00:40:27.080
+<v Yosif Mihaylov>that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4198-0
+00:40:27.640 --> 00:40:27.960
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4199-0
+00:40:31.080 --> 00:40:31.320
+<v Matt Wilkinson>Kroll.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4204-0
+00:40:33.560 --> 00:40:35.640
+<v Matt Wilkinson>But the, but the, but Eric.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4206-0
+00:40:37.320 --> 00:40:37.880
+<v Meijers, Eric>Yakup.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4224-0
+00:40:38.360 --> 00:40:44.531
+<v Matt Wilkinson>Can you just go to a production instance
+of 1060 and just check what permissions a</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4224-1
+00:40:44.531 --> 00:40:45.720
+<v Matt Wilkinson>QM user has got?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4235-0
+00:40:49.080 --> 00:40:51.363
+<v Matt Wilkinson>Then we can do that.
+If you could just let me know,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4235-1
+00:40:51.363 --> 00:40:52.680
+<v Matt Wilkinson>and then we can go from there.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4238-0
+00:41:03.640 --> 00:41:05.160
+<v Matt Wilkinson>Patrick, last question.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4239-0
+00:41:06.760 --> 00:41:07.080
+<v Uschmann, Patrick>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4251-0
+00:41:07.920 --> 00:41:13.800
+<v Matt Wilkinson>What data do you need for this test on
+the 19th or whenever it is?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4266-0
+00:41:13.240 --> 00:41:19.400
+<v Uschmann, Patrick>Only test data. There's no need for any.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4261-0
+00:41:15.720 --> 00:41:17.560
+<v Matt Wilkinson>Yeah, yeah, I know that, I know that,
+I know that, but are you...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4263-0
+00:41:19.160 --> 00:41:19.400
+<v Matt Wilkinson>A.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4268-0
+00:41:20.200 --> 00:41:20.360
+<v Yosif Mihaylov>It.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4276-0
+00:41:20.400 --> 00:41:22.600
+<v Uschmann, Patrick>production like data or what do you mean?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4305-0
+00:41:22.120 --> 00:41:25.378
+<v Matt Wilkinson>So, you, as I was saying,
+you guys are going to create the data</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4305-1
+00:41:25.378 --> 00:41:27.873
+<v Matt Wilkinson>yourselves in the test environments.
+You're not,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4305-2
+00:41:27.873 --> 00:41:31.080
+<v Matt Wilkinson>you don't want to feed or anything or
+anything else like that.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4296-0
+00:41:28.200 --> 00:41:29.560
+<v Uschmann, Patrick>Yeah, that would be...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4306-0
+00:41:30.920 --> 00:41:33.640
+<v Uschmann, Patrick>That would be OK, but that's the.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4319-0
+00:41:35.080 --> 00:41:40.840
+<v Uschmann, Patrick>That's the reason why I need access to
+the ABN, so to the TMS.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4325-0
+00:41:41.800 --> 00:41:43.160
+<v Matt Wilkinson>10:34, yeah, yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4330-0
+00:41:42.080 --> 00:41:45.000
+<v Uschmann, Patrick>Where I can create the orders, you know?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4348-0
+00:41:44.520 --> 00:41:47.573
+<v Matt Wilkinson>Yeah, yeah, yeah, yeah.
+But you won't be demonstrating that on</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4348-1
+00:41:47.573 --> 00:41:50.383
+<v Matt Wilkinson>the 19th, will you?
+You'll already have the data in a new</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4348-2
+00:41:50.383 --> 00:41:51.400
+<v Matt Wilkinson>dispo to demonstrate.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4358-0
+00:41:52.280 --> 00:41:57.480
+<v Uschmann, Patrick>We want to prepare it a week before, yeah,
+before the date.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4401-0
+00:41:56.280 --> 00:41:59.617
+<v Matt Wilkinson>Before, fine. Okay.
+So what I'm going to do,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4401-1
+00:41:59.617 --> 00:42:04.808
+<v Matt Wilkinson>so right in the early stages of,
+while Ron's solving the Cameo topic,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4401-2
+00:42:04.808 --> 00:42:10.592
+<v Matt Wilkinson>right in the early stages of Project G,
+we have a ABN environment 1034 that's</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4401-3
+00:42:10.592 --> 00:42:15.560
+<v Matt Wilkinson>hosted in Nuremberg that connects up to
+Postgres. So it is slower.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4392-0
+00:42:12.120 --> 00:42:12.680
+<v Uschmann, Patrick>Mhm.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4445-0
+00:42:15.800 --> 00:42:20.301
+<v Matt Wilkinson>than the Cameo version, but it will work,
+should work.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4445-1
+00:42:20.301 --> 00:42:24.884
+<v Matt Wilkinson>So you should be able to create the data
+that you need.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4445-2
+00:42:24.884 --> 00:42:31.185
+<v Matt Wilkinson>So I'll go and I need to speak to Basti
+just to get the correct URL for you.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4426-0
+00:42:29.560 --> 00:42:30.040
+<v Uschmann, Patrick>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4445-3
+00:42:31.185 --> 00:42:37.240
+<v Matt Wilkinson>But that will give you access to the ABN
+1034 application that is hosted.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4456-0
+00:42:37.880 --> 00:42:44.603
+<v Matt Wilkinson>In Nuremberg, but connects up to Postgres,
+so that that should meet what you need to</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4451-0
+00:42:41.080 --> 00:42:41.920
+<v Uschmann, Patrick>Okay, and...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4456-1
+00:42:44.603 --> 00:42:44.840
+<v Matt Wilkinson>do.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4465-0
+00:42:45.320 --> 00:42:50.200
+<v Uschmann, Patrick>And this one I will access via the VM or..
+.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4514-0
+00:42:50.520 --> 00:42:56.004
+<v Matt Wilkinson>Yeah, yeah, exactly, yes, yes. Yeah, yeah,
+yeah. It's not perfect. It's, again,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4472-0
+00:42:51.560 --> 00:42:53.320
+<v Uschmann, Patrick>Okay, yeah, all right.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4514-1
+00:42:56.004 --> 00:43:00.734
+<v Matt Wilkinson>it's the reason why we did the
+application hosting is because of the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4514-2
+00:43:00.734 --> 00:43:06.424
+<v Matt Wilkinson>performance of the connectivity between,
+it's the speed of the queries coming back</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4514-3
+00:43:06.424 --> 00:43:09.440
+<v Matt Wilkinson>down and forth, basically. Yeah,
+so let me.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4504-0
+00:43:07.000 --> 00:43:07.320
+<v Uschmann, Patrick>Yep.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4518-0
+00:43:09.880 --> 00:43:12.720
+<v Matt Wilkinson>I'll ask Pascal that now and see if I can
+get an answer.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4520-0
+00:43:13.480 --> 00:43:13.960
+<v Uschmann, Patrick>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4522-0
+00:43:14.040 --> 00:43:15.320
+<v Matt Wilkinson>More, Yakup, OK.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4524-0
+00:43:18.280 --> 00:43:19.800
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4536-0
+00:43:27.720 --> 00:43:30.514
+<v Matt Wilkinson>Eric,
+for what you sent me is just to select</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4536-1
+00:43:30.514 --> 00:43:31.880
+<v Matt Wilkinson>user, is that correct?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4540-0
+00:43:34.840 --> 00:43:35.720
+<v Meijers, Eric>That's what they need.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4542-0
+00:43:36.440 --> 00:43:37.160
+<v Matt Wilkinson>Yeah, okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4545-0
+00:43:39.720 --> 00:43:40.600
+<v Matt Wilkinson>So, you, you're safe?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4546-0
+00:43:43.360 --> 00:43:43.640
+<v Yosif Mihaylov>Yakup.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4554-0
+00:43:44.640 --> 00:43:47.751
+<v Matt Wilkinson>When, when,
+when new dispo writes back to the</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4554-1
+00:43:47.751 --> 00:43:48.360
+<v Matt Wilkinson>database.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4566-0
+00:43:50.080 --> 00:43:55.291
+<v Matt Wilkinson>What is it? What user is it using?
+Because the design is for it to use TMS</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4566-1
+00:43:55.291 --> 00:43:56.680
+<v Matt Wilkinson>VR. Is that correct?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4575-0
+00:43:58.120 --> 00:44:01.130
+<v Yosif Mihaylov>Well,
+it's it uses the same user for reading</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4575-1
+00:44:01.130 --> 00:44:02.200
+<v Yosif Mihaylov>and for writing.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4574-0
+00:44:02.360 --> 00:44:02.680
+<v Vervenne, Ron>Yes.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4585-0
+00:44:03.560 --> 00:44:05.880
+<v Matt Wilkinson>Correct, what's the user? Yeah, what?</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4587-0
+00:44:03.800 --> 00:44:06.520
+<v Nikolay Hristov>Yeah, yeah, it's the TMSBR.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4597-0
+00:44:07.320 --> 00:44:10.280
+<v Matt Wilkinson>Yeah, yeah, okay, good, okay, good, good,
+just because...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4590-0
+00:44:07.520 --> 00:44:07.760
+<v Vervenne, Ron>People.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4621-0
+00:44:11.320 --> 00:44:15.497
+<v Matt Wilkinson>On the the QM user,
+and what Eric just sent me,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4621-1
+00:44:15.497 --> 00:44:19.935
+<v Matt Wilkinson>it only has select,
+it only has select privileges,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4621-2
+00:44:19.935 --> 00:44:21.240
+<v Matt Wilkinson>like I thought.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4624-0
+00:44:22.200 --> 00:44:24.520
+<v Matt Wilkinson>On the production instances, so...</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4650-0
+00:44:25.840 --> 00:44:31.118
+<v Matt Wilkinson>Whatever you guys are doing in new dispo,
+if you can't use that secret for new,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4650-1
+00:44:31.118 --> 00:44:36.000
+<v Matt Wilkinson>so you can't use the QM user for new
+dispo. That's what I'm saying. Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4645-0
+00:44:34.440 --> 00:44:35.040
+<v Yosif Mihaylov>Thank you.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4647-0
+00:44:35.800 --> 00:44:36.120
+<v Yosif Mihaylov>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4672-0
+00:44:37.280 --> 00:44:41.222
+<v Nikolay Hristov>Yeah, yeah, okay,
+so we need to discuss this with the new</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4655-0
+00:44:38.280 --> 00:44:38.520
+<v Matt Wilkinson>Yep.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4672-1
+00:44:41.222 --> 00:44:44.280
+<v Nikolay Hristov>dispute guys and with Cloud for Work, so..
+.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4667-0
+00:44:42.280 --> 00:44:42.880
+<v Matt Wilkinson>Yeah, OK.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4688-0
+00:44:45.240 --> 00:44:48.026
+<v Matt Wilkinson>So that,
+that's a blocker on your side then,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4688-1
+00:44:48.026 --> 00:44:51.060
+<v Matt Wilkinson>just on,
+so you need to figure that one out. OK,</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4684-0
+00:44:50.120 --> 00:44:50.440
+<v Yosif Mihaylov>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4685-0
+00:44:50.360 --> 00:44:50.680
+<v Nikolay Hristov>Yeah.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4688-2
+00:44:51.060 --> 00:44:52.360
+<v Matt Wilkinson>yeah, yeah, OK, good.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4703-0
+00:44:54.600 --> 00:44:58.582
+<v Matt Wilkinson>And then we'll keep you posted on stream
+and the other things that we're doing yet.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4703-1
+00:44:58.582 --> 00:45:02.280
+<v Matt Wilkinson>If you'd let me know the bucket of what
+you guys want to use, that'd be good.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4705-0
+00:45:03.720 --> 00:45:04.120
+<v Matt Wilkinson>Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4708-0
+00:45:04.280 --> 00:45:05.480
+<v Nikolay Hristov>Mhm, Okay.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4712-0
+00:45:05.880 --> 00:45:08.040
+<v Matt Wilkinson>Jens, thank you. Ciao, ciao.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4715-0
+00:45:08.360 --> 00:45:09.720
+<v Nikolay Hristov>Thank you, guys. Bye.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4720-0
+00:45:09.680 --> 00:45:10.760
+<v Vervenne, Ron>No, I am.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4716-0
+00:45:10.280 --> 00:45:10.600
+<v Matt Wilkinson>But.</v>
+
+c2051207-9860-460f-8a4d-338ddc92a16c/4725-0
+00:45:11.520 --> 00:45:12.280
+<v Uschmann, Patrick>Thank you. Bye.</v>

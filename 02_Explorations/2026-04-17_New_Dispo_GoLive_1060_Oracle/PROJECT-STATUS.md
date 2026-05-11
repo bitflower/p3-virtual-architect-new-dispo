@@ -52,6 +52,7 @@
 - [ ] **DB user permissions: TMSBR with write privileges** — QM user is read-only, need TMSBR user for New Dispo write operations. Secret name prefixing solution decided (2026-05-07) (Owner: P3)
 - [ ] **LiquiBase infrastructure setup** — Setup this week, deployment process starting next week (Owner: Matt Wilkinson / Nagel)
 - [ ] **Striim event format mapping** — Assess Striim output format vs. Datastream for TMS Pulse integration (Owner: Matthias Max)
+- [ ] **Striim stream user configuration documentation** — Matt Wilkinson to document stream user config (differs from Datastream setup) (Owner: Matt Wilkinson)
 - [ ] **Infrastructure skeleton check** — Verify all GCP infra (Cloud Run, buckets, pipelines) exists for all environments. Fill gaps (Owner: Nikolay / P3 team)
 - [ ] **Keycloak authentication documentation** — Ron set up Enterprise ID integration; documentation needed for security reviews (Owner: Ron / Matt Wilkinson)
 
