@@ -2,9 +2,9 @@
 
 **Status:** 🔄 In Progress
 **Author:** Matthias Max
-**Last Updated:** 2026-04-10
-**Next Milestone:** Connect New Dispo stack to ORA-ABN-1060
-**Target Date:** TBD (dependent on ORA-ABN-1060 availability)
+**Last Updated:** 2026-05-11
+**Next Milestone:** Remediate ABN1060 database findings
+**Target Date:** TBD
 
 ---
 
@@ -26,12 +26,14 @@
 - [x] Joachim's feedback on Oracle pipeline and ABN 1060 provisioning (2026-04-10) - [Feedback](../../00_Meetings/2026-04-10_Joachim_Prozess_Postgres-to-Oracle/joachim_addition.md)
 - [x] Corrected gap assumption -- Oracle pipeline already exists (ENT → ABN → UAT)
 - [x] Updated exploration document to reflect corrected understanding
+- [x] ORA-ABN-1060 provisioned by Nagel/CAL
+- [x] ABN1060 database verification (manual + TMS Bridge DB Verifier) - [Review](../2026-05-11_ABN1060_Oracle_TMS_Database_Review_-_First_Batch_Analysis/abn1060-oracle-tms-database-review---first-batch-analysis.md)
 
 ### 🔄 In Progress
-- [ ] ORA-ABN-1060 being provisioned by Nagel/CAL (Joachim, Bernd Friedewald, Thomas Paulus)
+- [ ] Remediation of ABN1060 database findings (4 missing objects, 2 column issues, 1 missing queue)
 
 ### ⏳ Next Up
-- Obtain ORA-ABN-1060 connection details (host, port, credentials, network)
+- Re-run TMS Bridge DB Verifier after database fixes to confirm resolution
 - Configure TMS Bridge to connect to ORA-ABN-1060
 - Configure New Dispo Backend TEST environment for Oracle
 - Run first end-to-end integration test (Frontend → Backend → TMS Bridge → ORA-ABN-1060)
@@ -40,7 +42,7 @@
 - Test character encoding (UTF-8 vs. Oracle legacy charset) with real 1060 data
 
 ### 🔴 Blockers
-- None -- previous blockers resolved by Joachim's feedback
+- ABN1060 database requires fixes before TMS Bridge can connect -- see [Step 2 findings](../2026-05-11_ABN1060_Oracle_TMS_Database_Review_-_First_Batch_Analysis/abn1060-oracle-tms-database-review---first-batch-analysis.md)
 
 ---
 
@@ -51,18 +53,20 @@ Each step is documented as a sub-page:
 | Step | Title | Status | Document |
 |------|-------|--------|----------|
 | 1 | Environment Assessment (corrected by Joachim's feedback) | ✅ Complete | [Assessment](oracle-dev-abn-uat-instances-for-branch-1060.md), [Joachim's Feedback](../../00_Meetings/2026-04-10_Joachim_Prozess_Postgres-to-Oracle/joachim_addition.md) |
-| 2 | Connect New Dispo to ORA-ABN-1060 | ⏳ Pending | TBD |
-| 3 | End-to-End Integration Validation | ⏳ Pending | TBD |
-| 4 | TMS Pulse Load Test & Sign-Off Criteria | ⏳ Pending | TBD |
+| 2 | ABN1060 Database Verification | 🔄 Findings pending remediation | [Review](../2026-05-11_ABN1060_Oracle_TMS_Database_Review_-_First_Batch_Analysis/abn1060-oracle-tms-database-review---first-batch-analysis.md) |
+| 3 | Connect New Dispo to ORA-ABN-1060 | ⏳ Pending | TBD |
+| 4 | End-to-End Integration Validation | ⏳ Pending | TBD |
+| 5 | TMS Pulse Load Test & Sign-Off Criteria | ⏳ Pending | TBD |
 
 ---
 
 ## Timeline
 
-| Phase | Period | Status | Key Activities |
+| Phase | Date | Status | Key Activities |
 |-------|--------|--------|----------------|
 | Assessment | 2026-04-10 | ✅ | Gap analysis, Joachim consultation, gap assumption corrected |
-| Provisioning | 2026-04-10 (started) | 🔄 | Nagel/CAL provisioning ORA-ABN-1060 (already in progress) |
+| Provisioning | 2026-04-27 | ✅ | ORA-ABN-1060 provisioned by Nagel/CAL |
+| DB Verification | 2026-05-11 | 🔄 | Manual + automated verification complete, findings pending remediation |
 | Configuration | TBD | ⏳ | TMS Bridge + Backend config for ORA-ABN-1060 |
 | Validation | TBD | ⏳ | End-to-end integration test, TMS Pulse load test |
 | Sign-Off | TBD | ⏳ | ABN: Patrick & Max → UAT: Max Beisheim & Patrick U. |
@@ -88,6 +92,7 @@ Each step is documented as a sub-page:
 
 ### Project Steps
 - [Step 1: Environment Assessment (corrected by Joachim's feedback)](oracle-dev-abn-uat-instances-for-branch-1060.md)
+- [Step 2: ABN1060 Database Verification](../2026-05-11_ABN1060_Oracle_TMS_Database_Review_-_First_Batch_Analysis/abn1060-oracle-tms-database-review---first-batch-analysis.md)
 
 ### External References
 - [Azure DevOps CALtms Repo](https://dev.azure.com/caldevops/Agile/_git/CALtms) - TMS Database code (Oracle wrappers)
@@ -133,7 +138,7 @@ Each step is documented as a sub-page:
 | **Scope** | 🟢 | Shifted from "propose new instances" to "connect to existing pipeline" |
 | **Resources** | 🟢 | Nagel/CAL handling provisioning; P3 handles config |
 | **Risks** | 🟡 | Character encoding and wrapper edge cases -- testable once ABN 1060 is available |
-| **Blockers** | 🟢 | None -- previous blockers resolved |
+| **Blockers** | 🟡 | ABN1060 DB findings must be remediated before TMS Bridge connection |
 
 **Legend:** 🟢 Good | 🟡 Attention Needed | 🔴 Critical
 
@@ -145,6 +150,7 @@ Each step is documented as a sub-page:
 |------|--------|------------|
 | 2026-04-10 | Project created, Step 1 (Assessment) completed | Matthias Max |
 | 2026-04-10 | Gap assumption corrected: Oracle pipeline already exists. Joachim confirmed ABN 1060 being provisioned with live data. Document rewritten. Blockers cleared. Next steps shifted to New Dispo integration. | Matthias Max |
+| 2026-05-11 | Step 2 (ABN1060 Database Verification) added. Manual P3 developer testing + automated TMS Bridge DB Verifier run. Findings: 4 missing PDIS_TRANSPORTORDER objects (2 active, 2 obsolete), 2 column-level issues, 1 missing Oracle AQ queue. Remediation pending with TMS Team. | Matthias Max |
 
 ---
 
