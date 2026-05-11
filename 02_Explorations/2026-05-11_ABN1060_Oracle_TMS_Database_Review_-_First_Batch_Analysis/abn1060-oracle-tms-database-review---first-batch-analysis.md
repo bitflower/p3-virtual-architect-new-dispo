@@ -14,9 +14,10 @@
 
 ## Original User Input
 
-First batch of reviews for the ABN1060 Oracle database. Two sources:
-1. **P3 developer testing** - connected Backend + TMS Bridge against Oracle DB, identified runtime errors
+Reviews for the ABN1060 Oracle database. Three sources:
+1. **P3 developer testing (first batch)** - connected Backend + TMS Bridge against Oracle DB, identified runtime errors
 2. **Automated TMS Bridge DB Verifier** (from `Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier`) - systematic check of all 77 database objects the TMS Bridge depends on
+3. **P3 developer testing (second batch)** - confirmed CAL_QUEUE_Q error affects RemoveLeg, SetParticipant, RemoveParticipant; likely all write procedures
 
 </internal>
 
@@ -31,7 +32,7 @@ First batch of reviews for the ABN1060 Oracle database. Two sources:
 | Functions (11) | **3 missing** | `CreateTransportOrderFromLeg`, `CreateTransportOrderFromShipment` (obsolete), `AddShipment` (obsolete) |
 | Procedures (35) | **1 missing** | `RemoveShipment` |
 | Column definitions | **2 issues** | `Comment` casing in `V_DIS_TRANSPORTORDER`, missing `U_TIME` in `V_DIS_TO_PICKUPPLANNING` |
-| Queue infrastructure | **Missing** | `TMSBR1060.CAL_QUEUE_Q` not provisioned — causes runtime failures in `CreateAndAddLeg` and `Delete` |
+| Queue infrastructure | **Missing** | `TMSBR1060.CAL_QUEUE_Q` not provisioned — causes runtime failures in all write procedures (confirmed: `CreateAndAddLeg`, `Delete`, `RemoveLeg`, `SetParticipant`, `RemoveParticipant`) |
 
 | Metric | Value |
 |--------|-------|
@@ -65,9 +66,18 @@ Objects #2 and #3 are marked obsolete in the inventory — they back the depreca
 
 ### Category 2: Missing Queue Infrastructure (Blocker)
 
-P3 developer testing of `CreateAndAddLeg` and `Delete` procedures revealed that both fail at runtime due to a missing Oracle Advanced Queuing (AQ) queue.
+P3 developer testing revealed that write procedures fail at runtime due to a missing Oracle Advanced Queuing (AQ) queue. Initial testing identified `CreateAndAddLeg` and `Delete`; follow-up testing confirmed the issue is systemic.
 
 **Root cause:** `TMSBR1060.CAL_QUEUE_Q` does not exist.
+
+**Confirmed affected procedures:**
+- `CreateAndAddLeg` (initial batch)
+- `Delete` (initial batch)
+- `RemoveLeg` (second batch — confirmed by P3)
+- `SetParticipant` (second batch — confirmed by P3)
+- `RemoveParticipant` (second batch — confirmed by P3)
+
+P3 assessment: likely **all write procedures** are affected, since the queue is referenced from triggers that fire on data modification. This effectively makes ABN1060 **read-only** from the TMS Bridge perspective until the queue is provisioned.
 
 **Error chain for CreateAndAddLeg:**
 ```
@@ -89,7 +99,7 @@ ORA-21000: error number argument to raise_application_error of -24010 is out of 
 
 The Delete error is the same root cause: the PTA package catches the ORA-24010 queue error and attempts to re-raise it via `raise_application_error`, but -24010 is outside the valid range (-20000 to -20999), causing a secondary ORA-21000 error.
 
-**Action required:** The Oracle AQ queue `CAL_QUEUE_Q` needs to be created in the `TMSBR1060` schema. This is a provisioning/setup step for the TMS Bridge infrastructure.
+**Action required:** The Oracle AQ queue `CAL_QUEUE_Q` needs to be created in the `TMSBR1060` schema. This is a provisioning/setup step for the TMS Bridge infrastructure. **This is the single highest-priority fix** — it blocks all write operations.
 
 ### Category 3: Column-Level Issues (Blockers)
 
@@ -137,7 +147,7 @@ Level 2.0 (Permission): 73/77 granted, 1 skipped, 4 DENIED (non-existent objects
 | Missing CREATETRANSPORTORDERFROMSHIPMENT | Not tested | Found | Only caught by verifier. **Obsolete** per inventory |
 | Missing ADDSHIPMENT | Not tested | Found | Only caught by verifier. **Obsolete** per inventory |
 | Missing REMOVESHIPMENT | Not tested | Found | Only caught by verifier. Active — blocks dispatcher operations |
-| Queue infrastructure missing | Found (runtime) | Not checked | Verifier checks existence/perms, not runtime deps |
+| Queue infrastructure missing | Found (runtime, 5 procedures confirmed) | Not checked | Verifier checks existence/perms, not runtime deps. Likely affects all write procedures |
 | Column naming (Comment) | Found | Not checked | Verifier doesn't check column definitions |
 | Missing column (U_TIME) | Found | Not checked | Verifier doesn't check column definitions |
 | Delete runtime error | Found | Not detected | Procedure exists and has correct signature |
@@ -159,12 +169,17 @@ This cross-reference demonstrates the complementary value of both approaches: th
 
 ---
 
+<internal>
+
 ## Related Files
 
-- `00_Meetings/2026-05-11_Oracle_TMS_Check_ABN1060/Ivailo-analysis.md` - P3 developer testing notes
+- `00_Meetings/2026-05-11_Oracle_TMS_Check_ABN1060/Ivailo-analysis.md` - P3 developer testing notes (first batch)
+- `00_Meetings/2026-05-11_Oracle_TMS_Check_ABN1060/ivailo-2.md` - P3 developer testing notes (second batch — CAL_QUEUE_Q blast radius)
 - `00_Meetings/2026-05-11_Oracle_TMS_Check_ABN1060/TMS-Verfitier-results.md` - Automated verifier output
 - `Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier/` - Verifier tool source
 - `02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md` - Object registry source (v1.1)
+
+</internal>
 
 ---
 
@@ -177,6 +192,15 @@ This cross-reference demonstrates the complementary value of both approaches: th
 | TMS Bridge DB Verifier (`Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier`) | Automated verification of 77 DB objects across 3 levels (existence, signature, permissions) |
 
 </internal>
+
+---
+
+## Version History
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | 2026-05-11 | Matthias Max | Initial review: 4 missing objects, 1 missing queue, 2 column issues. Sources: P3 developer testing + automated TMS Bridge DB Verifier. |
+| 1.1 | 2026-05-11 | Matthias Max | Expanded CAL_QUEUE_Q blast radius: confirmed RemoveLeg, SetParticipant, RemoveParticipant also affected. Likely all write procedures blocked. Source: P3 second batch testing. |
 
 ---
 

@@ -1,0 +1,2820 @@
+WEBVTT
+
+d7925b0f-682b-4494-9169-6fa509b28fba/7-0
+00:00:16.333 --> 00:00:16.853
+<v Nikolay Hristov>Hello!</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/8-0
+00:00:17.493 --> 00:00:18.133
+<v Christian Lang>Hello!</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/11-0
+00:00:31.013 --> 00:00:31.573
+<v Matthias Max>Hi.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/13-0
+00:00:32.093 --> 00:00:32.853
+<v Christian Lang>Hello!</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/12-0
+00:00:32.573 --> 00:00:32.853
+<v Matthias Max>Töppe.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/17-0
+00:00:48.853 --> 00:00:49.173
+<v Uschmann, Patrick>I.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/18-0
+00:00:50.533 --> 00:00:50.933
+<v Matthias Max>Alright.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/19-0
+00:00:50.933 --> 00:00:51.493
+<v Christian Lang>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/35-0
+00:01:47.453 --> 00:01:47.893
+<v Uschmann, Patrick>Um...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/36-0
+00:01:48.853 --> 00:01:56.603
+<v Uschmann, Patrick>I'm just waiting for Matt, Ron, Pascal,
+and Eric to join because they have</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/36-1
+00:01:56.603 --> 00:01:57.533
+<v Uschmann, Patrick>accepted.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/37-0
+00:01:58.133 --> 00:02:00.213
+<v Christian Lang>A medicine vacation today,
+so he won't join.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/38-0
+00:02:00.853 --> 00:02:01.653
+<v Uschmann, Patrick>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/39-0
+00:02:02.133 --> 00:02:06.373
+<v Matthias Max>Ah, okay. So, okay,
+then let's wait for Ron.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/40-0
+00:02:07.733 --> 00:02:08.293
+<v Matthias Max>Fun.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/42-0
+00:02:19.093 --> 00:02:19.213
+<v Christian Lang>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/43-0
+00:02:19.413 --> 00:02:25.102
+<v Matthias Max>Maybe we can start with that.
+Did Matt get back on this data stream</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/43-1
+00:02:25.102 --> 00:02:28.533
+<v Matthias Max>option then, or are we missing that info?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/44-0
+00:02:29.933 --> 00:02:32.093
+<v Matthias Max>Now that is on vacation about the...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/45-0
+00:02:34.133 --> 00:02:35.493
+<v Matthias Max>A new functionality.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/48-0
+00:02:37.093 --> 00:02:38.053
+<v Christian Lang>In what aspects?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/47-0
+00:02:37.333 --> 00:02:37.813
+<v Matthias Max>Really.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/49-0
+00:02:39.253 --> 00:02:44.933
+<v Matthias Max>If thought of the data stream preview of,
+yeah, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/50-0
+00:02:43.093 --> 00:02:48.613
+<v Christian Lang>At the Google thing, I'm not not sure;
+I haven't had any information.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/52-0
+00:02:49.573 --> 00:02:50.613
+<v Christian Lang>I'm not sure.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/51-0
+00:02:49.693 --> 00:02:50.253
+<v Matthias Max>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/53-0
+00:02:51.733 --> 00:02:54.933
+<v Matthias Max>Okay, let's wait. I mean, he wrote Ron.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/54-0
+00:02:57.653 --> 00:02:59.493
+<v Matthias Max>Ron and Eric have been leading on this.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/55-0
+00:03:00.133 --> 00:03:00.613
+<v Christian Lang>Mmh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/56-0
+00:03:02.453 --> 00:03:04.293
+<v Matthias Max>Good, then they should be...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/57-0
+00:03:06.053 --> 00:03:06.773
+<v Matthias Max>Over there.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/58-0
+00:03:12.293 --> 00:03:17.253
+<v Matthias Max>Because we would actually decide today in
+the best case, right?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/61-0
+00:03:18.133 --> 00:03:19.013
+<v Christian Lang>Yeah, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/59-0
+00:03:18.573 --> 00:03:18.853
+<v Matthias Max>Töppe.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/62-0
+00:03:21.893 --> 00:03:22.453
+<v Christian Lang>Oh yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/63-0
+00:03:27.253 --> 00:03:27.653
+<v Meijers, Eric>Fine.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/65-0
+00:03:29.653 --> 00:03:30.373
+<v Christian Lang>Hi, Eric.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/64-0
+00:03:29.853 --> 00:03:30.213
+<v Matthias Max>I.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/73-0
+00:04:04.533 --> 00:04:06.773
+<v Uschmann, Patrick>Yeah, transcript is running, nothing else.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/72-0
+00:04:07.413 --> 00:04:08.373
+<v Matthias Max>Oh yeah, cool.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/74-0
+00:04:09.333 --> 00:04:09.973
+<v Matthias Max>Thanks.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/75-0
+00:04:09.493 --> 00:04:11.813
+<v Uschmann, Patrick>Is there any chance that we can?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/77-0
+00:04:15.493 --> 00:04:16.773
+<v Uschmann, Patrick>Take out this topic.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/78-0
+00:04:20.293 --> 00:04:21.413
+<v Uschmann, Patrick>In this week.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/79-0
+00:04:22.453 --> 00:04:28.293
+<v Uschmann, Patrick>So we don't have to wait for the next
+meeting on Monday.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/80-0
+00:04:30.213 --> 00:04:34.817
+<v Matthias Max>I mean, for us, there's a follow-up topic.
+If we go with stream,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/80-1
+00:04:34.817 --> 00:04:37.013
+<v Matthias Max>we need to look at the mapping.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/81-0
+00:04:38.533 --> 00:04:43.543
+<v Matthias Max>If data stream works and it has the same
+output, this would not have to be done.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/81-1
+00:04:43.543 --> 00:04:44.533
+<v Matthias Max>So that's the...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/82-0
+00:04:45.773 --> 00:04:48.773
+<v Matthias Max>motivation on our side to have that
+decision.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/85-0
+00:04:50.213 --> 00:04:54.021
+<v Matthias Max>And I think in general it would be good
+to have that decision,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/85-1
+00:04:54.021 --> 00:04:58.977
+<v Matthias Max>but it should be as fast as possible in
+my opinion. I wouldn't wait another week,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/83-0
+00:04:57.173 --> 00:04:57.653
+<v Christian Lang>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/85-2
+00:04:58.977 --> 00:05:01.093
+<v Matthias Max>right? Do you all agree to that or?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/84-0
+00:05:01.933 --> 00:05:02.213
+<v Christian Lang>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/87-0
+00:05:02.933 --> 00:05:09.208
+<v Matthias Max>Because we were just also discussing
+timelines in the me team and Max will</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/87-1
+00:05:09.208 --> 00:05:15.650
+<v Matthias Max>come up with the timeline as well.
+So we all are on the same page. And yeah,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/87-2
+00:05:15.650 --> 00:05:20.671
+<v Matthias Max>it's not long anymore.
+It's a few weeks and we need to make</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/87-3
+00:05:20.671 --> 00:05:21.173
+<v Matthias Max>steps.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/86-0
+00:05:21.933 --> 00:05:22.413
+<v Christian Lang>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/88-0
+00:05:24.933 --> 00:05:25.973
+<v Matthias Max>So.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/89-0
+00:05:27.413 --> 00:05:31.626
+<v Matthias Max>Eric,
+are you involved in that Google topic,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/89-1
+00:05:31.626 --> 00:05:38.742
+<v Matthias Max>like Matt wrote in his email about the
+new way of data stream to access the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/89-2
+00:05:38.742 --> 00:05:40.053
+<v Matthias Max>database logs?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/91-0
+00:05:42.773 --> 00:05:43.893
+<v Matthias Max>Do you know about that?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/90-0
+00:05:43.253 --> 00:05:43.893
+<v Meijers, Eric>Um, Gea.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/93-0
+00:05:45.013 --> 00:05:47.253
+<v Christian Lang>No, Matt will join us in 3 minutes.
+You just wrote.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/92-0
+00:05:45.493 --> 00:05:45.813
+<v Meijers, Eric>Oh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/96-0
+00:05:47.973 --> 00:05:53.056
+<v Meijers, Eric>I was informed, yeah,
+and we have done some, yeah,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/96-1
+00:05:53.056 --> 00:05:59.534
+<v Meijers, Eric>investigation and tryings on that.
+And the new way from the CDC,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/96-2
+00:05:59.534 --> 00:06:05.813
+<v Meijers, Eric>the binary reader, if you talk about that,
+that seems to work.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/95-0
+00:06:03.173 --> 00:06:03.733
+<v Matthias Max>Correct.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/97-0
+00:06:07.333 --> 00:06:12.015
+<v Meijers, Eric>But we have two different setups of
+databases and we have still one open</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/97-1
+00:06:12.015 --> 00:06:15.157
+<v Meijers, Eric>question on the one in the central
+environments.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/97-2
+00:06:15.157 --> 00:06:17.980
+<v Meijers, Eric>But there was yesterday meeting about
+that,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/97-3
+00:06:17.980 --> 00:06:22.982
+<v Meijers, Eric>but we had the bank holiday yesterday,
+so I was not involved in that meeting.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/97-4
+00:06:22.982 --> 00:06:25.933
+<v Meijers, Eric>So I'm not sure what the outcome of that
+was.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/98-0
+00:06:26.613 --> 00:06:30.773
+<v Meijers, Eric>But it looks like that the binary reader
+is an option to use.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/99-0
+00:06:31.893 --> 00:06:34.843
+<v Meijers, Eric>Yeah,
+but I'm not sure what map Brittemore has</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/99-1
+00:06:34.843 --> 00:06:35.973
+<v Meijers, Eric>discussed in that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/100-0
+00:06:37.133 --> 00:06:42.311
+<v Meijers, Eric>But instead of using more mining with the
+delay, the binary,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/100-1
+00:06:42.311 --> 00:06:44.773
+<v Meijers, Eric>there might be a solution in.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/101-0
+00:06:46.173 --> 00:06:46.493
+<v Matthias Max>Uh-huh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/104-0
+00:06:47.973 --> 00:06:52.800
+<v Matthias Max>I mean, the log mining is out of,
+is off the table. It's too slow.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/102-0
+00:06:52.133 --> 00:06:52.533
+<v Meijers, Eric>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/104-1
+00:06:52.800 --> 00:06:58.636
+<v Matthias Max>With whatever optimizations we would do,
+it will never be fulfilling the need of</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/103-0
+00:06:53.653 --> 00:06:53.973
+<v Meijers, Eric>Yakup.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/104-2
+00:06:58.636 --> 00:06:59.573
+<v Matthias Max>the business.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/105-0
+00:07:01.733 --> 00:07:02.213
+<v Matthias Max>Kamp.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/112-0
+00:07:21.493 --> 00:07:26.293
+<v Uschmann, Patrick>Any other topics that we can discuss
+until Matt will join us?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/113-0
+00:07:28.613 --> 00:07:33.413
+<v Matthias Max>Databases are available obviously since
+yesterday.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/114-0
+00:07:34.613 --> 00:07:36.453
+<v Matthias Max>We cannot.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/115-0
+00:07:37.973 --> 00:07:41.675
+<v Matthias Max>Check it because we don't have access,
+right? Also,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/115-1
+00:07:41.675 --> 00:07:45.093
+<v Matthias Max>the TMS user is something I wanted to
+bring up.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/116-0
+00:07:46.373 --> 00:07:47.253
+<v Matthias Max>Again.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/118-0
+00:07:47.893 --> 00:07:50.933
+<v Uschmann, Patrick>Yeah, that's something that I have also.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/119-0
+00:07:53.173 --> 00:08:00.475
+<v Uschmann, Patrick>Check checked on with with Matt. Um,
+I've asked him if we can be if we can,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/119-1
+00:08:00.475 --> 00:08:05.087
+<v Uschmann, Patrick>yeah,
+just take the same permissions as we have</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/119-2
+00:08:05.087 --> 00:08:09.988
+<v Uschmann, Patrick>for 1034,
+but at the moment it seems like we don't</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/119-3
+00:08:09.988 --> 00:08:10.853
+<v Uschmann, Patrick>have any.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/120-0
+00:08:13.133 --> 00:08:16.213
+<v Uschmann, Patrick>documentation about those permissions.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/122-0
+00:08:17.653 --> 00:08:18.693
+<v Uschmann, Patrick>So.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/121-0
+00:08:17.893 --> 00:08:18.133
+<v Matthias Max>Uh-huh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/123-0
+00:08:19.893 --> 00:08:23.093
+<v Uschmann, Patrick>At the moment,
+I don't know how we can solve it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/124-0
+00:08:25.733 --> 00:08:26.213
+<v Matthias Max>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/125-0
+00:08:25.733 --> 00:08:27.653
+<v Uschmann, Patrick>Except that review, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/127-0
+00:08:28.853 --> 00:08:35.897
+<v Uschmann, Patrick>discuss what permissions you need and
+that we give you new permissions for the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/127-1
+00:08:35.897 --> 00:08:37.413
+<v Uschmann, Patrick>1060 environment.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/126-0
+00:08:36.973 --> 00:08:37.093
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/128-0
+00:08:38.253 --> 00:08:41.954
+<v Matthias Max>Yeah,
+so I will quickly explain how we think it</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/128-1
+00:08:41.954 --> 00:08:46.119
+<v Matthias Max>can be done.
+We will provide another full list of all</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/128-2
+00:08:46.119 --> 00:08:50.515
+<v Matthias Max>objects connected to the bridge,
+let's put it like that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/128-3
+00:08:50.515 --> 00:08:55.991
+<v Matthias Max>Some are for reading, obviously.
+Tables are only read by us and views.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/128-4
+00:08:55.991 --> 00:08:58.613
+<v Matthias Max>We never write to tables directly.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/130-0
+00:08:59.013 --> 00:09:03.817
+<v Matthias Max>And the right side of things,
+that's function and procedures.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/130-1
+00:09:03.817 --> 00:09:09.938
+<v Matthias Max>And that's the interface we know of.
+We cannot know what is nested behind them</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/130-2
+00:09:09.938 --> 00:09:14.509
+<v Matthias Max>underneath the hood.
+So our requirement is literally to be</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/130-3
+00:09:14.509 --> 00:09:19.933
+<v Matthias Max>able to read on the reach objects and
+write on the write objects with</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/131-0
+00:09:20.013 --> 00:09:24.754
+<v Matthias Max>that user and you can test that literally
+database side only.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/131-1
+00:09:24.754 --> 00:09:30.643
+<v Matthias Max>We don't even need a bridge for that.
+You can run every single object with a</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/131-2
+00:09:30.643 --> 00:09:34.696
+<v Matthias Max>select or a call with that user and see
+if it works.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/131-3
+00:09:34.696 --> 00:09:39.973
+<v Matthias Max>If it doesn't work and it misses
+permissions, they need to be added.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/132-0
+00:09:40.533 --> 00:09:42.453
+<v Matthias Max>If it works, it works.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/134-0
+00:09:43.333 --> 00:09:48.933
+<v Matthias Max>That would be the proposal,
+because we don't know the interns, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/133-0
+00:09:46.133 --> 00:09:47.733
+<v Uschmann, Patrick>OK, so.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/135-0
+00:09:49.493 --> 00:09:54.976
+<v Uschmann, Patrick>Matt just joined us,
+so just to summarize it quickly,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/135-1
+00:09:54.976 --> 00:10:02.693
+<v Uschmann, Patrick>you will just write down what permissions
+to which objects you need, right?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/136-0
+00:10:04.373 --> 00:10:06.613
+<v Matthias Max>Uh, yeah, I, we...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/138-0
+00:10:06.653 --> 00:10:09.413
+<v Uschmann, Patrick>Check what he can give you.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/137-0
+00:10:08.053 --> 00:10:08.773
+<v Matthias Max>Exactly.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/140-0
+00:10:09.893 --> 00:10:13.537
+<v Matthias Max>Exactly.
+The only more fine-grained form of</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/140-1
+00:10:13.537 --> 00:10:18.176
+<v Matthias Max>formulation would be that it's the
+interfacing objects,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/140-2
+00:10:18.176 --> 00:10:22.566
+<v Matthias Max>not everything that's a dependency of
+these objects.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/140-3
+00:10:22.566 --> 00:10:28.613
+<v Matthias Max>Just the surface that we see is something
+we can provide. And obviously,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/141-0
+00:10:29.093 --> 00:10:34.993
+<v Matthias Max>It's either a select on the read object
+or calling the function and procedure on</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/141-1
+00:10:34.993 --> 00:10:38.053
+<v Matthias Max>the right side. That's what I can provide.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/142-0
+00:10:39.213 --> 00:10:46.395
+<v Matthias Max>And then you can like freely play around
+with what permissions you want to give to</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/142-1
+00:10:46.395 --> 00:10:53.231
+<v Matthias Max>this user and narrow it down as far as
+you want so that it just is able to run</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/142-2
+00:10:53.231 --> 00:10:56.693
+<v Matthias Max>that specific interface. I think that's.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/143-0
+00:10:57.853 --> 00:11:01.173
+<v Matthias Max>the fine-grained process on your side for
+that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/144-0
+00:11:03.013 --> 00:11:03.733
+<v Matthias Max>By Matt.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/146-0
+00:11:05.133 --> 00:11:06.813
+<v Matt Wilkinson>Hello, sorry, sorry I'm a little bit late.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/145-0
+00:11:05.493 --> 00:11:05.693
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/148-0
+00:11:07.893 --> 00:11:10.013
+<v Matt Wilkinson>Yeah,
+so that that's what we discussed last</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/148-1
+00:11:10.013 --> 00:11:11.893
+<v Matt Wilkinson>week. Have we got have we got the list?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/151-0
+00:11:13.333 --> 00:11:18.403
+<v Matthias Max>It's in the making.
+I can provide it today. It's quite long.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/149-0
+00:11:17.013 --> 00:11:18.693
+<v Matt Wilkinson>Yeah, okay, good, good, good, good.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/151-1
+00:11:18.403 --> 00:11:24.886
+<v Matthias Max>I thought it would be enough to go with
+the one that you use or track in your</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/151-2
+00:11:24.886 --> 00:11:30.040
+<v Matthias Max>axle for the migration,
+but there are a few other things that</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/151-3
+00:11:30.040 --> 00:11:31.453
+<v Matthias Max>need to be added.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/150-0
+00:11:32.373 --> 00:11:32.693
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/152-0
+00:11:32.653 --> 00:11:40.197
+<v Matthias Max>But I think not nothing really dramatic,
+just some additional tables that are read,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/152-1
+00:11:40.197 --> 00:11:42.533
+<v Matthias Max>read only, not written to.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/153-0
+00:11:43.413 --> 00:11:48.371
+<v Matthias Max>So I'll provide it and then you can play
+around with permissions on your end</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/153-1
+00:11:48.371 --> 00:11:51.333
+<v Matthias Max>anyway, right?
+And then find the right scope.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/155-0
+00:11:49.973 --> 00:11:54.999
+<v Matt Wilkinson>Yeah, yeah, that's the plan yet.
+So one of the discussions that Eric and I</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/155-1
+00:11:54.999 --> 00:11:59.623
+<v Matt Wilkinson>have had with Ron as well is we'll need
+to do separation of the log,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/155-2
+00:11:59.623 --> 00:12:02.907
+<v Matt Wilkinson>like the CDC account,
+whatever solution that is,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/155-3
+00:12:02.907 --> 00:12:07.129
+<v Matt Wilkinson>so that in the end run,
+but effectively there'll be an account</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/155-4
+00:12:07.129 --> 00:12:07.733
+<v Matt Wilkinson>for that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/157-0
+00:12:08.293 --> 00:12:12.217
+<v Matt Wilkinson>Because that has a different level of
+permission for, let's say,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/154-0
+00:12:08.453 --> 00:12:08.933
+<v Matthias Max>Mmh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/157-1
+00:12:12.217 --> 00:12:16.442
+<v Matt Wilkinson>archive logs or active logs.
+And then there'll be an account which we</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/157-2
+00:12:16.442 --> 00:12:21.091
+<v Matt Wilkinson>need the privileges for of what that
+needs to be run or what it needs to run</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/156-0
+00:12:16.533 --> 00:12:17.013
+<v Matthias Max>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/157-3
+00:12:21.091 --> 00:12:24.351
+<v Matt Wilkinson>effectively.
+And that will be the TMS Bridge account.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/157-4
+00:12:24.351 --> 00:12:24.653
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/160-0
+00:12:24.773 --> 00:12:30.773
+<v Matthias Max>Alright, yeah, makes total sense.
+It's way slimmer, right? Totally narrow.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/158-0
+00:12:25.853 --> 00:12:26.053
+<v Matt Wilkinson>Yep.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/159-0
+00:12:27.493 --> 00:12:27.813
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/161-0
+00:12:32.253 --> 00:12:32.853
+<v Matthias Max>Services.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/163-0
+00:12:32.533 --> 00:12:36.060
+<v Matt Wilkinson>It's all two different.
+The way I describe it and Eric on the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/163-1
+00:12:36.060 --> 00:12:40.213
+<v Matt Wilkinson>call, but it's two different use cases,
+basically, that we need to make.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/162-0
+00:12:38.933 --> 00:12:39.173
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/164-0
+00:12:41.773 --> 00:12:43.093
+<v Matthias Max>Yeah, makes sense.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/165-0
+00:12:43.813 --> 00:12:44.293
+<v Matt Wilkinson>Töppe.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/166-0
+00:12:45.813 --> 00:12:47.333
+<v Matthias Max>Good, so that's...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/169-0
+00:12:47.173 --> 00:12:49.937
+<v Matt Wilkinson>But just to be clear,
+as soon as we've got them,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/169-1
+00:12:49.937 --> 00:12:53.942
+<v Matt Wilkinson>we can create them. It's not,
+it's not Eric and Thomas are lined up to</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/167-0
+00:12:50.213 --> 00:12:50.453
+<v Matthias Max>No.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/169-2
+00:12:53.942 --> 00:12:58.398
+<v Matt Wilkinson>do it. Just need to, and then we can,
+we can get started getting tested on the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/168-0
+00:12:54.693 --> 00:12:55.173
+<v Matthias Max>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/169-3
+00:12:58.398 --> 00:13:00.373
+<v Matt Wilkinson>connection when you guys are ready.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/170-0
+00:12:59.653 --> 00:13:06.567
+<v Matthias Max>Cool, good. So if we provide it today,
+we can like start tomorrow or the next</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/170-1
+00:13:06.567 --> 00:13:12.241
+<v Matthias Max>day, sometime this week,
+with connecting our cloud stuff to it,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/170-2
+00:13:12.241 --> 00:13:12.773
+<v Matthias Max>right?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/171-0
+00:13:16.133 --> 00:13:19.021
+<v Matt Wilkinson>Yeah, I want to speak for this afternoon,
+but yes, that should be should be doable,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/171-1
+00:13:19.021 --> 00:13:20.293
+<v Matt Wilkinson>depending on what time you get it in.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/172-0
+00:13:21.413 --> 00:13:22.453
+<v Matthias Max>Okay, cool.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/173-0
+00:13:21.653 --> 00:13:25.493
+<v Matt Wilkinson>It won't take as long to create it on the
+database. It's no time at all.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/175-0
+00:13:27.813 --> 00:13:28.373
+<v Matthias Max>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/174-0
+00:13:27.893 --> 00:13:28.213
+<v Matt Wilkinson>Töppe.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/176-0
+00:13:29.973 --> 00:13:30.533
+<v Matthias Max>Good.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/177-0
+00:13:33.853 --> 00:13:37.467
+<v Matthias Max>What else was the topics? Aha, Google,
+Matt.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/177-1
+00:13:37.467 --> 00:13:43.813
+<v Matthias Max>We were waiting for probably more details
+from your side of the binary reader.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/180-0
+00:13:44.773 --> 00:13:50.316
+<v Matt Wilkinson>So there was, there's two,
+Eric is a bit more in more in knowledge</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/178-0
+00:13:45.573 --> 00:13:45.973
+<v Matthias Max>Um...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/180-1
+00:13:50.316 --> 00:13:56.107
+<v Matt Wilkinson>of what we what was achieved last week,
+but just to give you context,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/180-2
+00:13:56.107 --> 00:14:00.079
+<v Matt Wilkinson>that disablement of the setting was not,
+sorry,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/180-3
+00:14:00.079 --> 00:14:04.133
+<v Matt Wilkinson>we were able to enable it as data mining
+in GCP.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/181-0
+00:14:04.693 --> 00:14:07.844
+<v Matt Wilkinson>So Eric, Thomas and I and Ron, sorry,
+Eric,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/179-0
+00:14:05.093 --> 00:14:05.573
+<v Matthias Max>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/181-1
+00:14:07.844 --> 00:14:13.217
+<v Matt Wilkinson>Thomas and Ron then did some work last
+week to sort of get that set up and</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/181-2
+00:14:13.217 --> 00:14:18.446
+<v Matt Wilkinson>testing. But there's a, there's a,
+we have raised something with Google,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/181-3
+00:14:18.446 --> 00:14:21.813
+<v Matt Wilkinson>which there is a call this afternoon,
+I think.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/183-0
+00:14:23.573 --> 00:14:27.489
+<v Matt Wilkinson>That has probably already happened,
+I think. I think it happened at 2.30.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/183-1
+00:14:27.489 --> 00:14:30.506
+<v Matt Wilkinson>Just to sort of,
+there was a mismatch between what their</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/183-2
+00:14:30.506 --> 00:14:34.687
+<v Matt Wilkinson>documentation was saying needs to be
+required and what was actually able to be</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/183-3
+00:14:34.687 --> 00:14:37.333
+<v Matt Wilkinson>set up. So there was,
+it's currently in work, but</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/185-0
+00:14:38.613 --> 00:14:42.884
+<v Matt Wilkinson>Just as a summary,
+we should be able to get the solution</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/182-0
+00:14:38.773 --> 00:14:39.253
+<v Matthias Max>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/184-0
+00:14:40.773 --> 00:14:41.413
+<v Matthias Max>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/185-1
+00:14:42.884 --> 00:14:46.931
+<v Matt Wilkinson>working on Data Miner.
+It does need quite high level,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/185-2
+00:14:46.931 --> 00:14:51.278
+<v Matt Wilkinson>high permissions,
+which shouldn't be a problem, but yeah,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/185-3
+00:14:51.278 --> 00:14:57.273
+<v Matt Wilkinson>we've got the solution working to go off
+the active log rather than the archive</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/185-4
+00:14:57.273 --> 00:14:57.573
+<v Matt Wilkinson>log.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/186-0
+00:14:58.293 --> 00:15:00.533
+<v Matt Wilkinson>Eric, will you say that statement is true?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/187-0
+00:15:02.933 --> 00:15:04.373
+<v Matt Wilkinson>You were a bit more on it than I was.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/188-0
+00:15:05.493 --> 00:15:05.893
+<v Meijers, Eric>Yakup.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/189-0
+00:15:07.253 --> 00:15:07.573
+<v Matt Wilkinson>Yep.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/190-0
+00:15:07.253 --> 00:15:14.847
+<v Meijers, Eric>the binary reader can access the online
+block and is also reading it and showing</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/190-1
+00:15:14.847 --> 00:15:15.973
+<v Meijers, Eric>the changes.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/191-0
+00:15:17.013 --> 00:15:19.253
+<v Matt Wilkinson>Yeah, well, what we have it, what we...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/192-0
+00:15:17.613 --> 00:15:20.453
+<v Matthias Max>So, are there any sorry?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/195-0
+00:15:21.453 --> 00:15:24.888
+<v Matt Wilkinson>No, what I was going to say, Matthias,
+is what we haven't done is a load test</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/195-1
+00:15:24.888 --> 00:15:27.663
+<v Matt Wilkinson>with it. We haven't,
+we've just done like a single row update.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/193-0
+00:15:25.093 --> 00:15:25.573
+<v Matthias Max>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/194-0
+00:15:26.693 --> 00:15:27.173
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/195-2
+00:15:27.663 --> 00:15:29.733
+<v Matt Wilkinson>That was,
+so that was what I was going to add.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/196-0
+00:15:29.773 --> 00:15:35.379
+<v Matthias Max>Okay, because I was about to ask,
+because we mentioned it earlier,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/196-1
+00:15:35.379 --> 00:15:40.149
+<v Matthias Max>time is ticking.
+Are there any early red flags that make</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/196-2
+00:15:40.149 --> 00:15:46.174
+<v Matthias Max>us stop this approach? For example,
+what does preview mean from Google?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/196-3
+00:15:46.174 --> 00:15:50.693
+<v Matthias Max>Does it mean they can pull it back
+anytime they want?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/197-0
+00:15:51.013 --> 00:15:56.926
+<v Matthias Max>because it's not contractually binding
+already to deliver this feature.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/197-1
+00:15:56.926 --> 00:16:01.032
+<v Matthias Max>Is it fast?
+Does it hit the one minute limit that</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/197-2
+00:16:01.032 --> 00:16:06.453
+<v Matthias Max>business is asking for?
+Because if one of these two does not hit,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/198-0
+00:16:07.253 --> 00:16:10.533
+<v Matthias Max>We can stop here, in my opinion.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/199-0
+00:16:15.093 --> 00:16:18.773
+<v Matt Wilkinson>We saw it go through quite quickly.
+Have we done a load test now?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/201-0
+00:16:20.773 --> 00:16:25.108
+<v Matt Wilkinson>The, as a proof of comment, will it work?
+Yes, I think it will work.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/201-1
+00:16:25.108 --> 00:16:29.569
+<v Matt Wilkinson>The preview comment will need to sort of
+define with Google basically.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/201-2
+00:16:29.569 --> 00:16:34.533
+<v Matt Wilkinson>So usually when it's in a preview stage,
+it was basically it's about to go GA,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/201-3
+00:16:34.533 --> 00:16:36.293
+<v Matt Wilkinson>that was in general release.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/200-0
+00:16:38.693 --> 00:16:39.333
+<v Matthias Max>Mmh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/205-0
+00:16:38.773 --> 00:16:43.616
+<v Matt Wilkinson>or general access is what it's called.
+So it's not in an alpha or a beta.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/202-0
+00:16:41.773 --> 00:16:42.253
+<v Matthias Max>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/205-1
+00:16:43.616 --> 00:16:48.525
+<v Matt Wilkinson>If it was in an alpha or a beta,
+then I'd be a bit more worried, probably.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/205-2
+00:16:48.525 --> 00:16:53.173
+<v Matt Wilkinson>But the fact it's on a preview and we've
+got it enabled in the tenant.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/203-0
+00:16:49.813 --> 00:16:49.973
+<v Matthias Max>Mm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/206-0
+00:16:54.493 --> 00:16:56.853
+<v Matt Wilkinson>It won't disappear or change,
+I don't think it's...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/204-0
+00:16:55.013 --> 00:16:55.093
+<v Matthias Max>At.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/207-0
+00:16:58.213 --> 00:16:58.373
+<v Matthias Max>Mm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/209-0
+00:16:58.773 --> 00:17:02.149
+<v Matt Wilkinson>We can ask directly.
+To answer your question,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/209-1
+00:17:02.149 --> 00:17:06.039
+<v Matt Wilkinson>we haven't got a direct answer from
+Google about it,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/208-0
+00:17:05.013 --> 00:17:05.493
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/209-2
+00:17:06.039 --> 00:17:09.929
+<v Matt Wilkinson>but from my experience on these elements
+of preview,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/209-3
+00:17:09.929 --> 00:17:13.893
+<v Matt Wilkinson>they don't tend to disappear or change
+significantly.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/212-0
+00:17:12.693 --> 00:17:15.437
+<v Matthias Max>Yeah,
+just trying to make all things</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/212-1
+00:17:15.437 --> 00:17:21.594
+<v Matthias Max>transparent. We will put this in the ADR.
+In the end, it's a decision by, I think,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/210-0
+00:17:19.413 --> 00:17:19.813
+<v Matt Wilkinson>Can you?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/212-2
+00:17:21.594 --> 00:17:24.933
+<v Matthias Max>you, Christian, right?
+Niederlassungsleiter.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/211-0
+00:17:24.213 --> 00:17:24.453
+<v Christian Lang>Mm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/214-0
+00:17:26.213 --> 00:17:30.510
+<v Matthias Max>And then we can move on.
+Just was thinking about it over the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/213-0
+00:17:28.533 --> 00:17:28.933
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/214-1
+00:17:30.510 --> 00:17:33.962
+<v Matthias Max>weekend,
+what non-technical things come with it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/214-2
+00:17:33.962 --> 00:17:35.653
+<v Matthias Max>And that's one of these.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/215-0
+00:17:37.573 --> 00:17:37.733
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/218-0
+00:17:38.053 --> 00:17:41.261
+<v Matt Wilkinson>I think for a decision going forward for
+1060, we can,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/218-1
+00:17:41.261 --> 00:17:44.994
+<v Matt Wilkinson>until we prove this solution,
+we're going to use stream. STRIM.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/218-2
+00:17:44.994 --> 00:17:48.260
+<v Matt Wilkinson>So there's nothing,
+there's nothing holding us up here.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/216-0
+00:17:47.253 --> 00:17:47.333
+<v Matthias Max>Ohh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/218-3
+00:17:48.260 --> 00:17:52.518
+<v Matt Wilkinson>We've got the CDC solution, it's just,
+we've either got a very expensive</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/218-4
+00:17:52.518 --> 00:17:55.493
+<v Matt Wilkinson>solution or we've got a very,
+very cheap solution.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/217-0
+00:17:56.533 --> 00:17:57.653
+<v Matthias Max>Okay, so.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/219-0
+00:17:57.053 --> 00:17:58.373
+<v Matt Wilkinson>That stuff, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/220-0
+00:17:59.173 --> 00:18:03.450
+<v Matthias Max>Yeah, that's an interesting take. I mean,
+we can decide on that fine,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/220-1
+00:18:03.450 --> 00:18:06.933
+<v Matthias Max>because then I can kick off our mapping
+effort for that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/222-0
+00:18:08.053 --> 00:18:11.653
+<v Matthias Max>Um, to map the stream DTO.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/221-0
+00:18:11.573 --> 00:18:11.813
+<v Matt Wilkinson>Is it?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/223-0
+00:18:12.853 --> 00:18:18.229
+<v Matthias Max>to our target DTO and that's it.
+And then we make the binary reader Google</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/223-1
+00:18:18.229 --> 00:18:21.813
+<v Matthias Max>thing a parallel stream unrelated to the
+go live.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/225-0
+00:18:22.613 --> 00:18:26.899
+<v Matt Wilkinson>Correct, correct. Yeah, probably.
+Have you guys confirmed that you can make</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/224-0
+00:18:24.053 --> 00:18:24.533
+<v Matthias Max>Feige.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/225-1
+00:18:26.899 --> 00:18:30.622
+<v Matt Wilkinson>it work the data that's gone through Data
+Street, through stream,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/225-2
+00:18:30.622 --> 00:18:32.653
+<v Matt Wilkinson>because the structure was different?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/227-0
+00:18:33.493 --> 00:18:38.537
+<v Matthias Max>That's what I'm talking about.
+It's a little analysis of the exact</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/226-0
+00:18:35.973 --> 00:18:36.693
+<v Matt Wilkinson>Ah, okay, okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/227-1
+00:18:38.537 --> 00:18:41.173
+<v Matthias Max>objects, how they are stored there.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/229-0
+00:18:42.093 --> 00:18:46.019
+<v Matthias Max>Create the mapper, or adapt our mapping,
+literally.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/229-1
+00:18:46.019 --> 00:18:51.003
+<v Matthias Max>It's a cloud function that reads from the
+object store currently.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/229-2
+00:18:51.003 --> 00:18:56.213
+<v Matthias Max>It would just have a little mapping step
+before that, and that's it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/228-0
+00:18:51.173 --> 00:18:51.413
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/230-0
+00:18:58.053 --> 00:19:00.693
+<v Matt Wilkinson>But just to be clear,
+that you guys haven't done that yet.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/231-0
+00:19:01.493 --> 00:19:02.453
+<v Matthias Max>No, we have not.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/232-0
+00:19:03.013 --> 00:19:03.413
+<v Matt Wilkinson>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/233-0
+00:19:03.333 --> 00:19:08.492
+<v Matthias Max>That's why I asked for a quick decision,
+because it's additional work, right?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/233-1
+00:19:08.492 --> 00:19:11.733
+<v Matthias Max>And it needs to be started as early as
+possible.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/235-0
+00:19:13.733 --> 00:19:17.973
+<v Matthias Max>So, is that a good decision then,
+Christian? How does it sound to you?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/234-0
+00:19:14.533 --> 00:19:14.773
+<v Matt Wilkinson>Yep.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/236-0
+00:19:19.413 --> 00:19:21.413
+<v Christian Lang>Um, yeah, sounds good, I would say.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/238-0
+00:19:23.413 --> 00:19:26.229
+<v Christian Lang>So,
+I would not assume that we are having any</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/238-1
+00:19:26.229 --> 00:19:29.413
+<v Christian Lang>difficulties in getting rid of the
+preview feature.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/239-0
+00:19:31.573 --> 00:19:34.213
+<v Christian Lang>I would say still the most, let's say.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/240-0
+00:19:36.133 --> 00:19:39.733
+<v Christian Lang>feasible option that we have.
+So let's go for it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/242-0
+00:19:40.693 --> 00:19:46.996
+<v Matthias Max>So we go with stream for now. In parallel,
+we check the binary reader of data stream.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/242-1
+00:19:46.996 --> 00:19:51.907
+<v Matthias Max>Once everything works there,
+I would not bring it back into the go</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/242-2
+00:19:51.907 --> 00:19:54.693
+<v Matthias Max>live timeline. It would be after June.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/241-0
+00:19:55.333 --> 00:19:55.733
+<v Christian Lang>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/243-0
+00:19:55.973 --> 00:19:59.783
+<v Matthias Max>I think we cannot do both.
+We must commit to one thing now for the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/243-1
+00:19:59.783 --> 00:20:00.693
+<v Matthias Max>next two months.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/244-0
+00:20:12.613 --> 00:20:12.933
+<v Matthias Max>No.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/246-0
+00:20:12.973 --> 00:20:15.253
+<v Matt Wilkinson>Handle data stream or stream.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/245-0
+00:20:14.133 --> 00:20:15.013
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/248-0
+00:20:16.173 --> 00:20:22.773
+<v Matthias Max>Still, I mean, it's, you know,
+it's for distributed systems, it changes.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/249-0
+00:20:23.653 --> 00:20:28.397
+<v Matthias Max>If you want to keep a timeline,
+you need to freeze things at a certain</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/249-1
+00:20:28.397 --> 00:20:29.333
+<v Matthias Max>point of time.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/250-0
+00:20:30.213 --> 00:20:32.845
+<v Matt Wilkinson>What I'm saying is,
+is the stream configuration will is the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/250-1
+00:20:32.845 --> 00:20:35.653
+<v Matt Wilkinson>only one that will be throw away if we go
+for another solution.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/251-0
+00:20:36.933 --> 00:20:39.973
+<v Matt Wilkinson>Like, for example, how are you, if we...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/253-0
+00:20:41.133 --> 00:20:43.013
+<v Matt Wilkinson>If you, if it's a one or the other thing.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/254-0
+00:20:43.973 --> 00:20:47.466
+<v Matt Wilkinson>Then how are you going to handle the
+Postgres side? Because that is through,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/254-1
+00:20:47.466 --> 00:20:50.053
+<v Matt Wilkinson>that is not through stream,
+that is through data stream.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/255-0
+00:20:51.093 --> 00:20:51.573
+<v Matthias Max>Mmh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/256-0
+00:20:53.013 --> 00:20:56.053
+<v Matt Wilkinson>So you shouldn't be throwing anything
+away here. That's the point I'm making.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/258-0
+00:20:56.773 --> 00:21:00.903
+<v Matthias Max>Yeah, yeah.
+I'm not talking about the technical</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/257-0
+00:20:58.093 --> 00:20:58.933
+<v Christian Lang>It's an add-on, right?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/258-1
+00:21:00.903 --> 00:21:05.119
+<v Matthias Max>solution,
+I'm just talking about risk induced by</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/258-2
+00:21:05.119 --> 00:21:10.110
+<v Matthias Max>operations or whatever, yeah.
+And change time in general.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/258-3
+00:21:10.110 --> 00:21:16.133
+<v Matthias Max>Someone needs to do something,
+it takes another day, timeline is set.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/259-0
+00:21:17.013 --> 00:21:19.901
+<v Matthias Max>Yeah,
+it's more about the project management</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/259-1
+00:21:19.901 --> 00:21:22.533
+<v Matthias Max>side of things, not about the technology.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/260-0
+00:21:23.253 --> 00:21:23.653
+<v Matt Wilkinson>OK.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/262-0
+00:21:24.053 --> 00:21:30.550
+<v Uschmann, Patrick>Just one question from my side.
+If we don't get the other solution</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/261-0
+00:21:26.293 --> 00:21:26.613
+<v Matt Wilkinson>Töppe.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/262-1
+00:21:30.550 --> 00:21:33.653
+<v Uschmann, Patrick>running, does it mean that we...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/263-0
+00:21:34.813 --> 00:21:37.573
+<v Uschmann, Patrick>Can't access the other environments.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/265-0
+00:21:40.373 --> 00:21:43.893
+<v Matthias Max>Uh, it doesn't have to do with start Matt,
+you go.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/264-0
+00:21:41.093 --> 00:21:42.533
+<v Matt Wilkinson>No, we could, we could, no, we could.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/268-0
+00:21:44.213 --> 00:21:50.181
+<v Matt Wilkinson>Sorry, Matthias. No, no, Patrick,
+it means the stream solution is a third</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/266-0
+00:21:45.093 --> 00:21:45.653
+<v Matthias Max>There you go.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/268-1
+00:21:50.181 --> 00:21:55.826
+<v Matt Wilkinson>party tool and there is a cost associated
+with that third party tool.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/267-0
+00:21:54.533 --> 00:21:55.093
+<v Uschmann, Patrick>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/268-2
+00:21:55.826 --> 00:22:01.311
+<v Matt Wilkinson>But the stream solution has been utilized
+for nearly two years now,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/268-3
+00:22:01.311 --> 00:22:04.053
+<v Matt Wilkinson>streaming data from Oracle up into</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/269-0
+00:22:04.853 --> 00:22:08.133
+<v Matt Wilkinson>GCP, so it's just that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/271-0
+00:22:09.093 --> 00:22:15.550
+<v Matt Wilkinson>If we can use a native solution to Google
+of data stream, it is a cheaper solution,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/271-1
+00:22:15.550 --> 00:22:18.933
+<v Matt Wilkinson>but they both fulfill the same
+requirement.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/270-0
+00:22:20.133 --> 00:22:20.453
+<v Uschmann, Patrick>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/273-0
+00:22:20.853 --> 00:22:25.308
+<v Matt Wilkinson>Yeah, so there's no, there's no,
+from a connectivity perspective,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/273-1
+00:22:25.308 --> 00:22:29.763
+<v Matt Wilkinson>from data that we will pull,
+both solutions support all branches.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/273-2
+00:22:29.763 --> 00:22:33.813
+<v Matt Wilkinson>Just one is more expensive than the other.
+That's the term.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/272-0
+00:22:33.693 --> 00:22:35.813
+<v Uschmann, Patrick>So, we are just talking about cross.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/274-0
+00:22:37.333 --> 00:22:37.733
+<v Matt Wilkinson>A.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/276-0
+00:22:37.493 --> 00:22:42.585
+<v Uschmann, Patrick>But if we don't have the other solution
+running by the go live,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/275-0
+00:22:38.813 --> 00:22:39.573
+<v Matt Wilkinson>Yeah, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/276-1
+00:22:42.585 --> 00:22:44.973
+<v Uschmann, Patrick>then we can still do it later.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/277-0
+00:22:45.613 --> 00:22:45.973
+<v Christian Lang>Yakup.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/282-0
+00:22:46.373 --> 00:22:52.384
+<v Matt Wilkinson>Yeah, correct. Yeah, yeah, yeah.
+We've we've got we have we have license</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/279-0
+00:22:46.533 --> 00:22:49.493
+<v Uschmann, Patrick>Okay, okay, got it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/278-0
+00:22:46.613 --> 00:22:47.253
+<v Matthias Max>Exactly.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/282-1
+00:22:52.384 --> 00:22:56.420
+<v Matt Wilkinson>coverage for stream,
+which is the expensive one.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/280-0
+00:22:54.053 --> 00:22:54.213
+<v Matthias Max>And...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/282-2
+00:22:56.420 --> 00:23:00.373
+<v Matt Wilkinson>We have license coverage up until October
+2026.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/281-0
+00:23:01.253 --> 00:23:01.733
+<v Matthias Max>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/283-0
+00:23:02.453 --> 00:23:02.733
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/284-0
+00:23:02.853 --> 00:23:03.253
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/285-0
+00:23:05.013 --> 00:23:09.483
+<v Matthias Max>Okay, good.
+Then we will start looking into that</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/285-1
+00:23:09.483 --> 00:23:10.213
+<v Matthias Max>mapping.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/286-0
+00:23:11.013 --> 00:23:11.413
+<v Matt Wilkinson>Yakup.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/288-0
+00:23:12.853 --> 00:23:17.552
+<v Matthias Max>And I will write the AER then.
+I think we have all aspects together.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/287-0
+00:23:17.253 --> 00:23:17.613
+<v Christian Lang>M.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/288-1
+00:23:17.552 --> 00:23:17.893
+<v Matthias Max>Good.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/289-0
+00:23:18.853 --> 00:23:25.321
+<v Matt Wilkinson>Yep. One question I've got,
+which is the testers have been asking for,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/289-1
+00:23:25.321 --> 00:23:32.335
+<v Matt Wilkinson>and I wasn't quite sure on the answer,
+is how do we administer access to new</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/289-2
+00:23:32.335 --> 00:23:32.973
+<v Matt Wilkinson>dispos?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/294-0
+00:23:34.413 --> 00:23:38.141
+<v Matt Wilkinson>E.g., I know it's through enter ID,
+but is that, sorry,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/290-0
+00:23:37.493 --> 00:23:37.813
+<v Matthias Max>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/294-1
+00:23:38.141 --> 00:23:42.735
+<v Matt Wilkinson>I know it's through key clock,
+but is key clock connected to Nagle's</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/291-0
+00:23:39.693 --> 00:23:40.293
+<v Matthias Max>Mm-hmm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/294-2
+00:23:42.735 --> 00:23:44.933
+<v Matt Wilkinson>enter ID, or is that still to do?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/292-0
+00:23:44.293 --> 00:23:44.853
+<v Matthias Max>It is.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/293-0
+00:23:45.373 --> 00:23:46.133
+<v Nikolay Hristov>Yes, it is.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/296-0
+00:23:45.733 --> 00:23:49.013
+<v Matthias Max>No, it is, it is done it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/295-0
+00:23:48.373 --> 00:23:48.693
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/297-0
+00:23:50.213 --> 00:23:54.814
+<v Matthias Max>Yeah,
+Keycloak is still capable of running</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/297-1
+00:23:54.814 --> 00:23:58.453
+<v Matthias Max>extra users that are not in Nagle.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/298-0
+00:23:59.813 --> 00:24:01.413
+<v Matthias Max>But every number.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/299-0
+00:24:00.373 --> 00:24:03.033
+<v Matt Wilkinson>Just the guys are in Nagle,
+the guys are in Nagle, sorry,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/299-1
+00:24:03.033 --> 00:24:06.380
+<v Matt Wilkinson>they're not they're not external people,
+they are they're Nagle testers,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/299-2
+00:24:06.380 --> 00:24:07.573
+<v Matt Wilkinson>let's say they're testers.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/301-0
+00:24:07.013 --> 00:24:10.453
+<v Matthias Max>Yeah,
+everyone with a Nagle entry ID and has</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/301-1
+00:24:10.453 --> 00:24:16.110
+<v Matthias Max>the correct set up in his Nagle entry ID
+can access Niederlassungsleiter.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/301-2
+00:24:16.110 --> 00:24:17.333
+<v Matthias Max>They are synced.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/300-0
+00:24:17.013 --> 00:24:17.413
+<v Matt Wilkinson>Töppe.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/302-0
+00:24:19.173 --> 00:24:19.253
+<v Matt Wilkinson>Uh...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/303-0
+00:24:21.093 --> 00:24:23.668
+<v Matt Wilkinson>Okay, so it's open to anyone.
+It doesn't have to be,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/303-1
+00:24:23.668 --> 00:24:26.293
+<v Matt Wilkinson>it's not restricted to a group or
+anything like that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/305-0
+00:24:26.533 --> 00:24:30.373
+<v Nikolay Hristov>No, no, no, it's restricted to a group.
+You should add this user to a group.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/304-0
+00:24:28.693 --> 00:24:29.493
+<v Matthias Max>It's cool, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/306-0
+00:24:31.093 --> 00:24:34.474
+<v Matt Wilkinson>Okay, so next question.
+Have we got a technical document that</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/306-1
+00:24:34.474 --> 00:24:35.893
+<v Matt Wilkinson>explains what grouping is?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/307-0
+00:24:37.093 --> 00:24:38.453
+<v Matt Wilkinson>The design, because we're going to...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/308-0
+00:24:37.093 --> 00:24:43.243
+<v Nikolay Hristov>No, this is on your side, I think.
+We just connected one group from the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/308-1
+00:24:43.243 --> 00:24:49.051
+<v Nikolay Hristov>keycloak to the enter ID.
+And everything you put there in the enter</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/308-2
+00:24:49.051 --> 00:24:53.493
+<v Nikolay Hristov>ID should be able to authenticate through
+keycloak.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/309-0
+00:24:54.373 --> 00:24:57.801
+<v Matt Wilkinson>Yeah, so where's the,
+we've got a write up that we can add into</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/309-1
+00:24:57.801 --> 00:25:00.909
+<v Matt Wilkinson>then for key clock.
+So the write up for key clock and how</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/309-2
+00:25:00.909 --> 00:25:03.587
+<v Matt Wilkinson>that works,
+and we've got the entry ID group that</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/309-3
+00:25:03.587 --> 00:25:06.213
+<v Matt Wilkinson>we've set up for it.
+So I'm assuming Ron did it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/310-0
+00:25:07.173 --> 00:25:10.533
+<v Nikolay Hristov>Uh, yes, Ron did it, so maybe ask him.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/314-0
+00:25:09.613 --> 00:25:13.408
+<v Matt Wilkinson>Yeah. So let, no, no,
+on the basis that he's got a lot on his</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/314-1
+00:25:13.408 --> 00:25:17.264
+<v Matt Wilkinson>plate and a lot to do,
+can we at least get a write off of what</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/314-2
+00:25:17.264 --> 00:25:21.243
+<v Matt Wilkinson>key cloak authentication is doing,
+where it's authenticating to,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/314-3
+00:25:21.243 --> 00:25:25.405
+<v Matt Wilkinson>and then we can add the group in that we
+do because Ron's going to,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/311-0
+00:25:21.413 --> 00:25:21.573
+<v Matthias Max>And.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/312-0
+00:25:23.333 --> 00:25:23.653
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/314-4
+00:25:25.405 --> 00:25:29.322
+<v Matt Wilkinson>Ron will have absolutely forgotten which
+group he set it up on.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/314-5
+00:25:29.322 --> 00:25:30.853
+<v Matt Wilkinson>I can guarantee you that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/313-0
+00:25:31.653 --> 00:25:31.813
+<v Matthias Max>Mm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/315-0
+00:25:32.013 --> 00:25:34.901
+<v Matt Wilkinson>So we're going to need,
+the reason why I'm asking for</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/315-1
+00:25:34.901 --> 00:25:39.072
+<v Matt Wilkinson>documentation again is we're going to
+need to go to the security team to say,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/315-2
+00:25:39.072 --> 00:25:42.388
+<v Matt Wilkinson>this is what we're launching.
+This is how the administration,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/315-3
+00:25:42.388 --> 00:25:45.651
+<v Matt Wilkinson>the access is done.
+This is how we need to tell the identity</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/315-4
+00:25:45.651 --> 00:25:49.394
+<v Matt Wilkinson>and access management team,
+if you get a request for new disposition,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/315-5
+00:25:49.394 --> 00:25:51.213
+<v Matt Wilkinson>they need to go in this group. And</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/317-0
+00:25:52.333 --> 00:25:55.512
+<v Matt Wilkinson>Yeah,
+we need a document that articulates that</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/316-0
+00:25:53.493 --> 00:25:53.973
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/317-1
+00:25:55.512 --> 00:25:56.053
+<v Matt Wilkinson>process.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/318-0
+00:25:57.853 --> 00:25:57.973
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/319-0
+00:25:58.053 --> 00:26:00.941
+<v Matthias Max>Yeah,
+I also added a link to the wiki page</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/319-1
+00:26:00.941 --> 00:26:04.164
+<v Matthias Max>where this is documented for the internal
+flow,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/319-2
+00:26:04.164 --> 00:26:08.933
+<v Matthias Max>but we can also add further and try
+information there once we have it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/321-0
+00:26:16.733 --> 00:26:21.841
+<v Matt Wilkinson>It's not something we need right now,
+it's just that we're going to need to get</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/320-0
+00:26:16.973 --> 00:26:17.573
+<v Nikolay Hristov>Thank you.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/321-1
+00:26:21.841 --> 00:26:27.013
+<v Matt Wilkinson>people added in that need to be testers
+because we've got Max and Patrick and...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/322-0
+00:26:29.013 --> 00:26:31.226
+<v Matt Wilkinson>Nikolai,
+is there one key cloak for all the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/322-1
+00:26:31.226 --> 00:26:34.093
+<v Matt Wilkinson>environments or have we got a key cloak
+per environment?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/323-0
+00:26:33.253 --> 00:26:36.133
+<v Nikolay Hristov>No, no, no, key clock per environment.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/324-0
+00:26:36.613 --> 00:26:39.053
+<v Matt Wilkinson>Right, so again,
+we're going to need to know that as well.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/325-0
+00:26:40.173 --> 00:26:43.548
+<v Matt Wilkinson>Because there'll be one for dev,
+one for test, one for UAT,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/325-1
+00:26:43.548 --> 00:26:45.573
+<v Matt Wilkinson>and then one for prod, I'm assuming.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/326-0
+00:26:47.173 --> 00:26:49.493
+<v Nikolay Hristov>For the moment,
+we have just test and prot.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/327-0
+00:26:50.773 --> 00:26:51.573
+<v Nikolay Hristov>Because.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/328-0
+00:26:50.933 --> 00:26:53.813
+<v Matt Wilkinson>Well, you guys have built,
+have you not built a new environment yet?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/329-0
+00:26:55.413 --> 00:26:57.813
+<v Nikolay Hristov>No, is it created for it?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/330-0
+00:26:59.293 --> 00:27:03.373
+<v Matthias Max>We're checking the gaps right now,
+and I'm also checking if the...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/331-0
+00:27:04.933 --> 00:27:08.693
+<v Matthias Max>Document does not contain all of that
+already.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/332-0
+00:27:10.453 --> 00:27:11.493
+<v Matthias Max>The clock.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/333-0
+00:27:16.773 --> 00:27:18.053
+<v Matthias Max>Second.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/334-0
+00:27:19.493 --> 00:27:25.013
+<v Matthias Max>There is key cloak servers in the go live
+document. It's all documented.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/335-0
+00:27:26.613 --> 00:27:27.173
+<v Matthias Max>Here.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/336-0
+00:27:30.573 --> 00:27:36.850
+<v Matthias Max>I can quickly paste it as well if it
+helps. So we have local, of course,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/336-1
+00:27:36.850 --> 00:27:41.493
+<v Matthias Max>and then dev test props.
+They are all set up already.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/337-0
+00:27:44.893 --> 00:27:45.653
+<v Matt Wilkinson>The people.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/338-0
+00:27:46.973 --> 00:27:47.973
+<v Matthias Max>Kick hooks.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/339-0
+00:27:49.653 --> 00:27:50.613
+<v Matt Wilkinson>Okay, okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/340-0
+00:27:49.973 --> 00:27:55.093
+<v Matthias Max>So, these kind of questions,
+please look at the doc, not because...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/342-0
+00:27:56.053 --> 00:28:00.956
+<v Matthias Max>I made it and want it to be used because
+I want it to be complete.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/342-1
+00:28:00.956 --> 00:28:06.518
+<v Matthias Max>Anything that's not there is awesome
+because then I can add it and it's the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/341-0
+00:28:01.093 --> 00:28:01.733
+<v Matt Wilkinson>Yeah, OK.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/342-2
+00:28:06.518 --> 00:28:08.933
+<v Matthias Max>consolidated knowledge we gather.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/343-0
+00:28:13.973 --> 00:28:16.053
+<v Matthias Max>It's a lot of it should be there.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/344-0
+00:28:16.973 --> 00:28:17.533
+<v Matt Wilkinson>Yeah, yes.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/345-0
+00:28:19.573 --> 00:28:22.812
+<v Matt Wilkinson>It's just that we're going to need the
+knowledge of the corresponding groups,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/345-1
+00:28:22.812 --> 00:28:26.259
+<v Matt Wilkinson>because if there's only two environments,
+we're going to need to create the groups</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/345-2
+00:28:26.259 --> 00:28:28.253
+<v Matt Wilkinson>and enter ID,
+which we need to know what to do.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/347-0
+00:28:29.493 --> 00:28:31.973
+<v Matt Wilkinson>To the relevant key clocks,
+if they're created.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/346-0
+00:28:29.533 --> 00:28:29.813
+<v Matthias Max>Uh-huh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/348-0
+00:28:33.893 --> 00:28:40.569
+<v Matthias Max>Yes, so Nicolai, how does it work?
+Is the Nagle and TriD is only one in one</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/348-1
+00:28:40.569 --> 00:28:47.333
+<v Matthias Max>environment, or are there also dev, test,
+prod, and so on? Do you know that?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/351-0
+00:28:46.493 --> 00:28:51.493
+<v Nikolay Hristov>No,
+I don't know how it's on the their set.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/350-0
+00:28:49.573 --> 00:28:49.813
+<v Matthias Max>Hmm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/352-0
+00:28:50.213 --> 00:28:55.093
+<v Matt Wilkinson>There is there is one enter ID and those.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/353-0
+00:28:57.893 --> 00:28:59.333
+<v Matt Wilkinson>One, yeah, one.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/354-0
+00:29:03.093 --> 00:29:05.153
+<v Matt Wilkinson>Do we need to have three or four key
+clocks?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/354-1
+00:29:05.153 --> 00:29:08.634
+<v Matt Wilkinson>Can we not just have one and then
+separate grouping within one key clock in</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/354-2
+00:29:08.634 --> 00:29:09.733
+<v Matt Wilkinson>production, for example?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/355-0
+00:29:12.133 --> 00:29:12.853
+<v Matthias Max>Ohh.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/356-0
+00:29:12.453 --> 00:29:15.711
+<v Matt Wilkinson>Because then we, at the moment,
+we're creating extra infrastructure and a</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/356-1
+00:29:15.711 --> 00:29:19.013
+<v Matt Wilkinson>service that I don't think we really need,
+because we've got one enter ID.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/357-0
+00:29:21.573 --> 00:29:27.173
+<v Matt Wilkinson>We're effectively collecting 4
+application mappings to four SSOs.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/358-0
+00:29:29.493 --> 00:29:33.349
+<v Matt Wilkinson>just to meet a requirement of
+authentication for four different</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/358-1
+00:29:33.349 --> 00:29:34.133
+<v Matt Wilkinson>environments.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/359-0
+00:29:35.653 --> 00:29:41.413
+<v Matthias Max>I mean, this is a change, right?
+It was like that all the time.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/360-0
+00:29:42.773 --> 00:29:45.653
+<v Matthias Max>It requires rewiring and stuff like that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/361-0
+00:29:47.733 --> 00:29:48.053
+<v Matthias Max>Um...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/362-0
+00:29:48.933 --> 00:29:52.751
+<v Matt Wilkinson>Well, if it's easier,
+if it's easier to have the creation of</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/362-1
+00:29:52.751 --> 00:29:57.384
+<v Matt Wilkinson>four separate key clocks with four
+separate identities with four separate</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/362-2
+00:29:57.384 --> 00:30:00.890
+<v Matt Wilkinson>areas, then yeah, we can do that.
+That's not a problem.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/362-3
+00:30:00.890 --> 00:30:04.896
+<v Matt Wilkinson>It's easier to do that.
+I just challenge that it's easier to do</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/362-4
+00:30:04.896 --> 00:30:07.213
+<v Matt Wilkinson>that versus set up one key clock with</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/363-0
+00:30:07.493 --> 00:30:09.973
+<v Matt Wilkinson>Four different groups in it,
+all access groups in it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/364-0
+00:30:11.653 --> 00:30:12.293
+<v Matthias Max>I mean, it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/365-0
+00:30:11.733 --> 00:30:14.796
+<v Matt Wilkinson>It's like a mapping,
+you would have prod mapping from entra to</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/365-1
+00:30:14.796 --> 00:30:18.006
+<v Matt Wilkinson>key cloak prods in group,
+the group would exist and then it would</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/365-2
+00:30:18.006 --> 00:30:19.173
+<v Matt Wilkinson>give you access to prod.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/366-0
+00:30:20.093 --> 00:30:21.893
+<v Matt Wilkinson>Testing, testing.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/368-0
+00:30:22.693 --> 00:30:30.213
+<v Matthias Max>Yeah, I mean, it is set up already,
+so changing it is the effort, but...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/367-0
+00:30:25.013 --> 00:30:25.333
+<v Matt Wilkinson>Team.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/371-0
+00:30:31.333 --> 00:30:37.128
+<v Matthias Max>Need to talk about it, Nikolai. Also,
+when we talk about the gaps that we</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/371-1
+00:30:37.128 --> 00:30:42.453
+<v Matthias Max>probably have in the environments,
+we have to think about it, Matt.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/370-0
+00:30:40.293 --> 00:30:41.093
+<v Nikolay Hristov>Mm-hmm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/372-0
+00:30:44.853 --> 00:30:48.773
+<v Matt Wilkinson>Do do the path of least resistance
+totally. I just it's yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/373-0
+00:30:50.293 --> 00:30:50.773
+<v Matthias Max>Yakup.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/376-0
+00:30:50.453 --> 00:30:54.860
+<v Matt Wilkinson>We're creating four of the same things
+when realistically we could we could do</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/376-1
+00:30:54.860 --> 00:30:58.933
+<v Matt Wilkinson>it. It's an identity provider,
+so I'd be surprised if you couldn't have.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/375-0
+00:31:00.053 --> 00:31:00.373
+<v Matthias Max>Yakup.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/378-0
+00:31:01.093 --> 00:31:05.137
+<v Matt Wilkinson>for mappings of grouping rather than for
+running instances of people.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/378-1
+00:31:05.137 --> 00:31:06.293
+<v Matt Wilkinson>That's my challenge.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/377-0
+00:31:07.413 --> 00:31:07.573
+<v Matthias Max>Mm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/379-0
+00:31:08.733 --> 00:31:10.533
+<v Matthias Max>Of course, we will check it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/380-0
+00:31:11.573 --> 00:31:12.213
+<v Matt Wilkinson>Yep, OK.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/381-0
+00:31:13.973 --> 00:31:18.613
+<v Nikolay Hristov>We need to talk with developers for this,
+because I don't know, but...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/382-0
+00:31:20.453 --> 00:31:21.973
+<v Nikolay Hristov>For sure, we need to talk with them.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/383-0
+00:31:25.093 --> 00:31:25.493
+<v Matthias Max>Yakup.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/384-0
+00:31:28.453 --> 00:31:32.573
+<v Matthias Max>Okay, uh, what else?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/385-0
+00:31:33.653 --> 00:31:41.249
+<v Matthias Max>CDC, Oracle conversion, VDI, I think,
+ongoing stream license, we talked about.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/385-1
+00:31:41.249 --> 00:31:43.653
+<v Matthias Max>DB users, I will provide.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/387-0
+00:31:44.693 --> 00:31:47.933
+<v Matt Wilkinson>Database objects.
+I'll give you an update for that if you</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/386-0
+00:31:45.013 --> 00:31:45.333
+<v Matthias Max>IT.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/387-1
+00:31:47.933 --> 00:31:48.213
+<v Matt Wilkinson>want.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/388-0
+00:31:49.493 --> 00:31:50.373
+<v Matthias Max>Yeah, sure.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/391-0
+00:31:50.933 --> 00:31:54.516
+<v Matt Wilkinson>Yeah, yeah.
+So the Oracle conversion is done.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/391-1
+00:31:54.516 --> 00:31:58.255
+<v Matt Wilkinson>Andrea did the pull request yesterday for
+that.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/391-2
+00:31:58.255 --> 00:32:02.227
+<v Matt Wilkinson>I haven't asked Thomas or Eric to deploy
+them yet,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/389-0
+00:31:58.373 --> 00:31:58.853
+<v Matthias Max>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/391-3
+00:32:02.227 --> 00:32:07.992
+<v Matt Wilkinson>just because I've not seen them yet,
+but sorry, not seen the changes yet.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/390-0
+00:32:06.013 --> 00:32:06.653
+<v Matthias Max>Mm-hmm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/391-4
+00:32:07.992 --> 00:32:11.653
+<v Matt Wilkinson>But in reality,
+we could deploy into ABN 1060.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/394-0
+00:32:12.213 --> 00:32:16.275
+<v Matt Wilkinson>the required packages and views that you
+guys need.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/394-1
+00:32:16.275 --> 00:32:22.213
+<v Matt Wilkinson>We can get it all done together with the
+users, then that would be perfect.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/392-0
+00:32:16.693 --> 00:32:17.253
+<v Matthias Max>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/393-0
+00:32:19.493 --> 00:32:19.973
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/398-0
+00:32:23.333 --> 00:32:29.039
+<v Matthias Max>Of course, that would be awesome.
+So let's try and get that up and running.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/395-0
+00:32:24.293 --> 00:32:24.613
+<v Matt Wilkinson>Thanks.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/398-1
+00:32:29.039 --> 00:32:31.893
+<v Matthias Max>We will provide the interfaces plus...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/396-0
+00:32:29.413 --> 00:32:29.533
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/397-0
+00:32:31.973 --> 00:32:32.533
+<v Matt Wilkinson>You think?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/399-0
+00:32:32.973 --> 00:32:36.455
+<v Matthias Max>permission requirements,
+you will try to deploy and then you</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/399-1
+00:32:36.455 --> 00:32:39.653
+<v Matthias Max>probably have it up and running by the
+end of the week.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/403-0
+00:32:40.533 --> 00:32:46.034
+<v Matt Wilkinson>Yeah, yeah. Just the one thing,
+the one thing I was going to raise was is</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/400-0
+00:32:41.653 --> 00:32:43.333
+<v Matthias Max>They are public, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/403-1
+00:32:46.034 --> 00:32:51.685
+<v Matt Wilkinson>the 30 character limit. So, the we,
+I'm sure Sonia's told that you guys are</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/401-0
+00:32:49.373 --> 00:32:49.493
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/403-2
+00:32:51.685 --> 00:32:55.551
+<v Matt Wilkinson>the devs,
+but the in Oracle you have a 30 character</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/403-3
+00:32:55.551 --> 00:32:59.417
+<v Matt Wilkinson>limit name,
+so you can't have a naming of an object</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/403-4
+00:32:59.417 --> 00:33:01.573
+<v Matt Wilkinson>long more than 30 characters.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/402-0
+00:33:02.213 --> 00:33:02.533
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/404-0
+00:33:02.293 --> 00:33:04.788
+<v Matt Wilkinson>So,
+we've had to shorten down some of the</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/404-1
+00:33:04.788 --> 00:33:07.639
+<v Matt Wilkinson>views,
+and we've done that across both Postgres</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/404-2
+00:33:07.639 --> 00:33:08.293
+<v Matt Wilkinson>and Oracle.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/407-0
+00:33:09.333 --> 00:33:13.119
+<v Matt Wilkinson>So the debs, I think,
+are either realigning or have changed</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/405-0
+00:33:09.413 --> 00:33:09.973
+<v Matthias Max>Yes.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/407-1
+00:33:13.119 --> 00:33:16.400
+<v Matt Wilkinson>already. They might have finished it,
+I don't know.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/407-2
+00:33:16.400 --> 00:33:19.493
+<v Matt Wilkinson>So there's a new naming scheme, basically.
+Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/406-0
+00:33:17.333 --> 00:33:17.653
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/408-0
+00:33:22.613 --> 00:33:22.933
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/409-0
+00:33:28.493 --> 00:33:32.388
+<v Matt Wilkinson>So basically what I'm saying is we need
+to make sure that's in the version you</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/409-1
+00:33:32.388 --> 00:33:35.642
+<v Matt Wilkinson>guys are deploying those changes because
+otherwise it won't work.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/409-2
+00:33:35.642 --> 00:33:38.453
+<v Matt Wilkinson>Because you'll be looking for a view that
+doesn't exist.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/412-0
+00:33:40.453 --> 00:33:45.802
+<v Matthias Max>Yeah, it's arrived at the team.
+Just making sure again when the PBI is</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/410-0
+00:33:41.573 --> 00:33:41.973
+<v Matt Wilkinson>Yep.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/412-1
+00:33:45.802 --> 00:33:48.213
+<v Matthias Max>planned or if it's done already.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/411-0
+00:33:47.573 --> 00:33:47.813
+<v Matt Wilkinson>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/413-0
+00:33:49.093 --> 00:33:50.493
+<v Matt Wilkinson>Ohh, OK, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/414-0
+00:33:51.573 --> 00:33:52.373
+<v Matthias Max>Hey, good.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/416-0
+00:33:51.573 --> 00:33:57.375
+<v Maximilian Kehder>So if I understand, just one confirmation,
+if I'm understanding this correctly,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/415-0
+00:33:52.133 --> 00:33:52.613
+<v Matt Wilkinson>Is that?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/416-1
+00:33:57.375 --> 00:34:03.468
+<v Maximilian Kehder>we need to see that all our objects we're
+using have a 30 character or is in within</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/416-2
+00:34:03.468 --> 00:34:07.893
+<v Maximilian Kehder>this 30 character limit and if not,
+we need to shorten them.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/420-0
+00:34:09.333 --> 00:34:12.658
+<v Matt Wilkinson>We've already done it, Max,
+so Sonia's already done the work.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/417-0
+00:34:09.653 --> 00:34:10.853
+<v Matthias Max>They have been shortened.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/420-1
+00:34:12.658 --> 00:34:15.072
+<v Matt Wilkinson>Sonia and Andrea have already done the
+work.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/420-2
+00:34:15.072 --> 00:34:18.613
+<v Matt Wilkinson>They've shortened it and agreed in naming
+convention, and then...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/418-0
+00:34:15.893 --> 00:34:16.213
+<v Maximilian Kehder>Ah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/419-0
+00:34:17.893 --> 00:34:18.693
+<v Maximilian Kehder>Meaning?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/422-0
+00:34:19.893 --> 00:34:25.013
+<v Maximilian Kehder>What we need to do is just changing the
+names we use.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/423-0
+00:34:26.773 --> 00:34:27.413
+<v Matthias Max>Correct.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/424-0
+00:34:26.853 --> 00:34:28.493
+<v Matt Wilkinson>In the upside, yes. Yep.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/425-0
+00:34:28.453 --> 00:34:29.173
+<v Maximilian Kehder>Yep, all right.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/429-0
+00:34:28.773 --> 00:34:32.406
+<v Matthias Max>Yeah,
+it's no longer videos transport auto</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/426-0
+00:34:30.013 --> 00:34:30.333
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/429-1
+00:34:32.406 --> 00:34:34.773
+<v Matthias Max>pickup planning it. Correct.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/427-0
+00:34:32.533 --> 00:34:33.253
+<v Maximilian Kehder>It's Tito.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/430-0
+00:34:34.413 --> 00:34:38.453
+<v Maximilian Kehder>V this transfer,
+V this TO pickup planning or PP.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/428-0
+00:34:34.613 --> 00:34:35.013
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/431-0
+00:34:38.133 --> 00:34:38.933
+<v Matthias Max>Exactly.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/432-0
+00:34:39.733 --> 00:34:40.413
+<v Matt Wilkinson>Yeah, yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/433-0
+00:34:42.933 --> 00:34:44.053
+<v Maximilian Kehder>All right, got it.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/434-0
+00:34:45.013 --> 00:34:48.237
+<v Matt Wilkinson>If you, I think by the end,
+if let's say that if we have a target by</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/434-1
+00:34:48.237 --> 00:34:51.835
+<v Matt Wilkinson>the end of this week that we've got all
+the Oracle packages deployed in both</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/434-2
+00:34:51.835 --> 00:34:55.573
+<v Matt Wilkinson>Oracle packages deployed and then we've
+got the Postgres packages deployed with</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/434-3
+00:34:55.573 --> 00:34:58.750
+<v Matt Wilkinson>the new naming convention.
+We've got the database user created with</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/434-4
+00:34:58.750 --> 00:35:01.834
+<v Matt Wilkinson>the right permissions. I'm hoping, yeah,
+by the end of this week,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/434-5
+00:35:01.834 --> 00:35:05.198
+<v Matt Wilkinson>we should be able to do some smoke tests.
+So like you guys have access,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/434-6
+00:35:05.198 --> 00:35:06.133
+<v Matt Wilkinson>you can see it. It's</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/436-0
+00:35:06.773 --> 00:35:10.798
+<v Matt Wilkinson>The app is looking for the right name,
+etc. Sorry, right naming convention. Yeah,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/435-0
+00:35:10.293 --> 00:35:10.693
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/436-1
+00:35:10.798 --> 00:35:13.253
+<v Matt Wilkinson>I think by the end of the week we should
+be good.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/438-0
+00:35:14.373 --> 00:35:20.989
+<v Matthias Max>So talking about end of the week,
+public vacation on Fridays also on your</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/438-1
+00:35:20.989 --> 00:35:21.973
+<v Matthias Max>end, right?</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/437-0
+00:35:21.373 --> 00:35:21.613
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/439-0
+00:35:23.013 --> 00:35:25.413
+<v Matt Wilkinson>Monday, where's ours is Monday? U.K.
+is Monday.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/440-0
+00:35:26.133 --> 00:35:29.013
+<v Matthias Max>Uh-uh, okay,
+because Germany we're all Friday.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/441-0
+00:35:29.733 --> 00:35:30.213
+<v Matt Wilkinson>Mhm.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/442-0
+00:35:30.493 --> 00:35:34.293
+<v Matthias Max>So probably our deadline is Thursday
+evening.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/443-0
+00:35:36.293 --> 00:35:36.853
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/444-0
+00:35:36.373 --> 00:35:37.253
+<v Matthias Max>Would be good.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/445-0
+00:35:38.053 --> 00:35:38.293
+<v Matt Wilkinson>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/446-0
+00:35:40.773 --> 00:35:41.333
+<v Matthias Max>Okay.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/448-0
+00:35:41.013 --> 00:35:43.617
+<v Matt Wilkinson>I mean, I mean, I could I could do it,
+Matthias,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/448-1
+00:35:43.617 --> 00:35:47.443
+<v Matt Wilkinson>but I wouldn't I wouldn't trust my Oracle
+skill set to do it correctly,</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/448-2
+00:35:47.443 --> 00:35:48.453
+<v Matt Wilkinson>and nor would Eric.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/447-0
+00:35:49.853 --> 00:35:50.213
+<v Matthias Max>Yeah.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/450-0
+00:35:51.893 --> 00:35:54.613
+<v Matthias Max>All right, good. I need to jump.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/449-0
+00:35:53.213 --> 00:35:53.573
+<v Matt Wilkinson>It.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/451-0
+00:35:55.733 --> 00:35:57.573
+<v Matthias Max>Thanks a lot, and...</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/452-0
+00:35:58.853 --> 00:35:59.973
+<v Matthias Max>We speak soon.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/453-0
+00:36:00.133 --> 00:36:00.253
+<v Matt Wilkinson>Play.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/454-0
+00:36:01.893 --> 00:36:02.373
+<v Matt Wilkinson>Yakup.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/455-0
+00:36:02.093 --> 00:36:02.613
+<v Maximilian Kehder>All right.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/466-0
+00:36:03.253 --> 00:36:06.453
+<v Nikolay Hristov>All right, thank you. Thank you. Bye.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/456-0
+00:36:04.133 --> 00:36:04.933
+<v Matthias Max>Thank you.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/457-0
+00:36:04.133 --> 00:36:05.013
+<v Maximilian Kehder>Cheers, everyone.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/463-0
+00:36:05.093 --> 00:36:06.133
+<v Matt Wilkinson>Thanks, guys. Bye-bye.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/465-0
+00:36:06.093 --> 00:36:06.373
+<v Matthias Max>Bye.</v>
+
+d7925b0f-682b-4494-9169-6fa509b28fba/464-0
+00:36:06.133 --> 00:36:06.373
+<v Maximilian Kehder>Bye-bye.</v>
