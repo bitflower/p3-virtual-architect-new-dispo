@@ -1,6 +1,6 @@
-# New Dispo Coding Expert Agents
+# New Dispo Expert Agents
 
-Three specialized Claude Code agents for working with the New Dispo codebase.
+Specialized Claude Code agents for working with the New Dispo codebase and project portfolio.
 
 ## Available Agents
 
@@ -58,6 +58,23 @@ Can you help with [task] using the tms-bridge-expert agent?
 
 ---
 
+### 4. **project-lead**
+Portfolio-level project manager for the New Dispo wiki
+
+**Invoke with:**
+```
+Use the project-lead agent to update the portfolio
+```
+
+**Specializes in:**
+- Portfolio index page generation (Projects.md, Active.md)
+- Cross-project status aggregation and health dashboards
+- .order file management for Azure DevOps Wiki navigation
+- Dynamic project discovery from publish-mappings.json
+- Delegation to `/project-manager` for individual project work
+
+---
+
 ## How to Use These Agents
 
 ### Option 1: Explicit Invocation
@@ -66,6 +83,7 @@ Ask Claude Code to use a specific agent:
 "Use the frontend-expert agent to create a new Angular component for displaying transport orders"
 "Ask the backend-expert to help me implement a new CQRS command"
 "Have the tms-bridge-expert add a new GraphQL mutation"
+"Use the project-lead agent to update the projects overview"
 ```
 
 ### Option 2: Contextual Invocation
@@ -79,6 +97,12 @@ Claude Code will automatically select the right agent based on your question con
 
 "How do I query a different TMS database in GraphQL?"
 → Will likely invoke tms-bridge-expert
+
+"What projects are currently active?"
+→ Will invoke project-lead
+
+"Update the projects page on the wiki"
+→ Will invoke project-lead
 ```
 
 ## What Makes These Agents Special
