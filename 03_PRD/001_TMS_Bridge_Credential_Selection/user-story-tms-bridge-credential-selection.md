@@ -13,12 +13,33 @@ As the system moves toward Go-Live, database access must be scoped per calling s
 ## User Story
 
 **As** a platform operator,
-**I want** the TMS Bridge to support system-qualified database identifiers (e.g., `dispo-D-10-60` or `D-10-60-dispo`),
+**I want** the TMS Bridge to support system-qualified database identifiers (e.g., `dispo-D-10-60`),
 **so that** each calling system resolves to its own Secret Manager entry and database user with appropriately scoped permissions.
+
+## Examples
+
+### System-Qualified Identifiers
+
+| Caller | Identifier | Secret Manager Entry | Schema |
+|---|---|---|---|
+| New Dispo | `dispo-D-10-60` | `dispo-D-10-60` | `tms1060` |
+| Cloud4Log | `cloud4log-O-10-60` | `cloud4log-O-10-60` | `tms1060` |
+| Unqualified (current) | `D-10-60` | `D-10-60` | `tms1060` |
+
+### Environment-Qualified Identifiers
+
+The prefix can include an environment segment for per-environment credential separation:
+
+| Caller + Environment | Identifier | Secret Manager Entry |
+|---|---|---|
+| New Dispo ABN | `dispo-abn-D-10-60` | `dispo-abn-D-10-60` |
+| New Dispo UAT | `dispo-uat-D-10-60` | `dispo-uat-D-10-60` |
+| New Dispo Prod | `dispo-D-10-60` | `dispo-D-10-60` |
 
 ## Acceptance Criteria
 
-- [ ] The TMS Bridge accepts database identifiers with an optional system qualifier (prefix or postfix, per team decision) in addition to the existing format
+- [ ] The TMS Bridge accepts database identifiers with an optional system prefix (e.g., `dispo-D-10-60`) in addition to the existing format
+- [ ] The prefix supports multiple segments for environment qualification (e.g., `dispo-abn-D-10-60`)
 - [ ] Identifiers without a qualifier (e.g., `D-10-60`) continue to work unchanged (backward compatibility)
 - [ ] A qualified identifier (e.g., `dispo-D-10-60`) resolves to its own Secret Manager entry, independent of the unqualified identifier
 - [ ] A qualified identifier resolves to the same TMS schema as its unqualified counterpart (e.g., `dispo-D-10-60` and `D-10-60` both resolve to schema `tms1060`)

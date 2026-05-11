@@ -1,6 +1,6 @@
 # TMS Bridge Credential Selection
 
-**Date:** 2026-05-07
+**Date:** 2026-05-08
 **Status:** Done
 
 ---
@@ -195,6 +195,14 @@ Any identifier that doesn't match this pattern throws a `FormatException`. This 
 | Ambiguity risk | Low (anchored on `[DO]-`) | Very low |
 
 Both options are equally viable from a technical standpoint. The choice is a naming convention preference.
+
+---
+
+### Multi-Segment Prefixes (Environment Qualification)
+
+The prefix approach naturally extends to multi-segment prefixes for environment-specific credentials. For example, `dispo-abn-D-10-60` or `dispo-uat-D-10-60` would each resolve to their own Secret Manager entry while still extracting schema `tms1060`. This is visible in existing naming patterns — Cloud4Log already uses environment-aware secret names like `DIGILIS-10-33` (see [c4l-digilis-database-connections.pdf](../2026-01-25-database-identifier-analysis/c4l-digilis-database-connections.pdf)).
+
+The single-segment regex `(?:[a-z0-9]+-)?` would need to become `(?:(?:[a-z0-9]+-)+)?` to support this.
 
 ---
 
