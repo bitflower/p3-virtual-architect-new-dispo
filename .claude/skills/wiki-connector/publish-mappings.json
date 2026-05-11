@@ -147,8 +147,8 @@
     {
       "id": "project-oracle-cdc",
       "source": "02_Explorations/2026-03-11_Nagel_P3_Oracle_CDC_Kick_Off/PROJECT-STATUS.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Oracle-CDC.md",
-      "description": "Oracle CDC Solution for TMS Branch Databases - Living project status",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Completed/Oracle-CDC.md",
+      "description": "Oracle CDC Solution for TMS Branch Databases - Completed: Striim selected",
       "syncStrategy": {
         "type": "full-sync",
         "scope": "full-document",
@@ -576,6 +576,26 @@
         "excludeSections": ["Related Resources"],
         "mermaidSyntax": "azure-devops",
         "notes": "GoLive 1060 stakeholder alignment document - exclude Section 11 (Related Resources) which contains internal file paths. Mermaid blocks must use :::mermaid/:::: syntax for Azure DevOps wiki."
+      }
+    },
+    {
+      "id": "project-golive-1060",
+      "source": "02_Explorations/2026-04-17_New_Dispo_GoLive_1060_Oracle/PROJECT-STATUS.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/GoLive-1060.md",
+      "description": "GoLive 1060 (Oracle) - Active project tracker for branch 1060 go-live",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "template": "wiki",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Living project document - sync from exploration folder to wiki, remove internal exploration links for stakeholder visibility"
       }
     },
     {
