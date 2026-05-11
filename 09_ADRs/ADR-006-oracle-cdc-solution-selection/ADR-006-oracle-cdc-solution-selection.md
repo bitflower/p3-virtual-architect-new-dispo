@@ -88,8 +88,8 @@ Patrick Uschmann (PO) verbally confirmed on 2026-04-08 that **~10 seconds is acc
 | Date | Author | Change |
 |------|--------|--------|
 | 2026-04-15 | Matthias Max | Initial ADR created from PoC results |
-| 2026-05-11 | Matthias Max | ADR accepted: Striim selected (decided Apr 28 meeting). Decision rationale added. Binary Log Reader noted as parallel post-go-live track |
 | 2026-04-17 | Matthias Max | Complete rewrite: incorporated deep analysis (CW 16), corrected latency from 16-20s to 42-66 min, slimmed format |
+| 2026-05-11 | Matthias Max | ADR accepted: Striim selected (decided Apr 28 meeting). Decision rationale added. Binary Log Reader noted as parallel post-go-live track |
 
 ---
 
