@@ -1,0 +1,107 @@
+ERROR 2026-05-12T09:18:23.041801Z Connection id "0HNLG0AQ3UMN8", Request id "0HNLG0AQ3UMN8:00000001": An unhandled exception was thrown by the application.
+
+  {
+
+    "insertId": "6a02f05f0000a349f15ec3b9",
+
+    "jsonPayload": {
+
+      "scopes": [
+
+        {
+
+          "ParentId": "e4349d1d6c7cbde2",
+
+          "SpanId": "96457d8b11ed940c",
+
+          "TraceId": "2e3163324da69570e782cc063b5a4b7e"
+
+        },
+
+        {
+
+          "ConnectionId": "0HNLG0AQ3UMN8"
+
+        },
+
+        {
+
+          "RequestId": "0HNLG0AQ3UMN8:00000001",
+
+          "RequestPath": "/"
+
+        }
+
+      ],
+
+      "exception": "Newtonsoft.Json.JsonReaderException: Input string '6E+1' is not a valid integer. Path 'payload.tran_art', line 1, position 5878.\n   at Newtonsoft.Json.JsonTextReader.ParseReadNumber(ReadType readType, Char firstChar, Int32 initialPosition)\n   at Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)\n   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)\n   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)\n   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)\n   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)\n   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)\n   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)\n   at CALConsult.Disposition.Functions.FilterShipments.Bucket.Bucket.ContentProvider.BucketFileContentProvider.RetrieveStorageDataAsync[T](String fileName, String bucketName, CancellationToken cancellationToken) in /workspace/Bucket/ContentProvider/BucketFileContentProvider.cs:line 31\n   at CALConsult.Disposition.Functions.FilterShipments.Bucket.Trigger.FilterShipmentsTrigger.HandleAsync(CloudEvent cloudEvent, StorageObjectData storageObjectData, CancellationToken cancellationToken) in /workspace/Trigger/FilterShipmentsTrigger.cs:line 32\n   at Google.Cloud.Functions.Framework.CloudEventAdapter`1.HandleAsync(HttpContext context)\n   at Google.Cloud.Functions.Hosting.HostingInternals.Execute(HttpContext context)\n   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)",
+
+      "format_parameters": {
+
+        "TraceIdentifier": "0HNLG0AQ3UMN8:00000001",
+
+        "ConnectionId": "0HNLG0AQ3UMN8",
+
+        "{OriginalFormat}": "Connection id \"{ConnectionId}\", Request id \"{TraceIdentifier}\": An unhandled exception was thrown by the application."
+
+      },
+
+      "message": "Connection id \"0HNLG0AQ3UMN8\", Request id \"0HNLG0AQ3UMN8:00000001\": An unhandled exception was thrown by the application.",
+
+      "category": "Microsoft.AspNetCore.Server.Kestrel"
+
+    },
+
+    "resource": {
+
+      "type": "cloud_run_revision",
+
+      "labels": {
+
+        "project_id": "prj-cal-w-wl5-t-6c00-53ad",
+
+        "revision_name": "new-dispo-filter-shipment-records-abn1034-00004-h4x",
+
+        "location": "europe-west3",
+
+        "service_name": "new-dispo-filter-shipment-records-abn1034",
+
+        "configuration_name": "new-dispo-filter-shipment-records-abn1034"
+
+      }
+
+    },
+
+    "timestamp": "2026-05-12T09:18:23.041801Z",
+
+    "severity": "ERROR",
+
+    "labels": {
+
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/dotnet8:dotnet8_20260504_8_0_415_RC00",
+
+      "instanceId": "0007b734d90347e940756f24e995b5cc300d0b131228e77939278ea15aa993aa4240ef814c50a0375057f989d33ae436909dfec056ef772e12d59271781924e57c476aaf7232b2b6afdade60f1139b4968973565b6b7e633",
+
+      "goog-drz-cloudfunctions-location": "europe-west3",
+
+      "goog-managed-by": "cloudfunctions",
+
+      "goog-drz-cloudfunctions-id": "new-dispo-filter-shipment-records-abn1034"
+
+    },
+
+    "logName": "projects/prj-cal-w-wl5-t-6c00-53ad/logs/run.googleapis.com%2Fstdout",
+
+    "receiveTimestamp": "2026-05-12T09:18:23.154037327Z",
+
+    "errorGroups": [
+
+      {
+
+        "id": "CKDusdGd5PLxKw"
+
+      }
+
+    ]
+
+  }
