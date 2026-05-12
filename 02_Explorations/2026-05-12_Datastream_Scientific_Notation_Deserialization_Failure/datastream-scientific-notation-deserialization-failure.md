@@ -66,6 +66,8 @@ Two possible explanations:
 
 2. **Datastream serialization is non-deterministic for numeric types.** The same value may be serialized differently depending on internal buffer states, batch sizes, or Datastream version. Google periodically updates managed services.
 
+**Update (bucket file analysis):** The bucket file proves that scientific notation is **not new** -- `firma` has been serialized as `1E+1` in every single record. This means Datastream has been emitting scientific notation for `numeric(N,0)` columns all along. The reason `firma` never caused a crash is that it was mapped to `double`, not `int`. The PR #519 hypothesis is therefore **not the root cause of scientific notation appearing**. The crash was triggered because value `60` appeared in `tran_art` for what may be the first time in this branch's data, hitting the pre-existing `int?` type mismatch.
+
 ### Why doesn't it affect all numeric columns?
 
 The C# DTOs already map most `numeric(N,0)` columns to `double`, which handles scientific notation natively. Only `tran_art` and `tour` are mapped to `int?`/`int` -- likely an oversight from when the DTOs were created.
@@ -89,6 +91,19 @@ Key takeaway: Newtonsoft.Json's `int`/`int?` parser rejects **any** JSON number 
 
 Test file: `CALConsult.Disposition.Functions.FilterShipments.Bucket.Tests/Dtos/GoogleBucketShipmentDataDeserializationTests.cs`
 PR: [#32908](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Nagel-GCP/pullrequest/32908)
+
+### Bucket file analysis
+
+The actual Datastream bucket file (`tms1034_sendung_2026_05_12_11_07_...jsonl`, 22 CDC records) confirms the scientific notation is systematic, not a one-off:
+
+| Field | DB Type | Values in bucket file | C# Type | Crashes? |
+|---|---|---|---|---|
+| `tran_art` | `numeric(2,0)` | `6E+1` (19x), `null` (3x) | `int?` | **Yes** |
+| `firma` | `numeric(3,0)` | `1E+1` (all 22 records) | `double` | No -- `double` handles scientific notation |
+| `tour` | `numeric(3,0)` | `null` (all 22 records) | `int?` | Not yet -- but would crash on a non-null value |
+| `sendung_tix` | `numeric(22,0)` | `10340434955341` (plain integer) | `long` | No -- value too large for scientific notation shortening |
+
+This proves that **Datastream uses scientific notation for all `numeric(N,0)` columns** where the value is small enough. `firma = 10` is serialized as `1E+1`, just like `tran_art = 60` becomes `6E+1`. The only reason `firma` doesn't crash is that it was mapped to `double` rather than `int`.
 
 ---
 
