@@ -31,8 +31,8 @@ Reviews for the ABN1060 Oracle database. Three sources:
 | Views (20) | All pass | Exist with correct permissions |
 | Functions (11) | **3 missing** | `CreateTransportOrderFromLeg`, `CreateTransportOrderFromShipment` (obsolete), `AddShipment` (obsolete) |
 | Procedures (35) | **1 missing** | `RemoveShipment` |
-| Column definitions | **2 issues** | `Comment` casing in `V_DIS_TRANSPORTORDER`, missing `U_TIME` in `V_DIS_TO_PICKUPPLANNING` |
-| Queue infrastructure | **Missing** | `TMSBR1060.CAL_QUEUE_Q` not provisioned — causes runtime failures in all write procedures (confirmed: `CreateAndAddLeg`, `Delete`, `RemoveLeg`, `SetParticipant`, `RemoveParticipant`) |
+| Column definitions | **1 issue + 1 investigation** | `Comment` casing in `V_DIS_TRANSPORTORDER`. `U_TIME` confirmed missing in ALL environments (Oracle, PGS, and repo) — not ABN1060-specific, requires TMS Bridge-side investigation. |
+| Queue infrastructure | **Permission granted** | `TMSBR1060.CAL_QUEUE_Q` permission granted to TMSBR1060 user (2026-05-12). Retry pending to confirm fix. Previously caused runtime failures in all write procedures. |
 
 | Metric | Value |
 |--------|-------|
@@ -40,7 +40,7 @@ Reviews for the ABN1060 Oracle database. Three sources:
 | Existence (Level 1.0) | 73/77 found, 1 skipped, 4 not found |
 | Signature (Level 1.5) | 42/42 match |
 | Permissions (Level 2.0) | 73/77 granted, 1 skipped, 4 denied (non-existent) |
-| Active blockers | 2 missing objects + 1 missing queue + 2 column issues |
+| Active blockers | 2 missing objects + 1 column issue + 1 runtime error under investigation |
 | Obsolete gaps | 2 missing objects (low priority) |
 
 ---
@@ -64,20 +64,22 @@ Objects #2 and #3 are marked obsolete in the inventory — they back the depreca
 
 **Action required:** Routines #1 and #4 need to be created in the PDIS_TRANSPORTORDER package on ABN1060 (high priority). For #2 and #3, clarify with the TMS team whether to deploy them for completeness or remove them from the TMS Bridge inventory.
 
-### Category 2: Missing Queue Infrastructure (Blocker)
+### Category 2: Queue Infrastructure (Permission Granted — Retry Pending)
 
 P3 developer testing revealed that write procedures fail at runtime due to a missing Oracle Advanced Queuing (AQ) queue. Initial testing identified `CreateAndAddLeg` and `Delete`; follow-up testing confirmed the issue is systemic.
 
-**Root cause:** `TMSBR1060.CAL_QUEUE_Q` does not exist.
+**Root cause:** `TMSBR1060.CAL_QUEUE_Q` was not accessible.
 
-**Confirmed affected procedures:**
+**Update 2026-05-12 (Matt Wilkinson):** The permission grant for `CAL_QUEUE_Q` has been provided to the `TMSBR1060` user. The TMS team has raised the question of **why this permission is needed** — this should be clarified. A retry is needed to confirm the fix resolves all write procedure failures.
+
+**Confirmed affected procedures (before fix):**
 - `CreateAndAddLeg` (initial batch)
 - `Delete` (initial batch)
 - `RemoveLeg` (second batch — confirmed by P3)
 - `SetParticipant` (second batch — confirmed by P3)
 - `RemoveParticipant` (second batch — confirmed by P3)
 
-P3 assessment: likely **all write procedures** are affected, since the queue is referenced from triggers that fire on data modification. This effectively makes ABN1060 **read-only** from the TMS Bridge perspective until the queue is provisioned.
+P3 assessment: likely **all write procedures** were affected, since the queue is referenced from triggers that fire on data modification.
 
 **Error chain for CreateAndAddLeg:**
 ```
@@ -90,27 +92,32 @@ ORA-24010: QUEUE TMSBR1060.CAL_QUEUE_Q does not exist
   -> TMS1060.PDIS_TRANSPORTORDER
 ```
 
-**Error chain for Delete:**
+**Error chain for Delete (ORA-21000 — under investigation):**
 ```
 ORA-21000: error number argument to raise_application_error of -24010 is out of range
   -> TMS1060.PTA (line 5060)
   -> TMS1060.PDIS_TRANSPORTORDER (line 72)
 ```
 
-The Delete error is the same root cause: the PTA package catches the ORA-24010 queue error and attempts to re-raise it via `raise_application_error`, but -24010 is outside the valid range (-20000 to -20999), causing a secondary ORA-21000 error.
+The Delete error is the same root cause: the PTA package catches the ORA-24010 queue error and attempts to re-raise it via `raise_application_error`, but -24010 is outside the valid range (-20000 to -20999), causing a secondary ORA-21000 error. **Matt Wilkinson confirmed (2026-05-12) this is actively being worked on with the team.**
 
-**Action required:** The Oracle AQ queue `CAL_QUEUE_Q` needs to be created in the `TMSBR1060` schema. This is a provisioning/setup step for the TMS Bridge infrastructure. **This is the single highest-priority fix** — it blocks all write operations.
+**Action required:** Retry write operations to confirm the CAL_QUEUE_Q permission grant resolves the issue. Clarify to the TMS team why the TMS Bridge user needs access to CAL_QUEUE_Q (it is referenced by triggers on tables modified by PDIS_TRANSPORTORDER procedures — the TMS Bridge user needs enqueue permission because the stored procedures execute under the caller's context).
 
-### Category 3: Column-Level Issues (Blockers)
+### Category 3: Column-Level Issues
 
 These are data-level problems not caught by the automated verifier (which checks object existence, not column definitions).
 
-| # | View | Issue | Impact |
-|---|------|-------|--------|
-| 1 | `V_DIS_TRANSPORTORDER` | Column `Comment` uses mixed case instead of UPPERCASE | TMS Bridge expects all-uppercase column names; queries fail |
-| 2 | `V_DIS_TO_PICKUPPLANNING` | Column `U_TIME` is missing | Pickup planning page fails |
+| # | View | Issue | Status | Impact |
+|---|------|-------|--------|--------|
+| 1 | `V_DIS_TRANSPORTORDER` | Column `Comment` uses mixed case instead of UPPERCASE | **Open** | TMS Bridge expects all-uppercase column names; queries fail |
+| 2 | `V_DIS_TO_PICKUPPLANNING` | Column `U_TIME` is missing | **Reclassified** | See below |
 
-**Action required:** Fix the `Comment` column name to `COMMENT` (or quoted uppercase) in `V_DIS_TRANSPORTORDER`. Add `U_TIME` column to `V_DIS_TO_PICKUPPLANNING`.
+**Issue #1 — Comment casing:** Fix the `Comment` column name to `COMMENT` (or quoted uppercase) in `V_DIS_TRANSPORTORDER`. This remains an ABN1060-specific action.
+
+**Issue #2 — U_TIME (Reclassified: Not ABN1060-Specific):**
+Andrej (TMS team) confirmed (2026-05-12) that the field `U_TIME` does **not exist** in either of the views `V_DIS_TRANSPORTORDER` or `V_DIS_TO_PICKUPPLANNING` — neither in PostgreSQL, nor in Oracle, nor in the repository source code. This is **not** an ABN1060-specific gap but a systemic discrepancy: the TMS Bridge expects a column that has never been defined in any environment.
+
+**Recommended next step:** Trace in git history which PR or commit added `U_TIME` to the view definition. Since Andrej confirms it is not present in the current repo, it was either removed at some point or never committed. Identifying the originating change will clarify whether this is a regression (column was removed inadvertently) or a planned addition that was never completed.
 
 ### Category 4: Resolved During Testing
 
@@ -158,14 +165,17 @@ This cross-reference demonstrates the complementary value of both approaches: th
 
 ## Action Items
 
-| # | Action | Owner | Priority | Category |
-|---|--------|-------|----------|----------|
-| 1a | Create `CREATETRANSPORTORDERFROMLEG` and `REMOVESHIPMENT` in PDIS_TRANSPORTORDER | TMS Team | High | Missing Objects (active) |
-| 1b | Decide on `CREATETRANSPORTORDERFROMSHIPMENT` and `ADDSHIPMENT`: deploy for completeness or remove from inventory | TMS Team / P3 | Low | Missing Objects (obsolete) |
-| 2 | Create Oracle AQ queue `CAL_QUEUE_Q` in TMSBR1060 schema | TMS Team / DBA | High | Infrastructure |
-| 3 | Fix `Comment` column casing in V_DIS_TRANSPORTORDER | TMS Team / DBA | High | Column Fix |
-| 4 | Add `U_TIME` column to V_DIS_TO_PICKUPPLANNING | TMS Team / DBA | High | Column Fix |
-| 5 | Re-run verifier after fixes to confirm resolution | P3 | Medium | Verification |
+| # | Action | Owner | Priority | Status | Category |
+|---|--------|-------|----------|--------|----------|
+| 1a | Create `CREATETRANSPORTORDERFROMLEG` and `REMOVESHIPMENT` in PDIS_TRANSPORTORDER | TMS Team | High | Open | Missing Objects (active) |
+| 1b | Decide on `CREATETRANSPORTORDERFROMSHIPMENT` and `ADDSHIPMENT`: deploy for completeness or remove from inventory | TMS Team / P3 | Low | Open | Missing Objects (obsolete) |
+| 2a | ~~Create Oracle AQ queue `CAL_QUEUE_Q` in TMSBR1060 schema~~ | TMS Team / DBA | High | **Done** (2026-05-12) | Infrastructure |
+| 2b | Retry write operations to confirm CAL_QUEUE_Q fix | P3 | High | **Pending retry** | Verification |
+| 2c | Clarify to TMS team why TMSBR1060 needs CAL_QUEUE_Q access (trigger execution context) | P3 / CAL | Medium | Open | Documentation |
+| 3 | Fix `Comment` column casing in V_DIS_TRANSPORTORDER | TMS Team / DBA | High | Open | Column Fix |
+| 4 | ~~Add `U_TIME` column to V_DIS_TO_PICKUPPLANNING~~ — **Reclassified:** Investigate TMS Bridge `U_TIME` reference; column doesn't exist in any environment or repo | P3 | High | **Reclassified** | TMS Bridge Investigation |
+| 5 | Resolve ORA-21000 error in Delete (PTA line 5060 error re-raise) | TMS Team / Matt W. | High | **In progress** (2026-05-12) | Runtime Error |
+| 6 | Re-run verifier after fixes to confirm resolution | P3 | Medium | Blocked on #1a, #3 | Verification |
 
 ---
 
@@ -178,6 +188,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 - `00_Meetings/2026-05-11_Oracle_TMS_Check_ABN1060/TMS-Verfitier-results.md` - Automated verifier output
 - `Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier/` - Verifier tool source
 - `02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md` - Object registry source (v1.1)
+- `00_Meetings/2026-05-11_Oracle_TMS_Check_ABN1060/2026-05-12_feedback Matt.md` - Matt Wilkinson feedback on CAL_QUEUE_Q grant, U_TIME non-existence, ORA-21000 status
 
 </internal>
 
@@ -201,6 +212,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 |---------|------|--------|---------|
 | 1.0 | 2026-05-11 | Matthias Max | Initial review: 4 missing objects, 1 missing queue, 2 column issues. Sources: P3 developer testing + automated TMS Bridge DB Verifier. |
 | 1.1 | 2026-05-11 | Matthias Max | Expanded CAL_QUEUE_Q blast radius: confirmed RemoveLeg, SetParticipant, RemoveParticipant also affected. Likely all write procedures blocked. Source: P3 second batch testing. |
+| 1.2 | 2026-05-12 | Matthias Max | Updated with Matt Wilkinson feedback: (1) CAL_QUEUE_Q permission granted to TMSBR1060 — retry pending; (2) U_TIME reclassified — column doesn't exist in any environment (Oracle, PGS, repo), now a TMS Bridge-side investigation; (3) ORA-21000 Delete error actively being worked on by TMS team. |
 
 ---
 
