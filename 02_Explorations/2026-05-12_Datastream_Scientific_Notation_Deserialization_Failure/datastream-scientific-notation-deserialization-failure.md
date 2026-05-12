@@ -105,6 +105,10 @@ The actual Datastream bucket file (`tms1034_sendung_2026_05_12_11_07_...jsonl`, 
 
 This proves that **Datastream uses scientific notation for all `numeric(N,0)` columns** where the value is small enough. `firma = 10` is serialized as `1E+1`, just like `tran_art = 60` becomes `6E+1`. The only reason `firma` doesn't crash is that it was mapped to `double` rather than `int`.
 
+### Business impact assessment
+
+The file contains **zero** type "A" shipments -- 19x `sendungsart: "S"` and 3x `sendungsart: "H"`. The Cloud Function filters for `ShipmentType == "A"` only, so even if the deserialization had succeeded, all 22 records would have been filtered out and nothing would have been published to PubSub. **The crash has no business impact for this specific file.** However, any future file containing a type "A" shipment with `tran_art = 60` would both crash and cause a missed CDC event.
+
 ---
 
 ## Type Mismatch Audit
