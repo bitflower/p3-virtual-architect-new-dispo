@@ -226,6 +226,8 @@ Configure `JsonSerializerSettings` in `BucketFileContentProvider` with `FloatPar
 
 5. **Monitoring:** Should we add alerting for deserialization failures in the CDC pipeline? Currently, the Cloud Function fails silently (from the business perspective) -- the shipment is simply not forwarded.
 
+6. **Missing file context in error logs:** The error log does not contain the bucket file name that caused the failure. The exception surfaces through Kestrel (ASP.NET Core's built-in web server that runs inside Cloud Run containers serving Cloud Functions Gen2), whose top-level error handler only logs connection/request IDs -- no application-level context. The `catch` block in `BucketFileContentProvider.cs:43` only logs `ex.Message`, not the `fileName` or `bucketName` parameters. To identify the file that caused this error, one would need to correlate via the `TraceId` (`2e3163324da69570e782cc063b5a4b7e`) or search the Datastream bucket for files written around `2026-05-12T09:18Z`.
+
 ---
 
 ## Related Files
