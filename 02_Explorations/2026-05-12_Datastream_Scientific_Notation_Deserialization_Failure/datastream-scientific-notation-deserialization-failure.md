@@ -72,6 +72,25 @@ The C# DTOs already map most `numeric(N,0)` columns to `double`, which handles s
 
 ---
 
+## Proof
+
+Unit tests added to `GoogleBucketShipmentDataDeserializationTests` exercise the actual `JsonConvert.DeserializeObject<GoogleBucketFileContentDto<GoogleBucketShipmentData>>()` call with JSON payloads mimicking Datastream output. Results confirm the deserialization fails for all non-plain-integer numeric representations:
+
+| Test | JSON value for `tran_art` | Result |
+|---|---|---|
+| `Deserialize_TranArt_PlainInteger_Succeeds` | `60` | **PASS** |
+| `Deserialize_TranArt_Null_Succeeds` | `null` | **PASS** |
+| `Deserialize_TranArt_ScientificNotation_Succeeds` | `6E+1` | **FAIL** -- `JsonReaderException: Input string '6E+1' is not a valid integer` |
+| `Deserialize_TranArt_ScientificNotationLowercase_Succeeds` | `6e+1` | **FAIL** -- `JsonReaderException: Input string '6e+1' is not a valid integer` |
+| `Deserialize_Tour_ScientificNotation_Succeeds` | `1.2E+2` (tour field) | **FAIL** -- `JsonReaderException: Input string '1.2E+2' is not a valid integer` |
+| `Deserialize_NumericFields_WithDecimalPoint_Succeeds` | `60.0` | **FAIL** -- `JsonReaderException: Input string '60.0' is not a valid integer` |
+
+Key takeaway: Newtonsoft.Json's `int`/`int?` parser rejects **any** JSON number that is not a plain digit string. Scientific notation (`6E+1`), lowercase scientific notation (`6e+1`), and decimal notation (`60.0`) all fail. All three are valid JSON per RFC 8259 and could be produced by Google Datastream for `numeric(2,0)` columns.
+
+Test file: `CALConsult.Disposition.Functions.FilterShipments.Bucket.Tests/Dtos/GoogleBucketShipmentDataDeserializationTests.cs`
+
+---
+
 ## Type Mismatch Audit
 
 ### Database `numeric(N,0)` columns vs. C# DTO types
