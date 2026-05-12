@@ -1,0 +1,2735 @@
+WEBVTT
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/11-0
+00:00:03.902 --> 00:00:07.382
+<v Boyan Valchev>Share your screen and we can kick it off,
+so we don't lose any more time.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/12-0
+00:00:08.582 --> 00:00:10.422
+<v Ivaylo Petrov>Yep, I'll just share it now.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/13-0
+00:00:13.382 --> 00:00:15.142
+<v Ivaylo Petrov>Let me know once you can see it.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/14-0
+00:00:16.902 --> 00:00:17.542
+<v Matthias Max>It's there.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/16-0
+00:00:18.662 --> 00:00:24.010
+<v Ivaylo Petrov>Yeah, so, well,
+we have several cases that we should</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/16-1
+00:00:24.010 --> 00:00:30.367
+<v Ivaylo Petrov>probably cover here.
+I'm not sure whether if we can start with</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/16-2
+00:00:30.367 --> 00:00:36.422
+<v Ivaylo Petrov>the, with the delete one. Yeah, Bobby,
+you have a question?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/17-0
+00:00:37.422 --> 00:00:40.632
+<v Boyan Valchev>Yeah,
+probably just to give a little bit of</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/17-1
+00:00:40.632 --> 00:00:44.281
+<v Boyan Valchev>context, probably for, like,
+for all of the guys,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/17-2
+00:00:44.281 --> 00:00:50.045
+<v Boyan Valchev>basically what Ivaylo investigated is
+what we should do from new point of view</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/17-3
+00:00:50.045 --> 00:00:54.423
+<v Boyan Valchev>in order for us to make sure that we,
+like, for, let's say,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/17-4
+00:00:54.423 --> 00:00:58.582
+<v Boyan Valchev>for operation succeeds on GM side and
+fails in our side.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/19-0
+00:00:59.342 --> 00:01:04.774
+<v Boyan Valchev>what steps exactly we need to take for us
+in order to make New Dispo synced with</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/19-1
+00:01:04.774 --> 00:01:08.932
+<v Boyan Valchev>the actual GM state.
+So basically what we're going to discuss</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/19-2
+00:01:08.932 --> 00:01:13.559
+<v Boyan Valchev>here is like the actual steps,
+whether we have some questions around</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/19-3
+00:01:13.559 --> 00:01:16.510
+<v Boyan Valchev>this,
+whether this is the exact approach we</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/19-4
+00:01:16.510 --> 00:01:17.382
+<v Boyan Valchev>need to take.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/20-0
+00:01:17.702 --> 00:01:24.182
+<v Boyan Valchev>In terms of steps from new dispo point of
+view, also we have like some of this some.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/21-0
+00:01:26.182 --> 00:01:30.632
+<v Boyan Valchev>I would say decisions which we have made
+or scopes which we need to define.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/21-1
+00:01:30.632 --> 00:01:34.965
+<v Boyan Valchev>But basically, like I would say,
+let's just go item by item and like we'd</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/21-2
+00:01:34.965 --> 00:01:39.825
+<v Boyan Valchev>cover the delete topic at the end because
+I think that there we need the most time</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/21-3
+00:01:39.825 --> 00:01:43.163
+<v Boyan Valchev>for discussion.
+So let's start with the other ones first</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/21-4
+00:01:43.163 --> 00:01:45.622
+<v Boyan Valchev>and we'll cover the delete one at the end.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/22-0
+00:01:48.342 --> 00:01:48.822
+<v Matthias Max>Yep.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/24-0
+00:01:50.342 --> 00:01:54.469
+<v Ivaylo Petrov>Yeah, okay.
+So as for the unassigning of deletes and</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/24-1
+00:01:54.469 --> 00:02:00.776
+<v Ivaylo Petrov>logs, for example, we have two cases here.
+A case one is the what happens if the</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/24-2
+00:02:00.776 --> 00:02:06.383
+<v Ivaylo Petrov>lake is already unassigned on our site,
+we should first remove the load</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/24-3
+00:02:06.383 --> 00:02:09.342
+<v Ivaylo Petrov>assignment lake link entity. We should</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/25-0
+00:02:09.542 --> 00:02:16.874
+<v Ivaylo Petrov>to give an additional check whether we
+should remove the load assignment entity</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/25-1
+00:02:16.874 --> 00:02:21.457
+<v Ivaylo Petrov>as well.
+And after that we should find a suitable</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/25-2
+00:02:21.457 --> 00:02:25.856
+<v Ivaylo Petrov>log for the leg.
+Also create a leg log link and</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/25-3
+00:02:25.856 --> 00:02:28.422
+<v Ivaylo Petrov>recalculate the lots on the.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/26-0
+00:02:29.542 --> 00:02:31.582
+<v Ivaylo Petrov>Yeah, Yosif on the newly wrote.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/27-0
+00:02:32.502 --> 00:02:33.702
+<v Ivaylo Petrov>Reassigned, sorry.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/28-0
+00:02:34.302 --> 00:02:39.874
+<v Yosif Mihaylov>Yeah, this check if we should,
+if we should remove the what assignment</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/28-1
+00:02:39.874 --> 00:02:43.799
+<v Yosif Mihaylov>entity like,
+is it this check just for the either</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/28-2
+00:02:43.799 --> 00:02:44.662
+<v Yosif Mihaylov>potency or?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/30-0
+00:02:46.022 --> 00:02:51.866
+<v Yosif Mihaylov>part of the business logic because the
+removal operations in entity framework</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/30-1
+00:02:51.866 --> 00:02:56.511
+<v Yosif Mihaylov>should be idempotent,
+meaning that when we execute the remove</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/30-2
+00:02:56.511 --> 00:02:59.957
+<v Yosif Mihaylov>operation,
+even if the entity does not exist,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/30-3
+00:02:59.957 --> 00:03:04.902
+<v Yosif Mihaylov>it should not throw an error or anything.
+So just just as a note.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/31-0
+00:03:05.262 --> 00:03:05.942
+<v Yosif Mihaylov>About this.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/32-0
+00:03:09.102 --> 00:03:13.604
+<v Ivaylo Petrov>I think this one is more of like a
+business version, I think,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/32-1
+00:03:13.604 --> 00:03:17.889
+<v Ivaylo Petrov>because I'm not sure.
+I think when the load Simon leg link</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/32-2
+00:03:17.889 --> 00:03:21.737
+<v Ivaylo Petrov>entity does,
+actually the load Simon entity does not</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/32-3
+00:03:21.737 --> 00:03:26.022
+<v Ivaylo Petrov>have any more leg links,
+I think then we should remove it.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/33-0
+00:03:24.982 --> 00:03:28.342
+<v Yosif Mihaylov>Ohh, this OK.
+This is the part part of for the business.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/34-0
+00:03:28.582 --> 00:03:31.763
+<v Ivaylo Petrov>Yeah,
+should I actually add it as a note here</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/34-1
+00:03:31.763 --> 00:03:32.662
+<v Ivaylo Petrov>or it's fine?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/36-0
+00:03:33.862 --> 00:03:37.197
+<v Yosif Mihaylov>Well,
+it's actually more related to the first</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/35-0
+00:03:34.102 --> 00:03:34.262
+<v Matthias Max>Mm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/36-1
+00:03:37.197 --> 00:03:40.822
+<v Yosif Mihaylov>point,
+but let's just let's just go through them.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/38-0
+00:03:41.302 --> 00:03:42.342
+<v Ivaylo Petrov>Okay, okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/37-0
+00:03:42.502 --> 00:03:42.742
+<v Yosif Mihaylov>Yes.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/39-0
+00:03:43.862 --> 00:03:49.462
+<v Ivaylo Petrov>And then we have our case two,
+which have some discussions so that we</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/39-1
+00:03:49.462 --> 00:03:54.662
+<v Ivaylo Petrov>need to make, for example,
+like is assigned to another transport</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/39-2
+00:03:54.662 --> 00:03:58.422
+<v Ivaylo Petrov>order.
+And here is doing the to be discussion.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/39-3
+00:03:58.422 --> 00:04:03.142
+<v Ivaylo Petrov>We've added the,
+is this in the scope of the sync handler?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/40-0
+00:04:06.542 --> 00:04:07.022
+<v Matthias Max>Mhm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/42-0
+00:04:07.782 --> 00:04:11.622
+<v Matthias Max>That was also discussion last time we
+looked through all the cases, right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/43-0
+00:04:12.742 --> 00:04:15.542
+<v Matthias Max>Cross-transport order check kind of.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/45-0
+00:04:17.942 --> 00:04:21.443
+<v Boyan Valchev>It's not really a check,
+it's where I like, for example,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/45-1
+00:04:21.443 --> 00:04:25.804
+<v Boyan Valchev>like the check is one thing,
+the check is executed before we actually,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/45-2
+00:04:25.804 --> 00:04:30.840
+<v Boyan Valchev>in order for us to check whether we are
+good to continue with the TMS logic or we</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/45-3
+00:04:30.840 --> 00:04:34.525
+<v Boyan Valchev>need to seek first.
+But basically this is not a matter of a</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/44-0
+00:04:32.422 --> 00:04:32.862
+<v Matthias Max>I know.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/45-4
+00:04:34.525 --> 00:04:36.982
+<v Boyan Valchev>check, this is more of a matter of what.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/46-0
+00:04:37.022 --> 00:04:40.342
+<v Boyan Valchev>What we should do with the legs,
+which we find out that are out of sync.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/47-0
+00:04:40.662 --> 00:04:41.422
+<v Matthias Max>Yeah, yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/49-0
+00:04:43.222 --> 00:04:48.138
+<v Boyan Valchev>So, because for the deletion,
+I think last time we decided that this is</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/49-1
+00:04:48.138 --> 00:04:51.211
+<v Boyan Valchev>out of scope and the scope for the
+deletion,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/49-2
+00:04:51.211 --> 00:04:56.741
+<v Boyan Valchev>it should only care that the transport,
+that the legs should be only unassigned.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/48-0
+00:04:55.142 --> 00:04:55.462
+<v Matthias Max>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/49-3
+00:04:56.741 --> 00:05:01.862
+<v Boyan Valchev>But in the second thought, like,
+why leaving the state inconsistent again?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/50-0
+00:05:02.662 --> 00:05:06.262
+<v Matthias Max>Yeah, that's a necessary,
+or that the question that pops up</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/50-1
+00:05:06.262 --> 00:05:07.462
+<v Matthias Max>automatically, yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/51-0
+00:05:10.982 --> 00:05:17.237
+<v Matthias Max>I would really say let's prioritize.
+I think we should have a happy path where</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/51-1
+00:05:17.237 --> 00:05:18.662
+<v Matthias Max>we only look at...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/52-0
+00:05:19.862 --> 00:05:24.088
+<v Matthias Max>Inconsistencies within the transport
+order, finish that,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/52-1
+00:05:24.088 --> 00:05:25.942
+<v Matthias Max>and if there's time left.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/53-0
+00:05:27.062 --> 00:05:31.782
+<v Matthias Max>We can look into cross-transport order
+syncing issues.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/54-0
+00:05:33.702 --> 00:05:38.198
+<v Matthias Max>You probably will say, why that?
+If we already work on that now,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/54-1
+00:05:38.198 --> 00:05:40.342
+<v Matthias Max>why not resolve it immediately?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/55-0
+00:05:41.782 --> 00:05:46.822
+<v Matthias Max>It's an definitely perspective you can
+also have, and I just want to challenge.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/56-0
+00:05:48.022 --> 00:05:52.671
+<v Matthias Max>if we lose a lot of time when we do both
+at the same time,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/56-1
+00:05:52.671 --> 00:05:58.502
+<v Matthias Max>or if it's not better to 1st do the happy
+class within a transport order.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/57-0
+00:06:02.422 --> 00:06:02.582
+<v Matthias Max>Mm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/58-0
+00:06:03.462 --> 00:06:08.705
+<v Boyan Valchev>But the granularity here is not about the
+transport order, is it?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/58-1
+00:06:08.705 --> 00:06:13.868
+<v Boyan Valchev>It's more like for a leg.
+It's not directly at the under signing</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/58-2
+00:06:13.868 --> 00:06:14.742
+<v Boyan Valchev>process is.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/59-0
+00:06:16.022 --> 00:06:16.982
+<v Boyan Valchev>It's not.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/60-0
+00:06:19.462 --> 00:06:22.938
+<v Boyan Valchev>Like, specifically,
+it's not targeted to specific transport</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/60-1
+00:06:22.938 --> 00:06:25.720
+<v Boyan Valchev>order,
+but rather we try to unassign a leg from</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/60-2
+00:06:25.720 --> 00:06:28.327
+<v Boyan Valchev>it, right, or a lot. So, basically,
+it's it.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/60-3
+00:06:28.327 --> 00:06:32.151
+<v Boyan Valchev>I don't think the granularity should be
+on transport order level,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/60-4
+00:06:32.151 --> 00:06:33.542
+<v Boyan Valchev>but more on a leg level.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/62-0
+00:06:34.262 --> 00:06:39.982
+<v Matthias Max>But a leg on GMX, there are no lots.
+So an assignment means a leg has a</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/62-1
+00:06:39.982 --> 00:06:45.702
+<v Matthias Max>relationship to a transport order.
+That's what assignment means, right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/61-0
+00:06:46.822 --> 00:06:47.142
+<v Boyan Valchev>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/63-0
+00:06:47.742 --> 00:06:53.366
+<v Matthias Max>And we can all,
+and I would just propose to not go beyond</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/63-1
+00:06:53.366 --> 00:06:58.601
+<v Matthias Max>the transport order ID.
+We think there should be as a</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/63-2
+00:06:58.601 --> 00:06:59.862
+<v Matthias Max>relationship.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/64-0
+00:07:01.622 --> 00:07:06.069
+<v Matthias Max>And just check if that's already there or
+has been deleted.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/64-1
+00:07:06.069 --> 00:07:11.702
+<v Matthias Max>And not care about different transport
+order IDs in case we find such an...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/65-0
+00:07:12.662 --> 00:07:14.022
+<v Matthias Max>Uh, occurrence.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/66-0
+00:07:16.262 --> 00:07:19.462
+<v Matthias Max>But maybe I'm also too far away from the
+code.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/67-0
+00:07:26.782 --> 00:07:27.462
+<v Boyan Valchev>A bit.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/68-0
+00:07:26.822 --> 00:07:31.747
+<v Yosif Mihaylov>But is it isn't this isn't the syncing
+process like the essence of what we</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/68-1
+00:07:31.747 --> 00:07:35.622
+<v Yosif Mihaylov>should be doing for the transactional
+behavior scope like?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/69-0
+00:07:37.382 --> 00:07:39.222
+<v Yosif Mihaylov>Isn't it something that it's a must-have?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/70-0
+00:07:44.902 --> 00:07:49.432
+<v Matthias Max>It is,
+but if I can choose between 2 levels of</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/70-1
+00:07:49.432 --> 00:07:52.902
+<v Matthias Max>what our singing mechanism delivers.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/71-0
+00:07:53.862 --> 00:07:57.222
+<v Matthias Max>And I would have to decide which one I
+want first.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/72-0
+00:07:58.902 --> 00:08:06.582
+<v Matthias Max>I would hope that cross-transport order
+syncing issues are more rare.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/73-0
+00:08:07.862 --> 00:08:13.479
+<v Matthias Max>Than the other ones,
+because what they require is, for example,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/73-1
+00:08:13.479 --> 00:08:16.902
+<v Matthias Max>two people to work in parallel on that.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/74-0
+00:08:17.782 --> 00:08:20.342
+<v Matthias Max>Transport order, or rather that lake.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/75-0
+00:08:21.542 --> 00:08:27.622
+<v Matthias Max>Because how would that out of sync state
+come to life at all, right, if...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/76-0
+00:08:28.902 --> 00:08:34.484
+<v Matthias Max>If we look at the one person situation
+having synchronization issues,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/76-1
+00:08:34.484 --> 00:08:37.993
+<v Matthias Max>it would never be between transport
+orders.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/76-2
+00:08:37.993 --> 00:08:41.582
+<v Matthias Max>It would always be within a transport
+order.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/77-0
+00:08:43.062 --> 00:08:50.062
+<v Matthias Max>That's the happy scope I'm talking about.
+And if you want to go more complex,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/77-1
+00:08:50.062 --> 00:08:57.062
+<v Matthias Max>then you have to include several people
+working on potentially the same legs.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/78-0
+00:08:58.262 --> 00:09:03.542
+<v Matthias Max>I just try to split the complexity into
+several layers.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/79-0
+00:09:05.782 --> 00:09:08.552
+<v Matthias Max>That helps,
+but I think I'm probably confusing the</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/79-1
+00:09:08.552 --> 00:09:10.182
+<v Matthias Max>discussion more than it helps.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/81-0
+00:09:14.262 --> 00:09:15.222
+<v Boyan Valchev>As a seat.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/80-0
+00:09:14.462 --> 00:09:14.862
+<v Matthias Max>Okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/82-0
+00:09:17.542 --> 00:09:20.643
+<v Boyan Valchev>Basically, like, I mean,
+we are probably Matthias,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/82-1
+00:09:20.643 --> 00:09:22.102
+<v Boyan Valchev>you looking this from...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/84-0
+00:09:22.982 --> 00:09:26.561
+<v Boyan Valchev>New just point of view,
+because in from new just in order for us</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/84-1
+00:09:26.561 --> 00:09:29.368
+<v Boyan Valchev>to assign leg again,
+we need to unassign it first,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/84-2
+00:09:29.368 --> 00:09:33.608
+<v Boyan Valchev>but basically we don't know whether this
+is the case from TMS point of view,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/83-0
+00:09:30.422 --> 00:09:30.902
+<v Matthias Max>Mhm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/84-3
+00:09:33.608 --> 00:09:36.801
+<v Boyan Valchev>because, for example,
+what if they have a way to reassign</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/84-4
+00:09:36.801 --> 00:09:39.664
+<v Boyan Valchev>directly a leg from one transport order
+to another?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/84-5
+00:09:39.664 --> 00:09:43.022
+<v Boyan Valchev>Then the step with the unassigning is
+basically gone, right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/85-0
+00:10:10.982 --> 00:10:11.142
+<v Matthias Max>Mm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/86-0
+00:10:11.222 --> 00:10:16.584
+<v Boyan Valchev>They will face the error where we need to
+find the exact transport order and assign</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/86-1
+00:10:16.584 --> 00:10:17.222
+<v Boyan Valchev>it, right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/87-0
+00:10:18.902 --> 00:10:26.106
+<v Matthias Max>But it does this involve changes on the
+legacy app because that's what we</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/87-1
+00:10:26.106 --> 00:10:26.982
+<v Matthias Max>descoped.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/89-0
+00:10:28.502 --> 00:10:33.942
+<v Matthias Max>We only allow people,
+dispatchers to work in new dispo for this.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/90-0
+00:10:35.142 --> 00:10:38.022
+<v Matthias Max>No one will assign pickup legs somewhere
+else.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/92-0
+00:10:41.862 --> 00:10:46.220
+<v Boyan Valchev>I'm not sure whether we have this
+assumption because I don't think we have</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/91-0
+00:10:42.302 --> 00:10:42.462
+<v Matthias Max>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/92-1
+00:10:46.220 --> 00:10:48.022
+<v Boyan Valchev>discussed this. I mean, this...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/93-0
+00:10:46.622 --> 00:10:51.175
+<v Matthias Max>No, no, it's defined.
+It's definitely something accepted by</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/93-1
+00:10:51.175 --> 00:10:51.782
+<v Matthias Max>Patrick.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/94-0
+00:10:53.542 --> 00:10:55.382
+<v Matthias Max>I'm completely sure about that.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/95-0
+00:10:56.902 --> 00:10:58.822
+<v Matthias Max>Because that's why I'm so.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/97-0
+00:11:00.182 --> 00:11:06.147
+<v Matthias Max>That's why it sounds so clear. To me,
+it's quite clear what to do because we</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/97-1
+00:11:06.147 --> 00:11:10.640
+<v Matthias Max>have descoped that case.
+There is no other legacy uniface</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/97-2
+00:11:10.640 --> 00:11:15.753
+<v Matthias Max>application riding the same pickup legs
+or assignment than we do.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/97-3
+00:11:15.753 --> 00:11:17.302
+<v Matthias Max>It's only new disco.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/96-0
+00:11:17.182 --> 00:11:17.302
+<v Boyan Valchev>Yes.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/100-0
+00:11:19.062 --> 00:11:24.583
+<v Boyan Valchev>OK, but, like, in OK, I mean,
+this is fine. If this is the case, then,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/98-0
+00:11:19.382 --> 00:11:19.622
+<v Matthias Max>It.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/100-1
+00:11:24.583 --> 00:11:27.538
+<v Boyan Valchev>like,
+we just scope changes made from</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/100-2
+00:11:27.538 --> 00:11:33.525
+<v Boyan Valchev>third-party systems, but basically,
+isn't this exactly the case to sorry for</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/100-3
+00:11:33.525 --> 00:11:38.502
+<v Boyan Valchev>just taking your order,
+but isn't case to exactly what we need?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/101-0
+00:11:38.582 --> 00:11:42.176
+<v Boyan Valchev>To do in case, for example,
+we try to assign elect to transport order,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/101-1
+00:11:42.176 --> 00:11:45.062
+<v Boyan Valchev>and we notice that it's already assigned
+somewhere else.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/102-0
+00:11:47.062 --> 00:11:51.077
+<v Boyan Valchev>This is exactly the same case;
+we need to execute exactly the same steps</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/102-1
+00:11:51.077 --> 00:11:54.707
+<v Boyan Valchev>which you have, for example,
+for the check when we when we assign</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/102-2
+00:11:54.707 --> 00:11:56.742
+<v Boyan Valchev>electro transport order, for example.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/103-0
+00:11:59.142 --> 00:12:02.199
+<v Boyan Valchev>I don't really think that this is an
+additional effort.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/103-1
+00:12:02.199 --> 00:12:06.512
+<v Boyan Valchev>It's just the reusing of the logic we
+already will have for the checks when we</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/103-2
+00:12:06.512 --> 00:12:07.222
+<v Boyan Valchev>assign a leg.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/104-0
+00:12:09.702 --> 00:12:10.182
+<v Matthias Max>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/105-0
+00:12:11.062 --> 00:12:11.622
+<v Matthias Max>Okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/106-0
+00:12:13.062 --> 00:12:13.462
+<v Boyan Valchev>So...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/107-0
+00:12:14.342 --> 00:12:19.525
+<v Boyan Valchev>I don't think it would be an issue for us,
+like just to check whether, for example,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/107-1
+00:12:19.525 --> 00:12:23.474
+<v Boyan Valchev>in the VW select table,
+we have a transport order ID populated,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/107-2
+00:12:23.474 --> 00:12:26.867
+<v Boyan Valchev>and if we do,
+then we simply check for the assign like</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/107-3
+00:12:26.867 --> 00:12:31.495
+<v Boyan Valchev>we trigger the assign like logic. If not,
+we just trigger, we just remove,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/107-4
+00:12:31.495 --> 00:12:35.382
+<v Boyan Valchev>as it mentioned here,
+we remove the load assignment like link.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/108-0
+00:12:35.862 --> 00:12:38.691
+<v Boyan Valchev>We find suitable log,
+we create like load link,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/108-1
+00:12:38.691 --> 00:12:40.342
+<v Boyan Valchev>and we just recalculate lot.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/109-0
+00:12:41.222 --> 00:12:41.342
+<v Matthias Max>Uh-huh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/110-0
+00:12:41.862 --> 00:12:44.191
+<v Boyan Valchev>I mean,
+this is the new logic which should be</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/110-1
+00:12:44.191 --> 00:12:47.988
+<v Boyan Valchev>implemented as part of this PBI.
+The other logic should be reused from the</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/110-2
+00:12:47.988 --> 00:12:48.342
+<v Boyan Valchev>SI leg.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/111-0
+00:12:49.862 --> 00:12:52.022
+<v Boyan Valchev>Handlers for this synchronization.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/112-0
+00:12:56.182 --> 00:12:56.822
+<v Matthias Max>Okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/113-0
+00:12:57.942 --> 00:13:02.108
+<v Boyan Valchev>The question here is, Boshko,
+is this logic because you already started</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/113-1
+00:13:02.108 --> 00:13:05.985
+<v Boyan Valchev>working on the assigned lake and create
+transport order from lake,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/113-2
+00:13:05.985 --> 00:13:09.862
+<v Boyan Valchev>is this logic reusable in a way right now,
+as you have defined it?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/114-0
+00:13:12.102 --> 00:13:17.374
+<v Bojidar Dimitrov>Part of it is reusable.
+I'll have to check for other parts of it</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/114-1
+00:13:17.374 --> 00:13:17.942
+<v Bojidar Dimitrov>though.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/115-0
+00:13:18.422 --> 00:13:20.533
+<v Boyan Valchev>Okay,
+let's make sure that this exact</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/115-1
+00:13:20.533 --> 00:13:24.423
+<v Boyan Valchev>resolution where we find that the lake is
+already assigned somewhere,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/115-2
+00:13:24.423 --> 00:13:28.646
+<v Boyan Valchev>or even the protests where we find that
+the single lake is assigned already</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/115-3
+00:13:28.646 --> 00:13:31.535
+<v Boyan Valchev>somewhere,
+we can directly reuse it because we will</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/115-4
+00:13:31.535 --> 00:13:33.702
+<v Boyan Valchev>need it in a couple of places, I think.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/116-0
+00:13:35.822 --> 00:13:36.422
+<v Matthias Max>Mm-hmm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/117-0
+00:13:38.262 --> 00:13:38.502
+<v Boyan Valchev>P.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/119-0
+00:13:40.902 --> 00:13:44.580
+<v Matthias Max>Okay, so Ivaylo,
+is that giving you the answers you're</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/118-0
+00:13:41.822 --> 00:13:42.022
+<v Boyan Valchev>Cell.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/119-1
+00:13:44.580 --> 00:13:45.382
+<v Matthias Max>looking for?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/121-0
+00:13:48.982 --> 00:13:53.320
+<v Ivaylo Petrov>Well, yeah, I just wanted to clarify,
+but I mean,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/121-1
+00:13:53.320 --> 00:14:00.434
+<v Ivaylo Petrov>you've already discussed it that if there
+will be no other system that can assign</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/121-2
+00:14:00.434 --> 00:14:04.686
+<v Ivaylo Petrov>legs and transporters, I mean,
+as Bob mentioned,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/121-3
+00:14:04.686 --> 00:14:07.462
+<v Ivaylo Petrov>we can use the assign leg logic.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/122-0
+00:14:08.422 --> 00:14:09.382
+<v Ivaylo Petrov>Yeah, I think.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/123-0
+00:14:10.862 --> 00:14:12.782
+<v Ivaylo Petrov>Can cover the case, probably.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/124-0
+00:14:14.702 --> 00:14:15.342
+<v Matthias Max>Mm-hmm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/125-0
+00:14:18.182 --> 00:14:18.742
+<v Boyan Valchev>Yosif.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/126-0
+00:14:19.462 --> 00:14:25.572
+<v Yosif Mihaylov>Also, two points. The last time, like,
+actually, when we discussed this,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/126-1
+00:14:25.572 --> 00:14:31.432
+<v Yosif Mihaylov>then where this whole topic arised around
+defining exactly the steps,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/126-2
+00:14:31.432 --> 00:14:37.542
+<v Yosif Mihaylov>like what I wanted us to confirm was,
+for example, like on the case two,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/128-0
+00:14:37.822 --> 00:14:43.117
+<v Yosif Mihaylov>When we are creating, for example,
+what assignment entity or the what</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/128-1
+00:14:43.117 --> 00:14:47.883
+<v Yosif Mihaylov>assignment link link,
+like what exactly information we need to</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/128-2
+00:14:47.883 --> 00:14:53.859
+<v Yosif Mihaylov>create these entities and pretty much to
+verify that this is actually possible</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/128-3
+00:14:53.859 --> 00:14:56.582
+<v Yosif Mihaylov>because there might be some columns.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/129-0
+00:14:56.822 --> 00:14:59.678
+<v Yosif Mihaylov>where we need to populate some data,
+which we like,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/129-1
+00:14:59.678 --> 00:15:03.907
+<v Yosif Mihaylov>we are not sure what to populate or we
+don't have the data or something like</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/129-2
+00:15:03.907 --> 00:15:04.182
+<v Yosif Mihaylov>that.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/130-0
+00:15:06.742 --> 00:15:09.702
+<v Yosif Mihaylov>Was that in was that investigated?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/131-0
+00:15:11.622 --> 00:15:15.654
+<v Boyan Valchev>Not in this PBI per se,
+but I think Bosch could hear this as part</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/131-1
+00:15:15.654 --> 00:15:19.563
+<v Boyan Valchev>of his work for the assigned led to
+transport order. Basically,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/131-2
+00:15:19.563 --> 00:15:22.312
+<v Boyan Valchev>what we notice is that we have,
+for example,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/131-3
+00:15:22.312 --> 00:15:25.122
+<v Boyan Valchev>we just we checked what we need,
+for example,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/131-4
+00:15:25.122 --> 00:15:27.382
+<v Boyan Valchev>in order for us to recreate the whole</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/132-0
+00:15:30.182 --> 00:15:33.505
+<v Boyan Valchev>Posh, correct me if I'm wrong,
+but I think it was not a lot assignment,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/132-1
+00:15:33.505 --> 00:15:33.782
+<v Boyan Valchev>right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/133-0
+00:15:35.382 --> 00:15:35.982
+<v Bojidar Dimitrov>Ohh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/134-0
+00:15:36.742 --> 00:15:40.102
+<v Bojidar Dimitrov>Well, like assignment, I believe, like...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/135-0
+00:15:40.262 --> 00:15:42.822
+<v Boyan Valchev>The what to send my click link, was it or?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/138-0
+00:15:44.302 --> 00:15:49.702
+<v Bojidar Dimitrov>It was for the lot assignment and the leg
+link to both of them.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/137-0
+00:15:48.022 --> 00:15:48.582
+<v Boyan Valchev>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/139-0
+00:15:50.182 --> 00:15:55.075
+<v Boyan Valchev>So, so basically what it turned out,
+Yosif, just to summarize the whole thing,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/139-1
+00:15:55.075 --> 00:15:59.225
+<v Boyan Valchev>it was that we were missing 3 fields,
+I think something like this.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/139-2
+00:15:59.225 --> 00:16:03.746
+<v Boyan Valchev>We create item for this, Sonia took it.
+It's all they are already there,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/139-3
+00:16:03.746 --> 00:16:08.701
+<v Boyan Valchev>so I don't think that currently we have
+any issues with creating those entities</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/139-4
+00:16:08.701 --> 00:16:09.382
+<v Boyan Valchev>from the...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/140-0
+00:16:09.622 --> 00:16:13.122
+<v Boyan Valchev>Reading information from the table is
+called VW slack, I think.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/140-1
+00:16:13.122 --> 00:16:17.497
+<v Boyan Valchev>So basically we should be having all the
+fields we need for the load assignment</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/140-2
+00:16:17.497 --> 00:16:19.302
+<v Boyan Valchev>and the load assignment leg link.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/142-0
+00:16:21.462 --> 00:16:25.788
+<v Yosif Mihaylov>And also one more question, like,
+because we're going to be making this</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/141-0
+00:16:23.542 --> 00:16:23.782
+<v Boyan Valchev>Okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/142-1
+00:16:25.788 --> 00:16:29.453
+<v Yosif Mihaylov>syncing process, like, for example, again,
+for the case two,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/142-2
+00:16:29.453 --> 00:16:33.299
+<v Yosif Mihaylov>should we be also checking whether the
+shipment is not deleted?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/142-3
+00:16:33.299 --> 00:16:35.462
+<v Yosif Mihaylov>Because this could be also the case.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/143-0
+00:16:38.582 --> 00:16:39.142
+<v Matthias Max>Mmh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/144-0
+00:16:38.662 --> 00:16:41.462
+<v Boyan Valchev>But in this case,
+shouldn't be the leg be deleted as well?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/145-0
+00:16:42.582 --> 00:16:45.659
+<v Yosif Mihaylov>I mean, yes,
+but essentially like when we need to</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/145-1
+00:16:45.659 --> 00:16:50.705
+<v Yosif Mihaylov>check is like obviously one of the cases
+is like is assigned to another transport</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/145-2
+00:16:50.705 --> 00:16:53.413
+<v Yosif Mihaylov>order.
+That might be one of the reasons for</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/145-3
+00:16:53.413 --> 00:16:57.228
+<v Yosif Mihaylov>getting out of sync,
+but another reason could be that at this</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/145-4
+00:16:57.228 --> 00:17:00.982
+<v Yosif Mihaylov>point, the leg, the leg,
+I mean the shipment behind the leg.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/146-0
+00:17:01.182 --> 00:17:02.782
+<v Yosif Mihaylov>Is deleted, and we haven't seen.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/147-0
+00:17:06.422 --> 00:17:06.902
+<v Boyan Valchev>K.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/148-0
+00:17:07.102 --> 00:17:07.582
+<v Matthias Max>Mmh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/150-0
+00:17:09.462 --> 00:17:14.693
+<v Boyan Valchev>But that, like, I mean, this is more of,
+yeah, we can check it, of course,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/149-0
+00:17:09.942 --> 00:17:10.342
+<v Matthias Max>Ohh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/150-1
+00:17:14.693 --> 00:17:18.877
+<v Boyan Valchev>but like my question is because they have
+this view, right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/150-2
+00:17:18.877 --> 00:17:22.504
+<v Boyan Valchev>And this view is driven mainly by
+shipment records.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/150-3
+00:17:22.504 --> 00:17:27.316
+<v Boyan Valchev>So if a shipment is deleted,
+then we should not have a record in the</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/150-4
+00:17:27.316 --> 00:17:28.502
+<v Boyan Valchev>VW, like, I mean.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/151-0
+00:17:28.822 --> 00:17:29.222
+<v Boyan Valchev>The...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/152-0
+00:17:30.742 --> 00:17:31.142
+<v Boyan Valchev>Our.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/154-0
+00:17:30.982 --> 00:17:34.438
+<v Yosif Mihaylov>Probably, but it's still a,
+but still a scenario that needs to be</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/153-0
+00:17:33.222 --> 00:17:33.342
+<v Boyan Valchev>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/154-1
+00:17:34.438 --> 00:17:36.742
+<v Yosif Mihaylov>handled,
+and there might be more like this.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/155-0
+00:17:35.942 --> 00:17:38.894
+<v Boyan Valchev>Okay, yeah,
+but probably we should consider it. Yes,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/155-1
+00:17:38.894 --> 00:17:40.342
+<v Boyan Valchev>you can write it, I guess.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/156-0
+00:17:40.662 --> 00:17:40.822
+<v Matthias Max>Mm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/158-0
+00:17:41.462 --> 00:17:44.342
+<v Ivaylo Petrov>Should I add it as a case tree or?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/157-0
+00:17:43.862 --> 00:17:44.822
+<v Boyan Valchev>Yeah, yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/159-0
+00:17:46.262 --> 00:17:51.462
+<v Matthias Max>So are you talking about a shipment being
+deleted while its legs are still assigned?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/160-0
+00:17:52.302 --> 00:17:53.782
+<v Matthias Max>Is that the use case, Yosif?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/165-0
+00:17:55.222 --> 00:17:59.888
+<v Yosif Mihaylov>It's pretty much that we tried to
+unassign a leg, but for some reason,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/165-1
+00:17:59.888 --> 00:18:05.211
+<v Yosif Mihaylov>the shipment behind it has been deleted
+and we haven't been notified by the CDC,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/162-0
+00:18:04.822 --> 00:18:05.062
+<v Matthias Max>Mm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/165-2
+00:18:05.211 --> 00:18:10.599
+<v Yosif Mihaylov>but we got our thing. And at this moment,
+we tried to unassign it from somewhere,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/163-0
+00:18:07.662 --> 00:18:07.822
+<v Matthias Max>Uh-huh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/165-3
+00:18:10.599 --> 00:18:14.542
+<v Yosif Mihaylov>but actually the shipment is not there at
+all, for example.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/164-0
+00:18:15.862 --> 00:18:16.502
+<v Matthias Max>Team.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/166-0
+00:18:19.862 --> 00:18:19.942
+<v Matthias Max>Ohh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/167-0
+00:18:22.902 --> 00:18:23.142
+<v Matthias Max>Lapp.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/168-0
+00:18:25.222 --> 00:18:27.848
+<v Boyan Valchev>Then we should just delete the leg,
+I guess.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/168-1
+00:18:27.848 --> 00:18:31.991
+<v Boyan Valchev>Isn't this like what we should do?
+As well as like lot assignments and</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/168-2
+00:18:31.991 --> 00:18:35.610
+<v Boyan Valchev>everything. I mean, lot assignment,
+leg link and leg as well.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/168-3
+00:18:35.610 --> 00:18:37.302
+<v Boyan Valchev>Isn't this what we should do?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/169-0
+00:18:38.342 --> 00:18:40.342
+<v Yosif Mihaylov>Yeah, I do so.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/171-0
+00:18:39.942 --> 00:18:44.742
+<v Matthias Max>Exactly, yeah. I mean,
+this should actually be covered by a</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/170-0
+00:18:41.422 --> 00:18:41.862
+<v Yosif Mihaylov>Okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/171-1
+00:18:44.742 --> 00:18:45.782
+<v Matthias Max>higher level.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/172-0
+00:18:46.982 --> 00:18:50.742
+<v Matthias Max>CDC recovery we discussed last week,
+right? Where?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/173-0
+00:18:51.622 --> 00:18:55.062
+<v Matthias Max>We get the delete event for the shipment,
+which...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/174-0
+00:18:55.942 --> 00:19:00.733
+<v Matthias Max>leads to legs and lots being cleaned up
+for that shipment.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/174-1
+00:19:00.733 --> 00:19:06.742
+<v Matthias Max>But it probably is an issue that we still
+store it in the assigned table.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/175-0
+00:19:08.422 --> 00:19:10.902
+<v Matthias Max>Not in the unplanned table.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/178-0
+00:19:12.502 --> 00:19:16.034
+<v Boyan Valchev>I mean, when it comes to CDC,
+we have a handler for this,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/176-0
+00:19:12.982 --> 00:19:13.222
+<v Matthias Max>You.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/178-1
+00:19:16.034 --> 00:19:19.080
+<v Boyan Valchev>but probably let's just keep the CDC out
+of this.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/177-0
+00:19:18.502 --> 00:19:19.622
+<v Matthias Max>Yeah, yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/178-2
+00:19:19.080 --> 00:19:22.856
+<v Boyan Valchev>We can discuss it by guessing the
+refinement when all of the,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/178-3
+00:19:22.856 --> 00:19:26.510
+<v Boyan Valchev>like the rest of the team is there as
+well. But yeah, okay,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/178-4
+00:19:26.510 --> 00:19:31.382
+<v Boyan Valchev>this is a good point, Yosif. I mean,
+probably it's an edge case, but we should.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/179-0
+00:19:31.702 --> 00:19:35.697
+<v Boyan Valchev>Consulting be, you should be,
+we should be taking care of this as well,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/179-1
+00:19:35.697 --> 00:19:39.304
+<v Boyan Valchev>so I guess good point.
+Does anyone have any other comments or we</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/179-2
+00:19:39.304 --> 00:19:41.302
+<v Boyan Valchev>can move on with the other entities?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/180-0
+00:19:46.422 --> 00:19:49.841
+<v Boyan Valchev>Like, basically,
+this case tree is affecting all of the</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/180-1
+00:19:49.841 --> 00:19:53.381
+<v Boyan Valchev>scenarios, isn't it? I mean,
+this is a case, for example,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/180-2
+00:19:53.381 --> 00:19:57.776
+<v Boyan Valchev>if we don't find a leg data for this,
+we just remove everything, right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/180-3
+00:19:57.776 --> 00:20:01.500
+<v Boyan Valchev>Because leg is not assigned for this case,
+or, or, or, like,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/180-4
+00:20:01.500 --> 00:20:05.102
+<v Boyan Valchev>if we don't find the shipment for this,
+let's say, like...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/181-0
+00:20:05.222 --> 00:20:08.925
+<v Boyan Valchev>Once again, like we should,
+we can't proceed with the operation,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/181-1
+00:20:08.925 --> 00:20:13.426
+<v Boyan Valchev>we should just remove the like, basically,
+even you can type that this case is</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/181-2
+00:20:13.426 --> 00:20:16.902
+<v Boyan Valchev>applicable in all scenarios other than
+the delete, probably.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/182-0
+00:20:22.462 --> 00:20:25.087
+<v Boyan Valchev>I mean,
+probably the actions should be a little</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/182-1
+00:20:25.087 --> 00:20:28.367
+<v Boyan Valchev>bit different, like when,
+if we end up in a different case,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/182-2
+00:20:28.367 --> 00:20:32.742
+<v Boyan Valchev>but like checking whether this shipment
+is there is actually a case we need to.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/183-0
+00:20:34.022 --> 00:20:34.502
+<v Boyan Valchev>Have.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/184-0
+00:20:38.262 --> 00:20:38.822
+<v Boyan Valchev>Anyways.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/185-0
+00:20:40.462 --> 00:20:40.982
+<v Boyan Valchev>OK.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/186-0
+00:20:40.822 --> 00:20:41.222
+<v Matthias Max>No.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/188-0
+00:20:42.102 --> 00:20:45.656
+<v Boyan Valchev>For the assign, Ivaylo, you just continue,
+probably like,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/188-1
+00:20:45.656 --> 00:20:47.862
+<v Boyan Valchev>probably you will explain it better.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/189-0
+00:20:46.982 --> 00:20:51.221
+<v Ivaylo Petrov>Yeah, yeah,
+so here we have combined the assigned leg</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/189-1
+00:20:51.221 --> 00:20:54.990
+<v Ivaylo Petrov>to transporter and create transporter
+from leg.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/189-2
+00:20:54.990 --> 00:21:01.584
+<v Ivaylo Petrov>We should create a load assignment entity,
+we should create the load assignment leg</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/189-3
+00:21:01.584 --> 00:21:05.902
+<v Ivaylo Petrov>link respectively,
+and also we should delete the load.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/191-0
+00:21:06.022 --> 00:21:10.110
+<v Ivaylo Petrov>The leg link, if there was,
+if we are out of sync,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/191-1
+00:21:10.110 --> 00:21:16.363
+<v Ivaylo Petrov>and again here we should check whether if
+the previous one should be deleted,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/191-2
+00:21:16.363 --> 00:21:20.130
+<v Ivaylo Petrov>it should be deleted when the legs count
+is 0,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/191-3
+00:21:20.130 --> 00:21:25.982
+<v Ivaylo Petrov>as here we discussed with the locked load
+time entity, and we, if not...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/192-0
+00:21:26.182 --> 00:21:32.042
+<v Ivaylo Petrov>So, if we should not delete the lot,
+we should recalculate the lot aggregates,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/192-1
+00:21:32.042 --> 00:21:37.160
+<v Ivaylo Petrov>because I think Bobby mentioned that
+there was a small bug about the</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/192-2
+00:21:37.160 --> 00:21:41.091
+<v Ivaylo Petrov>recalculation,
+then we should be considering this as</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/192-3
+00:21:41.091 --> 00:21:41.462
+<v Ivaylo Petrov>well.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/193-0
+00:21:45.862 --> 00:21:47.302
+<v Ivaylo Petrov>Any questions?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/195-0
+00:21:50.702 --> 00:21:55.775
+<v Matthias Max>So you want to assign a leg,
+you do the check with TMS.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/195-1
+00:21:55.775 --> 00:21:59.942
+<v Matthias Max>You see that it is assigned already,
+correct?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/194-0
+00:21:56.742 --> 00:21:57.222
+<v Ivaylo Petrov>Yep.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/197-0
+00:22:00.742 --> 00:22:04.022
+<v Matthias Max>So you don't call the TMS, which means...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/196-0
+00:22:01.142 --> 00:22:01.622
+<v Ivaylo Petrov>Yep.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/199-0
+00:22:04.982 --> 00:22:09.222
+<v Matthias Max>You create a lot of assignment entity.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/200-0
+00:22:10.542 --> 00:22:15.382
+<v Matthias Max>Which is the parent for the lot assign
+and like link, right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/201-0
+00:22:16.982 --> 00:22:17.302
+<v Ivaylo Petrov>Yep.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/202-0
+00:22:17.622 --> 00:22:23.022
+<v Matthias Max>And then we need the lot likely,
+which is the unplanned side of things,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/202-1
+00:22:23.022 --> 00:22:23.622
+<v Matthias Max>correct?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/203-0
+00:22:25.062 --> 00:22:25.462
+<v Ivaylo Petrov>Yep.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/204-0
+00:22:25.942 --> 00:22:32.012
+<v Matthias Max>And then delete it, of course,
+if the lot is empty, yeah, makes sense.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/204-1
+00:22:32.012 --> 00:22:34.662
+<v Matthias Max>If not, you will, yeah, sounds.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/205-0
+00:22:35.462 --> 00:22:36.822
+<v Matthias Max>Sounds logical.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/207-0
+00:22:42.182 --> 00:22:42.982
+<v Ivaylo Petrov>Yeah, Yosif.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/208-0
+00:22:44.422 --> 00:22:47.673
+<v Yosif Mihaylov>Yeah, guys,
+sorry for going back to the previous</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/208-1
+00:22:47.673 --> 00:22:50.924
+<v Yosif Mihaylov>scenario. I'm just like,
+keep thinking about it,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/208-2
+00:22:50.924 --> 00:22:52.782
+<v Yosif Mihaylov>and I think like I'm just...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/210-0
+00:22:53.622 --> 00:22:58.895
+<v Yosif Mihaylov>Not sure whether like these cases are
+even possible to be honest. I mean,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/210-1
+00:22:58.895 --> 00:23:02.957
+<v Yosif Mihaylov>I think that we kind of discussed this in
+the beginning,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/210-2
+00:23:02.957 --> 00:23:07.875
+<v Yosif Mihaylov>but just if we try to replay what will
+happen is like at some point,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/210-3
+00:23:07.875 --> 00:23:12.008
+<v Yosif Mihaylov>like the state,
+like the state will be synced and someone</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/210-4
+00:23:12.008 --> 00:23:14.502
+<v Yosif Mihaylov>will be trying to unassign the leg.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/211-0
+00:23:15.702 --> 00:23:21.769
+<v Yosif Mihaylov>in our application. In this case,
+let's say that the DMS operation succeeds,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/211-1
+00:23:21.769 --> 00:23:26.182
+<v Yosif Mihaylov>but mudispo fails to synchronize.
+So this means that...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/212-0
+00:23:27.142 --> 00:23:30.573
+<v Yosif Mihaylov>From that point on,
+nobody ever will be able to see this</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/212-1
+00:23:30.573 --> 00:23:35.568
+<v Yosif Mihaylov>state like in some other state. I mean,
+it will be always be still assigned there.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/212-2
+00:23:35.568 --> 00:23:40.323
+<v Yosif Mihaylov>And the only operation that everybody
+will be able to do from this point on is</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/212-3
+00:23:40.323 --> 00:23:44.296
+<v Yosif Mihaylov>trying to unassign. I mean,
+there will be no option to assign the</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/212-4
+00:23:44.296 --> 00:23:46.342
+<v Yosif Mihaylov>Leicht to another transport order.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/213-0
+00:23:46.582 --> 00:23:50.359
+<v Yosif Mihaylov>because the state in new dispo will be
+out of sync,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/213-1
+00:23:50.359 --> 00:23:55.153
+<v Yosif Mihaylov>meaning it will be still assigned to this
+previous leg. So, like,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/213-2
+00:23:55.153 --> 00:23:59.221
+<v Yosif Mihaylov>I'm just wondering,
+is case 2 and case 3 even possible?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/213-3
+00:23:59.221 --> 00:24:03.144
+<v Yosif Mihaylov>I mean, case 3 is totally CDC,
+but even case 2, like,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/213-4
+00:24:03.144 --> 00:24:04.742
+<v Yosif Mihaylov>is this even possible?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/215-0
+00:24:10.102 --> 00:24:15.526
+<v Yosif Mihaylov>Because I think it is not. I mean, again,
+like we try to unassign the leg,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/215-1
+00:24:15.526 --> 00:24:20.444
+<v Yosif Mihaylov>we the TMS succeeds, new dispo fails.
+This means that in new dispo,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/215-2
+00:24:20.444 --> 00:24:26.446
+<v Yosif Mihaylov>every user from this point on will still
+see this leg assigned to this to this old</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/215-3
+00:24:26.446 --> 00:24:28.182
+<v Yosif Mihaylov>work or transport order.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/214-0
+00:24:29.142 --> 00:24:29.262
+<v Matthias Max>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/217-0
+00:24:29.542 --> 00:24:34.153
+<v Yosif Mihaylov>And the only operations that they will be
+ever able to do with this lake is</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/217-1
+00:24:34.153 --> 00:24:37.308
+<v Yosif Mihaylov>unassigned.
+They will be not able to unassign it to</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/217-2
+00:24:37.308 --> 00:24:38.582
+<v Yosif Mihaylov>some other transport.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/216-0
+00:24:39.542 --> 00:24:40.022
+<v Matthias Max>Mhm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/218-0
+00:24:40.902 --> 00:24:45.727
+<v Yosif Mihaylov>So next time they try to unassign it,
+we'll just check and see, well,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/218-1
+00:24:45.727 --> 00:24:51.035
+<v Yosif Mihaylov>this is already unassigned in TMS.
+We just do the try the unassignment again</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/218-2
+00:24:51.035 --> 00:24:51.862
+<v Yosif Mihaylov>in new this.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/219-0
+00:24:53.222 --> 00:24:56.845
+<v Yosif Mihaylov>This is, of course,
+with the assumption that only new dispo</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/219-1
+00:24:56.845 --> 00:24:59.382
+<v Yosif Mihaylov>operates with this with this planning Lex.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/220-0
+00:25:00.302 --> 00:25:00.782
+<v Matthias Max>Mhm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/221-0
+00:25:08.902 --> 00:25:10.822
+<v Matthias Max>Yep, true.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/223-0
+00:25:14.982 --> 00:25:17.793
+<v Yosif Mihaylov>I mean,
+how exactly did this leg will end up on</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/223-1
+00:25:17.793 --> 00:25:22.245
+<v Yosif Mihaylov>assigned to another transport order if
+all of this is happening through new</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/223-2
+00:25:22.245 --> 00:25:26.989
+<v Yosif Mihaylov>display, new dispo will be out of state,
+meaning that he will be still assigned,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/223-3
+00:25:26.989 --> 00:25:30.855
+<v Yosif Mihaylov>this leg will be still assigned to this
+previous transport order.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/223-4
+00:25:30.855 --> 00:25:34.662
+<v Yosif Mihaylov>They won't be seeing this leg in the
+planning area to be able to</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/224-0
+00:25:34.902 --> 00:25:36.102
+<v Yosif Mihaylov>Assessment somewhere else.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/225-0
+00:25:40.222 --> 00:25:41.142
+<v Matthias Max>Um...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/226-0
+00:25:43.622 --> 00:25:47.559
+<v Ivaylo Petrov>Yeah, I mean,
+if really this will be the case,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/226-1
+00:25:47.559 --> 00:25:54.513
+<v Ivaylo Petrov>that this pool will be the only source of
+assigning and non-assigning and creating</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/226-2
+00:25:54.513 --> 00:26:00.545
+<v Ivaylo Petrov>and etc. for the pickup legs. I mean,
+this is valid that you're saying,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/226-3
+00:26:00.545 --> 00:26:03.142
+<v Ivaylo Petrov>but actually, I'm sorry if I...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/227-0
+00:26:03.262 --> 00:26:08.952
+<v Ivaylo Petrov>Probably missed it,
+but this was the first time that I hear</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/227-1
+00:26:08.952 --> 00:26:15.874
+<v Ivaylo Petrov>this that the legacy system will not be
+touching the pickup line clicks,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/227-2
+00:26:15.874 --> 00:26:22.702
+<v Ivaylo Petrov>and this will be the only application
+that is that's working with this.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/228-0
+00:26:23.302 --> 00:26:27.862
+<v Ivaylo Petrov>So I believe it can,
+it's true that you said Yosif.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/230-0
+00:26:28.262 --> 00:26:31.453
+<v Boyan Valchev>Yeah, but the thing here is,
+sorry for the interruption, Ivaylo,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/230-1
+00:26:31.453 --> 00:26:34.791
+<v Boyan Valchev>the thing is that, okay, Yosif,
+for example, yeah, this is correct,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/230-2
+00:26:34.791 --> 00:26:38.031
+<v Boyan Valchev>like for the general, for the state,
+it is fine, but for example,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/230-3
+00:26:38.031 --> 00:26:42.204
+<v Boyan Valchev>let's say if the unassigned failed, right,
+because here the first operation is about</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/230-4
+00:26:42.204 --> 00:26:45.247
+<v Boyan Valchev>unassigned. Let's say that they will see,
+still see the load,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/230-5
+00:26:45.247 --> 00:26:47.702
+<v Boyan Valchev>the leg assigned to a particular
+transport order.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/231-0
+00:26:48.262 --> 00:26:52.756
+<v Boyan Valchev>Let's say we sync again,
+I mean we execute the operation again,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/229-0
+00:26:48.822 --> 00:26:49.062
+<v Yosif Mihaylov>Lapp.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/231-1
+00:26:52.756 --> 00:26:57.461
+<v Boyan Valchev>this operation succeeds.
+If we don't cover case two or case three,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/231-2
+00:26:57.461 --> 00:27:00.902
+<v Boyan Valchev>that means that this leg will end
+eventually in.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/232-0
+00:27:01.782 --> 00:27:04.892
+<v Yosif Mihaylov>But wait, wait, wait, can you go again?
+Let's just go,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/232-1
+00:27:04.892 --> 00:27:09.302
+<v Yosif Mihaylov>let's just go with the with the four,
+like let's say we we start from with...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/234-0
+00:27:07.782 --> 00:27:10.404
+<v Boyan Valchev>Oh yeah, okay, okay, I see your point.
+I see your point.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/234-1
+00:27:10.404 --> 00:27:13.302
+<v Boyan Valchev>They can't assign it if they don't see it
+as unassigned, okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/233-0
+00:27:12.502 --> 00:27:13.062
+<v Yosif Mihaylov>Exactly.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/239-0
+00:27:14.262 --> 00:27:17.069
+<v Yosif Mihaylov>They will always see it in the,
+they will always see,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/235-0
+00:27:14.422 --> 00:27:14.702
+<v Matthias Max>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/236-0
+00:27:14.422 --> 00:27:15.782
+<v Boyan Valchev>Yeah, probably this makes sense.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/239-1
+00:27:17.069 --> 00:27:20.864
+<v Yosif Mihaylov>they will always see it in this old
+assigned state to this old transport</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/239-2
+00:27:20.864 --> 00:27:23.411
+<v Yosif Mihaylov>order,
+and the only operation they'll be able to</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/237-0
+00:27:21.942 --> 00:27:22.422
+<v Boyan Valchev>Okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/239-3
+00:27:23.411 --> 00:27:26.582
+<v Yosif Mihaylov>do in terms of assigning and unassigning
+will be unassigned.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/238-0
+00:27:28.022 --> 00:27:28.182
+<v Matthias Max>Mm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/240-0
+00:27:33.702 --> 00:27:37.142
+<v Boyan Valchev>They can find me and probably would be
+sufficient to cover case one.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/241-0
+00:27:37.862 --> 00:27:41.767
+<v Yosif Mihaylov>I would say that, to be honest,
+I think that we should cover only case</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/241-1
+00:27:41.767 --> 00:27:42.262
+<v Yosif Mihaylov>one here.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/242-0
+00:27:45.222 --> 00:27:45.702
+<v Boyan Valchev>Okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/244-0
+00:27:45.942 --> 00:27:50.791
+<v Yosif Mihaylov>Now, when I think about it, like the CDC,
+I think that it's completely separate</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/243-0
+00:27:46.262 --> 00:27:46.822
+<v Ivaylo Petrov>K.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/244-1
+00:27:50.791 --> 00:27:53.519
+<v Yosif Mihaylov>concern.
+This is about syncing transactional</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/244-2
+00:27:53.519 --> 00:27:57.035
+<v Yosif Mihaylov>behavior, not CDC.
+So I agree with Matthias that, I mean,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/244-3
+00:27:57.035 --> 00:28:01.702
+<v Yosif Mihaylov>I was just brainstorming about case three,
+but I don't think that we should.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/245-0
+00:28:03.702 --> 00:28:07.462
+<v Yosif Mihaylov>Address it here,
+and I think case 2 is not valid, so...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/247-0
+00:28:09.022 --> 00:28:11.796
+<v Boyan Valchev>Okay, because like, yeah,
+this is totally fine.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/247-1
+00:28:11.796 --> 00:28:15.899
+<v Boyan Valchev>If you can just say that we have
+discussed this and it's out of scope,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/247-2
+00:28:15.899 --> 00:28:19.945
+<v Boyan Valchev>don't delete it in my opinion,
+because it's a part of the discussion.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/246-0
+00:28:17.902 --> 00:28:18.102
+<v Matthias Max>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/247-3
+00:28:19.945 --> 00:28:24.510
+<v Boyan Valchev>Just note that we have decided case two.
+Of course, just like first let's ask,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/247-4
+00:28:24.510 --> 00:28:26.822
+<v Boyan Valchev>does anybody have anything against this?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/248-0
+00:28:30.742 --> 00:28:31.382
+<v Matthias Max>No.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/249-0
+00:28:32.062 --> 00:28:35.877
+<v Boyan Valchev>Okay, so just then add it,
+because we have like one or two minutes</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/249-1
+00:28:35.877 --> 00:28:39.122
+<v Boyan Valchev>left before we jump to the actual
+refinement. Basically,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/249-2
+00:28:39.122 --> 00:28:41.798
+<v Boyan Valchev>like if just to cover the other flows
+quickly,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/249-3
+00:28:41.798 --> 00:28:44.645
+<v Boyan Valchev>if we just briefly went through the
+assigned leg,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/249-4
+00:28:44.645 --> 00:28:48.346
+<v Boyan Valchev>I don't think we have any uncertainties
+there, at least, I mean,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/249-5
+00:28:48.346 --> 00:28:49.542
+<v Boyan Valchev>I think it's quite...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/251-0
+00:28:50.742 --> 00:28:55.741
+<v Boyan Valchev>Clear what we need to do there for the
+loads and the create transport order from</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/251-1
+00:28:55.741 --> 00:28:59.937
+<v Boyan Valchev>load. Basically the same thing,
+but what we need to do is loop just</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/251-2
+00:28:59.937 --> 00:29:01.542
+<v Boyan Valchev>through the legs and sync.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/250-0
+00:29:02.462 --> 00:29:02.622
+<v Matthias Max>Uh-huh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/252-0
+00:29:03.862 --> 00:29:04.822
+<v Boyan Valchev>If we need to...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/253-0
+00:29:05.862 --> 00:29:06.982
+<v Boyan Valchev>And the...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/254-0
+00:29:08.222 --> 00:29:11.854
+<v Boyan Valchev>More most problematic thing I see is the
+delete transport orders.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/254-1
+00:29:11.854 --> 00:29:16.366
+<v Boyan Valchev>I can raise probably a concern here and
+we can discuss it in the other meeting as</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/254-2
+00:29:16.366 --> 00:29:21.044
+<v Boyan Valchev>well. Basically, like what the situation,
+the main issue for the transport order is.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/254-3
+00:29:21.044 --> 00:29:25.061
+<v Boyan Valchev>The reason is that, for example,
+let's say is our trust transport order.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/254-4
+00:29:25.061 --> 00:29:27.702
+<v Boyan Valchev>Let's say that we have some like watts or
+legs.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/255-0
+00:29:28.102 --> 00:29:32.682
+<v Boyan Valchev>assigned to it. If the user,
+if we fail to sync this operation within</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/255-1
+00:29:32.682 --> 00:29:36.281
+<v Boyan Valchev>the retried codes,
+which have the actual context which</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/255-2
+00:29:36.281 --> 00:29:39.226
+<v Boyan Valchev>transport order has been deleted,
+let's say,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/255-3
+00:29:39.226 --> 00:29:43.871
+<v Boyan Valchev>because this is the case where the
+operation succeeded on TMS side and</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/255-4
+00:29:43.871 --> 00:29:47.077
+<v Boyan Valchev>failed on the new display side. If,
+for example,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/255-5
+00:29:47.077 --> 00:29:50.022
+<v Boyan Valchev>the user goes out of the prompt,
+which knows</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/256-0
+00:29:50.582 --> 00:29:56.262
+<v Boyan Valchev>for which transport order ID will try to
+execute the delete operation.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/256-1
+00:29:56.262 --> 00:29:58.022
+<v Boyan Valchev>The concern is that...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/257-0
+00:29:59.222 --> 00:30:02.652
+<v Boyan Valchev>After this,
+after this transport order is deleted,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/257-1
+00:30:02.652 --> 00:30:08.234
+<v Boyan Valchev>the user won't be able to see those legs
+or lots anywhere because they would still</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/257-2
+00:30:08.234 --> 00:30:13.682
+<v Boyan Valchev>count as assigned if the operation fails.
+They won't have the transport order to</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/257-3
+00:30:13.682 --> 00:30:19.062
+<v Boyan Valchev>see where these legs or lots are assigned.
+They also won't be seeing this as an</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/258-0
+00:30:19.102 --> 00:30:21.755
+<v Boyan Valchev>Plant,
+because we have a what assignment link</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/258-1
+00:30:21.755 --> 00:30:25.966
+<v Boyan Valchev>link for those legs are load and lots,
+so they won't be able to see this</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/258-2
+00:30:25.966 --> 00:30:27.062
+<v Boyan Valchev>basically anywhere.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/259-0
+00:30:28.662 --> 00:30:28.862
+<v Matthias Max>Uh-huh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/261-0
+00:30:29.822 --> 00:30:33.505
+<v Boyan Valchev>Which is really adherent, and, like,
+we should be,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/261-1
+00:30:33.505 --> 00:30:37.622
+<v Boyan Valchev>we should consider how we handle this
+situation exactly.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/262-0
+00:30:40.342 --> 00:30:41.142
+<v Boyan Valchev>Because.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/264-0
+00:30:40.502 --> 00:30:45.025
+<v Matthias Max>So, again,
+you say if the delete succeeds of the</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/264-1
+00:30:45.025 --> 00:30:46.502
+<v Matthias Max>transport order.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/263-0
+00:30:46.742 --> 00:30:47.262
+<v Boyan Valchev>Mhm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/265-0
+00:30:47.662 --> 00:30:51.062
+<v Matthias Max>You will no longer see it, so you cannot.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/266-0
+00:30:50.102 --> 00:30:52.502
+<v Boyan Valchev>If the operation fails on, you dispose it,
+yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/270-0
+00:30:52.022 --> 00:30:56.103
+<v Matthias Max>Yeah,
+you cannot repeat it in the second time,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/270-1
+00:30:56.103 --> 00:30:59.142
+<v Matthias Max>except you do it immediately after.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/268-0
+00:30:56.182 --> 00:30:56.662
+<v Boyan Valchev>You can.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/269-0
+00:30:59.382 --> 00:31:00.022
+<v Boyan Valchev>Exactly.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/271-0
+00:31:00.782 --> 00:31:01.782
+<v Matthias Max>Mhm, mhm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/273-0
+00:31:02.742 --> 00:31:05.142
+<v Boyan Valchev>If we lose the context, we sorry.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/272-0
+00:31:02.902 --> 00:31:03.942
+<v Matthias Max>And if you...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/276-0
+00:31:04.902 --> 00:31:08.339
+<v Matthias Max>Yeah,
+if you refresh or come back after your</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/276-1
+00:31:08.339 --> 00:31:14.068
+<v Matthias Max>coffee and it has refreshed or whatever,
+the transport order will be gone,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/276-2
+00:31:14.068 --> 00:31:20.025
+<v Matthias Max>meaning we still have the old assignments
+in our database to the non-existing</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/274-0
+00:31:19.382 --> 00:31:20.022
+<v Boyan Valchev>Correct.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/276-3
+00:31:20.025 --> 00:31:21.782
+<v Matthias Max>transport order, right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/275-0
+00:31:21.942 --> 00:31:22.982
+<v Boyan Valchev>Correct, yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/277-0
+00:31:29.622 --> 00:31:31.942
+<v Matthias Max>So, so, so, so, so...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/278-0
+00:31:32.822 --> 00:31:38.822
+<v Matthias Max>The issue being that the legs are not
+presented as unplanned.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/279-0
+00:31:45.062 --> 00:31:45.462
+<v Matthias Max>Uh-huh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/280-0
+00:31:47.462 --> 00:31:47.862
+<v Matthias Max>Huh.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/281-0
+00:31:49.022 --> 00:31:50.342
+<v Matthias Max>So, you call?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/282-0
+00:31:49.702 --> 00:31:52.537
+<v Yosif Mihaylov>I think there's,
+I think there's not much that we can do</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/282-1
+00:31:52.537 --> 00:31:54.824
+<v Yosif Mihaylov>here.
+I think that this should potentially be</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/282-2
+00:31:54.824 --> 00:31:55.222
+<v Yosif Mihaylov>covered.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/283-0
+00:31:56.582 --> 00:31:59.622
+<v Yosif Mihaylov>I guess in some of the other falls.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/286-0
+00:32:00.342 --> 00:32:04.512
+<v Boyan Valchev>We don't have a, I mean,
+we don't have a flow which would touch</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/284-0
+00:32:00.382 --> 00:32:00.502
+<v Matthias Max>Yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/286-1
+00:32:04.512 --> 00:32:09.398
+<v Boyan Valchev>those because basically this is not an
+assignment, this is not assignment,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/285-0
+00:32:04.822 --> 00:32:05.782
+<v Matthias Max>Yeah, we donut.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/286-2
+00:32:09.398 --> 00:32:12.982
+<v Boyan Valchev>we don't touch legs,
+basically we don't interact with.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/287-0
+00:32:14.022 --> 00:32:15.622
+<v Matthias Max>Yeah, correct.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/288-0
+00:32:15.222 --> 00:32:15.782
+<v Boyan Valchev>So...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/289-0
+00:32:15.782 --> 00:32:16.502
+<v Yosif Mihaylov>Yeah, yeah, yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/290-0
+00:32:16.902 --> 00:32:22.502
+<v Matthias Max>This is the background cleanup kind of
+thing you expect to happen.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/291-0
+00:32:23.062 --> 00:32:26.621
+<v Boyan Valchev>And this is the only actual solution
+which I see in this situation,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/291-1
+00:32:26.621 --> 00:32:27.302
+<v Boyan Valchev>to be honest.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/292-0
+00:32:27.942 --> 00:32:28.342
+<v Matthias Max>Lapp.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/293-0
+00:32:29.782 --> 00:32:30.782
+<v Matthias Max>So.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/294-0
+00:32:32.662 --> 00:32:37.622
+<v Matthias Max>Maybe this is a very special case that
+needs extra highlighting and...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/295-0
+00:32:38.742 --> 00:32:39.862
+<v Matthias Max>These coping.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/296-0
+00:32:41.942 --> 00:32:47.149
+<v Matthias Max>Because yeah, we have a deadline,
+we have to deliver something.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/296-1
+00:32:47.149 --> 00:32:51.462
+<v Matthias Max>If new knowledge piles up,
+which prevents us from...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/297-0
+00:32:53.742 --> 00:32:57.017
+<v Matthias Max>finishing certain features in the
+timeline,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/297-1
+00:32:57.017 --> 00:32:59.622
+<v Matthias Max>it just needs to happen afterwards.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/298-0
+00:33:00.982 --> 00:33:02.582
+<v Matthias Max>It's just normal, right?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/299-0
+00:33:04.022 --> 00:33:05.462
+<v Matthias Max>I have to think about this.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/300-0
+00:33:07.142 --> 00:33:11.382
+<v Matthias Max>I mean,
+what we cover is the immediate retry.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/301-0
+00:33:12.342 --> 00:33:16.204
+<v Matthias Max>And also,
+we would have these internal retries,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/301-1
+00:33:16.204 --> 00:33:19.986
+<v Matthias Max>right?
+That's part of the transaction behavior</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/301-2
+00:33:19.986 --> 00:33:25.297
+<v Matthias Max>anyway. Within, what did we say,
+three times within 30 seconds or</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/301-3
+00:33:25.297 --> 00:33:26.102
+<v Matthias Max>something.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/302-0
+00:33:28.422 --> 00:33:33.342
+<v Matthias Max>But the case where you refresh and come
+back later.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/303-0
+00:33:36.262 --> 00:33:39.702
+<v Matthias Max>Was probably never in scope.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/304-0
+00:33:41.942 --> 00:33:42.902
+<v Yosif Mihaylov>Can we?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/305-0
+00:33:45.142 --> 00:33:46.502
+<v Yosif Mihaylov>So, um...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/306-0
+00:33:48.182 --> 00:33:48.662
+<v Yosif Mihaylov>Two.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/309-0
+00:33:49.142 --> 00:33:54.022
+<v Matthias Max>Yeah, sorry. Also,
+this would be a typical case where...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/308-0
+00:33:49.782 --> 00:33:51.222
+<v Yosif Mihaylov>Yeah, I was.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/310-0
+00:33:55.022 --> 00:33:56.822
+<v Matthias Max>An employee can...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/311-0
+00:33:58.182 --> 00:34:03.769
+<v Matthias Max>Get support in a manual way.
+You would raise a ticket with Service</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/311-1
+00:34:03.769 --> 00:34:08.022
+<v Matthias Max>Desk and say, hey, I miss my legs.
+Where are they?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/312-0
+00:34:09.142 --> 00:34:15.222
+<v Matthias Max>And then you can look up the two sources,
+TMS and NewDispo.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/313-0
+00:34:16.342 --> 00:34:22.502
+<v Matthias Max>And yeah, fix the data issue manually.
+I mean, this is what we agreed on anyway.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/314-0
+00:34:24.262 --> 00:34:30.281
+<v Matthias Max>as a last resort.
+That's why the information needs to be</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/314-1
+00:34:30.281 --> 00:34:32.182
+<v Matthias Max>shown to the user.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/315-0
+00:34:33.862 --> 00:34:36.982
+<v Matthias Max>That stuff was locked in the cloud locks.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/316-0
+00:34:38.662 --> 00:34:42.106
+<v Matthias Max>That's probably the little gap we still
+have.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/316-1
+00:34:42.106 --> 00:34:48.022
+<v Matthias Max>I stumbled across this ticket today for
+the front-end side of things for that.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/317-0
+00:34:52.902 --> 00:34:55.456
+<v Boyan Valchev>Hey,
+because we need to jump to the other</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/317-1
+00:34:55.456 --> 00:34:55.942
+<v Boyan Valchev>meeting.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/318-0
+00:34:56.782 --> 00:34:57.942
+<v Matthias Max>Yes, correct.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/319-0
+00:34:58.342 --> 00:35:02.569
+<v Bojidar Dimitrov>My suggestion for this,
+like how to handle this,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/319-1
+00:35:02.569 --> 00:35:08.005
+<v Bojidar Dimitrov>would be like if we know that the
+operation fails on our side,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/319-2
+00:35:08.005 --> 00:35:14.993
+<v Bojidar Dimitrov>like we can get the error and like log it
+in the DB in a table or something like</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/319-3
+00:35:14.993 --> 00:35:15.942
+<v Bojidar Dimitrov>that and...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/321-0
+00:35:16.142 --> 00:35:21.575
+<v Bojidar Dimitrov>probably have something like a background
+task that we can configure to run like</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/321-1
+00:35:21.575 --> 00:35:24.794
+<v Bojidar Dimitrov>once a day,
+once a week or something like that.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/321-2
+00:35:24.794 --> 00:35:27.142
+<v Bojidar Dimitrov>Like this can be further discussed.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/322-0
+00:35:27.702 --> 00:35:31.245
+<v Yosif Mihaylov>We don't notice, we cannot notice that,
+I mean,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/322-1
+00:35:31.245 --> 00:35:36.635
+<v Yosif Mihaylov>our application could crash at this point
+before logging, and even this,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/322-2
+00:35:36.635 --> 00:35:41.655
+<v Yosif Mihaylov>like this background process is something
+that it's that it's yeah,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/322-3
+00:35:41.655 --> 00:35:47.782
+<v Yosif Mihaylov>pretty much has some effort to implement.
+I think the easiest automatic way to to.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/323-0
+00:35:47.862 --> 00:35:53.347
+<v Yosif Mihaylov>to solve this, to be honest,
+is to enable the deletion of transport</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/323-1
+00:35:53.347 --> 00:35:57.299
+<v Yosif Mihaylov>orders CDC,
+because what would this happen if we</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/323-2
+00:35:57.299 --> 00:36:01.331
+<v Yosif Mihaylov>enable it,
+just the deletion of transport orders,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/323-3
+00:36:01.331 --> 00:36:07.542
+<v Yosif Mihaylov>meaning that when we successfully execute
+the delete transport order on TMS,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/324-0
+00:36:07.782 --> 00:36:13.542
+<v Yosif Mihaylov>Uh, like we will receive the CDC event,
+and given that our handles are idepotent.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/325-0
+00:36:14.902 --> 00:36:14.942
+<v Yosif Mihaylov>Uhh...</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/326-0
+00:36:16.662 --> 00:36:22.022
+<v Yosif Mihaylov>It would mean that that we would be able
+to pretty much just just catch up.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/327-0
+00:36:23.702 --> 00:36:29.303
+<v Matthias Max>Yeah, let's end the meeting here.
+We need to move on. Ivaylo,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/327-1
+00:36:29.303 --> 00:36:34.182
+<v Matthias Max>are you at least partially further with
+your answers?</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/330-0
+00:36:35.862 --> 00:36:40.043
+<v Ivaylo Petrov>Yeah, yeah,
+I mean it was a team discussion after all,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/328-0
+00:36:36.382 --> 00:36:36.502
+<v Matthias Max>Okay.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/330-1
+00:36:40.043 --> 00:36:46.353
+<v Ivaylo Petrov>so yeah, I just started some of the steps.
+I will be attaching the document in the</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/330-2
+00:36:46.353 --> 00:36:50.534
+<v Ivaylo Petrov>wiki as well,
+and I'll probably add a link in the PBI,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/329-0
+00:36:50.422 --> 00:36:51.942
+<v Matthias Max>Yeah, please, please do that.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/330-3
+00:36:50.534 --> 00:36:51.142
+<v Ivaylo Petrov>so yeah.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/331-0
+00:36:51.702 --> 00:36:54.761
+<v Boyan Valchev>Yeah, just so just to conclude,
+like this document,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/331-1
+00:36:54.761 --> 00:36:57.997
+<v Boyan Valchev>because those laws be implemented by
+different people,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/331-2
+00:36:57.997 --> 00:37:00.997
+<v Boyan Valchev>this document should be used as a
+reference point.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/331-3
+00:37:00.997 --> 00:37:05.998
+<v Boyan Valchev>We'll be adding this to the wiki with the
+actual steps we agreed to take. Basically,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/331-4
+00:37:05.998 --> 00:37:10.763
+<v Boyan Valchev>this would cover the logic behind the
+implementation which we'll be having, so..</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/331-5
+00:37:10.763 --> 00:37:10.822
+<v Boyan Valchev>.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/333-0
+00:37:10.902 --> 00:37:14.700
+<v Boyan Valchev>Like, yeah,
+just whoever starts working on such PBI,</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/333-1
+00:37:14.700 --> 00:37:19.142
+<v Boyan Valchev>just this should be the reference
+document which we take off.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/332-0
+00:37:17.542 --> 00:37:18.022
+<v Matthias Max>Mhm.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/335-0
+00:37:19.862 --> 00:37:26.718
+<v Matthias Max>Lisa, if it's not too much work,
+can you make it a markdown so it's Wiki</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/335-1
+00:37:26.718 --> 00:37:31.601
+<v Matthias Max>conform? Otherwise,
+Word will always just be a file</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/335-2
+00:37:31.601 --> 00:37:34.982
+<v Matthias Max>attachment in the Wiki. Okay, great.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/334-0
+00:37:31.862 --> 00:37:33.782
+<v Ivaylo Petrov>Yeah, yeah, yeah, of course, of course.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/339-0
+00:37:36.462 --> 00:37:38.742
+<v Boyan Valchev>Okay, great,
+let's jump to the other meeting then.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/336-0
+00:37:36.502 --> 00:37:37.142
+<v Matthias Max>Thanks.</v>
+
+f90e6f12-ff54-4c14-95df-321eeefea2cc/340-0
+00:37:39.542 --> 00:37:39.862
+<v Ivaylo Petrov>Yep.</v>

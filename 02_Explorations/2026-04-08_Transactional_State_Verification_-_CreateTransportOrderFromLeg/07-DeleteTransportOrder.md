@@ -273,6 +273,68 @@ Flow #7 is a **single TMS mutation** — fully atomic within PL/pgSQL:
 
 ---
 
+## New Dispo-Side Failure: Orphaned Assignments
+
+> Added: 2026-05-12 — based on team discussion (2026-04-28, Transactional Alignment meeting)
+
+### The Problem
+
+The existing "Failure Windows" table above only covers TMS-side state. There is an additional failure window on the **New Dispo side**:
+
+| Failure Point | TMS State | New Dispo State | User Impact |
+|---------------|-----------|-----------------|-------------|
+| TMS delete succeeds, New Dispo DB cleanup fails | TO deleted, legs reset to STATUS_DIS='F' | `LotAssignmentEntity` and `LotAssignmentLegLinkEntity` still reference the deleted TO | Legs/lots invisible to the user (see below) |
+
+After the TMS Bridge call succeeds, the Backend must:
+1. Remove `LotAssignmentLegLinkEntity` records
+2. Remove `LotAssignmentEntity` records
+3. Move legs back to a suitable unplanned lot
+
+If this local cleanup fails (application crash, database error, timeout) **and** the user loses the frontend context (page refresh, navigating away, session timeout), the operation cannot be retried because the transport order no longer exists in TMS.
+
+### Consequence
+
+The legs and lots remain marked as "assigned" in New Dispo to a transport order that no longer exists in TMS:
+
+- They do **not** appear as unplanned (they still have a `LotAssignmentLegLinkEntity`)
+- They do **not** appear under any transport order (the TO is gone from TMS)
+- The user has **no way** to find or interact with these legs through the UI
+- No existing flow touches these orphaned records — assign/unassign operations operate on existing transport orders
+
+### Recovery Options Discussed
+
+Four approaches were discussed in the 2026-04-28 Transactional Alignment meeting:
+
+#### Option A: Immediate Retry (already implemented)
+
+The existing retry mechanism (3 attempts within ~30 seconds) covers the case where the user keeps the frontend context. If the local DB write fails transiently, the retry can succeed because the frontend still holds the transport order ID and the operation context.
+
+**Limitation:** Does not cover the "context lost" case (page refresh, user walks away).
+
+#### Option B: Background Reconciliation Task
+
+Log the failed operation to a database table, then run a periodic background task (daily/weekly) that detects and cleans up orphaned assignments.
+
+**Concern:** The application could crash before even logging the failure, making this unreliable as a sole mechanism.
+
+#### Option C: CDC for Transport Order Deletes
+
+Enable CDC events for transport order deletions in TMS. When a TO is deleted in TMS, a CDC event arrives in New Dispo and triggers cleanup of the associated `LotAssignmentEntity` / `LotAssignmentLegLinkEntity` records. Since CDC handlers are idempotent, this would naturally heal the inconsistency — even if the original sync already cleaned up, the CDC handler would be a no-op.
+
+**Assessment:** Identified as the most reliable automatic recovery, since it does not depend on the application staying alive during the failure window.
+
+#### Option D: Manual Service Desk Recovery (last resort)
+
+User raises a ticket. Support looks up both sources (TMS and New Dispo), identifies the orphaned assignments, and manually corrects the data.
+
+**Assessment:** Acceptable as a last resort. Requires that the error is surfaced to the user (e.g., via Cloud Logging alerts or a UI inconsistency indicator) so they know to raise a ticket.
+
+### Current Status: Open
+
+No decision has been made on which recovery mechanism covers the "context lost" scenario. The immediate retry (Option A) is implemented. Options B, C, and D remain under evaluation.
+
+---
+
 ## Open Questions
 
 ### Q1: Pre-Check vs. Exception Handling
@@ -282,6 +344,9 @@ Flow #7 is a **single TMS mutation** — fully atomic within PL/pgSQL:
 
 ### Q2: Status Guard Pre-Validation
 **Question:** Should the pre-check also verify the TO's status to predict whether `canExecute(ACTION_TADEL)` will succeed? This would avoid making TMS calls that are guaranteed to fail for TOs in END/ABF/DIS status.
+
+### Q3: Recovery for Orphaned Assignments After Context Loss
+**Question:** Which recovery mechanism should cover the case where TMS delete succeeds, New Dispo cleanup fails, and the user loses frontend context? See [New Dispo-Side Failure: Orphaned Assignments](#new-dispo-side-failure-orphaned-assignments) for the full analysis and options A-D.
 
 ---
 
