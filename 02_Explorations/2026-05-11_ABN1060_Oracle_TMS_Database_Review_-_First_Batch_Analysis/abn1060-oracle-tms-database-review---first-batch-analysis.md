@@ -173,7 +173,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 | 2b | Retry write operations to confirm CAL_QUEUE_Q fix | P3 | High | **Pending retry** | Verification |
 | 2c | Clarify to TMS team why TMSBR1060 needs CAL_QUEUE_Q access (trigger execution context) | P3 / CAL | Medium | Open | Documentation |
 | 3 | Fix `Comment` column casing in V_DIS_TRANSPORTORDER | TMS Team / DBA | High | Open | Column Fix |
-| 4 | ~~Add `U_TIME` column to V_DIS_TO_PICKUPPLANNING~~ — **Reclassified:** Investigate TMS Bridge `U_TIME` reference; column doesn't exist in any environment or repo | P3 | High | **Reclassified** | TMS Bridge Investigation |
+| 4 | ~~Add `U_TIME` column to V_DIS_TO_PICKUPPLANNING~~ — **Reclassified:** Trace in git history which PR/commit added `U_TIME` to the view; column doesn't exist in any environment or repo | P3 | High | **Reclassified** | Git History Investigation |
 | 5 | Resolve ORA-21000 error in Delete (PTA line 5060 error re-raise) | TMS Team / Matt W. | High | **In progress** (2026-05-12) | Runtime Error |
 | 6 | Re-run verifier after fixes to confirm resolution | P3 | Medium | Blocked on #1a, #3 | Verification |
 
