@@ -50,6 +50,33 @@ Backend CDC Subscriber (would also crash -- int TransportMode, non-nullable)
 
 ---
 
+## Cloud Function Internal Flow
+
+```mermaid
+flowchart TD
+    A[Cloud Storage Event\nBucket + FileName] --> B{CanHandle?\nIs it a file, not a folder?}
+    B -- No --> Z[Skip]
+    B -- Yes --> C[Download file from bucket\nBucketFileContentProvider.RetrieveStorageDataAsync]
+    C --> D[Read file line by line]
+    D --> E[JsonConvert.DeserializeObject\nper line into GoogleBucketFileContentDto]
+
+    E -- "tran_art: 60 → OK\ntran_art: null → OK" --> F[Parse change type\nINSERT / DELETE / UPDATE-DELETE / UPDATE]
+    E -- "tran_art: 6E+1 → CRASH\ntran_art: 60.0 → CRASH\ntran_art: 6e+1 → CRASH" --> CRASH["❌ JsonReaderException\nInput string '6E+1' is not\na valid integer\n\nEntire file processing aborts.\nNo records from this file\nreach PubSub."]
+
+    F --> G[Collect all records\ninto List of GoogleRecordChangeDto]
+    G --> H[Loop over each record]
+    H --> I{ShipmentType == A?\nold or new record}
+    I -- No --> J[Skip record]
+    I -- Yes --> K[Publish to PubSub\nPubSubPublisher.PublishEventAsync]
+    K --> H
+    J --> H
+
+    style CRASH fill:#ff4444,color:#fff,stroke:#cc0000
+    style E fill:#ffaa00,color:#000,stroke:#cc8800
+```
+
+---
+
 ## Root Cause Analysis
 
 ### Why scientific notation?
