@@ -88,6 +88,7 @@ Unit tests added to `GoogleBucketShipmentDataDeserializationTests` exercise the 
 Key takeaway: Newtonsoft.Json's `int`/`int?` parser rejects **any** JSON number that is not a plain digit string. Scientific notation (`6E+1`), lowercase scientific notation (`6e+1`), and decimal notation (`60.0`) all fail. All three are valid JSON per RFC 8259 and could be produced by Google Datastream for `numeric(2,0)` columns.
 
 Test file: `CALConsult.Disposition.Functions.FilterShipments.Bucket.Tests/Dtos/GoogleBucketShipmentDataDeserializationTests.cs`
+PR: [#32908](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Nagel-GCP/pullrequest/32908)
 
 ---
 
