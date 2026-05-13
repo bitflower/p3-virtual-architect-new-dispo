@@ -31,6 +31,8 @@ Google Datastream serializes PostgreSQL `numeric(2,0)` values using scientific n
 | Nagel-GCP (Cloud Functions) | [#32908](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Nagel-GCP/pullrequest/32908) | DTO type fix (`int?` → `double?`), per-record error handling, improved logging, tests |
 | Disposition-Backend | [#32917](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/pullrequest/32917) | DTO type fix (`int` → `double`, `int?` → `double?`), mapper adjustments, 24 tests |
 
+**Parent Bug:** [#124701](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_workitems/edit/124701)
+
 ---
 
 ## Data Pipeline
