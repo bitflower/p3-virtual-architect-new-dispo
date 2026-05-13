@@ -31,7 +31,7 @@ Reviews for the ABN1060 Oracle database. Three sources:
 | Views (20) | All pass | Exist with correct permissions |
 | Functions (11) | **3 missing** | `CreateTransportOrderFromLeg`, `CreateTransportOrderFromShipment` (obsolete), `AddShipment` (obsolete) |
 | Procedures (35) | **1 missing** | `RemoveShipment` |
-| Column definitions | **1 issue + 1 investigation** | `Comment` casing in `V_DIS_TRANSPORTORDER`. `U_TIME` confirmed missing in ALL environments (Oracle, PGS, and repo) — not ABN1060-specific, requires TMS Bridge-side investigation. |
+| Column definitions | **2 deployment gaps** | `Comment` casing in `V_DIS_TRANSPORTORDER`. `U_TIME` missing from deployed views but present in repo (commit `98b257fa`) — deployment gap. |
 | Queue infrastructure | **Permission granted** | `TMSBR1060.CAL_QUEUE_Q` permission granted to TMSBR1060 user (2026-05-12). Retry pending to confirm fix. Previously caused runtime failures in all write procedures. |
 
 | Metric | Value |
@@ -115,9 +115,13 @@ These are data-level problems not caught by the automated verifier (which checks
 **Issue #1 — Comment casing:** Fix the `Comment` column name to `COMMENT` (or quoted uppercase) in `V_DIS_TRANSPORTORDER`. This remains an ABN1060-specific action.
 
 **Issue #2 — U_TIME (Reclassified: Not ABN1060-Specific):**
-Andrej (TMS team) confirmed (2026-05-12) that the field `U_TIME` does **not exist** in either of the views `V_DIS_TRANSPORTORDER` or `V_DIS_TO_PICKUPPLANNING` — neither in PostgreSQL, nor in Oracle, nor in the repository source code. This is **not** an ABN1060-specific gap but a systemic discrepancy: the TMS Bridge expects a column that has never been defined in any environment.
+Andrej (TMS team) stated (2026-05-12) that the field `U_TIME` does **not exist** in either of the views `V_DIS_TRANSPORTORDER` or `V_DIS_TO_PICKUPPLANNING` — neither in PostgreSQL, nor in Oracle, nor in the repository source code.
 
-**Recommended next step:** Trace in git history which PR or commit added `U_TIME` to the view definition. Since Andrej confirms it is not present in the current repo, it was either removed at some point or never committed. Identifying the originating change will clarify whether this is a regression (column was removed inadvertently) or a planned addition that was never completed.
+**Update 2026-05-13 — Git history contradicts this:** `U_TIME` **is present** in the repository. Commit `98b257fa` by Sonja Petkovic (2026-04-07, PBI 172967) explicitly added `s1.u_time` from the `sendung` table to `V_DIS_TRANSPORTORDER_PICKUPPLANNING` (later renamed to `V_DIS_TO_PICKUPPLANNING`). The column is present on `release/7.0.0.8+NEW-DISPO` and 6 other branches.
+
+This means the view definition in the repo is correct and includes `U_TIME`. The issue is that this view definition was **not deployed** to the Oracle (ABN1060) and PostgreSQL databases. This is a deployment gap, not a missing feature.
+
+**Recommended next step:** Deploy the current view definition of `V_DIS_TO_PICKUPPLANNING` (which includes `U_TIME`) to ABN1060 and verify it is also applied in the PostgreSQL environment.
 
 ### Category 4: Resolved During Testing
 
@@ -173,7 +177,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 | 2b | Retry write operations to confirm CAL_QUEUE_Q fix | P3 | High | **Pending retry** | Verification |
 | 2c | Clarify to TMS team why TMSBR1060 needs CAL_QUEUE_Q access (trigger execution context) | P3 / CAL | Medium | Open | Documentation |
 | 3 | Fix `Comment` column casing in V_DIS_TRANSPORTORDER | TMS Team / DBA | High | Open | Column Fix |
-| 4 | ~~Add `U_TIME` column to V_DIS_TO_PICKUPPLANNING~~ — **Reclassified:** Trace in git history which PR/commit added `U_TIME` to the view; column doesn't exist in any environment or repo | P3 | High | **Reclassified** | Git History Investigation |
+| 4 | Deploy current `V_DIS_TO_PICKUPPLANNING` view definition (includes `U_TIME` from commit `98b257fa`) to ABN1060 Oracle and verify PostgreSQL | TMS Team / DBA | High | Open | Deployment Gap |
 | 5 | Resolve ORA-21000 error in Delete (PTA line 5060 error re-raise) | TMS Team / Matt W. | High | **In progress** (2026-05-12) | Runtime Error |
 | 6 | Re-run verifier after fixes to confirm resolution | P3 | Medium | Blocked on #1a, #3 | Verification |
 
@@ -213,6 +217,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 | 1.0 | 2026-05-11 | Matthias Max | Initial review: 4 missing objects, 1 missing queue, 2 column issues. Sources: P3 developer testing + automated TMS Bridge DB Verifier. |
 | 1.1 | 2026-05-11 | Matthias Max | Expanded CAL_QUEUE_Q blast radius: confirmed RemoveLeg, SetParticipant, RemoveParticipant also affected. Likely all write procedures blocked. Source: P3 second batch testing. |
 | 1.2 | 2026-05-12 | Matthias Max | Updated with Matt Wilkinson feedback: (1) CAL_QUEUE_Q permission granted to TMSBR1060 — retry pending; (2) U_TIME reclassified — column doesn't exist in any environment (Oracle, PGS, repo), now a TMS Bridge-side investigation; (3) ORA-21000 Delete error actively being worked on by TMS team. |
+| 1.3 | 2026-05-13 | Matthias Max | U_TIME finding corrected: column IS in the repo (commit `98b257fa`, Sonja Petkovic, 2026-04-07, PBI 172967). The view definition was not deployed to Oracle/PGS — deployment gap, not a missing feature. Action item #4 updated accordingly. |
 
 ---
 
