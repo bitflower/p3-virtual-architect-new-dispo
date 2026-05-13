@@ -24,6 +24,15 @@ Google Datastream serializes PostgreSQL `numeric(2,0)` values using scientific n
 
 ---
 
+## Pull Requests
+
+| Repo | PR | Scope |
+|---|---|---|
+| Nagel-GCP (Cloud Functions) | [#32908](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Nagel-GCP/pullrequest/32908) | DTO type fix (`int?` → `double?`), per-record error handling, improved logging, tests |
+| Disposition-Backend | [#32917](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/pullrequest/32917) | DTO type fix (`int` → `double`, `int?` → `double?`), mapper adjustments, 24 tests |
+
+---
+
 ## Data Pipeline
 
 ```
@@ -117,8 +126,6 @@ Unit tests added to `GoogleBucketShipmentDataDeserializationTests` exercise the 
 Key takeaway: Newtonsoft.Json's `int`/`int?` parser rejects **any** JSON number that is not a plain digit string. Scientific notation (`6E+1`), lowercase scientific notation (`6e+1`), and decimal notation (`60.0`) all fail. All three are valid JSON per RFC 8259 and could be produced by Google Datastream for `numeric(2,0)` columns.
 
 Test file: `CALConsult.Disposition.Functions.FilterShipments.Bucket.Tests/Dtos/GoogleBucketShipmentDataDeserializationTests.cs`
-PR (Cloud Functions): [#32908](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Nagel-GCP/pullrequest/32908)
-PR (Backend): [#32917](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/pullrequest/32917)
 
 ### Bucket file analysis
 
