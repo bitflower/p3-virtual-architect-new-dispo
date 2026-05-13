@@ -1,5 +1,5 @@
 # ABN1060 Oracle TMS Database Review
-**Date:** 2026-05-11
+**Date:** 2026-05-13
 **Environment:** ABN (Oracle) - Schema TMS1060
 
 <internal>
@@ -32,7 +32,7 @@ Reviews for the ABN1060 Oracle database. Three sources:
 | Functions (11) | **3 missing** | `CreateTransportOrderFromLeg`, `CreateTransportOrderFromShipment` (obsolete), `AddShipment` (obsolete) |
 | Procedures (35) | **1 missing** | `RemoveShipment` |
 | Column definitions | **2 deployment gaps** | `Comment` casing in `V_DIS_TRANSPORTORDER`. `U_TIME` missing from deployed views but present in repo (commit `98b257fa`) — deployment gap. |
-| Queue infrastructure | **Permission granted** | `TMSBR1060.CAL_QUEUE_Q` permission granted to TMSBR1060 user (2026-05-12). Retry pending to confirm fix. Previously caused runtime failures in all write procedures. |
+| Queue infrastructure | **Partial fix** | `TMSBR1060.CAL_QUEUE_Q` permission granted (2026-05-12). Retry shows `SetParticipant` now works, but `CreateAndAddLeg` still fails with ORA-24010. Investigating whether different CAL_QUEUE overloads are involved. |
 
 | Metric | Value |
 |--------|-------|
@@ -40,7 +40,7 @@ Reviews for the ABN1060 Oracle database. Three sources:
 | Existence (Level 1.0) | 73/77 found, 1 skipped, 4 not found |
 | Signature (Level 1.5) | 42/42 match |
 | Permissions (Level 2.0) | 73/77 granted, 1 skipped, 4 denied (non-existent) |
-| Active blockers | 2 missing objects + 1 column issue + 1 runtime error under investigation |
+| Active blockers | 2 missing objects + 1 column issue + 1 partial queue fix + 1 runtime error under investigation |
 | Obsolete gaps | 2 missing objects (low priority) |
 
 ---
@@ -64,32 +64,43 @@ Objects #2 and #3 are marked obsolete in the inventory — they back the depreca
 
 **Action required:** Routines #1 and #4 need to be created in the PDIS_TRANSPORTORDER package on ABN1060 (high priority). For #2 and #3, clarify with the TMS team whether to deploy them for completeness or remove them from the TMS Bridge inventory.
 
-### Category 2: Queue Infrastructure (Permission Granted — Retry Pending)
+### Category 2: Queue Infrastructure (Partial Fix — Investigation Ongoing)
 
 P3 developer testing revealed that write procedures fail at runtime due to a missing Oracle Advanced Queuing (AQ) queue. Initial testing identified `CreateAndAddLeg` and `Delete`; follow-up testing confirmed the issue is systemic.
 
 **Root cause:** `TMSBR1060.CAL_QUEUE_Q` was not accessible.
 
-**Update 2026-05-12 (Matt Wilkinson):** The permission grant for `CAL_QUEUE_Q` has been provided to the `TMSBR1060` user. The TMS team has raised the question of **why this permission is needed** — this should be clarified. A retry is needed to confirm the fix resolves all write procedure failures.
+**Update 2026-05-12 (Matt Wilkinson):** The permission grant for `CAL_QUEUE_Q` has been provided to the `TMSBR1060` user. The TMS team has raised the question of **why this permission is needed** — this should be clarified.
+
+**Update 2026-05-13 (P3 retry results):** The permission grant **partially** resolved the issue:
+- **`SetParticipant` now works** — no CAL_QUEUE_Q error.
+- **`CreateAndAddLeg` still fails** — same ORA-24010 error persists.
+
+This raises the question whether `SetParticipant` and `CreateAndAddLeg` use **different overloads** (i.e., different call signatures/variants) of `CAL_QUEUE_Q` within `TMS1060.CAL_QUEUE`, and whether the permission grant only covers one of them. P3 flagged this as the next line of investigation.
 
 **Confirmed affected procedures (before fix):**
-- `CreateAndAddLeg` (initial batch)
-- `Delete` (initial batch)
-- `RemoveLeg` (second batch — confirmed by P3)
-- `SetParticipant` (second batch — confirmed by P3)
-- `RemoveParticipant` (second batch — confirmed by P3)
+- `CreateAndAddLeg` (initial batch) — **still failing after fix**
+- `Delete` (initial batch) — retry pending
+- `RemoveLeg` (second batch — confirmed by P3) — retry pending
+- `SetParticipant` (second batch — confirmed by P3) — **resolved by fix**
+- `RemoveParticipant` (second batch — confirmed by P3) — retry pending
 
-P3 assessment: likely **all write procedures** were affected, since the queue is referenced from triggers that fire on data modification.
+P3 assessment: likely **all write procedures** were affected, since the queue is referenced from triggers that fire on data modification. The partial fix suggests different code paths may exist.
 
-**Error chain for CreateAndAddLeg:**
+**Error chain for CreateAndAddLeg (2026-05-13, still failing):**
 ```
 ORA-24010: QUEUE TMSBR1060.CAL_QUEUE_Q does not exist
-  -> SYS.DBMS_AQ
-  -> TMS1060.CAL_QUEUE
-  -> TMS1060.PTA_DASHBOARD_MP4
-  -> trigger TMS1060.TRAIUD_SENDUNG_TABRD_MP4
-  -> TMS1060.PTA
-  -> TMS1060.PDIS_TRANSPORTORDER
+  -> SYS.DBMS_AQ (line 180)
+  -> TMS1060.CAL_QUEUE (line 132)
+  -> TMS1060.CAL_QUEUE (line 152)
+  -> TMS1060.CAL_QUEUE (line 168)
+  -> TMS1060.PTA_DASHBOARD_MP4 (line 113)
+  -> trigger TMS1060.TRAIUD_SENDUNG_TABRD_MP4 (line 9)
+  -> TMS1060.PTA (line 4976)
+  -> TMS1060.PTA (line 1719)
+  -> TMS1060.PTA (line 5262)
+  -> TMS1060.PDIS_TRANSPORTORDER (line 316)
+  -> TMS1060.PDIS_TRANSPORTORDER (line 298)
 ```
 
 **Error chain for Delete (ORA-21000 — under investigation):**
@@ -101,7 +112,7 @@ ORA-21000: error number argument to raise_application_error of -24010 is out of 
 
 The Delete error is the same root cause: the PTA package catches the ORA-24010 queue error and attempts to re-raise it via `raise_application_error`, but -24010 is outside the valid range (-20000 to -20999), causing a secondary ORA-21000 error. **Matt Wilkinson confirmed (2026-05-12) this is actively being worked on with the team.**
 
-**Action required:** Retry write operations to confirm the CAL_QUEUE_Q permission grant resolves the issue. Clarify to the TMS team why the TMS Bridge user needs access to CAL_QUEUE_Q (it is referenced by triggers on tables modified by PDIS_TRANSPORTORDER procedures — the TMS Bridge user needs enqueue permission because the stored procedures execute under the caller's context).
+**Action required:** Investigate why the permission grant resolved `SetParticipant` but not `CreateAndAddLeg`. Compare the CAL_QUEUE overloads used by each code path (line numbers in `TMS1060.CAL_QUEUE`: 132, 152, 168). Retry remaining write procedures to determine which are fixed and which still fail. Clarify to the TMS team why the TMS Bridge user needs access to CAL_QUEUE_Q (it is referenced by triggers on tables modified by PDIS_TRANSPORTORDER procedures — the TMS Bridge user needs enqueue permission because the stored procedures execute under the caller's context).
 
 ### Category 3: Column-Level Issues
 
@@ -158,7 +169,7 @@ Level 2.0 (Permission): 73/77 granted, 1 skipped, 4 DENIED (non-existent objects
 | Missing CREATETRANSPORTORDERFROMSHIPMENT | Not tested | Found | Only caught by verifier. **Obsolete** per inventory |
 | Missing ADDSHIPMENT | Not tested | Found | Only caught by verifier. **Obsolete** per inventory |
 | Missing REMOVESHIPMENT | Not tested | Found | Only caught by verifier. Active — blocks dispatcher operations |
-| Queue infrastructure missing | Found (runtime, 5 procedures confirmed) | Not checked | Verifier checks existence/perms, not runtime deps. Likely affects all write procedures |
+| Queue infrastructure missing | Found (runtime, 5 procedures confirmed). Retry: SetParticipant fixed, CreateAndAddLeg still fails | Not checked | Verifier checks existence/perms, not runtime deps. Partial fix suggests different code paths |
 | Column naming (Comment) | Found | Not checked | Verifier doesn't check column definitions |
 | Missing column (U_TIME) | Found | Not checked | Verifier doesn't check column definitions |
 | Delete runtime error | Found | Not detected | Procedure exists and has correct signature |
@@ -174,12 +185,15 @@ This cross-reference demonstrates the complementary value of both approaches: th
 | 1a | Create `CREATETRANSPORTORDERFROMLEG` and `REMOVESHIPMENT` in PDIS_TRANSPORTORDER | TMS Team | High | Open | Missing Objects (active) |
 | 1b | Decide on `CREATETRANSPORTORDERFROMSHIPMENT` and `ADDSHIPMENT`: deploy for completeness or remove from inventory | TMS Team / P3 | Low | Open | Missing Objects (obsolete) |
 | 2a | ~~Create Oracle AQ queue `CAL_QUEUE_Q` in TMSBR1060 schema~~ | TMS Team / DBA | High | **Done** (2026-05-12) | Infrastructure |
-| 2b | Retry write operations to confirm CAL_QUEUE_Q fix | P3 | High | **Pending retry** | Verification |
-| 2c | Clarify to TMS team why TMSBR1060 needs CAL_QUEUE_Q access (trigger execution context) | P3 / CAL | Medium | Open | Documentation |
+| 2b | ~~Retry write operations to confirm CAL_QUEUE_Q fix~~ | P3 | High | **Partial** (2026-05-13) | Verification |
+| 2c | Investigate CAL_QUEUE overload difference between `SetParticipant` (works) and `CreateAndAddLeg` (still fails). Compare call paths at `TMS1060.CAL_QUEUE` lines 132, 152, 168 | P3 / TMS Team | High | Open | Investigation |
+| 2d | Retry remaining write procedures (`Delete`, `RemoveLeg`, `RemoveParticipant`) to determine fix coverage | P3 | High | Open | Verification |
+| 2e | Clarify to TMS team why TMSBR1060 needs CAL_QUEUE_Q access (trigger execution context) | P3 / CAL | Medium | Open | Documentation |
 | 3 | Fix `Comment` column casing in V_DIS_TRANSPORTORDER | TMS Team / DBA | High | Open | Column Fix |
 | 4 | Deploy current `V_DIS_TO_PICKUPPLANNING` view definition (includes `U_TIME` from commit `98b257fa`) to ABN1060 Oracle and verify PostgreSQL | TMS Team / DBA | High | Open | Deployment Gap |
 | 5 | Resolve ORA-21000 error in Delete (PTA line 5060 error re-raise) | TMS Team / Matt W. | High | **In progress** (2026-05-12) | Runtime Error |
 | 6 | Re-run verifier after fixes to confirm resolution | P3 | Medium | Blocked on #1a, #3 | Verification |
+| 7 | Retry remaining write procedures (`Delete`, `RemoveLeg`, `RemoveParticipant`) to classify fix coverage | P3 | High | Open | Verification |
 
 ---
 
@@ -193,6 +207,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 - `Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier/` - Verifier tool source
 - `02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md` - Object registry source (v1.1)
 - `00_Meetings/2026-05-11_Oracle_TMS_Check_ABN1060/2026-05-12_feedback Matt.md` - Matt Wilkinson feedback on CAL_QUEUE_Q grant, U_TIME non-existence, ORA-21000 status
+- `00_Meetings/2026-05-13_oracle-abn1060-batch-v3/2026-05-13_oracle-abn1060-batch-v3.md` - P3 retry results: SetParticipant works, CreateAndAddLeg still fails (with error screenshot)
 
 </internal>
 
@@ -218,6 +233,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 | 1.1 | 2026-05-11 | Matthias Max | Expanded CAL_QUEUE_Q blast radius: confirmed RemoveLeg, SetParticipant, RemoveParticipant also affected. Likely all write procedures blocked. Source: P3 second batch testing. |
 | 1.2 | 2026-05-12 | Matthias Max | Updated with Matt Wilkinson feedback: (1) CAL_QUEUE_Q permission granted to TMSBR1060 — retry pending; (2) U_TIME reclassified — column doesn't exist in any environment (Oracle, PGS, repo), now a TMS Bridge-side investigation; (3) ORA-21000 Delete error actively being worked on by TMS team. |
 | 1.3 | 2026-05-13 | Matthias Max | U_TIME finding corrected: column IS in the repo (commit `98b257fa`, Sonja Petkovic, 2026-04-07, PBI 172967). The view definition was not deployed to Oracle/PGS — deployment gap, not a missing feature. Action item #4 updated accordingly. |
+| 1.4 | 2026-05-13 | Matthias Max | CAL_QUEUE_Q permission grant partial fix: `SetParticipant` now works, `CreateAndAddLeg` still fails with ORA-24010. New investigation: possible different CAL_QUEUE overloads per code path. Updated error chain with line numbers from P3 retry screenshot. Action items 2b-2e restructured. Source: P3 developer retry, overload question raised by P3. |
 
 ---
 
