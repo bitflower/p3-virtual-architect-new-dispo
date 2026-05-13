@@ -30,18 +30,26 @@ Reviews for the ABN1060 Oracle database. Three sources:
 | Tables (11) | All pass | Exist with correct permissions |
 | Views (20) | All pass | Exist with correct permissions |
 | Functions (11) | **2 missing + 1 type mismatch** | `CreateTransportOrderFromLeg` deployed as **Procedure** (TMS Bridge expects Function; parameter `Mode` → `nMode`). `CreateTransportOrderFromShipment` (obsolete), `AddShipment` (obsolete) still missing. |
-| Procedures (35) | **1 missing** | `RemoveShipment` |
+| Procedures (35) | **All pass** | `RemoveShipment` deployed (confirmed by Verifier Run 2, 2026-05-13) |
 | Column definitions | **1 open** | `Comment` casing in `V_DIS_TRANSPORTORDER`. ~~`U_TIME` deployment gap~~ resolved (2026-05-13). |
 | Queue infrastructure | **Partial fix** | `TMSBR1060.CAL_QUEUE_Q` permission granted (2026-05-12). Retry shows `SetParticipant` now works, but `CreateAndAddLeg` still fails with ORA-24010. Investigating whether different CAL_QUEUE overloads are involved. |
 
-| Metric | Value |
-|--------|-------|
-| Objects verified | 77 |
-| Existence (Level 1.0) | 73/77 found, 1 skipped, 4 not found |
-| Signature (Level 1.5) | 42/42 match |
-| Permissions (Level 2.0) | 73/77 granted, 1 skipped, 4 denied (non-existent) |
-| Active blockers | 1 missing object + 1 type mismatch requiring TMS Bridge adaptation + 1 column issue + 1 partial queue fix + 1 runtime error under investigation |
-| Obsolete gaps | 2 missing objects (low priority) |
+| Metric | Run 1 (2026-05-11) | Run 2 (2026-05-13) |
+|--------|-------|-------|
+| Objects verified | 77 | 77 |
+| Existence (Level 1.0) | 73/77 found | **75/77 found** |
+| Signature (Level 1.5) | 42/42 match | 42/42 match, 36 unchecked |
+| Permissions (Level 2.0) | 73/77 granted | **75/77 granted** |
+
+**Improvement:** 2 previously missing active objects now deployed: `CreateTransportOrderFromLeg` (15 args, signature not verified) and `RemoveShipment` (3 args, signature not verified). Only 2 obsolete objects remain missing.
+
+| Active blockers | Details |
+|--------|---------|
+| 1 type mismatch | `CreateTransportOrderFromLeg` deployed as Procedure (TMS Bridge expects Function), parameter `Mode` → `nMode` |
+| 1 column issue | `Comment` casing in `V_DIS_TRANSPORTORDER` |
+| 1 partial queue fix | CAL_QUEUE_Q — `SetParticipant` works, `CreateAndAddLeg` still fails |
+| 1 runtime error | ORA-21000 in Delete — under investigation |
+| 2 obsolete gaps | `CreateTransportOrderFromShipment`, `AddShipment` (low priority) |
 
 ---
 
@@ -56,7 +64,7 @@ These objects are listed in the [TMS Bridge Database Object Inventory](../2026-0
 | 1 | `CREATETRANSPORTORDERFROMLEG` | ~~Function~~ **Procedure** | PDIS_TRANSPORTORDER | **Active** | `CreateTransportOrderFromLegMutation` | ~~Missing~~ **Deployed — type mismatch** (see below) |
 | 2 | `CREATETRANSPORTORDERFROMSHIPMENT` | Function | PDIS_TRANSPORTORDER | **Obsolete** | `CreateTransportOrderFromLotMutation` (obsolete) | Low - obsolete mutation |
 | 3 | `ADDSHIPMENT` | Function | PDIS_TRANSPORTORDER | **Obsolete** | `CreateTransportOrderFromLotMutation` (obsolete) | Low - obsolete mutation |
-| 4 | `REMOVESHIPMENT` | Procedure | PDIS_TRANSPORTORDER | **Active** | `RemoveShipmentFromTransportOrderMutation` | Cannot remove shipment from TO |
+| 4 | `REMOVESHIPMENT` | Procedure | PDIS_TRANSPORTORDER | **Active** | `RemoveShipmentFromTransportOrderMutation` | ~~Missing~~ **Deployed** (confirmed by Verifier Run 2, 3 args) |
 
 All 4 missing objects belong to the `PDIS_TRANSPORTORDER` package. P3 developer testing confirmed #1 (`CreateTransportOrderFromLeg`). Objects #2-#4 were only caught by the automated verifier.
 
@@ -69,9 +77,9 @@ Object #1 (`CREATETRANSPORTORDERFROMLEG`) has been deployed to ABN1060 in the la
 
 2. **Parameter renamed: `Mode` → `nMode`.** The parameter `Mode numeric` was renamed to `nMode numeric` because `MODE` is an Oracle reserved word. The TMS Bridge passes this parameter as `"mode"` (`CreateTransportOrderFromLegMutation.cs:33`). The parameter name must be updated to `"nMode"` in the TMS Bridge code.
 
-Object #4 (`REMOVESHIPMENT`) was **not mentioned** in the deployment and remains missing.
+Object #4 (`REMOVESHIPMENT`) has also been deployed — confirmed by Verifier Run 2 (2026-05-13) with 3 args and EXECUTE granted.
 
-**Action required:** (a) Object #4 (`REMOVESHIPMENT`) still needs to be created in PDIS_TRANSPORTORDER on ABN1060. (b) TMS Bridge code must be adapted for Object #1: change `OperationType.Function` → `OperationType.Procedure` and parameter `"mode"` → `"nMode"`. (c) DB Verifier registry and DB Object Inventory must be updated to reflect the type change. (d) For #2 and #3, clarify with the TMS team whether to deploy them for completeness or remove them from the TMS Bridge inventory.
+**Action required:** (a) TMS Bridge code must be adapted for Object #1: change `OperationType.Function` → `OperationType.Procedure` and parameter `"mode"` → `"nMode"`. (b) DB Verifier registry and DB Object Inventory must be updated to reflect the type change. (c) For #2 and #3, clarify with the TMS team whether to deploy them for completeness or remove them from the TMS Bridge inventory.
 
 ### Category 2: Queue Infrastructure (Partial Fix — Investigation Ongoing)
 
@@ -154,6 +162,8 @@ This means the view definition in the repo is correct and includes `U_TIME`. The
 
 ## Verifier Results Summary
 
+### Run 1 (2026-05-11) — Schema `TMS1060`, User `TMSBR1060`
+
 ```
 Level 1.0 (Existence):  73/77 found, 1 skipped, 4 NOT FOUND
 Level 1.5 (Signature):  42/42 match
@@ -168,6 +178,33 @@ Level 2.0 (Permission): 73/77 granted, 1 skipped, 4 DENIED (non-existent objects
 | Procedures | 35 | 34 | 1 |
 | Types | 1 | 0 (skipped, PG-only) | 0 |
 
+### Run 2 (2026-05-13) — Schema `TMS1060`, User `TMSBR1060`
+
+```
+Level 1.0 (Existence):  75/77 found, 1 skipped, 2 NOT FOUND
+Level 1.5 (Signature):  42/42 match, 36 unchecked (no expected args)
+Level 2.0 (Permission): 75/77 granted, 1 skipped, 2 DENIED
+```
+
+| Category | Total | Pass | Fail |
+|----------|-------|------|------|
+| Tables | 11 | 11 | 0 |
+| Views | 20 | 20 | 0 |
+| Functions | 11 | 9 | 2 |
+| Procedures | 35 | 35 | 0 |
+| Types | 1 | 0 (skipped, PG-only) | 0 |
+
+**Delta from Run 1 → Run 2:** 2 objects fixed, 2 remain missing (both obsolete).
+
+| Object | Run 1 | Run 2 | Notes |
+|--------|-------|-------|-------|
+| `CREATETRANSPORTORDERFROMLEG` | NOT FOUND | **EXISTS** | 15 args, signature not verified. Verifier finds it under Functions; TMS Team states it is now a Procedure — type to be confirmed at runtime. |
+| `REMOVESHIPMENT` | NOT FOUND | **EXISTS** | 3 args, signature not verified. Now deployed. |
+| `CREATETRANSPORTORDERFROMSHIPMENT` | NOT FOUND | NOT FOUND | Obsolete — backs deprecated mutation |
+| `ADDSHIPMENT` | NOT FOUND | NOT FOUND | Obsolete — backs deprecated mutation |
+
+**Note on `CreateTransportOrderFromLeg`:** The verifier finds this routine under the Functions section with 15 args (vs the 8 parameters the TMS Bridge currently passes). The higher arg count is consistent with it being a Procedure that uses OUT parameters to return values (where a Function would use a RETURN). This supports the TMS Team's statement that the routine is now a Procedure, but the verifier does not distinguish between Function and Procedure at the Oracle package level — it finds both via `ALL_ARGUMENTS`. The TMS Bridge `OperationType.Function` call and the `"mode"` parameter name remain incompatible and must be adapted (see action item #1d).
+
 ---
 
 ## Cross-Reference: Manual vs Automated Findings
@@ -177,7 +214,7 @@ Level 2.0 (Permission): 73/77 granted, 1 skipped, 4 DENIED (non-existent objects
 | Missing CREATETRANSPORTORDERFROMLEG | Found | Found | **Deployed** (2026-05-13) as Procedure — type mismatch with TMS Bridge (expects Function). Parameter `Mode` → `nMode`. |
 | Missing CREATETRANSPORTORDERFROMSHIPMENT | Not tested | Found | Only caught by verifier. **Obsolete** per inventory |
 | Missing ADDSHIPMENT | Not tested | Found | Only caught by verifier. **Obsolete** per inventory |
-| Missing REMOVESHIPMENT | Not tested | Found | Only caught by verifier. Active — blocks dispatcher operations |
+| Missing REMOVESHIPMENT | Not tested | Found → **Deployed** (Run 2) | Confirmed by Verifier Run 2 (3 args, EXECUTE granted) |
 | Queue infrastructure missing | Found (runtime, 5 procedures confirmed). Retry: SetParticipant fixed, CreateAndAddLeg still fails | Not checked | Verifier checks existence/perms, not runtime deps. Partial fix suggests different code paths |
 | Column naming (Comment) | Found | Not checked | Verifier doesn't check column definitions |
 | Missing column (U_TIME) | Found | Not checked | **Resolved** (2026-05-13) — deployed to Oracle. Verify PostgreSQL. |
@@ -192,7 +229,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 | # | Action | Owner | Priority | Status | Category |
 |---|--------|-------|----------|--------|----------|
 | 1a | ~~Create `CREATETRANSPORTORDERFROMLEG` in PDIS_TRANSPORTORDER~~ | TMS Team | High | **Done** (2026-05-13) — but deployed as **Procedure**, not Function | Missing Objects |
-| 1b | Create `REMOVESHIPMENT` in PDIS_TRANSPORTORDER | TMS Team | High | Open | Missing Objects (active) |
+| 1b | ~~Create `REMOVESHIPMENT` in PDIS_TRANSPORTORDER~~ | TMS Team | High | **Done** (confirmed by Verifier Run 2, 2026-05-13) | Missing Objects |
 | 1c | Decide on `CREATETRANSPORTORDERFROMSHIPMENT` and `ADDSHIPMENT`: deploy for completeness or remove from inventory | TMS Team / P3 | Low | Open | Missing Objects (obsolete) |
 | 1d | **TMS Bridge adaptation:** Update `CreateTransportOrderFromLegMutation.cs` — change `OperationType.Function` → `OperationType.Procedure` (line 43) and parameter `"mode"` → `"nMode"` (line 33). Verify result handling is compatible with Procedure output. | P3 | **Critical** | Open | Type Mismatch |
 | 1e | Update DB Verifier registry (`db-objects.json:44`) and DB Object Inventory: reclassify `CreateTransportOrderFromLeg` from Function to Procedure | P3 / CAL | Medium | Open | Registry Update |
@@ -204,7 +241,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 | 3 | Fix `Comment` column casing in V_DIS_TRANSPORTORDER | TMS Team / DBA | High | Open | Column Fix |
 | 4 | ~~Deploy `V_DIS_TO_PICKUPPLANNING` view definition (includes `U_TIME`) to ABN1060 Oracle~~ and verify PostgreSQL | TMS Team / DBA | High | **Partially done** (2026-05-13) — Oracle deployed, PostgreSQL pending | Deployment Gap |
 | 5 | Resolve ORA-21000 error in Delete (PTA line 5060 error re-raise) | TMS Team | High | **In progress** (2026-05-12) | Runtime Error |
-| 6 | Re-run verifier after fixes to confirm resolution | P3 | Medium | Blocked on #1b, #1d, #3 | Verification |
+| 6 | Re-run verifier after fixes to confirm resolution | P3 | Medium | Blocked on #1d, #3 | Verification |
 | 7 | Retry remaining write procedures (`Delete`, `RemoveLeg`, `RemoveParticipant`) to classify fix coverage | P3 | High | Open | Verification |
 | 8 | **P3 to confirm** TMS Team's deployments: verify `CreateTransportOrderFromLeg` (as Procedure) is callable and `U_TIME` is present in `V_DIS_TO_PICKUPPLANNING` on ABN1060 | P3 | High | Open | Verification |
 
@@ -249,6 +286,7 @@ This cross-reference demonstrates the complementary value of both approaches: th
 | 1.3 | 2026-05-13 | Matthias Max | U_TIME finding corrected: column IS in the repo (commit `98b257fa`, Sonja Petkovic, 2026-04-07, PBI 172967). The view definition was not deployed to Oracle/PGS — deployment gap, not a missing feature. Action item #4 updated accordingly. |
 | 1.4 | 2026-05-13 | Matthias Max | CAL_QUEUE_Q permission grant partial fix: `SetParticipant` now works, `CreateAndAddLeg` still fails with ORA-24010. New investigation: possible different CAL_QUEUE overloads per code path. Updated error chain with line numbers from P3 retry screenshot. Action items 2b-2e restructured. Source: P3 developer retry, overload question raised by P3. |
 | 1.5 | 2026-05-13 | Matthias Max | TMS Team deployment confirmation: (1) `CreateTransportOrderFromLeg` deployed as **Procedure** (not Function) with parameter `Mode` renamed to `nMode` (Oracle reserved word). TMS Bridge code (`CreateTransportOrderFromLegMutation.cs`) calls `OperationType.Function` and uses `"mode"` — both must be adapted. New critical action item #1d. (2) `U_TIME` now deployed in `V_DIS_TO_PICKUPPLANNING` on Oracle — action item #4 partially resolved (PostgreSQL verification pending). (3) `RemoveShipment` not mentioned, remains missing. Action items restructured (#1a-#1e, #8 added). |
+| 1.6 | 2026-05-13 | Matthias Max | Incorporated Verifier Run 2 results: 75/77 found (up from 73/77). `CreateTransportOrderFromLeg` now EXISTS (15 args — higher count supports Procedure hypothesis with OUT parameters). `RemoveShipment` now EXISTS (3 args). Only 2 obsolete objects remain missing. Action item #1b marked done, #9 removed. All active missing objects now deployed — remaining blockers are type mismatch (#1d), column casing (#3), queue fix (#2c), and runtime error (#5). |
 
 ---
 
