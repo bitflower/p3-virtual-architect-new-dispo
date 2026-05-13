@@ -117,7 +117,8 @@ Unit tests added to `GoogleBucketShipmentDataDeserializationTests` exercise the 
 Key takeaway: Newtonsoft.Json's `int`/`int?` parser rejects **any** JSON number that is not a plain digit string. Scientific notation (`6E+1`), lowercase scientific notation (`6e+1`), and decimal notation (`60.0`) all fail. All three are valid JSON per RFC 8259 and could be produced by Google Datastream for `numeric(2,0)` columns.
 
 Test file: `CALConsult.Disposition.Functions.FilterShipments.Bucket.Tests/Dtos/GoogleBucketShipmentDataDeserializationTests.cs`
-PR: [#32908](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Nagel-GCP/pullrequest/32908)
+PR (Cloud Functions): [#32908](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Nagel-GCP/pullrequest/32908)
+PR (Backend): [#32917](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/pullrequest/32917)
 
 ### Bucket file analysis
 
@@ -268,7 +269,7 @@ Configure `JsonSerializerSettings` in `BucketFileContentProvider` with `FloatPar
 
 3. **CrossDockEventPublisher:** The other Cloud Function consuming from the same bucket uses `long` for its numeric fields (`SenTransportOrderNumber`) -- same `long` parsing risk with scientific notation.
 
-4. **Backend impact:** The Backend receives data via PubSub after the Cloud Function re-serializes it. Since the Cloud Function crashed, the Backend was not affected this time. But if the Cloud Function is fixed and starts forwarding `tran_art = 60`, the Backend's non-nullable `int TransportMode` might fail on a `null` value in a future record. Both DTOs should be fixed together.
+4. ~~**Backend impact:** The Backend receives data via PubSub after the Cloud Function re-serializes it. Since the Cloud Function crashed, the Backend was not affected this time. But if the Cloud Function is fixed and starts forwarding `tran_art = 60`, the Backend's non-nullable `int TransportMode` might fail on a `null` value in a future record. Both DTOs should be fixed together.~~ **Resolved:** Backend DTO updated (`int` → `double` for `TransportMode`, `int?` → `double?` for `TourNumber`) with mapper adjustments and 24 tests. PR [#32917](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Backend/pullrequest/32917).
 
 5. **Monitoring:** Should we add alerting for deserialization failures in the CDC pipeline? Currently, the Cloud Function fails silently (from the business perspective) -- the shipment is simply not forwarded.
 
