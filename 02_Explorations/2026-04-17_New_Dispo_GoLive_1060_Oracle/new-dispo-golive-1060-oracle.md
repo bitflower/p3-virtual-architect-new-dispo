@@ -101,9 +101,9 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 
 | Bucket                   | Environment | Purpose                | Status |
 | ------------------------ | ----------- | ---------------------- | ------ |
-| `WL5_CDC_BUCKET_ABN1060` | Test        | CDC bucket for ABN1060 | TBD    |
-| `WL5_CDC_BUCKET_UAT1060` | Test        | CDC bucket for UAT1060 | TBD    |
-| `WL5_CDC_BUCKET_1060`    | Prod        | CDC bucket for 1060    | TBD    |
+| `wl5-cdc-bucket-abn1060` | Test        | CDC bucket for ABN1060 | done   |
+| `wl5-cdc-bucket-uat1060` | Test        | CDC bucket for UAT1060 | done   |
+| `wl5-cdc-bucket-1060`    | Prod        | CDC bucket for 1060    | done   |
 
 ### 3.7 Pub/Sub
 
