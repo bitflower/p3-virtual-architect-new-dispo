@@ -1,6 +1,6 @@
 # [ADR009] TMS Bridge Credential Isolation via System-Qualified Database Identifier
 
-**Status:** Draft
+**Status:** Approved (2026-05-07)
 **Date:** 2026-05-11
 
 ## Context
@@ -11,21 +11,24 @@ The bridge treats the database identifier as an opaque string everywhere except 
 
 To isolate credentials per calling system, the identifier must carry a **system qualifier** that routes to a separate Secret Manager entry (and therefore separate database user) while still extracting the same schema name.
 
+A related constraint reinforces this need: WL4-T-T hosts multiple virtual environments (DEV, ABN, UAT) within the same GCP project (see ADR-005, ADR-008). GCP Secret Manager is project-scoped and cannot hold duplicate secret names. The same prefix mechanism that isolates callers must also support **environment qualification** via multi-segment prefixes (e.g., `dispo-abn-O-10-60`) so that each virtual environment resolves to its own Secret Manager entry.
+
 Key requirements:
 
 1. **Credential isolation**: Each calling system resolves to its own Secret Manager entry and database user
-2. **Backward compatibility**: Existing unqualified identifiers (e.g., `D-10-60`) must continue to work
-3. **Minimal code change**: Only the schema name extraction regex needs updating
-4. **Operability**: Identifiers should be easy to read, grep, and audit in Secret Manager and logs
+2. **Environment qualification**: Virtual environments within the same GCP project resolve to separate secrets for the same branch
+3. **Backward compatibility**: Existing unqualified identifiers (e.g., `D-10-60`) must continue to work
+4. **Minimal code change**: Only the schema name extraction regex needs updating
+5. **Operability**: Identifiers should be easy to read, grep, and audit in Secret Manager and logs
 
 #### Options Considered
 
 **For system qualifier placement:**
 
-* **Option A: Prefix** -- prepend the system name before the branch identifier
-  * Pattern: `{SYSTEM}-{DBMS}-{COMPANY}-{BRANCH}`
-  * Examples: `dispo-D-10-60`, `cloud4log-O-10-60`
-  * Regex: `^(?:[a-z0-9]+-)?[DO]-(\d{1,2})-(\d{1,3})$`
+* **Option A: Prefix** -- prepend the system name (and optionally environment) before the branch identifier
+  * Pattern: `{SYSTEM}-{DBMS}-{COMPANY}-{BRANCH}` or `{SYSTEM}-{ENV}-{DBMS}-{COMPANY}-{BRANCH}`
+  * Examples: `dispo-D-10-60`, `cloud4log-O-10-60`, `dispo-abn-O-10-60`
+  * Regex: `^(?:[a-z][a-z0-9]*(?:-[a-z][a-z0-9]*)*-)?[DO]-(\d{1,2})-(\d{1,3})$`
 
 * **Option B: Postfix** -- append the system name after the branch identifier
   * Pattern: `{DBMS}-{COMPANY}-{BRANCH}-{SYSTEM}`
@@ -34,10 +37,10 @@ Key requirements:
 
 ## Decision
 
-**Option A: Prefix.** The system qualifier is prepended to the database identifier.
+**Option A: Prefix.** The system qualifier is prepended to the database identifier. For virtual environments sharing a GCP project, an environment segment is added between system and branch identifier.
 
-* Pattern: `{SYSTEM}-{DBMS}-{COMPANY}-{BRANCH}`
-* Example: `dispo-D-10-60`
+* Pattern: `{SYSTEM}-{DBMS}-{COMPANY}-{BRANCH}` or `{SYSTEM}-{ENV}-{DBMS}-{COMPANY}-{BRANCH}`
+* Examples: `dispo-D-10-60`, `dispo-abn-O-10-60`, `dispo-uat-O-10-60`
 
 ## Rationale
 
@@ -73,6 +76,8 @@ Key requirements:
 ## Related ADRs
 
 * [ADR-004: TMS Bridge Database Identifier Naming Convention](../ADR-004-tms-bridge-database-identifier/ADR-004-tms-bridge-database-identifier.md) -- establishes the base `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` pattern that this ADR extends
+* [ADR-005: Dual Instance Deployment in WL4 Test Environment](../ADR-005-dual-instance-deployment-wl4-test/ADR-005-dual-instance-deployment-wl4-test.md) -- original workaround for missing WL4-DEV; multi-segment prefixes enable credential isolation across these virtual environments
+* [ADR-008: Use WL4-T-T for Development](../ADR-008-wl4-dev-unavailable-use-wl4-tt/ADR-008-wl4-dev-unavailable-use-wl4-tt.md) -- formalizes WL4-T-T as the dev target, creating the need for environment-qualified secrets
 
 ## References
 
@@ -90,13 +95,16 @@ Key requirements:
 
 **Regex Change:**
 * Current: `^[DO]-(\d{1,2})-(\d{1,3})$`
-* New: `^(?:[a-z0-9]+-)?[DO]-(\d{1,2})-(\d{1,3})$`
+* New: `^(?:[a-z][a-z0-9]*(?:-[a-z][a-z0-9]*)*-)?[DO]-(\d{1,2})-(\d{1,3})$`
+
+The regex supports zero or more prefix segments (each starting with a lowercase letter), followed by the DBMS marker and branch numbers. This handles unqualified (`O-10-60`), single-segment (`dispo-O-10-60`), and multi-segment (`dispo-abn-O-10-60`) identifiers. Each segment must start with `[a-z]`, preventing the DBMS marker `D`/`O` from being consumed as a prefix.
 
 ## Document History
 
 | Date       | Author            | Change       |
 | ---------- | ----------------- | ------------ |
-| 2026-05-11 | Virtual Architect | ADR created  |
+| 2026-05-11 | Matthias Max | ADR created  |
+| 2026-05-18 | Matthias Max | Extended with multi-segment prefix support for environment qualification (DEV/ABN/UAT in WL4-T-T); updated regex; added ADR-005/008 links |
 
 ---
 

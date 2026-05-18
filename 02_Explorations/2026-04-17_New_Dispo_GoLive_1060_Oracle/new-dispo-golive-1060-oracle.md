@@ -22,25 +22,26 @@ This section maps every environment stage across both the GCP (New Dispo) side a
          +----------------------------+        +----------------------------+
 
          +----------------------------+        +----------------------------+
- DEV     | WL5-DEV                    |        | ENT1                       |
-         | (development, feature      |        | (schema dev, unit testing) |
+ DEV     | WL4-T-T (virtual env)      |        | ENT1                       |
+         | WL5-DEV                    |        | (schema dev, unit testing) |
+         | (development, feature      |        |                            |
          |  testing)                  |        |                            |
          | Note: WL4-DEV does not     |        |                            |
-         |  exist — use WL4-T-T       |        |                            |
-         |  (see ADR-008)             |        |                            |
+         |  exist — see ADR-008       |        |                            |
          +-------------+--------------+        +-------------+--------------+
                        |                                      |
                        v                                      v
          +----------------------------+        +----------------------------+
- TEST    | WL4-T-T / WL5-T-T          |        | ABN 1060                   |
-         | (integration, E2E)         |        | (acceptance, live prod     |
-         |                            |        |  data)                     |
+ ABN     | WL4-T-T (virtual env)      |        | ORA-ABN-1060               |
+         | WL5-T-T                    |        | (acceptance, live prod     |
+         | (integration, E2E)         |        |  data)                     |
          +-------------+--------------+        +-------------+--------------+
                        |                                      |
                        v                                      v
          +----------------------------+        +----------------------------+
- UAT     | (shares TEST infra,        |        | UAT 1060                   |
-         |  dedicated TMS connection) |        | (customer acceptance)      |
+ UAT     | WL4-T-T (virtual env)      |        | ORA-UAT-1060               |
+         | WL5-T-T                    |        | (customer acceptance)      |
+         | (dedicated TMS connection) |        |                            |
          +-------------+--------------+        +-------------+--------------+
                        |                                      |
                        v                                      v
@@ -52,13 +53,60 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 
 ### 1.2 Environment Mapping Matrix
 
-| Stage     | GCP Project (WL4)                | GCP Project (WL5)           | Oracle Instance  | Data Profile                | Sign-Off                 |
-| --------- | -------------------------------- | --------------------------- | ---------------- | --------------------------- | ------------------------ |
-| **LOCAL** | --                               | --                          | --               | Seeded / empty              | Developer                |
-| **DEV**   | -- (does not exist, use WL4-T-T) | WL5-DEV (TBD)               | ENT1 (shared)    | Schema only, no branch data | Developer                |
-| **TEST**  | `prj-cal-w-wl4-t-4c48-53ad`      | `prj-cal-w-wl5-t-6c00-53ad` | **ORA-ABN-1060** | Live production data (1060) | Patrick U., Max K. (P3)  |
-| **UAT**   | (shares TEST infra)              | (shares TEST infra)         | **ORA-UAT-1060** | Production data             | Max Beisheim, Patrick U. |
-| **PROD**  | `prj-cal-w-wl4-p-afad-53ad`      | `prj-cal-w-wl5-p-3e5b-53ad` | PROD             | Production                  | --                       |
+| Stage     | GCP Project (WL4)                       | GCP Project (WL5)           | Oracle Instance  | Data Profile                | Sign-Off                 |
+| --------- | --------------------------------------- | --------------------------- | ---------------- | --------------------------- | ------------------------ |
+| **LOCAL** | --                                      | --                          | --               | Seeded / empty              | Developer                |
+| **DEV**   | WL4-T-T (virtual env, see ADR-008)      | WL5-DEV (TBD)               | ENT1 (shared)    | Schema only, no branch data | Developer                |
+| **ABN**   | WL4-T-T (virtual env)                   | `prj-cal-w-wl5-t-6c00-53ad` | **ORA-ABN-1060** | Live production data (1060) | Patrick U., Max K. (P3)  |
+| **UAT**   | WL4-T-T (virtual env)                   | `prj-cal-w-wl5-t-6c00-53ad` | **ORA-UAT-1060** | Production data             | Max Beisheim, Patrick U. |
+| **PROD**  | `prj-cal-w-wl4-p-afad-53ad`             | `prj-cal-w-wl5-p-3e5b-53ad` | PROD             | Production                  | --                       |
+
+All three non-prod stages (DEV, ABN, UAT) share the same WL4 GCP project `prj-cal-w-wl4-t-4c48-53ad` as virtual environments (see Section 1.3).
+
+### 1.3 Virtual Environments within WL4-T-T (Target Picture)
+
+Because WL4-DEV does not exist (see ADR-008), the WL4-T-T GCP project hosts three **virtual environments** — DEV, ABN, and UAT — each with its own set of Cloud Run services, Keycloak configuration, and Oracle database connection.
+
+**Constraint:** GCP Secret Manager is scoped per project. A single project cannot hold two secrets with the same name. Since all three virtual environments share `prj-cal-w-wl4-t-4c48-53ad`, database secrets must be differentiated via environment-qualified identifiers (see ADR-009).
+
+**Solution:** Credential routing via prefixed database identifiers. Each virtual environment resolves to its own Secret Manager entry, e.g., `dispo-abn-O-10-60` and `dispo-uat-O-10-60`.
+
+```
+WL4-T-T (prj-cal-w-wl4-t-4c48-53ad)
+┌─────────────────────────────────────────────────────────────────────────┐
+│                          Secret Manager (shared)                        │
+│                          ┌───────────────────┐                          │
+│                          │ dispo-dev-O-10-60  │                          │
+│                          │ dispo-abn-O-10-60  │                          │
+│                          │ dispo-uat-O-10-60  │                          │
+│                          └───────────────────┘                          │
+│                                                                         │
+│  ┌─────────────────────┐ ┌─────────────────────┐ ┌───────────────────┐  │
+│  │  DEV  (Prio 3)      │ │  ABN  (Prio 1)      │ │  UAT  (Prio 2)   │  │
+│  │                     │ │                     │ │                   │  │
+│  │  Keycloak           │ │  Keycloak           │ │  Keycloak         │  │
+│  │  Frontend           │ │  Frontend           │ │  Frontend         │  │
+│  │  Backend            │ │  Backend            │ │  Backend          │  │
+│  │  TMS Bridge         │ │  TMS Bridge         │ │  TMS Bridge       │  │
+│  │                     │ │                     │ │                   │  │
+│  │  → dispo-dev-O-10-60│ │  → dispo-abn-O-10-60│ │  → dispo-uat-O-…  │  │
+│  └─────────────────────┘ └─────────────────────┘ └───────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Priority ordering** (resource and scheduling conflicts):
+
+| Priority | Virtual Env | Purpose                    | Status     |
+| -------- | ----------- | -------------------------- | ---------- |
+| **1**    | ABN         | Acceptance with live data  | Next step  |
+| **2**    | UAT         | Customer acceptance        | After ABN sign-off |
+| **3**    | DEV         | Development / feature testing | Lowest priority |
+
+**Implications:**
+- Each virtual environment requires its own CI/CD pipeline (separate deployments per environment)
+- Secret Manager entries are namespaced via the credential routing prefix (ADR-009)
+- A single Secret Manager instance is shared across all virtual environments — no duplication possible
+- Cloud Run service names must include an environment suffix (e.g., `cal-new-disposition-backend-t-t-abn`)
 
 ---
 
@@ -99,19 +147,19 @@ This section maps every environment stage across both the GCP (New Dispo) side a
 
 ### 3.6 Cloud Storage Buckets
 
-| Bucket                   | Environment | Purpose                | Status |
-| ------------------------ | ----------- | ---------------------- | ------ |
-| `wl5-cdc-bucket-abn1060` | Test        | CDC bucket for ABN1060 | done   |
-| `wl5-cdc-bucket-uat1060` | Test        | CDC bucket for UAT1060 | done   |
-| `wl5-cdc-bucket-1060`    | Prod        | CDC bucket for 1060    | done   |
+| Bucket                   | GCP Project | Stage | Purpose                | Status |
+| ------------------------ | ----------- | ----- | ---------------------- | ------ |
+| `wl5-cdc-bucket-abn1060` | WL5-T-T     | ABN   | CDC bucket for ABN1060 | done   |
+| `wl5-cdc-bucket-uat1060` | WL5-T-T     | UAT   | CDC bucket for UAT1060 | done   |
+| `wl5-cdc-bucket-1060`    | WL5-P-P     | PROD  | CDC bucket for 1060    | done   |
 
 ### 3.7 Pub/Sub
 
-| Resource                | Environment | Purpose                | Status |
-| ----------------------- | ----------- | ---------------------- | ------ |
-| `WL5_CDC_TOPIC_ABN1060` | Test        | CDC events for ABN1060 | TBD    |
-| `WL5_CDC_TOPIC_UAT1060` | Test        | CDC events for UAT1060 | TBD    |
-| `WL5_CDC_TOPIC_1060`    | Prod        | CDC events for 1060    | TBD    |
+| Resource                | GCP Project | Stage | Purpose                | Status |
+| ----------------------- | ----------- | ----- | ---------------------- | ------ |
+| `WL5_CDC_TOPIC_ABN1060` | WL5-T-T     | ABN   | CDC events for ABN1060 | TBD    |
+| `WL5_CDC_TOPIC_UAT1060` | WL5-T-T     | UAT   | CDC events for UAT1060 | TBD    |
+| `WL5_CDC_TOPIC_1060`    | WL5-P-P     | PROD  | CDC events for 1060    | TBD    |
 
 ### 3.8 Networking
 
@@ -189,11 +237,11 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 
 ### 4.5 Azure Service Bus Mapping
 
-| Environment | ASB Namespace | Queue | Status |
-| ----------- | ------------- | ----- | ------ |
-| Test (ABN)  | TBD           | TBD   | TBD    |
-| UAT         | TBD           | TBD   | TBD    |
-| Prod        | TBD           | TBD   | TBD    |
+| Stage | ASB Namespace | Queue | Status |
+| ----- | ------------- | ----- | ------ |
+| ABN   | TBD           | TBD   | TBD    |
+| UAT   | TBD           | TBD   | TBD    |
+| PROD  | TBD           | TBD   | TBD    |
 
 **Purpose:** Outbound EDI messages (invoice/shipment distribution) via AMQP/TLS.
 
@@ -202,10 +250,13 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 
 ### 4.6 Secret Manager
 
-| Secret Name            | Purpose                      | Injected Into |
-| ---------------------- | ---------------------------- | ------------- |
-| `D-{COMPANY}-{BRANCH}` | PostgreSQL connection string | TMS Bridge    |
-| `O-{COMPANY}-{BRANCH}` | Oracle connection string     | TMS Bridge    |
+Secret names follow the credential routing convention from ADR-009. With virtual environments in WL4-T-T, the system-environment prefix distinguishes secrets for the same branch:
+
+| Secret Name Pattern                        | Example                | Purpose                      | Injected Into |
+| ------------------------------------------ | ---------------------- | ---------------------------- | ------------- |
+| `{DBMS}-{COMPANY}-{BRANCH}`                | `O-10-60`              | Legacy / unqualified         | TMS Bridge    |
+| `{SYSTEM}-{DBMS}-{COMPANY}-{BRANCH}`       | `dispo-O-10-60`        | System-qualified             | TMS Bridge    |
+| `{SYSTEM}-{ENV}-{DBMS}-{COMPANY}-{BRANCH}` | `dispo-abn-O-10-60`    | System + environment         | TMS Bridge    |
 
 ---
 
@@ -236,7 +287,7 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 | 4   | **Oracle deployment pipeline (QS tool)**            | Joachim Schreiner (Nagel)               | --      | Operational   | --         | --         | ENT -> ABN -> UAT -> PROD                      |
 | 5   | **ORA-ABN-1060 connection details**                 | Joachim Schreiner (Nagel)               | --      | ✅ Done       | --         | --         | TMSBR1060 user provisioned by Eric (2026-05-01) |
 | 6   | **TMS Bridge config for ORA-ABN-1060**              | P3 (Matthias, Max K.)                   | Joachim | In Progress   | --         | --         | Secret created in WL5-T-T; WL4-T-T TBC        |
-| 7   | **Backend TEST env config for Oracle**              | P3 (Matthias, Max K.)                   | --      | Pending       | #6         | P3         |                                                |
+| 7   | **Backend ABN env config for Oracle**               | P3 (Matthias, Max K.)                   | --      | Pending       | #6         | P3         |                                                |
 | 8   | **GCP Secret Manager: Oracle connection strings**   | P3 / CAL Infra (Matt W.)               | --      | In Progress   | --         | --         | TMSBR1060 secret in WL5-T-T (2026-05-01); WL4-T-T TBC |
 | 9   | **Network/VPN: Oracle on-prem reachable from GCP**  | CAL Infra / Nagel Infra                 | --      | TBD           | --         | --         | Verify `oracle-user` tag grants access to 1060 |
 | 10  | **End-to-end integration test (ABN 1060)**          | P3 (Matthias, Max K.)                   | Joachim | Pending       | #6, #7, #9 | P3         | Frontend -> Backend -> Bridge -> ORA-ABN-1060  |
