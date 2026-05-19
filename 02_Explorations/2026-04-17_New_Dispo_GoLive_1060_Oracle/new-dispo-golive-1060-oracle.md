@@ -1,6 +1,6 @@
 # New Dispo GoLive 1060 (Oracle)
 
-**Date:** 2026-05-04
+**Date:** 2026-05-19
 **Status:** Active
 **Purpose:** Holistic overview to align all stakeholders on the architecture, infrastructure, environments, and ownership for Branch 1060 on Oracle.
 
@@ -121,29 +121,77 @@ WL4-T-T (prj-cal-w-wl4-t-4c48-53ad)
 | **Network** | Shared VPC         | VPN, Routing, Firewall                         | `prj-cal-net-s-t-e004-53ad`                                     | `prj-cal-net-s-p-19c3-53ad` |
 | **CI/CD**   | Deployment         | Workload Identity, Pipelines                   | `prj-cal-w-cicd-wl4-a1bc-53ad` / `prj-cal-w-cicd-wl5-a591-53ad` | (same)                      |
 
+> **Virtual environments:** The WL4 and WL5 test projects each host three virtual environments (DEV, ABN, UAT). Every component listed above is deployed as a separate Cloud Run service per environment, with an environment suffix in the service name (see Section 1.3). Section 3 lists all individual deployments.
+
 ---
 
 ## 3. GCP Components by Environment
 
 ### 3.1 Cloud Run Services
 
-| Service    | Workload | Test Name                           | Test URL                                      | Prod Name                           | Prod URL                                 |
-| ---------- | -------- | ----------------------------------- | --------------------------------------------- | ----------------------------------- | ---------------------------------------- |
-| Frontend   | WL4      | `cal-new-disposition-frontend-t-t`  | `https://test.dispo.gcp.nagel-group.com`      | `cal-new-disposition-frontend-p-p`  | `https://dispo.gcp.nagel-group.com`      |
-| Backend    | WL4      | `cal-new-disposition-backend-t-t`   | `https://test.dispo.gcp.nagel-group.com`      | `cal-new-disposition-backend-p-p`   | `https://dispo.gcp.nagel-group.com`      |
-| TMS Bridge | WL5      | `cal-new-disposition-tmsbridge-t-t` | `https://test.tms-bridge.gcp.nagel-group.com` | `cal-new-disposition-tmsbridge-p-p` | `https://tms-bridge.gcp.nagel-group.com` |
+Each virtual environment requires its own Cloud Run deployment (see Section 1.3). Service names follow the convention `cal-new-disposition-{component}-{project}-{env}`.
+
+| Service    | Workload | Env  | Cloud Run Service Name                         | URL                                              | Status   |
+| ---------- | -------- | ---- | ---------------------------------------------- | ------------------------------------------------ | -------- |
+| Frontend   | WL4      | DEV  | `cal-new-disposition-frontend-t-t-dev`         | TBD                                              | TBD      |
+| Frontend   | WL4      | ABN  | `cal-new-disposition-frontend-t-t-abn`         | TBD                                              | TBD      |
+| Frontend   | WL4      | UAT  | `cal-new-disposition-frontend-t-t-uat`         | TBD                                              | TBD      |
+| Frontend   | WL4      | PROD | `cal-new-disposition-frontend-p-p`             | `https://dispo.gcp.nagel-group.com`              | existing |
+| Backend    | WL4      | DEV  | `cal-new-disposition-backend-t-t-dev`          | TBD                                              | TBD      |
+| Backend    | WL4      | ABN  | `cal-new-disposition-backend-t-t-abn`          | TBD                                              | TBD      |
+| Backend    | WL4      | UAT  | `cal-new-disposition-backend-t-t-uat`          | TBD                                              | TBD      |
+| Backend    | WL4      | PROD | `cal-new-disposition-backend-p-p`              | `https://dispo.gcp.nagel-group.com`              | existing |
+| TMS Bridge | WL5      | DEV  | `cal-new-disposition-tmsbridge-t-t-dev`        | TBD                                              | TBD      |
+| TMS Bridge | WL5      | ABN  | `cal-new-disposition-tmsbridge-t-t-abn`        | TBD                                              | TBD      |
+| TMS Bridge | WL5      | UAT  | `cal-new-disposition-tmsbridge-t-t-uat`        | TBD                                              | TBD      |
+| TMS Bridge | WL5      | PROD | `cal-new-disposition-tmsbridge-p-p`            | `https://tms-bridge.gcp.nagel-group.com`         | existing |
 
 ### 3.2 Cloud Functions (Gen2)
 
-| Function               | Workload | Trigger       | Test Instance                               | Prod Instance                               | Config |
-| ---------------------- | -------- | ------------- | ------------------------------------------- | ------------------------------------------- | ------ |
-| Dispo Filter (UAT1060) | WL5      | Cloud Storage | `new-dispo-filter-shipment-records-uat1060` | `new-dispo-filter-shipment-records-uat1060` | Python |
+No DEV instance needed — ENT1 is schema-only without CDC pipeline.
+
+| Function     | Workload | Trigger       | Env  | Instance Name                                  | Config | Status |
+| ------------ | -------- | ------------- | ---- | ---------------------------------------------- | ------ | ------ |
+| Dispo Filter | WL5      | Cloud Storage | ABN  | `new-dispo-filter-shipment-records-abn1060`    | Python | TBD    |
+| Dispo Filter | WL5      | Cloud Storage | UAT  | `new-dispo-filter-shipment-records-uat1060`    | Python | TBD    |
+| Dispo Filter | WL5      | Cloud Storage | PROD | `new-dispo-filter-shipment-records-1060`       | Python | TBD    |
 
 ### 3.3 Databases
 
-| Database             | Type                | Test Instance                  | Prod Instance                      |
-| -------------------- | ------------------- | ------------------------------ | ---------------------------------- |
-| New Dispo Backend DB | CloudSQL PostgreSQL | `cal-new-disposition-psql-t-t` | `cal-new-disposition-postgres-p-p` |
+Each virtual environment's Backend requires its own CloudSQL database for isolation (see Section 1.3). All virtual environments share the WL4-T-T CloudSQL instance; database-level separation is TBD.
+
+| Database             | Type                | Env  | CloudSQL Instance                      | Database Name | Status   |
+| -------------------- | ------------------- | ---- | -------------------------------------- | ------------- | -------- |
+| New Dispo Backend DB | CloudSQL PostgreSQL | DEV  | `cal-new-disposition-psql-t-t`         | TBD           | TBD      |
+| New Dispo Backend DB | CloudSQL PostgreSQL | ABN  | `cal-new-disposition-psql-t-t`         | TBD           | TBD      |
+| New Dispo Backend DB | CloudSQL PostgreSQL | UAT  | `cal-new-disposition-psql-t-t`         | TBD           | TBD      |
+| New Dispo Backend DB | CloudSQL PostgreSQL | PROD | `cal-new-disposition-postgres-p-p`     | --            | existing |
+
+### 3.4 Azure Service Bus
+
+| Stage | ASB Namespace | Queue | Status |
+| ----- | ------------- | ----- | ------ |
+| ABN   | TBD           | TBD   | TBD    |
+| UAT   | TBD           | TBD   | TBD    |
+| PROD  | TBD           | TBD   | TBD    |
+
+**Purpose:** Outbound EDI messages (invoice/shipment distribution) via AMQP/TLS.
+
+**Connection String Source:**
+- Backend: `EdiSettings.ConnectionString` in appsettings
+
+### 3.5 Secret Manager
+
+Secret names follow the credential routing convention from ADR-009: `{SYSTEM}-{ENV}-{DBMS}-{COMPANY}-{BRANCH}`. All virtual environments within a GCP project share one Secret Manager instance, so the environment prefix is required for disambiguation.
+
+| Secret Name              | GCP Project | Env  | Purpose                          | Injected Into | Status                   |
+| ------------------------ | ----------- | ---- | -------------------------------- | ------------- | ------------------------ |
+| `dispo-dev-O-10-60`     | WL4-T-T     | DEV  | Oracle connection (ENT1)         | TMS Bridge    | TBD                      |
+| `dispo-abn-O-10-60`     | WL4-T-T     | ABN  | Oracle connection (ORA-ABN-1060) | TMS Bridge    | TBD                      |
+| `dispo-uat-O-10-60`     | WL4-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | TBD                      |
+| `dispo-abn-O-10-60`     | WL5-T-T     | ABN  | Oracle connection (ORA-ABN-1060) | TMS Bridge    | done (2026-05-01)        |
+| `dispo-uat-O-10-60`     | WL5-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | TBD                      |
+| `O-10-60`               | WL5-P-P     | PROD | Oracle connection (PROD)         | TMS Bridge    | TBD                      |
 
 ### 3.6 Cloud Storage Buckets
 
@@ -170,6 +218,18 @@ WL4-T-T (prj-cal-w-wl4-t-4c48-53ad)
 | Hub VPC Project     | `prj-cal-net-h-5332-53ad`              | `prj-cal-net-h-5332-53ad`              | * to be confirmed |
 | CAL VPN Endpoints   | `34.157.54.59`, `34.157.191.34`        | (same hub)                             | * to be confirmed |
 | Nagel VPN Endpoints | `35.242.18.84`, `34.157.189.239`       | (same hub)                             | * to be confirmed |
+
+### 3.9 Keycloak Servers
+
+Each virtual environment requires its own Keycloak instance or realm (see Section 1.3).
+
+| Env   | Keycloak URL                                      | Status   |
+| ----- | ------------------------------------------------- | -------- |
+| LOCAL | `http://localhost:8080`                           | existing |
+| DEV   | TBD                                               | TBD      |
+| ABN   | TBD                                               | TBD      |
+| UAT   | TBD                                               | TBD      |
+| PROD  | `https://dispo.gcp.nagel-group.com/keycloak`      | existing |
 
 ---
 
@@ -198,15 +258,6 @@ WL4-T-T (prj-cal-w-wl4-t-4c48-53ad)
 | `tmsng-client`            | Machine-to-Machine      | ?????                  | Test               | * to be verified |
 | `driverapp-client`        | Machine-to-Machine      | ?????                  | Test               | * to be verified |
 
-**Keycloak Servers:**
-
-| Environment | URL                                               |
-| ----------- | ------------------------------------------------- |
-| Local       | `http://localhost:8080`                           |
-| Dev         | `https://dev.new-dispo.nagel.p3ds.net/keycloak`   |
-| Test        | `https://test.dispo.gcp.nagel-group.com/keycloak` |
-| Production  | `https://dispo.gcp.nagel-group.com/keycloak`      |
-
 ### 4.3 GCP Service Accounts
 
 | Service Account                                                  | Scope            | Purpose                                                             | Status            |
@@ -234,29 +285,6 @@ The exact permission scope required by the `TMSBR*` user (tables, views, functio
 **Database Identifier Convention (ADR-004):**
 Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germany Company 10 Branch 60)
 \* to be discussed in scope
-
-### 4.5 Azure Service Bus Mapping
-
-| Stage | ASB Namespace | Queue | Status |
-| ----- | ------------- | ----- | ------ |
-| ABN   | TBD           | TBD   | TBD    |
-| UAT   | TBD           | TBD   | TBD    |
-| PROD  | TBD           | TBD   | TBD    |
-
-**Purpose:** Outbound EDI messages (invoice/shipment distribution) via AMQP/TLS.
-
-**Connection String Source:**
-- Backend: `EdiSettings.ConnectionString` in appsettings
-
-### 4.6 Secret Manager
-
-Secret names follow the credential routing convention from ADR-009. With virtual environments in WL4-T-T, the system-environment prefix distinguishes secrets for the same branch:
-
-| Secret Name Pattern                        | Example                | Purpose                      | Injected Into |
-| ------------------------------------------ | ---------------------- | ---------------------------- | ------------- |
-| `{DBMS}-{COMPANY}-{BRANCH}`                | `O-10-60`              | Legacy / unqualified         | TMS Bridge    |
-| `{SYSTEM}-{DBMS}-{COMPANY}-{BRANCH}`       | `dispo-O-10-60`        | System-qualified             | TMS Bridge    |
-| `{SYSTEM}-{ENV}-{DBMS}-{COMPANY}-{BRANCH}` | `dispo-abn-O-10-60`    | System + environment         | TMS Bridge    |
 
 ---
 
@@ -420,3 +448,9 @@ Branching & versioning concept currently in the making.
 | Wiki: Environments                | `WIKI/Nagel-CAL-Disposition.wiki/Devops/Environments.md`                   |
 | ADR-004: DB Identifier Convention | `01_ADRs/`                                                                 |
 | TMS Bridge Database Objects       | `02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md` |
+
+---
+
+<div align="center">
+  <sub>Created and maintained by <strong>Virtual Architect</strong></sub>
+</div>
