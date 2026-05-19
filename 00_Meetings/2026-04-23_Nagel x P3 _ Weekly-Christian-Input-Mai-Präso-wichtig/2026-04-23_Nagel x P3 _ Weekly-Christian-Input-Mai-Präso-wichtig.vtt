@@ -1,0 +1,1352 @@
+WEBVTT
+
+403600a4-382f-4848-b982-a93a4e86c832/7-0
+00:00:15.284 --> 00:00:15.684
+<v Matthias Max>Hi.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/8-0
+00:00:18.404 --> 00:00:19.444
+<v Martin Dittmann>Hello.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/9-0
+00:00:23.164 --> 00:00:24.644
+<v Martin Dittmann>Alright, Patrick ist schon am.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/10-0
+00:00:26.004 --> 00:00:26.724
+<v Martin Dittmann>Dart.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/15-0
+00:00:37.764 --> 00:00:40.195
+<v Martin Dittmann>Hi Ledian, ich lass den Patrick auch.
+Da ist er ja. Ja,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/14-0
+00:00:39.884 --> 00:00:40.324
+<v Ledian Xhani>Hallo.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/15-1
+00:00:40.195 --> 00:00:41.844
+<v Martin Dittmann>wollt ich grad reinlassen. Hi Patrick.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/16-0
+00:00:45.204 --> 00:00:45.764
+<v Uschmann, Patrick>Hi.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/17-0
+00:00:47.204 --> 00:00:47.604
+<v Martin Dittmann>Moin.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/20-0
+00:00:55.204 --> 00:00:55.924
+<v Martin Dittmann>Hi Christian.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/21-0
+00:00:56.404 --> 00:00:57.124
+<v Ledian Xhani>Hi Christian.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/22-0
+00:00:57.284 --> 00:00:58.084
+<v Christian Lang>Halli Hallo.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/25-0
+00:01:00.644 --> 00:01:04.283
+<v Martin Dittmann>OK, dann denk ich mal,
+Pascal hatte auch angenommen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/25-1
+00:01:04.283 --> 00:01:07.921
+<v Martin Dittmann>von daher geben wir ihm noch eine Minute.
+Ansonsten,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/25-2
+00:01:07.921 --> 00:01:13.276
+<v Martin Dittmann>Max Kehler ist noch im Urlaub bis Montag
+und Cem ist leider verhindert heute.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/25-3
+00:01:13.276 --> 00:01:15.884
+<v Martin Dittmann>Von daher, wir von P. 3 sind komplett.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/24-0
+00:01:16.524 --> 00:01:17.004
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/29-0
+00:01:17.284 --> 00:01:22.731
+<v Martin Dittmann>Ja, ach komm, ich würd sagen,
+wir legen los oder die Dispo Pill und so</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/26-0
+00:01:19.524 --> 00:01:20.804
+<v Christian Lang>Ja, gerne fangen wir an.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/29-1
+00:01:22.731 --> 00:01:27.564
+<v Martin Dittmann>weiter, genau. O. K.,
+so einmal ein schnelles Update zu Dispo.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/29-2
+00:01:27.564 --> 00:01:31.476
+<v Martin Dittmann>Matthias,
+möchtest du direkt reinstarten oder soll</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/29-3
+00:01:31.476 --> 00:01:34.084
+<v Martin Dittmann>ich mit den Punkten oben anfangen?</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/31-0
+00:01:36.284 --> 00:01:37.084
+<v Matthias Max>Wie du willst.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/35-0
+00:01:38.724 --> 00:01:41.905
+<v Martin Dittmann>Ja, komm, mach die oben beiden.
+Also Roadmap haben wir ja schon</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/35-1
+00:01:41.905 --> 00:01:45.334
+<v Martin Dittmann>gemeinschaftlich abgestimmt,
+wurde jetzt soweit auch im Backlog dann</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/35-2
+00:01:45.334 --> 00:01:47.819
+<v Martin Dittmann>in den Refinements schon fleißig dran
+gearbeitet.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/35-3
+00:01:47.819 --> 00:01:51.347
+<v Martin Dittmann>Bisher sieht die Entwicklung gut aus,
+alles im im im Plan. Feinheiten,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/35-4
+00:01:51.347 --> 00:01:55.124
+<v Martin Dittmann>die abgestimmt werden mussten mit Joachim
+und so weiter, das hat glaube ich</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/39-0
+00:01:55.244 --> 00:01:59.591
+<v Martin Dittmann>geklappt und ansonsten genau Angebot
+Christian hatte ich dir rübergeschickt,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/39-1
+00:01:59.591 --> 00:02:02.751
+<v Martin Dittmann>das passt alles,
+wir arbeiten unverändert weiter an den</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/39-2
+00:02:02.751 --> 00:02:06.025
+<v Martin Dittmann>Themen Matthias,
+geh du gern noch mal zusammenfassend auf</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/39-3
+00:02:06.025 --> 00:02:09.581
+<v Martin Dittmann>Oracle und A. D. R. ein.
+Wir haben mit Christian ja vorgestern</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/39-4
+00:02:09.581 --> 00:02:10.484
+<v Martin Dittmann>gesprochen, aber</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/42-0
+00:02:10.644 --> 00:02:13.155
+<v Martin Dittmann>Auch vielleicht,
+um Patrick da noch mal abzuholen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/42-1
+00:02:13.155 --> 00:02:13.844
+<v Martin Dittmann>gerne an dich.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/41-0
+00:02:13.284 --> 00:02:13.964
+<v Matthias Max>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/48-0
+00:02:14.964 --> 00:02:18.952
+<v Matthias Max>Ja, Oracle C. D. C.
+haben wir die Analysen ja abgeschlossen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/48-1
+00:02:18.952 --> 00:02:23.202
+<v Matthias Max>haben die zusammen besprochen.
+Wave Forward ist auch festgelegt,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/48-2
+00:02:23.202 --> 00:02:27.451
+<v Matthias Max>entweder mit Stream weiterzumachen,
+vielleicht auch kurzfristig,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/48-3
+00:02:27.451 --> 00:02:31.504
+<v Matthias Max>oder eben der Option,
+die Data Stream noch zusätzlich bietet,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/48-4
+00:02:31.504 --> 00:02:33.204
+<v Matthias Max>die gerade in Klärung ist.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/52-0
+00:02:33.844 --> 00:02:37.497
+<v Matthias Max>Entscheidungshorizont ist irgendwie Ende
+dieser Woche.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/52-1
+00:02:37.497 --> 00:02:41.216
+<v Matthias Max>Wir haben jetzt hier reingeschrieben
+nächsten Dienstag,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/52-2
+00:02:41.216 --> 00:02:45.067
+<v Matthias Max>weil wir da das nächste Meeting haben.
+Das wäre das eine.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/52-3
+00:02:45.067 --> 00:02:50.048
+<v Matthias Max>Dann haben wir 2 ADAs zugemacht,
+einmal mit dem Proxy auf Datastream Seite</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/52-4
+00:02:50.048 --> 00:02:51.044
+<v Matthias Max>mit Post Press.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/56-0
+00:02:51.684 --> 00:02:55.053
+<v Matthias Max>Einfach,
+um das zu dokumentieren und weitermachen</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/56-1
+00:02:55.053 --> 00:02:59.230
+<v Matthias Max>zu können, was nicht heißt,
+dass man das Potenzial oder diese</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/56-2
+00:02:59.230 --> 00:03:04.484
+<v Matthias Max>Möglichkeit später noch mal aufnimmt und
+prüft. Und EDA 8 war, was war EDA 8?</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/57-0
+00:03:05.844 --> 00:03:07.364
+<v Martin Dittmann>War die Entwicklungsumgebung.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/62-0
+00:03:05.924 --> 00:03:09.959
+<v Matthias Max>Ah ja, genau das. Ja genau,
+das wird es einfach akzeptieren,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/62-1
+00:03:09.959 --> 00:03:15.052
+<v Matthias Max>dass wir keine haben mangels Ressourcen
+und auch hier später vielleicht eine</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/62-2
+00:03:15.052 --> 00:03:20.079
+<v Matthias Max>hochziehen und aber in Kauf nehmen,
+dass wir das alles im Test letztendlich</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/62-3
+00:03:20.079 --> 00:03:22.724
+<v Matthias Max>machen, was Vorbereitung geht, Abnahmen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/67-0
+00:03:23.044 --> 00:03:28.534
+<v Matthias Max>Tests und so weiter und dann auf Prott
+ziehen, mit dem kleinen Nachteil,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/67-1
+00:03:28.534 --> 00:03:34.324
+<v Matthias Max>dass man jetzt natürlich devartige Dinge
+dort deployed und den ja hochzieht,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/67-2
+00:03:34.324 --> 00:03:38.084
+<v Matthias Max>die man später umziehen muss. Genau,
+das war das.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/65-0
+00:03:36.924 --> 00:03:37.284
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/70-0
+00:03:40.324 --> 00:03:45.493
+<v Matthias Max>Entscheidung haben wir angesprochen,
+dem Umfang. Ja, passt soweit,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/70-1
+00:03:45.493 --> 00:03:46.804
+<v Matthias Max>was Linke angeht.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/76-0
+00:03:47.924 --> 00:03:51.861
+<v Martin Dittmann>würde vielleicht hier ergänzend,
+Patrick Christian hatte erwähnt,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/76-1
+00:03:51.861 --> 00:03:56.393
+<v Martin Dittmann>dass die Dispo vorgestellt werden soll in
+der Management Präsentation 19.5.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/76-2
+00:03:56.393 --> 00:03:59.137
+<v Martin Dittmann>und dass wir da auch dann noch mal
+abstimmen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/72-0
+00:03:57.284 --> 00:03:57.764
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/76-3
+00:03:59.137 --> 00:04:02.656
+<v Martin Dittmann>was soll wie genau gezeigt werden,
+dass wir sicherstellen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/76-4
+00:04:02.656 --> 00:04:04.564
+<v Martin Dittmann>dass es auch alles funktioniert.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/75-0
+00:04:04.884 --> 00:04:05.364
+<v Christian Lang>Yeah.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/82-0
+00:04:04.884 --> 00:04:07.482
+<v Martin Dittmann>dass wir dich vielleicht gerade vorher
+was Neues deployen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/82-1
+00:04:07.482 --> 00:04:10.916
+<v Martin Dittmann>weil es jetzt gerade eine Umgebung ist.
+Patrick, da vielleicht auch noch mal,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/82-2
+00:04:10.916 --> 00:04:13.601
+<v Martin Dittmann>wenn Max jetzt wieder da ist,
+dass wir dann genau abstimmen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/82-3
+00:04:13.601 --> 00:04:16.859
+<v Martin Dittmann>zu welchem Zeitpunkt wir vielleicht auch
+einfach nichts deployen und dann</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/79-0
+00:04:16.404 --> 00:04:16.964
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/82-4
+00:04:16.859 --> 00:04:18.884
+<v Martin Dittmann>kurzzeitig mal einfach da 'n Freeze
+einbauen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/81-0
+00:04:19.084 --> 00:04:19.644
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/83-0
+00:04:19.444 --> 00:04:21.844
+<v Uschmann, Patrick>Ja, wer präsentiert da?</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/84-0
+00:04:20.324 --> 00:04:22.084
+<v Martin Dittmann>Dass die Präsentation rund läuft.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/86-0
+00:04:23.844 --> 00:04:25.124
+<v Uschmann, Patrick>Wer präsentiert da?</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/87-0
+00:04:26.244 --> 00:04:27.044
+<v Christian Lang>Max Beisheim.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/88-0
+00:04:27.684 --> 00:04:28.084
+<v Uschmann, Patrick>Ja.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/95-0
+00:04:28.204 --> 00:04:31.353
+<v Christian Lang>haben wir heute Mittag nochmal 'n
+Austauschtermin, dann holt ihn Elisa ab.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/95-1
+00:04:31.353 --> 00:04:33.872
+<v Christian Lang>Also wichtig wäre halt,
+dass das Frontend per se läuft, ne.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/95-2
+00:04:33.872 --> 00:04:37.273
+<v Christian Lang>Wir hatten das schon mal vorgestellt,
+die Judispo in der in der Stilkoje intern,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/95-3
+00:04:37.273 --> 00:04:39.456
+<v Christian Lang>da gab es halt eigentlich nur rote
+Fehlermeldungen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/95-4
+00:04:39.456 --> 00:04:42.983
+<v Christian Lang>das können wir da uns halt nicht erlauben.
+Das muss nicht End-to-End funktionieren,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/95-5
+00:04:42.983 --> 00:04:45.124
+<v Christian Lang>haben wir glaub ich schon mal irgendwo
+besprochen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/94-0
+00:04:45.204 --> 00:04:45.844
+<v Martin Dittmann>Ciao.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/98-0
+00:04:45.764 --> 00:04:49.194
+<v Christian Lang>Wenn wir einfach da die so mal die Items
+draufziehen können links rechts</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/98-1
+00:04:49.194 --> 00:04:52.905
+<v Christian Lang>Transporter frag hier bisschen editieren,
+dann timo.com schicken et cetera ja,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/98-2
+00:04:52.905 --> 00:04:55.348
+<v Christian Lang>also eigentlich so ne funktionierende
+Testumgebung,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/98-3
+00:04:55.348 --> 00:04:56.804
+<v Christian Lang>dann ist es völlig ausreichend.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/100-0
+00:05:00.324 --> 00:05:01.204
+<v Uschmann, Patrick>OK.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/105-0
+00:05:03.404 --> 00:05:05.169
+<v Martin Dittmann>genau,
+haben wir aber extra jetzt mal hier</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/105-1
+00:05:05.169 --> 00:05:07.426
+<v Martin Dittmann>aufgenommen,
+damit das nicht unter den Tisch fällt und</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/105-2
+00:05:07.426 --> 00:05:10.134
+<v Martin Dittmann>dass wir da auch das sicherstellt,
+dass das da rund läuft. Genau,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/105-3
+00:05:10.134 --> 00:05:12.185
+<v Martin Dittmann>und dann ganzheitlich im Projektplan,
+ich glaube,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/105-4
+00:05:12.185 --> 00:05:14.360
+<v Martin Dittmann>da hatten wir auch vor Max Kehdas Urlaub
+gesprochen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/105-5
+00:05:14.360 --> 00:05:17.520
+<v Martin Dittmann>er hat da ein bisschen was vorbereitet,
+war aber noch nicht fertig geworden,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/105-6
+00:05:17.520 --> 00:05:19.284
+<v Martin Dittmann>auch da würde ich sagen,
+für nächste Woche</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/111-0
+00:05:19.364 --> 00:05:21.942
+<v Martin Dittmann>ich mein,
+wir haben ja jetzt auch den wöchentlichen</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/111-1
+00:05:21.942 --> 00:05:24.818
+<v Martin Dittmann>Austausch zum Oracle Thema,
+dass wir da einfach jetzt die</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/111-2
+00:05:24.818 --> 00:05:28.734
+<v Martin Dittmann>verschiedenen Teams zusammenbringen und
+so 'n übergreifenden Projektplan haben</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/111-3
+00:05:28.734 --> 00:05:32.799
+<v Martin Dittmann>und ja, immer wissen, wo wir dran stehen,
+wo es vielleicht gerade Schwierigkeiten</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/108-0
+00:05:32.084 --> 00:05:32.524
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/111-4
+00:05:32.799 --> 00:05:35.923
+<v Martin Dittmann>gibt. Genau, Matthias,
+auf der rechten Seite noch irgendwas zu</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/111-5
+00:05:35.923 --> 00:05:38.550
+<v Martin Dittmann>ergänzen, ich mein,
+das obere ist mit dem EDA 8 dann</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/111-6
+00:05:38.550 --> 00:05:39.244
+<v Martin Dittmann>abgeschlossen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/112-0
+00:05:39.684 --> 00:05:42.644
+<v Martin Dittmann>Die automatisierten Deployments, ja.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/114-0
+00:05:40.164 --> 00:05:43.326
+<v Matthias Max>Genau, das ist hier nochmal. Ja, sorry,
+ist hier nur drauf,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/114-1
+00:05:43.326 --> 00:05:46.804
+<v Matthias Max>weil wir eine Woche drauf erst die Dinge
+schließen und entfernen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/115-0
+00:05:48.484 --> 00:05:49.124
+<v Matthias Max>Hold.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/119-0
+00:05:48.964 --> 00:05:51.222
+<v Martin Dittmann>Genau,
+und auch hier lassen wir einfach so</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/119-1
+00:05:51.222 --> 00:05:54.058
+<v Martin Dittmann>stehen. Passt.
+Und Datenbank-Setup hatte sich ja auch</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/119-2
+00:05:54.058 --> 00:05:56.736
+<v Martin Dittmann>geklärt.
+Von daher haben wir hier eigentlich jetzt</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/119-3
+00:05:56.736 --> 00:06:00.884
+<v Martin Dittmann>erst mal die Risiken aus dem Weg geräumt,
+die die letzten Wochen so bestanden.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/126-0
+00:06:04.084 --> 00:06:08.684
+<v Matthias Max>Ja, auch vielleicht zum mittleren Punkt,
+der rot ist, ist bisher halt was,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/121-0
+00:06:04.644 --> 00:06:05.204
+<v Martin Dittmann>Gut.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/126-1
+00:06:08.684 --> 00:06:11.996
+<v Matthias Max>was wir noch nicht miterlebt haben,
+sagen wir mal so.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/126-2
+00:06:11.996 --> 00:06:15.431
+<v Matthias Max>Wir haben noch nie gesehen,
+wie das jetzt funktioniert,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/126-3
+00:06:15.431 --> 00:06:19.724
+<v Matthias Max>der Prozess auf eurer Seite von End zu A.
+B. N. zu U. A. T. zu Prott.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/125-0
+00:06:19.844 --> 00:06:20.404
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/131-0
+00:06:20.564 --> 00:06:25.450
+<v Matthias Max>wird gesagt, es ist da und funktioniert.
+Ich würde es halt gerne als als Risiko</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/131-1
+00:06:25.450 --> 00:06:29.419
+<v Matthias Max>hier einmal drin lassen,
+bis wir es wenigstens gesehen haben von</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/131-2
+00:06:29.419 --> 00:06:33.450
+<v Matthias Max>einem Environment zum anderen,
+wenn das zuverlässig funktioniert.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/131-3
+00:06:33.450 --> 00:06:36.564
+<v Matthias Max>Hat letztendlich hier so ein
+End-to-End-Charakter.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/129-0
+00:06:34.644 --> 00:06:35.044
+<v Christian Lang>Hallo.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/132-0
+00:06:37.044 --> 00:06:38.084
+<v Matthias Max>From reporting.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/133-0
+00:06:37.124 --> 00:06:39.330
+<v Christian Lang>Wir reden ja davon,
+dass vom normalen TMS Datenbank</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/133-1
+00:06:39.330 --> 00:06:39.924
+<v Christian Lang>Deployment ne.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/135-0
+00:06:40.164 --> 00:06:43.844
+<v Matthias Max>You know,
+Oracle Legacy Deployment process.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/138-0
+00:06:45.924 --> 00:06:48.839
+<v Christian Lang>Ja,
+ist ja bei uns eigentlich gang und gäbe.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/138-1
+00:06:48.839 --> 00:06:51.364
+<v Christian Lang>Also Oracle, ich glaube seit 35 Jahren.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/139-0
+00:06:51.924 --> 00:06:52.404
+<v Matthias Max>Ja.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/141-0
+00:06:53.204 --> 00:06:56.969
+<v Christian Lang>Ja, also professionell,
+gerade mit Liquid Base, tatsächlich,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/141-1
+00:06:56.969 --> 00:06:59.684
+<v Christian Lang>aber da mache ich mir jetzt weniger
+Sorgen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/143-0
+00:07:00.164 --> 00:07:01.764
+<v Matthias Max>Mhm, also gut, ja.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/144-0
+00:07:03.844 --> 00:07:05.204
+<v Matthias Max>Passt dann, denk ich.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/146-0
+00:07:05.124 --> 00:07:06.484
+<v Martin Dittmann>Passt, OK.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/152-0
+00:07:05.284 --> 00:07:08.303
+<v Christian Lang>Also, ich glaub, wenn wir,
+wenn wir einmal Deployment hinbekommen</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/152-1
+00:07:08.303 --> 00:07:11.276
+<v Christian Lang>haben, produktionsreif,
+dann werden Folge Deployments kein Thema</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/152-2
+00:07:11.276 --> 00:07:13.746
+<v Christian Lang>sein. Weil dann,
+wenn wir jetzt bei bei Prosqueres ja</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/152-3
+00:07:13.746 --> 00:07:16.857
+<v Christian Lang>oftmals das Thema, dass man klar,
+dass das ne View nicht mehr geht,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/152-4
+00:07:16.857 --> 00:07:20.562
+<v Christian Lang>weil irgendwie Depending Package fehlt.
+Das ist halt jetzt aufgrund der L.O.D.B.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/152-5
+00:07:20.562 --> 00:07:23.032
+<v Christian Lang>Thematik so,
+dass du halt eben die ganzen Hierarchien</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/152-6
+00:07:23.032 --> 00:07:25.044
+<v Christian Lang>löschen musst,
+bevor du was patchen kannst.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/158-0
+00:07:25.444 --> 00:07:27.935
+<v Christian Lang>Das haben wir bei Orgel ja gar nicht.
+Da ist es ja,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/150-0
+00:07:25.524 --> 00:07:26.004
+<v Matthias Max>Yeah.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/158-1
+00:07:27.935 --> 00:07:30.809
+<v Christian Lang>du deployst halt und dann kompiliert es
+komplett nicht. Ja,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/153-0
+00:07:28.564 --> 00:07:29.204
+<v Matthias Max>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/158-2
+00:07:30.809 --> 00:07:34.306
+<v Christian Lang>und wenn es nicht kombiniert,
+dann ist die alte Version auch noch aktiv.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/158-3
+00:07:34.306 --> 00:07:36.461
+<v Christian Lang>Von daher,
+wenn wir es einmal in Port haben,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/158-4
+00:07:36.461 --> 00:07:38.617
+<v Christian Lang>dann sind wir da eigentlich ziemlich
+stable.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/158-5
+00:07:38.617 --> 00:07:40.724
+<v Christian Lang>Das erläutere ich in die größere
+Baustelle.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/156-0
+00:07:39.284 --> 00:07:39.764
+<v Matthias Max>Ja.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/163-0
+00:07:41.924 --> 00:07:46.919
+<v Matthias Max>Das ja, es ging, glaub ich, eher drum,
+dass du Dispo ja in einem eigenen Branch</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/163-1
+00:07:46.919 --> 00:07:51.790
+<v Matthias Max>liegt und nicht alles zusammen in einem
+Mainbranch fließt. Aber sind Details,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/163-2
+00:07:51.790 --> 00:07:56.285
+<v Matthias Max>glaub ich. Ist auch allen bewusst,
+sind jetzt viele Augen drauf mit dem</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/163-3
+00:07:56.285 --> 00:07:57.284
+<v Matthias Max>Tracker sowieso.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/162-0
+00:07:57.684 --> 00:07:58.084
+<v Christian Lang>Yep.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/164-0
+00:07:58.324 --> 00:07:59.204
+<v Matthias Max>Sollte passen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/167-0
+00:08:02.164 --> 00:08:02.644
+<v Martin Dittmann>Kay.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/166-0
+00:08:02.404 --> 00:08:02.764
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/172-0
+00:08:03.764 --> 00:08:05.837
+<v Martin Dittmann>Dann würde ich sagen,
+gehen wir kurz weiter.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/172-1
+00:08:05.837 --> 00:08:08.003
+<v Martin Dittmann>Cloud von Vlog an sich können wir kurz
+halten.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/172-2
+00:08:08.003 --> 00:08:10.997
+<v Martin Dittmann>Hat sich jetzt endlich was getan
+hinsichtlich unserem Testsetup,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/172-3
+00:08:10.997 --> 00:08:13.301
+<v Martin Dittmann>dass wir da jetzt zwei Depots von Aldi
+Süd haben,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/172-4
+00:08:13.301 --> 00:08:16.756
+<v Martin Dittmann>die wir auch wirklich testen können,
+ohne dass wir da die Partnerabnahmen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/172-5
+00:08:16.756 --> 00:08:20.258
+<v Martin Dittmann>die Marius parallel auf dem gleichen und
+auf der gleichen Umgebung ja immer</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/172-6
+00:08:20.258 --> 00:08:20.764
+<v Martin Dittmann>durchführt.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/177-0
+00:08:20.964 --> 00:08:24.722
+<v Martin Dittmann>da irgendwie gestört werden. Von daher,
+da können wir auch mal irgendwie Dateien</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/177-1
+00:08:24.722 --> 00:08:28.062
+<v Martin Dittmann>hochladen, die irgendwie Schrott sind,
+einfach um vernünftig zu testen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/177-2
+00:08:28.062 --> 00:08:30.938
+<v Martin Dittmann>Von daher, das das ist jetzt eingerichtet,
+das schon mal gut.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/177-3
+00:08:30.938 --> 00:08:34.556
+<v Martin Dittmann>Refactoring an sich läuft genau und
+GoLife wurde ja sowieso schon abgestimmt.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/177-4
+00:08:34.556 --> 00:08:37.803
+<v Martin Dittmann>Also auf der Cloud for Log Seite
+beziehungsweise diese ganze Basis zu</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/177-5
+00:08:37.803 --> 00:08:39.844
+<v Martin Dittmann>Refactor und das ist alles soweit on
+Track.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/182-0
+00:08:40.484 --> 00:08:43.311
+<v Martin Dittmann>das Risiko, wo ich es,
+was ich bisher sehe, einfach nur,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/182-1
+00:08:43.311 --> 00:08:46.782
+<v Martin Dittmann>weil wir es halt auch da noch nicht
+zuverlässig zurückbekommen haben,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/182-2
+00:08:46.782 --> 00:08:50.154
+<v Martin Dittmann>zurückgespielt bekommen haben,
+ist halt genau dieser Download Flow,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/182-3
+00:08:50.154 --> 00:08:53.228
+<v Martin Dittmann>die die Endpunkte,
+die man kann hier noch bereitstellen muss,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/182-4
+00:08:53.228 --> 00:08:56.055
+<v Martin Dittmann>die gibt es bisher nicht,
+da hieß es vor 'n paar Wochen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/182-5
+00:08:56.055 --> 00:08:59.724
+<v Martin Dittmann>in ein paar Wochen gibt es sie,
+jetzt hieß es, wir brauchen doch noch mal</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/186-0
+00:08:59.884 --> 00:09:01.975
+<v Martin Dittmann>2 Wochen,
+da müssten wir jetzt wirklich dann</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/186-1
+00:09:01.975 --> 00:09:05.739
+<v Martin Dittmann>vielleicht auch spätestens nächste Woche
+dann auch mit Marius noch mal sprechen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/186-2
+00:09:05.739 --> 00:09:08.573
+<v Martin Dittmann>was machen wir denn,
+wenn die das jetzt nicht bereitstellen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/186-3
+00:09:08.573 --> 00:09:11.732
+<v Martin Dittmann>wie wie welche Auswirkungen hat das,
+es gibt ja den alten Flow über</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/186-4
+00:09:11.732 --> 00:09:14.056
+<v Martin Dittmann>Cloudflowlock,
+den wollten wir nicht integrieren,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/186-5
+00:09:14.056 --> 00:09:15.124
+<v Martin Dittmann>jetzt für markant auch.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/185-0
+00:09:15.364 --> 00:09:15.924
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/190-0
+00:09:16.324 --> 00:09:19.677
+<v Martin Dittmann>Ja, ist er dann damit zufrieden,
+dass wir erstmal Cloud for Lock live</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/190-1
+00:09:19.677 --> 00:09:22.503
+<v Martin Dittmann>schalten und dann markant halt nachziehen,
+wenn es da ist.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/190-2
+00:09:22.503 --> 00:09:25.712
+<v Martin Dittmann>Aus meiner Sicht halt ungünstig,
+dass die Endpunkte nicht da sind,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/190-3
+00:09:25.712 --> 00:09:29.208
+<v Martin Dittmann>auf wo wir eigentlich dachten.
+Wir geben ihm sogar durch das Refactoring</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/190-4
+00:09:29.208 --> 00:09:30.884
+<v Martin Dittmann>jetzt genug Zeit, das nachzuziehen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/192-0
+00:09:31.364 --> 00:09:33.579
+<v Martin Dittmann>Ich hoffe, es löst sich auf,
+aber es ist auf jeden Fall ein Risiko,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/192-1
+00:09:33.579 --> 00:09:35.044
+<v Martin Dittmann>dass wir hier in eine Verspätung
+reinlaufen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/193-0
+00:09:35.564 --> 00:09:36.644
+<v Christian Lang>Welche, welche fehlen da?</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/198-0
+00:09:37.604 --> 00:09:41.375
+<v Martin Dittmann>die es fehlt der Download Flow.
+Also du kannst den Proof of Delivery bei</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/198-1
+00:09:41.375 --> 00:09:44.474
+<v Martin Dittmann>Markant aktuell nicht über 'ne eigene A.
+P. I. runterladen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/198-2
+00:09:44.474 --> 00:09:48.400
+<v Martin Dittmann>sondern für die bestehenden Partner,
+die auch über die das Python Script in</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/198-3
+00:09:48.400 --> 00:09:52.274
+<v Martin Dittmann>der Vergangenheit genutzt wurden,
+hat Markant quasi die Dokumente an Cloud</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/198-4
+00:09:52.274 --> 00:09:53.204
+<v Martin Dittmann>for Lock gesendet.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/203-0
+00:09:53.364 --> 00:09:56.717
+<v Martin Dittmann>Und du konntest sie dann über Cloud
+Verlock mit runterladen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/199-0
+00:09:56.324 --> 00:09:57.164
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/203-1
+00:09:56.717 --> 00:10:01.058
+<v Martin Dittmann>also so eine Dreiecksbeziehung aufgebaut
+und das soll das ist ein Legacy Flow,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/203-2
+00:10:01.058 --> 00:10:04.795
+<v Martin Dittmann>den wollen sie auch nicht
+aufrechterhalten und genau diese Download</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/203-3
+00:10:04.795 --> 00:10:06.004
+<v Martin Dittmann>Flow Endpunkte fehlen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/202-0
+00:10:06.244 --> 00:10:07.444
+<v Christian Lang>Mhm, OK.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/205-0
+00:10:07.764 --> 00:10:08.724
+<v Martin Dittmann>Genau, ja.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/208-0
+00:10:19.604 --> 00:10:20.044
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/213-0
+00:10:20.084 --> 00:10:22.044
+<v Martin Dittmann>das einzige Risiko ist,
+was wir da gerade sehen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/213-1
+00:10:22.044 --> 00:10:24.204
+<v Martin Dittmann>dass wir dort einfach dann nichts
+integrieren können,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/213-2
+00:10:24.204 --> 00:10:26.964
+<v Martin Dittmann>weil es noch nicht da ist.
+Wir haben über 'n API Contract gesprochen</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/213-3
+00:10:26.964 --> 00:10:29.244
+<v Martin Dittmann>und so weiter,
+dass wir da vielleicht gegen was arbeiten</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/213-4
+00:10:29.244 --> 00:10:31.164
+<v Martin Dittmann>können.
+Auch der wurde noch nicht ausgetauscht,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/213-5
+00:10:31.164 --> 00:10:33.204
+<v Martin Dittmann>aber vielleicht ist das jetzt der nächste
+Schritt,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/213-6
+00:10:33.204 --> 00:10:35.524
+<v Martin Dittmann>dass wir da zumindest in der Entwicklung
+vorwärts kommen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/212-0
+00:10:36.604 --> 00:10:37.084
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/217-0
+00:10:37.404 --> 00:10:41.002
+<v Martin Dittmann>Gut, jo,
+das zu Cloud for Lock Markant in aller</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/217-1
+00:10:41.002 --> 00:10:44.524
+<v Martin Dittmann>Kürze und dann Ledian haben wir noch
+Mobile X.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/221-0
+00:10:45.004 --> 00:10:49.528
+<v Ledian Xhani>Ja, danke Martin. Also, ich fang mal an.
+Beim Asia DevOps Overview haben wir</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/221-1
+00:10:49.528 --> 00:10:53.346
+<v Ledian Xhani>nichts Neues. Beim B.C.S.
+Ticket Overview haben wir zwei Tickets</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/221-2
+00:10:53.346 --> 00:10:57.458
+<v Ledian Xhani>zurückbekommen. Wir dachten,
+wir haben die gelöst oder wir haben noch</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/221-3
+00:10:57.458 --> 00:11:00.924
+<v Ledian Xhani>mal zum Testen geschickt und der Fehler
+ist immer noch da.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/227-0
+00:11:03.244 --> 00:11:08.611
+<v Ledian Xhani>Weekly Effort, 5 Becken, 3,
+5 Frontend und so war auch completed.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/227-1
+00:11:08.611 --> 00:11:13.164
+<v Ledian Xhani>Genau BCS Ticket Detail,
+also High Prio Ticket ist das,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/227-2
+00:11:13.164 --> 00:11:17.311
+<v Ledian Xhani>was zurückkam.
+QR Code leads to Long Path in Soty.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/227-3
+00:11:17.311 --> 00:11:18.124
+<v Ledian Xhani>Wir haben.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/231-0
+00:11:18.284 --> 00:11:22.647
+<v Ledian Xhani>In . ich habe vergessen,
+in welchem D war das? Ich glaube D39.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/231-1
+00:11:22.647 --> 00:11:28.395
+<v Ledian Xhani>Wir haben das Problem, wenn die scannen.
+Entschuldigung, D20 war das hier Hamburg.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/231-2
+00:11:28.395 --> 00:11:31.996
+<v Ledian Xhani>Wenn die scannen,
+irgendwie landet die App in einem</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/231-3
+00:11:31.996 --> 00:11:35.804
+<v Ledian Xhani>falschen Path in . in SOT. Das ist sehr,
+sehr komisch.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/235-0
+00:11:36.044 --> 00:11:42.070
+<v Ledian Xhani>Wir sind da dabei. Wir recherchieren,
+was da der Fehler ist. Genau,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/235-1
+00:11:42.070 --> 00:11:45.969
+<v Ledian Xhani>und dann springe ich in zum letzten
+Spalte.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/235-2
+00:11:45.969 --> 00:11:53.324
+<v Ledian Xhani>Blocker schreibe Zugriff auf auf die Web
+Services, bleibt immer noch offen, genau.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/240-0
+00:11:53.484 --> 00:11:58.203
+<v Ledian Xhani>Da wollen wir Zugriff haben,
+weil wir die Webservice updaten wollen</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/240-1
+00:11:58.203 --> 00:12:03.199
+<v Ledian Xhani>und insbesondere den 39 gerade.
+Da haben wir was gefixt und wir wollten</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/240-2
+00:12:03.199 --> 00:12:06.392
+<v Ledian Xhani>da releasen,
+aber wir haben nachher noch kein</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/240-3
+00:12:06.392 --> 00:12:11.388
+<v Ledian Xhani>Schreibzugriff da. Next steps,
+pre OPC App Sport wie immer ongoing Asia</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/240-4
+00:12:11.388 --> 00:12:11.804
+<v Ledian Xhani>Board.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/244-0
+00:12:12.604 --> 00:12:16.981
+<v Ledian Xhani>Wie immer ongoing und Release.
+Das ist auch ongoing.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/244-1
+00:12:16.981 --> 00:12:22.927
+<v Ledian Xhani>Jetzt wir sind beim Völkling auch.
+Da wird Ronnie hat das neue Firmware</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/244-2
+00:12:22.927 --> 00:12:27.964
+<v Ledian Xhani>upgedatet und wir haben da die neue
+Version installiert auf.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/249-0
+00:12:28.284 --> 00:12:32.295
+<v Ledian Xhani>Ich glaub 2030 Geräte bis jetzt,
+also ist ongoing. Genau,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/249-1
+00:12:32.295 --> 00:12:35.891
+<v Ledian Xhani>was wir jetzt gerade auch machen,
+ist die QR-Codes,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/249-2
+00:12:35.891 --> 00:12:41.147
+<v Ledian Xhani>weil wir haben die das Release-Prozess
+sozusagen geändert und die QR-Codes,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/249-3
+00:12:41.147 --> 00:12:44.604
+<v Ledian Xhani>die Onboarding QR-Codes,
+haben immer noch Sachen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/254-0
+00:12:45.084 --> 00:12:49.463
+<v Ledian Xhani>wie wir vorher gemacht haben.
+Deshalb wollen wir die QR-Codes nebenbei</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/254-1
+00:12:49.463 --> 00:12:52.238
+<v Ledian Xhani>auch, wenn wir lesen,
+nebenbei auch updaten,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/254-2
+00:12:52.238 --> 00:12:57.048
+<v Ledian Xhani>zum Beispiel neue Sortier Agent anders
+herunterladen, nicht jetzt von Server,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/254-3
+00:12:57.048 --> 00:13:01.364
+<v Ledian Xhani>die App nicht auch vom Server
+herunterladen, sie Scale muss auch weg.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/252-0
+00:12:59.284 --> 00:12:59.804
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/260-0
+00:13:01.884 --> 00:13:07.854
+<v Ledian Xhani>Laut Raphael, das braucht man nicht mehr.
+Solche Sachen passen wir an und genau</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/255-0
+00:13:04.964 --> 00:13:05.404
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/260-1
+00:13:07.854 --> 00:13:12.406
+<v Ledian Xhani>beim Mao Migration,
+das ist nebenbei ongoing. Sieht gut aus,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/260-2
+00:13:12.406 --> 00:13:16.584
+<v Ledian Xhani>muss ich sagen.
+Ich bin zufrieden mit dem Stand gerade.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/260-3
+00:13:16.584 --> 00:13:18.524
+<v Ledian Xhani>Wir können die App laufen.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/259-0
+00:13:18.884 --> 00:13:19.444
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/266-0
+00:13:19.244 --> 00:13:24.618
+<v Ledian Xhani>UI Anpassungen wurden auch also kleine
+Sachen an UI wurden auch gefixt.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/266-1
+00:13:24.618 --> 00:13:30.067
+<v Ledian Xhani>Sieht gut aus, aber das ist etwas,
+das noch ein paar Monate dauern wird.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/266-2
+00:13:30.067 --> 00:13:34.844
+<v Ledian Xhani>Genau, was ist sonst da? Nix,
+genau das war's von meiner Seite.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/264-0
+00:13:31.404 --> 00:13:31.964
+<v Christian Lang>Mhm.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/270-0
+00:13:35.164 --> 00:13:38.326
+<v Christian Lang>OK,
+die Android 13 Rollout machen wir jetzt</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/270-1
+00:13:38.326 --> 00:13:41.631
+<v Christian Lang>gerade.
+Da haben wir keine Topics mehr offen,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/268-0
+00:13:39.404 --> 00:13:40.284
+<v Ledian Xhani>Ja, ja, genau.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/270-2
+00:13:41.631 --> 00:13:42.924
+<v Christian Lang>ne softwareseitig.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/277-0
+00:13:43.164 --> 00:13:45.413
+<v Ledian Xhani>Nee, kein Top.
+Es kommen ab und zu Probleme,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/277-1
+00:13:45.413 --> 00:13:48.861
+<v Ledian Xhani>zum Beispiel Einstellungen werden
+gelöscht, dann schaue ich manuell,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/272-0
+00:13:45.804 --> 00:13:46.284
+<v Christian Lang>No.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/273-0
+00:13:47.644 --> 00:13:48.284
+<v Christian Lang>Ja.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/277-2
+00:13:48.861 --> 00:13:52.309
+<v Ledian Xhani>wie das man besser machen kann.
+Das ist auch ein Lernprozess für uns</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/277-3
+00:13:52.309 --> 00:13:54.708
+<v Ledian Xhani>eigentlich,
+weil wir bei SODI haben es noch nie</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/277-4
+00:13:54.708 --> 00:13:58.106
+<v Ledian Xhani>gemacht und deshalb schauen wir auch,
+was wir da verbessern können.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/277-5
+00:13:58.106 --> 00:14:00.505
+<v Ledian Xhani>So kam es mit CAR-Codes,
+haben wir gemerkt, OK,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/277-6
+00:14:00.505 --> 00:14:02.004
+<v Ledian Xhani>das muss auch geändert werden.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/278-0
+00:14:02.124 --> 00:14:05.404
+<v Ledian Xhani>Weil ich vorher bin nicht dran gedacht,
+aber nee, kein Problem mehr.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/279-0
+00:14:05.644 --> 00:14:06.684
+<v Christian Lang>OK, OK, cool.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/281-0
+00:14:07.884 --> 00:14:09.124
+<v Christian Lang>Schön, danke.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/284-0
+00:14:12.364 --> 00:14:14.809
+<v Martin Dittmann>Dann sind wir tatsächlich schon durch für
+diese Woche.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/284-1
+00:14:14.809 --> 00:14:16.764
+<v Martin Dittmann>In aller Kürze einmal ein Update durch
+die.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/285-0
+00:14:17.964 --> 00:14:20.431
+<v Martin Dittmann>Drei großen Themen,
+die wir jede Woche hier reporten,</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/285-1
+00:14:20.431 --> 00:14:23.765
+<v Martin Dittmann>gibt es von eurer Seite noch Themen,
+die ihr gerne hier kurz diskutieren</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/285-2
+00:14:23.765 --> 00:14:24.404
+<v Martin Dittmann>wollen würdet.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/287-0
+00:14:26.604 --> 00:14:28.044
+<v Christian Lang>Ne, nicht wirklich.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/286-0
+00:14:27.324 --> 00:14:27.884
+<v Martin Dittmann>Nichts.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/288-0
+00:14:27.324 --> 00:14:28.124
+<v Uschmann, Patrick>Ich hab nix.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/289-0
+00:14:29.484 --> 00:14:33.244
+<v Martin Dittmann>Gut,
+dann frohes Schaffen heute Nachmittag und.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/294-0
+00:14:33.724 --> 00:14:35.644
+<v Uschmann, Patrick>Jo, danke. Bis dann. Ciao, ciao.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/290-0
+00:14:33.964 --> 00:14:34.924
+<v Ledian Xhani>Dein Tag total.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/297-0
+00:14:34.044 --> 00:14:35.884
+<v Martin Dittmann>Hören uns die Tage. Danke euch. Ciao.</v>
+
+403600a4-382f-4848-b982-a93a4e86c832/296-0
+00:14:36.044 --> 00:14:36.204
+<v Ledian Xhani>Ciao.</v>
