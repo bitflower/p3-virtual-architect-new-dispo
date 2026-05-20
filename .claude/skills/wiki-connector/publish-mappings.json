@@ -648,6 +648,40 @@
       }
     },
     {
+      "id": "adr-009-tms-bridge-credential-isolation",
+      "source": "09_ADRs/ADR-009-tms-bridge-credential-isolation-identifier/ADR-009-tms-bridge-credential-isolation-identifier.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/ADRs/[ADR009]-TMS-Bridge-Credential-Isolation-via-System%2DQualified-Database-Identifier.md",
+      "description": "ADR-009: TMS Bridge Credential Isolation via System-Qualified Database Identifier",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "ADR document - credential isolation via system-qualified identifier prefix, no attachments"
+      }
+    },
+    {
+      "id": "exploration-datastream-scientific-notation",
+      "source": "02_Explorations/2026-05-12_Datastream_Scientific_Notation_Deserialization_Failure/datastream-scientific-notation-deserialization-failure.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D12-Datastream-Scientific-Notation-Deserialization-Failure.md",
+      "description": "Datastream scientific notation deserialization failure - CDC numeric(2,0) type mismatch analysis",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "excludeSections": ["Original Error"],
+        "notes": "Exploration document - exclude raw error log when publishing to wiki"
+      }
+    },
+    {
       "id": "timezone-handling-tms",
       "source": "02_Explorations/2026-05-05_Handling_of_timezones_in_TMS_and_what_it_means_for_new_Dispo/handling-of-timezones-in-tms-and-what-it-means-for-new-dispo.md",
       "target": "WIKI/Nagel-CAL-Disposition.wiki/TMS-Knowledge/Handling-of-Timezones-in-TMS.md",
@@ -672,6 +706,21 @@
           "forceUpdate": false
         },
         "notes": "Timezone exploration - strip <internal> tags, copy sen_hst screenshot to .attachments"
+      }
+    },
+    {
+      "id": "exploration-function-vs-procedure-gap",
+      "source": "02_Explorations/2026-05-19_TMS_Bridge_Function_vs_Procedure_Execution_Gap/tms-bridge-function-vs-procedure-execution-gap.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D19-TMS-Bridge-Function-vs-Procedure-Execution-Gap.md",
+      "description": "TMS Bridge function vs procedure execution gap - type mismatches and coupling analysis",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "excludeSections": ["Original User Input", "Related Files"],
+        "notes": "Exploration document - exclude internal context and source file paths when publishing to wiki"
       }
     }
   ]
