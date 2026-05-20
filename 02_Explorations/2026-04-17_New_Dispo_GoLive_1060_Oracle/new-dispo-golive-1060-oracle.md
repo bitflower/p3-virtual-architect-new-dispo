@@ -87,7 +87,6 @@ WL4-T-T (prj-cal-w-wl4-t-4c48-53ad)
 │  │  Keycloak           │ │  Keycloak           │ │  Keycloak         │  │
 │  │  Frontend           │ │  Frontend           │ │  Frontend         │  │
 │  │  Backend            │ │  Backend            │ │  Backend          │  │
-│  │  TMS Bridge         │ │  TMS Bridge         │ │  TMS Bridge       │  │
 │  │                     │ │                     │ │                   │  │
 │  │  → dispo-dev-O-10-60│ │  → dispo-abn-O-10-60│ │  → dispo-uat-O-…  │  │
 │  └─────────────────────┘ └─────────────────────┘ └───────────────────┘  │
