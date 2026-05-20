@@ -61,55 +61,42 @@ Flow 7 is unique: the deleted TO disappears from the UI, so the user cannot retr
 
 ---
 
-## What Needs Deciding
+## Decisions (PO, 2026-05-20)
 
-### 1. Notification Style per Severity
+### 1. Notification Style: 3 Severity Levels
 
-The user sees a notification (snackbar/toast) after a conflict. Proposed severity mapping:
+| Severity | When | Style |
+|----------|------|-------|
+| **Info** | "Already done" — leg was already on this TO, lot already unassigned | Green toast, **auto-dismiss** per Figma |
+| **Warning** | "Something changed" — leg is on a different TO, partial lot conflict | Yellow/orange toast, **stays until dismissed** |
+| **Error** | "Something failed" — Flow 7 cleanup failure, TMS operation failed | Red toast, **stays until dismissed**, shows Log ID + copy button |
 
-| Severity | When | Suggested style |
-|----------|------|----------------|
-| **Info** | "Already done" — leg was already on this TO, lot already unassigned | Light/green toast, auto-dismiss after a few seconds |
-| **Warning** | "Something changed" — leg is on a different TO, partial lot conflict | Yellow/orange toast, stays until dismissed |
-| **Error** | "Something failed" — Flow 7 cleanup failure, TMS operation failed | Red toast, stays until dismissed, shows incident ID |
+### 2. Incident ID: Error-Only
 
-**Decision needed:** Do we want 2 levels (info vs. warning) or 3 levels (info vs. warning vs. error)? Or just one style for everything?
+Log ID is shown **only for non-resolvable issues** (error severity). Resolvable conflicts (info/warning) are logged server-side only — no ID shown to the user.
 
-### 2. Incident ID in the Notification
+### 3. Partial Success: Summary Toast Only
 
-Every sync conflict gets a trackable ID. This is the link between what the user sees and what operations can find in the logs.
+Single summary toast for batch operations: *"3 of 5 legs assigned. 2 had conflicts and were resolved automatically. Please refresh the page."*
 
-| Option | What user sees | Example |
-|--------|---------------|---------|
-| A | Show ID in toast, copy-to-clipboard button | "Incident: 0HN4B8Q9O5Q6M — [Copy]" |
-| B | Show ID only on error severity, not on info/warning | Keeps info-level toasts clean |
-| C | Don't show ID to user, only log it server-side | Simpler UX, harder for support |
+No per-leg detail panel.
 
-**Decision needed:** Show the incident ID to the user? Always, or only for errors?
+### 4. Flow 7 Toast: Transparent
 
-### 3. Partial Success Display (Flows 2, 4, 5, 6)
+*"Transport Order deleted. Some local data could not be cleaned up. Our team has been notified. Log ID: [Log ID]. This Log ID will no longer be accessible after dismissing this message."*
 
-Batch operations (lots with multiple legs) can have mixed results: some legs succeed, others conflict.
+### 5. Same-TO vs. Different-TO: Distinguish
 
-| Option | UX |
-|--------|----|
-| A | Single summary toast: "3 of 5 legs assigned. 2 had conflicts. Page refreshed." |
-| B | Per-leg detail in a panel/dialog: table showing each leg's status |
-| C | Summary toast + detail available on click |
+- Leg already on **this** TO → info level (benign)
+- Leg on a **different** TO → warning level (show which TO if available)
 
-**Decision needed:** Summary only, detail only, or both?
+### 6. Refresh Behavior: Manual
 
-### 4. Flow 7 Toast Content
+No auto-refresh. User refreshes the page manually after seeing the toast. (Overrides original parent #123326 AC2; parent updated.)
 
-When TO deletion succeeds in TMS but local cleanup fails:
+### 7. Message Style: Generic Template
 
-| Option | Toast says |
-|--------|-----------|
-| A | "Transport Order deleted. Some local data could not be cleaned up. Our team has been notified. Incident: X" |
-| B | "An error occurred. Please contact support. Incident: X" |
-| C | "Transport Order deleted. If you see orphaned assignments, they will be resolved shortly." |
-
-**Decision needed:** How transparent do we want to be about the partial failure?
+Generic template with `[action name]` slot. Not flow-specific wording.
 
 ---
 

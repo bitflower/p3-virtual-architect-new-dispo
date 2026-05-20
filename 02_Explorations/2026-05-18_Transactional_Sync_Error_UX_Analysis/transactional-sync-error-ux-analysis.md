@@ -328,24 +328,37 @@ The flow concept documents specify what data is queryable from TMS at sync-check
 | Unassign lot (partial sync) | Remove lot from TO | Some legs in lot were out of sync | Mixed success/failure per item | Refresh — partial repair, retry remainder |
 | Delete TO | Delete TO | (no sync check yet in #124364) | TBD | TBD |
 
-### UX Design Considerations for PO
+### UX Design Considerations — PO Decisions (2026-05-20)
 
-1. **Snackbar with incident ID** — per user story AC1, show once, include note "This information will no longer be available after dismissal"
-2. **Auto-refresh** — per AC2, page refreshes automatically after repair
-3. **No auto-retry of user action** — per AC4, user must consciously repeat the action
-4. **Severity levels** — "already done" (benign) vs. "assigned elsewhere" (needs attention) vs. "repair failed" (needs support)
-5. **Incident ID for support** — copy-to-clipboard? Shown only once per AC1
-6. **Partial success in batch operations** — unassign flows can return mixed results; how to show per-item status?
+| # | Topic | Decision | Source |
+|---|-------|----------|--------|
+| 1 | **Incident ID visibility** | Only shown for non-resolvable issues (Flow 7 / TMS failures). Resolvable conflicts: logged server-side only. | PO decision, parent #123326 AC1 updated |
+| 2 | **Refresh behavior** | Manual refresh — user refreshes the page themselves. No auto-refresh. | PO decision, overrides original AC2 |
+| 3 | **Auto-retry of user action** | No auto-retry. User must consciously repeat the action after refresh. | Confirmed, per AC4 |
+| 4 | **Severity levels** | Two levels for resolvable: info (auto-dismiss, green) for benign + warning (stays until dismissed, yellow/orange) for real conflicts. Error (red, persistent + Log ID) for non-resolvable. | PO decision |
+| 5 | **Same-TO vs. Different-TO** | Distinguish: "already on this TO" = info level, "on a different TO" = warning level. | PO decision, backend already supports this |
+| 6 | **Partial success display** | Summary toast only (e.g., "3 of 5 legs assigned. 2 had conflicts."). No per-leg detail panel. | PO decision |
+| 7 | **Flow 7 toast wording** | Transparent: "Transport Order deleted. Some local data could not be cleaned up. Our team has been notified. Log ID: X" | PO decision |
+| 8 | **Flow-specific vs. generic messages** | Generic template with `[action name]` slot. Not flow-specific wording. | PO decision |
+
+Ticket #123950 and parent #123326 updated with all decisions. See [ticket-123950-revised.md](./ticket-123950-revised.md) for full AC text.
 
 ---
 
 ## Open Questions
 
+### Resolved
+
+| # | Question | Resolution | Date |
+|---|----------|------------|------|
+| 5 | **Snackbar per AC1 vs. per-item errors** — one snackbar with summary or one per item? | Summary toast only (PO decision #6) | 2026-05-20 |
+| 8 | **Partial failure in batch operations** — UX for mixed success/failure results? | Summary toast, no per-leg detail (PO decision #6) | 2026-05-20 |
+
+### Still Open
+
 1. **#124364 (DeleteTransportOrder)**: No sync detection yet — concept specifies a simple TO-existence check. Who implements this? The concept also notes DeleteTO is **not idempotent** (error 20016 on retry).
 2. **Lot-based assign flows** (branch `feature/assing-lot-create-transport-order-from-lot-indempotent`): Implemented with full sync detection — per-leg `ShouldSync` + auto-repair. Has merge conflicts (not yet merged). Uses a different error contract: HTTP 200 + `Conflicts` array instead of HTTP 409 + `ConflictException`. Should the error contracts be aligned?
-3. **Incident ID storage**: With #124104 (GCP storage) removed, where do incident IDs resolve to? Just the log file? Is that queryable by support? The decision paper mentions "monitoring requirements" as open item.
+3. **Incident ID storage**: With #124104 (GCP storage) removed, where do incident IDs resolve to? Just the log file? Is that queryable by support? Recommendation: use `HttpContext.TraceIdentifier` (~1 line of code). See [incident-id-options.md](./incident-id-options.md).
 4. **Frontend error contract**: Should all flows use a unified error response shape, or keep the current split (ProblemDetails for assign, UpsertOperationResponseDto for unassign)? The concept's "manual recovery" option assumed a unified retry mechanism.
-5. **Snackbar per AC1 vs. per-item errors**: Unassign can fail for multiple items — one snackbar with summary or one per item?
 6. **Proactive vs. reactive detection**: Current implementation only detects out-of-sync on next user action. Concept Scenarios 2+3 describe cases where inconsistency persists silently until user happens to interact. Is this acceptable for June, or does the PO need a background check mechanism?
 7. **Concept drift**: The implementation went beyond Option 1 (manual recovery) by auto-repairing state. This is better for UX but wasn't in the original decision. Should the concept docs be updated to reflect what was actually built?
-8. **Partial failure in batch operations**: Concept docs for flows 2, 4, 5, 6 describe partial failure scenarios. The unassign implementation handles this per-item, but the UX for mixed success/failure results is undefined.
