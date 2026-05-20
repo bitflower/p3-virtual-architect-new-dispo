@@ -722,6 +722,20 @@
         "excludeSections": ["Original User Input", "Related Files"],
         "notes": "Exploration document - exclude internal context and source file paths when publishing to wiki"
       }
+    },
+    {
+      "id": "exploration-sync-conflict-ux",
+      "source": "02_Explorations/2026-05-18_Transactional_Sync_Error_UX_Analysis/ux-meeting-onepager.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D20-Sync-Conflict-UX-Meeting-Brief.md",
+      "description": "Sync Conflict UX Meeting Brief - decision document for PO alignment on error UX across 7 transactional flows",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Meeting brief for PO UX alignment - no internal tags, no link rewriting, no attachments"
+      }
     }
   ]
 }
