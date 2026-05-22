@@ -1,0 +1,1805 @@
+WEBVTT
+
+2fc31f77-7510-4abd-b902-3c9514500c34/11-0
+00:00:54.974 --> 00:00:55.694
+<v Ivaylo Petrov>Chai Chen.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/12-0
+00:00:58.454 --> 00:00:59.454
+<v Ivaylo Petrov>This should break my.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/13-0
+00:01:00.814 --> 00:01:01.774
+<v Ivaylo Petrov>Sega.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/14-0
+00:01:03.694 --> 00:01:04.654
+<v Ivaylo Petrov>Okay.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/48-0
+00:04:00.494 --> 00:04:01.694
+<v Matthias Max>Hi guys, sorry.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/49-0
+00:04:03.534 --> 00:04:03.934
+<v Ivaylo Petrov>K.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/50-0
+00:04:04.574 --> 00:04:06.414
+<v Matthias Max>And then a call with Yosif.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/53-0
+00:04:09.854 --> 00:04:11.774
+<v Matthias Max>He'll join as well. There he is.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/54-0
+00:04:17.694 --> 00:04:18.414
+<v Matthias Max>Good.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/55-0
+00:04:21.614 --> 00:04:27.276
+<v Matthias Max>Maybe quick update on the previous call,
+which is our regular call we I have set</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/55-1
+00:04:27.276 --> 00:04:28.814
+<v Matthias Max>up with Ivailo Pashov.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/56-0
+00:04:30.014 --> 00:04:32.014
+<v Matthias Max>He actually didn't show up.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/57-0
+00:04:33.454 --> 00:04:36.654
+<v Matthias Max>And also did not decline, so...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/58-0
+00:04:37.934 --> 00:04:42.889
+<v Matthias Max>And also he didn't have a,
+was not in touch with Yosif regarding the</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/58-1
+00:04:42.889 --> 00:04:44.254
+<v Matthias Max>CDC recovery topic.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/59-0
+00:04:45.134 --> 00:04:50.147
+<v Matthias Max>But still,
+Yosif had some time during the last seven</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/59-1
+00:04:50.147 --> 00:04:57.810
+<v Matthias Max>days to investigate and create a little
+POC on a potential recovery mechanism we</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/59-2
+00:04:57.810 --> 00:05:03.108
+<v Matthias Max>can use once CDC fails.
+And we discussed that just now.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/59-3
+00:05:03.108 --> 00:05:04.054
+<v Matthias Max>I think it</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/60-0
+00:05:04.174 --> 00:05:10.479
+<v Matthias Max>goes too far if we go deeper here for now.
+I will just wrap it up from the</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/60-1
+00:05:10.479 --> 00:05:14.683
+<v Matthias Max>transcript.
+And there's also code branch you can,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/60-2
+00:05:14.683 --> 00:05:17.374
+<v Matthias Max>we all could look into together.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/61-0
+00:05:19.054 --> 00:05:23.728
+<v Matthias Max>So that's that.
+The good news is there are solutions and</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/61-1
+00:05:23.728 --> 00:05:30.453
+<v Matthias Max>the performance is probably quite fine.
+It's just a lot of questions that need to</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/61-2
+00:05:30.453 --> 00:05:34.799
+<v Matthias Max>be answered specifically on the process
+of recovery.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/61-3
+00:05:34.799 --> 00:05:38.654
+<v Matthias Max>How do you detect that CDC is down?
+What's the</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/62-0
+00:05:38.894 --> 00:05:44.170
+<v Matthias Max>the time out when you say we discovered a
+downtime,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/62-1
+00:05:44.170 --> 00:05:52.390
+<v Matthias Max>then are all branches affected or just
+some, who starts that recovery and so on.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/62-2
+00:05:52.390 --> 00:05:58.174
+<v Matthias Max>So I think a lot of rather processor
+questions are open.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/63-0
+00:05:58.414 --> 00:06:06.347
+<v Matthias Max>than technical ones. Technically,
+it's quite flat because we only handle</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/63-1
+00:06:06.347 --> 00:06:09.934
+<v Matthias Max>one table, Cem Dome, same as CDC.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/64-0
+00:06:10.894 --> 00:06:15.382
+<v Matthias Max>and pass it through the same kind of
+business logic.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/64-1
+00:06:15.382 --> 00:06:22.242
+<v Matthias Max>We even reuse business logic, obviously,
+in the back end to then go through each</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/64-2
+00:06:22.242 --> 00:06:28.678
+<v Matthias Max>one by one and apply the appropriate
+logic, which means creation, adoption,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/64-3
+00:06:28.678 --> 00:06:31.134
+<v Matthias Max>or deletion of legs and lots.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/65-0
+00:06:32.094 --> 00:06:39.213
+<v Matthias Max>So I think the POC in general is a very
+good step forward. Anything to add, Yosif,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/65-1
+00:06:39.213 --> 00:06:40.414
+<v Matthias Max>to wrap it up?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/66-0
+00:06:42.654 --> 00:06:46.179
+<v Yosif Mihaylov>Yeah,
+I think that the PUC was successful in</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/66-1
+00:06:46.179 --> 00:06:49.862
+<v Yosif Mihaylov>general.
+I think that our conceptual idea will</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/66-2
+00:06:49.862 --> 00:06:50.254
+<v Yosif Mihaylov>work.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/68-0
+00:06:52.974 --> 00:06:56.472
+<v Yosif Mihaylov>Yeah,
+there is some work left in terms of</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/68-1
+00:06:56.472 --> 00:07:00.971
+<v Yosif Mihaylov>refining the whole thing,
+but with this POC the most,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/68-2
+00:07:00.971 --> 00:07:07.302
+<v Yosif Mihaylov>and I would say the hardest part of
+implementing the functionality is done.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/68-3
+00:07:07.302 --> 00:07:12.134
+<v Yosif Mihaylov>What is left really for us is to make
+some minor changes.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/69-0
+00:07:12.214 --> 00:07:16.371
+<v Yosif Mihaylov>changes here and there,
+and then expose the functionality to an</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/69-1
+00:07:16.371 --> 00:07:19.294
+<v Yosif Mihaylov>endpoint, for example.
+And that would be it.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/70-0
+00:07:20.334 --> 00:07:21.614
+<v Yosif Mihaylov>So, yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/71-0
+00:07:23.054 --> 00:07:23.614
+<v Matthias Max>Mmh.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/72-0
+00:07:27.534 --> 00:07:29.934
+<v Matthias Max>Good. Like I said, I will wrap it up.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/73-0
+00:07:32.574 --> 00:07:39.122
+<v Matthias Max>Then maybe what would help me is to go
+through the list of pending topics on</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/73-1
+00:07:39.122 --> 00:07:42.014
+<v Matthias Max>architectural and conceptual side.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/74-0
+00:07:43.374 --> 00:07:48.974
+<v Matthias Max>I've started a loop,
+which also is like a vacation handover.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/75-0
+00:07:50.134 --> 00:07:53.814
+<v Matthias Max>And, therefore,
+the list of things to be done by the end</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/75-1
+00:07:53.814 --> 00:07:54.654
+<v Matthias Max>of this week.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/76-0
+00:07:55.934 --> 00:07:59.374
+<v Matthias Max>All those with the highest prior at the
+top.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/77-0
+00:08:01.654 --> 00:08:01.774
+<v Matthias Max>Um...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/78-0
+00:08:03.854 --> 00:08:08.494
+<v Matthias Max>Maybe that could be a good topic for
+today to go through that.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/79-0
+00:08:09.774 --> 00:08:14.353
+<v Matthias Max>So that we are all aligned on what's
+still to be done and what's to be</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/79-1
+00:08:14.353 --> 00:08:19.255
+<v Matthias Max>expected until the end of the week.
+Anything from your side you brought for</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/79-2
+00:08:19.255 --> 00:08:20.094
+<v Matthias Max>this meeting?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/80-0
+00:08:25.854 --> 00:08:27.054
+<v Boyan Valchev>I mean, uh...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/81-0
+00:08:28.734 --> 00:08:32.135
+<v Boyan Valchev>Probably like the question with the
+deletion of the,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/81-1
+00:08:32.135 --> 00:08:34.574
+<v Boyan Valchev>like the deletion transactional topic.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/82-0
+00:08:35.294 --> 00:08:38.414
+<v Matthias Max>Uh, yeah, that's not even covered here.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/83-0
+00:08:38.974 --> 00:08:40.574
+<v Boyan Valchev>Yeah, because I'm not seeing it here.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/84-0
+00:08:41.694 --> 00:08:43.214
+<v Matthias Max>It's actually...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/85-0
+00:08:47.214 --> 00:08:49.934
+<v Matthias Max>In my head, and I've also worked on it.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/86-0
+00:08:52.094 --> 00:08:55.694
+<v Matthias Max>And I've talked about it with Joachim.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/87-0
+00:08:57.774 --> 00:09:03.294
+<v Matthias Max>Maybe I can share what's the state second.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/88-0
+00:09:08.334 --> 00:09:09.134
+<v Matthias Max>Milev.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/89-0
+00:09:14.734 --> 00:09:16.014
+<v Matthias Max>Seven.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/90-0
+00:09:19.534 --> 00:09:20.814
+<v Matthias Max>Should be this one.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/91-0
+00:09:32.654 --> 00:09:37.614
+<v Matthias Max>Yeah, that's the correct one. One second,
+just too big to share.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/92-0
+00:09:41.134 --> 00:09:42.094
+<v Matthias Max>Okay.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/93-0
+00:09:44.894 --> 00:09:47.134
+<v Matthias Max>So, this is a smaller window now.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/94-0
+00:09:51.294 --> 00:09:52.254
+<v Matthias Max>Can you see it?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/95-0
+00:09:54.654 --> 00:09:55.054
+<v Ivaylo Petrov>Yep.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/96-0
+00:09:56.014 --> 00:10:02.014
+<v Matthias Max>Good. So maybe to start with the question.
+Where is the question?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/97-0
+00:10:04.014 --> 00:10:05.294
+<v Matthias Max>Basically, the...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/98-0
+00:10:05.374 --> 00:10:05.534
+<v Matthias Max>No.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/99-0
+00:10:07.054 --> 00:10:09.654
+<v Matthias Max>Question from Boyan was.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/100-0
+00:10:12.494 --> 00:10:14.494
+<v Matthias Max>No, it's not in that document.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/102-0
+00:10:15.614 --> 00:10:17.134
+<v Matthias Max>Check, it's here.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/103-0
+00:10:20.574 --> 00:10:21.054
+<v Matthias Max>Here.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/104-0
+00:10:22.014 --> 00:10:26.590
+<v Matthias Max>This was the question.
+Do we have any progress decision on what</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/104-1
+00:10:26.590 --> 00:10:32.454
+<v Matthias Max>we will do to delete TO operation fails
+on our side and we have the context lost?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/104-2
+00:10:32.454 --> 00:10:35.887
+<v Matthias Max>In that case,
+we might have a length slot still</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/104-3
+00:10:35.887 --> 00:10:39.534
+<v Matthias Max>assigned exactly without any way to
+unassign them.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/105-0
+00:10:41.134 --> 00:10:48.340
+<v Matthias Max>Relates to open question two, exactly. So,
+without a way to unassign them Boyan,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/105-1
+00:10:48.340 --> 00:10:53.056
+<v Matthias Max>you mean that the transport order is gone
+in the UI,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/105-2
+00:10:53.056 --> 00:11:00.174
+<v Matthias Max>and therefore you cannot re-delete it if
+you want to put it like that, which...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/106-0
+00:11:00.254 --> 00:11:01.454
+<v Matthias Max>Leaves as no.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/107-0
+00:11:02.494 --> 00:11:05.694
+<v Matthias Max>possibility to recover anything at all.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/108-0
+00:11:06.654 --> 00:11:10.574
+<v Matthias Max>Is that the challenge you are asking for,
+right? That's how I understood it.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/110-0
+00:11:11.374 --> 00:11:15.090
+<v Boyan Valchev>I mean,
+the issue here is that we still have like</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/109-0
+00:11:11.774 --> 00:11:12.014
+<v Matthias Max>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/110-1
+00:11:15.090 --> 00:11:20.814
+<v Boyan Valchev>objects for this transport order in our
+system, like those legs would still.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/111-0
+00:11:22.014 --> 00:11:24.654
+<v Boyan Valchev>Be assigned from you just point of view.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/115-0
+00:11:25.454 --> 00:11:30.882
+<v Boyan Valchev>But, like, this will not be correct,
+and like there is pretty much no way for</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/115-1
+00:11:30.882 --> 00:11:35.057
+<v Boyan Valchev>the user to fix this for a new Dispo
+point of view. I mean,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/115-2
+00:11:35.057 --> 00:11:40.068
+<v Boyan Valchev>even if they apply some changes,
+those legs would never be seen anymore</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/113-0
+00:11:35.294 --> 00:11:35.614
+<v Matthias Max>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/115-3
+00:11:40.068 --> 00:11:44.174
+<v Boyan Valchev>from a new Dispo point of view,
+because they would appear.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/114-0
+00:11:43.134 --> 00:11:43.494
+<v Matthias Max>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/117-0
+00:11:44.414 --> 00:11:47.774
+<v Boyan Valchev>Assigned, but actually they won't be.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/116-0
+00:11:46.094 --> 00:11:46.494
+<v Matthias Max>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/118-0
+00:11:48.494 --> 00:11:49.134
+<v Matthias Max>Correct.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/119-0
+00:11:50.214 --> 00:11:54.814
+<v Matthias Max>So they are not in the left space,
+to put it like that, not on the left area.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/120-0
+00:11:56.614 --> 00:11:57.934
+<v Boyan Valchev>They're sorry, they're not.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/122-0
+00:11:58.134 --> 00:12:03.590
+<v Matthias Max>They will not be available on the UI on
+the left side where the unplanned options</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/121-0
+00:12:02.494 --> 00:12:03.854
+<v Boyan Valchev>Yeah, never, never.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/122-1
+00:12:03.590 --> 00:12:05.054
+<v Matthias Max>are. Yeah, yeah, good.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/123-0
+00:12:06.414 --> 00:12:09.214
+<v Matthias Max>So to go back to the other doc.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/124-0
+00:12:12.654 --> 00:12:17.934
+<v Matthias Max>Four options that could be.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/125-0
+00:12:20.134 --> 00:12:21.054
+<v Matthias Max>Disgust.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/126-0
+00:12:23.774 --> 00:12:28.652
+<v Matthias Max>The immediate retry, I think,
+is a no-brainer. We do that already,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/126-1
+00:12:28.652 --> 00:12:30.254
+<v Matthias Max>but after three times.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/127-0
+00:12:31.454 --> 00:12:33.054
+<v Matthias Max>It's lost.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/128-0
+00:12:34.494 --> 00:12:38.616
+<v Matthias Max>Of course,
+background jobs could always fix such</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/128-1
+00:12:38.616 --> 00:12:42.823
+<v Matthias Max>things,
+but we decided that these are too big for</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/128-2
+00:12:42.823 --> 00:12:44.254
+<v Matthias Max>now to implement.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/129-0
+00:12:45.814 --> 00:12:51.854
+<v Matthias Max>Another option discussed was CDC,
+obviously extends CDC by.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/130-0
+00:12:53.014 --> 00:12:55.694
+<v Matthias Max>Other than the shipment type,
+which is transport orders.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/131-0
+00:12:56.654 --> 00:12:58.494
+<v Matthias Max>Also out of scope for now.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/132-0
+00:12:59.574 --> 00:13:04.894
+<v Matthias Max>which kind of only leaves us with one
+last option, which is a manual.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/134-0
+00:13:06.174 --> 00:13:12.174
+<v Matthias Max>Recovery or resolving, rather,
+and this would be triggered.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/133-0
+00:13:12.254 --> 00:13:12.574
+<v Boyan Valchev>Köppe.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/135-0
+00:13:13.574 --> 00:13:19.617
+<v Matthias Max>potentially to the user by an error
+message of some kind. Plus, I guess,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/135-1
+00:13:19.617 --> 00:13:24.005
+<v Matthias Max>logging like we are planning it for the
+other flows,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/135-2
+00:13:24.005 --> 00:13:30.793
+<v Matthias Max>so that from the logs someone could find
+out which transport order is affected or</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/135-3
+00:13:30.793 --> 00:13:33.774
+<v Matthias Max>which trace ID, which request ID was</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/136-0
+00:13:34.254 --> 00:13:43.614
+<v Matthias Max>that in and then start manual cleanup all
+through a backend provided endpoint.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/137-0
+00:13:44.694 --> 00:13:46.094
+<v Matthias Max>which does cleanup.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/138-0
+00:13:47.534 --> 00:13:51.534
+<v Matthias Max>So that's the only option I see feasible.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/139-0
+00:13:52.654 --> 00:13:53.534
+<v Matthias Max>Orga go live.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/140-0
+00:13:57.134 --> 00:13:59.774
+<v Matthias Max>And the question is, what can we do?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/141-0
+00:14:00.654 --> 00:14:06.894
+<v Matthias Max>to confirm this if it really works or
+what are the steps to...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/142-0
+00:14:08.414 --> 00:14:10.134
+<v Matthias Max>be added to the backlog.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/143-0
+00:14:11.694 --> 00:14:13.694
+<v Matthias Max>As an as an MVP solution.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/146-0
+00:14:23.854 --> 00:14:28.734
+<v Boyan Valchev>Like, how would the user trigger this?
+I mean, basically, like someone, OK,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/146-1
+00:14:28.734 --> 00:14:32.074
+<v Boyan Valchev>they said,
+let's say they spot somehow that this is</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/146-2
+00:14:32.074 --> 00:14:33.294
+<v Boyan Valchev>this is like wrong.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/147-0
+00:14:34.934 --> 00:14:35.934
+<v Boyan Valchev>What next?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/148-0
+00:14:37.694 --> 00:14:44.452
+<v Matthias Max>So the user deletes the transport order,
+it gets deleted in TMS. After that,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/148-1
+00:14:44.452 --> 00:14:50.596
+<v Matthias Max>something breaks, we don't get back,
+we don't store the updated legs.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/148-2
+00:14:50.596 --> 00:14:53.054
+<v Matthias Max>That's the situation, right?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/150-0
+00:14:54.214 --> 00:14:59.016
+<v Boyan Valchev>Okay, okay, and let's say,
+let's say that after this,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/149-0
+00:14:54.734 --> 00:14:54.854
+<v Matthias Max>Play.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/150-1
+00:14:59.016 --> 00:15:02.574
+<v Boyan Valchev>like they lose the con, they lose the...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/151-0
+00:15:05.214 --> 00:15:08.254
+<v Boyan Valchev>Context of this, they like we.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/152-0
+00:15:10.734 --> 00:15:13.754
+<v Boyan Valchev>We have lost the context. There is no way,
+like,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/152-1
+00:15:13.754 --> 00:15:17.699
+<v Boyan Valchev>for us to know that this happened already.
+The user, let's say,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/152-2
+00:15:17.699 --> 00:15:20.781
+<v Boyan Valchev>closed the retry stuff and and so on,
+like, okay,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/152-3
+00:15:20.781 --> 00:15:25.342
+<v Boyan Valchev>we logged this somewhere in the log.
+Somebody noticed first, who is this?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/152-4
+00:15:25.342 --> 00:15:29.534
+<v Boyan Valchev>Somebody who notices in the log that that
+something is wrong and...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/153-0
+00:15:29.574 --> 00:15:33.294
+<v Boyan Valchev>Second question is,
+what does Hidden do afterwards?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/154-0
+00:15:34.334 --> 00:15:34.974
+<v Matthias Max>So.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/155-0
+00:15:36.254 --> 00:15:38.814
+<v Matthias Max>Best case, the user...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/156-0
+00:15:39.774 --> 00:15:43.534
+<v Matthias Max>Don't closes the browser or screenshots
+the message.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/157-0
+00:15:44.414 --> 00:15:48.805
+<v Matthias Max>He gets then in touch with service desk.
+Of course,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/157-1
+00:15:48.805 --> 00:15:53.618
+<v Matthias Max>we know there is no service desk in the
+first few weeks,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/157-2
+00:15:53.618 --> 00:16:00.120
+<v Matthias Max>so whoever is available for do such
+service task kind of things will get the</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/157-3
+00:16:00.120 --> 00:16:02.654
+<v Matthias Max>email from them or the ticket.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/158-0
+00:16:03.854 --> 00:16:08.272
+<v Matthias Max>And then, of course,
+the backend has tracked everything in the</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/158-1
+00:16:08.272 --> 00:16:08.974
+<v Matthias Max>cloud log.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/159-0
+00:16:09.934 --> 00:16:16.272
+<v Matthias Max>So that person from Services can go there
+and get the information out of the cloud</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/159-1
+00:16:16.272 --> 00:16:16.654
+<v Matthias Max>lock.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/160-0
+00:16:17.854 --> 00:16:23.134
+<v Matthias Max>And from a request ID, transport order ID,
+whatever it is. In the best case,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/160-1
+00:16:23.134 --> 00:16:25.054
+<v Matthias Max>we lock as much as possible.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/161-0
+00:16:26.254 --> 00:16:30.654
+<v Matthias Max>And then that person either calls us.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/162-0
+00:16:31.534 --> 00:16:39.487
+<v Matthias Max>to execute the cleanup endpoint,
+or that person has the possibility to do</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/162-1
+00:16:39.487 --> 00:16:42.174
+<v Matthias Max>it on his own or her own.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/163-0
+00:16:44.094 --> 00:16:45.694
+<v Matthias Max>That's the absolute minimum.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/164-0
+00:16:47.854 --> 00:16:48.494
+<v Matthias Max>Yosif.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/165-0
+00:16:49.694 --> 00:16:56.155
+<v Yosif Mihaylov>Yeah, isn't this like very, I mean,
+inconvenient and hard to implement into</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/165-1
+00:16:56.155 --> 00:17:00.236
+<v Yosif Mihaylov>reality,
+like with the user making screenshots,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/165-2
+00:17:00.236 --> 00:17:06.188
+<v Yosif Mihaylov>notifying someone and so on,
+like I just find it a very awkward flow.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/165-3
+00:17:06.188 --> 00:17:08.654
+<v Yosif Mihaylov>I can suggest something else.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/166-0
+00:17:08.894 --> 00:17:08.974
+<v Yosif Mihaylov>Um...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/168-0
+00:17:10.894 --> 00:17:17.223
+<v Yosif Mihaylov>No, it just came to my mind.
+Let's say that every time we make this</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/168-1
+00:17:17.223 --> 00:17:24.483
+<v Yosif Mihaylov>operation for the for the deletion,
+we lock an event when we when we start to</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/168-2
+00:17:24.483 --> 00:17:29.509
+<v Yosif Mihaylov>delete, let's say,
+like in the beginning of our fall,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/168-3
+00:17:29.509 --> 00:17:30.254
+<v Yosif Mihaylov>we lock.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/169-0
+00:17:31.534 --> 00:17:39.799
+<v Yosif Mihaylov>deletion of transport order initiated and
+every time when the flow ends and this is</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/169-1
+00:17:39.799 --> 00:17:44.817
+<v Yosif Mihaylov>after like we delete from our application
+as well,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/169-2
+00:17:44.817 --> 00:17:49.934
+<v Yosif Mihaylov>we then look again that the deletion for
+transport.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/170-0
+00:17:50.094 --> 00:17:54.752
+<v Yosif Mihaylov>The order ID was finished and succeeded.
+This way,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/170-1
+00:17:54.752 --> 00:18:01.511
+<v Yosif Mihaylov>I think in the work someone could be
+checking for these pairs, let's say,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/170-2
+00:18:01.511 --> 00:18:08.361
+<v Yosif Mihaylov>and if if he find a let's say some work
+for initiated the for TMS deletion</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/170-3
+00:18:08.361 --> 00:18:12.837
+<v Yosif Mihaylov>initiated,
+but we he doesn't find the other work</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/170-4
+00:18:12.837 --> 00:18:13.294
+<v Yosif Mihaylov>that.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/171-0
+00:18:14.014 --> 00:18:19.842
+<v Yosif Mihaylov>The TMS deletion was finished,
+then he checks the the the state,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/171-1
+00:18:19.842 --> 00:18:25.223
+<v Yosif Mihaylov>and we can, I guess,
+we can make a query for something like</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/171-2
+00:18:25.223 --> 00:18:31.052
+<v Yosif Mihaylov>that to make it easier.
+Maybe we can we can even we can even set</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/171-3
+00:18:31.052 --> 00:18:33.294
+<v Yosif Mihaylov>up an alert on the cloud.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/172-0
+00:18:33.374 --> 00:18:34.574
+<v Yosif Mihaylov>For something like that.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/173-0
+00:18:35.454 --> 00:18:40.871
+<v Yosif Mihaylov>I think it would be better,
+especially if we have someone who will be</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/173-1
+00:18:40.871 --> 00:18:42.574
+<v Yosif Mihaylov>monitoring this stuff.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/174-0
+00:18:46.414 --> 00:18:50.708
+<v Matthias Max>How is this different?
+It's still the same painful experience</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/174-1
+00:18:50.708 --> 00:18:52.094
+<v Matthias Max>for the user, right?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/175-0
+00:18:53.694 --> 00:18:56.270
+<v Yosif Mihaylov>Well,
+the user is not involved in this one for</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/175-1
+00:18:56.270 --> 00:18:56.654
+<v Yosif Mihaylov>at all.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/176-0
+00:18:58.254 --> 00:19:00.014
+<v Yosif Mihaylov>How it is painful for the user.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/177-0
+00:19:00.334 --> 00:19:02.654
+<v Matthias Max>Ah, you mean that it's proactive?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/179-0
+00:19:03.374 --> 00:19:07.710
+<v Yosif Mihaylov>I mean,
+these logs are happening from our backend</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/178-0
+00:19:07.614 --> 00:19:07.774
+<v Matthias Max>Mm.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/179-1
+00:19:07.710 --> 00:19:11.614
+<v Yosif Mihaylov>and they are catched by the operations
+team.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/182-0
+00:19:12.174 --> 00:19:16.266
+<v Matthias Max>Yeah,
+so you make it an automated DevOps</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/180-0
+00:19:12.774 --> 00:19:12.814
+<v Yosif Mihaylov>I.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/182-1
+00:19:16.266 --> 00:19:23.454
+<v Matthias Max>monitoring task to find solo events that
+don't close and alert on them.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/181-0
+00:19:22.814 --> 00:19:23.054
+<v Yosif Mihaylov>Cem.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/184-0
+00:19:24.414 --> 00:19:27.054
+<v Matthias Max>So, you get the outages.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/183-0
+00:19:24.654 --> 00:19:25.214
+<v Yosif Mihaylov>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/185-0
+00:19:27.414 --> 00:19:28.414
+<v Yosif Mihaylov>Something like that.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/186-0
+00:19:28.814 --> 00:19:29.214
+<v Matthias Max>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/188-0
+00:19:33.374 --> 00:19:39.938
+<v Boyan Valchev>Can't we make it like even more automated?
+This is what I'm thinking right now.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/187-0
+00:19:33.654 --> 00:19:33.854
+<v Matthias Max>Good.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/188-1
+00:19:39.938 --> 00:19:44.697
+<v Boyan Valchev>Because like checking whether we have
+legs in our system,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/188-2
+00:19:44.697 --> 00:19:51.179
+<v Boyan Valchev>it's still existing for which we do not
+have a transport order is basically to</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/188-3
+00:19:51.179 --> 00:19:52.574
+<v Boyan Valchev>cure this one to.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/189-0
+00:19:53.774 --> 00:19:57.934
+<v Boyan Valchev>You want to you just put the no database
+and want to GMX.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/190-0
+00:19:58.974 --> 00:20:05.294
+<v Yosif Mihaylov>We already have this whole buyer from the
+POC for the for the recovery, by the way.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/191-0
+00:20:13.054 --> 00:20:13.214
+<v Yosif Mihaylov>Oh.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/192-0
+00:20:13.254 --> 00:20:19.082
+<v Boyan Valchev>Can we just do something like a cron job
+or something just to check whether search</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/192-1
+00:20:19.082 --> 00:20:22.734
+<v Boyan Valchev>legs exist in you Dispo and automatically
+fix this?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/194-0
+00:20:23.694 --> 00:20:28.430
+<v Boyan Valchev>That would be a matter of just
+unassigning those legs, nothing more.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/194-1
+00:20:28.430 --> 00:20:31.793
+<v Boyan Valchev>If we find legs without a transport order
+to it,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/194-2
+00:20:31.793 --> 00:20:35.774
+<v Boyan Valchev>we just mark them as unassigned to new
+Dispo and move on.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/195-0
+00:20:36.894 --> 00:20:40.291
+<v Boyan Valchev>I mean, there is a way for us to, like,
+say this, because, like,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/195-1
+00:20:40.291 --> 00:20:44.734
+<v Boyan Valchev>we can retrieve all of the legs and where
+they are assigned according to you, Dispo.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/196-0
+00:20:46.094 --> 00:20:49.463
+<v Boyan Valchev>We can also see, like,
+where a particular transport order ID</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/196-1
+00:20:49.463 --> 00:20:53.054
+<v Boyan Valchev>exists in their database,
+because this is all we need right now.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/197-0
+00:20:55.054 --> 00:20:55.294
+<v Matthias Max>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/198-0
+00:20:56.014 --> 00:20:56.494
+<v Boyan Valchev>And...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/199-0
+00:20:57.774 --> 00:21:00.574
+<v Boyan Valchev>Can't we just run this program something
+like once a day?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/201-0
+00:21:02.814 --> 00:21:06.608
+<v Boyan Valchev>If we need, if,
+if we need to run it like more often,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/200-0
+00:21:03.214 --> 00:21:04.014
+<v Yosif Mihaylov>Thank you. Bye bye.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/201-1
+00:21:06.608 --> 00:21:08.014
+<v Boyan Valchev>we can always do it.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/205-0
+00:21:09.214 --> 00:21:16.139
+<v Yosif Mihaylov>The current job, the current job, I think,
+I think is, I mean, will bring complexity,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/202-0
+00:21:09.294 --> 00:21:09.774
+<v Boyan Valchev>But...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/205-1
+00:21:16.139 --> 00:21:21.374
+<v Yosif Mihaylov>but what we can do is reuse the the the
+the logic which I wrote.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/206-0
+00:21:22.494 --> 00:21:29.853
+<v Yosif Mihaylov>And especially if we have it as a service,
+but even like to have it like running</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/204-0
+00:21:22.574 --> 00:21:22.894
+<v Matthias Max>Go.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/206-1
+00:21:29.853 --> 00:21:34.941
+<v Yosif Mihaylov>constantly, but even if we don't have it,
+like I would,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/206-2
+00:21:34.941 --> 00:21:40.574
+<v Yosif Mihaylov>I think that this operations team can
+just run it once a day.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/207-0
+00:21:42.414 --> 00:21:44.955
+<v Yosif Mihaylov>And yeah,
+just remove this complexity from the</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/207-1
+00:21:44.955 --> 00:21:47.766
+<v Yosif Mihaylov>current job,
+because this current job I think will,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/207-2
+00:21:47.766 --> 00:21:50.254
+<v Yosif Mihaylov>I don't think we have time for for
+searching.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/208-0
+00:21:50.574 --> 00:21:54.014
+<v Matthias Max>So exactly my point.
+Can I quickly interrupt? Sorry.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/210-0
+00:21:55.534 --> 00:22:00.254
+<v Matthias Max>I'm pushing back because we have
+economical constraints.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/211-0
+00:22:01.214 --> 00:22:06.174
+<v Matthias Max>We need to make something that just
+satisfies.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/212-0
+00:22:07.294 --> 00:22:09.134
+<v Matthias Max>It being called.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/213-0
+00:22:10.734 --> 00:22:14.389
+<v Matthias Max>Yeah,
+how like a failure notification and the</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/213-1
+00:22:14.389 --> 00:22:20.507
+<v Matthias Max>minimal recovery flow. That's what's paid.
+We talk about fixed budgets here.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/213-2
+00:22:20.507 --> 00:22:22.414
+<v Matthias Max>Everything we do on top.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/214-0
+00:22:23.454 --> 00:22:29.149
+<v Matthias Max>is not paid. Any crunch of you build,
+any logic that runs automatically,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/214-1
+00:22:29.149 --> 00:22:34.845
+<v Matthias Max>all of this needs to be built and tested.
+In what time? In 3 more weeks,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/214-2
+00:22:34.845 --> 00:22:39.527
+<v Matthias Max>that's the first constraint. Plus,
+without the money there,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/214-3
+00:22:39.527 --> 00:22:42.414
+<v Matthias Max>we have the approval that this manual</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/215-0
+00:22:43.134 --> 00:22:46.254
+<v Matthias Max>Notification-based resolving is accepted.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/216-0
+00:22:47.134 --> 00:22:52.997
+<v Matthias Max>So I'm pushing back because of that.
+I'm not pushing back because I don't want</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/216-1
+00:22:52.997 --> 00:22:57.079
+<v Matthias Max>to find the optimal technical solution or
+UX solution.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/216-2
+00:22:57.079 --> 00:23:03.239
+<v Matthias Max>But this is not what we do here right now.
+We find the minimal viable solution for</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/216-3
+00:23:03.239 --> 00:23:06.654
+<v Matthias Max>the amount of money we have and time we
+have.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/217-0
+00:23:07.854 --> 00:23:11.054
+<v Matthias Max>I think that's really important to
+reframe the discussion.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/218-0
+00:23:14.094 --> 00:23:19.774
+<v Matthias Max>And anything locked based in the cloud
+lock with a little bit of a toast.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/219-0
+00:23:20.654 --> 00:23:24.272
+<v Matthias Max>Regarding, oh, sorry,
+we discovered an error.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/219-1
+00:23:24.272 --> 00:23:29.150
+<v Matthias Max>That's all we can do.
+We cannot do the whole automatic fixing</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/219-2
+00:23:29.150 --> 00:23:33.712
+<v Matthias Max>in the background.
+That's not what we promised and that's</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/219-3
+00:23:33.712 --> 00:23:38.118
+<v Matthias Max>not expected.
+So we do ourselves a favor not going that</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/219-4
+00:23:38.118 --> 00:23:39.534
+<v Matthias Max>far at this point.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/220-0
+00:23:39.614 --> 00:23:41.785
+<v Matthias Max>Point,
+I'm not saying that we don't go there</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/220-1
+00:23:41.785 --> 00:23:42.654
+<v Matthias Max>after the go live.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/221-0
+00:23:45.774 --> 00:23:47.214
+<v Matthias Max>Is that clear to everyone?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/224-0
+00:23:49.854 --> 00:23:53.480
+<v Yosif Mihaylov>Yeah, for sure.
+We don't have time for such mechanisms.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/224-1
+00:23:53.480 --> 00:23:57.755
+<v Yosif Mihaylov>Like I think that's why I suggested
+Teodor option with the locks,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/224-2
+00:23:57.755 --> 00:24:02.223
+<v Yosif Mihaylov>because it is really absolutely no effort
+from us to implement this.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/222-0
+00:24:01.974 --> 00:24:02.294
+<v Matthias Max>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/224-3
+00:24:02.223 --> 00:24:06.303
+<v Yosif Mihaylov>And the other option is just to reuse
+this recovery mechanism,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/224-4
+00:24:06.303 --> 00:24:08.894
+<v Yosif Mihaylov>because it's essentially doing the same.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/223-0
+00:24:10.014 --> 00:24:10.614
+<v Matthias Max>Mhm.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/225-0
+00:24:11.294 --> 00:24:14.599
+<v Yosif Mihaylov>That's no,
+that's that's both of these options are</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/225-1
+00:24:14.599 --> 00:24:16.414
+<v Yosif Mihaylov>pretty much no extra effort.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/226-0
+00:24:17.014 --> 00:24:17.294
+<v Matthias Max>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/227-0
+00:24:18.614 --> 00:24:22.064
+<v Matthias Max>Even better,
+if they fall together in the same</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/227-1
+00:24:22.064 --> 00:24:24.414
+<v Matthias Max>building blocks, that's perfect.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/228-0
+00:24:25.854 --> 00:24:27.614
+<v Yosif Mihaylov>We can do both, to be honest.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/229-0
+00:24:29.374 --> 00:24:30.254
+<v Matthias Max>Both what?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/230-0
+00:24:31.454 --> 00:24:32.974
+<v Yosif Mihaylov>Where we can keep the works.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/231-0
+00:24:34.254 --> 00:24:38.448
+<v Yosif Mihaylov>We can also have the mechanism.
+It's just about now, from this point on,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/231-1
+00:24:38.448 --> 00:24:42.814
+<v Yosif Mihaylov>it's just about operational strategy and
+how we are going to approach this.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/231-2
+00:24:42.814 --> 00:24:47.411
+<v Yosif Mihaylov>First question is, would there be like,
+maybe, I'm not sure if we discussed it,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/231-3
+00:24:47.411 --> 00:24:51.720
+<v Yosif Mihaylov>would there be a person who will be
+monitoring logs or something like that</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/231-4
+00:24:51.720 --> 00:24:53.214
+<v Yosif Mihaylov>for the application state?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/232-0
+00:24:53.854 --> 00:24:57.770
+<v Matthias Max>I mean,
+the issue is it was planned to have an</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/232-1
+00:24:57.770 --> 00:25:01.937
+<v Matthias Max>operational team ready together with the
+go live.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/232-2
+00:25:01.937 --> 00:25:08.854
+<v Matthias Max>Then Naga pushed back and started a much
+bigger, I think I explained that already,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/232-3
+00:25:08.854 --> 00:25:12.854
+<v Matthias Max>a much bigger offering round where they
+ask for</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/233-0
+00:25:12.974 --> 00:25:19.240
+<v Matthias Max>the whole operation of all their systems.
+And in the next round,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/233-1
+00:25:19.240 --> 00:25:24.254
+<v Matthias Max>they extended the list of parties
+offering on that.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/234-0
+00:25:25.054 --> 00:25:29.730
+<v Matthias Max>beyond P3.
+So it's now a huge buyer process with a</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/234-1
+00:25:29.730 --> 00:25:35.691
+<v Matthias Max>lot of legal and whatever people
+contributing to the discussion,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/234-2
+00:25:35.691 --> 00:25:43.026
+<v Matthias Max>which leads to the process being slower
+and no operational team being available</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/234-3
+00:25:43.026 --> 00:25:44.494
+<v Matthias Max>for the go live.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/235-0
+00:25:45.134 --> 00:25:46.654
+<v Matthias Max>But that's literally...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/236-0
+00:25:47.814 --> 00:25:50.014
+<v Matthias Max>First of all, their problem.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/237-0
+00:25:51.374 --> 00:25:59.181
+<v Matthias Max>And Martin is currently trying to find a
+middle ground for a time from go live to</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/237-1
+00:25:59.181 --> 00:26:02.894
+<v Matthias Max>when there's a solid operational setup.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/238-0
+00:26:03.934 --> 00:26:04.814
+<v Matthias Max>So...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/239-0
+00:26:05.974 --> 00:26:12.494
+<v Matthias Max>The ones probably monitoring this could
+be us on a minimal level.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/240-0
+00:26:13.854 --> 00:26:18.620
+<v Matthias Max>But it's not definitive.
+And it's also not part of the scope and</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/240-1
+00:26:18.620 --> 00:26:24.414
+<v Matthias Max>budget of the development of the solution,
+because this is operational budget.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/241-0
+00:26:25.614 --> 00:26:26.334
+<v Matthias Max>And...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/242-0
+00:26:27.374 --> 00:26:31.374
+<v Matthias Max>Yeah,
+that's literally I know about this public.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/243-0
+00:26:32.974 --> 00:26:36.414
+<v Matthias Max>But it's not that we can hand this over
+today.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/244-0
+00:26:37.614 --> 00:26:39.454
+<v Matthias Max>to someone from operations team.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/245-0
+00:26:42.014 --> 00:26:45.016
+<v Matthias Max>And we, yeah,
+we should focus on the building blocks.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/245-1
+00:26:45.016 --> 00:26:48.964
+<v Matthias Max>How they are put together on the
+operational level is not what we care</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/245-2
+00:26:48.964 --> 00:26:49.854
+<v Matthias Max>about right now.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/246-0
+00:26:51.014 --> 00:26:52.334
+<v Matthias Max>That's what I want to say.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/247-0
+00:26:54.334 --> 00:26:57.294
+<v Matthias Max>And I think we we have a good.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/248-0
+00:26:58.254 --> 00:26:59.454
+<v Matthias Max>Transparency now.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/249-0
+00:27:00.534 --> 00:27:01.054
+<v Matthias Max>Of this.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/250-0
+00:27:02.214 --> 00:27:04.574
+<v Matthias Max>I would propose to wrap it up in...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/251-0
+00:27:05.494 --> 00:27:08.254
+<v Matthias Max>Holistic concept we can read through
+together.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/252-0
+00:27:09.774 --> 00:27:13.774
+<v Matthias Max>And which can be presented to, I guess,
+public once again.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/253-0
+00:27:14.654 --> 00:27:19.108
+<v Matthias Max>to get it signed off.
+And then we derive the minimal building</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/253-1
+00:27:19.108 --> 00:27:22.054
+<v Matthias Max>blocks from it and put it in the backlog.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/254-0
+00:27:28.494 --> 00:27:29.614
+<v Matthias Max>That makes sense.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/255-0
+00:27:37.374 --> 00:27:37.774
+<v Matthias Max>Okay.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/256-0
+00:27:41.734 --> 00:27:42.174
+<v Matthias Max>Um...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/257-0
+00:27:46.974 --> 00:27:54.414
+<v Matthias Max>So that could literally answers the
+question you had, Boyan, I guess.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/258-0
+00:27:55.934 --> 00:27:56.574
+<v Matthias Max>Um...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/259-0
+00:27:58.174 --> 00:28:04.574
+<v Matthias Max>with the sub-question of what and when do
+we lock and what do we show to the user.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/260-0
+00:28:05.854 --> 00:28:09.934
+<v Matthias Max>But that is a task I'm preparing right
+now anyway.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/261-0
+00:28:12.414 --> 00:28:16.491
+<v Matthias Max>with this transitional, transitional,
+transactional, my God,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/261-1
+00:28:16.491 --> 00:28:20.235
+<v Matthias Max>too much talk today,
+transactional UX and transactional</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/261-2
+00:28:20.235 --> 00:28:22.174
+<v Matthias Max>logging because they kind of.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/264-0
+00:28:23.934 --> 00:28:28.890
+<v Matthias Max>are the same thing from different angles.
+Here we inform the user,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/262-0
+00:28:27.094 --> 00:28:27.494
+<v Yosif Mihaylov>It is.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/264-1
+00:28:28.890 --> 00:28:30.814
+<v Matthias Max>here we inform operations.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/263-0
+00:28:29.214 --> 00:28:29.454
+<v Yosif Mihaylov>Oh.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/265-0
+00:28:31.814 --> 00:28:36.391
+<v Yosif Mihaylov>And this is really only about the use
+case with transport order deletion.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/265-1
+00:28:36.391 --> 00:28:37.134
+<v Yosif Mihaylov>Was that it?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/267-0
+00:28:37.534 --> 00:28:41.719
+<v Matthias Max>No,
+it's all 7 flows where we need proper</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/266-0
+00:28:40.574 --> 00:28:41.134
+<v Yosif Mihaylov>So.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/267-1
+00:28:41.719 --> 00:28:43.214
+<v Matthias Max>logging and UX.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/268-0
+00:28:44.574 --> 00:28:45.854
+<v Matthias Max>It's, I guess.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/269-0
+00:28:45.294 --> 00:28:48.312
+<v Yosif Mihaylov>No, no,
+I mean this specific use case with the</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/269-1
+00:28:48.312 --> 00:28:49.854
+<v Yosif Mihaylov>with the losing context.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/271-0
+00:28:51.854 --> 00:28:54.734
+<v Matthias Max>It's specifically there more difficult,
+yes.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/270-0
+00:28:53.294 --> 00:28:53.374
+<v Yosif Mihaylov>Up.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/272-0
+00:28:57.774 --> 00:29:03.294
+<v Matthias Max>Because at the source you lose data,
+while for the others.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/273-0
+00:29:04.414 --> 00:29:05.054
+<v Matthias Max>It's.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/274-0
+00:29:06.494 --> 00:29:08.174
+<v Matthias Max>Additions or changes?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/275-0
+00:29:10.574 --> 00:29:13.134
+<v Matthias Max>And this flow number seven has a.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/276-0
+00:29:11.694 --> 00:29:15.409
+<v Yosif Mihaylov>Can you just,
+because I'm starting like too much</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/276-1
+00:29:15.409 --> 00:29:18.974
+<v Yosif Mihaylov>context, like Bobby,
+can you remind me like...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/277-0
+00:29:20.494 --> 00:29:24.562
+<v Yosif Mihaylov>When we delete, for example,
+the transport order, like,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/277-1
+00:29:24.562 --> 00:29:29.866
+<v Yosif Mihaylov>we failed to delete the legs and what was
+exactly the issue there, like,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/277-2
+00:29:29.866 --> 00:29:35.534
+<v Yosif Mihaylov>isn't we going to sync it the next time
+we try to do any operation with this?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/278-0
+00:29:36.014 --> 00:29:38.494
+<v Boyan Valchev>The issue is that they have no way to
+sync it.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/279-0
+00:29:40.574 --> 00:29:40.654
+<v Yosif Mihaylov>Ohh.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/280-0
+00:29:40.614 --> 00:29:45.982
+<v Boyan Valchev>I mean, they don't have a way to,
+they really don't have a way to make this</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/280-1
+00:29:45.982 --> 00:29:49.655
+<v Boyan Valchev>happen. Like,
+because from you Dispo point of view,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/280-2
+00:29:49.655 --> 00:29:55.588
+<v Boyan Valchev>those would appear as assigned, but like,
+there would be no transport order for the</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/280-3
+00:29:55.588 --> 00:29:59.614
+<v Boyan Valchev>user to click and attempt any operation
+over those legs.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/283-0
+00:30:00.254 --> 00:30:03.854
+<v Yosif Mihaylov>Oh yeah, yeah, they will appear,
+they will still be assigned, yeah, yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/281-0
+00:30:03.014 --> 00:30:03.534
+<v Boyan Valchev>Mhm.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/282-0
+00:30:03.614 --> 00:30:04.254
+<v Matthias Max>Correct.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/284-0
+00:30:05.054 --> 00:30:05.214
+<v Yosif Mihaylov>Eng.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/285-0
+00:30:17.854 --> 00:30:18.174
+<v Yosif Mihaylov>Hello?</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/286-0
+00:30:18.254 --> 00:30:27.353
+<v Matthias Max>Our item potency data sync check,
+and which we then react to and fix data,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/286-1
+00:30:27.353 --> 00:30:29.294
+<v Matthias Max>but for flow #7.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/287-0
+00:30:30.574 --> 00:30:32.094
+<v Matthias Max>It is a bit different.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/288-0
+00:30:33.934 --> 00:30:34.414
+<v Matthias Max>Good.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/290-0
+00:30:35.294 --> 00:30:39.587
+<v Yosif Mihaylov>Just one question, like,
+would it be possible to mark to mark to</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/290-1
+00:30:39.587 --> 00:30:43.947
+<v Yosif Mihaylov>to implement just for this specific use
+case? I don't know, like,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/290-2
+00:30:43.947 --> 00:30:48.505
+<v Yosif Mihaylov>like a soft delete for the for them for
+these entities. For example,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/290-3
+00:30:48.505 --> 00:30:53.327
+<v Yosif Mihaylov>when we go ahead and try to delete the
+transport order in the beginning,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/290-4
+00:30:53.327 --> 00:30:54.054
+<v Yosif Mihaylov>we we mark.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/289-0
+00:30:55.054 --> 00:30:55.774
+<v Matthias Max>Book.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/292-0
+00:30:55.054 --> 00:30:57.854
+<v Yosif Mihaylov>We mark them as bdeleted or something
+like that.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/291-0
+00:30:56.654 --> 00:30:56.894
+<v Matthias Max>We.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/294-0
+00:30:57.934 --> 00:31:01.054
+<v Matthias Max>We are in the last development spring,
+Yosif.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/296-0
+00:31:01.094 --> 00:31:05.264
+<v Yosif Mihaylov>Yeah, yeah, yeah, but just, yeah,
+I just wanted to bring this up that this</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/296-1
+00:31:05.264 --> 00:31:06.654
+<v Yosif Mihaylov>might also impossibility.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/297-0
+00:31:06.974 --> 00:31:11.734
+<v Matthias Max>Yeah, I'll wrap it up.
+We need to fly low level,</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/297-1
+00:31:11.734 --> 00:31:16.494
+<v Matthias Max>as low level as possible with regards to
+effort.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/298-0
+00:31:17.574 --> 00:31:22.814
+<v Matthias Max>To get this done successfully,
+and I think I have all the info.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/300-0
+00:31:23.854 --> 00:31:28.574
+<v Matthias Max>And I can get this assigned,
+assigned by Patrick and Max, and then...</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/299-0
+00:31:25.734 --> 00:31:25.854
+<v Yosif Mihaylov>Yeah.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/301-0
+00:31:29.734 --> 00:31:33.454
+<v Matthias Max>We go minimal and everything else can
+follow after the go live.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/302-0
+00:31:35.454 --> 00:31:40.254
+<v Matthias Max>Good. Time is up anyway.
+Let's move over to the refinement.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/303-0
+00:31:43.054 --> 00:31:43.534
+<v Yosif Mihaylov>Okay.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/309-0
+00:31:44.414 --> 00:31:48.174
+<v Matthias Max>Good, thanks a lot. Talk soon. Bye bye.</v>
+
+2fc31f77-7510-4abd-b902-3c9514500c34/304-0
+00:31:46.334 --> 00:31:46.894
+<v Ivaylo Petrov>Thank you.</v>
