@@ -11,6 +11,10 @@
 - `feature/add-initial-retry-behavior` (PR #32732, merged) — #124103 (retry mechanism)
 **Note:** All feature branches share merge-base `781a2800` (2026-05-07) with `origin/master`. Diffs are identical regardless of base branch.
 
+**Meeting Input:**
+- `00_Meetings/2026-05-21_Weekly Refinement - NewDispo-Transactional-FLows-UX+Logging.vtt` — Team refinement with Matthias, Max Kehder, Boyan, Yosif, Bojidar, Ivaylo, Sonja (~75 min)
+
+<!-- internal -->
 **Concept Sources (local → wiki via wiki-connector):**
 - `02_Explorations/2026-03-16_Transactional-Behaviour-New-Dispo-TMS-Transport-Orders/` → `Transactional-Behaviour.md`
 - `02_Explorations/2026-04-08_Transactional_State_Verification_-_CreateTransportOrderFromLeg/` → `Transactional-Behaviour/Flows/`
@@ -20,6 +24,7 @@
   - `Flows.md` — Progress tracker for all 7 flow analyses
   - `Flows/01..07-*.md` — Individual flow analysis with verification queries
   - `Challange-Transactional-Aprroaches.md` — Discussion on approaches
+<!-- /internal -->
 
 ---
 
@@ -64,7 +69,7 @@ The transactional flows implement a **pre-action sync check**: before executing 
 
 **Key files:** `CreateTransportOrderFromLotSyncSubHandler.cs`, `AssignLotToTransportOrderSyncSubHandler.cs` on branch `feature/assing-lot-create-transport-order-from-lot-indempotent`
 
-**Important:** Lot-based flows use HTTP 200 + `Conflicts` array, NOT HTTP 409 + `ConflictException`. This is a different error contract from the single-leg flows.
+**Important:** Lot-based flows use HTTP 200 + `Conflicts` array, NOT HTTP 409 + `ConflictException`. This is a different error contract from the single-leg flows. Lot is a New Dispo Backend concept only — TMS Bridge and TMS Database have no knowledge of lots. The Backend maps lot → legs before calling TMS Bridge.
 
 ### Unassign Flows (#124362 / #124363): UnassignLegs, UnassignLots
 
@@ -81,6 +86,22 @@ The transactional flows implement a **pre-action sync check**: before executing 
 ### Delete Transport Order (#124364)
 
 Minimal changes so far — only adds a `mode` parameter to the GraphQL mutation. No sync detection implemented yet.
+
+### Atomicity Guarantees
+
+| Scope | Atomic? | Explanation |
+|-------|---------|-------------|
+| TMS operations within one flow | **Yes** | All TMS calls for a single operation (e.g., unassign all legs in a lot) commit or fail together |
+| New Dispo DB operations within one flow | **Yes** | Single `SaveChangesAsync` call commits all local changes at once |
+| Cross-system (TMS + New Dispo together) | **No** | TMS can succeed while New Dispo fails — this is the out-of-sync case |
+
+It will **never** happen that 3 of 5 legs in a lot are unassigned in New Dispo while 2 are not. The out-of-sync state is always all-or-nothing per system. The "partial success" concept applies only across *separate operations* (individual legs from the slider), not within a single lot/TO operation.
+
+**"Non-recoverable" means per-request:** non-recoverable within this request including internal Polly retries. If the user tries again later and succeeds, that's a new iteration. This is the "manual minimal version."
+
+### Known Limitation: Backend Crash
+
+If the Backend process itself crashes (not just a TMS or DB failure), there will be no incident ID in the response and no structured log entry. Manual cloud log investigation is the fallback. Scoped out for now.
 
 ---
 
@@ -252,13 +273,16 @@ What is still missing (#124105 scope):
 3. **Enriched error response** — the error messages are plain strings with minimal context; no machine-readable conflict type, no affected entity details
 4. **Log persistence** — logs go to rolling text files only; no dedicated queryable storage for sync incidents (note: #124104 for GCP storage was descoped/removed)
 
-### Recommendation
+### Current #124105 Scope (as refined)
 
-Redefine #124105 to focus on:
-- Generate a unique incident ID (GUID) for each sync conflict
-- Add structured logging: conflict type, affected entities, TMS state snapshot, repair action taken
-- Include the incident ID in the error response to the frontend
-- Decide: is rolling-file logging sufficient, or is a lightweight alternative to the descoped GCP storage needed?
+**State:** To Refine | **Effort:** 1.5 (predates scope expansion — worth re-estimating)
+
+| AC | Scope |
+|----|-------|
+| AC 1 | Incident ID in all sync conflict responses — `HttpContext.TraceIdentifier` recommended (~1 line in `BaseExceptionHandler`) |
+| AC 2 | Structured sync conflict logging — incidentId, conflictType, affectedEntityType/Id, transportOrderId, actionTaken, flowName |
+| AC 3 | Unified error response shape — replacing 3 inconsistent contracts (409 ProblemDetails / 200 ConflictDto[] / 200 UpsertOperationResponseDto[]). Must be agreed with FE team. |
+| AC 4 | Log pairing for Flow 7 — "deletion initiated" / "deletion finished" events with matching identifiers |
 
 ---
 
@@ -332,16 +356,28 @@ The flow concept documents specify what data is queryable from TMS at sync-check
 
 | # | Topic | Decision | Source |
 |---|-------|----------|--------|
-| 1 | **Incident ID visibility** | Only shown for non-resolvable issues (Flow 7 / TMS failures). Resolvable conflicts: logged server-side only. | PO decision, parent #123326 AC1 updated |
+| 1 | **Incident ID visibility** | Only shown for non-resolvable issues (Flow 7 / TMS failures). Resolvable conflicts: logged server-side only. Cryptic UUID/hex acceptable — copy-paste button handles UX. One fresh ID per request, no correlation across retries. | PO decision + team confirmation |
 | 2 | **Refresh behavior** | Manual refresh — user refreshes the page themselves. No auto-refresh. | PO decision, overrides original AC2 |
 | 3 | **Auto-retry of user action** | No auto-retry. User must consciously repeat the action after refresh. | Confirmed, per AC4 |
-| 4 | **Severity levels** | Two levels for resolvable: info (auto-dismiss, green) for benign + warning (stays until dismissed, yellow/orange) for real conflicts. Error (red, persistent + Log ID) for non-resolvable. | PO decision |
+| 4 | **Severity levels** | Two levels for resolvable: info (auto-dismiss, green) for benign + warning (stays until dismissed, yellow/orange) for real conflicts. Error (red, persistent + Log ID) for non-resolvable. | PO decision + team confirmation |
 | 5 | **Same-TO vs. Different-TO** | Distinguish: "already on this TO" = info level, "on a different TO" = warning level. | PO decision, backend already supports this |
-| 6 | **Partial success display** | Summary toast only (e.g., "3 of 5 legs assigned. 2 had conflicts."). No per-leg detail panel. | PO decision |
+| 6 | **Partial success display** | Summary toast for individual-leg-from-slider scenario only (e.g., "3 of 5 legs assigned. 2 had conflicts."). Lot operations are atomic — one operation = one toast, no per-leg partial state. No per-leg detail panel. | PO decision, refined by team |
 | 7 | **Flow 7 toast wording** | Transparent: "Transport Order deleted. Some local data could not be cleaned up. Our team has been notified. Log ID: X" | PO decision |
 | 8 | **Flow-specific vs. generic messages** | Generic template with `[action name]` slot. Not flow-specific wording. | PO decision |
+| 9 | **Log infrastructure** | Use existing GCP Cloud Run log. No dedicated sink or table. Filter by incident ID. Yosif proposed structured log template: prefix + incident ID + entity IDs for filterability. | Team decision |
 
-Ticket #123950 and parent #123326 updated with all decisions. See [ticket-123950-revised.md](./ticket-123950-revised.md) for full AC text.
+### Current #123950 Scope (as refined)
+
+**State:** To Refine | **Depends on:** #124105
+
+| AC | Scope |
+|----|-------|
+| AC 1 | Info toast — benign conflicts (green, auto-dismiss). Template: *"The [action name] you performed affected an out-of-sync item. The issue has been resolved automatically. Please refresh the page."* |
+| AC 2 | Warning toast — real conflicts (orange, stays until dismissed). Same template, different severity. |
+| AC 3 | Batch summary toast (Flows 2, 4, 5, 6) — single summary, severity follows worst-case item. |
+| AC 4 | Error toast — non-resolvable (red, stays, Log ID + copy button). Flow 7 template: *"Transport Order deleted. Some local data could not be cleaned up. Our team has been notified. Log ID: [Log ID]."* |
+| AC 5 | Same-TO vs. Different-TO distinction (Flows 3, 4) — same TO = info, different TO = warning. |
+| AC 6 | General behavior — manual refresh, no auto-retry, generic template with `[action name]` slot. |
 
 ---
 
@@ -351,14 +387,19 @@ Ticket #123950 and parent #123326 updated with all decisions. See [ticket-123950
 
 | # | Question | Resolution | Date |
 |---|----------|------------|------|
-| 5 | **Snackbar per AC1 vs. per-item errors** — one snackbar with summary or one per item? | Summary toast only (PO decision #6) | 2026-05-20 |
-| 8 | **Partial failure in batch operations** — UX for mixed success/failure results? | Summary toast, no per-leg detail (PO decision #6) | 2026-05-20 |
+| 3 | **Incident ID implementation** — which approach? | `HttpContext.TraceIdentifier` (Option 1) recommended. Cryptic UUID/hex acceptable — copy-paste button handles UX. GCP log entry ID (Option 3) dismissed as non-trivial. Now defined as #124105 AC 1. | 2026-05-21 |
+| 4 | **Frontend error contract** — unified or split? | Unified. #124105 AC 3 mandates a single response shape replacing all three current contracts. Must be agreed with FE team before implementation. | 2026-05-23 |
+| 5 | **Snackbar per AC1 vs. per-item errors** — one snackbar with summary or one per item? | Summary toast only (PO decision #6). Applies only to individual-leg-from-slider scenario; lot operations are atomic (one toast per lot). | 2026-05-20 |
+| 8 | **Partial failure in batch operations** — UX for mixed success/failure results? | Summary toast, no per-leg detail. Lot operations are atomic — partial success only across separate requests (individual legs from slider). | 2026-05-20 |
+| 9 | **Incident ID human-readability** — does the ID need to be user-friendly? | No. Cryptic UUID/hex is acceptable. Copy-paste button handles the UX. Confirmed by Max Kehder. | 2026-05-21 |
+| 10 | **Dedicated log infrastructure** — separate log sink for conflict events? | No. Use existing GCP Cloud Run log. Filter by incident ID. No additional infra. | 2026-05-21 |
+| 11 | **Incident ID correlation across retries** — should the same entity get the same ID on repeated failures? | No. Each request gets a fresh ID. Separate requests = separate incidents. | 2026-05-21 |
+| 12 | **Meaning of "non-recoverable"** — permanently broken or just this request? | Per-request scope: non-recoverable within this request including internal Polly retries. User can retry manually later. | 2026-05-21 |
 
 ### Still Open
 
 1. **#124364 (DeleteTransportOrder)**: No sync detection yet — concept specifies a simple TO-existence check. Who implements this? The concept also notes DeleteTO is **not idempotent** (error 20016 on retry).
-2. **Lot-based assign flows** (branch `feature/assing-lot-create-transport-order-from-lot-indempotent`): Implemented with full sync detection — per-leg `ShouldSync` + auto-repair. Has merge conflicts (not yet merged). Uses a different error contract: HTTP 200 + `Conflicts` array instead of HTTP 409 + `ConflictException`. Should the error contracts be aligned?
-3. **Incident ID storage**: With #124104 (GCP storage) removed, where do incident IDs resolve to? Just the log file? Is that queryable by support? Recommendation: use `HttpContext.TraceIdentifier` (~1 line of code). See [incident-id-options.md](./incident-id-options.md).
-4. **Frontend error contract**: Should all flows use a unified error response shape, or keep the current split (ProblemDetails for assign, UpsertOperationResponseDto for unassign)? The concept's "manual recovery" option assumed a unified retry mechanism.
-6. **Proactive vs. reactive detection**: Current implementation only detects out-of-sync on next user action. Concept Scenarios 2+3 describe cases where inconsistency persists silently until user happens to interact. Is this acceptable for June, or does the PO need a background check mechanism?
-7. **Concept drift**: The implementation went beyond Option 1 (manual recovery) by auto-repairing state. This is better for UX but wasn't in the original decision. Should the concept docs be updated to reflect what was actually built?
+2. **Lot-based assign flows** (branch `feature/assing-lot-create-transport-order-from-lot-indempotent`): Has merge conflicts (not yet merged). Uses HTTP 200 + `Conflicts` array instead of HTTP 409 + `ConflictException`. Must adopt unified contract from #124105 AC 3 at merge time.
+3. **Proactive vs. reactive detection**: Current implementation only detects out-of-sync on next user action. Concept Scenarios 2+3 describe cases where inconsistency persists silently until user happens to interact. Is this acceptable for June, or does the PO need a background check mechanism?
+4. **Concept drift**: The implementation went beyond Option 1 (manual recovery) by auto-repairing state. This is better for UX but wasn't in the original decision. Should the concept docs be updated to reflect what was actually built?
+5. **Toast auto-dismiss duration**: 3-second auto-dismiss may be too short for information-dense toasts. Addressed by severity model (orange/red stay until dismissed), but worth validating during implementation.

@@ -1,0 +1,5020 @@
+WEBVTT
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/33-0
+00:03:30.347 --> 00:03:31.027
+<v Matthias Max>Hi, guys.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/37-0
+00:03:33.907 --> 00:03:37.107
+<v Maximilian Kehder>Hello, everyone. Sorry for being late.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/35-0
+00:03:34.147 --> 00:03:34.547
+<v Ivaylo Petrov>Eric.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/34-0
+00:03:34.307 --> 00:03:34.467
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/36-0
+00:03:36.267 --> 00:03:36.747
+<v Matthias Max>Mhm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/38-0
+00:03:38.627 --> 00:03:39.987
+<v Matthias Max>Oh, you're just right, Max.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/39-0
+00:03:40.307 --> 00:03:40.947
+<v Maximilian Kehder>Yes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/41-0
+00:03:41.587 --> 00:03:45.627
+<v Matthias Max>Oh, I am too sorry. Me too, me too.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/42-0
+00:03:48.147 --> 00:03:48.707
+<v Matthias Max>Good.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/43-0
+00:03:51.667 --> 00:03:56.867
+<v Matthias Max>So the topics are just these two I posted
+or is there anything else?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/45-0
+00:03:57.547 --> 00:04:00.147
+<v Maximilian Kehder>Currently, no, let's just start with them.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/44-0
+00:03:58.227 --> 00:03:58.547
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/46-0
+00:04:00.947 --> 00:04:01.427
+<v Matthias Max>Mhm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/47-0
+00:04:03.667 --> 00:04:05.747
+<v Matthias Max>Good, and I had probably...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/48-0
+00:04:07.507 --> 00:04:08.947
+<v Matthias Max>Start sharing.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/49-0
+00:04:12.067 --> 00:04:12.227
+<v Matthias Max>Oh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/50-0
+00:04:21.987 --> 00:04:25.869
+<v Matthias Max>I think we should start with the
+front-end side of things to make the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/50-1
+00:04:25.869 --> 00:04:26.867
+<v Matthias Max>requirement clear.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/51-0
+00:04:28.467 --> 00:04:30.307
+<v Matthias Max>Maybe I can make this bigger.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/52-0
+00:04:33.187 --> 00:04:33.747
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/53-0
+00:04:35.587 --> 00:04:36.667
+<v Matthias Max>So, we are in the...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/54-0
+00:04:39.067 --> 00:04:39.267
+<v Matthias Max>Um...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/55-0
+00:04:40.947 --> 00:04:42.147
+<v Matthias Max>In this story.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/56-0
+00:04:43.307 --> 00:04:45.587
+<v Matthias Max>to give some context quickly.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/57-0
+00:04:48.267 --> 00:04:52.307
+<v Matthias Max>Transactional behavior between Team as
+New Dispo, long running topic.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/58-0
+00:04:53.747 --> 00:04:54.307
+<v Matthias Max>On.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/60-0
+00:04:56.307 --> 00:05:03.992
+<v Matthias Max>We are very far progressed, I would say,
+with a lot of development already done in</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/60-1
+00:05:03.992 --> 00:05:10.103
+<v Matthias Max>the back end and so on.
+So now we are at a state where the bridge</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/60-2
+00:05:10.103 --> 00:05:14.547
+<v Matthias Max>between actual back end behaviour and
+front end</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/59-0
+00:05:10.947 --> 00:05:11.267
+<v Maximilian Kehder>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/61-0
+00:05:16.467 --> 00:05:18.787
+<v Matthias Max>UX was not closed yet.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/62-0
+00:05:19.827 --> 00:05:23.861
+<v Matthias Max>If you looked at this PBI yesterday,
+I think there were only,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/62-1
+00:05:23.861 --> 00:05:25.747
+<v Matthias Max>there was one sentence in it.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/63-0
+00:05:26.987 --> 00:05:29.507
+<v Matthias Max>Together with Max and public.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/64-0
+00:05:30.387 --> 00:05:34.307
+<v Matthias Max>We refined it now,
+we prepared it regarding the actual need.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/65-0
+00:05:35.347 --> 00:05:37.427
+<v Matthias Max>And that is now written down here.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/66-0
+00:05:38.787 --> 00:05:42.915
+<v Matthias Max>So,
+we are talking about several levels of</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/66-1
+00:05:42.915 --> 00:05:48.387
+<v Matthias Max>communication that we want to establish,
+depending on...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/67-0
+00:05:49.987 --> 00:05:56.233
+<v Matthias Max>based on the outcome of the
+synchronization effort or resolving</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/67-1
+00:05:56.233 --> 00:05:58.867
+<v Matthias Max>success of the seven flows.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/68-0
+00:06:00.467 --> 00:06:05.987
+<v Matthias Max>I think the seven flows are clear by now.
+Do we have to go into them again?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/69-0
+00:06:07.147 --> 00:06:10.467
+<v Matthias Max>Because they are also listed here.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/70-0
+00:06:11.987 --> 00:06:15.148
+<v Matthias Max>So,
+four of them are about creating and</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/70-1
+00:06:15.148 --> 00:06:18.783
+<v Matthias Max>assigning,
+two of them are about unassigning,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/70-2
+00:06:18.783 --> 00:06:23.051
+<v Matthias Max>and the last one is deleting the
+transport order. So,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/70-3
+00:06:23.051 --> 00:06:24.947
+<v Matthias Max>this is the goal to have</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/71-0
+00:06:27.107 --> 00:06:33.709
+<v Matthias Max>Yeah, toasts appear.
+It's really about toasts on certain</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/71-1
+00:06:33.709 --> 00:06:39.267
+<v Matthias Max>situations based on the rules defined
+here. And</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/72-0
+00:06:40.427 --> 00:06:41.907
+<v Matthias Max>And that's the front-end story.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/73-0
+00:06:44.787 --> 00:06:46.947
+<v Matthias Max>We have an accompanying.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/74-0
+00:06:48.147 --> 00:06:52.547
+<v Matthias Max>Beck and story,
+which was also still empty.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/75-0
+00:06:53.827 --> 00:06:57.587
+<v Matthias Max>As of yesterday, and now has content.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/76-0
+00:06:59.107 --> 00:07:04.742
+<v Matthias Max>It literally describes what the backend
+must provide to make these toasts</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/76-1
+00:07:04.742 --> 00:07:05.427
+<v Matthias Max>possible.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/77-0
+00:07:07.027 --> 00:07:13.701
+<v Matthias Max>Also, quick spoiler at the beginning,
+we already had estimated this on a rough</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/77-1
+00:07:13.701 --> 00:07:19.699
+<v Matthias Max>level back then with 1.5. However,
+I reset this to the state to refine</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/77-2
+00:07:19.699 --> 00:07:23.585
+<v Matthias Max>because we're going to do exactly that
+today,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/77-3
+00:07:23.585 --> 00:07:28.147
+<v Matthias Max>refine it again and therefore also
+estimate it again.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/78-0
+00:07:29.347 --> 00:07:29.587
+<v Matthias Max>No.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/79-0
+00:07:30.787 --> 00:07:36.345
+<v Matthias Max>Good, so what does this PBI do?
+It does two things. One,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/79-1
+00:07:36.345 --> 00:07:40.147
+<v Matthias Max>it covers how we lock and what we lock.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/80-0
+00:07:41.347 --> 00:07:44.992
+<v Matthias Max>And second,
+it prepares the foundation for the front</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/80-1
+00:07:44.992 --> 00:07:45.267
+<v Matthias Max>end.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/81-0
+00:07:46.467 --> 00:07:47.507
+<v Matthias Max>Side of things.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/82-0
+00:07:49.987 --> 00:07:50.147
+<v Matthias Max>Mm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/83-0
+00:07:51.227 --> 00:07:56.629
+<v Matthias Max>Now my question is, how do we start?
+Do we start with the front end?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/83-1
+00:07:56.629 --> 00:08:00.387
+<v Matthias Max>Do we start with the back end?
+Do we need more?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/84-0
+00:08:01.547 --> 00:08:04.147
+<v Matthias Max>Conceptual input intro first.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/85-0
+00:08:05.387 --> 00:08:08.761
+<v Matthias Max>What's your take here?
+What are your questions?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/85-1
+00:08:08.761 --> 00:08:12.627
+<v Matthias Max>Where are your gaps when you when you
+hear about this?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/86-0
+00:08:17.427 --> 00:08:21.612
+<v Boyan Valchev>Isn't like the part of the backend,
+like most of it,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/86-1
+00:08:21.612 --> 00:08:28.085
+<v Boyan Valchev>excluding the probably the one for the
+deletion, isn't like this already covered?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/86-2
+00:08:28.085 --> 00:08:29.427
+<v Boyan Valchev>I mean, we are...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/87-0
+00:08:28.387 --> 00:08:30.627
+<v Matthias Max>Yeah, sorry.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/90-0
+00:08:31.027 --> 00:08:35.359
+<v Boyan Valchev>We are already returning, I think,
+the conflict responses, or, like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/88-0
+00:08:34.707 --> 00:08:34.827
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/90-1
+00:08:35.359 --> 00:08:39.941
+<v Boyan Valchev>in case we attempt, for example,
+on a sign of multiple, let's say, legs,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/90-2
+00:08:39.941 --> 00:08:43.394
+<v Boyan Valchev>for example,
+if we succeed with some and fail with the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/90-3
+00:08:43.394 --> 00:08:48.227
+<v Boyan Valchev>errors, we should be returning info, like,
+both for the succeeded and the...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/92-0
+00:08:51.347 --> 00:08:54.618
+<v Boyan Valchev>And also the fail ones.
+So basically this information,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/91-0
+00:08:54.067 --> 00:08:54.187
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/92-1
+00:08:54.618 --> 00:08:57.354
+<v Boyan Valchev>whether we have a conflict or not,
+like this,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/92-2
+00:08:57.354 --> 00:09:02.052
+<v Boyan Valchev>this should be already covered as like as
+part of the other PBIs which we have</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/92-3
+00:09:02.052 --> 00:09:07.107
+<v Boyan Valchev>already implemented. Like Bozhilov, Yosif,
+correct me if I'm wrong on this one, but.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/93-0
+00:09:08.187 --> 00:09:10.227
+<v Boyan Valchev>Like throwing those exceptions.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/94-0
+00:09:11.587 --> 00:09:14.867
+<v Boyan Valchev>Is already should be already like part of
+those PBIs.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/95-0
+00:09:19.587 --> 00:09:23.057
+<v Yosif Mihaylov>Yeah, like we,
+from what I seen in Bosh PRs,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/95-1
+00:09:23.057 --> 00:09:25.987
+<v Yosif Mihaylov>we do throw these conflict exceptions.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/96-0
+00:09:29.587 --> 00:09:33.046
+<v Bojidar Dimitrov>Yeah,
+just for maybe the flow with the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/96-1
+00:09:33.046 --> 00:09:37.391
+<v Bojidar Dimitrov>assigning and creating from lots, because,
+like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/96-2
+00:09:37.391 --> 00:09:44.752
+<v Bojidar Dimitrov>I believe that I discussed this with you,
+Bobby, like a while back when I started,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/96-3
+00:09:44.752 --> 00:09:48.387
+<v Bojidar Dimitrov>like, didn't we talk like when we have...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/98-0
+00:09:49.417 --> 00:09:54.615
+<v Bojidar Dimitrov>to think, like,
+if anything happens like an error,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/98-1
+00:09:54.615 --> 00:10:03.073
+<v Bojidar Dimitrov>we throw the whole operation like we end
+the whole operation. Something like that,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/98-2
+00:10:03.073 --> 00:10:05.417
+<v Bojidar Dimitrov>I believe we discussed.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/99-0
+00:10:06.017 --> 00:10:10.352
+<v Boyan Valchev>If, if it cancels the lot, then yes,
+like we don't want to assign the lot</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/99-1
+00:10:10.352 --> 00:10:10.937
+<v Boyan Valchev>partially.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/101-0
+00:10:12.217 --> 00:10:17.497
+<v Boyan Valchev>So this is why for the lot,
+if like we can't assign a single leg,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/101-1
+00:10:17.497 --> 00:10:22.057
+<v Boyan Valchev>then we should be throwing care for the
+whole operation.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/102-0
+00:10:24.617 --> 00:10:28.105
+<v Boyan Valchev>So, yeah, I mean,
+I think this should be the current</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/102-1
+00:10:28.105 --> 00:10:28.697
+<v Boyan Valchev>behavior.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/105-0
+00:10:31.337 --> 00:10:35.116
+<v Bojidar Dimitrov>I mean,
+this includes like if we have to sync one</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/105-1
+00:10:35.116 --> 00:10:38.744
+<v Bojidar Dimitrov>leg,
+then we don't assign the whole lot at all.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/103-0
+00:10:38.697 --> 00:10:39.097
+<v Boyan Valchev>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/105-2
+00:10:38.744 --> 00:10:42.069
+<v Bojidar Dimitrov>We just sync the one leg. Yeah, yeah,
+yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/105-3
+00:10:42.069 --> 00:10:47.888
+<v Bojidar Dimitrov>Just because I've made it work like that
+and you think a little bit earlier,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/105-4
+00:10:47.888 --> 00:10:50.457
+<v Bojidar Dimitrov>like we assign some legs and we...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/104-0
+00:10:50.457 --> 00:10:52.377
+<v Boyan Valchev>Yeah, but, but Bosco, this is...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/106-0
+00:10:50.937 --> 00:10:53.337
+<v Bojidar Dimitrov>Don't assign others like, uh, yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/107-0
+00:10:53.257 --> 00:10:57.177
+<v Boyan Valchev>This is when we try this for individual
+legs, right?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/109-0
+00:10:56.777 --> 00:11:00.904
+<v Bojidar Dimitrov>Ah, okay, okay, yeah, yeah,
+it works like that there. Sorry,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/109-1
+00:11:00.904 --> 00:11:04.827
+<v Bojidar Dimitrov>I misunderstood you.
+I thought you were talking about the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/109-2
+00:11:04.827 --> 00:11:05.977
+<v Bojidar Dimitrov>whole lot. Sorry.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/110-0
+00:11:04.937 --> 00:11:07.810
+<v Boyan Valchev>Yeah,
+and it mean it's the same for the signing</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/110-1
+00:11:07.810 --> 00:11:12.000
+<v Boyan Valchev>as well as general signing of legs,
+like if we succeed there or fail,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/110-2
+00:11:12.000 --> 00:11:15.471
+<v Boyan Valchev>like there should not be interdependent
+from one another,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/110-3
+00:11:15.471 --> 00:11:18.882
+<v Boyan Valchev>but when it was speaking about a lot,
+then if one fails,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/110-4
+00:11:18.882 --> 00:11:20.857
+<v Boyan Valchev>then the whole thing should fail.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/111-0
+00:11:22.697 --> 00:11:27.563
+<v Matthias Max>Yeah,
+so I think what needs to be made clear is</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/111-1
+00:11:27.563 --> 00:11:35.570
+<v Matthias Max>this is not about adding more logic or
+something like that. The logic is fine.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/111-2
+00:11:35.570 --> 00:11:42.057
+<v Matthias Max>It's just that for the UX concept that
+was picked a few things.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/113-0
+00:11:42.137 --> 00:11:49.562
+<v Matthias Max>need adjustment and maybe some things are
+even cosmetical, to be honest.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/113-1
+00:11:49.562 --> 00:11:54.240
+<v Matthias Max>But what's definitely missing is incident
+ID,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/113-2
+00:11:54.240 --> 00:12:01.257
+<v Matthias Max>something we can give the user to refer
+back to a failed resolution.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/114-0
+00:12:01.497 --> 00:12:07.078
+<v Matthias Max>That's one thing.
+Second thing is we return bare string</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/114-1
+00:12:07.078 --> 00:12:12.857
+<v Matthias Max>messages, not machine readable,
+structured logins. That's</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/115-0
+00:12:13.817 --> 00:12:20.319
+<v Matthias Max>like tackling the logging side of things
+when someone comes back to the logs from,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/115-1
+00:12:20.319 --> 00:12:24.314
+<v Matthias Max>for example,
+operation side of things and needs to</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/115-2
+00:12:24.314 --> 00:12:28.857
+<v Matthias Max>resolve the information that came along
+with the request.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/116-0
+00:12:29.897 --> 00:12:35.437
+<v Matthias Max>Then there are just separate data
+contracts, or rather error contracts,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/116-1
+00:12:35.437 --> 00:12:41.362
+<v Matthias Max>that make it currently a bit difficult
+for the front end to implement the UX</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/116-2
+00:12:41.362 --> 00:12:41.977
+<v Matthias Max>concept.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/117-0
+00:12:45.017 --> 00:12:50.937
+<v Matthias Max>And these are rather unification or
+harmonization things on the back end,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/117-1
+00:12:50.937 --> 00:12:55.657
+<v Matthias Max>on the existing back end logic,
+which is fine and correct.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/118-0
+00:12:56.777 --> 00:13:01.295
+<v Matthias Max>to be the foundation for the UX to be
+implemented.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/118-1
+00:13:01.295 --> 00:13:04.217
+<v Matthias Max>That's what this ticket is about.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/119-0
+00:13:06.617 --> 00:13:08.937
+<v Matthias Max>And it probably...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/120-0
+00:13:10.057 --> 00:13:15.535
+<v Matthias Max>Needs review from someone who worked a
+lot on the implementation of the logic of</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/120-1
+00:13:15.535 --> 00:13:16.617
+<v Matthias Max>the seven flows.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/121-0
+00:13:18.217 --> 00:13:24.294
+<v Matthias Max>Maybe it's just too narrow for a full
+refinement. I don't know.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/121-1
+00:13:24.294 --> 00:13:26.857
+<v Matthias Max>I'm just thinking out loud.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/122-0
+00:13:27.817 --> 00:13:31.337
+<v Matthias Max>We need a smaller session where we go
+through it in detail.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/123-0
+00:13:33.257 --> 00:13:33.977
+<v Matthias Max>On.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/124-0
+00:13:35.417 --> 00:13:36.537
+<v Matthias Max>That's the state here.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/125-0
+00:13:42.137 --> 00:13:45.118
+<v Matthias Max>I mean,
+who worked on that did read through it?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/125-1
+00:13:45.118 --> 00:13:46.857
+<v Matthias Max>Let's maybe start like that.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/126-0
+00:13:49.897 --> 00:13:53.795
+<v Matthias Max>Because that, I think,
+is the foundation to even discuss this</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/126-1
+00:13:53.795 --> 00:13:54.297
+<v Matthias Max>further.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/133-0
+00:14:12.377 --> 00:14:14.814
+<v Boyan Valchev>I mean,
+for unfamiliar with like what we should</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/133-1
+00:14:14.814 --> 00:14:17.097
+<v Boyan Valchev>be showing, we sync on the front end and..
+.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/134-0
+00:14:18.297 --> 00:14:21.897
+<v Boyan Valchev>Yeah, I haven't really went through this,
+like, maybe I, to be honest.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/136-0
+00:14:24.177 --> 00:14:24.937
+<v Boyan Valchev>But, like...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/135-0
+00:14:24.297 --> 00:14:24.617
+<v Matthias Max>Yep.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/137-0
+00:14:31.497 --> 00:14:36.682
+<v Matthias Max>So, I think the same, to be honest.
+It sounds like a lot,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/137-1
+00:14:36.682 --> 00:14:38.737
+<v Matthias Max>but it's really just...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/138-0
+00:14:39.857 --> 00:14:41.017
+<v Matthias Max>Paving the way.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/139-0
+00:14:42.177 --> 00:14:47.577
+<v Matthias Max>on a harmonization level for the X to be
+able to be implemented.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/140-0
+00:14:49.497 --> 00:14:49.897
+<v Boyan Valchev>Um...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/141-0
+00:14:49.577 --> 00:14:50.217
+<v Matthias Max>So.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/142-0
+00:14:52.217 --> 00:14:54.631
+<v Boyan Valchev>Sorry, uh,
+I don't want to interrupt you if you</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/142-1
+00:14:54.631 --> 00:14:55.737
+<v Boyan Valchev>should ask afterwards.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/143-0
+00:14:55.737 --> 00:14:57.017
+<v Matthias Max>No, no, all good.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/144-0
+00:14:58.137 --> 00:15:01.577
+<v Boyan Valchev>Ah, okay, about this logging, like...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/145-0
+00:15:03.257 --> 00:15:09.077
+<v Boyan Valchev>The question which pops up right now,
+and I can't see like an explicit answer</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/145-1
+00:15:09.077 --> 00:15:09.897
+<v Boyan Valchev>in the PBI.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/146-0
+00:15:11.497 --> 00:15:15.302
+<v Boyan Valchev>Which lock do we want to use?
+Do we want to use the generic lock which</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/146-1
+00:15:15.302 --> 00:15:17.017
+<v Boyan Valchev>we have, for example, for the...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/147-0
+00:15:19.177 --> 00:15:22.740
+<v Boyan Valchev>in the GCP environment right now,
+because they're like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/147-1
+00:15:22.740 --> 00:15:27.321
+<v Boyan Valchev>we have this log where pretty much
+everything which fails or everything</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/147-2
+00:15:27.321 --> 00:15:31.648
+<v Boyan Valchev>which is like, I don't know,
+in any way goes wrong is locked there.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/147-3
+00:15:31.648 --> 00:15:34.574
+<v Boyan Valchev>I mean,
+we have used these logs previously to</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/147-4
+00:15:34.574 --> 00:15:38.137
+<v Boyan Valchev>retrieve some information from them.
+The question is...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/148-0
+00:15:38.177 --> 00:15:44.772
+<v Boyan Valchev>Do we want to use this lock or we want to
+use different one just for those events</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/148-1
+00:15:44.772 --> 00:15:45.737
+<v Boyan Valchev>which occur?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/149-0
+00:15:46.857 --> 00:15:53.456
+<v Matthias Max>I expected it to be the existing one,
+no dedicated table, bucket, whatever.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/149-1
+00:15:53.456 --> 00:15:58.057
+<v Matthias Max>The standard cloud lock,
+which can then be filtered.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/150-0
+00:15:58.977 --> 00:16:00.697
+<v Matthias Max>For such incidents.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/151-0
+00:16:03.257 --> 00:16:06.057
+<v Matthias Max>Because we decided against additional
+infra.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/152-0
+00:16:08.057 --> 00:16:12.377
+<v Matthias Max>Also to keep maintenance low and have a
+minimal starting point.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/154-0
+00:16:15.657 --> 00:16:19.217
+<v Boyan Valchev>Okay,
+so like the expectation is like to filter</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/154-1
+00:16:19.217 --> 00:16:23.000
+<v Boyan Valchev>over what? Okay,
+let's say we provide an ID in the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/154-2
+00:16:23.000 --> 00:16:28.933
+<v Boyan Valchev>response messages, this would be 1 filter.
+Do we want to have something like a,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/154-3
+00:16:28.933 --> 00:16:29.897
+<v Boyan Valchev>I don't know.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/155-0
+00:16:31.177 --> 00:16:31.497
+<v Boyan Valchev>Oh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/156-0
+00:16:32.697 --> 00:16:36.377
+<v Boyan Valchev>search word which we can look only for
+those conflicts. For example,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/156-1
+00:16:36.377 --> 00:16:40.484
+<v Boyan Valchev>if we have like conflict in the message
+or something like this 409 conflict,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/156-2
+00:16:40.484 --> 00:16:41.977
+<v Boyan Valchev>so we can filter over those.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/157-0
+00:16:43.497 --> 00:16:45.177
+<v Matthias Max>I think that would make sense, yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/158-0
+00:16:47.457 --> 00:16:53.659
+<v Matthias Max>But really the use case for the go live
+is manual resolvement. So you,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/158-1
+00:16:53.659 --> 00:16:58.813
+<v Matthias Max>in the best case,
+get the ID from the user who experienced</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/158-2
+00:16:58.813 --> 00:16:59.337
+<v Matthias Max>the...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/159-0
+00:17:00.617 --> 00:17:04.937
+<v Matthias Max>Unsuccessful resolvent, you get that ID.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/160-0
+00:17:06.457 --> 00:17:11.896
+<v Matthias Max>And with that ID,
+you go into the cloud log, search for it,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/160-1
+00:17:11.896 --> 00:17:16.156
+<v Matthias Max>and there you find structured JSON
+attachment,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/160-2
+00:17:16.156 --> 00:17:22.863
+<v Matthias Max>which contains the relevant domain IDs
+like transport or ship ID, leg ID,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/160-3
+00:17:22.863 --> 00:17:24.857
+<v Matthias Max>whatever is available.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/161-0
+00:17:25.737 --> 00:17:29.417
+<v Matthias Max>That's the resolvement path.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/162-0
+00:17:30.537 --> 00:17:31.897
+<v Matthias Max>For the operations side.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/163-0
+00:17:35.097 --> 00:17:42.367
+<v Matthias Max>And that's really it, no mass resolving.
+So maybe answering that question,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/163-1
+00:17:42.367 --> 00:17:49.637
+<v Matthias Max>that search term is maybe not required
+because the ID should be unique and</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/163-2
+00:17:49.637 --> 00:17:53.417
+<v Matthias Max>result in exactly 1 matching log entry.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/164-0
+00:17:58.697 --> 00:18:01.977
+<v Boyan Valchev>Okay, another question because like...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/165-0
+00:18:03.497 --> 00:18:08.937
+<v Boyan Valchev>I don't see the designs like for the
+different error prompts which we have for</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/165-1
+00:18:08.937 --> 00:18:13.274
+<v Boyan Valchev>the front end in the PVI,
+but like Max showed to me yesterday,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/165-2
+00:18:13.274 --> 00:18:18.231
+<v Boyan Valchev>those basically like we have two
+different types of toaster messages we</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/165-3
+00:18:18.231 --> 00:18:23.051
+<v Boyan Valchev>want. The one is, let's say,
+when a conflict occurred and we resolved</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/165-4
+00:18:23.051 --> 00:18:23.257
+<v Boyan Valchev>it.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/166-0
+00:18:23.577 --> 00:18:26.693
+<v Boyan Valchev>And when the other one is like,
+if it wasn't able to resolve it,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/166-1
+00:18:26.693 --> 00:18:29.377
+<v Boyan Valchev>like if the system wasn't able to resolve
+the conflict.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/167-0
+00:18:33.897 --> 00:18:38.051
+<v Boyan Valchev>The question is, like,
+the only situation which I see, which we,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/167-1
+00:18:38.051 --> 00:18:43.482
+<v Boyan Valchev>where we can't resolve it with a repeated
+action is, at least from my point of view,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/167-2
+00:18:43.482 --> 00:18:46.549
+<v Boyan Valchev>the deletion of transport order,
+because there,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/167-3
+00:18:46.549 --> 00:18:50.766
+<v Boyan Valchev>once we delete the transport order,
+for example, something fails,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/167-4
+00:18:50.766 --> 00:18:53.577
+<v Boyan Valchev>there is no way for the user to retry
+this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/169-0
+00:18:54.537 --> 00:18:58.214
+<v Boyan Valchev>So essentially this would be the only
+location,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/169-1
+00:18:58.214 --> 00:19:04.417
+<v Boyan Valchev>the only occasion where we should show
+like the idea and saying, okay, we can't,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/169-2
+00:19:04.417 --> 00:19:08.247
+<v Boyan Valchev>we can't,
+the result is just go and contact port.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/169-3
+00:19:08.247 --> 00:19:11.617
+<v Boyan Valchev>Is this correct assumption?
+Or for example,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/169-4
+00:19:11.617 --> 00:19:14.297
+<v Boyan Valchev>like we want also to show the same.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/170-0
+00:19:15.097 --> 00:19:18.975
+<v Boyan Valchev>The message, if we attempt to try,
+if we attempt to sync,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/170-1
+00:19:18.975 --> 00:19:22.920
+<v Boyan Valchev>so not to retrieve the sync,
+and it fails for some reason,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/170-2
+00:19:22.920 --> 00:19:27.467
+<v Boyan Valchev>because there is a difference between
+both cases with the deletion,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/170-3
+00:19:27.467 --> 00:19:30.877
+<v Boyan Valchev>you can't repeat the situation. Well,
+for example,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/170-4
+00:19:30.877 --> 00:19:33.417
+<v Boyan Valchev>if a synchronization fails for a sign.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/171-0
+00:19:34.617 --> 00:19:38.307
+<v Boyan Valchev>Then, for example,
+the user can retry this after sometime</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/171-1
+00:19:38.307 --> 00:19:42.377
+<v Boyan Valchev>just by trying to assign the same, like,
+let's say, once again.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/172-0
+00:19:43.497 --> 00:19:47.962
+<v Boyan Valchev>So like those are different occasions.
+The question is how do we want to handle</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/172-1
+00:19:47.962 --> 00:19:48.297
+<v Boyan Valchev>those?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/174-0
+00:19:52.297 --> 00:19:58.185
+<v Matthias Max>For the deletion of transport orders,
+we should be able to show an error</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/174-1
+00:19:58.185 --> 00:20:02.137
+<v Matthias Max>because we have the state still in the
+back end.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/175-0
+00:20:03.217 --> 00:20:07.899
+<v Matthias Max>For example,
+if we couldn't write to the cloud SQL or</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/175-1
+00:20:07.899 --> 00:20:13.882
+<v Matthias Max>something like that, we still,
+we know that and can inform the user,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/175-2
+00:20:13.882 --> 00:20:19.517
+<v Matthias Max>including an incident ID,
+which then leads to the related domain</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/175-3
+00:20:19.517 --> 00:20:20.297
+<v Matthias Max>entities.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/176-0
+00:20:21.457 --> 00:20:23.417
+<v Matthias Max>Like, transport already in that case.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/177-0
+00:20:24.537 --> 00:20:25.897
+<v Matthias Max>So this can be...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/178-0
+00:20:27.817 --> 00:20:29.417
+<v Matthias Max>We are returned to the front-end.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/179-0
+00:20:31.257 --> 00:20:33.832
+<v Yosif Mihaylov>Sorry,
+how exactly do you imagine this incident</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/179-1
+00:20:33.832 --> 00:20:35.977
+<v Yosif Mihaylov>ID to be correlated with these entities?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/180-0
+00:20:37.177 --> 00:20:43.497
+<v Matthias Max>The incident ID is literally something we
+create on an unresolved state.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/181-0
+00:20:45.657 --> 00:20:46.377
+<v Matthias Max>And.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/186-0
+00:20:47.337 --> 00:20:53.653
+<v Matthias Max>that bring it into the logging message
+somewhere and in a string or in a</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/183-0
+00:20:52.857 --> 00:20:53.257
+<v Yosif Mihaylov>Eight.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/186-1
+00:20:53.653 --> 00:20:58.671
+<v Matthias Max>structured output JSON.
+And what we also put there is the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/186-2
+00:20:58.671 --> 00:21:03.516
+<v Matthias Max>transport order ID, shipment IDs,
+whatever IDs we have.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/184-0
+00:21:02.097 --> 00:21:02.697
+<v Yosif Mihaylov>No problem.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/186-3
+00:21:03.516 --> 00:21:06.457
+<v Matthias Max>So they form a little object that.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/188-0
+00:21:06.097 --> 00:21:09.417
+<v Yosif Mihaylov>Yeah,
+but how this is the TDD will be used?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/187-0
+00:21:06.657 --> 00:21:07.017
+<v Matthias Max>Oops.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/189-0
+00:21:11.177 --> 00:21:15.779
+<v Matthias Max>It's being,
+it's in the error response to the front</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/189-1
+00:21:15.779 --> 00:21:19.761
+<v Matthias Max>end.
+So the front end can show that incident</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/189-2
+00:21:19.761 --> 00:21:21.177
+<v Matthias Max>ID in the toast.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/190-0
+00:21:22.937 --> 00:21:28.537
+<v Matthias Max>And the user will then be able to copy it
+from there, or screenshot it, or whatever.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/192-0
+00:21:29.577 --> 00:21:34.857
+<v Matthias Max>so that anyone from operations trying to
+resolve this has an entry point.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/191-0
+00:21:30.537 --> 00:21:30.857
+<v Yosif Mihaylov>Oh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/193-0
+00:21:36.017 --> 00:21:37.097
+<v Matthias Max>To this exact.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/194-0
+00:21:39.417 --> 00:21:40.457
+<v Matthias Max>Uh, issue.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/196-0
+00:21:41.017 --> 00:21:42.217
+<v Yosif Mihaylov>Just to find the book.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/195-0
+00:21:41.417 --> 00:21:41.737
+<v Matthias Max>Yep.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/197-0
+00:21:43.337 --> 00:21:44.697
+<v Matthias Max>Just to find the lock, yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/198-0
+00:21:45.177 --> 00:21:45.657
+<v Yosif Mihaylov>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/199-0
+00:21:47.177 --> 00:21:47.817
+<v Matthias Max>Correct.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/200-0
+00:21:50.937 --> 00:21:55.771
+<v Yosif Mihaylov>It's just that this incident ID,
+like we won't be able, for example,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/200-1
+00:21:55.771 --> 00:22:00.255
+<v Yosif Mihaylov>if we have another issue with the same
+transport order and leg,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/200-2
+00:22:00.255 --> 00:22:03.337
+<v Yosif Mihaylov>we won't be able to correlate to this
+same.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/201-0
+00:22:05.257 --> 00:22:05.337
+<v Yosif Mihaylov>Ahh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/202-0
+00:22:06.857 --> 00:22:11.391
+<v Yosif Mihaylov>To the same ID, that won't be possible,
+just just so so we are clear on that,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/202-1
+00:22:11.391 --> 00:22:14.937
+<v Yosif Mihaylov>because we don't start,
+we don't save this context anywhere.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/204-0
+00:22:16.297 --> 00:22:21.442
+<v Yosif Mihaylov>This incident ID will be unique every
+time when there is a conflict,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/204-1
+00:22:21.442 --> 00:22:26.586
+<v Yosif Mihaylov>no matter if we if the conflict is
+related with the exactly the same</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/204-2
+00:22:26.586 --> 00:22:27.257
+<v Yosif Mihaylov>entities.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/203-0
+00:22:27.657 --> 00:22:28.217
+<v Matthias Max>Mhm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/205-0
+00:22:29.657 --> 00:22:33.532
+<v Matthias Max>That's true.
+And it's maybe also fine like that</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/205-1
+00:22:33.532 --> 00:22:38.537
+<v Matthias Max>because it represents the actual try and
+the actual requests.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/206-0
+00:22:41.257 --> 00:22:45.097
+<v Matthias Max>These are separate requests,
+so they get separate incident IDs.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/209-0
+00:22:45.817 --> 00:22:50.214
+<v Yosif Mihaylov>And also, like,
+we should be aware that there will be</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/209-1
+00:22:50.214 --> 00:22:56.971
+<v Yosif Mihaylov>these rare occasions where something will
+fail and we won't be able either to like</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/209-2
+00:22:56.971 --> 00:23:02.915
+<v Yosif Mihaylov>return incident ID nor to work.
+That would happen if for some reason the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/209-3
+00:23:02.915 --> 00:23:04.217
+<v Yosif Mihaylov>backend crashes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/207-0
+00:23:04.777 --> 00:23:05.417
+<v Matthias Max>True.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/210-0
+00:23:06.857 --> 00:23:08.697
+<v Matthias Max>That's a good point.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/211-0
+00:23:09.337 --> 00:23:10.537
+<v Yosif Mihaylov>That's a match case.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/212-0
+00:23:11.017 --> 00:23:16.297
+<v Matthias Max>Yeah, that's really an edge case then now.
+I think it should be mentioned at least.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/213-0
+00:23:17.937 --> 00:23:20.057
+<v Matthias Max>So that public knows.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/214-0
+00:23:21.177 --> 00:23:23.177
+<v Matthias Max>But what can we do in that case?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/215-0
+00:23:25.417 --> 00:23:25.897
+<v Matthias Max>And...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/217-0
+00:23:28.217 --> 00:23:29.817
+<v Matthias Max>You would need to...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/218-0
+00:23:31.417 --> 00:23:35.417
+<v Matthias Max>Trace that back manually anyway through
+cloud logs.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/219-0
+00:23:37.057 --> 00:23:38.377
+<v Matthias Max>In an investigation.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/220-0
+00:23:47.657 --> 00:23:49.577
+<v Matthias Max>I would scope that out for now.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/221-0
+00:23:50.777 --> 00:23:51.657
+<v Yosif Mihaylov>Yeah, I think...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/222-0
+00:23:53.017 --> 00:23:55.097
+<v Yosif Mihaylov>We can live with this one, to be honest.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/223-0
+00:23:56.057 --> 00:24:00.457
+<v Matthias Max>Yeah, we have to get started.
+I think it's important to have this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/224-0
+00:24:01.657 --> 00:24:06.925
+<v Matthias Max>The concept understood end to end.
+What do we want to achieve in the front</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/224-1
+00:24:06.925 --> 00:24:10.788
+<v Matthias Max>end and why?
+What does the back end have to deliver to</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/224-2
+00:24:10.788 --> 00:24:16.407
+<v Matthias Max>cover the front end needs and the logging
+needs an operations team member would</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/224-3
+00:24:16.407 --> 00:24:19.497
+<v Matthias Max>have?
+That's important for today's session.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/225-0
+00:24:20.577 --> 00:24:20.857
+<v Matthias Max>And.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/227-0
+00:24:21.497 --> 00:24:25.854
+<v Yosif Mihaylov>So to sum up what is needed, like,
+you know, these hand works,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/227-1
+00:24:25.854 --> 00:24:29.726
+<v Yosif Mihaylov>we need to start working,
+not only throwing exceptions.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/227-2
+00:24:29.726 --> 00:24:34.013
+<v Yosif Mihaylov>I think we do not work right now.
+Maybe we can, when working,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/227-3
+00:24:34.013 --> 00:24:39.337
+<v Yosif Mihaylov>we can come up with this template so that
+the works are like easy to filter.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/229-0
+00:24:39.737 --> 00:24:44.255
+<v Yosif Mihaylov>For example, start with the work,
+something like transaction issue or</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/229-1
+00:24:44.255 --> 00:24:49.419
+<v Yosif Mihaylov>unable to sync or something like that,
+then add the incident ID to this work as</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/229-2
+00:24:49.419 --> 00:24:54.647
+<v Yosif Mihaylov>part of the work, add all the relevant,
+the rest of the relevant data as part of</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/228-0
+00:24:49.577 --> 00:24:49.857
+<v Matthias Max>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/229-3
+00:24:54.647 --> 00:24:58.777
+<v Yosif Mihaylov>the work, like the leg ID,
+the transport ID, and then whatever.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/230-0
+00:24:58.857 --> 00:25:03.737
+<v Yosif Mihaylov>The other thing what we need to do is add
+this incident ID to the response.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/231-0
+00:25:04.777 --> 00:25:06.137
+<v Matthias Max>Correct, yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/233-0
+00:25:04.937 --> 00:25:09.596
+<v Yosif Mihaylov>And actually, it should be, it should be,
+we already not much there,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/233-1
+00:25:09.596 --> 00:25:14.457
+<v Yosif Mihaylov>just added to the message error message
+that we are already retrieving.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/232-0
+00:25:15.257 --> 00:25:15.457
+<v Matthias Max>Uh-huh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/234-0
+00:25:15.737 --> 00:25:16.537
+<v Yosif Mihaylov>Uh, return.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/235-0
+00:25:18.137 --> 00:25:18.457
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/236-0
+00:25:22.697 --> 00:25:26.601
+<v Boyan Valchev>Yeah, I mean, I normally like from GCP,
+like in Cloud Run,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/236-1
+00:25:26.601 --> 00:25:31.167
+<v Boyan Valchev>when we throw an exception,
+it's automatically logged inside the bug</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/236-2
+00:25:31.167 --> 00:25:34.079
+<v Boyan Valchev>with a trace after it. So, I mean,
+however,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/236-3
+00:25:34.079 --> 00:25:38.975
+<v Boyan Valchev>I see why it would be useful just to log
+some additional context as well,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/236-4
+00:25:38.975 --> 00:25:40.497
+<v Boyan Valchev>not only the exception.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/237-0
+00:25:43.017 --> 00:25:48.368
+<v Boyan Valchev>This is the first thing. I mean, yeah,
+probably additional works would be a good</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/237-1
+00:25:48.368 --> 00:25:51.538
+<v Boyan Valchev>idea.
+Template is also something we need to add</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/237-2
+00:25:51.538 --> 00:25:55.370
+<v Boyan Valchev>as part probably of this PBI.
+The question here is, like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/237-3
+00:25:55.370 --> 00:25:58.937
+<v Boyan Valchev>which I have is about the incident ID,
+because, like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/237-4
+00:25:58.937 --> 00:26:04.287
+<v Boyan Valchev>when we discussed it initially with Max,
+I was under the impression that we need</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/237-5
+00:26:04.287 --> 00:26:04.617
+<v Boyan Valchev>to...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/239-0
+00:26:04.777 --> 00:26:08.401
+<v Boyan Valchev>lock,
+we need to showcase the actual lock entry</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/239-1
+00:26:08.401 --> 00:26:12.703
+<v Boyan Valchev>ID and not generate the custom like ID
+for the incident.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/239-2
+00:26:12.703 --> 00:26:17.006
+<v Boyan Valchev>So which one of those two?
+Because there might be a way,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/239-3
+00:26:17.006 --> 00:26:21.837
+<v Boyan Valchev>I'm not sure of this,
+but there might be a way to get the entry</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/239-4
+00:26:21.837 --> 00:26:23.497
+<v Boyan Valchev>ID of the lock we are.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/241-0
+00:26:24.777 --> 00:26:29.897
+<v Boyan Valchev>we are logging inside the GCP.
+There might be a way to do this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/241-1
+00:26:29.897 --> 00:26:34.617
+<v Boyan Valchev>The question is,
+do we want to attempt this or generate an</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/240-0
+00:26:32.337 --> 00:26:32.697
+<v Matthias Max>Uh-huh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/241-2
+00:26:34.617 --> 00:26:35.577
+<v Boyan Valchev>incident ID?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/243-0
+00:26:36.137 --> 00:26:39.868
+<v Matthias Max>But literally,
+this is I tried to cover this here</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/243-1
+00:26:39.868 --> 00:26:43.897
+<v Matthias Max>because I knew we there's probably a
+native solution.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/244-0
+00:26:45.017 --> 00:26:45.657
+<v Matthias Max>Um...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/245-0
+00:26:47.337 --> 00:26:50.421
+<v Matthias Max>Absolutely.
+No need to invent something when there's</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/245-1
+00:26:50.421 --> 00:26:54.086
+<v Matthias Max>already an identifier.
+I don't know if that's the correct one.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/245-2
+00:26:54.086 --> 00:26:56.297
+<v Matthias Max>Maybe I should make this a bit more...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/246-0
+00:26:57.457 --> 00:27:01.017
+<v Matthias Max>How can I edit this more open?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/247-0
+00:27:03.497 --> 00:27:04.617
+<v Matthias Max>Something like...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/248-0
+00:27:12.617 --> 00:27:13.737
+<v Matthias Max>Something like that.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/249-0
+00:27:16.297 --> 00:27:19.800
+<v Matthias Max>It's just that we need any kind of
+identifier.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/249-1
+00:27:19.800 --> 00:27:25.688
+<v Matthias Max>It doesn't matter if it's an existing one
+from the stack that's already there,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/249-2
+00:27:25.688 --> 00:27:30.457
+<v Matthias Max>or if we need to create a UUA ID or
+whatever type of unique ID.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/250-0
+00:27:37.657 --> 00:27:42.587
+<v Yosif Mihaylov>Now, like, and to be honest,
+I'm pretty sure that, like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/250-1
+00:27:42.587 --> 00:27:47.948
+<v Yosif Mihaylov>it won't be trivial to retrieve this ID
+of the work. Usually,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/250-2
+00:27:47.948 --> 00:27:52.272
+<v Yosif Mihaylov>usually how this happens is the other way
+around.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/250-3
+00:27:52.272 --> 00:27:55.817
+<v Yosif Mihaylov>You generate the work ID and you pass it.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/251-0
+00:27:56.857 --> 00:28:00.836
+<v Yosif Mihaylov>To the work that you are writing,
+and it's being used,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/251-1
+00:28:00.836 --> 00:28:05.321
+<v Yosif Mihaylov>but one thing that we can we should keep
+in mind is this IDs,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/251-2
+00:28:05.321 --> 00:28:11.036
+<v Yosif Mihaylov>either this incident IDs, trace IDs,
+or whatever, they are not human readable,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/251-3
+00:28:11.036 --> 00:28:15.449
+<v Yosif Mihaylov>like they are not,
+they are not like 56 integer or something</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/251-4
+00:28:15.449 --> 00:28:17.257
+<v Yosif Mihaylov>like that, and we cannot.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/252-0
+00:28:18.057 --> 00:28:23.890
+<v Yosif Mihaylov>We cannot right now implement something
+like that because it's not trivial.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/252-1
+00:28:23.890 --> 00:28:29.340
+<v Yosif Mihaylov>The easiest thing what we can do is
+generate some new ID and use that.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/252-2
+00:28:29.340 --> 00:28:33.177
+<v Yosif Mihaylov>But yeah, that won't be very convenient,
+I guess.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/253-0
+00:28:37.257 --> 00:28:41.969
+<v Matthias Max>Absolutely. I mean,
+that's a question to Max maybe,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/253-1
+00:28:41.969 --> 00:28:46.137
+<v Matthias Max>and then to Patrick,
+how nerdy can the ID be?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/254-0
+00:28:48.137 --> 00:28:55.817
+<v Matthias Max>Is it necessary to simplify it or is even
+32 characters of strange characters fine?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/257-0
+00:29:05.657 --> 00:29:08.457
+<v Maximilian Kehder>Sorry, 32 characters of strings.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/259-0
+00:29:09.657 --> 00:29:14.788
+<v Matthias Max>It's just an example. I just made that up.
+I don't know how it looks,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/258-0
+00:29:09.737 --> 00:29:10.697
+<v Maximilian Kehder>Is this the limit?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/259-1
+00:29:14.788 --> 00:29:18.159
+<v Matthias Max>but is that an issue?
+Could that be an issue?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/259-2
+00:29:18.159 --> 00:29:21.017
+<v Matthias Max>That's the question, if it's very long.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/261-0
+00:29:24.217 --> 00:29:26.217
+<v Maximilian Kehder>I mean, if it's a very long message.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/260-0
+00:29:24.697 --> 00:29:25.057
+<v Matthias Max>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/263-0
+00:29:28.057 --> 00:29:33.100
+<v Yosif Mihaylov>No, not very long message, Max.
+This is about this incident ID that the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/262-0
+00:29:32.857 --> 00:29:33.177
+<v Maximilian Kehder>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/263-1
+00:29:33.100 --> 00:29:36.672
+<v Yosif Mihaylov>user will use snapshot or whatever and
+provide it.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/263-2
+00:29:36.672 --> 00:29:41.785
+<v Yosif Mihaylov>The problem is that it is not easy to
+provide human readable ID. I mean,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/263-3
+00:29:41.785 --> 00:29:45.497
+<v Yosif Mihaylov>it will take effort and I think it will
+get complex.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/265-0
+00:29:44.297 --> 00:29:48.468
+<v Maximilian Kehder>But we're not talking about a human
+readable ID.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/264-0
+00:29:47.777 --> 00:29:48.617
+<v Yosif Mihaylov>Yeah, Beck.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/265-1
+00:29:48.468 --> 00:29:54.937
+<v Maximilian Kehder>We're just talking about the basically
+the 10 character string combination.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/266-0
+00:29:52.537 --> 00:29:57.257
+<v Yosif Mihaylov>Yeah, that's what I'm saying,
+but that's what we can do easily.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/268-0
+00:29:57.177 --> 00:30:01.142
+<v Maximilian Kehder>Yeah, this is all good. Like basically,
+if you go, Matthias,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/268-1
+00:30:01.142 --> 00:30:05.497
+<v Maximilian Kehder>if you could open the GCP logs,
+do you have it open at some point?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/269-0
+00:30:06.937 --> 00:30:11.474
+<v Matthias Max>In a different window, yeah,
+but I just pasted an example in the chat.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/269-1
+00:30:11.474 --> 00:30:15.500
+<v Matthias Max>It's actually 32 hexa,
+which makes it completely random if you</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/269-2
+00:30:15.500 --> 00:30:17.097
+<v Matthias Max>want to look at the chat.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/270-0
+00:30:27.257 --> 00:30:27.577
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/271-0
+00:30:27.657 --> 00:30:29.257
+<v Maximilian Kehder>This is not what we expect.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/272-0
+00:30:29.417 --> 00:30:32.986
+<v Matthias Max>Also,
+it doesn't get more beautiful when you</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/272-1
+00:30:32.986 --> 00:30:38.377
+<v Matthias Max>make it artificially 6 in pictures or
+whatever. It's still cryptic.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/274-0
+00:30:39.377 --> 00:30:43.657
+<v Matthias Max>And we plan a copy-paste button there.
+Is it mentioned in the front end?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/273-0
+00:30:39.497 --> 00:30:39.897
+<v Maximilian Kehder>Yep.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/275-0
+00:30:44.937 --> 00:30:45.577
+<v Maximilian Kehder>Should be.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/277-0
+00:30:45.657 --> 00:30:45.737
+<v Matthias Max>Um...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/278-0
+00:30:47.497 --> 00:30:48.857
+<v Matthias Max>Play the song.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/279-0
+00:30:50.377 --> 00:30:55.097
+<v Matthias Max>I think a lot of is covered in the AC,
+to be honest.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/280-0
+00:30:56.217 --> 00:30:58.257
+<v Matthias Max>Copy, paste button, yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/281-0
+00:31:00.297 --> 00:31:05.818
+<v Matthias Max>So you will not read this at all.
+You will not write it down.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/281-1
+00:31:05.818 --> 00:31:10.537
+<v Matthias Max>You just click the button and it's in the
+clipboard.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/282-0
+00:31:16.857 --> 00:31:17.417
+<v Matthias Max>No.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/284-0
+00:31:19.097 --> 00:31:23.097
+<v Maximilian Kehder>So this is 100% acceptable that we don't
+have a humanly readable.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/283-0
+00:31:19.577 --> 00:31:19.977
+<v Matthias Max>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/285-0
+00:31:25.897 --> 00:31:26.297
+<v Maximilian Kehder>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/286-0
+00:31:27.817 --> 00:31:31.562
+<v Maximilian Kehder>Lock ID. I mean, it's an ID,
+it's an identifier,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/286-1
+00:31:31.562 --> 00:31:37.675
+<v Maximilian Kehder>and it should not have the basically the
+bonus of being self-explanatory to the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/286-2
+00:31:37.675 --> 00:31:38.057
+<v Maximilian Kehder>user.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/287-0
+00:31:40.377 --> 00:31:40.857
+<v Yosif Mihaylov>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/288-0
+00:31:45.897 --> 00:31:47.817
+<v Matthias Max>Sure, so that answers.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/290-0
+00:31:49.097 --> 00:31:51.337
+<v Matthias Max>Questions regarding ID.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/289-0
+00:31:51.337 --> 00:31:51.577
+<v Yosif Mihaylov>What?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/291-0
+00:31:52.417 --> 00:31:58.537
+<v Matthias Max>I think structured locking is also
+important. Maybe I can add that image.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/292-0
+00:31:59.417 --> 00:32:01.817
+<v Matthias Max>To the as a comment.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/293-0
+00:32:03.217 --> 00:32:06.777
+<v Matthias Max>So, it's clear what's meant here, uh,
+this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/294-0
+00:32:06.137 --> 00:32:10.710
+<v Yosif Mihaylov>I saw somewhere, sorry,
+that the front end, I mean, it flashed,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/294-1
+00:32:10.710 --> 00:32:16.497
+<v Yosif Mihaylov>that the front end decides what's the
+severity. Have you discussed that? I mean,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/294-2
+00:32:16.497 --> 00:32:19.497
+<v Yosif Mihaylov>I saw it now when you were changing the...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/295-0
+00:32:21.777 --> 00:32:22.217
+<v Matthias Max>Uh-huh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/297-0
+00:32:23.577 --> 00:32:25.177
+<v Yosif Mihaylov>Can you go back to that?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/296-0
+00:32:23.737 --> 00:32:24.137
+<v Matthias Max>That's.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/298-0
+00:32:25.737 --> 00:32:26.857
+<v Matthias Max>Good point there.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/299-0
+00:32:30.377 --> 00:32:31.137
+<v Matthias Max>That's.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/300-0
+00:32:33.337 --> 00:32:34.217
+<v Matthias Max>The the the.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/301-0
+00:32:33.817 --> 00:32:38.446
+<v Boyan Valchev>So, this is, this is why I asked, because,
+like, I saw that, like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/301-1
+00:32:38.446 --> 00:32:44.041
+<v Boyan Valchev>there are two types of messages inside
+the Figma, which Max showed me yesterday.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/301-2
+00:32:44.041 --> 00:32:47.564
+<v Boyan Valchev>Basically,
+one of them is for unrecoverable error,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/301-3
+00:32:47.564 --> 00:32:52.537
+<v Boyan Valchev>the other one is that, for example, we,
+I think we did synchronization.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/303-0
+00:32:53.097 --> 00:32:57.533
+<v Boyan Valchev>The missing part is like what happens,
+for example,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/303-1
+00:32:57.533 --> 00:33:02.054
+<v Boyan Valchev>if we attempt a synchronization and
+something fails.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/303-2
+00:33:02.054 --> 00:33:08.537
+<v Boyan Valchev>Do we treat this as unrecoverable error
+or we have a third state somewhere?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/304-0
+00:33:09.097 --> 00:33:15.797
+<v Matthias Max>I think that's the non-resolvable.
+We detect as out of sync state,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/304-1
+00:33:15.797 --> 00:33:20.297
+<v Matthias Max>we cannot recover.
+So it is non-recoverable.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/305-0
+00:33:21.897 --> 00:33:23.257
+<v Matthias Max>And that should be.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/306-0
+00:33:25.737 --> 00:33:26.777
+<v Matthias Max>Should be red.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/307-0
+00:33:29.337 --> 00:33:33.523
+<v Yosif Mihaylov>And what exactly does it even mean
+non-recoverable?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/307-1
+00:33:33.523 --> 00:33:39.319
+<v Yosif Mihaylov>Because this in theory could end up being
+recovered on some next retry.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/307-2
+00:33:39.319 --> 00:33:42.377
+<v Yosif Mihaylov>So why we classify as non-recoverable?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/308-0
+00:33:42.697 --> 00:33:47.362
+<v Matthias Max>I mean,
+it was not recoverable in that one</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/308-1
+00:33:47.362 --> 00:33:54.087
+<v Matthias Max>request the user did,
+including our three retries, of course.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/308-2
+00:33:54.087 --> 00:33:55.497
+<v Matthias Max>And for that,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/309-0
+00:33:56.617 --> 00:34:00.717
+<v Matthias Max>That process is done.
+That request is done and it was not</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/309-1
+00:34:00.717 --> 00:34:03.897
+<v Matthias Max>recoverable, not resolvable, which means..
+.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/310-0
+00:34:04.937 --> 00:34:11.536
+<v Matthias Max>It is unresolved and will stay like that.
+So he gets the red arrow and the ID to</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/310-1
+00:34:11.536 --> 00:34:16.669
+<v Matthias Max>give it to operations.
+If he goes ahead and tries again and it</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/310-2
+00:34:16.669 --> 00:34:22.697
+<v Matthias Max>succeeds, that's a new iteration.
+Then it will show green and he's happy.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/312-0
+00:34:27.937 --> 00:34:31.666
+<v Matthias Max>But that's the manual nature of what
+we're building here,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/312-1
+00:34:31.666 --> 00:34:33.337
+<v Matthias Max>really the manual minimal.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/311-0
+00:34:32.297 --> 00:34:32.537
+<v Yosif Mihaylov>One.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/313-0
+00:34:34.697 --> 00:34:37.177
+<v Matthias Max>version of this behavior.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/314-0
+00:34:46.617 --> 00:34:53.577
+<v Matthias Max>So maybe it helps to go through the
+actual states that can be that can happen.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/315-0
+00:34:53.697 --> 00:34:57.845
+<v Yosif Mihaylov>But PDS,
+because the syncing process happens on,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/315-1
+00:34:57.845 --> 00:35:01.822
+<v Yosif Mihaylov>like,
+the next attempt after the issue already</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/315-2
+00:35:01.822 --> 00:35:06.477
+<v Yosif Mihaylov>occurred, right?
+Because right now we attempt to sync,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/315-3
+00:35:06.477 --> 00:35:13.417
+<v Yosif Mihaylov>let's say we try to initially assign a
+leg, it fails, we returned that it failed.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/316-0
+00:35:14.297 --> 00:35:17.774
+<v Yosif Mihaylov>But like we retry obviously these two or
+three times,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/316-1
+00:35:17.774 --> 00:35:22.217
+<v Yosif Mihaylov>but the syncing process happens actually
+on the next attempt, right?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/318-0
+00:35:25.017 --> 00:35:30.419
+<v Matthias Max>We have an initial state check.
+Maybe someone who implemented that can</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/318-1
+00:35:30.419 --> 00:35:34.451
+<v Matthias Max>explain it in code terms.
+But the first thing we do,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/317-0
+00:35:32.857 --> 00:35:32.897
+<v Maximilian Kehder>I.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/318-2
+00:35:34.451 --> 00:35:37.417
+<v Matthias Max>or maybe where do we have this diagram?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/319-0
+00:35:37.697 --> 00:35:40.835
+<v Yosif Mihaylov>But in the initial step,
+in the example I gave,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/319-1
+00:35:40.835 --> 00:35:44.103
+<v Yosif Mihaylov>like in the beginning,
+everything was fine. Like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/319-2
+00:35:44.103 --> 00:35:45.737
+<v Yosif Mihaylov>we tried to assign a leg.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/320-0
+00:35:46.617 --> 00:35:47.257
+<v Yosif Mihaylov>Like...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/322-0
+00:35:48.257 --> 00:35:53.459
+<v Yosif Mihaylov>The first time we tried to assign, like,
+we, we it succeeds in TMS,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/322-1
+00:35:53.459 --> 00:35:59.119
+<v Yosif Mihaylov>but then it fails in new Dispo,
+like we will try like two or three times,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/321-0
+00:35:59.097 --> 00:35:59.577
+<v Matthias Max>Mmh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/322-2
+00:35:59.119 --> 00:36:03.173
+<v Yosif Mihaylov>and then we fail.
+There is no syncing process there.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/322-3
+00:36:03.173 --> 00:36:08.297
+<v Yosif Mihaylov>The syncing process happens on the next
+interaction with this leg.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/323-0
+00:36:08.977 --> 00:36:13.017
+<v Matthias Max>Ah, I see where you're coming from.
+So yes, this is...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/324-0
+00:36:15.017 --> 00:36:20.306
+<v Matthias Max>Correct, because in the initial one,
+we didn't try to fix it. It just,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/324-1
+00:36:20.306 --> 00:36:23.657
+<v Matthias Max>the fail just happened,
+to put it like that.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/325-0
+00:36:24.777 --> 00:36:25.417
+<v Yosif Mihaylov>Exactly.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/326-0
+00:36:25.737 --> 00:36:26.217
+<v Matthias Max>Yeah, yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/327-0
+00:36:28.977 --> 00:36:34.152
+<v Matthias Max>And we, what we talk here,
+what we talk about here is the second</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/327-1
+00:36:34.152 --> 00:36:37.177
+<v Matthias Max>tries whenever a conflict is detected.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/328-0
+00:36:38.777 --> 00:36:42.907
+<v Matthias Max>Before,
+because this is the additional sync point</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/328-1
+00:36:42.907 --> 00:36:47.367
+<v Matthias Max>that we now have,
+we first check for inconsistencies,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/328-2
+00:36:47.367 --> 00:36:53.148
+<v Matthias Max>and there we find out that we have them,
+and then we try to fix them.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/328-3
+00:36:53.148 --> 00:36:59.177
+<v Matthias Max>If they can be fixed, all good. If not,
+we have a non-recoverable state.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/329-0
+00:37:02.377 --> 00:37:03.257
+<v Matthias Max>That's the flow.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/330-0
+00:37:05.897 --> 00:37:07.257
+<v Matthias Max>And the check.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/331-0
+00:37:08.137 --> 00:37:13.040
+<v Matthias Max>On a clean, like, let's put,
+let's take a leg that was never put on a</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/331-1
+00:37:13.040 --> 00:37:16.963
+<v Matthias Max>new transport order.
+This will have a green flag on the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/331-2
+00:37:16.963 --> 00:37:21.795
+<v Matthias Max>checkpoint and we will just move on with
+the usual flow, happy path,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/331-3
+00:37:21.795 --> 00:37:25.017
+<v Matthias Max>create transport order, assign the leg,
+done.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/332-0
+00:37:26.937 --> 00:37:33.366
+<v Matthias Max>If that lag has already been tried before,
+a checkpoint will show that,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/332-1
+00:37:33.366 --> 00:37:37.919
+<v Matthias Max>bring that up.
+Then we run into the resolving mode</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/332-2
+00:37:37.919 --> 00:37:43.097
+<v Matthias Max>instead of the happy path.
+And if that fails, we get red.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/333-0
+00:37:45.257 --> 00:37:49.593
+<v Matthias Max>If it succeeds,
+we have orange because we tell the user,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/333-1
+00:37:49.593 --> 00:37:49.897
+<v Matthias Max>hey.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/334-0
+00:37:50.857 --> 00:37:54.537
+<v Matthias Max>Now everything is fine,
+but we had to fix a few things.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/335-0
+00:37:55.497 --> 00:37:58.057
+<v Matthias Max>And green is literally only the happy
+case.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/336-0
+00:38:00.897 --> 00:38:03.337
+<v Matthias Max>When there were no issues, Greenfield.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/337-0
+00:38:07.537 --> 00:38:08.937
+<v Matthias Max>Does that make sense?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/338-0
+00:38:10.217 --> 00:38:10.617
+<v Matthias Max>Ohh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/339-0
+00:38:17.977 --> 00:38:26.733
+<v Matthias Max>So maybe to someone who worked on that,
+on these seven flows, how does that sound?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/339-1
+00:38:26.733 --> 00:38:27.577
+<v Matthias Max>Is it...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/340-0
+00:38:30.177 --> 00:38:34.457
+<v Matthias Max>Understandable. Does it make sense?
+What gaps do you see?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/342-0
+00:38:35.817 --> 00:38:40.937
+<v Matthias Max>How much effort is it? Is it?
+Are we 90% done or not?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/341-0
+00:38:38.537 --> 00:38:39.417
+<v Boyan Valchev>The Gap.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/343-0
+00:38:42.857 --> 00:38:47.348
+<v Boyan Valchev>The gap which I see is that I don't,
+we don't have design, for example,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/343-1
+00:38:47.348 --> 00:38:50.903
+<v Boyan Valchev>for multiple entities,
+because those dialogues which you</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/343-2
+00:38:50.903 --> 00:38:54.146
+<v Boyan Valchev>showcased me yesterday,
+they cover a single entity.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/343-3
+00:38:54.146 --> 00:38:58.387
+<v Boyan Valchev>So what happens, for example,
+because I can assign, let's unassign,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/343-4
+00:38:58.387 --> 00:39:01.817
+<v Boyan Valchev>not assign,
+but I can unassign more than a single leg.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/344-0
+00:39:02.297 --> 00:39:07.577
+<v Boyan Valchev>More than a single lot I can assign,
+can assign combination of legs and lots.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/345-0
+00:39:08.617 --> 00:39:13.744
+<v Boyan Valchev>So how are we supposed to showcase this
+to the user? For example,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/345-1
+00:39:13.744 --> 00:39:19.104
+<v Boyan Valchev>let's say if the operation returns
+conflicts and for two out of five</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/345-2
+00:39:19.104 --> 00:39:23.842
+<v Boyan Valchev>entities, for example,
+and let's say there could be one more</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/345-3
+00:39:23.842 --> 00:39:27.337
+<v Boyan Valchev>edge cases, for example, we were able to..
+.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/346-0
+00:39:27.497 --> 00:39:30.142
+<v Boyan Valchev>resolve the conflict successfully for one
+of them,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/346-1
+00:39:30.142 --> 00:39:33.097
+<v Boyan Valchev>but we weren't able to resolve it for the
+other one. So.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/347-0
+00:39:34.137 --> 00:39:36.297
+<v Boyan Valchev>How should this be showcased to the user?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/348-0
+00:39:38.697 --> 00:39:40.537
+<v Yosif Mihaylov>Sorry, can you repeat this, Boyan?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/349-0
+00:39:41.257 --> 00:39:46.226
+<v Boyan Valchev>From the from the UI,
+from the like from the drive instruction</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/349-1
+00:39:46.226 --> 00:39:49.380
+<v Boyan Valchev>slider,
+we have the ability to assign a</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/349-2
+00:39:49.380 --> 00:39:52.377
+<v Boyan Valchev>combination of multiple lots and legs.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/350-0
+00:39:53.497 --> 00:39:57.177
+<v Boyan Valchev>We execute this as part of the same
+operation, basically, on assign.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/351-0
+00:39:58.217 --> 00:40:03.570
+<v Boyan Valchev>And what is like not covered in any of
+the designs or anything is how are we</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/351-1
+00:40:03.570 --> 00:40:08.992
+<v Boyan Valchev>going to showcase this like that feedback,
+user feedback for the for multiple</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/351-2
+00:40:08.992 --> 00:40:13.371
+<v Boyan Valchev>entities. For example,
+let's say I have three lots and outside</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/351-3
+00:40:13.371 --> 00:40:18.097
+<v Boyan Valchev>of those three lots I try to unassign
+also three legs individually.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/352-0
+00:40:18.777 --> 00:40:23.317
+<v Boyan Valchev>What happens, for example,
+if the operation fails for one lot and</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/352-1
+00:40:23.317 --> 00:40:26.274
+<v Boyan Valchev>one leg,
+and let's say that we resolve the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/352-2
+00:40:26.274 --> 00:40:30.195
+<v Boyan Valchev>conflict for the leg,
+but we are not able to resolve the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/352-3
+00:40:30.195 --> 00:40:33.977
+<v Boyan Valchev>conflict for the lot. I mean,
+how do we showcase this?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/354-0
+00:40:34.377 --> 00:40:37.264
+<v Yosif Mihaylov>I mean,
+each operation there has separate</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/354-1
+00:40:37.264 --> 00:40:42.832
+<v Yosif Mihaylov>response. Obviously, for each operation,
+we will be returning the response being</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/354-2
+00:40:42.832 --> 00:40:48.193
+<v Yosif Mihaylov>that success or conflict or whatever.
+The only question is in terms of in the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/354-3
+00:40:48.193 --> 00:40:53.898
+<v Yosif Mihaylov>UI, let's say if we have two conflicts,
+let's say that we attempted 10 operations,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/353-0
+00:40:49.417 --> 00:40:49.817
+<v Boyan Valchev>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/354-4
+00:40:53.898 --> 00:40:56.097
+<v Yosif Mihaylov>like assign, unassign, whatever.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/356-0
+00:40:56.217 --> 00:41:00.505
+<v Yosif Mihaylov>Out of them, 8 succeeded,
+two has some errors, issues, conflicts,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/356-1
+00:41:00.505 --> 00:41:04.337
+<v Yosif Mihaylov>syncing, whatever.
+We just need to find a way to show this</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/356-2
+00:41:04.337 --> 00:41:09.274
+<v Yosif Mihaylov>information. Currently, currently,
+like we should be already covering this,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/356-3
+00:41:09.274 --> 00:41:13.236
+<v Yosif Mihaylov>I think, for some part.
+What happens with the current design</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/356-4
+00:41:13.236 --> 00:41:16.679
+<v Yosif Mihaylov>right now,
+if we have more than one issues from this</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/356-5
+00:41:16.679 --> 00:41:19.017
+<v Yosif Mihaylov>record, are we showing them stacked?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/358-0
+00:41:19.737 --> 00:41:25.772
+<v Boyan Valchev>No, right now, right now, if, for example,
+the unassign fails for one of four or two</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/357-0
+00:41:19.817 --> 00:41:21.577
+<v Yosif Mihaylov>or what exactly?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/358-1
+00:41:25.772 --> 00:41:31.664
+<v Boyan Valchev>or four entities we're trying to unassign,
+we just show a dialogue saying that the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/358-2
+00:41:31.664 --> 00:41:35.497
+<v Boyan Valchev>unassign was successful for two out of
+four entities.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/359-0
+00:41:37.017 --> 00:41:38.697
+<v Boyan Valchev>Basically, this is what we do right now.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/360-0
+00:41:37.417 --> 00:41:41.577
+<v Yosif Mihaylov>And we, we don't show the,
+we don't show the actual errors issues.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/361-0
+00:41:41.097 --> 00:41:41.497
+<v Boyan Valchev>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/363-0
+00:41:45.337 --> 00:41:49.205
+<v Boyan Valchev>I mean, those are locked as exceptions,
+like, and the user, like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/363-1
+00:41:49.205 --> 00:41:53.601
+<v Boyan Valchev>they are returning the response from the
+query, but, but like, we are not,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/363-2
+00:41:53.601 --> 00:41:55.417
+<v Boyan Valchev>we are not showcasing the user.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/364-0
+00:41:56.937 --> 00:42:01.695
+<v Boyan Valchev>But like if we want to handle conflicts
+or anything, I mean,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/364-1
+00:42:01.695 --> 00:42:06.297
+<v Boyan Valchev>we should come up with a way where we
+could potentially...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/365-0
+00:42:09.977 --> 00:42:14.151
+<v Boyan Valchev>Like either show once again,
+like the operation was successful,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/365-1
+00:42:14.151 --> 00:42:15.977
+<v Boyan Valchev>was successful for N out of.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/366-0
+00:42:17.177 --> 00:42:21.598
+<v Boyan Valchev>Hicks entities, but for example, there,
+I mean, I'm not sure how exactly,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/366-1
+00:42:21.598 --> 00:42:24.525
+<v Boyan Valchev>but they should be able to get more
+details, or,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/366-2
+00:42:24.525 --> 00:42:29.124
+<v Boyan Valchev>or we like show individual information
+for each of the entities for which we</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/366-3
+00:42:29.124 --> 00:42:30.617
+<v Boyan Valchev>attempted this operation.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/367-0
+00:42:31.657 --> 00:42:35.215
+<v Boyan Valchev>But yeah,
+and also like something we need to</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/367-1
+00:42:35.215 --> 00:42:40.115
+<v Boyan Valchev>consider as well is the time that this
+toaster message stays.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/367-2
+00:42:40.115 --> 00:42:46.202
+<v Boyan Valchev>Because if I have 10 entities and I show
+the toaster message for, let's say,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/367-3
+00:42:46.202 --> 00:42:49.838
+<v Boyan Valchev>3 seconds,
+user won't be able to get whatever</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/367-4
+00:42:49.838 --> 00:42:51.577
+<v Boyan Valchev>information they want.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/368-0
+00:42:52.377 --> 00:42:55.122
+<v Boyan Valchev>So,
+this is those those are all all topics</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/368-1
+00:42:55.122 --> 00:43:00.037
+<v Boyan Valchev>which which needs to be discussed,
+and because today I started just thinking</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/368-2
+00:43:00.037 --> 00:43:03.803
+<v Boyan Valchev>about how are we going to implement this
+on the front end,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/368-3
+00:43:03.803 --> 00:43:07.889
+<v Boyan Valchev>like having in mind the design which
+Mehmet provided yesterday,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/368-4
+00:43:07.889 --> 00:43:10.697
+<v Boyan Valchev>but this design is severely like,
+it's not.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/369-0
+00:43:11.137 --> 00:43:13.097
+<v Boyan Valchev>What we need, we need more information.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/370-0
+00:43:13.497 --> 00:43:18.198
+<v Matthias Max>But isn't this covered here? I mean,
+we talk about a single toast,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/370-1
+00:43:18.198 --> 00:43:22.337
+<v Matthias Max>even if multiple entities are affected,
+like here we have.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/371-0
+00:43:21.737 --> 00:43:25.670
+<v Boyan Valchev>Yeah, but, Marković,
+what if there is a recoverable error</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/371-1
+00:43:25.670 --> 00:43:28.992
+<v Boyan Valchev>there?
+How the user would know which incident ID</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/371-2
+00:43:28.992 --> 00:43:29.737
+<v Boyan Valchev>to provide?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/372-0
+00:43:30.457 --> 00:43:37.817
+<v Matthias Max>It's just always just one incident ID per
+toast and usually one toast per action.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/374-0
+00:43:38.777 --> 00:43:39.977
+<v Boyan Valchev>Oh, this is not the case.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/373-0
+00:43:39.177 --> 00:43:39.417
+<v Matthias Max>But.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/375-0
+00:43:41.097 --> 00:43:42.457
+<v Matthias Max>Why, with you?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/376-0
+00:43:42.137 --> 00:43:47.264
+<v Boyan Valchev>Because each operation is a different
+attempt to do something with three decent</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/376-1
+00:43:47.264 --> 00:43:50.725
+<v Boyan Valchev>transaction,
+but like each attempt to do something is</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/376-2
+00:43:50.725 --> 00:43:53.737
+<v Boyan Valchev>like an individual entry,
+individual incident.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/378-0
+00:43:54.697 --> 00:43:59.337
+<v Matthias Max>But the flows are the iterations, like...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/377-0
+00:43:54.937 --> 00:43:55.577
+<v Boyan Valchev>We are not.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/380-0
+00:44:00.297 --> 00:44:05.337
+<v Matthias Max>Adding a leg to a new T.O.
+would create maximum one toast.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/381-0
+00:44:06.777 --> 00:44:10.697
+<v Matthias Max>Adding a lot to an existing TO,
+maximum 1 toast.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/383-0
+00:44:11.257 --> 00:44:15.737
+<v Boyan Valchev>Okay, but what about the other side then?
+The other side is in... Sorry?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/382-0
+00:44:13.577 --> 00:44:14.377
+<v Matthias Max>Awesome.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/385-0
+00:44:16.137 --> 00:44:19.517
+<v Matthias Max>Also,
+one toast a leg and a sign is 1 toast,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/384-0
+00:44:17.657 --> 00:44:17.977
+<v Boyan Valchev>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/385-1
+00:44:19.517 --> 00:44:19.817
+<v Matthias Max>Max.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/386-0
+00:44:21.017 --> 00:44:24.777
+<v Matthias Max>The toast shows,
+it disappears if it's green.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/387-0
+00:44:25.897 --> 00:44:28.057
+<v Matthias Max>If it's orange or red, it stays.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/388-0
+00:44:29.097 --> 00:44:33.454
+<v Matthias Max>Of course, if he moves on,
+although there is errors,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/388-1
+00:44:33.454 --> 00:44:35.097
+<v Matthias Max>he needs to approve.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/389-0
+00:44:36.537 --> 00:44:37.737
+<v Matthias Max>They will stack up.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/391-0
+00:44:39.857 --> 00:44:44.584
+<v Matthias Max>But will he do that?
+I don't think he will just continue and</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/390-0
+00:44:40.217 --> 00:44:40.497
+<v Boyan Valchev>Ye.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/391-1
+00:44:44.584 --> 00:44:48.457
+<v Matthias Max>have 8 or 10 or whatever amount of toast
+stacked.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/392-0
+00:44:49.857 --> 00:44:53.497
+<v Matthias Max>But the seven flows are each one toast.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/393-0
+00:44:55.017 --> 00:44:58.842
+<v Matthias Max>And in the best case,
+green ones which disappear after X</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/393-1
+00:44:58.842 --> 00:45:03.337
+<v Matthias Max>seconds, which is default timing.
+I don't know what the timing is.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/395-0
+00:45:06.857 --> 00:45:10.433
+<v Boyan Valchev>Is this what they want?
+Because like currently for the other</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/394-0
+00:45:07.257 --> 00:45:07.337
+<v Matthias Max>It.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/395-1
+00:45:10.433 --> 00:45:13.306
+<v Boyan Valchev>signing,
+we show one toaster for the whole group</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/395-2
+00:45:13.306 --> 00:45:18.113
+<v Boyan Valchev>of operations the user tries to execute.
+We don't show individual toast messages.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/395-3
+00:45:18.113 --> 00:45:21.337
+<v Boyan Valchev>And this is a requirement we hear from
+their side. So.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/396-0
+00:45:21.497 --> 00:45:26.727
+<v Maximilian Kehder>Yeah, but we're now getting, like,
+we're not talking about the conflicts</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/396-1
+00:45:26.727 --> 00:45:30.954
+<v Maximilian Kehder>when basically the TMS database is just
+throwing an error.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/396-2
+00:45:30.954 --> 00:45:35.897
+<v Maximilian Kehder>We're talking about the, the,
+our databases are getting out of sync.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/397-0
+00:45:41.897 --> 00:45:46.377
+<v Matthias Max>Yeah, I think that's the differentiation.
+It's literally always second tries.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/399-0
+00:45:45.097 --> 00:45:49.576
+<v Maximilian Kehder>It's, we don't, yeah,
+we don't want to replace the error flow</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/398-0
+00:45:48.697 --> 00:45:48.937
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/399-1
+00:45:49.576 --> 00:45:53.911
+<v Maximilian Kehder>we have right now,
+but basically just advance it with, hey,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/399-2
+00:45:53.911 --> 00:45:58.896
+<v Maximilian Kehder>we got a new type of error,
+and this is not just a TMSB saying, hey,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/399-3
+00:45:58.896 --> 00:46:03.014
+<v Maximilian Kehder>I'm not reachable.
+It's more like our database is out of</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/399-4
+00:46:03.014 --> 00:46:06.409
+<v Maximilian Kehder>sync. All right,
+we try to resolve this issue,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/399-5
+00:46:06.409 --> 00:46:08.937
+<v Maximilian Kehder>and if it is resolvable, all right.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/400-0
+00:46:09.097 --> 00:46:13.230
+<v Maximilian Kehder>perfect if it is not resolvable,
+like we're just talking about the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/400-1
+00:46:13.230 --> 00:46:14.217
+<v Maximilian Kehder>synchronization.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/401-0
+00:46:17.017 --> 00:46:19.097
+<v Maximilian Kehder>Getting everything in sync again.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/402-0
+00:46:18.777 --> 00:46:22.357
+<v Boyan Valchev>So what do you expect to see in the
+example I showed?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/402-1
+00:46:22.357 --> 00:46:26.599
+<v Boyan Valchev>You have your attempt on the sign of
+three lots and three legs.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/402-2
+00:46:26.599 --> 00:46:30.046
+<v Boyan Valchev>There is desynchronization for one leg
+and one lot.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/402-3
+00:46:30.046 --> 00:46:35.349
+<v Boyan Valchev>We were successfully able to sync the leg,
+but we weren't able to sync the lot.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/402-4
+00:46:35.349 --> 00:46:37.337
+<v Boyan Valchev>What should the user see then?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/403-0
+00:46:39.577 --> 00:46:43.177
+<v Matthias Max>Can you repeat what?
+What's the the main action which flow?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/406-0
+00:46:43.177 --> 00:46:47.143
+<v Boyan Valchev>We try to unassign because we have this
+option. Simultaneously,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/406-1
+00:46:47.143 --> 00:46:51.171
+<v Boyan Valchev>we tick and we try to unassign 3 legs and
+three lots. Different,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/406-2
+00:46:51.171 --> 00:46:53.897
+<v Boyan Valchev>like those legs are not part of those
+lots.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/404-0
+00:46:51.297 --> 00:46:51.657
+<v Matthias Max>Uh-huh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/408-0
+00:46:54.977 --> 00:47:01.298
+<v Boyan Valchev>And it turns out that we have a conflict
+for one lot and one leg, let's say,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/405-0
+00:46:55.017 --> 00:46:55.257
+<v Matthias Max>Uh-huh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/408-1
+00:47:01.298 --> 00:47:02.857
+<v Boyan Valchev>for example, and...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/407-0
+00:47:01.497 --> 00:47:01.897
+<v Maximilian Kehder>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/410-0
+00:47:03.057 --> 00:47:06.297
+<v Maximilian Kehder>Two different messages, that's fine. Like,
+I don't care.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/411-0
+00:47:05.297 --> 00:47:07.177
+<v Boyan Valchev>What about the successful operations?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/409-0
+00:47:05.577 --> 00:47:05.897
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/413-0
+00:47:08.137 --> 00:47:11.497
+<v Maximilian Kehder>Then the successful ones still get like a
+success message.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/414-0
+00:47:14.137 --> 00:47:14.457
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/415-0
+00:47:14.137 --> 00:47:15.257
+<v Boyan Valchev>Isn't it confusing?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/417-0
+00:47:17.497 --> 00:47:20.617
+<v Matthias Max>I mean, it sorry, Max.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/416-0
+00:47:17.737 --> 00:47:18.457
+<v Maximilian Kehder>Basically.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/418-0
+00:47:20.217 --> 00:47:25.727
+<v Maximilian Kehder>Basically, in the success message,
+we're saying, oh, three out of five,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/418-1
+00:47:25.727 --> 00:47:31.849
+<v Maximilian Kehder>or how many you meant in your example
+were successfully done. The rest did not.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/418-2
+00:47:31.849 --> 00:47:32.537
+<v Maximilian Kehder>All good.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/419-0
+00:47:33.817 --> 00:47:35.657
+<v Maximilian Kehder>And then we have two error messages.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/420-0
+00:47:37.097 --> 00:47:37.497
+<v Maximilian Kehder>Right.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/421-0
+00:47:39.177 --> 00:47:41.257
+<v Boyan Valchev>Okay, this is what we want then, okay?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/422-0
+00:47:42.457 --> 00:47:43.417
+<v Maximilian Kehder>That's bad.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/423-0
+00:47:42.697 --> 00:47:46.857
+<v Matthias Max>I mean, it really maps for me,
+it maps to the technical.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/424-0
+00:47:48.217 --> 00:47:51.691
+<v Matthias Max>This wrapper,
+but this wrapper is the flow.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/424-1
+00:47:51.691 --> 00:47:56.508
+<v Matthias Max>Create transport order from flow,
+that's the flow, from leg,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/424-2
+00:47:56.508 --> 00:48:00.297
+<v Matthias Max>that's the flow. If that succeeds, fine,
+green.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/425-0
+00:48:01.657 --> 00:48:05.897
+<v Matthias Max>No, sorry, if it can be resolved.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/426-0
+00:48:06.777 --> 00:48:07.497
+<v Matthias Max>It is.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/427-0
+00:48:09.017 --> 00:48:09.817
+<v Matthias Max>Orange.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/428-0
+00:48:10.937 --> 00:48:15.017
+<v Matthias Max>If it can't be resolved, it's red.
+That's the anchor.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/429-0
+00:48:16.297 --> 00:48:19.817
+<v Matthias Max>The disk wrapper for me is the flow
+identifier.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/430-0
+00:48:20.977 --> 00:48:25.266
+<v Matthias Max>And each disk wrapper creates a separate
+toast,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/430-1
+00:48:25.266 --> 00:48:32.057
+<v Matthias Max>because they are technically executed
+requests, which deserve a toast each.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/431-0
+00:48:34.217 --> 00:48:36.577
+<v Boyan Valchev>But this contradicts what Max just said.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/432-0
+00:48:39.337 --> 00:48:39.977
+<v Matthias Max>Uh, does it?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/434-0
+00:48:41.337 --> 00:48:42.217
+<v Matthias Max>I don't think.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/433-0
+00:48:41.577 --> 00:48:42.217
+<v Boyan Valchev>Yes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/435-0
+00:48:42.857 --> 00:48:43.817
+<v Maximilian Kehder>And can we just...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/436-0
+00:48:43.017 --> 00:48:45.737
+<v Boyan Valchev>Because, as I mentioned,
+as I mentioned here.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/437-0
+00:48:44.857 --> 00:48:49.208
+<v Maximilian Kehder>Can you make it this clear on Mariya just
+so we are on the same page and not</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/437-1
+00:48:49.208 --> 00:48:52.937
+<v Maximilian Kehder>talking and always have to think about
+what we are talking about?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/438-0
+00:48:54.937 --> 00:48:56.537
+<v Matthias Max>Myra, you mean Myro?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/439-0
+00:48:56.377 --> 00:48:57.097
+<v Maximilian Kehder>Ivaylo.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/440-0
+00:48:59.577 --> 00:49:02.577
+<v Matthias Max>Hey, we can start tomorrow, yes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/441-0
+00:49:03.897 --> 00:49:07.535
+<v Maximilian Kehder>It's just about,
+I don't want to basically go over</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/441-1
+00:49:07.535 --> 00:49:09.817
+<v Maximilian Kehder>everything and just then we see.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/442-0
+00:49:10.817 --> 00:49:11.977
+<v Maximilian Kehder>what we're deciding on.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/443-0
+00:49:14.137 --> 00:49:14.417
+<v Matthias Max>No.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/444-0
+00:49:14.777 --> 00:49:18.645
+<v Maximilian Kehder>Long story short,
+just as a reminder again,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/444-1
+00:49:18.645 --> 00:49:21.897
+<v Maximilian Kehder>they have no expectations about this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/445-0
+00:49:23.697 --> 00:49:30.201
+<v Maximilian Kehder>So the client has no idea what they want.
+We can provide what we want,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/445-1
+00:49:30.201 --> 00:49:36.063
+<v Maximilian Kehder>and then we will see after an iteration
+if this is good or not.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/445-2
+00:49:36.063 --> 00:49:43.574
+<v Maximilian Kehder>Just like the overall, what we need to do.
+I don't want to over-engineer this and</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/445-3
+00:49:43.574 --> 00:49:45.497
+<v Maximilian Kehder>make this a big fuss.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/446-0
+00:49:46.537 --> 00:49:49.577
+<v Maximilian Kehder>Because everything we're like planning in
+now.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/447-0
+00:49:51.097 --> 00:49:53.977
+<v Maximilian Kehder>could even not meet their expectation.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/449-0
+00:49:57.377 --> 00:50:01.436
+<v Matthias Max>But I think that's a bit,
+that sounds confusing if I would have</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/448-0
+00:49:57.977 --> 00:49:58.457
+<v Maximilian Kehder>So...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/449-1
+00:50:01.436 --> 00:50:06.447
+<v Matthias Max>heard it as a team member because we've
+aligned with Patrick and he has signed</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/449-2
+00:50:06.447 --> 00:50:07.017
+<v Matthias Max>that off.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/450-0
+00:50:07.657 --> 00:50:11.017
+<v Maximilian Kehder>Yes, you signed that off, but still...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/451-0
+00:50:15.657 --> 00:50:20.129
+<v Maximilian Kehder>His,
+what he wants is the only thing he wants</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/451-1
+00:50:20.129 --> 00:50:23.337
+<v Maximilian Kehder>is to get an error message and...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/452-0
+00:50:25.017 --> 00:50:27.177
+<v Maximilian Kehder>To have this copy-paste functionality.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/453-0
+00:50:28.137 --> 00:50:32.418
+<v Maximilian Kehder>But whether we show 15 toast messages or
+one,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/453-1
+00:50:32.418 --> 00:50:37.257
+<v Maximilian Kehder>have it all written up in a very clear
+tone or not.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/454-0
+00:50:38.617 --> 00:50:41.097
+<v Maximilian Kehder>He has not made any requirements.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/455-0
+00:50:43.657 --> 00:50:45.177
+<v Maximilian Kehder>This is all I want to say.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/457-0
+00:50:46.297 --> 00:50:51.880
+<v Maximilian Kehder>So whatever we're putting in now is our
+understanding on how this could be done</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/457-1
+00:50:51.880 --> 00:50:52.857
+<v Maximilian Kehder>in a good way.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/458-0
+00:50:56.137 --> 00:50:57.977
+<v Matthias Max>So, I don't know how you wanna...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/459-0
+00:51:00.377 --> 00:51:02.217
+<v Matthias Max>Visualize this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/461-0
+00:51:04.377 --> 00:51:11.577
+<v Matthias Max>For me, it's literally, you, you,
+you said, Boyan multiple actions at once.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/462-0
+00:51:13.737 --> 00:51:14.617
+<v Matthias Max>You had.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/463-0
+00:51:17.257 --> 00:51:21.417
+<v Matthias Max>Unassigned 3 legs and two locks,
+or what was it? Something like that?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/464-0
+00:51:22.617 --> 00:51:24.377
+<v Boyan Valchev>Well, yeah, I mean, for example, yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/465-0
+00:51:25.257 --> 00:51:28.457
+<v Matthias Max>Go unassigned lot.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/466-0
+00:51:31.537 --> 00:51:34.457
+<v Matthias Max>Unassigned leg three times.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/467-0
+00:51:36.457 --> 00:51:37.737
+<v Matthias Max>Anything like this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/468-0
+00:51:39.097 --> 00:51:41.017
+<v Matthias Max>And this is the one.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/469-0
+00:51:44.137 --> 00:51:45.017
+<v Matthias Max>User Actually.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/470-0
+00:51:50.137 --> 00:51:51.577
+<v Matthias Max>Something like this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/471-0
+00:51:52.857 --> 00:51:53.337
+<v Matthias Max>Right?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/472-0
+00:51:56.217 --> 00:51:56.457
+<v Matthias Max>That.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/473-0
+00:51:59.337 --> 00:51:59.817
+<v Matthias Max>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/474-0
+00:52:01.657 --> 00:52:03.257
+<v Matthias Max>Am I sharing? Yes, I am.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/475-0
+00:52:04.697 --> 00:52:05.417
+<v Matthias Max>Now.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/476-0
+00:52:07.737 --> 00:52:09.657
+<v Matthias Max>This relates to...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/477-0
+00:52:11.257 --> 00:52:16.564
+<v Matthias Max>He this blah blah blah and then what's it
+called? Unassigned lot. Oops,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/477-1
+00:52:16.564 --> 00:52:17.817
+<v Matthias Max>what's happening?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/478-0
+00:52:19.097 --> 00:52:20.537
+<v Matthias Max>Is it an assigned lot?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/479-0
+00:52:23.017 --> 00:52:24.537
+<v Matthias Max>I think something like that.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/480-0
+00:52:25.737 --> 00:52:26.137
+<v Matthias Max>Right?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/484-0
+00:52:27.017 --> 00:52:32.381
+<v Boyan Valchev>Yeah, we have different operations,
+basically for a lot or like, I mean,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/481-0
+00:52:29.537 --> 00:52:29.817
+<v Matthias Max>But.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/482-0
+00:52:32.217 --> 00:52:32.697
+<v Matthias Max>No.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/484-1
+00:52:32.381 --> 00:52:37.891
+<v Boyan Valchev>I'm not sure whether we have different
+wrappers, to be honest, in the PDs,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/484-2
+00:52:37.891 --> 00:52:42.446
+<v Boyan Valchev>since we don't have the concept of a lot
+inside the database,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/484-3
+00:52:42.446 --> 00:52:45.017
+<v Boyan Valchev>so essentially this is not correct.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/483-0
+00:52:46.857 --> 00:52:46.937
+<v Matthias Max>Ah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/486-0
+00:52:47.257 --> 00:52:50.451
+<v Boyan Valchev>Right,
+because the database does not know</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/486-1
+00:52:50.451 --> 00:52:54.177
+<v Boyan Valchev>anything about lots, per se.
+Lots are a concept.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/487-0
+00:52:53.337 --> 00:52:58.268
+<v Matthias Max>Exactly. Also,
+we don't care if the database knows.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/487-1
+00:52:58.268 --> 00:53:01.017
+<v Matthias Max>We know the backend has this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/488-0
+00:53:02.137 --> 00:53:06.857
+<v Matthias Max>Call to the bridge,
+and here we have the check.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/489-0
+00:53:08.057 --> 00:53:08.937
+<v Matthias Max>Upfront.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/490-0
+00:53:08.217 --> 00:53:11.395
+<v Boyan Valchev>No,
+it's not correct because the bridge also</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/490-1
+00:53:11.395 --> 00:53:16.831
+<v Boyan Valchev>does not know that we have lots because
+this is new display related business</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/490-2
+00:53:16.831 --> 00:53:18.737
+<v Boyan Valchev>logic and it's not correct.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/491-0
+00:53:19.337 --> 00:53:20.297
+<v Matthias Max>Mhm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/492-0
+00:53:20.377 --> 00:53:22.900
+<v Boyan Valchev>Like,
+we have a transaction on the backend,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/492-1
+00:53:22.900 --> 00:53:27.200
+<v Boyan Valchev>but all the bridge knows is that we are
+calling unassigned multiple times.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/492-2
+00:53:27.200 --> 00:53:31.672
+<v Boyan Valchev>It does not know that, for example,
+we are doing this for a lot or or or like</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/492-3
+00:53:31.672 --> 00:53:32.417
+<v Boyan Valchev>for whatever.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/493-0
+00:53:33.577 --> 00:53:41.188
+<v Matthias Max>All right, that was my mistake. Anyway,
+the relevant point is not the bridge or</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/493-1
+00:53:41.188 --> 00:53:47.657
+<v Matthias Max>database, but the back end, right?
+This is where we try to resolve.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/494-0
+00:53:54.297 --> 00:54:00.427
+<v Matthias Max>And that's our single action.
+That's the user action.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/494-1
+00:54:00.427 --> 00:54:02.697
+<v Matthias Max>And we get back one.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/495-0
+00:54:03.737 --> 00:54:04.857
+<v Matthias Max>Toast for this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/496-0
+00:54:07.657 --> 00:54:08.777
+<v Matthias Max>Maybe like that.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/497-0
+00:54:12.777 --> 00:54:13.737
+<v Matthias Max>Something like this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/498-0
+00:54:14.617 --> 00:54:16.217
+<v Matthias Max>And it's the same for the others.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/499-0
+00:54:20.697 --> 00:54:22.297
+<v Matthias Max>That's the idea, I think.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/500-0
+00:54:23.497 --> 00:54:24.777
+<v Matthias Max>All the visualization.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/501-0
+00:54:27.897 --> 00:54:29.097
+<v Matthias Max>Are you?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/502-0
+00:54:30.297 --> 00:54:32.697
+<v Matthias Max>Yeah, so get the idea.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/503-0
+00:54:34.497 --> 00:54:36.777
+<v Matthias Max>This would just be something different.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/506-0
+00:54:47.937 --> 00:54:49.177
+<v Maximilian Kehder>What does this?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/507-0
+00:54:51.257 --> 00:54:51.657
+<v Maximilian Kehder>Main.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/508-0
+00:54:52.617 --> 00:54:55.977
+<v Matthias Max>Like times X for legs.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/509-0
+00:54:58.897 --> 00:55:02.537
+<v Matthias Max>I just wanted to say that this is the
+multiple.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/510-0
+00:55:04.857 --> 00:55:08.057
+<v Matthias Max>Of this something like that,
+maybe it does make more sense.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/511-0
+00:55:10.777 --> 00:55:14.589
+<v Matthias Max>Here,
+the lot does not exist on the B level,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/511-1
+00:55:14.589 --> 00:55:19.417
+<v Matthias Max>so the backend does this logical mapping
+of lot to like.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/512-0
+00:55:21.257 --> 00:55:24.457
+<v Matthias Max>But that's anyway our.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/513-0
+00:55:25.657 --> 00:55:31.154
+<v Matthias Max>Entry point for the checking and
+resolving and deciding what the error is,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/513-1
+00:55:31.154 --> 00:55:35.697
+<v Matthias Max>or what could be resolved and what not,
+and return it to the.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/514-0
+00:55:36.937 --> 00:55:37.497
+<v Matthias Max>Front end.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/515-0
+00:55:42.017 --> 00:55:43.977
+<v Matthias Max>This is maybe the front answer.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/517-0
+00:55:46.457 --> 00:55:50.057
+<v Maximilian Kehder>Okay, so let's go easiest approach first.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/516-0
+00:55:46.857 --> 00:55:47.337
+<v Matthias Max>Yes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/518-0
+00:55:52.057 --> 00:55:54.777
+<v Maximilian Kehder>or less effort approach first.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/519-0
+00:55:56.137 --> 00:56:02.895
+<v Maximilian Kehder>If we say we send for every interaction,
+even if it's basically if we have just</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/519-1
+00:56:02.895 --> 00:56:08.217
+<v Maximilian Kehder>one interaction of the user,
+we send him multiple error cases.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/521-0
+00:56:09.377 --> 00:56:12.723
+<v Matthias Max>Next,
+quick question: There's another meeting</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/520-0
+00:56:09.897 --> 00:56:10.297
+<v Maximilian Kehder>So.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/521-1
+00:56:12.723 --> 00:56:14.177
+<v Matthias Max>with Patrick, and...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/522-0
+00:56:15.537 --> 00:56:16.137
+<v Matthias Max>Joachim.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/523-0
+00:56:18.537 --> 00:56:18.617
+<v Matthias Max>Um...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/524-0
+00:56:19.737 --> 00:56:22.012
+<v Maximilian Kehder>Yeah,
+maybe we can postpone because right now</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/524-1
+00:56:22.012 --> 00:56:22.457
+<v Maximilian Kehder>we are...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/525-0
+00:56:25.177 --> 00:56:26.617
+<v Matthias Max>I would write them quickly.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/526-0
+00:56:27.497 --> 00:56:28.537
+<v Maximilian Kehder>I can do this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/527-0
+00:56:30.137 --> 00:56:39.651
+<v Maximilian Kehder>You basically stay up here. So literally,
+or you can do it and I try to explain.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/527-1
+00:56:39.651 --> 00:56:41.177
+<v Maximilian Kehder>So literally,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/528-0
+00:56:43.097 --> 00:56:47.987
+<v Maximilian Kehder>If we just send for every request,
+so we have one action,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/528-1
+00:56:47.987 --> 00:56:50.937
+<v Maximilian Kehder>and even if multiple objects are...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/529-0
+00:56:53.377 --> 00:56:58.171
+<v Maximilian Kehder>used, we have those multiple error cases.
+And let's say, I mean,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/529-1
+00:56:58.171 --> 00:57:03.332
+<v Maximilian Kehder>this could be annoying, yes,
+but we are not building the 100% version</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/529-2
+00:57:03.332 --> 00:57:06.651
+<v Maximilian Kehder>right now.
+We're building something which is</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/529-3
+00:57:06.651 --> 00:57:10.116
+<v Maximilian Kehder>basically one part further.
+It's an increment.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/529-4
+00:57:10.116 --> 00:57:12.697
+<v Maximilian Kehder>And we're implementing the ability.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/530-0
+00:57:12.857 --> 00:57:17.275
+<v Maximilian Kehder>to see what has happened.
+And if this is becoming an issue,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/530-1
+00:57:17.275 --> 00:57:21.177
+<v Maximilian Kehder>that we have basically 15 toast messages
+stacked up.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/531-0
+00:57:24.537 --> 00:57:29.227
+<v Maximilian Kehder>Then we will might,
+then we will be able to, yeah,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/531-1
+00:57:29.227 --> 00:57:32.537
+<v Maximilian Kehder>configure this and make this better.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/532-0
+00:57:33.697 --> 00:57:36.377
+<v Maximilian Kehder>If this is needed, if not, perfect.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/533-0
+00:57:37.897 --> 00:57:42.074
+<v Maximilian Kehder>But right now,
+it seems to me that we are thinking about</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/533-1
+00:57:42.074 --> 00:57:45.737
+<v Maximilian Kehder>making this so great,
+but we don't even know how.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/534-0
+00:57:47.497 --> 00:57:49.097
+<v Maximilian Kehder>and what the user wants.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/535-0
+00:57:53.257 --> 00:57:57.382
+<v Maximilian Kehder>So my assumption would be right now,
+even if we have just one action and</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/535-1
+00:57:57.382 --> 00:57:59.981
+<v Maximilian Kehder>multiple toasts,
+we just get multiple toasts.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/535-2
+00:57:59.981 --> 00:58:01.337
+<v Maximilian Kehder>I'm all right with this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/536-0
+00:58:08.457 --> 00:58:09.977
+<v Boyan Valchev>Yeah, we have this document somewhere.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/537-0
+00:58:11.097 --> 00:58:11.737
+<v Maximilian Kehder>Yes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/542-0
+00:58:30.217 --> 00:58:33.399
+<v Boyan Valchev>And also,
+does this cover the case only where we</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/542-1
+00:58:33.399 --> 00:58:34.697
+<v Boyan Valchev>have like conflicts?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/543-0
+00:58:35.897 --> 00:58:39.337
+<v Boyan Valchev>Because this would be the new flow,
+essentially.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/545-0
+00:58:41.297 --> 00:58:42.857
+<v Maximilian Kehder>What do you mean by conflicts?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/544-0
+00:58:41.537 --> 00:58:42.217
+<v Boyan Valchev>And what?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/546-0
+00:58:44.697 --> 00:58:45.177
+<v Boyan Valchev>I mean.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/548-0
+00:58:47.737 --> 00:58:52.052
+<v Boyan Valchev>Currently, we have the flow, let's say,
+if we have this attempted for five</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/548-1
+00:58:52.052 --> 00:58:56.137
+<v Boyan Valchev>operations, we show, let's say,
+four out of five succeeded and nothing</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/548-2
+00:58:56.137 --> 00:58:58.726
+<v Boyan Valchev>more.
+Do we want to show individual messages</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/548-3
+00:58:58.726 --> 00:59:02.177
+<v Boyan Valchev>only when we have conflicts or we want to
+change the whole?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/547-0
+00:58:59.057 --> 00:58:59.417
+<v Maximilian Kehder>Mm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/550-0
+00:59:04.537 --> 00:59:08.537
+<v Maximilian Kehder>So I'm not sure if you can see it on the
+screen right now.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/549-0
+00:59:05.017 --> 00:59:06.377
+<v Boyan Valchev>Oh, think.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/552-0
+00:59:09.697 --> 00:59:12.057
+<v Boyan Valchev>I mean, Matthias is sharing currently,
+I think.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/551-0
+00:59:10.537 --> 00:59:10.617
+<v Maximilian Kehder>Uhh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/553-0
+00:59:11.977 --> 00:59:13.297
+<v Maximilian Kehder>Yeah, but yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/554-0
+00:59:16.177 --> 00:59:19.657
+<v Maximilian Kehder>So, um, I think his screen is frozen.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/555-0
+00:59:22.937 --> 00:59:25.793
+<v Maximilian Kehder>Anyhow, so you see the gray banner?
+Basically,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/555-1
+00:59:25.793 --> 00:59:27.737
+<v Maximilian Kehder>this is when we remove elements.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/556-0
+00:59:31.897 --> 00:59:32.537
+<v Maximilian Kehder>Meaning.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/557-0
+00:59:33.697 --> 00:59:36.777
+<v Maximilian Kehder>When we have three out of all right,
+what's happening now?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/558-0
+00:59:37.737 --> 00:59:43.527
+<v Maximilian Kehder>When we have three out of five elements
+removed, we show this gray thingy,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/558-1
+00:59:43.527 --> 00:59:47.927
+<v Maximilian Kehder>toast message. And additionally,
+on the right hand side,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/558-2
+00:59:47.927 --> 00:59:50.937
+<v Maximilian Kehder>basically you see the arrow going down.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/559-0
+00:59:53.897 --> 00:59:55.577
+<v Maximilian Kehder>Uh, the error goes...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/560-0
+00:59:56.657 --> 01:00:01.241
+<v Maximilian Kehder>Yeah, then back up here. Yeah, great,
+great sketch.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/560-1
+01:00:01.241 --> 01:00:06.617
+<v Maximilian Kehder>But this is basically the addition we
+have currently, right?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/561-0
+01:00:09.337 --> 01:00:12.918
+<v Boyan Valchev>Not sure whether we have a specific one
+for a shipment, but generally speaking,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/561-1
+01:00:12.918 --> 01:00:13.097
+<v Boyan Valchev>yes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/562-0
+01:00:13.337 --> 01:00:18.433
+<v Maximilian Kehder>Yes, generally speaking, yes. All right.
+So we have removed three out of five.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/562-1
+01:00:18.433 --> 01:00:23.723
+<v Maximilian Kehder>So this is the gray message. All right.
+And then we show basically the same as we</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/562-2
+01:00:23.723 --> 01:00:26.883
+<v Maximilian Kehder>had before,
+those extra messages and those other</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/562-3
+01:00:26.883 --> 01:00:27.657
+<v Maximilian Kehder>error cases.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/563-0
+01:00:35.057 --> 01:00:35.257
+<v Matthias Max>And.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/567-0
+01:00:53.817 --> 01:00:56.617
+<v Matthias Max>Oh, my, the question is, are we?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/568-0
+01:00:57.777 --> 01:01:01.177
+<v Matthias Max>With the answers provided to the
+questions.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/570-0
+01:01:02.057 --> 01:01:05.257
+<v Matthias Max>Are we moving towards a common
+understanding?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/571-0
+01:01:06.457 --> 01:01:07.657
+<v Matthias Max>Or is this still?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/572-0
+01:01:09.097 --> 01:01:09.577
+<v Matthias Max>A big.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/573-0
+01:01:11.017 --> 01:01:12.057
+<v Matthias Max>Gap.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/574-0
+01:01:14.297 --> 01:01:17.257
+<v Matthias Max>I cannot currently judge that.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/576-0
+01:01:18.857 --> 01:01:24.645
+<v Maximilian Kehder>I mean, basically, we're moving,
+we're getting closer to the release,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/575-0
+01:01:19.497 --> 01:01:19.737
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/576-1
+01:01:24.645 --> 01:01:29.358
+<v Maximilian Kehder>and I just want,
+if you have a way which is good as well</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/576-2
+01:01:29.358 --> 01:01:31.177
+<v Maximilian Kehder>and easy to implement.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/577-0
+01:01:32.137 --> 01:01:33.257
+<v Maximilian Kehder>Please bring it up right now.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/579-0
+01:01:34.457 --> 01:01:37.577
+<v Maximilian Kehder>This is for me just the simplest approach
+I can think of.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/582-0
+01:01:57.537 --> 01:01:58.137
+<v Maximilian Kehder>Hello!</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/583-0
+01:01:59.337 --> 01:01:59.657
+<v Matthias Max>Mm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/584-0
+01:02:01.257 --> 01:02:01.657
+<v Boyan Valchev>Well...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/585-0
+01:02:01.497 --> 01:02:02.617
+<v Maximilian Kehder>Can you see him? Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/586-0
+01:02:03.657 --> 01:02:04.057
+<v Maximilian Kehder>All right.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/587-0
+01:02:04.577 --> 01:02:05.097
+<v Boyan Valchev>I mean.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/589-0
+01:02:13.817 --> 01:02:19.131
+<v Bojidar Dimitrov>Just a suggestion that I think is like
+possible. Like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/588-0
+01:02:13.897 --> 01:02:15.097
+<v Boyan Valchev>Not true, yeah, sorry.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/589-1
+01:02:19.131 --> 01:02:26.666
+<v Bojidar Dimitrov>because I know we've had this like in
+previous projects and things like that,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/589-2
+01:02:26.666 --> 01:02:29.177
+<v Bojidar Dimitrov>we had something like a...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/591-0
+01:02:30.537 --> 01:02:35.539
+<v Bojidar Dimitrov>Like A pop-up window,
+a small pop-up window or something like</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/591-1
+01:02:35.539 --> 01:02:39.007
+<v Bojidar Dimitrov>that,
+that we just displayed a list of all</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/591-2
+01:02:39.007 --> 01:02:42.879
+<v Bojidar Dimitrov>errors and like successes and things like
+that,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/591-3
+01:02:42.879 --> 01:02:49.171
+<v Bojidar Dimitrov>and wouldn't this be just like a general
+solution or maybe we don't have like</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/591-4
+01:02:49.171 --> 01:02:49.897
+<v Bojidar Dimitrov>anything?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/592-0
+01:02:50.057 --> 01:02:55.097
+<v Bojidar Dimitrov>Prepared for that, and that's why, like,
+it would be hard right now to get this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/593-0
+01:02:56.617 --> 01:03:01.897
+<v Maximilian Kehder>So your idea would be to have like an
+extra pop-up for this type of error.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/594-0
+01:03:03.097 --> 01:03:07.417
+<v Bojidar Dimitrov>Well, I mean, we know, like, uh,
+things for...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/595-0
+01:03:08.297 --> 01:03:13.057
+<v Bojidar Dimitrov>For example,
+like for the situations with like the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/595-1
+01:03:13.057 --> 01:03:20.524
+<v Bojidar Dimitrov>syncing of the lot and things like that,
+because like you may need to sync more</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/595-2
+01:03:20.524 --> 01:03:27.617
+<v Bojidar Dimitrov>than one leg there, like when you throw,
+you return the error for like a...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/596-0
+01:03:28.297 --> 01:03:31.977
+<v Bojidar Dimitrov>The lot has some legs, like...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/597-0
+01:03:32.937 --> 01:03:37.994
+<v Bojidar Dimitrov>You need to show the user like which legs
+perhaps were synced,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/597-1
+01:03:37.994 --> 01:03:43.934
+<v Bojidar Dimitrov>like give a little bit more exact
+information and like an exception would</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/597-2
+01:03:43.934 --> 01:03:44.897
+<v Bojidar Dimitrov>be like a...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/598-0
+01:03:46.377 --> 01:03:50.009
+<v Bojidar Dimitrov>Too big of a message,
+like it would be a wall of text or</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/598-1
+01:03:50.009 --> 01:03:53.577
+<v Bojidar Dimitrov>something like that, for example,
+if we have a big lot.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/599-0
+01:03:54.577 --> 01:04:05.246
+<v Bojidar Dimitrov>And having something like a pop-up window
+for these situations would be like a more.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/599-1
+01:04:05.246 --> 01:04:05.497
+<v Bojidar Dimitrov>..</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/600-0
+01:04:06.657 --> 01:04:15.417
+<v Bojidar Dimitrov>Like a general situation which we can use
+to these type of actions, yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/601-0
+01:04:16.777 --> 01:04:20.650
+<v Bojidar Dimitrov>Like requests like the unassigned in this
+situation,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/601-1
+01:04:20.650 --> 01:04:26.568
+<v Bojidar Dimitrov>like both the sign and create with the
+lots and probably other few places that I</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/601-2
+01:04:26.568 --> 01:04:29.417
+<v Bojidar Dimitrov>just can't think of right now at least.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/603-0
+01:04:34.297 --> 01:04:37.977
+<v Matthias Max>Yeah, I get that,
+but aren't we discussing?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/604-0
+01:04:39.257 --> 01:04:47.060
+<v Matthias Max>Things that need follow up later, for now,
+we just have a one-to-one relationship,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/604-1
+01:04:47.060 --> 01:04:52.043
+<v Matthias Max>flow to toast.
+If it turns out we spam them with too</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/604-2
+01:04:52.043 --> 01:04:55.897
+<v Matthias Max>many toasts, we add a little unification.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/605-0
+01:04:56.697 --> 01:04:59.297
+<v Matthias Max>Task that improves this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/606-0
+01:05:05.017 --> 01:05:10.002
+<v Matthias Max>I mean, it's not even,
+we don't even know how many of these</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/606-1
+01:05:10.002 --> 01:05:13.657
+<v Matthias Max>parallel tasks someone will execute
+anyway.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/608-0
+01:05:14.137 --> 01:05:17.854
+<v Maximilian Kehder>I mean,
+removing multiple um likes and lots from</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/607-0
+01:05:15.337 --> 01:05:15.737
+<v Matthias Max>Inga.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/608-1
+01:05:17.854 --> 01:05:19.977
+<v Maximilian Kehder>a transport order is for me.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/609-0
+01:05:22.217 --> 01:05:27.497
+<v Maximilian Kehder>Could be like a daily or general thing a
+user does.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/610-0
+01:05:28.057 --> 01:05:28.297
+<v Matthias Max>Lapp.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/611-0
+01:05:28.937 --> 01:05:34.297
+<v Maximilian Kehder>And adding a lot to a transport order is
+basically the normal thing they do.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/612-0
+01:05:35.817 --> 01:05:35.937
+<v Matthias Max>Uh-huh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/613-0
+01:05:38.777 --> 01:05:42.174
+<v Matthias Max>Good,
+but then the discussion is is valuable,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/613-1
+01:05:42.174 --> 01:05:42.617
+<v Matthias Max>right?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/615-0
+01:05:46.417 --> 01:05:50.166
+<v Maximilian Kehder>It is valuable,
+like there are plenty actions which</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/615-1
+01:05:50.166 --> 01:05:53.337
+<v Maximilian Kehder>impact multiple legs, for example,
+at once.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/618-0
+01:05:59.577 --> 01:06:03.802
+<v Boyan Valchev>Yeah, also,
+also a topic which comes to my mind right</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/618-1
+01:06:03.802 --> 01:06:06.697
+<v Boyan Valchev>now is about the deletion, because...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/620-0
+01:06:07.977 --> 01:06:10.454
+<v Boyan Valchev>Like,
+there might be a bunch of words and legs.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/620-1
+01:06:10.454 --> 01:06:13.240
+<v Boyan Valchev>It's the same situation, basically,
+as then the sign,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/620-2
+01:06:13.240 --> 01:06:16.697
+<v Boyan Valchev>because when we delete the transport
+order, we want to mark those.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/621-0
+01:06:17.977 --> 01:06:22.220
+<v Boyan Valchev>Item says, like,
+unassigned on our end as well, so, like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/621-1
+01:06:22.220 --> 01:06:27.998
+<v Boyan Valchev>this a little bit contradicts with the
+flow one operation 11 toaster, because,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/621-2
+01:06:27.998 --> 01:06:31.363
+<v Boyan Valchev>like,
+there we might have one operation which</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/621-3
+01:06:31.363 --> 01:06:36.629
+<v Boyan Valchev>is actually the deleting of the transport
+order, but behind the scenes,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/621-4
+01:06:36.629 --> 01:06:38.457
+<v Boyan Valchev>we need to unassign each.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/622-0
+01:06:38.537 --> 01:06:39.257
+<v Boyan Valchev>One of the...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/623-0
+01:06:42.137 --> 01:06:43.177
+<v Boyan Valchev>Each one of the...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/624-0
+01:06:46.977 --> 01:06:49.803
+<v Boyan Valchev>Records, the legs,
+or the loads assigned to this transport</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/624-1
+01:06:49.803 --> 01:06:50.377
+<v Boyan Valchev>order, so...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/625-0
+01:06:52.137 --> 01:06:54.922
+<v Boyan Valchev>Yeah,
+it's an additional case there as well,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/625-1
+01:06:54.922 --> 01:06:55.417
+<v Boyan Valchev>I guess.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/626-0
+01:06:57.497 --> 01:07:03.097
+<v Matthias Max>But you don't want our toes for all
+affected new Dispo records.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/627-0
+01:07:04.457 --> 01:07:07.977
+<v Matthias Max>For the flow 7,
+you want one for the transport order.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/628-0
+01:07:09.977 --> 01:07:15.337
+<v Matthias Max>And only you only display the ID anyway,
+and the toast when it fails.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/629-0
+01:07:21.977 --> 01:07:29.731
+<v Matthias Max>Or did you not propose that to have one
+toast or message or whatever it is,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/629-1
+01:07:29.731 --> 01:07:33.097
+<v Matthias Max>entry per failed New Dispo entry?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/630-0
+01:07:34.257 --> 01:07:36.617
+<v Matthias Max>which could be of course many.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/631-0
+01:07:37.737 --> 01:07:40.137
+<v Matthias Max>On a transfer, all a delete action.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/632-0
+01:07:41.017 --> 01:07:45.888
+<v Boyan Valchev>I mean, if you want to support it,
+if you want to check what exactly went</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/632-1
+01:07:45.888 --> 01:07:48.849
+<v Boyan Valchev>wrong,
+if I provide you an incident ID and I</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/632-2
+01:07:48.849 --> 01:07:51.877
+<v Boyan Valchev>have,
+not sure which will be easier to debug,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/632-3
+01:07:51.877 --> 01:07:55.694
+<v Boyan Valchev>to be honest, because, like,
+we need to think here, like,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/632-4
+01:07:55.694 --> 01:07:59.577
+<v Boyan Valchev>from problem resolving,
+if such problem occurs, of course.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/634-0
+01:07:59.817 --> 01:08:03.385
+<v Boyan Valchev>point of view.
+Because like what it would be easier like</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/634-1
+01:08:03.385 --> 01:08:08.393
+<v Boyan Valchev>to have an individual incident ID for
+each record which failed to sync properly</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/634-2
+01:08:08.393 --> 01:08:13.525
+<v Boyan Valchev>or have a just a general incident ID and
+just correlated to all of the operations</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/634-3
+01:08:13.525 --> 01:08:18.220
+<v Boyan Valchev>which failed according to this in the
+same context of course because Yosif</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/633-0
+01:08:17.657 --> 01:08:17.777
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/634-4
+01:08:18.220 --> 01:08:21.537
+<v Boyan Valchev>mentioned that we can't correlate between
+different.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/635-0
+01:08:22.457 --> 01:08:25.215
+<v Boyan Valchev>Operation, but for example,
+if the delete failed,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/635-1
+01:08:25.215 --> 01:08:29.682
+<v Boyan Valchev>then you know that for this transport
+order, all of the related entities failed,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/635-2
+01:08:29.682 --> 01:08:32.826
+<v Boyan Valchev>and you can look like,
+or some of those entities failed,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/635-3
+01:08:32.826 --> 01:08:37.017
+<v Boyan Valchev>and you can look pretty much the same
+incident ID in the in the work spots.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/636-0
+01:08:40.217 --> 01:08:40.617
+<v Boyan Valchev>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/638-0
+01:08:48.897 --> 01:08:50.457
+<v Maximilian Kehder>Okay, so on and on.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/639-0
+01:08:53.097 --> 01:08:57.817
+<v Maximilian Kehder>We will be just using one toast message,
+even.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/640-0
+01:08:59.257 --> 01:09:04.697
+<v Maximilian Kehder>per not action,
+but per entity or whatever we do as now.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/641-0
+01:09:06.057 --> 01:09:08.017
+<v Maximilian Kehder>And later, have a...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/642-0
+01:09:09.177 --> 01:09:12.584
+<v Maximilian Kehder>Refactoring task or unification task,
+if needed.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/642-1
+01:09:12.584 --> 01:09:15.017
+<v Maximilian Kehder>Is this the common sense right now?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/643-0
+01:09:18.697 --> 01:09:22.846
+<v Matthias Max>I think it is,
+we still need to make sure that we talk</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/643-1
+01:09:22.846 --> 01:09:23.977
+<v Matthias Max>about the same.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/644-0
+01:09:25.577 --> 01:09:27.497
+<v Matthias Max>Source, is it?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/645-0
+01:09:28.377 --> 01:09:32.777
+<v Matthias Max>The leg in the case of lots or is it the
+lot?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/646-0
+01:09:36.097 --> 01:09:42.072
+<v Matthias Max>I think that's the last question that I'm
+still not having answered.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/646-1
+01:09:42.072 --> 01:09:43.977
+<v Matthias Max>Like here it would be.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/647-0
+01:09:45.657 --> 01:09:46.617
+<v Matthias Max>Like this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/648-0
+01:09:49.657 --> 01:09:50.697
+<v Matthias Max>Or is it this?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/650-0
+01:09:52.537 --> 01:09:58.434
+<v Matthias Max>I mean, we don't care about the database,
+in my opinion. We care about our entities,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/649-0
+01:09:53.057 --> 01:09:53.417
+<v Maximilian Kehder>Mm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/650-1
+01:09:58.434 --> 01:10:02.388
+<v Matthias Max>and that is the lot.
+Just repeating that again to have a</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/650-2
+01:10:02.388 --> 01:10:03.497
+<v Matthias Max>conscience here.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/651-0
+01:10:11.417 --> 01:10:13.817
+<v Matthias Max>Do we want this or this?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/652-0
+01:10:12.417 --> 01:10:14.217
+<v Boyan Valchev>Basically, currently.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/653-0
+01:10:13.337 --> 01:10:17.208
+<v Yosif Mihaylov>But wait, just sorry,
+sorry I was a bit distracted.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/653-1
+01:10:17.208 --> 01:10:21.897
+<v Yosif Mihaylov>Sorry to interrupt. So,
+do you understand what which is coming</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/653-2
+01:10:21.897 --> 01:10:27.480
+<v Yosif Mihaylov>like from the front end is a is a
+operation request like that we feed into</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/653-3
+01:10:27.480 --> 01:10:33.136
+<v Yosif Mihaylov>this like from drive instructions to
+either isn't this an atomic operation?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/653-4
+01:10:33.136 --> 01:10:33.657
+<v Yosif Mihaylov>I mean.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/655-0
+01:10:34.217 --> 01:10:39.625
+<v Yosif Mihaylov>It's atomic both in terms of TMS
+operations and new Dispo operations.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/655-1
+01:10:39.625 --> 01:10:45.342
+<v Yosif Mihaylov>There is no way that when we try to
+unassign the locked only we manage to</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/655-2
+01:10:45.342 --> 01:10:47.737
+<v Yosif Mihaylov>unassign only some of the legs.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/656-0
+01:10:49.977 --> 01:10:52.297
+<v Boyan Valchev>Yes, this is correct. This is correct,
+like...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/658-0
+01:10:52.697 --> 01:10:55.783
+<v Maximilian Kehder>No, no,
+we can like this is the thing we can</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/658-1
+01:10:55.783 --> 01:10:58.937
+<v Maximilian Kehder>understand 3 out of five legs or lots out
+of.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/661-0
+01:10:58.457 --> 01:11:00.997
+<v Yosif Mihaylov>Yes,
+but then these are these in terms of</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/657-0
+01:10:59.137 --> 01:10:59.257
+<v Boyan Valchev>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/661-1
+01:11:00.997 --> 01:11:05.533
+<v Yosif Mihaylov>operations are not unassigned mode,
+but they are individual unassigned leg</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/661-2
+01:11:05.533 --> 01:11:08.617
+<v Yosif Mihaylov>operations.
+Because right now here we are pointing</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/659-0
+01:11:05.577 --> 01:11:05.897
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/661-3
+01:11:08.617 --> 01:11:13.515
+<v Yosif Mihaylov>the what I see is like different tolls
+per different legs out of this unassigned</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/661-4
+01:11:13.515 --> 01:11:13.817
+<v Yosif Mihaylov>mode.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/660-0
+01:11:14.817 --> 01:11:14.857
+<v Matthias Max>Ah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/663-0
+01:11:15.617 --> 01:11:20.397
+<v Yosif Mihaylov>which is not the case.
+We can have either like as an operation</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/663-1
+01:11:20.397 --> 01:11:23.811
+<v Yosif Mihaylov>entity,
+we can either have an assigned walk,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/663-2
+01:11:23.811 --> 01:11:28.743
+<v Yosif Mihaylov>which is a one operation,
+or we can have multiple unassigned leg</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/663-3
+01:11:28.743 --> 01:11:29.577
+<v Yosif Mihaylov>operations.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/665-0
+01:11:31.577 --> 01:11:34.487
+<v Maximilian Kehder>Okay,
+and then it's good for me if we have per</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/664-0
+01:11:32.137 --> 01:11:32.377
+<v Boyan Valchev>No.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/665-1
+01:11:34.487 --> 01:11:36.777
+<v Maximilian Kehder>unassigned lot or per unassigned leg.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/667-0
+01:11:35.577 --> 01:11:41.156
+<v Yosif Mihaylov>So, when assign what all,
+it's always atomic both on the TMS and</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/667-1
+01:11:41.156 --> 01:11:45.017
+<v Yosif Mihaylov>both on on our site,
+the the assigned there.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/666-0
+01:11:42.257 --> 01:11:43.097
+<v Boyan Valchev>Yes, yes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/669-0
+01:11:44.297 --> 01:11:48.432
+<v Boyan Valchev>This is correct, this is correct.
+The only question which I had, I mean,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/669-1
+01:11:48.432 --> 01:11:51.661
+<v Boyan Valchev>we could do this,
+like we can make like individual toast</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/669-2
+01:11:51.661 --> 01:11:56.022
+<v Boyan Valchev>when you assign for assign for unassigned
+load or unassigned individual leg.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/669-3
+01:11:56.022 --> 01:11:59.704
+<v Boyan Valchev>This is something we can do.
+The question is what should happen,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/669-4
+01:11:59.704 --> 01:12:02.366
+<v Boyan Valchev>for example,
+if we delete the transport order,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/669-5
+01:12:02.366 --> 01:12:07.011
+<v Boyan Valchev>because there we execute also unassigned
+legs and unassigned loads and then stuff</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/669-6
+01:12:07.011 --> 01:12:07.577
+<v Boyan Valchev>like this.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/672-0
+01:12:08.457 --> 01:12:12.639
+<v Boyan Valchev>Because, like,
+if we stick with the concept that we have</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/672-1
+01:12:12.639 --> 01:12:18.289
+<v Boyan Valchev>one toaster message per operation,
+like the delete transport order operation</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/672-2
+01:12:18.289 --> 01:12:22.617
+<v Boyan Valchev>is also like one operation from this
+point of view, and...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/670-0
+01:12:21.897 --> 01:12:22.457
+<v Matthias Max>Mhm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/671-0
+01:12:22.697 --> 01:12:22.857
+<v Yosif Mihaylov>No.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/673-0
+01:12:23.657 --> 01:12:24.457
+<v Boyan Valchev>And the...</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/674-0
+01:12:23.897 --> 01:12:27.017
+<v Yosif Mihaylov>It's a game atomic, right?
+It's a game atomic operation.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/675-0
+01:12:26.537 --> 01:12:29.977
+<v Boyan Valchev>I'm not sure about this, to be honest.
+I mean, I'm not sure, like, okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/676-0
+01:12:28.137 --> 01:12:33.533
+<v Yosif Mihaylov>It is, it is 100% sure.
+Like when we delete the transport order,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/676-1
+01:12:33.533 --> 01:12:38.513
+<v Yosif Mihaylov>we execute the TMS call,
+then we try to start executing the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/676-2
+01:12:38.513 --> 01:12:43.410
+<v Yosif Mihaylov>unassigned operations or whatever
+operations on New Dispo,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/676-3
+01:12:43.410 --> 01:12:50.382
+<v Yosif Mihaylov>but we commit them all of them at once in
+a single transaction by calling this save</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/676-4
+01:12:50.382 --> 01:12:52.457
+<v Yosif Mihaylov>changes async in the end.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/677-0
+01:12:53.017 --> 01:12:56.420
+<v Yosif Mihaylov>It's not we we don't make them separate
+either,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/677-1
+01:12:56.420 --> 01:13:01.595
+<v Yosif Mihaylov>like when we try to to to handle this
+daily transport order in new Dispo</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/677-2
+01:13:01.595 --> 01:13:05.069
+<v Yosif Mihaylov>database,
+either we we succeed and it's all good</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/677-3
+01:13:05.069 --> 01:13:07.337
+<v Yosif Mihaylov>and all in the correct state or.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/678-0
+01:13:08.617 --> 01:13:11.737
+<v Yosif Mihaylov>Like we are not able to do anything.
+It's A transaction.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/679-0
+01:13:12.297 --> 01:13:12.777
+<v Matthias Max>Mhm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/681-0
+01:13:14.297 --> 01:13:20.094
+<v Matthias Max>Yes,
+but this is the path to the TMS database,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/681-1
+01:13:20.094 --> 01:13:23.177
+<v Matthias Max>what we define as atomic.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/682-0
+01:13:24.137 --> 01:13:26.617
+<v Matthias Max>Afterwards, it can't be.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/683-0
+01:13:25.417 --> 01:13:27.417
+<v Yosif Mihaylov>It's atomic in your Dispo as well.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/684-0
+01:13:30.057 --> 01:13:31.457
+<v Matthias Max>Okay, good. All right.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/688-0
+01:13:30.937 --> 01:13:34.099
+<v Yosif Mihaylov>They are not atomic,
+both of them together,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/688-1
+01:13:34.099 --> 01:13:39.415
+<v Yosif Mihaylov>but they are atomic individually.
+The TMS operation is atomic and the new</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/685-0
+01:13:34.537 --> 01:13:35.017
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/686-0
+01:13:36.617 --> 01:13:37.257
+<v Matthias Max>I see.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/687-0
+01:13:39.177 --> 01:13:39.577
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/688-2
+01:13:39.415 --> 01:13:42.217
+<v Yosif Mihaylov>Dispo DB operations are atomic as well.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/691-0
+01:13:42.737 --> 01:13:48.512
+<v Matthias Max>Okay, so to make it, how can we make it?
+If you have 5 legs in a lot,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/691-1
+01:13:48.512 --> 01:13:55.030
+<v Matthias Max>the five assignments in TMS are atomic
+and storing the leg lot data records in</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/691-2
+01:13:55.030 --> 01:14:00.640
+<v Matthias Max>your Dispo are also atomic,
+so you will not just have three records</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/689-0
+01:13:58.617 --> 01:13:59.137
+<v Yosif Mihaylov>Exactly.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/691-3
+01:14:00.640 --> 01:14:02.537
+<v Matthias Max>successful out of five.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/690-0
+01:14:02.137 --> 01:14:02.737
+<v Yosif Mihaylov>Exactly.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/692-0
+01:14:03.577 --> 01:14:04.297
+<v Matthias Max>Good, good, good.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/693-0
+01:14:05.657 --> 01:14:06.217
+<v Matthias Max>All right.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/694-0
+01:14:08.057 --> 01:14:12.057
+<v Matthias Max>That's fine. Still, I question the sticky.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/695-0
+01:14:13.017 --> 01:14:15.817
+<v Matthias Max>Or we need to really talk about it again.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/697-0
+01:14:17.657 --> 01:14:22.122
+<v Matthias Max>Should I put the arrow here or here?
+Because when I read the sticky,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/696-0
+01:14:20.537 --> 01:14:20.857
+<v Yosif Mihaylov>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/697-1
+01:14:22.122 --> 01:14:26.457
+<v Matthias Max>it sounds like the checkbox is here and I
+think it should be here.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/699-0
+01:14:27.097 --> 01:14:30.481
+<v Yosif Mihaylov>The only use case,
+the only use case where we have these</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/698-0
+01:14:27.657 --> 01:14:27.737
+<v Matthias Max>The.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/699-1
+01:14:30.481 --> 01:14:32.617
+<v Yosif Mihaylov>different toasts per per operations.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/700-0
+01:14:33.497 --> 01:14:38.467
+<v Yosif Mihaylov>the way I understand it,
+is in this wider for these individual</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/700-1
+01:14:38.467 --> 01:14:43.594
+<v Yosif Mihaylov>operations. The only place.
+Everywhere else I think it should be</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/700-2
+01:14:43.594 --> 01:14:44.777
+<v Yosif Mihaylov>single, single.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/701-0
+01:14:46.617 --> 01:14:49.177
+<v Yosif Mihaylov>Prompt like single, single,
+single error prompt.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/703-0
+01:14:53.577 --> 01:14:59.543
+<v Matthias Max>But isn't that the same?
+It's just a different entry point in the</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/703-1
+01:14:59.543 --> 01:15:05.417
+<v Matthias Max>UX. But it's clear what the user does.
+He either unassigns a leg</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/702-0
+01:15:01.257 --> 01:15:01.337
+<v Yosif Mihaylov>Oh.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/704-0
+01:15:06.737 --> 01:15:09.937
+<v Matthias Max>Or a lot, or remove the Transversal.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/705-0
+01:15:13.257 --> 01:15:13.737
+<v Matthias Max>P.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/707-0
+01:15:13.257 --> 01:15:18.654
+<v Yosif Mihaylov>All of these are individual operations,
+and all of these could have individual</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/706-0
+01:15:16.137 --> 01:15:16.777
+<v Matthias Max>Correct.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/707-1
+01:15:18.654 --> 01:15:19.337
+<v Yosif Mihaylov>responses.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/711-0
+01:15:19.657 --> 01:15:24.179
+<v Matthias Max>Exactly. And the lot,
+unassigned lot does not spawn 5</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/711-1
+01:15:24.179 --> 01:15:31.128
+<v Matthias Max>unassigned leg actions because that's not
+what it is. It is not 5 unassigned legs.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/708-0
+01:15:25.337 --> 01:15:25.737
+<v Yosif Mihaylov>No.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/709-0
+01:15:28.457 --> 01:15:28.857
+<v Yosif Mihaylov>No.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/711-2
+01:15:31.128 --> 01:15:33.137
+<v Matthias Max>It's one unassigned lot.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/710-0
+01:15:33.497 --> 01:15:34.057
+<v Yosif Mihaylov>Yes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/712-0
+01:15:34.457 --> 01:15:39.255
+<v Matthias Max>Good,
+because then I think this is just a bit</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/712-1
+01:15:39.255 --> 01:15:40.297
+<v Matthias Max>like once.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/713-0
+01:15:42.057 --> 01:15:44.297
+<v Matthias Max>That's the misleading part here.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/714-0
+01:15:45.657 --> 01:15:48.937
+<v Matthias Max>If I read this, I would say, aha,
+they want one.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/716-0
+01:15:50.137 --> 01:15:54.591
+<v Matthias Max>Five toes for a lot with five legs when
+understanding A lot.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/716-1
+01:15:54.591 --> 01:15:57.657
+<v Matthias Max>That's what I read when I read the sticky.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/715-0
+01:15:55.737 --> 01:15:56.137
+<v Yosif Mihaylov>No.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/717-0
+01:16:04.257 --> 01:16:05.257
+<v Matthias Max>Do we even need this?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/718-0
+01:16:04.457 --> 01:16:07.482
+<v Yosif Mihaylov>In the case where,
+let's say that we unassign a lot,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/718-1
+01:16:07.482 --> 01:16:10.849
+<v Yosif Mihaylov>we succeed in TMS,
+but we fail in New Dispo, in New Dispo,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/718-2
+01:16:10.849 --> 01:16:14.959
+<v Yosif Mihaylov>we will never have partial state,
+as we already discussed, it's atomic.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/718-3
+01:16:14.959 --> 01:16:17.698
+<v Yosif Mihaylov>In this case, for this operation,
+for the site,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/718-4
+01:16:17.698 --> 01:16:22.035
+<v Yosif Mihaylov>what we should be just saying, hey,
+like we were unable to unassign the lot</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/718-5
+01:16:22.035 --> 01:16:22.777
+<v Yosif Mihaylov>in New Dispo.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/719-0
+01:16:23.577 --> 01:16:25.977
+<v Yosif Mihaylov>with all the relevant other data.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/720-0
+01:16:26.817 --> 01:16:27.417
+<v Matthias Max>Mm-hmm.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/721-0
+01:16:32.377 --> 01:16:32.857
+<v Matthias Max>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/722-0
+01:16:32.497 --> 01:16:36.329
+<v Yosif Mihaylov>It will never be the case that only one
+leg out of this what would be unassigned</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/722-1
+01:16:36.329 --> 01:16:37.417
+<v Yosif Mihaylov>or something like that.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/723-0
+01:16:38.337 --> 01:16:38.537
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/728-0
+01:16:52.897 --> 01:16:56.617
+<v Matthias Max>I don't know how to say it,
+but that's what came to my mind.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/729-0
+01:16:57.977 --> 01:16:59.977
+<v Maximilian Kehder>By the way,
+you can remove the sticky as well.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/730-0
+01:17:01.817 --> 01:17:02.217
+<v Matthias Max>Yes.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/733-0
+01:17:12.377 --> 01:17:12.857
+<v Matthias Max>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/734-0
+01:17:14.857 --> 01:17:15.417
+<v Matthias Max>So.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/735-0
+01:17:17.697 --> 01:17:19.977
+<v Matthias Max>Where do we, where do we stand? Is that?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/736-0
+01:17:21.977 --> 01:17:29.000
+<v Matthias Max>Probably enough discussion for now and
+now give everybody time to let that sink</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/736-1
+01:17:29.000 --> 01:17:31.897
+<v Matthias Max>and talk about it again tomorrow.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/737-0
+01:17:33.257 --> 01:17:36.217
+<v Matthias Max>to come back with still open questions.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/739-0
+01:17:39.017 --> 01:17:41.832
+<v Boyan Valchev>Basically,
+I'll try to start working over this and</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/738-0
+01:17:39.497 --> 01:17:39.577
+<v Matthias Max>The.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/739-1
+01:17:41.832 --> 01:17:45.530
+<v Boyan Valchev>start just implementing this to see how
+this would look, and yeah,</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/739-2
+01:17:45.530 --> 01:17:47.737
+<v Boyan Valchev>probably we can have further discussion.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/740-0
+01:17:49.377 --> 01:17:49.657
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/741-0
+01:17:51.417 --> 01:17:51.737
+<v Matthias Max>Yeah.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/742-0
+01:17:57.657 --> 01:18:00.617
+<v Matthias Max>All right, then, Max, should we jump over?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/743-0
+01:18:03.417 --> 01:18:07.497
+<v Matthias Max>Because I had one question for Joachim,
+at least I should go there quickly.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/745-0
+01:18:09.657 --> 01:18:13.737
+<v Matthias Max>And because I think we are overtime
+anyway here, right?</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/744-0
+01:18:09.897 --> 01:18:10.937
+<v Maximilian Kehder>Yeah, sure, we can.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/746-0
+01:18:14.857 --> 01:18:16.217
+<v Maximilian Kehder>Yes, we are.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/747-0
+01:18:18.617 --> 01:18:19.097
+<v Matthias Max>Okay.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/748-0
+01:18:20.697 --> 01:18:23.337
+<v Matthias Max>Good, then we speak tomorrow.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/749-0
+01:18:25.977 --> 01:18:26.857
+<v Maximilian Kehder>Alright, bye bye.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/753-0
+01:18:27.417 --> 01:18:28.537
+<v Matthias Max>Thanks, bye.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/752-0
+01:18:27.617 --> 01:18:27.977
+<v Boyan Valchev>Thank you, bye.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/757-0
+01:18:28.617 --> 01:18:29.577
+<v Ivaylo Petrov>Thank you. Bye.</v>
+
+797044ad-5a6e-4ce5-a976-a6c9384450e0/759-0
+01:18:29.217 --> 01:18:29.737
+<v Sonja Petković>Bye.</v>

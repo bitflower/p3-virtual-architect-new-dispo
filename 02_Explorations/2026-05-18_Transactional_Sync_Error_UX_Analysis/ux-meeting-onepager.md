@@ -1,9 +1,10 @@
 # Sync Conflict UX
 
-**Date:** 2026-05-20
+**Date:** 2026-05-20 (PO Decisions) · 2026-05-21 (Team Refinement)
 **Purpose:** Align on UX behavior for sync conflicts across all 7 transactional flows
-**Audience:** Patrick, Max Kehder (POs), Matthias (facilitator)
+**Audience:** Patrick, Max Kehder (POs), Matthias (facilitator), Dev Team
 **Scope:** What the user sees, what operations sees, what we need to decide
+**Tickets:** #124105 (BE — logging + error response) · #123950 (FE — toast UX)
 
 ---
 
@@ -15,14 +16,28 @@ New Dispo and TMS are two separate systems. When a user performs a transport ord
 
 | Outcome | What Happens | User Experience |
 |---------|-------------|-----------------|
-| **Resolved conflict** | Backend detects mismatch, repairs New Dispo to match TMS, returns error | User sees a message, page refreshes with corrected data. User decides whether to repeat the action. |
+| **Resolved conflict** | Backend detects mismatch, repairs New Dispo to match TMS, returns error | User sees a message, refreshes page, re-evaluates. |
 | **Unresolved conflict** (Flow 7 only) | Backend cannot repair because the deleted TO is gone from the UI | User sees an error. Service desk must investigate and clean up manually. |
 
-**The user never needs to "fix" anything.** The repair happens inline — when the user triggers an action and a mismatch is found, the Backend corrects the local data as part of that same request. There is no background job. The user only needs to understand that the world changed and re-evaluate their next action.
+**The user never needs to "fix" anything.** The repair happens inline — the Backend corrects the local data as part of the same request. There is no background job. The user only needs to understand that the world changed and re-evaluate their next action.
+
+### Atomicity Guarantees
+
+| Scope | Atomic? |
+|-------|---------|
+| TMS operations within one flow | **Yes** |
+| New Dispo DB operations within one flow | **Yes** (single `SaveChangesAsync`) |
+| Cross-system (TMS + New Dispo together) | **No** — this is the out-of-sync case |
+
+It will **never** happen that 3 of 5 legs in a lot are unassigned in New Dispo while 2 are not. The out-of-sync state is always all-or-nothing per system.
+
+**"Non-recoverable" means per-request:** non-recoverable within this request including internal Polly retries. If the user tries again later and succeeds, that's a new iteration with a green toast.
 
 ---
 
 ## The 7 Flows at a Glance
+
+**Note:** Lot is a New Dispo Backend concept only. TMS Bridge and TMS Database have no knowledge of lots. The Backend maps lot → legs before calling TMS Bridge.
 
 ### Assign Flows (1-4): "I want to put legs/lots onto a Transport Order"
 
@@ -35,10 +50,10 @@ New Dispo and TMS are two separate systems. When a user performs a transport ord
 
 **Flow 3 has a special case:**
 
-| Sub-case | Meaning | Suggested severity |
-|----------|---------|-------------------|
-| Leg already on **this** TO | Action was already done — nothing to worry about | Low (info) |
-| Leg on a **different** TO | Real conflict — leg belongs somewhere else | Medium (warning) |
+| Sub-case | Meaning | Severity |
+|----------|---------|----------|
+| Leg already on **this** TO | Action was already done — nothing to worry about | Info (green, auto-dismiss) |
+| Leg on a **different** TO | Real conflict — leg belongs somewhere else | Warning (orange, stays) |
 
 Flow 4 has the same sub-case distinction per leg.
 
@@ -49,7 +64,7 @@ Flow 4 has the same sub-case distinction per leg.
 | 5 | **Unassign Lots** | Some legs in the lot were already removed in TMS | Error per lot: "Conflict occurred" + page refresh | Low — mostly benign, legs are already gone |
 | 6 | **Unassign Legs** | Some legs were already removed in TMS | Per-leg result: success / conflict / TMS failure | Low — already removed = effectively done |
 
-**Partial success:** Flows 5 and 6 can have mixed results — some legs removed successfully, others had conflicts. The page refreshes and shows the corrected state.
+**Partial success** applies only when individual legs are selected from the drive instructions slider — each selected leg is a separate Backend request, producing separate toasts. Lot operations are atomic: one operation = one toast. There is no per-leg partial state within a lot operation.
 
 ### Delete Flow (7): "I want to delete a Transport Order"
 
@@ -57,11 +72,11 @@ Flow 4 has the same sub-case distinction per leg.
 |---|------|-------------------|---------------------|----------|
 | 7 | **Delete TO** | If TMS deletes but local cleanup fails: orphaned data | Generic error (no specific handling yet) | **High** — user loses context, manual cleanup needed |
 
-Flow 7 is unique: the deleted TO disappears from the UI, so the user cannot retry. This is the only flow where service desk involvement is required.
+Flow 7 is unique: the deleted TO disappears from the UI, so the user cannot retry. Delete TO is one atomic operation = one toast, even though it internally unassigns all legs. This is the only flow where service desk involvement is required.
 
 ---
 
-## Decisions (PO, 2026-05-20)
+## Decisions (PO, 2026-05-20 · confirmed by team 2026-05-21)
 
 ### 1. Notification Style: 3 Severity Levels
 
@@ -75,11 +90,13 @@ Flow 7 is unique: the deleted TO disappears from the UI, so the user cannot retr
 
 Log ID is shown **only for non-resolvable issues** (error severity). Resolvable conflicts (info/warning) are logged server-side only — no ID shown to the user.
 
+Incident ID format: cryptic UUID/hex is acceptable. The Frontend provides a copy-paste button — users never need to read or type the ID. One fresh ID per request, no correlation across retries. Use existing GCP Cloud Run log for filtering — no dedicated log sink needed.
+
 ### 3. Partial Success: Summary Toast Only
 
 Single summary toast for batch operations: *"3 of 5 legs assigned. 2 had conflicts and were resolved automatically. Please refresh the page."*
 
-No per-leg detail panel.
+No per-leg detail panel. This summary applies only to the individual-leg-from-slider scenario where the Frontend fires multiple independent Backend requests. Lot operations are atomic — one operation = one toast.
 
 ### 4. Flow 7 Toast: Transparent
 
@@ -96,7 +113,35 @@ No auto-refresh. User refreshes the page manually after seeing the toast. (Overr
 
 ### 7. Message Style: Generic Template
 
-Generic template with `[action name]` slot. Not flow-specific wording.
+Generic template with `[action name]` slot. Not flow-specific wording. Action names: "assign leg", "assign lot", "create transport order", "unassign leg", "unassign lot", "delete transport order".
+
+---
+
+## Ticket Status
+
+### #124105 — [BE] Log Dispo<->TMS transactional issues and return proper response
+
+**State:** To Refine | **Effort:** 1.5 (predates scope expansion — worth re-estimating)
+
+| AC | Scope |
+|----|-------|
+| AC 1 | Incident ID in all sync conflict responses (`HttpContext.TraceIdentifier`) |
+| AC 2 | Structured sync conflict logging (incidentId, conflictType, affectedEntity, transportOrderId, actionTaken, flowName) |
+| AC 3 | Unified error response shape (replacing 3 inconsistent contracts) |
+| AC 4 | Log pairing for Flow 7 ("deletion initiated" / "deletion finished") |
+
+### #123950 — [FE] Implement Transactional Issue Communication with user
+
+**State:** To Refine | **Depends on:** #124105
+
+| AC | Scope |
+|----|-------|
+| AC 1 | Info toast — benign conflicts (green, auto-dismiss) |
+| AC 2 | Warning toast — real conflicts (orange, stays until dismissed) |
+| AC 3 | Batch summary toast (Flows 2, 4, 5, 6) |
+| AC 4 | Error toast — non-resolvable (red, Log ID + copy button) |
+| AC 5 | Same-TO vs. Different-TO distinction (Flows 3, 4) |
+| AC 6 | General behavior (manual refresh, generic template, no auto-retry) |
 
 ---
 
@@ -138,23 +183,29 @@ User deletes TO
 | Capability | Current state | Needed for Go-Live |
 |------------|--------------|-------------------|
 | Incident ID in error response | Not yet | Yes — use existing ASP.NET `TraceIdentifier` (~1 line of code) |
-| Structured conflict logging (type, entities, action taken) | Not yet | Yes — replace generic `LogError` with structured fields |
+| Structured conflict logging (type, entities, action taken) | Not yet | Yes — prefix like "transaction issue" + incident ID + entity IDs |
 | Log pairing for Flow 7 ("initiated" / "finished") | Not yet | Yes — enables proactive detection of orphaned deletions |
 | Cloud alerting on unpaired Flow 7 events | Not yet | Yes — so operations doesn't rely on user reports |
 | Recovery endpoint for orphaned assignments | Not yet (POC exists) | Yes — expose existing CDC recovery logic as callable endpoint |
+
+### Known Limitations
+
+- **Backend crash**: If the Backend process itself crashes (not just a TMS or DB failure), there will be no incident ID in the response and no structured log entry. Manual cloud log investigation is the fallback. Scoped out for now.
+- **Figma multi-entity designs**: Current Figma designs (Mehmet) cover single-entity scenarios only. Don't block on this — build simplest version first.
 
 ---
 
 ## Summary: Minimal Building Blocks
 
-| Building Block | Covers | Effort |
-|---------------|--------|--------|
-| Incident ID in error responses | All 7 flows | ~1 line backend code |
-| Structured sync conflict logging | Flows 1-6 | Small backend change |
-| Severity-based toast in Frontend | All 7 flows | Frontend UX work (needs PO input from this meeting) |
-| Log pairing for deletions | Flow 7 | Small backend change |
-| Recovery endpoint | Flow 7 | Reuse CDC POC logic |
-| Cloud alert on unpaired deletions | Flow 7 | GCP config |
+| Building Block | Covers | Ticket | Effort |
+|---------------|--------|--------|--------|
+| Incident ID in error responses | All 7 flows | #124105 AC 1 | ~1 line backend code |
+| Structured sync conflict logging | Flows 1-6 | #124105 AC 2 | Small backend change |
+| Unified error response shape | All 7 flows | #124105 AC 3 | Backend — agree shape with FE team |
+| Log pairing for deletions | Flow 7 | #124105 AC 4 | Small backend change |
+| Severity-based toast in Frontend | All 7 flows | #123950 AC 1-5 | Frontend UX work |
+| Recovery endpoint | Flow 7 | TBD | Reuse CDC POC logic |
+| Cloud alert on unpaired deletions | Flow 7 | TBD | GCP config |
 
 ---
 
