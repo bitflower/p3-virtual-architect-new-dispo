@@ -1,0 +1,3672 @@
+WEBVTT
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/10-0
+00:00:03.513 --> 00:00:04.233
+<v Matthias Max>Great.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/11-0
+00:00:03.713 --> 00:00:04.633
+<v Maximilian Kehder>Back on. Yep.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/12-0
+00:00:05.304 --> 00:00:05.544
+<v Boyan Valchev>So.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/15-0
+00:00:05.930 --> 00:00:09.140
+<v Boyan Valchev>Okay,
+yesterday I was checking the bug like for</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/15-1
+00:00:09.140 --> 00:00:12.819
+<v Boyan Valchev>the counters when we load,
+I mean the update counters.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/13-0
+00:00:09.410 --> 00:00:09.890
+<v Matthias Max>Sorry.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/15-2
+00:00:12.819 --> 00:00:17.903
+<v Boyan Valchev>And basically like the bug seemed to be
+like when we load additional pages,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/14-0
+00:00:13.490 --> 00:00:13.890
+<v Maximilian Kehder>Yep.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/15-3
+00:00:17.903 --> 00:00:21.381
+<v Boyan Valchev>like for loads lags,
+it caused a bug because it was</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/15-4
+00:00:21.381 --> 00:00:25.127
+<v Boyan Valchev>disappearing.
+But then I decided to go and try the same</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/15-5
+00:00:25.127 --> 00:00:25.930
+<v Boyan Valchev>for the two.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/17-0
+00:00:26.010 --> 00:00:29.725
+<v Boyan Valchev>transport orders.
+So I decided that I will assign 10</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/17-1
+00:00:29.725 --> 00:00:35.333
+<v Boyan Valchev>transport orders to different vehicles
+and I decided not to pick a pre-existing</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/17-2
+00:00:35.333 --> 00:00:40.801
+<v Boyan Valchev>vehicles but rather assign like a custom
+licence plate for each one of those.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/17-3
+00:00:40.801 --> 00:00:44.026
+<v Boyan Valchev>So I went test one, test 2,
+test 3 and so on.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/17-4
+00:00:44.026 --> 00:00:46.690
+<v Boyan Valchev>What was not expected at least I think</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/18-0
+00:00:46.970 --> 00:00:52.484
+<v Boyan Valchev>It's not expected from user point of view
+and something they have pointed out like</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/18-1
+00:00:52.484 --> 00:00:57.998
+<v Boyan Valchev>quite some time ago was that, for example,
+if I have two transport orders assigned</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/18-2
+00:00:57.998 --> 00:01:02.051
+<v Boyan Valchev>to a vehicle with, let's say,
+a custom licence plate number,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/18-3
+00:01:02.051 --> 00:01:06.170
+<v Boyan Valchev>for example, test 2,
+they won't appear grouped. They are not.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/20-0
+00:01:06.570 --> 00:01:09.815
+<v Boyan Valchev>treated as transport orders with assigned
+vehicle.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/20-1
+00:01:09.815 --> 00:01:14.079
+<v Boyan Valchev>And this is because of the grouping we
+are making on the back end.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/20-2
+00:01:14.079 --> 00:01:18.597
+<v Boyan Valchev>So I don't really think that this is a
+desired behavior. I think that,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/20-3
+00:01:18.597 --> 00:01:22.033
+<v Boyan Valchev>for example,
+if I decide to assign 2 transport orders</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/19-0
+00:01:20.450 --> 00:01:20.650
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/20-4
+00:01:22.033 --> 00:01:26.170
+<v Boyan Valchev>to a vehicle with a custom licence plate,
+regardless what it is.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/21-0
+00:01:26.570 --> 00:01:31.448
+<v Boyan Valchev>They should appear grouped,
+and we should lazy load them as assigned</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/21-1
+00:01:31.448 --> 00:01:32.650
+<v Boyan Valchev>transport orders.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/22-0
+00:01:34.330 --> 00:01:35.930
+<v Boyan Valchev>And this is not the case currently.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/23-0
+00:01:42.130 --> 00:01:46.579
+<v Boyan Valchev>I mean, the question is like, have we,
+I mean, I do I remember correctly,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/23-1
+00:01:46.579 --> 00:01:51.209
+<v Boyan Valchev>they have brought this up in the past
+because I'm pretty confident that they</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/23-2
+00:01:51.209 --> 00:01:51.450
+<v Boyan Valchev>did.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/24-0
+00:01:53.050 --> 00:01:57.387
+<v Boyan Valchev>I think it was on one of the
+presentations that Max Božić pointed this</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/24-1
+00:01:57.387 --> 00:02:02.581
+<v Boyan Valchev>out. And also, the other question is like,
+it should be a relatively small change on</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/24-2
+00:02:02.581 --> 00:02:06.063
+<v Boyan Valchev>the back end.
+I tried to do it yesterday myself. I mean,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/24-3
+00:02:06.063 --> 00:02:09.851
+<v Boyan Valchev>I think I'm returning code.
+I did the correctly grouped ones,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/24-4
+00:02:09.851 --> 00:02:10.890
+<v Boyan Valchev>but like what is?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/26-0
+00:02:12.130 --> 00:02:14.937
+<v Boyan Valchev>What is not expected,
+at least from my side,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/26-1
+00:02:14.937 --> 00:02:19.243
+<v Boyan Valchev>is that now the request completes,
+but we are just showing a loading</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/26-2
+00:02:19.243 --> 00:02:23.485
+<v Boyan Valchev>indicator on the front end,
+so it's something which is not expected</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/26-3
+00:02:23.485 --> 00:02:26.231
+<v Boyan Valchev>definitely,
+at least from my point of view.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/26-4
+00:02:26.231 --> 00:02:31.410
+<v Boyan Valchev>Like once we change the grouping to see
+only a loading slider on the pickup on it.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/25-0
+00:02:29.210 --> 00:02:29.410
+<v Maximilian Kehder>And.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/27-0
+00:02:31.490 --> 00:02:35.312
+<v Boyan Valchev>page for the transport orders. So,
+so basically, like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/27-1
+00:02:35.312 --> 00:02:38.856
+<v Boyan Valchev>I really think that it's worth
+investigating this.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/27-2
+00:02:38.856 --> 00:02:44.345
+<v Boyan Valchev>I really think that it's not a desired
+behaviour to not group transport orders</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/27-3
+00:02:44.345 --> 00:02:48.862
+<v Boyan Valchev>assigned to, let's say,
+a vehicle with custom licence plate. So,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/27-4
+00:02:48.862 --> 00:02:49.210
+<v Boyan Valchev>yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/28-0
+00:02:51.650 --> 00:02:52.810
+<v Boyan Valchev>What do you guys think?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/31-0
+00:03:07.570 --> 00:03:13.605
+<v Matthias Max>To be honest, I cannot follow right now.
+I was in a totally different space until</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/30-0
+00:03:10.570 --> 00:03:11.210
+<v Maximilian Kehder>Cem.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/31-1
+00:03:13.605 --> 00:03:19.125
+<v Matthias Max>the one minute before the refinement.
+I would need dedicated time to think</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/31-2
+00:03:19.125 --> 00:03:22.290
+<v Matthias Max>about it, understand the issue, etc.
+Maybe</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/32-0
+00:03:23.810 --> 00:03:26.370
+<v Matthias Max>You can describe it quickly.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/33-0
+00:03:27.250 --> 00:03:28.530
+<v Matthias Max>Or we use this.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/34-0
+00:03:29.370 --> 00:03:32.440
+<v Boyan Valchev>I can show you,
+I think I can show you like what I have</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/34-1
+00:03:32.440 --> 00:03:34.250
+<v Boyan Valchev>in mind, even with the, with the.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/36-0
+00:03:37.130 --> 00:03:40.219
+<v Boyan Valchev>In the test environment,
+I show you exactly like what I have in</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/36-1
+00:03:40.219 --> 00:03:42.730
+<v Boyan Valchev>mind because it's quite easy to reproduce,
+I think.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/35-0
+00:03:43.410 --> 00:03:43.890
+<v Matthias Max>Okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/39-0
+00:03:46.210 --> 00:03:50.450
+<v Matthias Max>And we have, I think,
+three to five months.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/38-0
+00:03:49.290 --> 00:03:49.850
+<v Boyan Valchev>Whoa.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/40-0
+00:03:51.050 --> 00:03:53.290
+<v Boyan Valchev>Yeah, yeah, it's it will be quick.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/41-0
+00:03:55.850 --> 00:04:01.550
+<v Boyan Valchev>So, let me share my screen quickly.
+You should be able to see it right now.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/41-1
+00:04:01.550 --> 00:04:03.050
+<v Boyan Valchev>So, okay, I go here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/43-0
+00:04:04.730 --> 00:04:10.570
+<v Boyan Valchev>So, you see this loads, this is test,
+right? They have all assigned them.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/42-0
+00:04:07.890 --> 00:04:08.290
+<v Maximilian Kehder>Yep.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/44-0
+00:04:13.130 --> 00:04:16.453
+<v Boyan Valchev>Okay,
+I'll create two more then and I'll show</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/44-1
+00:04:16.453 --> 00:04:21.801
+<v Boyan Valchev>you exactly what I have in mind.
+Let's see one with more. Okay, this one,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/44-2
+00:04:21.801 --> 00:04:24.330
+<v Boyan Valchev>let's say it's for, let's say 18th.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/45-0
+00:04:26.010 --> 00:04:27.170
+<v Boyan Valchev>Twelve.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/46-0
+00:04:33.650 --> 00:04:33.930
+<v Boyan Valchev>Hey.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/48-0
+00:04:40.690 --> 00:04:43.756
+<v Boyan Valchev>Okay,
+and now let's create another one in the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/48-1
+00:04:43.756 --> 00:04:44.490
+<v Boyan Valchev>same range.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/53-0
+00:04:57.650 --> 00:05:01.125
+<v Boyan Valchev>Okay,
+so what we do now is we just did 20 and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/53-1
+00:05:01.125 --> 00:05:03.770
+<v Boyan Valchev>21, so we just go into the details.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/54-0
+00:05:06.570 --> 00:05:08.090
+<v Boyan Valchev>Here and here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/55-0
+00:05:12.170 --> 00:05:14.490
+<v Boyan Valchev>And what I will do is I will just assign
+a custom.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/56-0
+00:05:15.930 --> 00:05:17.850
+<v Boyan Valchev>Licence plate to those.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/57-0
+00:05:19.010 --> 00:05:19.490
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/61-0
+00:05:19.210 --> 00:05:22.177
+<v Boyan Valchev>See,
+it would reload both of the pages now,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/61-1
+00:05:22.177 --> 00:05:25.414
+<v Boyan Valchev>so I can,
+I will decide it reloads them because</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/61-2
+00:05:25.414 --> 00:05:30.135
+<v Boyan Valchev>it's an operation which changes the
+transport order, so test to vote.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/61-3
+00:05:30.135 --> 00:05:35.530
+<v Boyan Valchev>So what you normally expect is to see
+those two grouped to this vehicle, right?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/58-0
+00:05:30.770 --> 00:05:31.250
+<v Maximilian Kehder>Mhm.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/59-0
+00:05:32.890 --> 00:05:33.010
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/60-0
+00:05:36.210 --> 00:05:36.610
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/63-0
+00:05:37.130 --> 00:05:41.914
+<v Boyan Valchev>But it's not the case because we treat
+them as unassigned, you see,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/63-1
+00:05:41.914 --> 00:05:46.981
+<v Boyan Valchev>because the grouping is over a truck
+match code ID and not over a truck</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/63-2
+00:05:46.981 --> 00:05:51.554
+<v Boyan Valchev>licence plate as well.
+Like in the cases where we have the truck</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/63-3
+00:05:51.554 --> 00:05:55.002
+<v Boyan Valchev>match code ID,
+we are properly displaying those,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/63-4
+00:05:55.002 --> 00:05:56.410
+<v Boyan Valchev>as you can see here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/64-0
+00:05:56.890 --> 00:05:57.450
+<v Boyan Valchev>Right.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/62-0
+00:05:57.810 --> 00:05:58.370
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/65-0
+00:05:58.970 --> 00:06:03.370
+<v Boyan Valchev>But if it's like a just a custom licence
+plate, we are not doing this.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/66-0
+00:06:05.850 --> 00:06:06.410
+<v Boyan Valchev>Right.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/68-0
+00:06:07.730 --> 00:06:13.490
+<v Maximilian Kehder>Um, yeah, but isn't this the agreed um...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/67-0
+00:06:12.890 --> 00:06:12.930
+<v Boyan Valchev>Uhh...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/69-0
+00:06:15.010 --> 00:06:15.810
+<v Maximilian Kehder>Behavior.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/71-0
+00:06:15.290 --> 00:06:19.391
+<v Boyan Valchev>Not sure. Not sure to be honest.
+This is why I'm bringing this up because</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/71-1
+00:06:19.391 --> 00:06:23.770
+<v Boyan Valchev>at least my expectation would be to see
+those two grouped on the same vehicle.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/70-0
+00:06:19.570 --> 00:06:20.050
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/73-0
+00:06:27.370 --> 00:06:31.322
+<v Boyan Valchev>And I think that this was a question,
+like, from Max by having the past.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/72-0
+00:06:27.570 --> 00:06:28.050
+<v Maximilian Kehder>There.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/73-1
+00:06:31.322 --> 00:06:35.653
+<v Boyan Valchev>This is what I recorded yesterday. So,
+basically, we need we need to see, like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/73-2
+00:06:35.653 --> 00:06:38.090
+<v Boyan Valchev>what what we are going to do with those
+two.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/75-0
+00:06:38.130 --> 00:06:45.058
+<v Maximilian Kehder>I mean, I'm pretty sure they want this.
+Like, I mean, it is agreed, in my opinion,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/75-1
+00:06:45.058 --> 00:06:50.317
+<v Maximilian Kehder>if I remember correctly,
+this is agreed behaviour that when we</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/75-2
+00:06:50.317 --> 00:06:55.410
+<v Maximilian Kehder>switch from the licence plate to the key
+as basically the...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/76-0
+00:06:56.450 --> 00:06:56.770
+<v Maximilian Kehder>Um...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/74-0
+00:06:57.930 --> 00:06:58.090
+<v Boyan Valchev>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/77-0
+00:06:58.170 --> 00:07:03.376
+<v Maximilian Kehder>Yeah, the common ground.
+But we never had like a fallback if there</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/77-1
+00:07:03.376 --> 00:07:07.650
+<v Maximilian Kehder>was nothing,
+but we have like a vehicle licence plate.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/78-0
+00:07:10.210 --> 00:07:10.610
+<v Maximilian Kehder>Okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/79-0
+00:07:11.610 --> 00:07:12.490
+<v Boyan Valchev>Yeah, exactly.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/81-0
+00:07:11.770 --> 00:07:18.016
+<v Maximilian Kehder>way forward. I'm thinking, so this is,
+in my opinion, this is agreed behavior.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/80-0
+00:07:13.770 --> 00:07:13.970
+<v Boyan Valchev>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/81-1
+00:07:18.016 --> 00:07:21.890
+<v Maximilian Kehder>I am 100% sure they want this specific
+behavior.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/82-0
+00:07:22.810 --> 00:07:27.856
+<v Maximilian Kehder>That's when you have two,
+when you have the same licence plate,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/82-1
+00:07:27.856 --> 00:07:31.090
+<v Maximilian Kehder>they should basically become one as well.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/84-0
+00:07:34.290 --> 00:07:36.850
+<v Maximilian Kehder>If we know how much extra effort this is.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/83-0
+00:07:34.330 --> 00:07:34.810
+<v Boyan Valchev>Okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/85-0
+00:07:38.850 --> 00:07:42.050
+<v Maximilian Kehder>Let's see if we can still make it as well,
+if not.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/86-0
+00:07:41.050 --> 00:07:45.009
+<v Boyan Valchev>Oh no, if they want it that way, I mean,
+we'll keep it that way. It's fine.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/86-1
+00:07:45.009 --> 00:07:45.530
+<v Boyan Valchev>It's fine.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/88-0
+00:07:47.250 --> 00:07:51.891
+<v Boyan Valchev>Like, I'm okay with it.
+Just wanted to show it just because it</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/87-0
+00:07:50.610 --> 00:07:50.930
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/88-1
+00:07:51.891 --> 00:07:56.090
+<v Boyan Valchev>looks strange,
+at least for me in first glance, so yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/90-0
+00:07:57.810 --> 00:08:03.266
+<v Maximilian Kehder>I mean, it's good that you're seeing this,
+because this is business behavior.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/89-0
+00:07:58.010 --> 00:07:58.570
+<v Boyan Valchev>Level 6.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/90-1
+00:08:03.266 --> 00:08:07.813
+<v Maximilian Kehder>It's very good that you're seeing this as
+well. But like I said,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/90-2
+00:08:07.813 --> 00:08:12.850
+<v Maximilian Kehder>we had to switch from the truck licence
+plate towards the mesh code ID.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/91-0
+00:08:14.130 --> 00:08:17.570
+<v Maximilian Kehder>And since we are not.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/92-0
+00:08:19.490 --> 00:08:24.173
+<v Maximilian Kehder>Matching on the licence plate,
+but on the match code ID,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/92-1
+00:08:24.173 --> 00:08:25.570
+<v Maximilian Kehder>this is expected.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/94-0
+00:08:26.490 --> 00:08:30.850
+<v Boyan Valchev>OK, I mean, if you're sure,
+like it's fine if you need to cheque it</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/93-0
+00:08:30.690 --> 00:08:30.770
+<v Maximilian Kehder>The.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/94-1
+00:08:30.850 --> 00:08:34.570
+<v Boyan Valchev>with them, it's also fine, just like,
+so we don't end up.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/96-0
+00:08:33.730 --> 00:08:39.771
+<v Maximilian Kehder>It's good that you raised it. I mean,
+I can cheque it again with Patrick and I</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/95-0
+00:08:39.130 --> 00:08:39.610
+<v Boyan Valchev>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/96-1
+00:08:39.771 --> 00:08:45.890
+<v Maximilian Kehder>know the answer they will be giving to me
+will be, oh no, we want this as well.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/97-0
+00:08:49.250 --> 00:08:54.050
+<v Maximilian Kehder>So if this is an easy thing,
+we can just merge in as well.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/98-0
+00:08:56.530 --> 00:08:58.850
+<v Maximilian Kehder>Nice. OK, let's just do it.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/100-0
+00:08:57.770 --> 00:09:00.578
+<v Boyan Valchev>We can cheque it,
+we can treat it as a book and we can</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/100-1
+00:09:00.578 --> 00:09:03.131
+<v Boyan Valchev>cheque it,
+but let's first discuss this with them</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/100-2
+00:09:03.131 --> 00:09:07.113
+<v Boyan Valchev>because I really don't want to spend
+effort which won't be needed, which can,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/99-0
+00:09:06.290 --> 00:09:06.650
+<v Maximilian Kehder>Yep.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/100-3
+00:09:07.113 --> 00:09:10.432
+<v Boyan Valchev>which we can live without.
+So basically let's see what they come</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/100-4
+00:09:10.432 --> 00:09:13.700
+<v Boyan Valchev>back with and we can discuss it.
+But like it would be even more</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/100-5
+00:09:13.700 --> 00:09:16.304
+<v Boyan Valchev>problematic if they find it further down
+the road.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/100-6
+00:09:16.304 --> 00:09:19.010
+<v Boyan Valchev>So I prefer to get this out of the way
+right now and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/101-0
+00:09:19.130 --> 00:09:21.791
+<v Boyan Valchev>Just, yeah,
+be confident that at least the displaying</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/101-1
+00:09:21.791 --> 00:09:24.010
+<v Boyan Valchev>of those things is how they expect it to
+be.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/102-0
+00:09:24.370 --> 00:09:28.015
+<v Maximilian Kehder>Okay, good catch.
+I will address this with Patrick and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/102-1
+00:09:28.015 --> 00:09:33.451
+<v Maximilian Kehder>decide when we're going to be doing this,
+because I know we will be doing this at</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/102-2
+00:09:33.451 --> 00:09:36.699
+<v Maximilian Kehder>some point.
+And it's good that you bring this up</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/102-3
+00:09:36.699 --> 00:09:38.290
+<v Maximilian Kehder>before they bring it up.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/103-0
+00:09:41.570 --> 00:09:44.026
+<v Boyan Valchev>Yep, okay, so yeah,
+basically this was my topic from</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/103-1
+00:09:44.026 --> 00:09:44.490
+<v Boyan Valchev>yesterday.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/104-0
+00:09:45.090 --> 00:09:45.970
+<v Maximilian Kehder>Thank you.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/106-0
+00:09:56.610 --> 00:09:59.890
+<v Maximilian Kehder>Then, Matthias, the stage is yours.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/107-0
+00:10:04.050 --> 00:10:05.890
+<v Matthias Max>Yeah, yeah, okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/108-0
+00:10:07.890 --> 00:10:10.050
+<v Matthias Max>Okay, so...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/109-0
+00:10:11.770 --> 00:10:13.490
+<v Matthias Max>Let me share.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/110-0
+00:10:18.770 --> 00:10:23.890
+<v Matthias Max>We are talking about the recovery topic
+of...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/112-0
+00:10:25.490 --> 00:10:32.610
+<v Matthias Max>Send on a shipment,
+so once we had an outage of CDZ.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/113-0
+00:10:35.570 --> 00:10:38.850
+<v Matthias Max>Uh, close in general,
+no matter the reason.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/114-0
+00:10:40.370 --> 00:10:44.315
+<v Matthias Max>Could be network outage,
+data stream failure,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/114-1
+00:10:44.315 --> 00:10:49.718
+<v Matthias Max>also database side issues like the right
+ahead logic timeouts,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/114-2
+00:10:49.718 --> 00:10:56.751
+<v Matthias Max>which we know they exist for big branches.
+It's literally just one hour that this</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/114-3
+00:10:56.751 --> 00:10:58.210
+<v Matthias Max>work ahead logic.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/115-0
+00:10:59.050 --> 00:11:03.355
+<v Matthias Max>Yeah,
+Orga Hadzhiev can cover up after that,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/115-1
+00:11:03.355 --> 00:11:08.712
+<v Matthias Max>you lose data.
+We need to be able to recover such gaps.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/115-2
+00:11:08.712 --> 00:11:15.410
+<v Matthias Max>And this is the last bit of resilience
+that we have in terms of gaps.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/116-0
+00:11:16.530 --> 00:11:21.790
+<v Matthias Max>And we've talked about this a lot already
+in Sofia,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/116-1
+00:11:21.790 --> 00:11:30.286
+<v Matthias Max>then later with Ivaylo Pashov involved in
+also Yosif recently finishing a POC here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/116-2
+00:11:30.286 --> 00:11:37.570
+<v Matthias Max>So, it's really validated by now,
+and what I'm presenting is really the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/117-0
+00:11:38.610 --> 00:11:42.210
+<v Matthias Max>Minimal version we can build.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/118-0
+00:11:43.410 --> 00:11:48.118
+<v Matthias Max>for a go-live. So that's, I think,
+important, again, for the mindset.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/118-1
+00:11:48.118 --> 00:11:51.750
+<v Matthias Max>If we challenge this,
+if we go through the questions,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/118-2
+00:11:51.750 --> 00:11:56.458
+<v Matthias Max>if we go through the concept,
+keep in mind we want to build something</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/118-3
+00:11:56.458 --> 00:11:59.956
+<v Matthias Max>within the go-live scope. Anything else,
+of course,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/118-4
+00:11:59.956 --> 00:12:03.050
+<v Matthias Max>has potential to be improved beyond
+go-lives.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/119-0
+00:12:03.570 --> 00:12:07.881
+<v Matthias Max>specifically with regards to automation
+and so on.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/119-1
+00:12:07.881 --> 00:12:13.884
+<v Matthias Max>But that's not what we want to focus on
+today, to use the time wisely.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/119-2
+00:12:13.884 --> 00:12:19.295
+<v Matthias Max>Scope again, just so that it's clear,
+it's one table, not more,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/119-3
+00:12:19.295 --> 00:12:25.890
+<v Matthias Max>not a full sync of something else.
+It's just syncing with the sentence table.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/120-0
+00:12:26.290 --> 00:12:31.485
+<v Matthias Max>And of course,
+the new disposite things that come with</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/120-1
+00:12:31.485 --> 00:12:34.130
+<v Matthias Max>it, literally legs and lots.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/121-0
+00:12:35.810 --> 00:12:43.108
+<v Matthias Max>We had a few options considered back then,
+but really only this one is achievable in</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/121-1
+00:12:43.108 --> 00:12:48.517
+<v Matthias Max>the short amount of time.
+To give you a quick extreme example,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/121-2
+00:12:48.517 --> 00:12:55.730
+<v Matthias Max>we had one option of an outbox pattern on
+a TMS site, which of course is completely</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/122-0
+00:12:56.050 --> 00:12:59.665
+<v Matthias Max>unimaginable,
+because team S team would have to build</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/122-1
+00:12:59.665 --> 00:13:03.414
+<v Matthias Max>something that assures consistency
+between the systems.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/122-2
+00:13:03.414 --> 00:13:08.838
+<v Matthias Max>And we know how the collaboration works
+with them, how fast they are, et cetera.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/122-3
+00:13:08.838 --> 00:13:14.328
+<v Matthias Max>It's the nightmare. So this was de-scoped.
+There were two other options that also</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/122-4
+00:13:14.328 --> 00:13:14.730
+<v Matthias Max>don't.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/123-0
+00:13:14.850 --> 00:13:17.650
+<v Matthias Max>makes sense or are not feasible within
+the scope.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/124-0
+00:13:19.890 --> 00:13:24.370
+<v Matthias Max>So, back to the content,
+if you don't have questions so far.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/125-0
+00:13:28.610 --> 00:13:35.893
+<v Matthias Max>Okay. The recovery is a two-step process.
+We'll see why in a bit. And also,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/125-1
+00:13:35.893 --> 00:13:42.984
+<v Matthias Max>I think I've touched that already.
+Why do we recover manually? Of course,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/125-2
+00:13:42.984 --> 00:13:46.530
+<v Matthias Max>these things can be automated so that</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/126-0
+00:13:47.090 --> 00:13:53.144
+<v Matthias Max>Once you detect that, for example,
+a network is back or data stream is back</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/126-1
+00:13:53.144 --> 00:13:58.721
+<v Matthias Max>or whatever was the outage is back,
+could be recovered automatically,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/126-2
+00:13:58.721 --> 00:14:05.094
+<v Matthias Max>but this is also not in scope for June.
+So just imagine someone would say, hey,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/126-3
+00:14:05.094 --> 00:14:06.130
+<v Matthias Max>the outage is</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/127-0
+00:14:06.290 --> 00:14:09.562
+<v Matthias Max>gone,
+let's trigger this recovery manually.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/127-1
+00:14:09.562 --> 00:14:11.570
+<v Matthias Max>That's how it's gonna work.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/128-0
+00:14:13.730 --> 00:14:17.465
+<v Matthias Max>And of course,
+the endpoint would have some options.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/128-1
+00:14:17.465 --> 00:14:22.891
+<v Matthias Max>For example, the branch selection.
+You probably don't want to run it for all</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/128-2
+00:14:22.891 --> 00:14:28.248
+<v Matthias Max>branches later once there are more
+branches live, but for some or just one.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/128-3
+00:14:28.248 --> 00:14:31.490
+<v Matthias Max>And you want to decide for which time
+window.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/129-0
+00:14:31.890 --> 00:14:37.362
+<v Matthias Max>because you most probably know when the
+outage was, when it started,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/129-1
+00:14:37.362 --> 00:14:41.803
+<v Matthias Max>when it ended.
+So you don't have to rethink everything,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/129-2
+00:14:41.803 --> 00:14:45.451
+<v Matthias Max>but just this time frame.
+Except for deletes,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/129-3
+00:14:45.451 --> 00:14:50.210
+<v Matthias Max>which we'll discuss in a bit. For deletes,
+it's a bit more.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/130-0
+00:14:50.450 --> 00:14:51.170
+<v Matthias Max>Difficult.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/131-0
+00:14:52.850 --> 00:14:57.262
+<v Matthias Max>So let's start with a two-step approach.
+Why 2 steps?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/131-1
+00:14:57.262 --> 00:15:03.880
+<v Matthias Max>Because insert and updates are kind of
+more easy because for them you still have</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/131-2
+00:15:03.880 --> 00:15:10.335
+<v Matthias Max>the old shipments available in TMS.
+That's really the crucial differentiation.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/131-3
+00:15:10.335 --> 00:15:13.930
+<v Matthias Max>You can go back to TMS and ask what
+changed</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/132-0
+00:15:14.290 --> 00:15:21.797
+<v Matthias Max>between this and that time with some
+time-based logic and just pull that data</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/132-1
+00:15:21.797 --> 00:15:29.112
+<v Matthias Max>and rerun our existing resolvers,
+aka business logic. That's the easy part.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/132-2
+00:15:29.112 --> 00:15:32.770
+<v Matthias Max>For deletes, you can't do that because</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/133-0
+00:15:33.090 --> 00:15:37.102
+<v Matthias Max>Obviously, they are no longer there,
+these records.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/133-1
+00:15:37.102 --> 00:15:42.967
+<v Matthias Max>TMS also doesn't have a soft delete,
+which would mean the records are still</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/133-2
+00:15:42.967 --> 00:15:47.056
+<v Matthias Max>there, but marked deleted. So literally,
+physically,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/133-3
+00:15:47.056 --> 00:15:52.690
+<v Matthias Max>they are gone in the source database,
+which leads to, I would phrase it,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/135-0
+00:15:53.050 --> 00:16:00.386
+<v Matthias Max>an inversion of the cheque loop,
+it means we need to go back to our latest</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/135-1
+00:16:00.386 --> 00:16:07.136
+<v Matthias Max>state, known state of legs,
+and derive the parent shipments from it,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/135-2
+00:16:07.136 --> 00:16:12.810
+<v Matthias Max>so that these list of shipments is the
+one to be checked.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/136-0
+00:16:14.050 --> 00:16:19.370
+<v Matthias Max>literally for existence.
+Does this and this and this shipment</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/136-1
+00:16:19.370 --> 00:16:24.690
+<v Matthias Max>still exist, yes or no?
+Or was it deleted during this outage?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/137-0
+00:16:25.890 --> 00:16:30.485
+<v Matthias Max>That's the reverse-based approach for
+deletes,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/137-1
+00:16:30.485 --> 00:16:33.810
+<v Matthias Max>which makes it a two-step process.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/138-0
+00:16:36.370 --> 00:16:40.690
+<v Matthias Max>The question probably comes up,
+why only unplanned legs?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/139-0
+00:16:42.050 --> 00:16:48.222
+<v Matthias Max>The reason is really why I even asked
+that is because if you don't limit the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/139-1
+00:16:48.222 --> 00:16:53.272
+<v Matthias Max>volume of legs on our side to be checked,
+it becomes very big.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/139-2
+00:16:53.272 --> 00:16:59.123
+<v Matthias Max>And I wanted to find out if we really
+need to cheque dispatched legs and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/139-3
+00:16:59.123 --> 00:17:02.490
+<v Matthias Max>shipments. And the answer is no, we don't.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/140-0
+00:17:03.730 --> 00:17:08.253
+<v Matthias Max>It is not necessary.
+They will and cannot be deleted after</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/140-1
+00:17:08.253 --> 00:17:12.776
+<v Matthias Max>being dispatched,
+which means for us the amount of legs to</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/140-2
+00:17:12.776 --> 00:17:14.770
+<v Matthias Max>be checked is way smaller.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/141-0
+00:17:15.970 --> 00:17:18.370
+<v Matthias Max>And it's just the unplanned ones.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/143-0
+00:17:21.330 --> 00:17:28.101
+<v Matthias Max>Good. So what does it mean in general?
+We have the recovery endpoint triggered.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/143-1
+00:17:28.101 --> 00:17:32.417
+<v Matthias Max>Actually,
+I think the arrow should rather be here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/143-2
+00:17:32.417 --> 00:17:33.010
+<v Matthias Max>Anyway.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/142-0
+00:17:34.210 --> 00:17:34.530
+<v Boyan Valchev>O.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/144-0
+00:17:36.410 --> 00:17:37.090
+<v Matthias Max>Questions?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/150-0
+00:17:36.530 --> 00:17:41.961
+<v Boyan Valchev>Just a question about the delete.
+So if I understood correctly,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/146-0
+00:17:39.570 --> 00:17:40.210
+<v Matthias Max>Mhm.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/150-1
+00:17:41.961 --> 00:17:48.327
+<v Boyan Valchev>like we would need to cheque like our
+internal legs against their shipment</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/147-0
+00:17:42.930 --> 00:17:43.130
+<v Matthias Max>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/150-2
+00:17:48.327 --> 00:17:53.250
+<v Boyan Valchev>database, right? Shipment table,
+not database, but table.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/148-0
+00:17:50.370 --> 00:17:51.010
+<v Matthias Max>Correct.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/149-0
+00:17:53.210 --> 00:17:54.450
+<v Matthias Max>Yeah, exactly.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/151-0
+00:17:54.770 --> 00:17:56.690
+<v Boyan Valchev>So, like, uh...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/152-0
+00:18:00.090 --> 00:18:04.443
+<v Boyan Valchev>Yeah, probably this could, like,
+probably like conceptually is this like a</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/152-1
+00:18:04.443 --> 00:18:08.855
+<v Boyan Valchev>separate for the from the other flows or
+can be handled in the single flow,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/152-2
+00:18:08.855 --> 00:18:12.221
+<v Boyan Valchev>because, like,
+once we cheque which records are inserted,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/152-3
+00:18:12.221 --> 00:18:15.472
+<v Boyan Valchev>we need also to have, for example,
+like both data sets,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/152-4
+00:18:15.472 --> 00:18:17.330
+<v Boyan Valchev>like our legs and the shipments.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/153-0
+00:18:18.370 --> 00:18:21.443
+<v Boyan Valchev>Regardless,
+whether they're like the whole on bond</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/153-1
+00:18:21.443 --> 00:18:26.023
+<v Boyan Valchev>shipments data set. So, basically,
+that would mean that we'll be doing this</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/153-2
+00:18:26.023 --> 00:18:28.975
+<v Boyan Valchev>comparison like once when we track,
+for example,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/153-3
+00:18:28.975 --> 00:18:32.290
+<v Boyan Valchev>whether new shipments are resorted during
+this outage.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/156-0
+00:18:33.810 --> 00:18:39.945
+<v Boyan Valchev>And, like, isn't it the same, basically,
+like, but for the deleted ones, like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/156-1
+00:18:39.945 --> 00:18:45.615
+<v Boyan Valchev>cheque which which legs are present in
+our leg data set and cheque which</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/156-2
+00:18:45.615 --> 00:18:49.498
+<v Boyan Valchev>shipment is no longer in their Xenon
+table, like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/156-3
+00:18:49.498 --> 00:18:52.450
+<v Boyan Valchev>is this isn't this like part of the...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/154-0
+00:18:51.490 --> 00:18:51.650
+<v Yosif Mihaylov>It.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/155-0
+00:18:52.450 --> 00:18:53.970
+<v Yosif Mihaylov>To cheque the leads.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/157-0
+00:18:52.610 --> 00:18:53.410
+<v Boyan Valchev>Same flow.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/158-0
+00:18:54.930 --> 00:18:55.650
+<v Yosif Mihaylov>Sorry, Božić.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/159-0
+00:18:56.050 --> 00:18:56.370
+<v Boyan Valchev>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/160-0
+00:18:56.730 --> 00:19:02.485
+<v Yosif Mihaylov>Cheque the delete,
+it goes other way around. We check,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/160-1
+00:19:02.485 --> 00:19:09.287
+<v Yosif Mihaylov>first we retrieve the legs and what data
+in new Dispo and check,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/160-2
+00:19:09.287 --> 00:19:16.090
+<v Yosif Mihaylov>like see what legs we have associated
+with what shipment IDs and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/163-0
+00:19:16.450 --> 00:19:21.651
+<v Yosif Mihaylov>Using these shipment IDs,
+we cheque against the DMS data set to see</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/163-1
+00:19:21.651 --> 00:19:25.858
+<v Yosif Mihaylov>if we have, let's say,
+next for shipments that do not,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/162-0
+00:19:25.210 --> 00:19:25.810
+<v Boyan Valchev>Mmh.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/163-2
+00:19:25.858 --> 00:19:30.066
+<v Yosif Mihaylov>and we delete. The problem there, like,
+not a problem,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/163-3
+00:19:30.066 --> 00:19:35.650
+<v Yosif Mihaylov>but the challenge we have there is
+related to how much data we retrieve.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/164-0
+00:19:35.970 --> 00:19:40.390
+<v Yosif Mihaylov>Because for example, for the updates,
+we can make queries such as like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/164-1
+00:19:40.390 --> 00:19:45.303
+<v Yosif Mihaylov>give me the shipments that have been
+changed in the last 15 seconds, let's say.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/164-2
+00:19:45.303 --> 00:19:48.311
+<v Yosif Mihaylov>This won't work for the deletes,
+for the delete,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/164-3
+00:19:48.311 --> 00:19:52.057
+<v Yosif Mihaylov>like I'm not sure if you covered this
+because I just joined,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/164-4
+00:19:52.057 --> 00:19:55.250
+<v Yosif Mihaylov>but this won't work for the deletes
+because when...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/165-0
+00:19:55.810 --> 00:20:00.731
+<v Yosif Mihaylov>First, when shipment is deleted,
+we don't have the updated property like</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/165-1
+00:20:00.731 --> 00:20:05.922
+<v Yosif Mihaylov>updated. And we cannot simply say,
+give me the updated shipments in the last</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/165-2
+00:20:05.922 --> 00:20:09.562
+<v Yosif Mihaylov>15 seconds,
+which means that to track if something is</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/165-3
+00:20:09.562 --> 00:20:12.529
+<v Yosif Mihaylov>deleted,
+we need to always retrieve all the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/165-4
+00:20:12.529 --> 00:20:13.810
+<v Yosif Mihaylov>shipments from TMS.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/166-0
+00:20:14.610 --> 00:20:18.152
+<v Yosif Mihaylov>The good thing is that we, in this case,
+we only need the IDs.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/166-1
+00:20:18.152 --> 00:20:22.369
+<v Yosif Mihaylov>We don't need any other relevant fields.
+So that's how we track the leads.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/166-2
+00:20:22.369 --> 00:20:26.530
+<v Yosif Mihaylov>We always retrieve all the shipment IDs
+from TMS and cheque against that.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/167-0
+00:20:36.370 --> 00:20:39.410
+<v Yosif Mihaylov>That's really the only way to to.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/168-0
+00:20:40.610 --> 00:20:41.970
+<v Yosif Mihaylov>Track deletes.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/170-0
+00:20:47.090 --> 00:20:50.333
+<v Matthias Max>Yeah,
+I think we went through that before you</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/170-1
+00:20:50.333 --> 00:20:53.505
+<v Matthias Max>joined.
+I described why we have this reverse</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/170-2
+00:20:53.505 --> 00:20:58.370
+<v Matthias Max>cheque for deletions because the records
+simply are no longer there.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/171-0
+00:21:00.850 --> 00:21:02.850
+<v Matthias Max>Good. Oh yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/172-0
+00:21:01.010 --> 00:21:04.290
+<v Yosif Mihaylov>Yeah, we have to always follow the date.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/173-0
+00:21:05.050 --> 00:21:07.170
+<v Matthias Max>Does this answer your question, Boyan?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/174-0
+00:21:09.170 --> 00:21:09.810
+<v Boyan Valchev>Yeah, yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/175-0
+00:21:11.010 --> 00:21:11.490
+<v Matthias Max>Okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/177-0
+00:21:11.650 --> 00:21:16.668
+<v Yosif Mihaylov>But the good thing is first that
+retrieving all the shipment IDs from TMS</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/177-1
+00:21:16.668 --> 00:21:21.144
+<v Yosif Mihaylov>when we use directly this end of table
+and not the view is quick.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/177-2
+00:21:21.144 --> 00:21:25.146
+<v Yosif Mihaylov>I think what was it, Matthias,
+I think I showed it to you.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/177-3
+00:21:25.146 --> 00:21:30.368
+<v Yosif Mihaylov>I think it was taking like a second,
+something like that to retrieve all the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/176-0
+00:21:28.930 --> 00:21:29.290
+<v Matthias Max>Okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/177-4
+00:21:30.368 --> 00:21:31.250
+<v Yosif Mihaylov>shipment IDs.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/179-0
+00:21:31.650 --> 00:21:36.796
+<v Yosif Mihaylov>And given that this functionality will
+mostly act as a recovery mechanism,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/179-1
+00:21:36.796 --> 00:21:41.118
+<v Yosif Mihaylov>meaning that at this point we will not
+replace the CDC at all,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/179-2
+00:21:41.118 --> 00:21:46.607
+<v Yosif Mihaylov>like probably we won't hear it working as
+a background process working every 15</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/179-3
+00:21:46.607 --> 00:21:50.450
+<v Yosif Mihaylov>seconds and so on. Like in this case,
+when we, when we.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/181-0
+00:21:50.570 --> 00:21:53.849
+<v Yosif Mihaylov>this is going to be used purely as
+recovery.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/181-1
+00:21:53.849 --> 00:21:57.420
+<v Yosif Mihaylov>The performance doesn't really matter,
+actually.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/180-0
+00:21:56.450 --> 00:21:56.850
+<v Matthias Max>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/181-2
+00:21:57.420 --> 00:22:03.250
+<v Yosif Mihaylov>But even if we have it as a service,
+it's not that slow, and I think it's fine.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/182-0
+00:22:06.210 --> 00:22:09.823
+<v Matthias Max>Good point, by the way,
+about CDC replacement.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/182-1
+00:22:09.823 --> 00:22:15.666
+<v Matthias Max>We discussed this a few weeks back.
+It was an idea when we started thinking</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/182-2
+00:22:15.666 --> 00:22:20.510
+<v Matthias Max>about this recovery,
+that it could become a polling-based CDC,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/182-3
+00:22:20.510 --> 00:22:23.970
+<v Matthias Max>which we custom built.
+I really think by now</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/185-0
+00:22:24.370 --> 00:22:28.343
+<v Matthias Max>not that,
+because the deletions are really more</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/185-1
+00:22:28.343 --> 00:22:33.475
+<v Matthias Max>difficult to detect,
+and it's way easier to get them via CDC,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/185-2
+00:22:33.475 --> 00:22:38.606
+<v Matthias Max>because there you have a real event,
+and that's event-driven,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/185-3
+00:22:38.606 --> 00:22:41.090
+<v Matthias Max>which is way more performance.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/184-0
+00:22:42.210 --> 00:22:43.130
+<v Yosif Mihaylov>Well, like...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/186-0
+00:22:42.610 --> 00:22:42.930
+<v Matthias Max>1.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/187-0
+00:22:44.210 --> 00:22:47.902
+<v Yosif Mihaylov>Like, I will say that they are hard,
+like true,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/187-1
+00:22:47.902 --> 00:22:53.748
+<v Yosif Mihaylov>like we have to hold all the data,
+but again, I'm saying like, essentially,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/187-2
+00:22:53.748 --> 00:22:58.517
+<v Yosif Mihaylov>these are two requests that we make
+against each branch. One,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/187-3
+00:22:58.517 --> 00:23:04.210
+<v Yosif Mihaylov>the main query that we are going to be
+making would be queries such as...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/188-0
+00:23:04.290 --> 00:23:08.093
+<v Yosif Mihaylov>give me the shipments that have been
+updated in the last,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/188-1
+00:23:08.093 --> 00:23:11.372
+<v Yosif Mihaylov>like whatever seconds.
+That's one of the queries.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/188-2
+00:23:11.372 --> 00:23:15.438
+<v Yosif Mihaylov>And the other queries give me all
+shipment IDs. All together,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/188-3
+00:23:15.438 --> 00:23:20.553
+<v Yosif Mihaylov>these two queries executed in parallel,
+probably will finish in a second or a</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/188-4
+00:23:20.553 --> 00:23:25.537
+<v Yosif Mihaylov>second and a half even, let's say.
+Then there goes the our syncing process,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/188-5
+00:23:25.537 --> 00:23:27.570
+<v Yosif Mihaylov>internal TMS data syncing, our.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/189-0
+00:23:27.890 --> 00:23:30.770
+<v Yosif Mihaylov>Database is quite fast, so...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/190-0
+00:23:31.970 --> 00:23:38.086
+<v Yosif Mihaylov>Like this whole process should be,
+should be quick and I, I don't even,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/190-1
+00:23:38.086 --> 00:23:43.608
+<v Yosif Mihaylov>I don't see how, like,
+I think that that it's completely usable.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/190-2
+00:23:43.608 --> 00:23:49.810
+<v Yosif Mihaylov>I wouldn't go as far as saying that we
+cannot use this as a replacement.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/191-0
+00:23:50.930 --> 00:23:56.130
+<v Matthias Max>Yeah, good. Maybe I phrased it wrong.
+It just...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/192-0
+00:23:57.890 --> 00:24:02.789
+<v Matthias Max>relax the situation a bit.
+And it's good to have this POC done.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/192-1
+00:24:02.789 --> 00:24:07.611
+<v Matthias Max>As always, we've learned A lot.
+We are now working fact-based,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/192-2
+00:24:07.611 --> 00:24:12.051
+<v Matthias Max>not assumption-based.
+Such decisions will come after June</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/192-3
+00:24:12.051 --> 00:24:15.648
+<v Matthias Max>anyway,
+maybe after more tests and things that</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/192-4
+00:24:15.648 --> 00:24:19.170
+<v Matthias Max>are done to validate the situation even
+more.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/193-0
+00:24:20.130 --> 00:24:26.059
+<v Matthias Max>I'm just glad we found the basic building
+blocks now that cover the requirement for</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/193-1
+00:24:26.059 --> 00:24:29.730
+<v Matthias Max>the go-live,
+which is a recovery system that works.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/194-0
+00:24:31.010 --> 00:24:34.330
+<v Matthias Max>So, good. Let's go back on track.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/195-0
+00:24:35.570 --> 00:24:39.322
+<v Matthias Max>Any questions until here?
+I think where did we stop?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/195-1
+00:24:39.322 --> 00:24:44.348
+<v Matthias Max>Probably with the data flow.
+So someone triggers the recovery endpoint</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/195-2
+00:24:44.348 --> 00:24:49.940
+<v Matthias Max>after the outage is fixed in the Dispo
+backend. From there, we have two sides,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/195-3
+00:24:49.940 --> 00:24:54.825
+<v Matthias Max>obviously, that are involved.
+One is the Cloud SQL database with the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/195-4
+00:24:54.825 --> 00:24:55.250
+<v Matthias Max>lakes.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/196-0
+00:24:55.650 --> 00:25:00.273
+<v Matthias Max>where all that logic,
+like philtre logic will be executed and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/196-1
+00:25:00.273 --> 00:25:06.164
+<v Matthias Max>on the other side, the team has bridge,
+which is our channel to the databases.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/196-2
+00:25:06.164 --> 00:25:07.730
+<v Matthias Max>I think that's clear.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/197-0
+00:25:08.850 --> 00:25:12.690
+<v Matthias Max>Um, key point also important for the...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/198-0
+00:25:14.450 --> 00:25:20.023
+<v Matthias Max>Yeah, for the good feeling actually,
+because we know we don't rewrite a lot</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/198-1
+00:25:20.023 --> 00:25:23.470
+<v Matthias Max>here.
+The POC showed that we can reuse the CDC</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/198-2
+00:25:23.470 --> 00:25:25.010
+<v Matthias Max>resolvers completely.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/199-0
+00:25:26.530 --> 00:25:32.313
+<v Matthias Max>I think that's a good sign,
+which also shows that the POC is covering</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/199-1
+00:25:32.313 --> 00:25:36.610
+<v Matthias Max>a huge part of the implementation
+actually already.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/201-0
+00:25:37.730 --> 00:25:43.784
+<v Matthias Max>So that's a good thing.
+Not sure if we need to go deeper here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/201-1
+00:25:43.784 --> 00:25:51.377
+<v Matthias Max>What did the POC cover? Full branch sync.
+Yeah, sure. That was still the case.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/201-2
+00:25:51.377 --> 00:25:52.050
+<v Matthias Max>It did.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/200-0
+00:25:51.410 --> 00:25:52.450
+<v Yosif Mihaylov>This can, can.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/202-0
+00:25:53.650 --> 00:25:53.970
+<v Matthias Max>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/204-0
+00:25:53.650 --> 00:26:02.447
+<v Yosif Mihaylov>One more important point regarding this
+table. Like what I want to mention,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/204-1
+00:26:02.447 --> 00:26:09.508
+<v Yosif Mihaylov>this is this old state derival.
+Like for this data sync for,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/203-0
+00:26:06.570 --> 00:26:07.170
+<v Matthias Max>Mhm.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/204-2
+00:26:09.508 --> 00:26:14.370
+<v Yosif Mihaylov>what we essentially need to do is compare.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/205-0
+00:26:14.730 --> 00:26:18.336
+<v Yosif Mihaylov>Two shipments, like,
+like the old shipment and the new</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/205-1
+00:26:18.336 --> 00:26:22.599
+<v Yosif Mihaylov>shipment. New shipment is clear,
+like these are coming from TMS,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/205-2
+00:26:22.599 --> 00:26:27.583
+<v Yosif Mihaylov>we retrieve them. The old shipments,
+we don't have such, like in new Dispo,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/205-3
+00:26:27.583 --> 00:26:31.255
+<v Yosif Mihaylov>as we all know,
+we don't have the concept of shipments,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/205-4
+00:26:31.255 --> 00:26:34.010
+<v Yosif Mihaylov>we only have legs and walks. This means...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/206-0
+00:26:34.330 --> 00:26:40.279
+<v Yosif Mihaylov>to that we have to somehow derive what
+was the old state of the shipment.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/206-1
+00:26:40.279 --> 00:26:44.460
+<v Yosif Mihaylov>The only way that we can do this is using
+our legs.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/206-2
+00:26:44.460 --> 00:26:50.168
+<v Yosif Mihaylov>So like we essentially end up deriving
+the old shipment from the legs.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/206-3
+00:26:50.168 --> 00:26:56.600
+<v Yosif Mihaylov>What we do is we retrieve all the legs
+for a shipment ID, we take whatever leg,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/206-4
+00:26:56.600 --> 00:26:58.610
+<v Yosif Mihaylov>it doesn't really matter.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/207-0
+00:26:59.010 --> 00:27:05.198
+<v Yosif Mihaylov>and we built the shipment out of it.
+There are a few assumptions here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/207-1
+00:27:05.198 --> 00:27:11.647
+<v Yosif Mihaylov>The assumptions are that these legs and
+all derive and inherit all of the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/207-2
+00:27:11.647 --> 00:27:18.010
+<v Yosif Mihaylov>shipment fields and they do not ever
+change per leg. This is why this is</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/208-0
+00:27:18.130 --> 00:27:22.110
+<v Yosif Mihaylov>Safe to do to derive the old shipment
+from the leg.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/208-1
+00:27:22.110 --> 00:27:27.162
+<v Yosif Mihaylov>If this changes in the future,
+this will break the functionality,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/208-2
+00:27:27.162 --> 00:27:32.750
+<v Yosif Mihaylov>and this is like very important,
+like probably Max knows the best what's</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/208-3
+00:27:32.750 --> 00:27:38.491
+<v Yosif Mihaylov>coming up for us, but to put it simply,
+like leg inherits multiple fields,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/208-4
+00:27:38.491 --> 00:27:39.410
+<v Yosif Mihaylov>like weight.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/209-0
+00:27:41.090 --> 00:27:44.607
+<v Yosif Mihaylov>Volume palette spaces,
+four palette spaces, all these fields,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/209-1
+00:27:44.607 --> 00:27:49.090
+<v Yosif Mihaylov>and they are never changed, but like,
+and this is the assumption we have here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/210-0
+00:27:50.210 --> 00:27:54.882
+<v Yosif Mihaylov>If any point,
+if at any point a leg derives from a</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/210-1
+00:27:54.882 --> 00:28:01.570
+<v Yosif Mihaylov>shipment and it could be changed like
+independently from the other legs.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/211-0
+00:28:03.090 --> 00:28:07.420
+<v Yosif Mihaylov>This is going to be a problem,
+but right now I don't think that's the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/211-1
+00:28:07.420 --> 00:28:07.730
+<v Yosif Mihaylov>case.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/212-0
+00:28:08.650 --> 00:28:09.970
+<v Yosif Mihaylov>And that's our assumption here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/213-0
+00:28:11.570 --> 00:28:12.050
+<v Matthias Max>Mhm.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/214-0
+00:28:15.090 --> 00:28:15.410
+<v Matthias Max>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/215-0
+00:28:16.130 --> 00:28:20.746
+<v Maximilian Kehder>Regarding what is coming up,
+there will be basically this is now</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/215-1
+00:28:20.746 --> 00:28:25.078
+<v Maximilian Kehder>future what they want.
+So I really want to make a difference</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/215-2
+00:28:25.078 --> 00:28:29.410
+<v Maximilian Kehder>between what we need right now and what
+in future they want.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/217-0
+00:28:30.770 --> 00:28:37.389
+<v Maximilian Kehder>So in future,
+legs will be able to split up. So a leg,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/217-1
+00:28:37.389 --> 00:28:44.130
+<v Maximilian Kehder>basically the VL leg, could be, in theory,
+VL1 and VL2.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/218-0
+00:28:46.610 --> 00:28:52.025
+<v Maximilian Kehder>But in the end,
+come back to be just basically merge</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/218-1
+00:28:52.025 --> 00:28:56.930
+<v Maximilian Kehder>again into a single HL,
+which comes afterwards.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/220-0
+00:28:58.530 --> 00:29:02.173
+<v Yosif Mihaylov>This is not relevant for this use case,
+as long as, like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/219-0
+00:29:01.330 --> 00:29:01.890
+<v Maximilian Kehder>Okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/220-1
+00:29:02.173 --> 00:29:06.634
+<v Yosif Mihaylov>no matter how they split, like,
+the idea is that all these fields that</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/220-2
+00:29:06.634 --> 00:29:11.157
+<v Yosif Mihaylov>the Leicht inherits from the shipment,
+such as the origin, destination,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/220-3
+00:29:11.157 --> 00:29:15.931
+<v Yosif Mihaylov>as I said, wait, all these fields,
+as long as these fields are not changed,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/220-4
+00:29:15.931 --> 00:29:19.010
+<v Yosif Mihaylov>and we can reconstruct a shipment from a
+Leicht.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/221-0
+00:29:19.170 --> 00:29:19.890
+<v Yosif Mihaylov>We are safe.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/222-0
+00:29:21.010 --> 00:29:24.130
+<v Maximilian Kehder>Reconstruct a shipment from a leg.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/224-0
+00:29:24.450 --> 00:29:28.798
+<v Yosif Mihaylov>That's what we do currently for this
+mechanism to work. Yes,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/223-0
+00:29:28.690 --> 00:29:29.010
+<v Maximilian Kehder>Raul.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/224-1
+00:29:28.798 --> 00:29:31.650
+<v Yosif Mihaylov>we derive from it from from from a like.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/225-0
+00:29:34.250 --> 00:29:35.650
+<v Maximilian Kehder>Like the best.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/226-0
+00:29:36.050 --> 00:29:40.050
+<v Matthias Max>logic, Max.
+We only know legs in the Dispo,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/226-1
+00:29:40.050 --> 00:29:45.050
+<v Matthias Max>and the lake knows its parent shipment.
+This is logic.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/227-0
+00:29:43.010 --> 00:29:45.410
+<v Maximilian Kehder>Yeah, so basically, if if we...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/228-0
+00:29:48.690 --> 00:29:51.170
+<v Maximilian Kehder>So, like in the example I was stating,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/229-0
+00:29:53.250 --> 00:29:57.190
+<v Maximilian Kehder>Currently,
+a leg is holding all the weight and all</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/229-1
+00:29:57.190 --> 00:30:00.050
+<v Maximilian Kehder>the BSR, all the BSR of the shipment.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/231-0
+00:30:01.210 --> 00:30:02.290
+<v Maximilian Kehder>This is the current state.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/230-0
+00:30:01.370 --> 00:30:01.850
+<v Yosif Mihaylov>Mmh.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/232-0
+00:30:03.570 --> 00:30:03.850
+<v Yosif Mihaylov>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/233-0
+00:30:04.050 --> 00:30:07.717
+<v Maximilian Kehder>So, basically,
+if the if the shipment changes,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/233-1
+00:30:07.717 --> 00:30:13.256
+<v Maximilian Kehder>the lag changes, if the lag changes,
+and basically we can reconstruct,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/233-2
+00:30:13.256 --> 00:30:16.690
+<v Maximilian Kehder>we can basically find the truth in the
+TMS.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/234-0
+00:30:18.370 --> 00:30:19.370
+<v Maximilian Kehder>This is...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/235-0
+00:30:18.450 --> 00:30:23.875
+<v Yosif Mihaylov>We are not able to think like to get this
+to derive the shipment right now from the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/235-1
+00:30:23.875 --> 00:30:26.781
+<v Yosif Mihaylov>legs.
+It's not just looking at the shipment.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/235-2
+00:30:26.781 --> 00:30:30.850
+<v Yosif Mihaylov>Looking at the shipment in TMS gives us
+the current new state.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/236-0
+00:30:31.810 --> 00:30:37.325
+<v Yosif Mihaylov>We are deriving the old state and we are
+deriving this because we persist actually</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/236-1
+00:30:37.325 --> 00:30:40.050
+<v Yosif Mihaylov>this shipment fields as part of our legs.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/239-0
+00:30:41.250 --> 00:30:46.147
+<v Yosif Mihaylov>Our legs have all these fields, as I said,
+origin, destination, weight, whatever,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/238-0
+00:30:45.810 --> 00:30:46.210
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/239-1
+00:30:46.147 --> 00:30:49.850
+<v Yosif Mihaylov>and this using these fields,
+we reconstruct the old shipment.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/242-0
+00:30:51.010 --> 00:30:54.130
+<v Maximilian Kehder>And why do we need to reconstruct the old
+shipment?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/240-0
+00:30:51.330 --> 00:30:51.730
+<v Yosif Mihaylov>That.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/243-0
+00:30:54.210 --> 00:30:56.848
+<v Yosif Mihaylov>This,
+we have to compare old shipment and new</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/243-1
+00:30:56.848 --> 00:31:00.290
+<v Yosif Mihaylov>shipment to see what changes can happen
+for this mechanism.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/244-0
+00:31:04.370 --> 00:31:08.610
+<v Yosif Mihaylov>We are pretty much need to compare what
+was before and what is now.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/246-0
+00:31:11.730 --> 00:31:14.850
+<v Maximilian Kehder>Yeah, okay.
+I'm not seeing a problem here now.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/249-0
+00:31:17.170 --> 00:31:22.895
+<v Yosif Mihaylov>Well, if at some point these fields,
+let's say the weight, let's say,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/247-0
+00:31:17.450 --> 00:31:18.050
+<v Matthias Max>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/249-1
+00:31:22.895 --> 00:31:28.703
+<v Yosif Mihaylov>right now each of the shipment legs,
+they all, including the shipment,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/249-2
+00:31:28.703 --> 00:31:31.730
+<v Yosif Mihaylov>they all have the same values, right?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/248-0
+00:31:31.890 --> 00:31:32.290
+<v Maximilian Kehder>Yep.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/250-0
+00:31:32.930 --> 00:31:37.349
+<v Yosif Mihaylov>So it's safe to reconstruct,
+let's say that we reconstruct the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/250-1
+00:31:37.349 --> 00:31:41.558
+<v Yosif Mihaylov>shipment from a leg.
+We see that what we currently have for</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/250-2
+00:31:41.558 --> 00:31:46.329
+<v Yosif Mihaylov>this old shipment and its legs is that
+the weight is 50, let's say.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/250-3
+00:31:46.329 --> 00:31:51.450
+<v Yosif Mihaylov>We then retrieve the new shipment from
+TMS using the ID and see that the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/250-4
+00:31:51.450 --> 00:31:55.519
+<v Yosif Mihaylov>shipment there,
+that the weight there for the shipment is</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/250-5
+00:31:55.519 --> 00:31:55.730
+<v Yosif Mihaylov>70.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/252-0
+00:31:55.970 --> 00:32:00.321
+<v Yosif Mihaylov>Let's say we detected a change,
+like the weight increase.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/252-1
+00:32:00.321 --> 00:32:05.423
+<v Yosif Mihaylov>That's how this works now. In future,
+in future, if something like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/251-0
+00:32:01.090 --> 00:32:01.450
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/252-2
+00:32:05.423 --> 00:32:10.450
+<v Yosif Mihaylov>like let's say that it gets possible to
+change the weight per leg.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/255-0
+00:32:11.970 --> 00:32:15.341
+<v Yosif Mihaylov>that is going to be an issue.
+Because then, like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/253-0
+00:32:14.850 --> 00:32:16.050
+<v Maximilian Kehder>Yeah, okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/255-1
+00:32:15.341 --> 00:32:19.725
+<v Yosif Mihaylov>I'm not saying that it becomes impossible
+to use this mechanism,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/255-2
+00:32:19.725 --> 00:32:23.838
+<v Yosif Mihaylov>but then we have to figure out a strategy,
+which in the end,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/255-3
+00:32:23.838 --> 00:32:28.896
+<v Yosif Mihaylov>we will resolve the same to reconstruct
+the shipment safely from the legs.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/255-4
+00:32:28.896 --> 00:32:30.650
+<v Yosif Mihaylov>Right now, this is simple.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/254-0
+00:32:29.570 --> 00:32:29.970
+<v Maximilian Kehder>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/256-0
+00:32:30.930 --> 00:32:35.718
+<v Yosif Mihaylov>because these are always the same and are
+not changed. But in future,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/256-1
+00:32:35.718 --> 00:32:40.164
+<v Yosif Mihaylov>if this changes somehow,
+we have to implement a strategy to help</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/256-2
+00:32:40.164 --> 00:32:44.610
+<v Yosif Mihaylov>to derive this or this treatment from our
+existing clicks. Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/257-0
+00:32:42.770 --> 00:32:47.949
+<v Maximilian Kehder>But this will be then development of
+basically first,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/257-1
+00:32:47.949 --> 00:32:55.621
+<v Maximilian Kehder>basically make our system able to handle
+these splitting up of legs and then as</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/257-2
+00:32:55.621 --> 00:32:59.170
+<v Maximilian Kehder>well updating our recovery mechanism.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/260-0
+00:33:01.170 --> 00:33:05.336
+<v Yosif Mihaylov>Yeah, it might be possible. Then later,
+let's say that we introduce some</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/258-0
+00:33:01.410 --> 00:33:02.450
+<v Maximilian Kehder>I don't.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/260-1
+00:33:05.336 --> 00:33:09.731
+<v Yosif Mihaylov>splitting logic for the legs and we are
+able to split the legs and split the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/259-0
+00:33:08.210 --> 00:33:08.770
+<v Maximilian Kehder>Yes.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/260-2
+00:33:09.731 --> 00:33:12.413
+<v Yosif Mihaylov>weight.
+Then what we have to do is adjust this</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/260-3
+00:33:12.413 --> 00:33:15.838
+<v Yosif Mihaylov>mechanism to make sure that we can do the
+other way around.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/260-4
+00:33:15.838 --> 00:33:20.290
+<v Yosif Mihaylov>When we reconstruct the old shipment,
+let's say we aggregate the legs weight.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/262-0
+00:33:20.650 --> 00:33:24.619
+<v Yosif Mihaylov>and we reconstruct the shipment again.
+This pretty much means that we have to</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/262-1
+00:33:24.619 --> 00:33:28.284
+<v Yosif Mihaylov>add new functionality. Right now,
+this is coming out-of-the-box because</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/262-2
+00:33:28.284 --> 00:33:31.694
+<v Yosif Mihaylov>these are not changed. Later,
+if we introduce something like this,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/261-0
+00:33:29.410 --> 00:33:29.810
+<v Maximilian Kehder>Yep.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/262-3
+00:33:31.694 --> 00:33:35.410
+<v Yosif Mihaylov>as long as we are somehow able in theory
+to reconstruct it, we are fine.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/263-0
+00:33:37.330 --> 00:33:38.850
+<v Maximilian Kehder>Matthias, you have your hand raised.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/264-0
+00:33:39.330 --> 00:33:43.960
+<v Matthias Max>I think we should go back to the actual
+topic because what you discuss is</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/264-1
+00:33:43.960 --> 00:33:45.650
+<v Matthias Max>valuable but future-driven.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/266-0
+00:33:47.650 --> 00:33:51.228
+<v Matthias Max>And we have only so much time left to go
+through this,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/266-1
+00:33:51.228 --> 00:33:53.570
+<v Matthias Max>and we want to make this waterproof.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/267-0
+00:33:54.530 --> 00:33:58.681
+<v Maximilian Kehder>Yeah, so, but to sum up, I agree with you,
+Yosif.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/267-1
+00:33:58.681 --> 00:34:04.824
+<v Maximilian Kehder>We will most likely need to reconsider
+this or basically go over this and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/267-2
+00:34:04.824 --> 00:34:09.639
+<v Maximilian Kehder>refactor this mechanism once we introduce
+this splitting.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/267-3
+00:34:09.639 --> 00:34:12.130
+<v Maximilian Kehder>This is accepted from my side.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/268-0
+00:34:13.570 --> 00:34:19.330
+<v Maximilian Kehder>Because, or due to the restriction of,
+yeah, time we have right now.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/269-0
+00:34:20.290 --> 00:34:29.170
+<v Maximilian Kehder>So, I heard your concern and I see this,
+but currently we cannot build something.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/270-0
+00:34:31.010 --> 00:34:31.490
+<v Maximilian Kehder>Bigger.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/271-0
+00:34:31.170 --> 00:34:34.182
+<v Yosif Mihaylov>But this,
+currently we don't have to build it. Like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/271-1
+00:34:34.182 --> 00:34:35.490
+<v Yosif Mihaylov>this is not about time.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/272-0
+00:34:34.290 --> 00:34:36.450
+<v Maximilian Kehder>Yeah, that's right. So we're good.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/275-0
+00:34:37.090 --> 00:34:41.300
+<v Yosif Mihaylov>Yes, right now we are just good.
+In future we add more functionality,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/273-0
+00:34:37.650 --> 00:34:37.690
+<v Matthias Max>Oh.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/274-0
+00:34:39.170 --> 00:34:39.490
+<v Maximilian Kehder>Yep.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/275-1
+00:34:41.300 --> 00:34:45.090
+<v Yosif Mihaylov>hence we have to adjust the existing
+functionality. That's it.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/276-0
+00:34:45.730 --> 00:34:47.090
+<v Matthias Max>Exactly.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/277-0
+00:34:45.810 --> 00:34:47.490
+<v Maximilian Kehder>All right, then we're on the same page.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/278-0
+00:34:47.810 --> 00:34:53.229
+<v Matthias Max>Correct. It's the typical flow.
+The spectrum of things to consider when</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/278-1
+00:34:53.229 --> 00:34:56.541
+<v Matthias Max>adding features just widens.
+In the future,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/278-2
+00:34:56.541 --> 00:35:01.810
+<v Matthias Max>we have to consider the recovery
+mechanism with everything we change.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/279-0
+00:35:02.930 --> 00:35:03.250
+<v Matthias Max>Good.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/280-0
+00:35:04.450 --> 00:35:05.010
+<v Matthias Max>So...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/281-0
+00:35:06.090 --> 00:35:09.090
+<v Matthias Max>Back to the documents.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/282-0
+00:35:11.810 --> 00:35:11.890
+<v Matthias Max>Uh...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/283-0
+00:35:15.170 --> 00:35:19.166
+<v Matthias Max>Aha, yes, POC.
+So the POC covers already A lot.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/283-1
+00:35:19.166 --> 00:35:25.159
+<v Matthias Max>It proved a lot of things that we've just
+discussed. What it didn't do,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/283-2
+00:35:25.159 --> 00:35:30.737
+<v Matthias Max>it didn't philtre by time.
+It just did a full branch sync as we've</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/283-3
+00:35:30.737 --> 00:35:31.570
+<v Matthias Max>seen here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/284-0
+00:35:33.570 --> 00:35:37.894
+<v Matthias Max>However,
+it supports already update time filtering.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/284-1
+00:35:37.894 --> 00:35:44.297
+<v Matthias Max>I think that's also just a little bonus
+because it is the foundation for the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/284-2
+00:35:44.297 --> 00:35:49.537
+<v Matthias Max>watermark filtering.
+And then I think the most important thing</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/284-3
+00:35:49.537 --> 00:35:54.610
+<v Matthias Max>for now in this meeting is to go through
+the open questions.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/285-0
+00:35:55.610 --> 00:36:02.527
+<v Matthias Max>because they define if more development
+work is created or if things are already</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/285-1
+00:36:02.527 --> 00:36:05.090
+<v Matthias Max>answered and therefore solved.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/286-0
+00:36:06.850 --> 00:36:12.531
+<v Matthias Max>Good. So what is the watermark?
+The watermark is really a time,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/286-1
+00:36:12.531 --> 00:36:19.810
+<v Matthias Max>a moment which defines how far back we
+need to go to cheque for change shipments.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/287-0
+00:36:21.490 --> 00:36:25.628
+<v Matthias Max>Why do we even wonder about this?
+In my opinion,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/287-1
+00:36:25.628 --> 00:36:32.132
+<v Matthias Max>it's necessary because we need to make
+sure we don't put unnecessary load on</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/287-2
+00:36:32.132 --> 00:36:37.706
+<v Matthias Max>these databases. They are in production,
+they are very sensitive,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/287-3
+00:36:37.706 --> 00:36:41.930
+<v Matthias Max>they are running on very constrained
+hardware. So</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/288-0
+00:36:42.210 --> 00:36:44.450
+<v Matthias Max>The less we query, the better.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/289-0
+00:36:45.690 --> 00:36:51.771
+<v Matthias Max>And therefore, the question arises,
+where do we get that time from?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/289-1
+00:36:51.771 --> 00:36:55.170
+<v Matthias Max>How far do we go back when recovering?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/290-0
+00:36:56.370 --> 00:37:00.655
+<v Matthias Max>And there's two things we could do,
+in my opinion,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/290-1
+00:37:00.655 --> 00:37:04.857
+<v Matthias Max>and we need to discuss this and align
+with Nagra.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/290-2
+00:37:04.857 --> 00:37:11.076
+<v Matthias Max>One is something kind of automated,
+because the state on our database has</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/290-3
+00:37:11.076 --> 00:37:14.690
+<v Matthias Max>time aspects stored.
+We know when the last</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/291-0
+00:37:15.730 --> 00:37:21.177
+<v Matthias Max>leg was changed successfully,
+we could use that as an anchor.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/291-1
+00:37:21.177 --> 00:37:28.117
+<v Matthias Max>Option B would be to maintain some kind
+of state in the CDC flow where we know</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/291-2
+00:37:28.117 --> 00:37:34.707
+<v Matthias Max>the last time it ran successfully,
+literally the last time we successfully</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/291-3
+00:37:34.707 --> 00:37:35.410
+<v Matthias Max>received</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/292-0
+00:37:35.970 --> 00:37:38.530
+<v Matthias Max>A CDC event and processed it.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/293-0
+00:37:39.410 --> 00:37:42.610
+<v Matthias Max>That's the two options I see. Oh, Yosif.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/294-0
+00:37:46.050 --> 00:37:49.966
+<v Yosif Mihaylov>Yeah, some input on this,
+on this like here,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/294-1
+00:37:49.966 --> 00:37:53.970
+<v Yosif Mihaylov>we have the same issue that we had for
+the...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/295-0
+00:37:56.050 --> 00:38:03.580
+<v Yosif Mihaylov>Change changes counter and the fact that
+what we persist in new displaced timings</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/295-1
+00:38:03.580 --> 00:38:09.641
+<v Yosif Mihaylov>is time zone sensitive,
+where what is persisted is time stamps in</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/295-2
+00:38:09.641 --> 00:38:11.570
+<v Yosif Mihaylov>TMS is not time zone.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/296-0
+00:38:16.210 --> 00:38:22.499
+<v Yosif Mihaylov>So what this means for the scope of this
+POC is that we trigger this endpoint,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/296-1
+00:38:22.499 --> 00:38:27.993
+<v Yosif Mihaylov>which will then trigger this mechanism
+using this timestamp. We say,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/296-2
+00:38:27.993 --> 00:38:32.770
+<v Yosif Mihaylov>we call the endpoint and say,
+update whatever branch after.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/297-0
+00:38:33.010 --> 00:38:40.302
+<v Yosif Mihaylov>Why can we provide the date now? Like,
+like we need to be able to provide the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/297-1
+00:38:40.302 --> 00:38:47.127
+<v Yosif Mihaylov>date that is time zone sensitive
+according to the TMS branch that we are</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/297-2
+00:38:47.127 --> 00:38:48.530
+<v Yosif Mihaylov>acting against.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/298-0
+00:38:50.210 --> 00:38:56.049
+<v Yosif Mihaylov>This is important and this is not
+something that we can automatically</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/298-1
+00:38:56.049 --> 00:39:01.054
+<v Yosif Mihaylov>handle because again,
+we don't have each time zone for each</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/298-2
+00:39:01.054 --> 00:39:04.975
+<v Yosif Mihaylov>branch.
+But I think that for the scope of this</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/298-3
+00:39:04.975 --> 00:39:09.730
+<v Yosif Mihaylov>release, this is fine. First,
+because we are going to...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/299-0
+00:39:10.210 --> 00:39:13.750
+<v Yosif Mihaylov>First,
+this is going to be executed on demand.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/299-1
+00:39:13.750 --> 00:39:19.701
+<v Yosif Mihaylov>It's not something that is going to run
+as a background process, as we agreed,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/299-2
+00:39:19.701 --> 00:39:25.200
+<v Yosif Mihaylov>at least for now. And second,
+we are going to be having a single branch.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/299-3
+00:39:25.200 --> 00:39:29.570
+<v Yosif Mihaylov>We know what the time zone is there.
+So let's say that...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/300-0
+00:39:29.650 --> 00:39:33.149
+<v Yosif Mihaylov>There is a CDC outage that has occurred,
+let's say,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/300-1
+00:39:33.149 --> 00:39:36.783
+<v Yosif Mihaylov>yesterday in 12 o'clock at noon.
+Now we had a outage.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/300-2
+00:39:36.783 --> 00:39:40.013
+<v Yosif Mihaylov>Now the outage is resolved.
+The CDC is running.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/300-3
+00:39:40.013 --> 00:39:45.061
+<v Yosif Mihaylov>We need to sync the data. We know,
+then we would know which branch this is</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/300-4
+00:39:45.061 --> 00:39:49.570
+<v Yosif Mihaylov>because we have a single branch.
+We know what the time zone there.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/301-0
+00:39:49.890 --> 00:39:54.757
+<v Yosif Mihaylov>Let's say that they are Germany time,
+they are like 2 hours behind.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/301-1
+00:39:54.757 --> 00:39:59.767
+<v Yosif Mihaylov>So you'll just be providing,
+we'll be calling this endpoint and we're</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/301-2
+00:39:59.767 --> 00:40:03.991
+<v Yosif Mihaylov>providing yesterday 10 o'clock.
+And we should be all good.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/301-3
+00:40:03.991 --> 00:40:08.930
+<v Yosif Mihaylov>But here we also have these time zone
+challenges that we had before.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/302-0
+00:40:09.090 --> 00:40:10.210
+<v Yosif Mihaylov>That's what I want to say.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/303-0
+00:40:12.530 --> 00:40:13.010
+<v Matthias Max>Mhm.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/304-0
+00:40:14.210 --> 00:40:16.770
+<v Matthias Max>Absolutely, I think the time zone.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/305-0
+00:40:17.730 --> 00:40:21.890
+<v Matthias Max>Um, challenge still needs to be resolved.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/306-0
+00:40:24.210 --> 00:40:25.170
+<v Matthias Max>Totally agree.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/307-0
+00:40:32.890 --> 00:40:33.410
+<v Matthias Max>Goods.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/308-0
+00:40:35.010 --> 00:40:36.850
+<v Matthias Max>So what's next?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/310-0
+00:40:39.010 --> 00:40:44.232
+<v Matthias Max>I think this is quite clear,
+still a challenge, however,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/310-1
+00:40:44.232 --> 00:40:50.370
+<v Matthias Max>it could also be related to four,
+if things are idempotent anyway.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/311-0
+00:40:51.250 --> 00:40:56.539
+<v Matthias Max>You can make this quite generous and
+overlap or even run the full scan, right?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/311-1
+00:40:56.539 --> 00:40:59.953
+<v Matthias Max>That's always an option.
+If things are idempotent,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/311-2
+00:40:59.953 --> 00:41:04.305
+<v Matthias Max>you don't destroy anything.
+You can just run it full and be safe</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/311-3
+00:41:04.305 --> 00:41:07.452
+<v Matthias Max>anyway.
+It's just a matter of how much load to</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/311-4
+00:41:07.452 --> 00:41:10.130
+<v Matthias Max>put on the system and how long it takes.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/312-0
+00:41:11.330 --> 00:41:17.184
+<v Matthias Max>But I think it's just nicer if we can
+provide something more targeted and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/312-1
+00:41:17.184 --> 00:41:18.450
+<v Matthias Max>custom tailored.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/313-0
+00:41:19.970 --> 00:41:24.597
+<v Matthias Max>Good. Good triggers.
+I think that's really not a development</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/313-1
+00:41:24.597 --> 00:41:28.920
+<v Matthias Max>task for this refiner.
+I just wanted to have it covered.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/313-2
+00:41:28.920 --> 00:41:35.292
+<v Matthias Max>It's probably something on PO level, Max,
+to be aligned on and specifically for the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/313-3
+00:41:35.292 --> 00:41:40.450
+<v Matthias Max>expectation management that everybody
+knows what's going to happen.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/314-0
+00:41:40.850 --> 00:41:43.570
+<v Matthias Max>in the live situation.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/316-0
+00:41:44.290 --> 00:41:46.770
+<v Maximilian Kehder>So especially who triggers the recovery.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/315-0
+00:41:44.690 --> 00:41:45.090
+<v Matthias Max>Cem.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/317-0
+00:41:47.250 --> 00:41:51.965
+<v Matthias Max>Exactly. Both questions, who detects it,
+who recovers it,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/317-1
+00:41:51.965 --> 00:41:57.574
+<v Matthias Max>is all operations questions.
+Nothing actually to be answered or even</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/317-2
+00:41:57.574 --> 00:42:02.290
+<v Matthias Max>discussed here in this round,
+because here we develop it.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/318-0
+00:42:03.570 --> 00:42:05.090
+<v Matthias Max>These two are operational.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/319-0
+00:42:07.730 --> 00:42:13.614
+<v Matthias Max>Good. That one's still crucial.
+I think Yosif, you mentioned that already,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/319-1
+00:42:13.614 --> 00:42:19.106
+<v Matthias Max>and I think it is item potent.
+I just wanted to bring it up again and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/319-2
+00:42:19.106 --> 00:42:19.970
+<v Matthias Max>confirm it.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/320-0
+00:42:21.330 --> 00:42:23.650
+<v Matthias Max>Could you say something about this?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/321-0
+00:42:24.450 --> 00:42:30.133
+<v Yosif Mihaylov>Yeah, this is by its nature.
+I can give a comparison just so that</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/321-1
+00:42:30.133 --> 00:42:34.267
+<v Yosif Mihaylov>everyone can understand. So the CDC,
+let's say,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/321-2
+00:42:34.267 --> 00:42:40.811
+<v Yosif Mihaylov>is not that important because the events
+which are essentially representing</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/321-3
+00:42:40.811 --> 00:42:44.170
+<v Yosif Mihaylov>changes that are coming are historical.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/323-0
+00:42:44.850 --> 00:42:50.135
+<v Yosif Mihaylov>Meaning that we receive an event now,
+for some reason, if we don't process it,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/323-1
+00:42:50.135 --> 00:42:53.815
+<v Yosif Mihaylov>we can receive it. Let's say we will try,
+we will try,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/323-2
+00:42:53.815 --> 00:42:58.834
+<v Yosif Mihaylov>we can leave it till we can receive this
+event tomorrow, but by this time,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/323-3
+00:42:58.834 --> 00:42:59.570
+<v Yosif Mihaylov>like the...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/324-0
+00:43:00.770 --> 00:43:06.196
+<v Yosif Mihaylov>the data that the event is representing
+and the current state of the data might</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/324-1
+00:43:06.196 --> 00:43:09.316
+<v Yosif Mihaylov>be different.
+That's why it's important to be</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/324-2
+00:43:09.316 --> 00:43:12.910
+<v Yosif Mihaylov>independent. Also,
+these events could be executed in</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/324-3
+00:43:12.910 --> 00:43:16.370
+<v Yosif Mihaylov>parallel and so on and so on.
+With this mechanism,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/324-4
+00:43:16.370 --> 00:43:19.490
+<v Yosif Mihaylov>like idempotency is not a concern because.
+..</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/325-0
+00:43:20.690 --> 00:43:26.581
+<v Yosif Mihaylov>it always, when it's being executed,
+it always retrieves the current last</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/325-1
+00:43:26.581 --> 00:43:31.437
+<v Yosif Mihaylov>state of the data,
+meaning that let's say we have an insert,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/325-2
+00:43:31.437 --> 00:43:36.930
+<v Yosif Mihaylov>we see a new shipment has been inserted,
+we created the legs for it,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/326-0
+00:43:38.610 --> 00:43:43.472
+<v Yosif Mihaylov>And so on, then we then we run it again.
+The next time we run it,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/326-1
+00:43:43.472 --> 00:43:48.998
+<v Yosif Mihaylov>we are just going to see that we already
+have inserted the legs and, like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/326-2
+00:43:48.998 --> 00:43:54.892
+<v Yosif Mihaylov>we won't we won't make a double insert.
+This is true as long as this process is</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/326-3
+00:43:54.892 --> 00:44:00.050
+<v Yosif Mihaylov>not executed concurrently in parallel,
+which is not in the case here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/327-0
+00:44:00.450 --> 00:44:05.170
+<v Yosif Mihaylov>This is this mechanism right now that
+we're going to give them is.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/328-0
+00:44:06.930 --> 00:44:11.961
+<v Yosif Mihaylov>is supposed and meant to be executed on
+demand from operational team.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/328-1
+00:44:11.961 --> 00:44:17.712
+<v Yosif Mihaylov>So it doesn't make sense that two people
+from operations team trying to execute</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/328-2
+00:44:17.712 --> 00:44:23.462
+<v Yosif Mihaylov>this mechanism exactly at the same time.
+So that I think this is not a concern.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/328-3
+00:44:23.462 --> 00:44:26.050
+<v Yosif Mihaylov>So I think that, yeah, we should be.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/329-0
+00:44:26.530 --> 00:44:27.250
+<v Yosif Mihaylov>Save there.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/330-0
+00:44:29.570 --> 00:44:34.690
+<v Yosif Mihaylov>This could be sure only if this mechanism
+is executed concurrently.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/331-0
+00:44:38.530 --> 00:44:43.372
+<v Yosif Mihaylov>which is not the case.
+And it should not be the case even if</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/331-1
+00:44:43.372 --> 00:44:49.089
+<v Yosif Mihaylov>this mechanism later we implement as a
+replacement for CDC and it's not</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/331-2
+00:44:49.089 --> 00:44:54.011
+<v Yosif Mihaylov>triggered on demand,
+but let's say automatic process with the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/331-3
+00:44:54.011 --> 00:44:59.251
+<v Yosif Mihaylov>host service or whatever,
+such mechanisms should are not meant to</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/331-4
+00:44:59.251 --> 00:44:59.410
+<v Yosif Mihaylov>be</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/332-0
+00:44:59.570 --> 00:45:04.190
+<v Yosif Mihaylov>to be around concurrently.
+That's why then later we have these</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/332-1
+00:45:04.190 --> 00:45:08.956
+<v Yosif Mihaylov>points for multiple instances running and
+how we can solve this.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/332-2
+00:45:08.956 --> 00:45:14.896
+<v Yosif Mihaylov>What we need to guarantee is that there's
+a single process running at a time and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/332-3
+00:45:14.896 --> 00:45:16.290
+<v Yosif Mihaylov>there's no overlap.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/333-0
+00:45:17.890 --> 00:45:19.170
+<v Yosif Mihaylov>Between such processes.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/334-0
+00:45:21.770 --> 00:45:22.130
+<v Matthias Max>Uh-huh.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/335-0
+00:45:23.890 --> 00:45:24.370
+<v Matthias Max>Good.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/336-0
+00:45:25.450 --> 00:45:29.912
+<v Matthias Max>Then, next one,
+multi-instance on concurrency,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/336-1
+00:45:29.912 --> 00:45:33.330
+<v Matthias Max>as the back end scales horizontally.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/337-0
+00:45:34.450 --> 00:45:38.050
+<v Matthias Max>This is something I think we need to
+consider.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/338-0
+00:45:39.410 --> 00:45:39.890
+<v Matthias Max>Um...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/340-0
+00:45:41.490 --> 00:45:47.523
+<v Yosif Mihaylov>Do we, because this is sorry again,
+this is this is a topic only for the case</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/339-0
+00:45:41.730 --> 00:45:43.650
+<v Matthias Max>Your school? Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/340-1
+00:45:47.523 --> 00:45:51.933
+<v Yosif Mihaylov>where we have this process implemented as
+a replacement,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/340-2
+00:45:51.933 --> 00:45:57.734
+<v Yosif Mihaylov>implemented like an automatic mechanism
+that's constantly running every 15</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/340-3
+00:45:57.734 --> 00:46:00.210
+<v Yosif Mihaylov>seconds and whatever this topic.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/341-0
+00:46:01.050 --> 00:46:06.018
+<v Yosif Mihaylov>Is valid only then,
+when when we have it via an endpoint</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/341-1
+00:46:06.018 --> 00:46:10.290
+<v Yosif Mihaylov>triggered on demand, this is not relevant,
+so...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/342-0
+00:46:10.690 --> 00:46:15.521
+<v Matthias Max>Why is it not relevant?
+The load balancer literally decides if we</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/342-1
+00:46:15.521 --> 00:46:18.450
+<v Matthias Max>need multiple instances for the request.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/344-0
+00:46:18.450 --> 00:46:21.659
+<v Yosif Mihaylov>The load balancer, load balancer,
+in the end,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/344-1
+00:46:21.659 --> 00:46:26.055
+<v Yosif Mihaylov>will forward the request to a single
+instance. There won't be,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/344-2
+00:46:26.055 --> 00:46:30.381
+<v Yosif Mihaylov>there won't be the case where the load
+balancer, for example,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/343-0
+00:46:29.090 --> 00:46:29.650
+<v Matthias Max>Mhm.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/344-3
+00:46:30.381 --> 00:46:33.730
+<v Yosif Mihaylov>forwards the same request to the two
+instances.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/345-0
+00:46:34.290 --> 00:46:41.390
+<v Matthias Max>Yeah, maybe I was formulating it wrong.
+I was in the maximum situation</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/345-1
+00:46:41.390 --> 00:46:48.290
+<v Matthias Max>considering 64 branches live.
+We get a request to run it for all 64.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/345-2
+00:46:48.290 --> 00:46:52.290
+<v Matthias Max>I just imagine it should be split across</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/347-0
+00:46:53.250 --> 00:46:57.500
+<v Matthias Max>instances,
+but also then you would have separation</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/347-1
+00:46:57.500 --> 00:47:03.250
+<v Matthias Max>by branch or branches and it would not be
+a conflict, correct? Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/346-0
+00:47:00.290 --> 00:47:00.450
+<v Yosif Mihaylov>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/348-0
+00:47:04.930 --> 00:47:10.004
+<v Matthias Max>Okay, good.
+Last one I think we touched already.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/348-1
+00:47:10.004 --> 00:47:16.942
+<v Matthias Max>It's just a sensitive topic,
+the load we put on team as databases.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/348-2
+00:47:16.942 --> 00:47:23.570
+<v Matthias Max>I would want to align on that with them,
+asking questions like,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/349-0
+00:47:23.890 --> 00:47:31.436
+<v Matthias Max>all these queries fine or come up with
+examples for a three-hour outage on</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/349-1
+00:47:31.436 --> 00:47:36.970
+<v Matthias Max>branch XYZ,
+we would run these queries resulting in 7,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/349-2
+00:47:36.970 --> 00:47:43.410
+<v Matthias Max>000 whatever IDs records returned.
+Is that an issue, yes or no?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/350-0
+00:47:44.210 --> 00:47:50.943
+<v Matthias Max>Do we have to throttle it to limit
+execution of query in batches or with</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/350-1
+00:47:50.943 --> 00:47:56.570
+<v Matthias Max>pauses of a second in between?
+That's just the context here.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/350-2
+00:47:56.570 --> 00:48:02.290
+<v Matthias Max>I want to verify and not just blindly
+assume that our huge...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/351-0
+00:48:02.330 --> 00:48:07.703
+<v Matthias Max>partially huge selects are just fine.
+I think that's what we should do.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/351-1
+00:48:07.703 --> 00:48:11.883
+<v Matthias Max>I don't know what the questions are
+really going to be,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/351-2
+00:48:11.883 --> 00:48:17.853
+<v Matthias Max>but we should maybe collect them during
+our implementation where we collect and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/351-3
+00:48:17.853 --> 00:48:20.690
+<v Matthias Max>gather some more knowledge about this.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/352-0
+00:48:21.890 --> 00:48:24.290
+<v Matthias Max>and then post back these questions to
+them.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/353-0
+00:48:30.690 --> 00:48:35.721
+<v Matthias Max>Good.
+Last one I just crossed out because it is</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/353-1
+00:48:35.721 --> 00:48:36.770
+<v Matthias Max>confirmed.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/354-0
+00:48:38.930 --> 00:48:43.580
+<v Matthias Max>So that's fine.
+Then literally the next step is actually</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/354-1
+00:48:43.580 --> 00:48:45.130
+<v Matthias Max>going into backlog.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/355-0
+00:48:45.810 --> 00:48:52.570
+<v Matthias Max>sculpting. We have some code already,
+so I guess it's rather different approach.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/355-1
+00:48:52.570 --> 00:48:58.746
+<v Matthias Max>We wouldn't write everything from scratch
+as if it wouldn't be there yet.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/355-2
+00:48:58.746 --> 00:49:05.090
+<v Matthias Max>We would probably build on the POC and
+just formulate what still is needed.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/356-0
+00:49:05.730 --> 00:49:09.090
+<v Matthias Max>But that's actually up to you.
+I don't know what you prefer.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/357-0
+00:49:10.450 --> 00:49:16.850
+<v Matthias Max>I just wanted to outline what I see left
+to be done.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/359-0
+00:49:21.170 --> 00:49:26.681
+<v Yosif Mihaylov>What is left to be done, like this POC,
+to be honest, covers a lot.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/358-0
+00:49:21.810 --> 00:49:21.930
+<v Matthias Max>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/359-1
+00:49:26.681 --> 00:49:33.327
+<v Yosif Mihaylov>It covers the basic mechanism for this
+recovery. Most of the core logic is there.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/359-2
+00:49:33.327 --> 00:49:39.650
+<v Yosif Mihaylov>What is needed is just to do some,
+first do some refactoring, obviously this.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/360-0
+00:49:42.530 --> 00:49:46.916
+<v Yosif Mihaylov>Just refine the code there.
+In terms of implementations,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/360-1
+00:49:46.916 --> 00:49:52.996
+<v Yosif Mihaylov>what we need to do is expose the endpoint
+for the mechanism. That's one thing.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/360-2
+00:49:52.996 --> 00:49:57.229
+<v Yosif Mihaylov>You dated it there.
+Another thing that we should do is</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/360-3
+00:49:57.229 --> 00:50:00.770
+<v Yosif Mihaylov>implement this deletion detection.
+Right now,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/361-0
+00:50:01.090 --> 00:50:06.015
+<v Yosif Mihaylov>Like we are making a single query,
+this main query I told you about,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/361-1
+00:50:06.015 --> 00:50:10.655
+<v Yosif Mihaylov>where you were just saying,
+give me the shipments that have been</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/361-2
+00:50:10.655 --> 00:50:15.152
+<v Yosif Mihaylov>updated in the last,
+like whatever time we provide as an input</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/361-3
+00:50:15.152 --> 00:50:20.649
+<v Yosif Mihaylov>to the endpoint. In addition to that,
+we have to make additional requests to</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/361-4
+00:50:20.649 --> 00:50:24.290
+<v Yosif Mihaylov>each branch,
+which is to retrieve all the TMS IDs.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/362-0
+00:50:24.370 --> 00:50:28.597
+<v Yosif Mihaylov>This is for the deletion detection.
+This is something that it's not done in</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/362-1
+00:50:28.597 --> 00:50:31.490
+<v Yosif Mihaylov>the POC.
+So that's another thing that we should do.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/363-0
+00:50:32.610 --> 00:50:35.730
+<v Matthias Max>Yeah, that's what it mean. I would just...</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/364-0
+00:50:36.690 --> 00:50:43.196
+<v Matthias Max>literally wrap up the POC to production
+level with the features that it has,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/364-1
+00:50:43.196 --> 00:50:47.337
+<v Matthias Max>merge it,
+and then create the PBIs needed to add</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/364-2
+00:50:47.337 --> 00:50:53.505
+<v Matthias Max>everything you just mentioned,
+like it's all written here, the endpoint,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/364-3
+00:50:53.505 --> 00:50:56.210
+<v Matthias Max>scope, deletion, detection, etc.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/366-0
+00:50:56.850 --> 00:51:02.264
+<v Matthias Max>That's one approach to also distribute
+the work across the team.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/366-1
+00:51:02.264 --> 00:51:07.346
+<v Matthias Max>Because if you say,
+I'll do everything in the POC branch and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/366-2
+00:51:07.346 --> 00:51:13.927
+<v Matthias Max>ticket, I think it gets convoluted.
+We lose track of what's left, what's done,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/366-3
+00:51:13.927 --> 00:51:15.010
+<v Matthias Max>and we don't.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/367-0
+00:51:15.170 --> 00:51:17.170
+<v Matthias Max>Use the Team spectrum.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/368-0
+00:51:18.530 --> 00:51:20.370
+<v Matthias Max>That was just my thinking.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/369-0
+00:51:22.130 --> 00:51:26.850
+<v Matthias Max>Also for Max to have an insight on what's
+left and where we stand.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/370-0
+00:51:28.450 --> 00:51:31.890
+<v Matthias Max>So yeah, how do you want to go on here?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/371-0
+00:51:34.770 --> 00:51:38.904
+<v Matthias Max>Probably Yosif and Boyan,
+you just draught the PBIs,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/371-1
+00:51:38.904 --> 00:51:41.010
+<v Matthias Max>maybe that's a way forward.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/372-0
+00:51:46.290 --> 00:51:47.090
+<v Yosif Mihaylov>Design, yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/373-0
+00:51:48.450 --> 00:51:50.690
+<v Matthias Max>Okay. Yes.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/374-0
+00:51:52.050 --> 00:51:58.439
+<v Matthias Max>And that was it.
+Deeper insights can be found in the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/374-1
+00:51:58.439 --> 00:52:00.610
+<v Matthias Max>write-up of Yosif.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/375-0
+00:52:01.490 --> 00:52:02.050
+<v Matthias Max>Oops.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/376-0
+00:52:03.330 --> 00:52:07.438
+<v Matthias Max>Yeah,
+I think I have to update the link and the</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/376-1
+00:52:07.438 --> 00:52:11.890
+<v Matthias Max>branch of Yosif in as well as a deeper
+analysis of.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/377-0
+00:52:13.090 --> 00:52:17.987
+<v Matthias Max>Everything we've discussed,
+it really touches a lot of aspects and</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/377-1
+00:52:17.987 --> 00:52:23.909
+<v Matthias Max>was then boiled down to this refinement
+brief here. So if you want to go deeper,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/377-2
+00:52:23.909 --> 00:52:25.810
+<v Matthias Max>please feel free to do so.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/378-0
+00:52:33.410 --> 00:52:35.250
+<v Matthias Max>Good, Max, back to you.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/379-0
+00:52:42.970 --> 00:52:43.890
+<v Matthias Max>Hello?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/380-0
+00:52:46.930 --> 00:52:51.490
+<v Matthias Max>Sneezing? I thought we bored you to death.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/381-0
+00:52:59.010 --> 00:52:59.650
+<v Matthias Max>Okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/383-0
+00:52:59.490 --> 00:53:02.625
+<v Maximilian Kehder>No, you did not.
+It was rather me just like continuously</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/383-1
+00:53:02.625 --> 00:53:04.770
+<v Maximilian Kehder>sneezing for, I don't know, one minute.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/382-0
+00:53:06.170 --> 00:53:06.450
+<v Matthias Max>Lapp.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/384-0
+00:53:08.650 --> 00:53:09.330
+<v Matthias Max>Bless you.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/386-0
+00:53:09.010 --> 00:53:14.648
+<v Maximilian Kehder>Yes, regarding the PBIs, Yosif,
+can you create them today?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/386-1
+00:53:14.648 --> 00:53:22.389
+<v Maximilian Kehder>And basically that we can have a final
+look over them before Matthias leaves for</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/386-2
+00:53:22.389 --> 00:53:23.250
+<v Maximilian Kehder>vacation.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/387-0
+00:53:27.410 --> 00:53:27.810
+<v Yosif Mihaylov>Okay.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/388-0
+00:53:28.770 --> 00:53:34.989
+<v Maximilian Kehder>That would be great.
+So what's left for me is talk to Patrick</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/388-1
+00:53:34.989 --> 00:53:42.613
+<v Maximilian Kehder>about the topic you have raised, Boyan,
+regarding the grouping of transport</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/388-2
+00:53:42.613 --> 00:53:47.930
+<v Maximilian Kehder>orders. This is number one. Number 2 is,
+yes, Yosif.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/389-0
+00:53:49.330 --> 00:53:53.442
+<v Yosif Mihaylov>Yeah, sorry that, like,
+before we move from the topic,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/389-1
+00:53:53.442 --> 00:53:57.555
+<v Yosif Mihaylov>question to Matthias,
+because all this time, like, we,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/389-2
+00:53:57.555 --> 00:54:01.368
+<v Yosif Mihaylov>at least I,
+was not able to sync with Ivaylo about</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/389-3
+00:54:01.368 --> 00:54:06.677
+<v Yosif Mihaylov>any of these at any point. Like,
+I haven't heard from him in the last,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/389-4
+00:54:06.677 --> 00:54:07.650
+<v Yosif Mihaylov>I don't know.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/391-0
+00:54:07.730 --> 00:54:13.552
+<v Yosif Mihaylov>More than a week, so my question is, like,
+can we sync with the Ivaylo with this</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/391-1
+00:54:13.552 --> 00:54:17.650
+<v Yosif Mihaylov>with this with our approach with what we
+consider there?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/392-0
+00:54:18.930 --> 00:54:19.890
+<v Yosif Mihaylov>Do we need to?</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/393-0
+00:54:20.450 --> 00:54:28.683
+<v Matthias Max>We don't. We didn't. And in my opinion,
+we can't. It's really the answer I have.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/393-1
+00:54:28.683 --> 00:54:29.090
+<v Matthias Max>I'm.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/394-0
+00:54:30.250 --> 00:54:35.623
+<v Matthias Max>Yeah, to be completely honest,
+done with the collaboration.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/394-1
+00:54:35.623 --> 00:54:40.907
+<v Matthias Max>It's not professional.
+I don't get answers on any channel.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/394-2
+00:54:40.907 --> 00:54:47.087
+<v Matthias Max>I have no shows on meetings.
+I don't get concepts. I requested four,</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/394-3
+00:54:47.087 --> 00:54:51.924
+<v Matthias Max>five times.
+We are back in the motors that it's us in</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/394-4
+00:54:51.924 --> 00:54:52.730
+<v Matthias Max>the room.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/395-0
+00:54:53.650 --> 00:54:56.850
+<v Matthias Max>We own the solutions, the concepts.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/396-0
+00:54:58.010 --> 00:55:01.490
+<v Matthias Max>That's my current take on it.
+If you need that.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/397-0
+00:55:02.690 --> 00:55:06.874
+<v Matthias Max>Reconfirmation with him,
+because you value his insight.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/397-1
+00:55:06.874 --> 00:55:09.490
+<v Matthias Max>Please feel free to try and get it.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/398-0
+00:55:10.410 --> 00:55:14.103
+<v Matthias Max>But at this point,
+I feel confident with this recovery</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/398-1
+00:55:14.103 --> 00:55:17.730
+<v Matthias Max>mechanism,
+and I would move on as discussed just now.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/400-0
+00:55:26.290 --> 00:55:30.405
+<v Maximilian Kehder>Okay,
+so I would sum up basically the topic</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/400-1
+00:55:30.405 --> 00:55:37.139
+<v Maximilian Kehder>from Boyana, number one. Number 2,
+talking about and confirming the ops</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/400-2
+00:55:37.139 --> 00:55:44.715
+<v Maximilian Kehder>behavior, basically who is triggering,
+who is detecting it. This is of ops side.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/400-3
+00:55:44.715 --> 00:55:45.090
+<v Maximilian Kehder>Yep.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/401-0
+00:55:46.290 --> 00:55:50.770
+<v Maximilian Kehder>Those were the leftover questions from me
+and you create the tech PBIs.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/402-0
+00:55:54.130 --> 00:55:54.250
+<v Matthias Max>Yeah.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/403-0
+00:55:55.650 --> 00:55:57.730
+<v Maximilian Kehder>For us to implement an estimate next week.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/404-0
+00:56:00.530 --> 00:56:01.090
+<v Matthias Max>Right.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/406-0
+00:56:03.890 --> 00:56:09.650
+<v Matthias Max>Alright then, see you later in the review,
+not reading, retro, retro.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/405-0
+00:56:04.130 --> 00:56:04.690
+<v Maximilian Kehder>All right.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/407-0
+00:56:10.130 --> 00:56:10.850
+<v Maximilian Kehder>Yes.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/408-0
+00:56:13.010 --> 00:56:13.730
+<v Matthias Max>Thanks.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/409-0
+00:56:13.090 --> 00:56:13.890
+<v Maximilian Kehder>All right.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/410-0
+00:56:14.130 --> 00:56:14.770
+<v Ivaylo Petrov>Thank you.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/414-0
+00:56:15.410 --> 00:56:16.610
+<v Maximilian Kehder>Thanks, everyone. Bye.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/412-0
+00:56:15.450 --> 00:56:16.050
+<v Matthias Max>Bye-bye.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/417-0
+00:56:16.610 --> 00:56:17.010
+<v Ivaylo Petrov>Bye.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/420-0
+00:56:17.170 --> 00:56:17.650
+<v Boyan Valchev>Bye.</v>
+
+fcdbede2-e3fe-4792-be01-266c94cfe8d2/421-0
+00:56:18.050 --> 00:56:18.370
+<v Yosif Mihaylov>Bye.</v>
