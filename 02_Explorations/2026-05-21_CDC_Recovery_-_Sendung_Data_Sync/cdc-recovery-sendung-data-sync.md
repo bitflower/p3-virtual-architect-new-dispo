@@ -1,7 +1,7 @@
 # CDC Recovery - Sendung Data Sync
 
 **Date:** 2026-05-21
-**Status:** Validated Concept (PoC complete)
+**Status:** Accepted (Refinement 2026-05-22) — PBIs being created
 **PoC Branch:** `feature/data-sync-poll-mechanism` (Disposition-Backend)
 **PoC Author:** Yosif Mihaylov
 
@@ -202,6 +202,8 @@ public static GoogleBucketShipmentData ToGoogleBucketShipmentData(this LegEntity
 
 **Why this works:** Shipment-level fields (weight, volume, pallet spaces, traffic mode, addresses) are identical across all legs of a shipment. When a shipment changes, all its legs are updated atomically. So any leg accurately represents the "old" shipment state.
 
+**Critical assumption (confirmed refinement 2026-05-22):** This derivation depends on leg-inherited fields never diverging per-leg. If future features introduce per-leg field changes (e.g., weight splitting across VL sub-legs), the derivation strategy must be updated (e.g., aggregate leg weights to reconstruct shipment weight). Maximilian confirmed that future leg splitting is planned but agreed this is a known future concern, not a Go-Live blocker.
+
 **Resolver pipeline:**
 
 Each `IShipmentUpdatedEventResolver` has:
@@ -312,6 +314,8 @@ Background hosted service that polls TMS at a configurable interval (~15s). Same
 
 **Problem:** If the watermark is derived from local CloudSQL `UpdatedAt`, it reflects when New Dispo wrote the record (local clock), not when TMS changed it (`u_time`, TMS clock). The CDC pipeline adds latency between these two clocks.
 
+**Additional complication (refinement 2026-05-22, Yosif):** TMS timestamps (`u_time`) are not timezone-aware, while New Dispo timestamps are timezone-sensitive. For Go-Live (single branch, on-demand), the operator provides the timestamp in TMS clock domain manually — manageable. For multi-branch/automated future use, a timezone resolution strategy per branch is needed.
+
 **Mitigation:** Apply a safety overlap margin (e.g., watermark - 10 minutes) when querying TMS. Re-processed records are handled gracefully by resolvers via `Supports(old, new)` — if nothing changed, no resolver fires. Alternative: persist the last successfully processed TMS `u_time` during CDC processing to stay in the TMS clock domain.
 
 ### 3. TMS Database Load Protection
@@ -326,11 +330,13 @@ Background hosted service that polls TMS at a configurable interval (~15s). Same
 
 **Action required:** Coordinate with Nagel on acceptable query volume before production use.
 
-### 4. Multi-Instance Concurrency (TBD)
+### 4. Multi-Instance Concurrency (De-scoped for Go-Live)
 
 **Problem:** If Backend runs multiple instances, multiple recovery processes could run simultaneously on the same data.
 
-**Options to discuss in refinement:**
+**Refinement outcome (2026-05-22):** De-scoped for Go-Live. Only relevant if mechanism becomes an automatic background process. For on-demand triggering, the load balancer routes to a single instance. Branches provide natural separation — no conflict even if multiple instances process different branches. Must be revisited if mechanism becomes automated.
+
+**Options for future automated mode:**
 - Database flag: persist "sync is running" flag (simple, slight race condition window)
 - Leader election: only one instance runs the sync
 - Accept idempotency: resolvers check field changes, so duplicate processing is safe but wasteful
@@ -357,9 +363,9 @@ Background hosted service that polls TMS at a configurable interval (~15s). Same
 | 2 | **What's the detection threshold?** When do we declare an outage? | Affects runbook and alerting design |
 | 3 | **Who triggers recovery?** DevOps? Operations? Automated? | Affects endpoint authorization, documentation, training |
 | 4 | ~~**All branches or per-branch?**~~ Resolved: support both — operations provides branch selection as endpoint input | - |
-| 5 | **TMS database load tolerance?** Acceptable query volume per minute? | Must be answered by Nagel before production use |
-| 6 | **Is recovery idempotent?** Running it twice should be safe | Likely yes (resolvers check changes), needs explicit verification |
-| 7 | **How is the watermark derived?**<br>A: `MAX(UpdatedAt)` from local CloudSQL entities with safety margin to account for CDC pipeline latency (clock domain mismatch between TMS `u_time` and local write time)<br>B: Persist the last successfully processed TMS `u_time` value directly during CDC processing (stays in TMS clock domain, no conversion needed, but new state to maintain) | Determines recovery accuracy and implementation approach — needs team refinement |
+| 5 | **TMS database load tolerance?** Acceptable query volume per minute? | Must be answered by Nagel before production use. Collect concrete query examples during implementation. |
+| 6 | ~~**Is recovery idempotent?** Running it twice should be safe~~ **Confirmed (refinement 2026-05-22, Yosif):** Idempotent by nature — mechanism always retrieves current latest state from TMS and compares against local state. Only breaks under concurrent execution, which does not apply to on-demand triggering. | Resolved |
+| 7 | **How is the watermark derived?**<br>A: `MAX(UpdatedAt)` from local CloudSQL entities with safety margin to account for CDC pipeline latency (clock domain mismatch between TMS `u_time` and local write time)<br>B: Persist the last successfully processed TMS `u_time` value directly during CDC processing (stays in TMS clock domain, no conversion needed, but new state to maintain)<br>**Timezone complication (refinement 2026-05-22):** TMS timestamps are not timezone-aware; New Dispo timestamps are timezone-sensitive. For Go-Live (single branch, on-demand), operator provides timestamp in TMS clock domain manually. | Open — for Go-Live, external input; auto-derivation is post-June |
 
 ---
 
@@ -429,8 +435,9 @@ Based on this concept, the following work items can be derived:
 | P3 Internal Bi-Weekly (transcript) | 2026-05-19 | Team-level summary, process questions identified |
 | Dispo Blocker with Joachim Schreiner, Patrick Uschmann (PO) (transcript) | 2026-05-21 | Confirmed: dispatched shipments never deleted in TMS, delete constraint being enforced |
 | `feature/data-sync-poll-mechanism` branch | 2026-05-19 | PoC implementation |
+| Extra Refinement: CDC Recovery (transcript) | 2026-05-22 | Concept accepted, idempotency confirmed, multi-instance de-scoped, timezone complication identified, old-state derivation assumption documented |
 
-**Capacity note:** Yosif has no capacity for New Dispo for ~3 weeks (as of 2026-05-19). Process decisions and concept finalization can proceed in parallel.
+**Note (2026-05-22):** Ivaylo Pashov collaboration on CDC topics abandoned — no responses, no-shows, no concepts despite repeated requests. Team owns the solutions and concepts independently.
 
 ---
 
