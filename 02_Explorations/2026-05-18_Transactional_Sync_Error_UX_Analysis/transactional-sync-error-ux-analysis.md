@@ -87,7 +87,7 @@ The transactional flows implement a **pre-action sync check**: before executing 
 
 ### Delete Transport Order (#124364)
 
-Minimal changes so far — only adds a `mode` parameter to the GraphQL mutation. No sync detection implemented yet.
+**In Progress.** Sync detection designed: check if deletion was already performed in TMS → if yes, sync local state by unassigning legs/lots on New Dispo side and return HTTP 200 (operation effectively succeeded). Does not check whether legs are assigned to a different TO — only cares about cleaning up local state.
 
 ### Atomicity Guarantees
 
@@ -133,12 +133,12 @@ The concept documentation (approved April 2026) specified verification queries a
 | **04 AssignLotToTO** | Check all lot legs, per-leg count, user retries | Queries TMS batch, **auto-repairs** per conflicting leg, returns HTTP 200 with per-leg `ConflictDto` (same-TO/different-TO distinction). Same branch as Flow 02 (not yet merged — merge conflicts) | **Overdelivered** — auto-repair per leg + same/different-TO error messages. Different error contract: HTTP 200 + Conflicts array (not 409). |
 | **05 UnassignLots** | Query TMS for removal status, show error, user retries | Queries TMS, **auto-repairs** unsynched legs, proceeds with synched legs, returns per-item success/failure | **Overdelivered** — auto-repair + partial success (synched legs proceed, unsynched repaired) |
 | **06 UnassignLegs** | Query TMS per-leg, show error, user retries | Same auto-repair pattern, per-leg granularity, proceeds with synched legs | **Overdelivered** — auto-repair + partial success |
-| **07 DeleteTO** | Query TMS for TO existence, show error, user retries | Only adds `mode` parameter to mutation — no sync check | **Underdelivered** — no state check, no error handling, no repair |
+| **07 DeleteTO** | Query TMS for TO existence, show error, user retries | In Progress: check if already deleted in TMS → sync local state, return 200 | **Catching up** — sync detection designed, implementation in progress |
 
 **Summary:**
 - 6 of 7 flows **overdeliver** vs. Option 1 (auto-repair instead of manual retry)
 - Of these, 2 (lot-based assign flows) are implemented on branch but not yet merged (merge conflicts)
-- 1 of 7 flows **underdelivered** (DeleteTO has no sync check at all)
+- 1 of 7 flows **catching up** (DeleteTO sync detection in progress — #124364)
 
 ### Cross-cutting: Option 1 Requirements Not Yet Addressed
 
@@ -176,7 +176,7 @@ Detailed per-flow analysis with sequence diagrams, concept vs. implementation co
 | 04 AssignLotToTO | [flow-04-assign-lot-to-transport-order.md](./flow-04-assign-lot-to-transport-order.md) | Overdelivered (on branch, merge conflicts) |
 | 05 UnassignLots | [flow-05-unassign-lots.md](./flow-05-unassign-lots.md) | Overdelivered |
 | 06 UnassignLegs | [flow-06-unassign-legs.md](./flow-06-unassign-legs.md) | Overdelivered |
-| 07 DeleteTO | [flow-07-delete-transport-order.md](./flow-07-delete-transport-order.md) | Underdelivered |
+| 07 DeleteTO | [flow-07-delete-transport-order.md](./flow-07-delete-transport-order.md) | In Progress (#124364) |
 
 ---
 
@@ -397,11 +397,11 @@ The flow concept documents specify what data is queryable from TMS at sync-check
 | 10 | **Dedicated log infrastructure** — separate log sink for conflict events? | No. Use existing GCP Cloud Run log. Filter by incident ID. No additional infra. | 2026-05-21 |
 | 11 | **Incident ID correlation across retries** — should the same entity get the same ID on repeated failures? | No. Each request gets a fresh ID. Separate requests = separate incidents. | 2026-05-21 |
 | 12 | **Meaning of "non-recoverable"** — permanently broken or just this request? | Per-request scope: non-recoverable within this request including internal Polly retries. User can retry manually later. | 2026-05-21 |
+| 13 | **Proactive vs. reactive detection** — background check or only on user action? | Reactive only (on next user action). Accepted for June as "manual minimal version." | 2026-05-21 |
+| 14 | **Concept drift** — auto-repair went beyond Option 1, update docs? | Yes. Auto-repair is now the documented pattern, confirmed by team. Concept updated to reflect what was built. | 2026-05-21 |
+| 15 | **Toast auto-dismiss duration** — 3 seconds too short? | Addressed by severity model: info auto-dismisses, warning/error stay until dismissed. Validate during FE implementation. | 2026-05-21 |
 
 ### Still Open
 
-1. **#124364 (DeleteTransportOrder)**: No sync detection yet — concept specifies a simple TO-existence check. Who implements this? The concept also notes DeleteTO is **not idempotent** (error 20016 on retry).
-2. **Lot-based assign flows** (branch `feature/assing-lot-create-transport-order-from-lot-indempotent`): Has merge conflicts (not yet merged). Uses HTTP 200 + `Conflicts` array instead of HTTP 409 + `ConflictException`. Must adopt unified contract from #124105 AC 3 at merge time.
-3. **Proactive vs. reactive detection**: Current implementation only detects out-of-sync on next user action. Concept Scenarios 2+3 describe cases where inconsistency persists silently until user happens to interact. Is this acceptable for June, or does the PO need a background check mechanism?
-4. **Concept drift**: The implementation went beyond Option 1 (manual recovery) by auto-repairing state. This is better for UX but wasn't in the original decision. Should the concept docs be updated to reflect what was actually built?
-5. **Toast auto-dismiss duration**: 3-second auto-dismiss may be too short for information-dense toasts. Addressed by severity model (orange/red stay until dismissed), but worth validating during implementation.
+1. **#124364 (DeleteTransportOrder)**: In Progress. Sync detection designed but not yet complete. Must adopt unified error contract from #124105 AC 3 and include incident ID (AC 1) + structured logging (AC 2).
+2. **Lot-based assign flows** (#123304 In Progress, branch `feature/assing-lot-create-transport-order-from-lot-indempotent`): Has merge conflicts (not yet merged). Ticket specifies "return 409 conflict" which may align with unified contract from #124105 AC 3. Must adopt unified contract at merge time.
