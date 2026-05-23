@@ -724,9 +724,47 @@
       }
     },
     {
+      "id": "refinement-cdc-recovery-sendung-data-sync",
+      "source": "02_Explorations/2026-05-21_CDC_Recovery_-_Sendung_Data_Sync/refinement-brief.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Planning/Team-Refinements/2026%2D05%2D22-CDC-Recovery-Sendung-Data-Sync.md",
+      "description": "CDC Recovery Sendung Data Sync - Refinement Brief for team session",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Refinement brief - rewrite links to wiki paths"
+      }
+    },
+    {
+      "id": "exploration-cdc-recovery-sendung-data-sync",
+      "source": "02_Explorations/2026-05-21_CDC_Recovery_-_Sendung_Data_Sync/cdc-recovery-sendung-data-sync.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D21-CDC-Recovery-Sendung-Data-Sync.md",
+      "description": "CDC Recovery Sendung Data Sync - Full exploration concept with architecture, algorithm, and backlog",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Full exploration document - rewrite links, remove internal-only references"
+      }
+    },
+    {
       "id": "exploration-sync-conflict-ux",
       "source": "02_Explorations/2026-05-18_Transactional_Sync_Error_UX_Analysis/ux-meeting-onepager.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D20-Sync-Conflict-UX-Meeting-Brief.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D20-Sync-Conflict-UX.md",
       "description": "Sync Conflict UX Meeting Brief - decision document for PO alignment on error UX across 7 transactional flows",
       "syncStrategy": {
         "type": "full-sync",
