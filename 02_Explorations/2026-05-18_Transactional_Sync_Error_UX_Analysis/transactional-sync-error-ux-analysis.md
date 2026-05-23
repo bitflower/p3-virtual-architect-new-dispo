@@ -11,8 +11,10 @@
 - `feature/add-initial-retry-behavior` (PR #32732, merged) — #124103 (retry mechanism)
 **Note:** All feature branches share merge-base `781a2800` (2026-05-07) with `origin/master`. Diffs are identical regardless of base branch.
 
+<!-- internal -->
 **Meeting Input:**
 - `00_Meetings/2026-05-21_Weekly Refinement - NewDispo-Transactional-FLows-UX+Logging.vtt` — Team refinement with Matthias, Max Kehder, Boyan, Yosif, Bojidar, Ivaylo, Sonja (~75 min)
+<!-- /internal -->
 
 <!-- internal -->
 **Concept Sources (local → wiki via wiki-connector):**
@@ -31,8 +33,8 @@
 ## Goal
 
 Two questions:
-1. Is #124105 ("[BE] Log Dispo<->TMS transactional issues and return proper response") still needed, or do the flow implementations already cover it?
-2. What sync error information could be surfaced to the Frontend for the PO to design a UX concept (#123950)?
+1. **UX (#123950):** What should the user see when a sync conflict occurs — toast severity, wording, incident ID visibility, partial success handling?
+2. **Logging (#124105):** What structured logging and unified error response does the Backend need to support the UX concept and enable operations to investigate failures?
 
 ---
 
