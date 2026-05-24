@@ -16,6 +16,10 @@
 | Code/CALConsult.TmsProxyClient                     | TMS Proxy Client                               |
 | Code/Disposition-Rollout-Tools                     | New Dispo Rollout Tools / Helpers              |
 
+## Testing
+
+- New Dispo Backend uses **MSTest** (`MSTest.TestFramework` / `Microsoft.VisualStudio.TestTools.UnitTesting`). Use `[TestClass]`, `[TestMethod]`, `[TestInitialize]` — not xUnit or NUnit.
+
 ## WIKI
 
 | Folder                                        | Component                           |

@@ -776,6 +776,26 @@
       }
     },
     {
+      "id": "exploration-tour-calculation-tracing",
+      "source": "02_Explorations/2026-05-24_Tour_Calculation_Tracing_-_Shared_Code_Analysis/tour-calculation-tracing---shared-code-analysis.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D24-Tour-Calculation-Tracing-Shared-Code-Analysis.md",
+      "description": "Tour Calculation Tracing - shared code analysis, scoping decisions, and trace resolution approach",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "excludeSections": ["Related Files"],
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Exploration document - exclude file path references when publishing to wiki"
+      }
+    },
+    {
       "id": "transactional-sync-error-ux-analysis",
       "source": "02_Explorations/2026-05-18_Transactional_Sync_Error_UX_Analysis/transactional-sync-error-ux-analysis.md",
       "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D18-Sync-Error-UX-Analysis.md",
