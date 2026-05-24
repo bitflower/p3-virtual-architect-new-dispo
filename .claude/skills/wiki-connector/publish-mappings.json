@@ -762,17 +762,36 @@
       }
     },
     {
-      "id": "exploration-sync-conflict-ux",
+      "id": "refinement-sync-conflict-ux",
       "source": "02_Explorations/2026-05-18_Transactional_Sync_Error_UX_Analysis/ux-meeting-onepager.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D20-Sync-Conflict-UX.md",
-      "description": "Sync Conflict UX Meeting Brief - decision document for PO alignment on error UX across 7 transactional flows",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Planning/Team-Refinements/2026%2D05%2D20-Sync-Conflict-UX.md",
+      "description": "Sync Conflict UX Refinement Brief - PO decisions on error UX across 7 transactional flows",
       "syncStrategy": {
         "type": "full-sync",
         "scope": "full-document",
         "dateMarkers": {
           "enabled": false
         },
-        "notes": "Meeting brief for PO UX alignment - no internal tags, no link rewriting, no attachments"
+        "notes": "Refinement brief for PO UX alignment - no internal tags, no link rewriting, no attachments"
+      }
+    },
+    {
+      "id": "transactional-sync-error-ux-analysis",
+      "source": "02_Explorations/2026-05-18_Transactional_Sync_Error_UX_Analysis/transactional-sync-error-ux-analysis.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D05%2D18-Sync-Error-UX-Analysis.md",
+      "description": "Transactional Sync Error UX Analysis - concept vs implementation gap analysis, PO decisions, team refinement feedback",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Full exploration document - rewrite links, remove internal-only references"
       }
     }
   ]
