@@ -285,6 +285,58 @@ A `<ProjectReference>` pointing outside the repo would fail with "file not found
 ### Frontend PR
 - Unchanged — trace ID initiation and header propagation remain as-is
 
+## Validation: Local Trace Captures (2026-05-25)
+
+Two end-to-end trace captures were run locally to validate the Backend-only tracing implementation. The first run exposed a timing bug in `completeTrace` (reported 1 point / 0 ms); the second run confirmed the fix.
+
+### Definitive Trace (Run 2 — post timing fix)
+
+**Trace ID:** `ea109799-a1f1-49d7-8901-ad2fdd1a00b0` | **Total:** 4,018 ms | **Capture points:** 10
+
+```
+FE-1  |>                                                              |  Request initiated
+BE-1  | >                                                             |  Backend received
+BE-2  | >                                                             |  -> TMS Bridge: GetPoolDto
+BE-3  |        >                                                      |  <- TMS Bridge: PoolDTO (549ms)
+BE-4  |        >                                                      |  -> TOP Service
+BE-5  |                                                      >        |  <- TOP Service: Enriched (3,083ms)
+BE-6  |                                                      >        |  -> TMS Bridge: SetPoolDto
+BE-7  |                                                            >  |  <- TMS Bridge: SetPool done (356ms)
+BE-8  |                                                            >  |  Backend response sent (3,991ms total)
+FE-2  |                                                             > |  Frontend received (4,018ms total)
+      0s        1s        2s        3s        4s
+```
+
+| Phase | Duration | % of Total |
+|---|---|---|
+| Frontend → Backend transit | 9 ms | 0.2% |
+| TMS Bridge: GetPoolDto | 549 ms | 13.7% |
+| TOP Service optimization | 3,083 ms | **76.7%** |
+| TMS Bridge: SetPoolDto | 356 ms | 8.9% |
+| Backend overhead + response | 21 ms | 0.5% |
+| **Total (FE-measured)** | **4,018 ms** | **100%** |
+
+### Run Comparison
+
+| Metric | Run 1 (cold) | Run 2 (warm) | Delta |
+|---|---|---|---|
+| Total (FE) | 6,433 ms | 4,018 ms | -37.5% |
+| TMS Bridge: GetPoolDto | 767 ms | 549 ms | -28.4% |
+| TOP Service | 5,145 ms | 3,083 ms | -40.1% |
+| TMS Bridge: SetPoolDto | 403 ms | 356 ms | -11.7% |
+| `completeTrace` points | 1 (bug) | 10 (fixed) | — |
+| `completeTrace` duration | 0 ms (bug) | 4,000 ms (correct) | — |
+
+### Key Findings
+
+- **TOP Service dominates**: ~77–80% of total calculation time across both runs
+- **TMS Bridge calls are fast**: GetPoolDto + SetPoolDto together account for ~20% (well under 1 second each)
+- **Network/processing overhead is negligible**: Frontend ↔ Backend transit + Backend overhead < 1%
+- **Warm-cache effect is significant**: 37.5% total reduction between runs, almost entirely from TOP Service (-40%)
+- **Timing fix confirmed**: `completeTrace` correctly reports all 10 capture points and total duration after the fix
+
+---
+
 ## Related Files
 
 ### Backend (Disposition-Backend) — keeps tracing
