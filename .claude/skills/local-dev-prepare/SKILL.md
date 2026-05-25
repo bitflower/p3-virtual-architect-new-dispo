@@ -138,9 +138,19 @@ ASPNETCORE_ENVIRONMENT=Local dotnet ef database update --project CALConsult.Disp
 
 ### 6. Frontend Local Tweaks
 
-#### a) Point Keycloak to local instance
+In `Code/Disposition-Frontend/apps/nagel-cal-disposition/environment/environment.ts`, apply two changes:
 
-In `Code/Disposition-Frontend/apps/nagel-cal-disposition/environment/environment.ts`, change:
+#### a) Enable development mode
+
+Change `development: false` to `development: true`. Without this, asset paths (e.g. profile pictures) use production-style locale-prefixed paths (`../../../de/assets/...`) that don't exist on the local dev server. With `development: true` it correctly uses `../assets/...`.
+
+```typescript
+development: true, // Set to true if you are developing locally
+```
+
+#### b) Point Keycloak to local instance
+
+Change:
 ```typescript
 url: 'https://dev.new-dispo.nagel.p3ds.net/keycloak',
 ```
