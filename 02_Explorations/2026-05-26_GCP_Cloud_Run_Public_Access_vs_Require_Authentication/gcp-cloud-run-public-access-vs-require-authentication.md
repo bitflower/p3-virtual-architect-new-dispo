@@ -34,8 +34,10 @@ GCP Cloud Run has an **Authentication** setting per service that controls whethe
 
 | Setting | Meaning | Risk |
 |---------|---------|------|
-| **Allow unauthenticated** | Anyone on the internet can call the service URL. No identity token needed. | Endpoint is publicly accessible. |
+| **Allow unauthenticated** | No Google OIDC identity token needed at the infrastructure gate. | No IAM-level caller verification. |
 | **Require authentication** | Caller must present a valid Google OIDC token with `roles/run.invoker` permission. Unauthenticated requests get **403 Forbidden**. | Access controlled via IAM. |
+
+**Important nuance:** "Allow unauthenticated" does **not** automatically mean "publicly reachable from the internet." It only controls the IAM check. A separate setting — **ingress** — controls network reachability. The combination `--allow-unauthenticated` + `--ingress internal` means: no OIDC token required, but only VPC-internal traffic can reach the service. The GCP console's "Authentication" column (visible in the screenshots above) shows only the IAM setting, not the ingress setting — which can be misleading.
 
 ## Analysis
 
@@ -131,7 +133,7 @@ The Google SDK handles **token refresh** automatically. If a shared `HttpClient`
 
 ## Key Takeaway
 
-The "Allow unauthenticated" shortcut saves a few lines of code but exposes the endpoint to the entire internet. For internal services (Cloud Functions calling each other, backend services), **always use "Require authentication"** — the effort is trivial.
+"Allow unauthenticated" alone is not the security risk — it depends on the **ingress** setting. The combination `--ingress internal` + `--allow-unauthenticated` is a valid posture: the service is unreachable from the internet, and Keycloak handles application-level access control within the VPC. Adding GCP IAM "Require authentication" on top provides defense in depth, but introduces an `Authorization` header conflict with Keycloak (see [below](#the-authorization-header-conflict--why-require-authentication--keycloak-is-not-straightforward)).
 
 ## Caller Authentication Code Analysis
 
@@ -259,13 +261,42 @@ For Cloud4Log to function, three communication legs must all succeed:
 | **2** | Cloud Function → Keycloak | Get Keycloak access token | **Yes** — network unreachable |
 | **3** | Cloud Function → TMS Bridge | GraphQL query with Keycloak token | **Yes** — network unreachable |
 
-### Environment comparison
+### Pipeline and wiki evidence — test/prod are already internal
 
-| Environment | Ingress / Visibility | Authentication | Result |
-|-------------|---------------------|---------------|--------|
-| **Test** | Public (reachable from internet) | Allow unauthenticated | Cloud Functions can call TMS Bridge |
-| **Prod** | Public (reachable from internet) | Allow unauthenticated | Cloud Functions can call TMS Bridge |
-| **Dev** | **Not publicly accessible** | **Require authentication** | Cloud Functions **cannot reach** TMS Bridge — blocked |
+The initial assumption (from the GCP console screenshots) was that test/prod are "public." **This is incorrect.** The GCP console's "Authentication" column only shows the IAM setting. The actual deployment pipelines and wiki tell a different story:
+
+**TMS Bridge Azure Pipelines — both test and prod deploy with:**
+
+```yaml
+--allow-unauthenticated \
+--ingress internal
+```
+
+- **Prod** (`azure-pipelines-cloudrun-p-p.yml:167-168`): Introduced by Nikolay Hristov, Feb 24, 2025
+- **Test/WL5** (`azure-pipelines-cloudrun-t-t-wl5.yml:165,170`): Introduced by Nikolay Hristov, May 20, 2025
+
+**Wiki Network-Configuration.md confirms this is standard for ALL services:**
+
+> "All Cloud Run services are configured with `--ingress internal`"
+> "All Cloud Run services are configured with `--vpc-egress all-traffic`"
+
+**Established architectural intent** (from `02_Explorations/2026-03-22_Cloud4Log-Blocker-Clarification/blocker-clarification.md`, written by Matthias Max):
+
+> "The TMS Bridge was designed and built together with Christian. It was initially considered as an API gateway but that decision was revoked early on. **The TMS Bridge is an internal component providing access to TMS data for internal consumers only.**"
+
+**No ADR or formal decision for `--allow-unauthenticated`:** Searched all ADRs, explorations, and meeting notes back to 2024. No documented architecture decision exists for the `--allow-unauthenticated` flag. It was added by Nikolay as a deployment configuration without documented rationale. The wiki (`Why-TMS-Bridge.md`) states Keycloak Bearer tokens are required — no mention of GCP IAM auth.
+
+**Nikolay's statement "TMS Bridge was created to work with public access"** likely refers to the `--allow-unauthenticated` flag (no OIDC required), not to `--ingress all` (internet-reachable). The pipelines confirm ingress is `internal`.
+
+### Environment comparison (corrected)
+
+| Environment | Ingress | IAM (GCP console "Authentication" column) | Keycloak | Internet-reachable? | Result |
+|-------------|---------|------------------------------------------|----------|-------------------|--------|
+| **Test** | `internal` | Allow unauthenticated | Yes | **No** | Works — VPC egress + Keycloak |
+| **Prod** | `internal` | Allow unauthenticated | Yes | **No** | Works — VPC egress + Keycloak |
+| **Dev** | `internal` (?) | **Require authentication** | Yes | **No** | **Blocked** — triggers get 403, network unreachable |
+
+Test and prod already implement `--ingress internal` + `--allow-unauthenticated` + Keycloak. This is **Option 1** from the protection options below. The dev environment is the anomaly — it additionally has "Require authentication" (GCP IAM), which blocks both the Cloud Function triggers and (if they could run) the outgoing calls.
 
 ### Why the team can't fix it themselves
 
@@ -338,13 +369,13 @@ Given the three protection layers (network, GCP IAM, Keycloak) and the header co
 
 ---
 
-#### Option 1: Internal network + Keycloak only (recommended)
+#### Option 1: Internal network + Keycloak only (recommended — already active on test/prod)
 
 | Layer | Setting | Status |
 |-------|---------|--------|
-| Network | `INGRESS_TRAFFIC_INTERNAL_ONLY` | Change needed (currently public on test/prod) |
-| GCP IAM | Allow unauthenticated | No change |
-| Application | Keycloak JWT validation | Already implemented |
+| Network | `--ingress internal` | **Already active** on test/prod (pipeline-confirmed) |
+| GCP IAM | Allow unauthenticated | **Already active** on test/prod |
+| Application | Keycloak JWT validation | **Already implemented** in all callers |
 
 **How it works:**
 - TMS Bridge ingress set to "Internal only" — blocks all internet traffic
@@ -357,10 +388,12 @@ Given the three protection layers (network, GCP IAM, Keycloak) and the header co
 - Within the VPC, Keycloak JWT validation ensures only authorized callers succeed
 - Attack surface: VPC-internal only (not the entire internet)
 
-**Effort:**
-- Terraform/config: Set ingress to internal on TMS Bridge + Keycloak
-- Terraform/config: Enable Direct VPC egress on Cloud Functions (+ Backend if not already)
-- Shared VPC: One-time subnet share + `compute.networkUser` grant from host project admin
+**Current state:** Test and prod already run this configuration. The wiki (`Network-Configuration.md`) documents `--ingress internal` + `--vpc-egress all-traffic` as the standard for all services.
+
+**To unblock dev:**
+- Set Cloud Functions and TMS Bridge on dev to `--allow-unauthenticated` (matching test/prod)
+- Ensure Cloud Functions on dev have VPC egress configured (matching test/prod)
+- Ensure Keycloak is reachable from within the VPC on dev
 - Code: **None**
 
 **Applies to all three legs:**
@@ -457,50 +490,55 @@ Registration in `TMSBridgeSetupExtensions.cs`:
 
 ---
 
-#### Option 4: Public access + Keycloak only (current test/prod)
+#### Option 4: Public access + Keycloak only (not currently used — was incorrectly assumed for test/prod)
 
 | Layer | Setting | Status |
 |-------|---------|--------|
-| Network | `INGRESS_TRAFFIC_ALL` | Current state on test/prod |
-| GCP IAM | Allow unauthenticated | Current state |
+| Network | `INGRESS_TRAFFIC_ALL` | **Not active** — test/prod use `--ingress internal` |
+| GCP IAM | Allow unauthenticated | Already active |
 | Application | Keycloak JWT validation | Already implemented |
 
 **What's protected:**
 - Only Keycloak JWT validation — nothing at network or infrastructure level
-- TMS Bridge URL is reachable from the entire internet
+- TMS Bridge URL would be reachable from the entire internet
 - Protection relies entirely on application-level token validation
 
 **Effort:**
-- **None** — this is the status quo on test/prod
-- Only needs replication to dev (the short-term unblock)
+- Would require changing ingress from `internal` to `all` — a **downgrade** from current test/prod security
+
+This option was initially assumed to be the status quo on test/prod based on the GCP console "Authentication" column, but pipeline analysis proved this wrong. Test/prod already use the more secure Option 1. **This option should not be pursued.**
 
 ---
 
 ### Option comparison
 
-| | Network | GCP IAM | Keycloak | Code changes | Effort | Security |
-|---|---------|---------|----------|-------------|--------|----------|
-| **Option 1** | Internal | — | Existing | None | Low | Good |
-| **Option 2** | Internal | OIDC | Custom header | All callers + TMS Bridge | Medium | Best |
-| **Option 3** | Internal | OIDC | Dropped for S2S | TMS Bridge redesign | High | Best |
-| **Option 4** | Public | — | Existing | None | None | Weak |
+| | Network | GCP IAM | Keycloak | Code changes | Effort | Security | Status |
+|---|---------|---------|----------|-------------|--------|----------|--------|
+| **Option 1** | Internal | — | Existing | None | Low | Good | **Already on test/prod** |
+| **Option 2** | Internal | OIDC | Custom header | All callers + TMS Bridge | Medium | Best | Not implemented |
+| **Option 3** | Internal | OIDC | Dropped for S2S | TMS Bridge redesign | High | Best | Not implemented |
+| **Option 4** | Public | — | Existing | None | None | Weak | **Not in use** (initial misreading) |
 
 ### Recommendation
 
-**Option 1 (Internal network + Keycloak)** is the right target for all environments:
+**Option 1 (Internal network + Keycloak) is already the production standard.** Test and prod have been running this configuration since Nikolay's pipeline setup (Feb 2025 for prod, May 2025 for test). The dev environment is the only anomaly.
 
-- It closes the biggest gap (public internet exposure) with **zero code changes**
-- Keycloak auth is already proven and working — no reason to disrupt it
-- The marginal security gain of Option 2 (GCP IAM on top) does not justify the code changes across three codebases plus the `Authorization` header workaround
-- Option 2 remains available as a future hardening step if requirements change
+The fix is to **align dev with test/prod** — not to migrate test/prod to a new model:
 
-**Phased approach:**
+- Set Cloud Functions and TMS Bridge on dev to `--allow-unauthenticated` + `--ingress internal`
+- Ensure VPC egress is configured for Cloud Functions on dev (test/prod already use `--vpc-egress all-traffic`)
+- Ensure Keycloak is reachable from within the VPC on dev
+- **Zero code changes needed** — the Keycloak auth flow works as-is
 
-| Phase | What | Effort | Timeline |
-|-------|------|--------|----------|
-| **0. Unblock dev** | Align dev with test/prod: set ingress to "All", IAM to "Allow unauthenticated" | Config only (Christian/DevOps) | Immediate |
-| **1. Network hardening** | All environments: ingress → "Internal only", Cloud Functions + Backend → Direct VPC egress | Terraform config + one-time shared VPC grants | Mid-term |
-| **2. Optional: GCP IAM** | Add "Require authentication" + OIDC handler + custom header (Option 2) | Code changes in TMS Bridge, Backend, Cloud4Log | Only if security audit requires it |
+Option 2 (adding GCP IAM on top) remains available as a future hardening step, but the `Authorization` header conflict makes it a non-trivial change across three codebases. It should only be pursued if a security audit explicitly requires infrastructure-level identity verification beyond network isolation + Keycloak.
+
+**Action plan:**
+
+| Step | What | Effort | Owner |
+|------|------|--------|-------|
+| **1. Align dev** | Set Cloud Functions + TMS Bridge + Keycloak on dev to `--allow-unauthenticated` + `--ingress internal` + VPC egress | Config only | Christian/DevOps + Nikolay |
+| **2. Verify VPC egress on dev** | Confirm Cloud Functions on dev have `--vpc-egress all-traffic` and the shared VPC subnet is shared with WL5-dev | Config check | Mihailo + Nikolay |
+| **3. Optional future hardening** | Add "Require authentication" + OIDC handler + custom header (Option 2) | Code changes in TMS Bridge, Backend, Cloud4Log | Only if security audit requires it |
 
 ### GCP Documentation — Private Networking
 
@@ -512,22 +550,140 @@ Registration in `TMSBridgeSetupExtensions.cs`:
 
 ### Action items
 
-- [ ] Matthias: Escalate to Christian — align dev with test/prod (Phase 0 unblock)
-- [ ] Check with Mihailo + Nikolay (2026-05-27): Clarify exact setup needed for TMS Bridge and Keycloak on dev — raise Direct VPC egress as the target (not private DNS)
-- [ ] Mid-term (Phase 1): Plan migration of all environments to internal ingress + Direct VPC egress
+- [ ] Matthias: Escalate to Christian/DevOps — align dev Cloud Functions + TMS Bridge + Keycloak with test/prod config (`--allow-unauthenticated` + `--ingress internal` + `--vpc-egress all-traffic`)
+- [ ] Check with Mihailo + Nikolay (2026-05-27): Confirm VPC egress and shared VPC subnet config on dev — raise that test/prod already have the correct setup, dev just needs to match
 - [ ] Yosif is the right contact for mock data / database topics on dev (not Mihailo)
+
+## gcloud Verification (2026-06-08)
+
+Live `gcloud` query of all three WL5 environments, run by Matthias Max.
+
+### TMS Bridge — Cross-Environment Comparison
+
+| Setting | **Dev** (`prj-cal-w-wl5-d-d048-53ad`) | **Test** (`prj-cal-w-wl5-t-6c00-53ad`) | **Prod** (`prj-cal-w-wl5-p-3e5b-53ad`) |
+|---------|--------|--------|--------|
+| **Service name** | `cal-new-disposition-tmsbridge-d-d` | `cal-new-disposition-tmsbridge-t-t` | `cal-new-disposition-tmsbridge-p-p` |
+| **Region** | europe-west3 | europe-west3 | europe-west3 |
+| **Ingress** | `internal-and-cloud-load-balancing` | `internal` | `internal` |
+| **IAM (`run.invoker`)** | IAP SA only | `allUsers` | `allUsers` |
+| **IAP enabled** | **Yes** | No | No |
+| **Default URL** | Disabled | Enabled | Disabled |
+| **VPC egress** | `all-traffic` | `all-traffic` | `all-traffic` |
+| **Service Account** | `94140780561-compute@developer.gserviceaccount.com` (default) | `wl5-cloudrun@...t-6c00-53ad` (custom) | `wl5-cloudrun@...p-3e5b-53ad` (custom) |
+| **Min instances** | 0 (scales to zero) | 1 | 1 |
+| **Max instances** | 10 | 100 | 25 |
+| **Concurrency** | 80 | 60 | 80 |
+| **CPU / Memory** | 1 vCPU / 1 Gi | 1 vCPU / 1 Gi | 1 vCPU / 1 Gi |
+| **CloudSQL** | — | `cal-new-disposition-psql-t-t` | — |
+| **Shared VPC** | `vpc-c-shared-vpc-c-net-s-d` | `vpc-c-shared-vpc-c-net-s-t` | `vpc-c-shared-vpc-c-net-s-p` |
+| **Last deployed** | 2026-06-05 | 2026-06-05 | 2026-06-02 |
+
+### IAM Policy Details
+
+**Dev:**
+```
+bindings:
+- members:
+  - serviceAccount:service-94140780561@gcp-sa-iap.iam.gserviceaccount.com
+  role: roles/run.invoker
+```
+
+**Test:**
+```
+bindings:
+- members:
+  - allUsers
+  role: roles/run.invoker
+```
+
+**Prod:**
+```
+bindings:
+- members:
+  - allUsers
+  role: roles/run.invoker
+```
+
+### Key Findings
+
+**1. Dev uses IAP (Identity-Aware Proxy) — not just "Require authentication"**
+
+The exploration originally assumed dev had simple GCP IAM "Require authentication" (i.e., callers need an OIDC token with `run.invoker`). The actual config is more complex: dev has **IAP enabled** (`run.googleapis.com/iap-enabled: true`). IAP is a separate Google infrastructure layer that sits in front of a Cloud Load Balancer, intercepts requests, and enforces Google-managed authentication before traffic reaches Cloud Run. Only the IAP service account (`service-94140780561@gcp-sa-iap.iam.gserviceaccount.com`) has `roles/run.invoker` — all traffic must flow through IAP → Load Balancer → Cloud Run. This explains both the `internal-and-cloud-load-balancing` ingress (IAP requires a load balancer) and the disabled default URL (traffic must enter via the LB, not direct Cloud Run URL).
+
+**2. Dev uses the default Compute Engine service account**
+
+Test and prod use a dedicated `wl5-cloudrun@...` service account. Dev uses the default Compute Engine SA (`94140780561-compute@developer.gserviceaccount.com`). This is a security anti-pattern — the default SA has `Editor` role on the project, granting far more permissions than needed.
+
+**3. Dev has no minimum instances**
+
+Test and prod keep at least 1 instance warm. Dev scales to zero, adding cold start latency.
+
+**4. Ingress setting divergence confirms the blocker**
+
+Test/prod use `--ingress internal` — only VPC-internal traffic reaches the service. Dev uses `--ingress internal-and-cloud-load-balancing` — traffic can come from internal sources OR through a Cloud Load Balancer with IAP. This is a fundamentally different networking model. Cloud Functions on dev cannot reach the TMS Bridge via direct VPC egress the way they can on test/prod, because the IAP layer intercepts.
+
+**5. All environments share the same VPC egress pattern**
+
+All three environments have `--vpc-access-egress: all-traffic` and are connected to the shared VPC. The network plumbing is consistent — the divergence is purely at the ingress/auth layer.
+
+### Impact on Recommendation
+
+The original recommendation (align dev with test/prod) remains correct, but the scope is slightly larger than assumed:
+
+| Change needed on dev | Original assumption | Actual state |
+|---------------------|---------------------|--------------|
+| **Authentication** | Switch from "Require authentication" to "Allow unauthenticated" | Switch from **IAP-gated** to "Allow unauthenticated" — also requires removing IAP config and potentially the load balancer |
+| **Ingress** | Already `internal` | Switch from `internal-and-cloud-load-balancing` to `internal` |
+| **Service Account** | Already correct | Switch from **default Compute SA** to dedicated `wl5-cloudrun` SA |
+| **Min instances** | Not discussed | Set to 1 to match test/prod |
+
+### All Cloud Run Services on Dev (for reference)
+
+| Service | Ingress |
+|---------|---------|
+| `cal-new-disposition-backend-d-d` | `internal-and-cloud-load-balancing` |
+| `cal-new-disposition-frontend-d-d` | `internal-and-cloud-load-balancing` |
+| `cal-new-disposition-keycloak-d-d` | `internal-and-cloud-load-balancing` |
+| `cal-new-disposition-tmsbridge-d-d` | `internal-and-cloud-load-balancing` |
+| `dev-download-proofofdelivery-function` | `internal` |
+| `dev-downloadproofofdeliveryfunction` | `internal` |
+| `dev-upload-deliverynotes-function` | `internal` |
+| `dev-uploaddeliverynotesfunction` | `internal` |
+
+All four core services (Backend, Frontend, Keycloak, TMS Bridge) on dev use `internal-and-cloud-load-balancing` with IAP. The Cloud Functions use `internal`. This confirms the IAP/LB pattern was applied project-wide to the core services on dev, not just TMS Bridge.
+
+---
 
 ## Questions/Open Items
 
-- [ ] **Nikolay follow-up (2026-05-27):** What exactly does "TMS Bridge is created to work with public access" mean? Is it a code-level assumption or just the current deployment config?
-- [ ] What is the ingress setting on dev vs test/prod? Is it "Internal" vs "All"?
-- [ ] Is VPC connector configured for the Cloud Functions on dev?
-- [ ] For Phase 1: Confirm that Keycloak is also reachable internally (same VPC) or determine its deployment model
-- [ ] For Phase 1: Verify that the Backend Cloud Run service can use Direct VPC egress to reach TMS Bridge (both are Cloud Run — may already be internal by default if in same project)
-- [ ] If Phase 2 (GCP IAM) is ever pursued: the following callers need `run.invoker` on the TMS Bridge — **New Dispo Backend** SA and **Cloud4Log** SA. Confirm exact service account emails per environment.
+### Resolved by pipeline/wiki analysis
+
+- [x] **What is the ingress setting on test/prod?** → `--ingress internal` (confirmed in both Azure Pipelines and wiki `Network-Configuration.md`). Test/prod are NOT publicly reachable from the internet.
+- [x] **What does "TMS Bridge is created to work with public access" mean?** → Likely refers to `--allow-unauthenticated` (no OIDC required), not `--ingress all` (internet-reachable). Pipelines confirm ingress is `internal`. No ADR or formal decision documented — appears to be a deployment configuration choice by Nikolay, not an architectural requirement.
+- [x] **Is there a mid-term migration needed for test/prod?** → No. Test/prod already implement Option 1 (internal ingress + allow unauthenticated + Keycloak). Only dev needs alignment.
+
+### Resolved by gcloud verification (2026-06-08)
+
+- [x] **Nikolay follow-up (2026-05-27):** Confirm dev environment config — **Dev uses IAP + `internal-and-cloud-load-balancing` ingress. Only the IAP service account has `run.invoker`. Default URL is disabled. This is a fundamentally different setup from test/prod.** Verified via `gcloud run services describe` + `get-iam-policy`.
+- [x] **VPC egress on dev** → `all-traffic` — matches test/prod. VPC egress is consistent across all environments.
+- [x] **Service accounts per environment** → Dev: `94140780561-compute@developer.gserviceaccount.com` (default, should be changed). Test: `wl5-cloudrun@prj-cal-w-wl5-t-6c00-53ad.iam.gserviceaccount.com`. Prod: `wl5-cloudrun@prj-cal-w-wl5-p-3e5b-53ad.iam.gserviceaccount.com`.
+
+### Still open
+
+- [ ] Is the shared VPC subnet shared with WL5-dev, and does the Cloud Run service agent have `compute.networkUser`?
+- [ ] Is Keycloak reachable from within the VPC on dev? (EBV integration hit the same issue: "TMS Bridge KeyCloak not reachable from APIM" — meeting notes 2025-07-22)
+- [ ] Who configured IAP on dev and why? Was this a deliberate security choice or a Nikolay/DevOps experiment? No ADR or documented decision found.
+- [ ] Can the IAP config + load balancer on dev be safely removed, or do other consumers depend on it?
+- [ ] If Option 2 (GCP IAM) is ever pursued: the following callers need `run.invoker` on the TMS Bridge — **New Dispo Backend** SA and **Cloud4Log** SA. Exact SAs now confirmed for test and prod (see table above). Dev SA needs to be migrated from default Compute SA first.
 
 ## Related Files
 
 - Screenshots: `00_Meetings/2026-05-26_WL5-dev-public-setting/`
 - Meeting transcript: `00_Meetings/2026-05-26_Martin und Mihailo DevOps Cloud4Log GCP Topics.vtt`
 - Clarification chat: `02_Explorations/2026-05-26_GCP_Cloud_Run_Public_Access_vs_Require_Authentication/chat.md`
+- Cloud4Log blocker clarification (TMS Bridge architectural intent): `02_Explorations/2026-03-22_Cloud4Log-Blocker-Clarification/blocker-clarification.md`
+- TMS Bridge wiki — auth section: `WIKI/Nagel-CAL-Disposition.wiki/Architecure/Backend/Why-TMS-Bridge.md`
+- Network config wiki (ingress/egress documentation): `WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/Infrastructure/Network-Configuration.md`
+- TMS Bridge prod pipeline (source of `--allow-unauthenticated` + `--ingress internal`): `Code/Disposition-Abstraction-Layer/azure-pipelines-cloudrun-p-p.yml:167-168`
+- TMS Bridge test pipeline: `Code/Disposition-Abstraction-Layer/azure-pipelines-cloudrun-t-t-wl5.yml:165,170`
+- EBV meeting notes (same Keycloak reachability issue): `WIKI/Nagel-CAL-Disposition.wiki/EBV-%2D-TMS-Bridge/EBV-Meeting-Notes-22.07.2025.md`
