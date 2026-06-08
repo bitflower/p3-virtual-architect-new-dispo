@@ -1,0 +1,825 @@
+WEBVTT
+
+d4744676-2db1-4090-8ef8-621da49bf28c/7-0
+00:00:08.606 --> 00:00:08.966
+<v Boyan Valchev>Hi.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/8-0
+00:00:09.766 --> 00:00:10.406
+<v Beisheim, Maximilian>Hi, Boyle.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/22-0
+00:01:00.966 --> 00:01:01.686
+<v Maximilian Kehder>Boyan.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/23-0
+00:01:02.206 --> 00:01:02.646
+<v Beisheim, Maximilian>What?</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/24-0
+00:01:05.446 --> 00:01:06.046
+<v Kaupmann, Anna>Bye.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/25-0
+00:01:09.686 --> 00:01:11.126
+<v Maximilian Kehder>All right.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/27-0
+00:01:16.806 --> 00:01:20.886
+<v Maximilian Kehder>So, um, where shall we start?</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/28-0
+00:01:24.166 --> 00:01:26.726
+<v Maximilian Kehder>One second, OK.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/29-0
+00:01:24.806 --> 00:01:28.138
+<v Boyan Valchev>Yeah, I can,
+I can probably just start just the</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/29-1
+00:01:28.138 --> 00:01:33.274
+<v Boyan Valchev>discussion around the whole topic,
+like we are like the use cases Max you</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/29-2
+00:01:33.274 --> 00:01:37.785
+<v Boyan Valchev>gave us, I think it was on Wednesday,
+like we investigated them,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/29-3
+00:01:37.785 --> 00:01:42.089
+<v Boyan Valchev>I've checked one of them now,
+we are no longer able to create</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/29-4
+00:01:42.089 --> 00:01:44.726
+<v Boyan Valchev>duplicates for the for the legs, this.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/32-0
+00:01:44.966 --> 00:01:50.646
+<v Boyan Valchev>This will no longer be reproducible.
+This is like now prohibited on on a</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/32-1
+00:01:50.646 --> 00:01:55.003
+<v Boyan Valchev>database level,
+so you won't be seeing any more similar</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/32-2
+00:01:55.003 --> 00:02:00.371
+<v Boyan Valchev>legs in the in the database,
+like I mean legs for the same shipment.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/31-0
+00:02:00.046 --> 00:02:00.326
+<v Beisheim, Maximilian>Yeah.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/32-3
+00:02:00.371 --> 00:02:03.950
+<v Boyan Valchev>Also,
+when we discussed about the topic which</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/32-4
+00:02:03.950 --> 00:02:04.806
+<v Boyan Valchev>you showed.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/34-0
+00:02:04.886 --> 00:02:10.505
+<v Boyan Valchev>Case me the other the other use case I
+can share my screen. For example,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/34-1
+00:02:10.505 --> 00:02:15.584
+<v Boyan Valchev>when you when you assign just quickly
+here when you assign a leg,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/34-2
+00:02:15.584 --> 00:02:21.126
+<v Boyan Valchev>it's the wrong screen of course,
+from new GSPO and then you switch the.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/35-0
+00:02:23.046 --> 00:02:24.166
+<v Boyan Valchev>The traffic mode.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/36-0
+00:02:25.046 --> 00:02:30.360
+<v Boyan Valchev>Basically, like I, we had an issue there,
+we fixed the issue basically. Now,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/36-1
+00:02:30.360 --> 00:02:33.811
+<v Boyan Valchev>for example,
+if you switch from traffic mode 4 to</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/36-2
+00:02:33.811 --> 00:02:37.814
+<v Boyan Valchev>traffic mode three,
+what new dispute does basically is it</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/36-3
+00:02:37.814 --> 00:02:41.264
+<v Boyan Valchev>creates the HR Lake.
+I can showcase this as well,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/36-4
+00:02:41.264 --> 00:02:44.646
+<v Boyan Valchev>but what it will do,
+it will create the HR Lake.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/37-0
+00:02:45.086 --> 00:02:48.906
+<v Boyan Valchev>What I observed,
+which I don't think is the correct</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/37-1
+00:02:48.906 --> 00:02:54.489
+<v Boyan Valchev>behavior, is that in TMS database,
+the old leg stays assigned. For example,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/37-2
+00:02:54.489 --> 00:02:59.925
+<v Boyan Valchev>like I no longer have a VO leg,
+but it appears from TMS that it's already</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/37-3
+00:02:59.925 --> 00:03:04.406
+<v Boyan Valchev>assigned. So this morning,
+we had a discussion with Joachim.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/38-0
+00:03:04.566 --> 00:03:08.719
+<v Boyan Valchev>about this behavior.
+And he said that this is something which</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/38-1
+00:03:08.719 --> 00:03:13.206
+<v Boyan Valchev>is not implemented from TMS database
+point of view. And basically,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/38-2
+00:03:13.206 --> 00:03:18.430
+<v Boyan Valchev>like he thinks that it should not be
+possible to switch between traffic modes</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/38-3
+00:03:18.430 --> 00:03:23.520
+<v Boyan Valchev>which cause the leg type to change.
+And because this was a contradiction to</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/38-4
+00:03:23.520 --> 00:03:24.726
+<v Boyan Valchev>what we discussed.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/39-0
+00:03:24.806 --> 00:03:28.771
+<v Boyan Valchev>on Wednesday,
+this is why I wanted to ask you basically,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/39-1
+00:03:28.771 --> 00:03:31.900
+<v Boyan Valchev>like, is this a valid use case?
+For example,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/39-2
+00:03:31.900 --> 00:03:36.978
+<v Boyan Valchev>is it a valid use case if I have a
+shipment assigned from you, and I go,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/39-3
+00:03:36.978 --> 00:03:41.777
+<v Boyan Valchev>let's say, in the OTMS system,
+and I switch the traffic mode to such</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/39-4
+00:03:41.777 --> 00:03:43.446
+<v Boyan Valchev>that changes the actual.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/40-0
+00:03:43.566 --> 00:03:44.566
+<v Boyan Valchev>Pick up leg type.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/43-0
+00:03:48.246 --> 00:03:51.969
+<v Maximilian Kehder>Basically,
+the switch not between 2:00 and 4:00,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/41-0
+00:03:48.406 --> 00:03:48.726
+<v Beisheim, Maximilian>Bye.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/43-1
+00:03:51.969 --> 00:03:55.920
+<v Maximilian Kehder>this would still be possible,
+and this would be OK,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/43-2
+00:03:55.920 --> 00:04:00.326
+<v Maximilian Kehder>but the switch between 2:00 or 4:00
+towards one or three.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/42-0
+00:04:00.966 --> 00:04:02.006
+<v Boyan Valchev>Or vice versa.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/44-0
+00:04:02.566 --> 00:04:03.046
+<v Maximilian Kehder>Yep.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/45-0
+00:04:05.206 --> 00:04:09.368
+<v Beisheim, Maximilian>Well, basically,
+we gone through these topics because</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/45-1
+00:04:09.368 --> 00:04:15.148
+<v Beisheim, Maximilian>there were things happening in the new
+desktop app that didn't seem right.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/45-2
+00:04:15.148 --> 00:04:18.925
+<v Beisheim, Maximilian>That's what we started to discuss.
+So basically,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/45-3
+00:04:18.925 --> 00:04:24.166
+<v Beisheim, Maximilian>if you go through this topic,
+it's exactly what we have to discuss.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/47-0
+00:04:24.246 --> 00:04:30.457
+<v Beisheim, Maximilian>how it should be displayed properly,
+because currently we are able to do these</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/47-1
+00:04:30.457 --> 00:04:35.802
+<v Beisheim, Maximilian>changes and the new Diskboard app shows
+things that aren't correct.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/47-2
+00:04:35.802 --> 00:04:41.699
+<v Beisheim, Maximilian>That's basically the topic where we
+stumbled upon. So if you, for example,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/47-3
+00:04:41.699 --> 00:04:42.406
+<v Beisheim, Maximilian>have a...</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/49-0
+00:04:44.166 --> 00:04:50.111
+<v Beisheim, Maximilian>planned transport order with a leg on it.
+And it's, for example,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/48-0
+00:04:46.166 --> 00:04:46.766
+<v Boyan Valchev>Mhm.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/49-1
+00:04:50.111 --> 00:04:56.421
+<v Beisheim, Maximilian>here with the traffic mode 4,
+and I'll change it to, let's say, one,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/49-2
+00:04:56.421 --> 00:05:02.549
+<v Beisheim, Maximilian>it is allowed to do that.
+And what will happen in the new dispo is</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/49-3
+00:05:02.549 --> 00:05:03.646
+<v Beisheim, Maximilian>not correct.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/52-0
+00:05:03.766 --> 00:05:09.240
+<v Beisheim, Maximilian>So somebody has to react to this.
+And somebody had to discuss this in the</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/52-1
+00:05:09.240 --> 00:05:15.454
+<v Beisheim, Maximilian>past that this shouldn't happen on either
+the new dispo deletes the lake in the new</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/50-0
+00:05:09.526 --> 00:05:09.566
+<v Maximilian Kehder>I.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/52-2
+00:05:15.454 --> 00:05:21.667
+<v Beisheim, Maximilian>dispo and it is sent back to the open and
+replan shipments or something else should</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/52-3
+00:05:21.667 --> 00:05:25.366
+<v Beisheim, Maximilian>happen.
+But you cannot just let it stay as it is.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/53-0
+00:05:25.446 --> 00:05:27.526
+<v Beisheim, Maximilian>That's what I tried to discuss with you.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/51-0
+00:05:26.486 --> 00:05:27.046
+<v Boyan Valchev>Jesus.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/55-0
+00:05:28.086 --> 00:05:30.454
+<v Boyan Valchev>Yeah,
+this is this is why I reached this</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/55-1
+00:05:30.454 --> 00:05:34.151
+<v Boyan Valchev>morning to Joachim just to discuss
+exactly this topic with you,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/55-2
+00:05:34.151 --> 00:05:37.097
+<v Boyan Valchev>because it appears here that it's
+possible, right?</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/55-3
+00:05:37.097 --> 00:05:39.870
+<v Boyan Valchev>You can do it from the from the old TMS
+system,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/55-4
+00:05:39.870 --> 00:05:44.433
+<v Boyan Valchev>but he says that this is like a book in
+the TMS system and it should not here,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/55-5
+00:05:44.433 --> 00:05:45.126
+<v Boyan Valchev>there he is.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/56-0
+00:05:47.686 --> 00:05:49.046
+<v Maximilian Kehder>Thanks for joining.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/58-0
+00:05:48.726 --> 00:05:50.566
+<v Boyan Valchev>Are you welcome? Yeah.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/57-0
+00:05:49.926 --> 00:05:50.486
+<v Beisheim, Maximilian>Yeah, my.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/59-0
+00:05:50.766 --> 00:05:51.766
+<v Joachim Schreiner>Hi, what is I mean?</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/60-0
+00:05:52.126 --> 00:05:52.566
+<v Beisheim, Maximilian>Hi.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/61-0
+00:05:53.126 --> 00:05:56.416
+<v Boyan Valchev>Yeah, Joachim,
+I was basically just telling about the</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/61-1
+00:05:56.416 --> 00:06:00.924
+<v Boyan Valchev>conversation we had this morning about
+this switching of traffic modes of</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/61-2
+00:06:00.924 --> 00:06:05.554
+<v Boyan Valchev>assigned shipments and that in your
+opinion it should not be possible to do</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/61-3
+00:06:05.554 --> 00:06:07.686
+<v Boyan Valchev>this once the shipment is assigned.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/62-0
+00:06:09.366 --> 00:06:13.146
+<v Boyan Valchev>And that this is something which should
+be implemented like in the in the</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/62-1
+00:06:13.146 --> 00:06:13.606
+<v Boyan Valchev>database.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/63-0
+00:06:18.086 --> 00:06:24.126
+<v Joachim Schreiner>not to be able to change traffic mode if
+it's assigned to a transport order.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/64-0
+00:06:24.326 --> 00:06:25.206
+<v Boyan Valchev>Exactly, yeah.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/65-0
+00:06:25.766 --> 00:06:25.926
+<v Joachim Schreiner>Mm.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/67-0
+00:06:27.206 --> 00:06:31.241
+<v Joachim Schreiner>Okay,
+would be this suggestion is also</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/67-1
+00:06:31.241 --> 00:06:34.966
+<v Joachim Schreiner>implemented, I think, for long haul.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/68-0
+00:06:36.206 --> 00:06:36.406
+<v Boyan Valchev>If.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/69-0
+00:06:37.446 --> 00:06:37.766
+<v Beisheim, Maximilian>Ohh.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/70-0
+00:06:38.886 --> 00:06:43.734
+<v Beisheim, Maximilian>Well, basically,
+maybe to get maybe a discussion we had a</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/70-1
+00:06:43.734 --> 00:06:47.746
+<v Beisheim, Maximilian>long time ago,
+since we actually in the future,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/70-2
+00:06:47.746 --> 00:06:53.597
+<v Beisheim, Maximilian>we'll be able to plan preliminary
+shipments and we are planning these</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/70-3
+00:06:53.597 --> 00:06:59.782
+<v Beisheim, Maximilian>shipments in for the pickup situation and
+there are certain consolations.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/70-4
+00:06:59.782 --> 00:07:01.286
+<v Beisheim, Maximilian>I assume that not.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/71-0
+00:07:01.686 --> 00:07:07.174
+<v Beisheim, Maximilian>Finally, have been written down,
+or we have to get back our documents is</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/71-1
+00:07:07.174 --> 00:07:07.926
+<v Beisheim, Maximilian>basically.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/72-0
+00:07:09.846 --> 00:07:16.012
+<v Beisheim, Maximilian>Since I am planning a pickup and it's in
+a pickup state and it's a preliminary</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/72-1
+00:07:16.012 --> 00:07:20.227
+<v Beisheim, Maximilian>shipment, I would,
+I'm not quite sure how fast we can</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/72-2
+00:07:20.227 --> 00:07:24.207
+<v Beisheim, Maximilian>implement it,
+but I would assume the system should</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/72-3
+00:07:24.207 --> 00:07:25.846
+<v Beisheim, Maximilian>react is that even if</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/73-0
+00:07:26.806 --> 00:07:33.896
+<v Beisheim, Maximilian>I change a traffic mode that not yet has
+been communicated to the customer and is</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/73-1
+00:07:33.896 --> 00:07:40.641
+<v Beisheim, Maximilian>a preliminary shipment is able to be
+changed only if it changes the state for</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/73-2
+00:07:40.641 --> 00:07:47.126
+<v Beisheim, Maximilian>a certain status that it has been
+communicated, then it should be blocked.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/75-0
+00:07:47.166 --> 00:07:52.796
+<v Beisheim, Maximilian>because we are in a communication state
+and not like we are in the current state</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/74-0
+00:07:49.686 --> 00:07:49.926
+<v Boyan Valchev>Right.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/75-1
+00:07:52.796 --> 00:07:57.454
+<v Beisheim, Maximilian>today with the long haul,
+that if I plan a shipment on a long haul</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/75-2
+00:07:57.454 --> 00:08:01.833
+<v Beisheim, Maximilian>transport order, yes,
+we block the traffic mode because we say</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/75-3
+00:08:01.833 --> 00:08:07.046
+<v Beisheim, Maximilian>this planning state has to be kept.
+But just to get things up and running,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/76-0
+00:08:08.006 --> 00:08:11.102
+<v Beisheim, Maximilian>Yeah,
+I'm not quite sure what the easiest way</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/76-1
+00:08:11.102 --> 00:08:16.286
+<v Beisheim, Maximilian>is to do this topic and to solve it.
+But I believe it is too complicated and</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/76-2
+00:08:16.286 --> 00:08:21.536
+<v Beisheim, Maximilian>too difficult to implement what I tried
+to tell you that since we all have a,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/76-3
+00:08:21.536 --> 00:08:26.854
+<v Beisheim, Maximilian>we all plan preliminary shipments and
+preliminary shipments and if they're not</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/76-4
+00:08:26.854 --> 00:08:28.806
+<v Beisheim, Maximilian>communicated to the customer,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/77-0
+00:08:30.046 --> 00:08:35.222
+<v Beisheim, Maximilian>and they are on a drive instructions,
+a traffic mode can be changed.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/77-1
+00:08:35.222 --> 00:08:39.349
+<v Beisheim, Maximilian>If it's logical,
+there are certain scenarios we can go</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/77-2
+00:08:39.349 --> 00:08:42.649
+<v Beisheim, Maximilian>through,
+then I would expect that the drive</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/77-3
+00:08:42.649 --> 00:08:48.726
+<v Beisheim, Maximilian>instructions would change the tour points
+automatically and I can then just stay</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/78-0
+00:08:48.966 --> 00:08:52.806
+<v Beisheim, Maximilian>Working within this schema, but...</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/79-0
+00:08:54.086 --> 00:08:59.409
+<v Beisheim, Maximilian>If you say it is necessary to keep
+everything in state as it is,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/79-1
+00:08:59.409 --> 00:09:03.668
+<v Beisheim, Maximilian>then my suggestion would be for the
+starting phase,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/79-2
+00:09:03.668 --> 00:09:07.435
+<v Beisheim, Maximilian>if we register that a shipment,
+nevertheless,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/79-3
+00:09:07.435 --> 00:09:11.940
+<v Beisheim, Maximilian>if it's preliminary or final is on drive
+instructions,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/79-4
+00:09:11.940 --> 00:09:14.806
+<v Beisheim, Maximilian>then the state needs to be blocked.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/80-0
+00:09:15.126 --> 00:09:22.177
+<v Beisheim, Maximilian>And the only way to undo it is to delete
+the shipment from the drive instructions</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/80-1
+00:09:22.177 --> 00:09:27.165
+<v Beisheim, Maximilian>and then plan it again.
+I think that is also that what we</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/80-2
+00:09:27.165 --> 00:09:31.206
+<v Beisheim, Maximilian>discussed a long time ago.
+So the question is,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/81-0
+00:09:32.846 --> 00:09:34.086
+<v Beisheim, Maximilian>what needs to be done.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/82-0
+00:09:35.366 --> 00:09:39.535
+<v Boyan Valchev>By just to confirm, by delete,
+you mean on the signing it from the</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/82-1
+00:09:39.535 --> 00:09:40.966
+<v Boyan Valchev>transport order, right?</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/83-0
+00:09:41.446 --> 00:09:47.732
+<v Beisheim, Maximilian>That would be my suggestion for the start,
+but I think Joachim can give his point of</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/83-1
+00:09:47.732 --> 00:09:50.246
+<v Beisheim, Maximilian>view what would be the best to do.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/84-0
+00:09:53.286 --> 00:09:53.726
+<v Joachim Schreiner>And.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/85-0
+00:09:55.286 --> 00:10:08.605
+<v Joachim Schreiner>This solution would mean that on TMS side,
+nothing is to do for the CDC data</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/85-1
+00:10:08.605 --> 00:10:14.486
+<v Joachim Schreiner>exchange or information flow means</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/86-0
+00:10:15.606 --> 00:10:21.098
+<v Joachim Schreiner>There's a traffic mode change and the
+transport on all transport orders that</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/86-1
+00:10:21.098 --> 00:10:21.526
+<v Joachim Schreiner>are...</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/88-0
+00:10:24.166 --> 00:10:32.366
+<v Joachim Schreiner>Involved in this change have to be
+changed by a new dispo.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/89-0
+00:10:32.886 --> 00:10:33.846
+<v Beisheim, Maximilian>Correct. Anna.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/90-0
+00:10:33.366 --> 00:10:34.326
+<v Boyan Valchev>So, sorry, what?</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/91-0
+00:10:33.406 --> 00:10:35.846
+<v Joachim Schreiner>It it sounds a little bit like this.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/92-0
+00:10:36.726 --> 00:10:37.446
+<v Boyan Valchev>No, my.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/94-0
+00:10:36.726 --> 00:10:41.856
+<v Beisheim, Maximilian>I think that is also what we discussed to
+that time when we started the project,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/94-1
+00:10:41.856 --> 00:10:46.036
+<v Beisheim, Maximilian>that we start with that. And so therefore,
+I also agree with you,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/94-2
+00:10:46.036 --> 00:10:48.886
+<v Beisheim, Maximilian>there shouldn't be any changes on your
+side.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/95-0
+00:10:50.686 --> 00:10:53.743
+<v Boyan Valchev>But Joachim,
+we discussed that this change is allowed</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/95-1
+00:10:53.743 --> 00:10:58.045
+<v Boyan Valchev>from the OTMS system and we're just
+reacting to it. I mean, from new dispo,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/95-2
+00:10:58.045 --> 00:11:00.875
+<v Boyan Valchev>there is no possible way to add the
+traffic mode.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/95-3
+00:11:00.875 --> 00:11:05.686
+<v Boyan Valchev>New dispo does not allow switching of the
+traffic mode. We are reacting to a change.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/97-0
+00:11:04.286 --> 00:11:09.274
+<v Joachim Schreiner>Yeah, okay.
+It's not the problem of switching the</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/97-1
+00:11:09.274 --> 00:11:15.360
+<v Joachim Schreiner>traffic mode for someone decides to
+switch the traffic mode,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/97-2
+00:11:15.360 --> 00:11:21.446
+<v Joachim Schreiner>maybe OMS or someone else,
+and their leg is already planned.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/98-0
+00:11:22.646 --> 00:11:28.413
+<v Joachim Schreiner>It's only planned,
+so it should be possible to undo the</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/96-0
+00:11:22.886 --> 00:11:23.366
+<v Boyan Valchev>Yeah, but...</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/98-1
+00:11:28.413 --> 00:11:32.326
+<v Joachim Schreiner>planning and replan the new situation.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/99-0
+00:11:33.046 --> 00:11:36.168
+<v Boyan Valchev>I mean, currently,
+we are allowing this from point of view.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/99-1
+00:11:36.168 --> 00:11:38.770
+<v Boyan Valchev>I mean,
+if you change the traffic mode we create,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/99-2
+00:11:38.770 --> 00:11:42.256
+<v Boyan Valchev>then you like, if it's a different type,
+we also create an HR leg,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/99-3
+00:11:42.256 --> 00:11:45.794
+<v Boyan Valchev>but what I have showcased you this
+morning, I can showcase as well,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/99-4
+00:11:45.794 --> 00:11:48.812
+<v Boyan Valchev>just right now. OK,
+so now we have this shipment created.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/99-5
+00:11:48.812 --> 00:11:52.246
+<v Boyan Valchev>I just let me show what is happening,
+so we are on the same page.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/101-0
+00:11:53.646 --> 00:11:59.611
+<v Boyan Valchev>Okay, I find it 27, here is 27 once again,
+right? It's 4 to 7, here it is 4 to 7.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/101-1
+00:11:59.611 --> 00:12:05.504
+<v Boyan Valchev>So let's go and plan this shipment here.
+I don't have any tour points right now.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/101-2
+00:12:05.504 --> 00:12:07.686
+<v Boyan Valchev>Let's go and just add it here.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/102-0
+00:12:09.446 --> 00:12:11.526
+<v Boyan Valchev>It's A VOlet, because you can see, right?</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/103-0
+00:12:12.886 --> 00:12:16.669
+<v Boyan Valchev>Okay, so it's blunt here.
+It says traffic mode 4.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/103-1
+00:12:16.669 --> 00:12:20.377
+<v Boyan Valchev>So let's switch it to traffic mode one or
+three,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/103-2
+00:12:20.377 --> 00:12:25.446
+<v Boyan Valchev>which requires the other type of the leg.
+So for example, let's...</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/104-0
+00:12:28.806 --> 00:12:30.086
+<v Boyan Valchev>Let's just go here.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/105-0
+00:12:31.366 --> 00:12:37.286
+<v Boyan Valchev>And let me just cheque my schema to which
+status I had to change it.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/106-0
+00:12:37.646 --> 00:12:42.006
+<v Beisheim, Maximilian>No, just put no,
+no pre cabbage or two thirty-four.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/108-0
+00:12:42.966 --> 00:12:46.406
+<v Boyan Valchev>The 34, yeah, exactly, 34. Let's do 34.</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/111-0
+00:12:45.446 --> 00:12:49.905
+<v Beisheim, Maximilian>But do it with the pre-carriage. No, no,
+do it with the pre-carriage. Yeah,</v>
+
+d4744676-2db1-4090-8ef8-621da49bf28c/111-1
+00:12:49.905 --> 00:12:50.726
+<v Beisheim, Maximilian>just press it.</v>
