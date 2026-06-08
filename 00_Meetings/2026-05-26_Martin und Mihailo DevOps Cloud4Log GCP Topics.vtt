@@ -1,0 +1,548 @@
+WEBVTT
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/7-0
+00:00:03.089 --> 00:00:07.484
+<v Martin Dittmann>What is needed? Yeah,
+what do we need when we do not have the</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/7-1
+00:00:07.484 --> 00:00:11.949
+<v Martin Dittmann>DevOps permissions to do so?
+And Matt said we shouldn't do it,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/6-0
+00:00:10.089 --> 00:00:10.569
+<v Mihailo Marčetić>Mhm.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/7-2
+00:00:11.949 --> 00:00:17.689
+<v Martin Dittmann>and something happened there with Matt in
+the past. But do you know the details?</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/8-0
+00:00:19.049 --> 00:00:24.622
+<v Mihailo Marčetić>Yep, basically what is the problem?
+The problem is that on the,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/8-1
+00:00:24.622 --> 00:00:31.502
+<v Mihailo Marčetić>I can show you as well, maybe it's better.
+So in the test and also on the prod</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/8-2
+00:00:31.502 --> 00:00:35.769
+<v Mihailo Marčetić>environment,
+service and cloud service and cloud</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/8-3
+00:00:35.769 --> 00:00:38.729
+<v Mihailo Marčetić>functions are publicly accessible.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/10-0
+00:00:39.609 --> 00:00:46.482
+<v Mihailo Marčetić>So basically, for example,
+TMS Bridge is also the cloud service.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/10-1
+00:00:46.482 --> 00:00:53.249
+<v Mihailo Marčetić>It is publicly accessible,
+so our application and functions can</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/10-2
+00:00:53.249 --> 00:00:57.689
+<v Mihailo Marčetić>communicate with this TMS service without.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/12-0
+00:00:59.329 --> 00:01:04.931
+<v Mihailo Marčetić>require authentication.
+So this is difference between test and</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/11-0
+00:01:02.249 --> 00:01:02.729
+<v Martin Dittmann>Mhm.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/12-1
+00:01:04.931 --> 00:01:10.266
+<v Mihailo Marčetić>dev and on the development environment,
+we don't have that.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/12-2
+00:01:10.266 --> 00:01:15.689
+<v Mihailo Marčetić>We have like required authentication,
+so I can show you now.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/14-0
+00:01:16.169 --> 00:01:20.007
+<v Matthias Max>Sorry,
+let me hide between the cloud functions</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/13-0
+00:01:17.209 --> 00:01:17.849
+<v Mihailo Marčetić>So...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/14-1
+00:01:20.007 --> 00:01:26.048
+<v Matthias Max>of Cloud for Lock and Mark Hunt,
+so the uploader and the bridge or where,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/14-2
+00:01:26.048 --> 00:01:28.089
+<v Matthias Max>which connection is that?</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/15-0
+00:01:29.689 --> 00:01:32.881
+<v Mihailo Marčetić>So you can see here on the test
+environment,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/15-1
+00:01:32.881 --> 00:01:36.569
+<v Mihailo Marčetić>you can see that everything is publicly
+accessible.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/16-0
+00:01:37.209 --> 00:01:37.569
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/17-0
+00:01:38.489 --> 00:01:40.249
+<v Mihailo Marčetić>But on the...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/18-0
+00:01:40.689 --> 00:01:40.969
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/19-0
+00:01:41.449 --> 00:01:44.009
+<v Mihailo Marčetić>Development environment is required
+identification.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/20-0
+00:01:44.969 --> 00:01:45.449
+<v Matthias Max>Mhm.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/21-0
+00:01:45.969 --> 00:01:52.483
+<v Mihailo Marčetić>So, TMS Bridge is not allowed to,
+our function is not allowed to</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/21-1
+00:01:52.483 --> 00:01:55.289
+<v Mihailo Marčetić>communicate with TMS Bridge.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/24-0
+00:01:58.569 --> 00:02:05.716
+<v Mihailo Marčetić>For now, on the development environment,
+because it's not like we don't have any</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/22-0
+00:02:00.929 --> 00:02:01.049
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/24-1
+00:02:05.716 --> 00:02:12.158
+<v Mihailo Marčetić>publicly accessible endpoint,
+and we also cannot create DNS private DNS,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/24-2
+00:02:12.158 --> 00:02:16.481
+<v Mihailo Marčetić>like,
+because we don't have permissions on the..</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/23-0
+00:02:13.529 --> 00:02:14.009
+<v Matthias Max>Mhm.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/24-3
+00:02:16.481 --> 00:02:16.569
+<v Mihailo Marčetić>.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/25-0
+00:02:17.169 --> 00:02:21.769
+<v Mihailo Marčetić>project where the development network is.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/26-0
+00:02:22.329 --> 00:02:23.609
+<v Matthias Max>I got it.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/27-0
+00:02:22.889 --> 00:02:25.449
+<v Mihailo Marčetić>So, here we don't have any permissions.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/28-0
+00:02:26.249 --> 00:02:26.569
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/29-0
+00:02:27.849 --> 00:02:29.529
+<v Mihailo Marčetić>So, I...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/32-0
+00:02:27.849 --> 00:02:30.904
+<v Matthias Max>So,
+the where on the cloud functions in</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/32-1
+00:02:30.904 --> 00:02:34.569
+<v Matthias Max>workload four or five, they are in four,
+right?</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/31-0
+00:02:33.929 --> 00:02:35.129
+<v Mihailo Marčetić>Over full of five.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/33-0
+00:02:35.809 --> 00:02:36.489
+<v Matthias Max>Five, as well.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/35-0
+00:02:37.209 --> 00:02:40.089
+<v Mihailo Marčetić>Yep, so this is the, the...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/34-0
+00:02:38.089 --> 00:02:38.889
+<v Matthias Max>So.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/37-0
+00:02:42.809 --> 00:02:42.849
+<v Matthias Max>Uhh.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/36-0
+00:02:43.129 --> 00:02:43.209
+<v Mihailo Marčetić>Uhh...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/38-0
+00:02:45.449 --> 00:02:46.329
+<v Matthias Max>And...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/39-0
+00:02:47.569 --> 00:02:53.762
+<v Matthias Max>So public in this sense here,
+does it make it public in the global</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/39-1
+00:02:53.762 --> 00:02:59.769
+<v Matthias Max>World Wide Web sense or just within the
+virtual private network?</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/40-0
+00:03:02.249 --> 00:03:02.689
+<v Matthias Max>Team.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/41-0
+00:03:02.329 --> 00:03:09.168
+<v Mihailo Marčetić>So basically I think that we should like
+create those services public accessible</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/41-1
+00:03:09.168 --> 00:03:15.922
+<v Mihailo Marčetić>so we can like ping and communicate like
+our function can communicate with this</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/41-2
+00:03:15.922 --> 00:03:22.169
+<v Mihailo Marčetić>service and after that when we test
+everything and everything is working.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/42-0
+00:03:22.489 --> 00:03:27.818
+<v Mihailo Marčetić>We can, like,
+see how we can maybe create architecture</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/42-1
+00:03:27.818 --> 00:03:33.049
+<v Mihailo Marčetić>that it's not that the public access is
+not required.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/43-0
+00:03:35.049 --> 00:03:36.329
+<v Mihailo Marčetić>So, I think that is...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/44-0
+00:03:35.209 --> 00:03:39.129
+<v Matthias Max>I think that's where the discussion is
+around.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/45-0
+00:03:40.969 --> 00:03:41.769
+<v Matthias Max>Um...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/46-0
+00:03:44.409 --> 00:03:44.729
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/48-0
+00:03:46.089 --> 00:03:51.776
+<v Matthias Max>But have you talked to Nikolay about this?
+Because we have had discussions about</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/47-0
+00:03:50.489 --> 00:03:50.889
+<v Mihailo Marčetić>Yep.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/48-1
+00:03:51.776 --> 00:03:52.969
+<v Matthias Max>service accounts.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/49-0
+00:03:54.249 --> 00:03:58.745
+<v Mihailo Marčetić>Yep, I had,
+and we worked together on the on this</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/49-1
+00:03:58.745 --> 00:04:04.679
+<v Mihailo Marčetić>particular development environment for
+this cloud new DMS bridge,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/49-2
+00:04:04.679 --> 00:04:09.984
+<v Mihailo Marčetić>because he deployed those on the test
+environment as well,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/49-3
+00:04:09.984 --> 00:04:14.569
+<v Mihailo Marčetić>so he deployed those on a development
+environment.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/50-0
+00:04:15.209 --> 00:04:20.106
+<v Mihailo Marčetić>We created load balancers for Kicklock
+and TMS Bridge, but yeah,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/50-1
+00:04:20.106 --> 00:04:24.249
+<v Mihailo Marčetić>it's not working because it's not
+publicly accessible.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/52-0
+00:04:28.089 --> 00:04:29.049
+<v Matthias Max>Okay.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/51-0
+00:04:28.729 --> 00:04:29.289
+<v Mihailo Marčetić>And we...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/53-0
+00:04:32.329 --> 00:04:36.400
+<v Matthias Max>So, yeah,
+I get the point of now that they don't</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/53-1
+00:04:36.400 --> 00:04:38.809
+<v Matthias Max>want this publicly available.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/56-0
+00:04:39.289 --> 00:04:43.924
+<v Mihailo Marčetić>Yeah,
+but the problem is that we have a similar</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/56-1
+00:04:43.924 --> 00:04:50.876
+<v Mihailo Marčetić>setup on prod and test environment,
+so we didn't like think about that.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/54-0
+00:04:48.449 --> 00:04:48.929
+<v Matthias Max>Mhm.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/56-2
+00:04:50.876 --> 00:04:58.889
+<v Mihailo Marčetić>We like didn't consider those facts that
+they don't want like publicly accessible.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/55-0
+00:04:58.969 --> 00:04:59.249
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/58-0
+00:04:59.089 --> 00:05:03.163
+<v Mihailo Marčetić>Services,
+because they are like on the test and and</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/58-1
+00:05:03.163 --> 00:05:08.021
+<v Mihailo Marčetić>prod as well, so uh,
+it's kind of hard to to to predict those</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/57-0
+00:05:05.289 --> 00:05:05.609
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/58-2
+00:05:08.021 --> 00:05:08.569
+<v Mihailo Marčetić>things.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/61-0
+00:05:08.809 --> 00:05:14.517
+<v Matthias Max>It's 2 topics. One is you could say,
+let's make it unified. And there,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/59-0
+00:05:09.889 --> 00:05:09.969
+<v Mihailo Marčetić>The</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/61-1
+00:05:14.517 --> 00:05:18.617
+<v Matthias Max>dev is exotic.
+It should align with test and prod,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/61-2
+00:05:18.617 --> 00:05:24.486
+<v Matthias Max>meaning it should be public, yes.
+And the second topic is mid-long term.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/61-3
+00:05:24.486 --> 00:05:30.998
+<v Matthias Max>We don't want these things to be public.
+We need a strategy of how to get rid of</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/60-0
+00:05:30.649 --> 00:05:31.009
+<v Mihailo Marčetić>Yes.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/61-4
+00:05:30.998 --> 00:05:33.329
+<v Matthias Max>it. That's the second stream.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/63-0
+00:05:34.329 --> 00:05:39.361
+<v Matthias Max>It should not block the project,
+meaning I will try to convince them to</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/63-1
+00:05:39.361 --> 00:05:43.135
+<v Matthias Max>adopt DEF to the other pattern. Yes,
+and in parallel,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/62-0
+00:05:41.609 --> 00:05:42.089
+<v Mihailo Marčetić>Yep.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/63-2
+00:05:43.135 --> 00:05:46.489
+<v Matthias Max>we can talk about how to get rid of the
+public.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/64-0
+00:05:46.809 --> 00:05:50.329
+<v Mihailo Marčetić>Yes, I think that is the best case,
+and best case is another.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/65-0
+00:05:51.009 --> 00:05:51.449
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/66-0
+00:05:53.929 --> 00:05:54.569
+<v Matthias Max>Goods.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/67-0
+00:05:57.209 --> 00:06:02.219
+<v Martin Dittmann>Okay, is there anything else, Matthias,
+or to Mihailo regarding the mock data?</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/67-1
+00:06:02.219 --> 00:06:05.769
+<v Martin Dittmann>Anything that we should discuss with
+Mihailo, Matthias?</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/68-0
+00:06:08.649 --> 00:06:09.609
+<v Mihailo Marčetić>Yeah, I think that...</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/69-0
+00:06:08.649 --> 00:06:10.769
+<v Matthias Max>I think, yeah, sorry.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/70-0
+00:06:11.049 --> 00:06:12.329
+<v Mihailo Marčetić>Yeah, yeah, I think.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/71-0
+00:06:11.529 --> 00:06:14.089
+<v Martin Dittmann>I not mock data or prod data, Mihailo,
+but please, yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/73-0
+00:06:16.009 --> 00:06:20.688
+<v Mihailo Marčetić>I'm not sure about those mock datas and
+databases,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/73-1
+00:06:20.688 --> 00:06:26.009
+<v Mihailo Marčetić>so maybe Yosif is a more suitable person
+to discuss with.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/72-0
+00:06:26.409 --> 00:06:26.889
+<v Matthias Max>Mhm.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/74-0
+00:06:26.809 --> 00:06:27.569
+<v Martin Dittmann>Yeah, yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/75-0
+00:06:29.089 --> 00:06:29.289
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/80-0
+00:06:31.609 --> 00:06:36.673
+<v Martin Dittmann>No, that's all right. Okay. Then, yeah,
+thanks for the feedback, Mihailo,</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/76-0
+00:06:32.249 --> 00:06:32.289
+<v Matthias Max>I.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/80-1
+00:06:36.673 --> 00:06:41.874
+<v Martin Dittmann>and for quickly summarizing for us.
+What's the issue from your perspective?</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/78-0
+00:06:41.609 --> 00:06:41.929
+<v Mihailo Marčetić>P.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/80-2
+00:06:41.874 --> 00:06:45.843
+<v Martin Dittmann>And then Matthias,
+let's continue and like wrap it up for</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/80-3
+00:06:45.843 --> 00:06:48.169
+<v Martin Dittmann>Christian to address those topics.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/79-0
+00:06:48.809 --> 00:06:49.289
+<v Matthias Max>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/82-0
+00:06:51.249 --> 00:06:52.489
+<v Martin Dittmann>OK, cool.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/81-0
+00:06:52.169 --> 00:06:52.289
+<v Mihailo Marčetić>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/83-0
+00:06:53.689 --> 00:06:54.009
+<v Mihailo Marčetić>Yeah.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/84-0
+00:06:54.689 --> 00:06:56.249
+<v Martin Dittmann>That's all, Mihailo. Thank you very much.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/85-0
+00:06:56.249 --> 00:06:58.249
+<v Mihailo Marčetić>Okay, thank you guys. See ya.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/88-0
+00:06:58.729 --> 00:07:00.409
+<v Matthias Max>Yeah, thanks.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/87-0
+00:06:58.809 --> 00:06:59.609
+<v Martin Dittmann>See ya, bye.</v>
+
+1cdcd8cd-555b-4bcb-9c31-a3937db3b779/89-0
+00:07:03.009 --> 00:07:03.449
+<v Martin Dittmann>Okay.</v>
