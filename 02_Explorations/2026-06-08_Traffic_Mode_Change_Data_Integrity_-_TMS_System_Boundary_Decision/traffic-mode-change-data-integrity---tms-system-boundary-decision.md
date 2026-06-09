@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-08
 **Status:** Decision Required
-**Decision Owner:** Christian Lang (Nagel Architect), Matthias Max (P3 Architect)
+**Decision Owner:** Christian Lang (Decision Maker), Matthias Max (P3 Architect)
 **Stakeholders:** Maximilian Beisheim (Business Owner Nagel), Maximilian Kehder (ProxyPO P3), Joachim Schreiner (TMS Database), Boyan Valchev (Lead Developer New Dispo)
 
 ---
@@ -21,12 +21,14 @@ When a shipment's traffic mode is changed in the TMS (UniFace UI) while the ship
 
 | TMS Traffic Mode | New Dispo Traffic Mode | Pickup Leg Type |
 |---|---|---|
-| 34 | 1 | VL (Vorholung) |
-| 30 | 2 | VL (Vorholung) |
-| 3 + ohne Vorlauf | 3 | HL (Hauptlauf-Relationsverladung) |
-| 3 / 31 / 32 | 4 | HL (Hauptlauf) |
+| 34 | 1 | HL (Long Haul) |
+| 30 | 2 | VL (Pre-Haulage) |
+| 3 + without pre-haulage | 3 | HL (Long Haul Relation Loading) |
+| 3 / 31 / 32 | 4 | VL (Pre-Haulage) |
 
-**Critical boundary:** Switching between traffic modes 1/2 (VL leg) and 3/4 (HL leg) requires a fundamentally different pickup leg type. Switching within the same group (e.g., 1 to 2, or 3 to 4) is harmless because the leg type remains the same.
+> **Note:** Handling of TMS Traffic Mode 31 currently under clarification -- a change is expected here.
+
+**Critical boundary:** Switching between HL (traffic modes 1/3) and VL (traffic modes 2/4) requires a fundamentally different pickup leg type.
 
 ### The Data Flow
 
@@ -89,7 +91,7 @@ When a shipment's traffic mode is changed in the TMS (UniFace UI) while the ship
 - Wants Matthias and Christian to decide who implements the fix
 - Became frustrated with the discussion dynamic, feeling P3 was assigning work to Nagel personnel
 
-**Meeting 2 outcome:** Escalate to Matthias Max (P3 Architect) and Christian Lang (Nagel Architect) for decision by Tuesday.
+**Meeting 2 outcome:** Escalate to Matthias Max (P3 Architect) and Christian Lang (Decision Maker) for decision by Tuesday.
 
 ### Exchange: Kehder - Joachim (Teams Chat)
 
@@ -169,11 +171,11 @@ graph LR
 - **Dashed arrow with X (New Dispo Backend → TMS Database):** Does not exist today. Option B proposes adding this: New Dispo Backend would write corrections back into TMS via TMS Bridge when it detects integrity issues through CDC. This is the bottom-up write-back path that was de-scoped.
 - **Crossed dashed line (TMS internal):** When UniFace triggers a traffic mode change, the internal TMS database logic does not clean up the orphaned transport order assignment. This is the data integrity gap that must be closed within TMS.
 
-### Option A: TMS Owns Its Data Integrity (Recommended)
+### Option A: TMS Owns Its Data Integrity
 
 **Description:** The internal TMS database logic that processes traffic mode changes is extended to also clean up transport order assignments when the leg type changes. Alternatively, TMS blocks traffic mode changes that would change the leg type while the shipment is assigned. This is consistent with the existing precedent for long-haul transport orders, where traffic mode changes are already blocked.
 
-**Architectural rationale:**
+**Properties:**
 - **System boundary principle:** Each system is responsible for its own data consistency. The TMS database is the source of truth for transport order assignments. When an internal TMS operation (traffic mode change) creates inconsistency in TMS data, it is TMS's responsibility to resolve it.
 - **Self-introduced changes:** The traffic mode change is triggered within TMS itself. TMS must enforce data integrity for changes it introduces -- this has never been delegated to an external system.
 - **Isolation test:** If New Dispo were stripped away entirely and TMS ran standalone, the traffic mode change would still produce orphaned assignments. TMS would have to clean this up regardless. New Dispo's existence does not change TMS's responsibility for its own consistency.
@@ -201,14 +203,20 @@ graph LR
 
 **This is not a bug fix -- it is an architectural direction change.**
 
+### Go-Live Context: Data Integrity on PROD
+
+For the Go-Live on PROD, **all known error sources that endanger data integrity must be prevented**. The traffic mode change is one such error source.
+
+**Feasibility of both options:**
+
+- **Option A (TMS fix):** The TMS team currently has no capacity to implement this short-term.
+- **Option B (New Dispo corrects):** This is not a small adjustment but an architectural change of significant scope -- with all consequences listed under Option B.
+
 ### Recommendation
 
-**Option A** preserves the established system boundary: TMS is responsible for its own data integrity, New Dispo reflects TMS state via CDC. This is consistent with the existing long-haul precedent, has lower implementation risk, and avoids creating a hard dependency between TMS runtime integrity and New Dispo availability.
+**For Go-Live:** Neither Option A nor Option B are feasible before Go-Live. The traffic mode change across the VL/HL boundary must therefore be **operationally blocked** for assigned shipments until a technical solution is in place.
 
-If Option A is not feasible due to timeline or resource constraints, Option B can be implemented as a **temporary workaround** with explicit acknowledgment that:
-- It is not the long-term architectural direction
-- TMS must eventually own this responsibility
-- The synchronization risks are accepted for the interim period
+**Post Go-Live:** The decision between Option A and Option B will be analyzed and made in a subsequent concept phase.
 
 ---
 

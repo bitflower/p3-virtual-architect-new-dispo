@@ -2,7 +2,7 @@
 
 **Datum:** 2026-06-08
 **Status:** Entscheidung erforderlich
-**Entscheider:** Christian Lang (Nagel Architect), Matthias Max (P3 Architect)
+**Entscheider:** Christian Lang (Entscheider), Matthias Max (P3 Architect)
 
 ---
 
@@ -20,12 +20,14 @@ New Dispo reagiert korrekt -- das alte Leg wird entfernt, ein neues Leg des rich
 
 | TMS Verkehrsart | New Dispo Verkehrsart | Pickup-Leg-Typ |
 |---|---|---|
-| 34 | 1 | VL (Vorholung) |
+| 34 | 1 | HL (Hauptlauf) |
 | 30 | 2 | VL (Vorholung) |
 | 3 + ohne Vorlauf | 3 | HL (Hauptlauf-Relationsverladung) |
-| 3 / 31 / 32 | 4 | HL (Hauptlauf) |
+| 3 / 31 / 32 | 4 | VL (Vorholung) |
 
-**Kritische Grenze:** Ein Wechsel zwischen Verkehrsart 1/2 (VL) und 3/4 (HL) erfordert einen komplett anderen Leg-Typ. Wechsel innerhalb derselben Gruppe sind unproblematisch.
+> **Hinweis:** Umgang mit TMS Verkehrsart 31 derzeit in Klärung -- hier gibt es eine Änderung.
+
+**Kritische Grenze:** Ein Wechsel zwischen HL (Verkehrsart 1/3) und VL (Verkehrsart 2/4) erfordert einen komplett anderen Leg-Typ.
 
 ---
 
@@ -61,11 +63,11 @@ graph LR
 
 ---
 
-## Option A: TMS verantwortet eigene Datenintegrität (Empfehlung)
+## Option A: TMS verantwortet eigene Datenintegrität
 
 Die interne TMS-Logik wird erweitert, sodass bei einem Verkehrsart-Wechsel über die VL/HL-Grenze die verwaiste Transportauftragszuweisung bereinigt wird. Alternativ: TMS blockiert den Wechsel, wenn die Sendung zugewiesen ist (Präzedenz: Hauptlauf-TAs blockieren dies bereits).
 
-**Warum diese Option:**
+**Eigenschaften:**
 - **Systemgrenze:** Jedes System ist für die eigene Datenkonsistenz verantwortlich. Die Änderung entsteht im TMS -- TMS muss sie sauber abschließen.
 - **Isolationstest:** Ohne New Dispo würde der Verkehrsart-Wechsel dieselbe verwaiste Zuweisung erzeugen. TMS müsste das Problem unabhängig lösen.
 - **Präzedenz existiert:** Hauptlauf-TAs blockieren Verkehrsart-Wechsel bereits. Das gleiche Prinzip gilt für Vorholung.
@@ -90,14 +92,22 @@ New Dispo würde bei Erkennung eines Verkehrsart-Wechsels via CDC die TMS Bridge
 
 ---
 
+## Go-Live-Kontext: Datenintegrität auf PROD
+
+Für den Go-Live auf PROD müssen **alle bekannten Fehlerquellen, die die Datenintegrität gefährden, unterbunden werden**. Der Verkehrsart-Wechsel ist eine solche Fehlerquelle.
+
+**Machbarkeit beider Optionen:**
+
+- **Option A (TMS-Fix):** Das TMS-Team hat derzeit keine Kapazität, dies kurzfristig umzusetzen.
+- **Option B (New Dispo korrigiert):** Dies ist keine kleine Anpassung, sondern eine Architekturänderung größeren Ausmaßes -- mit allen unter Option B genannten Konsequenzen.
+
+---
+
 ## Empfehlung
 
-**Option A** wahrt die etablierte Systemgrenze. TMS verantwortet eigene Datenintegrität, New Dispo bildet TMS-Zustand via CDC ab. Dies ist konsistent mit der bestehenden Hauptlauf-Präzedenz, hat geringeres Implementierungsrisiko und vermeidet eine harte Abhängigkeit zwischen TMS-Laufzeitintegrität und New-Dispo-Verfügbarkeit.
+**Für den Go-Live:** Weder Option A noch Option B sind vor dem Go-Live realisierbar. Der Verkehrsart-Wechsel über die VL/HL-Grenze muss daher für zugewiesene Sendungen **operativ unterbunden** werden, bis eine technische Lösung vorliegt.
 
-Falls Option A aus Zeit- oder Ressourcengründen nicht umsetzbar ist, kann Option B als **temporärer Workaround** implementiert werden -- mit expliziter Akzeptanz, dass:
-- dies nicht die langfristige architektonische Richtung ist
-- TMS diese Verantwortung langfristig übernehmen muss
-- die Synchronisationsrisiken für die Übergangszeit bewusst akzeptiert werden
+**Nach dem Go-Live:** Die Entscheidung zwischen Option A und Option B wird in einer nachgelagerten Konzeptphase analysiert und getroffen.
 
 ---
 
