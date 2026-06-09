@@ -98,6 +98,21 @@ The replication slot continues to hold WAL, preventing PostgreSQL from reclaimin
 - Email sent to Nagel GCP team requesting pause/resume of the stream
 - Also requested `datastream.streams.update` permission for self-service in the future (our account `x_matthias.max@nagel-group.com` currently lacks this permission)
 
+## WAL Lag Progression
+
+The slot holds ALL WAL from its `restart_lsn` forward — not just changes to the `sendung` table. PostgreSQL WAL is a sequential log of all writes across the entire database. The publication (`sendung_pub`) only filters what the consumer decodes and delivers, but the slot prevents PostgreSQL from reclaiming any WAL segment that hasn't been consumed yet.
+
+This means the 234–240 GB backlog is driven by **total database write throughput** across all tables in `abn1034`, not just `sendung` changes. This is why the lag grows so fast when the consumer stalls.
+
+| Time (UTC) | Replication Lag | wal_status |
+|---|---|---|
+| ~12:30 | 234 GB | extended |
+| ~15:00 | 240 GB | extended |
+
+![Replication slot query showing 240 GB lag](replication-slot-240gb-lag.png)
+
+Growth rate: ~6 GB in ~2.5 hours = ~2.4 GB/hour of total WAL production on this database.
+
 ## Open Items
 
 - Monitor WAL lag after restart to confirm it's decreasing
