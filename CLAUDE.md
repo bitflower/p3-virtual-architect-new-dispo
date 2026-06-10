@@ -26,3 +26,7 @@
 | --------------------------------------------- | ----------------------------------- |
 | WIKI/Nagel-CAL-Disposition.wiki               | "New TMS" Wiki                      |
 | WIKI/Nagel-CAL-Disposition.wiki/Documentation | User-Facing "New TMS" Documentation |
+
+## Setup
+
+- Azure MCP needs Node version 20+
