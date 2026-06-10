@@ -247,18 +247,58 @@ As the rollout to production environments progresses, the same monitoring functi
 
 ---
 
-## 6. Alternative: AlloyDB `max_slot_wal_keep_size` as Safety Net
+## 6. Recommendation: AlloyDB `max_slot_wal_keep_size` as Safety Net
 
-Independent of monitoring, configure a WAL retention limit on AlloyDB as a last-resort safety net:
+### What It Does
+
+Configure a WAL retention limit on AlloyDB to prevent replication slots from exhausting database disk:
 
 ```sql
 ALTER SYSTEM SET max_slot_wal_keep_size = '100GB';
 SELECT pg_reload_conf();
 ```
 
-This prevents any single replication slot from holding more than 100 GB of WAL. If the limit is exceeded, the slot's `wal_status` changes to `lost` and PostgreSQL reclaims the WAL. The consumer (Datastream) will then require a full resync.
+### Behavior When the Limit Is Reached
 
-**Trade-off:** Protects database disk from exhaustion, but forces a destructive recovery. This should be a safety net, not a substitute for monitoring.
+When a slot's retained WAL exceeds the configured limit, PostgreSQL acts **at the next checkpoint**:
+
+1. **WAL segments are reclaimed** -- PostgreSQL deletes the WAL files the slot was holding, regardless of the consumer's position
+2. **Slot is marked `wal_status = 'lost'`** -- the slot itself is not dropped, but it becomes invalid
+3. **Consumer gets an error** -- Datastream receives `requested WAL segment has already been removed` on its next read attempt
+4. **Full resync required** -- recovery requires dropping the slot, deleting and recreating the Datastream stream (triggers a full backfill/initial snapshot)
+
+The `wal_status` transition path: `reserved` → `extended` → `unreserved` → **`lost`**
+
+### Why This Is a Recommendation for Both Teams
+
+**For the TMS Database team:** This is a database protection measure. Without it, a stalled Datastream consumer can accumulate hundreds of GB of WAL (234 GB on abn1034, 422 GB on uat2820 in past incidents), risking disk exhaustion and a full database outage affecting all applications -- not just CDC. Setting `max_slot_wal_keep_size` guarantees the database stays healthy regardless of what any CDC consumer does.
+
+**For the New Dispo team:** A slot going `lost` is a clear, unambiguous signal that requires action -- unlike a silent stall where the stream reports RUNNING. It gives the team a defined recovery procedure:
+
+1. Detect the `lost` status (via the monitoring from Section 2, or via Datastream error logs)
+2. Identify the time window of lost CDC events (from the last confirmed flush LSN to the slot invalidation time)
+3. Drop the invalidated slot and recreate the Datastream stream
+4. Backfill the lost time window -- either via Datastream's initial snapshot (full table) or a targeted reconciliation query for the affected period
+5. Resume normal CDC operation
+
+This is a **bounded recovery problem** with a known time window, which is far better than the current situation where a silent stall can go undetected for days with an unbounded data gap.
+
+### Suggested Threshold
+
+| Parameter | Value | Rationale |
+|-----------|-------|-----------|
+| `max_slot_wal_keep_size` | `100GB` | Well above the 50 GB critical alert threshold (giving time to react), but well below disk capacity. At the observed WAL production rate of ~2.4 GB/hour (abn1034), this provides ~42 hours of buffer before the safety net triggers. |
+
+### Trade-off
+
+| | Without `max_slot_wal_keep_size` | With `max_slot_wal_keep_size = 100GB` |
+|---|---|---|
+| **Database risk** | Unbounded WAL growth, potential disk-full crash | Capped at 100 GB, database stays healthy |
+| **CDC recovery** | Manual detection, unclear data gap | Automatic WAL reclaim, defined recovery procedure |
+| **Data loss** | None (WAL preserved), but database may crash | CDC events in the overflow window must be reconciled |
+| **Who acts** | TMS Database team (emergency disk cleanup) | New Dispo team (planned CDC recovery) |
+
+This should be a safety net complementing the monitoring from Section 2 -- not a substitute for it. The monitoring catches issues early (10 GB warning); this prevents catastrophic outcomes if the monitoring or response fails.
 
 ---
 
@@ -285,6 +325,84 @@ This prevents any single replication slot from holding more than 100 GB of WAL. 
 | 2026-06-08 | abn1034 | `sendung_slot_abn1034` | 234 GB | Silent Datastream stall -- stream RUNNING, no errors, consumer frozen at 11:38 UTC |
 
 All three incidents would have been detected earlier with the monitoring proposed in this document.
+
+---
+
+## 8. TMS Database Code Verification
+
+Verified the recommendations from the [Gemini WAL/Replication Slots reference](../../00_Input/2026-06-10_Postgres-WAL-replication-slots-datastream-gemini.md) against the actual TMS database schema code (`Code/tms-alloydb-schema`).
+
+### Publication Setup -- CORRECT
+
+**Gemini recommends:** Strict `CREATE PUBLICATION ... FOR TABLE` (not `FOR ALL TABLES`).
+
+**Code (`src/sql/scripts/misc/datastream_setup.sql:43`):**
+```sql
+EXECUTE FORMAT('CREATE PUBLICATION %s FOR TABLE %s',
+    current_setting('myvars.publication'),
+    current_setting('myvars.tablename'));
+```
+
+The script is parameterized and creates a **single-table publication**. No `FOR ALL TABLES` anywhere. Matches the recommendation.
+
+### Replica Identity -- NOT EXPLICITLY SET (acceptable)
+
+**Gemini recommends:** `ALTER TABLE target_table_name REPLICA IDENTITY FULL` for tables with UPDATEs/DELETEs.
+
+**Code:** Zero `REPLICA IDENTITY` statements exist in the entire `tms-alloydb-schema` repo. However, `sendung` has a primary key:
+
+```sql
+-- src/sql/constraint/pk_uq/sendung_pk_uq.sql
+ALTER TABLE ONLY sendung ADD CONSTRAINT sendungp1 PRIMARY KEY (sendung_tix);
+```
+
+PostgreSQL defaults to `REPLICA IDENTITY DEFAULT` when a PK exists, which uses the PK to identify rows in UPDATE/DELETE WAL records. This is **sufficient for Datastream** -- the PK-based default works correctly. `REPLICA IDENTITY FULL` would write the entire old row image for every UPDATE, generating significantly more WAL on a 197-column table. The Gemini recommendation is overly cautious here; it only applies to tables **without** a primary key.
+
+### Table Count -- CONFIRMED
+
+**Gemini says:** "1 out of 700 tables"
+
+**Code:** **774 table files** in `src/sql/table/`. The WAL-filtering bottleneck described in the Gemini document (WAL Sender must parse all WAL to find the 1 relevant table) is real and matches all three observed incidents.
+
+### Replication Slot Creation -- CONFIRMED (DBA-managed, idempotent)
+
+**Gemini says:** DBAs create slots manually; Datastream references the slot name.
+
+**Code (`src/sql/scripts/misc/datastream_setup.sql`):** The script:
+1. Checks if slot already exists (idempotent)
+2. Stops all `pg_cron` jobs before creation
+3. Kills all other database connections (avoids open transactions blocking slot creation)
+4. Creates the slot: `PG_CREATE_LOGICAL_REPLICATION_SLOT(slot_name, 'pgoutput')`
+5. Re-enables all `pg_cron` jobs
+
+This is a well-structured setup. The connection kill + job pause is a precaution against open transactions preventing slot creation -- suggests this was learned from experience.
+
+### `max_slot_wal_keep_size` -- NOT CONFIGURED (gap)
+
+No WAL retention safety net is configured anywhere in the schema repo. A stalled consumer can grow WAL indefinitely -- as observed: 234 GB on abn1034, 422 GB on uat2820.
+
+This reinforces the need for monitoring (this document's proposal) **and** the safety net described in Section 6.
+
+### Datastream User -- NOT IN SCHEMA REPO
+
+The replication user (e.g., `tmsbr1034` for abn1034) is not defined in the schema codebase. All roles in `create_base_roles.sql` and `create_developer_roles.sql` explicitly use `NOREPLICATION`. The Datastream user is created outside this repo, likely manually per environment as documented in the [gcloud operations guide](../2026-06-09_gcloud-tooling/gcp-datastream-gcloud-operations-guide.md):
+
+```sql
+CREATE USER tmsbr1034 WITH REPLICATION LOGIN PASSWORD '...';
+GRANT USAGE ON SCHEMA tms1034 TO tmsbr1034;
+GRANT SELECT ON ALL TABLES IN SCHEMA tms1034 TO tmsbr1034;
+```
+
+### Verification Summary
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| Publication: strict `FOR TABLE` | OK | `datastream_setup.sql` uses parameterized single-table publication |
+| Replica Identity | OK (implicit) | PK on `sendung_tix` provides default identity; `FULL` not needed and would increase WAL |
+| Table count (~700) | Confirmed | 774 tables -- WAL filtering bottleneck is real |
+| Slot creation | OK | Idempotent script with connection cleanup |
+| `max_slot_wal_keep_size` | Missing | No safety net configured |
+| Datastream user in code | Missing | Created manually per environment, not in schema repo |
 
 ---
 
