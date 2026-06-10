@@ -8,6 +8,17 @@
 
 ---
 
+## Revision History
+
+| Date | Change | Source |
+|------|--------|--------|
+| 2026-06-10 | **AC 3 dropped:** Lot operations are atomic — no partial-leg outcomes. Individual-leg-from-slider (Flow 6) = one toast per leg, no summary needed. | Refinement feedback, #123950 |
+| 2026-06-10 | **Unassign UX gap:** Flows 5+6 share one FE interaction but have no explicit toast requirements. | Refinement feedback, #123950 |
+| 2026-06-10 | **FE action mapping added:** Maps FE interactions to Backend flows for implementability. | Derived from refinement feedback |
+| 2026-06-10 | **"Partial lot conflict" corrected:** Lots are atomic — replaced with "lot-level conflict (all-or-nothing)". | Refinement feedback, #123950 |
+
+---
+
 ## How Sync Conflicts Work
 
 New Dispo and TMS are two separate systems. When a user performs a transport order action, both systems must agree on the current state. Sometimes they don't.
@@ -61,7 +72,7 @@ Flow 4 has the same sub-case distinction per leg.
 
 | # | Flow | Conflict means... | What user sees today | Severity |
 |---|------|-------------------|---------------------|----------|
-| 5 | **Unassign Lots** | Some legs in the lot were already removed in TMS | Error per lot: "Conflict occurred" + page refresh | Low — mostly benign, legs are already gone |
+| 5 | **Unassign Lots** | Some legs in the lot were already removed in TMS | Error per lot: "Conflict occurred" + page refresh | Low — already done, legs are already gone |
 | 6 | **Unassign Legs** | Some legs were already removed in TMS | Per-leg result: success / conflict / TMS failure | Low — already removed = effectively done |
 
 **Partial success** applies only when individual legs are selected from the drive instructions slider — each selected leg is a separate Backend request, producing separate toasts. Lot operations are atomic: one operation = one toast. There is no per-leg partial state within a lot operation.
@@ -83,7 +94,7 @@ Flow 7 is unique: the deleted TO disappears from the UI, so the user cannot retr
 | Severity | When | Style |
 |----------|------|-------|
 | **Info** | "Already done" — leg was already on this TO, lot already unassigned | Green toast, **auto-dismiss** per Figma |
-| **Warning** | "Something changed" — leg is on a different TO, partial lot conflict | Yellow/orange toast, **stays until dismissed** |
+| **Warning** | "Something changed" — leg is on a different TO, ~~partial lot conflict~~ **lot-level conflict** (atomic, all-or-nothing) | Yellow/orange toast, **stays until dismissed** |
 | **Error** | "Something failed" — Flow 7 cleanup failure, TMS operation failed | Red toast, **stays until dismissed**, shows Log ID + copy button |
 
 ### 2. Incident ID: Error-Only
@@ -92,11 +103,13 @@ Log ID is shown **only for non-resolvable issues** (error severity). Resolvable 
 
 Incident ID format: cryptic UUID/hex is acceptable. The Frontend provides a copy-paste button — users never need to read or type the ID. One fresh ID per request, no correlation across retries. Use existing GCP Cloud Run log for filtering — no dedicated log sink needed.
 
-### 3. Partial Success: Summary Toast Only
+### 3. ~~Partial Success: Summary Toast Only~~ Partial Success: One Toast Per Request
 
-Single summary toast for batch operations: *"3 of 5 legs assigned. 2 had conflicts and were resolved automatically. Please refresh the page."*
+~~Single summary toast for batch operations: *"3 of 5 legs assigned. 2 had conflicts and were resolved automatically. Please refresh the page."*~~
 
-No per-leg detail panel. This summary applies only to the individual-leg-from-slider scenario where the Frontend fires multiple independent Backend requests. Lot operations are atomic — one operation = one toast.
+~~No per-leg detail panel. This summary applies only to the individual-leg-from-slider scenario where the Frontend fires multiple independent Backend requests. Lot operations are atomic — one operation = one toast.~~
+
+**Iteration 2 (2026-06-10):** Lot operations are atomic (all-or-nothing) — there is no scenario where some legs in a lot succeed and others fail within a single operation. The individual-leg-from-slider scenario (Flow 6) fires one Backend request per leg, each producing its own toast. No summary aggregation is needed — the user sees one toast per leg result.
 
 ### 4. Flow 7 Toast: Transparent
 
@@ -104,7 +117,7 @@ No per-leg detail panel. This summary applies only to the individual-leg-from-sl
 
 ### 5. Same-TO vs. Different-TO: Distinguish
 
-- Leg already on **this** TO → info level (benign)
+- Leg already on **this** TO → info level (already done)
 - Leg on a **different** TO → warning level (show which TO if available)
 
 ### 6. Refresh Behavior: Manual
@@ -136,12 +149,26 @@ Generic template with `[action name]` slot. Not flow-specific wording. Action na
 
 | AC | Scope |
 |----|-------|
-| AC 1 | Info toast — benign conflicts (green, auto-dismiss) |
+| AC 1 | Info toast — "already done" conflicts (green, auto-dismiss) |
 | AC 2 | Warning toast — real conflicts (orange, stays until dismissed) |
-| AC 3 | Batch summary toast (Flows 2, 4, 5, 6) |
+| ~~AC 3~~ | ~~Batch summary toast (Flows 2, 4, 5, 6)~~ **Dropped (Iteration 2)** — lot operations are atomic, individual legs = one toast per request |
 | AC 4 | Error toast — non-resolvable (red, Log ID + copy button) |
 | AC 5 | Same-TO vs. Different-TO distinction (Flows 3, 4) |
 | AC 6 | General behavior (manual refresh, generic template, no auto-retry) |
+
+**Iteration 2 — Gaps (2026-06-10):**
+
+- **Unassign flows (5+6) covered under AC 1/AC 2.** Both are triggered via the same FE interaction (removing items from a TO). Unassign sync conflicts are already done (already removed in TMS) → info level (AC 1). If reassigned to different TO → warning level (AC 2). No separate AC needed — AC 1 and AC 2 examples updated to include unassign scenarios.
+- **FE action → Backend flow mapping needed.** The 7 Backend flows map to fewer FE interactions:
+
+| FE Action | Backend Flow(s) | Toast Behavior |
+|-----------|----------------|----------------|
+| Create TO (from leg) | Flow 1 | AC 1 or AC 2 (single toast) |
+| Create TO (from lot) | Flow 2 | AC 1 or AC 2 (single toast, atomic) |
+| Assign leg to TO | Flow 3 | AC 1 (same TO) or AC 2 (different TO), per AC 5 |
+| Assign lot to TO | Flow 4 | AC 1 (same TO) or AC 2 (different TO), per AC 5 |
+| Unassign from TO (slider) | Flow 5 (lots) + Flow 6 (legs) | **Gap: no AC.** One toast per request. Mostly info level. |
+| Delete TO | Flow 7 | AC 4 (error toast with Log ID) |
 
 ---
 

@@ -30,6 +30,17 @@
 
 ---
 
+## Revision History
+
+| Date | Change | Source | Sections Affected |
+|------|--------|--------|-------------------|
+| 2026-06-10 | **AC 3 corrected:** Lot operations are atomic — batch summary toast does not apply to lot flows. AC 3 scope narrowed to individual-leg-from-slider scenario (Flow 6) only, where each leg is a separate BE request producing a separate toast. No summary aggregation needed. | Refinement feedback, #123950 | §Current #123950 Scope, §PO Decisions #6 |
+| 2026-06-10 | **Unassign UX gap identified:** Flows 5+6 (UnassignLots, UnassignLegs) have no explicit UX requirements in #123950. Both are triggered via the same FE interaction (batch operation). ACs must define toast behavior for unassign sync conflicts. | Refinement feedback, #123950 | §Current #123950 Scope, §Per-Flow UX Scenarios |
+| 2026-06-10 | **FE interaction model noted:** ACs are structured around 7 Backend flows, but FE has fewer distinct interactions. Unassign-lots and unassign-legs are one button from FE perspective. ACs should map FE actions to Backend flows. | Derived from unassign feedback | §Current #123950 Scope |
+| 2026-06-10 | **"Partial success" corrected for lots:** Removed misleading "partial success" / "partial sync" terminology for lot operations. Lots are atomic — entire lot takes conflict path if any leg is unsynched. "Partial" only applies across separate per-leg requests (Flow 6 slider). | Refinement feedback, #123950 | §Per-Flow Comparison, §UX Scenarios |
+
+---
+
 ## Goal
 
 Two questions:
@@ -131,8 +142,8 @@ The concept documentation (approved April 2026) specified verification queries a
 | **02 CreateTOFromLot** | Check all lot legs assigned to same TO, show error, user retries | Queries TMS per leg, **auto-repairs** per conflicting leg, returns HTTP 200 with per-leg `ConflictDto` list. Branch: `feature/assing-lot-create-transport-order-from-lot-indempotent` (not yet merged — merge conflicts) | **Overdelivered** — auto-repair per leg + per-leg conflict details. Different error contract: HTTP 200 + Conflicts array (not 409). |
 | **03 AssignLegToTO** | Query TMS, distinguish same-TO (no-op) vs. different-TO (error), user retries | Queries TMS, **auto-repairs**, throws ConflictException. Distinguishes same-TO vs. different-TO in error message. | **Overdelivered** — auto-repair + same/different-TO distinction in error message |
 | **04 AssignLotToTO** | Check all lot legs, per-leg count, user retries | Queries TMS batch, **auto-repairs** per conflicting leg, returns HTTP 200 with per-leg `ConflictDto` (same-TO/different-TO distinction). Same branch as Flow 02 (not yet merged — merge conflicts) | **Overdelivered** — auto-repair per leg + same/different-TO error messages. Different error contract: HTTP 200 + Conflicts array (not 409). |
-| **05 UnassignLots** | Query TMS for removal status, show error, user retries | Queries TMS, **auto-repairs** unsynched legs, proceeds with synched legs, returns per-item success/failure | **Overdelivered** — auto-repair + partial success (synched legs proceed, unsynched repaired) |
-| **06 UnassignLegs** | Query TMS per-leg, show error, user retries | Same auto-repair pattern, per-leg granularity, proceeds with synched legs | **Overdelivered** — auto-repair + partial success |
+| **05 UnassignLots** | Query TMS for removal status, show error, user retries | Queries TMS, **auto-repairs** unsynched legs, returns per-lot success/failure | **Overdelivered** — auto-repair. ~~partial success (synched legs proceed, unsynched repaired)~~ **Iteration 2:** Lot is atomic — entire lot takes conflict path if any leg is unsynched. |
+| **06 UnassignLegs** | Query TMS per-leg, show error, user retries | Same auto-repair pattern, per-leg granularity, proceeds with synched legs | **Overdelivered** — auto-repair + per-leg results (each leg is a separate request) |
 | **07 DeleteTO** | Query TMS for TO existence, show error, user retries | In Progress: check if already deleted in TMS → sync local state, return 200 | **Catching up** — sync detection designed, implementation in progress |
 
 **Summary:**
@@ -298,7 +309,7 @@ The flow concept documents specify what data is queryable from TMS at sync-check
 |------|------------------------------|----------------|
 | **CreateTOFromLeg** | TransportOrderId, PerformanceDate, Company, Branch, TransportMode (via V_DIS_TransportOrder join) | Yes — can tell user "leg is already on TO #X, created on date Y" |
 | **CreateTOFromLot** | Per-leg assignment status, existing TransportOrderId, expected vs. actual leg count. Implemented: `ConflictDto` per leg with `IsAssigned` flag | Yes — can show partial assignment status. Implementation returns per-leg conflict details in HTTP 200 |
-| **AssignLegToTO** | TransportOrderId, PickupTourPointId, DeliveryTourPointId, TMS LegId; HasSen idempotency means TMS silently no-ops | Yes — can distinguish "already on this TO" (benign) from "on different TO" (conflict) |
+| **AssignLegToTO** | TransportOrderId, PickupTourPointId, DeliveryTourPointId, TMS LegId; HasSen idempotency means TMS silently no-ops | Yes — can distinguish "already on this TO" (already done) from "on different TO" (real conflict) |
 | **AssignLotToTO** | Per-leg assignment count, tour point sequence. Implemented: per-leg `ConflictDto` with same-TO/different-TO distinction | Yes — can show which legs are assigned where. Implementation returns per-leg conflict details with same/different TO error messages |
 | **UnassignLots** | Per-leg removal status (still assigned vs. removed), expected leg count | Yes — can show "3 of 5 legs removed, 2 were already unassigned" |
 | **UnassignLegs** | Per-leg status (removed/still-assigned/reassigned-elsewhere) | Yes — granular per-leg feedback |
@@ -351,7 +362,7 @@ The flow concept documents specify what data is queryable from TMS at sync-check
 | Assign leg (on different TO) | Assign leg to TO X | Leg on TO Y in TMS, local synced | Snackbar: "Leg is on TO Y. Page refreshed. Re-evaluate." | Decide if reassignment needed |
 | Create TO from leg (already assigned) | Create new TO | Leg already on TO Z, local synced | Snackbar: "Leg already on TO Z. Page refreshed." | Navigate to existing TO or pick different leg |
 | Unassign leg (not assigned in TMS) | Remove leg from TO | Leg wasn't on this TO in TMS, local cleaned | Per-item error in response | Refresh — already unassigned |
-| Unassign lot (partial sync) | Remove lot from TO | Some legs in lot were out of sync | Mixed success/failure per item | Refresh — partial repair, retry remainder |
+| Unassign lot (sync conflict) | Remove lot from TO | Some legs in lot were out of sync | ~~Mixed success/failure per item~~ **Iteration 2:** Lot is atomic — entire lot reports conflict, unsynched legs auto-repaired | Refresh — retry to remove remaining synched legs |
 | Delete TO | Delete TO | (no sync check yet in #124364) | TBD | TBD |
 
 ### UX Design Considerations — PO Decisions (2026-05-20)
@@ -361,9 +372,9 @@ The flow concept documents specify what data is queryable from TMS at sync-check
 | 1 | **Incident ID visibility** | Only shown for non-resolvable issues (Flow 7 / TMS failures). Resolvable conflicts: logged server-side only. Cryptic UUID/hex acceptable — copy-paste button handles UX. One fresh ID per request, no correlation across retries. | PO decision + team confirmation |
 | 2 | **Refresh behavior** | Manual refresh — user refreshes the page themselves. No auto-refresh. | PO decision, overrides original AC2 |
 | 3 | **Auto-retry of user action** | No auto-retry. User must consciously repeat the action after refresh. | Confirmed, per AC4 |
-| 4 | **Severity levels** | Two levels for resolvable: info (auto-dismiss, green) for benign + warning (stays until dismissed, yellow/orange) for real conflicts. Error (red, persistent + Log ID) for non-resolvable. | PO decision + team confirmation |
+| 4 | **Severity levels** | Two levels for resolvable: info (auto-dismiss, green) for "already done" cases + warning (stays until dismissed, yellow/orange) for real conflicts. Error (red, persistent + Log ID) for non-resolvable. | PO decision + team confirmation |
 | 5 | **Same-TO vs. Different-TO** | Distinguish: "already on this TO" = info level, "on a different TO" = warning level. | PO decision, backend already supports this |
-| 6 | **Partial success display** | Summary toast for individual-leg-from-slider scenario only (e.g., "3 of 5 legs assigned. 2 had conflicts."). Lot operations are atomic — one operation = one toast, no per-leg partial state. No per-leg detail panel. | PO decision, refined by team |
+| 6 | **Partial success display** | ~~Summary toast for individual-leg-from-slider scenario only (e.g., "3 of 5 legs assigned. 2 had conflicts.").~~ **Iteration 2 (2026-06-10):** Lot operations are atomic — one operation = one toast, no per-leg partial state within a lot. Individual-leg-from-slider scenario (Flow 6) fires one BE request per leg, producing one toast per leg — no summary aggregation needed. No per-leg detail panel. | PO decision, refined by team; corrected in iteration 2 |
 | 7 | **Flow 7 toast wording** | Transparent: "Transport Order deleted. Some local data could not be cleaned up. Our team has been notified. Log ID: X" | PO decision |
 | 8 | **Flow-specific vs. generic messages** | Generic template with `[action name]` slot. Not flow-specific wording. | PO decision |
 | 9 | **Log infrastructure** | Use existing GCP Cloud Run log. No dedicated sink or table. Filter by incident ID. Yosif proposed structured log template: prefix + incident ID + entity IDs for filterability. | Team decision |
@@ -374,12 +385,17 @@ The flow concept documents specify what data is queryable from TMS at sync-check
 
 | AC | Scope |
 |----|-------|
-| AC 1 | Info toast — benign conflicts (green, auto-dismiss). Template: *"The [action name] you performed affected an out-of-sync item. The issue has been resolved automatically. Please refresh the page."* |
+| AC 1 | Info toast — "already done" conflicts (green, auto-dismiss). Template: *"The [action name] you performed affected an out-of-sync item. The issue has been resolved automatically. Please refresh the page."* |
 | AC 2 | Warning toast — real conflicts (orange, stays until dismissed). Same template, different severity. |
-| AC 3 | Batch summary toast (Flows 2, 4, 5, 6) — single summary, severity follows worst-case item. |
+| ~~AC 3~~ | ~~Batch summary toast (Flows 2, 4, 5, 6) — single summary, severity follows worst-case item.~~ **Iteration 2 (2026-06-10):** Dropped for lot operations — lots are atomic (all-or-nothing), no partial leg outcomes within a single lot operation. Individual-leg-from-slider scenario (Flow 6) produces one BE request per leg = one toast per leg. No summary aggregation needed. |
 | AC 4 | Error toast — non-resolvable (red, stays, Log ID + copy button). Flow 7 template: *"Transport Order deleted. Some local data could not be cleaned up. Our team has been notified. Log ID: [Log ID]."* |
 | AC 5 | Same-TO vs. Different-TO distinction (Flows 3, 4) — same TO = info, different TO = warning. |
 | AC 6 | General behavior — manual refresh, no auto-retry, generic template with `[action name]` slot. |
+
+**Iteration 2 — Gaps identified (2026-06-10):**
+
+- **Unassign UX covered under AC 1/AC 2:** Flows 5+6 had no explicit toast requirements. Both unassign-lots and unassign-legs are triggered via the same FE interaction (removing items from a TO in the drive instructions slider). Resolved: unassign sync conflicts fall under existing severity rules — legs already removed in TMS (already done) → **info level** (AC 1), legs reassigned to a different TO → **warning level** (AC 2). AC 1 and AC 2 examples updated to include unassign scenarios. No separate AC needed.
+- **FE interaction model:** The 7 Backend flows map to fewer FE interactions. Specifically: unassign-lots and unassign-legs are one user action. The ACs should include a mapping of FE actions → Backend flows → toast behavior, so FE developers know which AC applies to which button.
 
 ---
 
