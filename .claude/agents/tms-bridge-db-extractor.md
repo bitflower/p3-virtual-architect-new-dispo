@@ -1,12 +1,12 @@
 ---
 name: tms-bridge-db-extractor
-description: Extract all TMS database objects referenced by the TMS Bridge from C# source code
+description: Extract all TMS database objects and their column definitions referenced by the TMS Bridge from C# source code
 tools: [Read, Glob, Grep]
 ---
 
 # TMS Bridge Database Object Extractor
 
-Extract a complete, classified inventory of all TMS database objects accessed by `CALConsult.TMSBridge.API` directly from source code. Produces a structured markdown document suitable for wiki publication.
+Extract a complete, classified inventory of all TMS database objects accessed by `CALConsult.TMSBridge.API` directly from source code, including column-level metadata for tables and views. Produces a structured markdown document suitable for wiki publication and a JSON registry (`db-objects.json`) with column definitions for machine consumption.
 
 ## Codebase Root
 
@@ -15,7 +15,7 @@ Tests: `Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API.Tests/`
 
 ## Extraction Pipeline
 
-Execute steps 1-7 in order. Each step produces a partial inventory. Step 8 merges and formats.
+Execute all steps in order. Steps 1-9 extract database objects and column metadata. Step 10 resolves schemas. Step 11 assembles output.
 
 ---
 
@@ -37,7 +37,7 @@ Patterns: .ToView("...") and .ToTable("...")
 
 For each entity, record:
 - DB object name (string argument)
-- Schema (second argument if present, otherwise infer — see Step 9)
+- Schema (second argument if present, otherwise infer — see Step 10)
 - Entity type (from `modelBuilder.Entity<T>()` or the configuration class)
 - EF mapping directive (`ToView` or `ToTable`)
 - Whether the entity has a `DbSet<T>` property (entities without → "navigation-only")
@@ -46,7 +46,102 @@ Cross-reference: if an entity has a mapping in both its configuration AND Branch
 
 ---
 
-### Step 2: Classify by actual database object type
+### Step 2: Extract Column Definitions
+
+For each entity discovered in Step 1, extract column-level metadata from its EntityConfiguration file and the corresponding entity class.
+
+**2a. Identify the entity class for each EntityConfiguration:**
+
+Each EntityConfiguration implements `IEntityTypeConfiguration<TEntity>`. Extract `TEntity` to locate the entity class file.
+```
+Pattern: class *EntityConfiguration : IEntityTypeConfiguration<TEntity>
+Entity class file: Data/Entities/**/{TEntity}.cs
+```
+
+If the file is not found at the expected path, grep for `public class {TEntity}` or `public partial class {TEntity}` across all `Data/Entities/**/*.cs` files.
+
+**2b. Extract column names from EntityConfiguration files:**
+```
+Files: Data/Entities/**/*EntityConfiguration.cs
+Pattern: builder.Property(e => e.{PropertyName}).HasColumnName("{column_name}")
+Optional chain: .HasColumnType("{pg_type}")
+```
+
+Handle multi-line fluent API chains — `.HasColumnName()` and `.HasColumnType()` may appear on separate lines:
+```csharp
+builder.Property(e => e.SomeProperty)
+    .HasColumnName("some_column")
+    .HasColumnType("timestamp without time zone");
+```
+
+For each `.HasColumnName()` call, record:
+- **Column name:** string argument to `.HasColumnName("...")`
+- **Explicit PostgreSQL type:** string argument to `.HasColumnType("...")` if chained on the same property (rare — very few instances across the codebase)
+- **C# property name:** `{PropertyName}` from `e => e.{PropertyName}`
+
+Only extract columns where `.HasColumnName()` is explicitly called. Properties configured via `builder.Property(...)` without `.HasColumnName()` use EF convention naming and are excluded from the column list.
+
+**2c. Resolve column types via C# type inference:**
+
+Look up each C# property's type in the entity class and map to PostgreSQL:
+
+| C# Type | PostgreSQL Type |
+|---|---|
+| `string` | `text` |
+| `long` / `long?` | `bigint` |
+| `int` / `int?` | `integer` |
+| `short` / `short?` | `smallint` |
+| `decimal` / `decimal?` | `numeric` |
+| `double` / `double?` | `double precision` |
+| `float` / `float?` | `real` |
+| `bool` / `bool?` | `boolean` |
+| `DateTime` / `DateTime?` | `timestamp with time zone` |
+| `DateOnly` / `DateOnly?` | `date` |
+| `TimeOnly` / `TimeOnly?` | `time without time zone` |
+| `Guid` / `Guid?` | `uuid` |
+| `byte[]` | `bytea` |
+| (unknown) | `null` — flag in report |
+
+**Type resolution priority:** If `.HasColumnType()` is present, use its explicit value and set `inferredType: false`. Otherwise, infer from the C# property type and set `inferredType: true`. If the C# type has no mapping entry, set `type` to `null` and flag in report.
+
+**Value conversions:** If `.HasConversion<T>()` or `.HasConversion(...)` is chained on the property, the stored database type may differ from the C# property type. Flag these as `type: null` with `inferredType: true` and note the conversion in the report for manual review.
+
+**2d. BranchDbContext column override check:**
+```
+File: Data/DbContexts/BranchDbContext.cs
+Patterns: .HasColumnName("...") and .HasColumnType("...")
+```
+Verify no column-level overrides exist in BranchDbContext. Currently none are expected — this is a defensive check. If any are found, they take priority over EntityConfiguration values (same override principle as `ToView`/`ToTable` in Step 1). Replace the corresponding EntityConfiguration column values (name and/or type) and log each override in the report.
+
+**2e. Property-count safety net:**
+
+For each entity, compare:
+- Total public settable properties in the entity class (`public {Type} {Name} { get; set; }`)
+- Count of `.HasColumnName()` calls in its EntityConfiguration
+
+If counts differ, report the mismatch:
+- Entity name
+- Entity class property count
+- `.HasColumnName()` call count
+- Delta and list of unmatched property names
+
+Properties without `.HasColumnName()` may be navigation properties (relationships to other entities) or convention-named columns. The `.HasColumnName()` calls are authoritative — only explicitly mapped columns appear in the output. Flag mismatches for review but do not add unmapped properties to the column list.
+
+**2f. Multi-entity UNION dedup:**
+
+When multiple EntityConfigurations map to the same database object (from Step 1 cross-reference):
+1. Collect columns from ALL entity configurations for that object
+2. UNION by column name (case-sensitive match)
+3. Same column name + same type → deduplicate (keep one)
+4. Same column name + different types → flag as **CONFLICT** in report, keep both types noted
+5. No "primary" entity concept — all configurations contribute equally
+
+**Output per database object:**
+For each Table/View from Step 1, record an ordered list of columns: `{ name, type, inferredType }` ordered by the sequence of `builder.Property(...)` calls as they appear top-to-bottom in the EntityConfiguration file. For multi-entity views, columns from the first configuration (alphabetical by filename) appear first, then additional columns from subsequent configurations.
+
+---
+
+### Step 3: Classify by actual database object type
 
 **Classification principle:** Objects are classified by their **actual database type** (TABLE or VIEW), not by the EF Core mapping directive. `ToView()` means "treat as read-only" — it does NOT imply the database object is a view. `ToTable()` means "treat as writable" — it does NOT guarantee the object is a table if overridden.
 
@@ -76,7 +171,7 @@ For tables classified from `ToView`, add an `EF Mapping` column showing `ToView`
 
 ---
 
-### Step 3: Extract Stored Procedures
+### Step 4: Extract Stored Procedures
 
 **Search pattern:**
 ```
@@ -94,7 +189,7 @@ For each match, extract:
 
 ---
 
-### Step 4: Extract Functions
+### Step 5: Extract Functions
 
 **Search pattern:**
 ```
@@ -102,7 +197,7 @@ Files: GraphQL/Mutations/**/*.cs, GraphQL/Queries/**/*.cs, Services/**/*.cs
 Pattern: OperationType.Function
 ```
 
-Extract same fields as Step 3. Additionally:
+Extract same fields as Step 4. Additionally:
 - **Access classification:** If the function is called from a Query class or is a pure getter (name starts with `get`), classify as READ. If called from a Mutation class and the name starts with `set`, `create`, `add`, `remove`, classify as WRITE.
 - **Do not rely on naming alone** — check the actual call site context.
 
@@ -114,7 +209,7 @@ These are EF-mapped functions called differently from IRoutineExecutor functions
 
 ---
 
-### Step 5: Extract Table Functions (Oracle-only)
+### Step 6: Extract Table Functions (Oracle-only)
 
 **Search pattern:**
 ```
@@ -126,7 +221,7 @@ These generate `SELECT * FROM TABLE(schema.function(...))` via `OracleTableBuild
 
 ---
 
-### Step 6: Extract Custom Types
+### Step 7: Extract Custom Types
 
 **Search pattern:**
 ```
@@ -149,7 +244,7 @@ Find usage sites by grepping for the enum type name in mutation input DTOs and A
 
 ---
 
-### Step 7: Detect Implicit Call Chains
+### Step 8: Detect Implicit Call Chains
 
 Some database calls are triggered indirectly — not from a GraphQL mutation/query directly, but from resolver classes or middleware.
 
@@ -168,7 +263,7 @@ For each match, trace back to understand:
 
 ---
 
-### Step 8: Detect Obsolete/Inactive Entries
+### Step 9: Detect Obsolete/Inactive Entries
 
 **Search pattern:**
 ```
@@ -176,11 +271,11 @@ File: Startup.cs (or Program.cs)
 Pattern: commented-out AddTypeExtension lines, or mutations/queries not registered
 ```
 
-Cross-reference: every mutation/query class found in Steps 3-5 should have a registration in Startup. If a class exists but is not registered (or is commented out), flag it as **obsolete**.
+Cross-reference: every mutation/query class found in Steps 4-6 should have a registration in Startup. If a class exists but is not registered (or is commented out), flag it as **obsolete**.
 
 ---
 
-### Step 9: Schema Resolution
+### Step 10: Schema Resolution
 
 For each extracted object, determine the schema:
 
@@ -192,9 +287,11 @@ For each extracted object, determine the schema:
 
 ---
 
-### Step 10: Assemble Output
+### Step 11: Assemble Output
 
-Produce a markdown document with this exact structure:
+Produce two outputs: a markdown document and a JSON registry.
+
+**Markdown Document:**
 
 ```markdown
 # TMS Bridge: Database Objects
@@ -250,6 +347,44 @@ Produce a markdown document with this exact structure:
 - Functions/Procedures/Table Functions → EXECUTE
 - Custom Types → USAGE
 
+**JSON Registry Output (`db-objects.json`):**
+
+In addition to the markdown document, produce a complete `db-objects.json` array. Each Table and View entry includes a `columns` array from Step 2. Routines (Function, Procedure, TableFunction) and CustomType entries do NOT get `columns`.
+
+Entry format for Tables and Views:
+```json
+{
+  "kind": "View",
+  "schema": "tms",
+  "name": "v_dis_tp_client_comm",
+  "permission": "SELECT",
+  "columns": [
+    { "name": "shipmentid", "type": "bigint", "inferredType": false },
+    { "name": "trucklicenseplate", "type": "text", "inferredType": true }
+  ]
+}
+```
+
+Entry format for routines and custom types (unchanged — no `columns`):
+```json
+{
+  "kind": "Procedure",
+  "schema": "pdis_transportorder",
+  "name": "addtourpoint",
+  "permission": "EXECUTE"
+}
+```
+
+Column fields:
+
+| Field | Type | Description |
+|---|---|---|
+| `name` | `string` | Column name exactly as in `.HasColumnName("...")` — no case transformation |
+| `type` | `string` or `null` | PostgreSQL type: explicit from `.HasColumnType()` or inferred from C# type. `null` if type unmappable |
+| `inferredType` | `boolean` | `false` if `.HasColumnType()` was explicit, `true` if inferred from C# type |
+
+Column ordering: as defined in Step 2f (top-to-bottom `builder.Property(...)` call order; multi-entity views sorted alphabetically by filename).
+
 ---
 
 ## Quality Checks (run before output)
@@ -260,6 +395,10 @@ Produce a markdown document with this exact structure:
 4. **Access classification:** Every object has READ or WRITE
 5. **Cross-reference DbSets:** Every `DbSet<T>` in BranchDbContext should map to exactly one table or view
 6. **Rename detection:** Compare `ToView`/`ToTable` strings against SQL file names in `Code/tms-alloydb-schema/src/sql/view/` and `Code/tms-alloydb-schema/src/sql/scripts/` to detect name mismatches (potential pending renames)
+7. **Column completeness:** Every Table and View entry in the JSON registry has a non-empty `columns` array
+8. **Column dedup:** No duplicate column names within a single database object entry
+9. **Type coverage:** Report count of explicit `.HasColumnType()` vs inferred types vs `null` types across all columns (expected: very few explicit, several hundred inferred)
+10. **Property-count safety net:** Report all entity property-count vs `.HasColumnName()`-count mismatches with entity names and deltas
 
 ---
 
@@ -270,10 +409,13 @@ These were real errors made during manual extraction. The agent must avoid them:
 | Pitfall | How to Avoid |
 |---------|-------------|
 | Counting entities with `ToTable` as tables when DbContext overrides to `ToView` | Always check BranchDbContext overrides FIRST |
-| Assuming `ToView()` target is a database VIEW | Cross-reference against TMS DB schema files (Step 2). `ToView()` = read-only EF mapping, not DB object type. Example: `sen_ref` is a TABLE mapped via `ToView()` |
+| Assuming `ToView()` target is a database VIEW | Cross-reference against TMS DB schema files (Step 3). `ToView()` = read-only EF mapping, not DB object type. Example: `sen_ref` is a TABLE mapped via `ToView()` |
 | Missing `HasPostgresEnum` custom types | Explicitly scan for `HasPostgresEnum` |
 | Miscounting procedures (got ~26, actual was 35) | Exhaustively grep ALL `OperationType.Procedure` sites |
-| Missing routines only called from resolvers (not mutations) | Step 7 — scan resolvers and middleware too |
+| Missing routines only called from resolvers (not mutations) | Step 8 — scan resolvers and middleware too |
 | Confusing function vs procedure classification | Use `OperationType` enum value, not naming |
 | Missing mutations that have a class but no DB-section entry (e.g., `removedriver`) | Cross-reference mutation classes against extracted routine names |
 | Missing routines behind `SetXServerDtoMutation` calling both get AND set | Read full mutation code — one mutation may call multiple routines |
+| Missing `.HasColumnName()` in multi-line fluent chains | Read the full `builder.Property(...)` chain including continuation lines across multiple lines |
+| Confusing navigation properties with mapped columns in property count | Navigation properties don't have `.HasColumnName()` — they affect the property-count safety net delta but are not errors |
+| Missing columns from second entity on shared view | UNION columns from ALL entity configurations mapped to same database object (Step 2f) |
