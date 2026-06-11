@@ -813,6 +813,20 @@
         },
         "notes": "Full exploration document - rewrite links, remove internal-only references"
       }
+    },
+    {
+      "id": "bug-124918-email-cannot-be-sent",
+      "source": "20_Bug-Analysis/2026-05-28_BUG-124918_Email-Cannot-Be-Sent.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Bug-Analysis-(Automated)/2026%2D06%2D10-124918-Email-can-not-be-sent.md",
+      "description": "BUG-124918: Email Cannot Be Sent - Cross-component analysis with TMS database verification",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Bug analysis document - full sync, no link rewriting needed"
+      }
     }
   ]
 }
