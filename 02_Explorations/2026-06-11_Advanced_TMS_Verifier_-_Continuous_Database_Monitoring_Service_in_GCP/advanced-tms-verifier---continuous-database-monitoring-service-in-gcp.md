@@ -573,16 +573,19 @@ All options share `TmsBridgeDbVerifier.Core`. They are **not mutually exclusive*
 Build the hosts incrementally, each adding value on top of the shared core:
 
 ### Layer 1: Core Library + CLI Upgrade (foundation for everything)
-Extract `.Core` from the existing CLI tool. Add column verification (Level 3) and drift detection (Level 6). The CLI remains the primary interface — every other host delegates to it or references `.Core`.
+Extract `.Core` from the existing CLI tool. Add column verification (Level 3), drift detection (Level 6), and `IResultStore`/`IResultQuery` for history. The CLI remains the primary interface — every other host delegates to it or references `.Core`.
 
-### Layer 2: Pipeline Gate (highest immediate value)
+### Layer 2: Claude Code Skill + `/loop` (fastest path to results)
+Build `/verify-databases` skill that invokes the CLI locally (VPN on). Immediate value — running checks within a day of completing the core. Use `/loop 30m /verify-databases` for continuous monitoring during work hours. Reactions via MCP (work items).
+
+### Layer 3: Wiki Status Page (team visibility without infrastructure)
+`MarkdownReporter` in `.Core` generates a status page with current state + checkpoint history. Published to wiki via `/wiki-connector` after each skill run. Team can bookmark and see schema breathing — no dashboard needed yet.
+
+### Layer 4: Pipeline Gate (deployment safety)
 Add a pipeline step to the TMS Bridge deployment pipeline. This is the BUG-124918 class of failures eliminated. Low effort because it just invokes the CLI.
 
-### Layer 3: Claude Code Skill + `/loop` (personal monitoring)
-Build `/verify-databases` skill that invokes the CLI locally. Use `/loop 30m /verify-databases` for continuous monitoring during work hours. Reactions via MCP (work items) and wiki publish.
-
-### Layer 4: Cloud Host (team-shared, always-on)
-Deploy to GCP for 24/7 monitoring. Choice of Cloud Function (Option A) or Cloud Run (Option B) — the host wrapper is thin either way because all logic is in `.Core`.
+### Layer 5: Cloud Host (team-shared, always-on, 24/7)
+Deploy to GCP for monitoring when laptop is off. Choice of Cloud Function (Option A) or Cloud Run (Option B) — the host wrapper is thin either way because all logic is in `.Core`. Firestore for history, timeline dashboard for visualization.
 
 ### Architecture Diagram
 
@@ -602,26 +605,26 @@ graph TB
         CLI --> VR
     end
 
-    subgraph "Layer 2: Pipeline Gate"
-        PIPE[Azure DevOps Pipeline Step]
-        PIPE -->|"exit code 0/1"| CLI
-        PIPE -->|"blocks deploy on failure"| DEPLOY[TMS Bridge Deployment]
-    end
-
-    subgraph "Layer 3: Claude Code"
+    subgraph "Layer 2+3: Claude Code + Wiki"
         SKILL["/verify-databases skill"]
         LOOP["/loop 30m /verify-databases"]
         SKILL -->|"dotnet run + parse JSON"| CLI
         LOOP --> SKILL
         SKILL -->|"on failure"| ADO[Azure DevOps Work Item]
-        SKILL -->|"publish"| WIKI[Wiki Report]
+        SKILL -->|"publish status page"| WIKI[Wiki: TMS-Bridge-DB-Status]
     end
 
-    subgraph "Layer 4: GCP Host"
+    subgraph "Layer 4: Pipeline Gate"
+        PIPE[Azure DevOps Pipeline Step]
+        PIPE -->|"exit code 0/1"| CLI
+        PIPE -->|"blocks deploy on failure"| DEPLOY[TMS Bridge Deployment]
+    end
+
+    subgraph "Layer 5: GCP Host"
         CS[Cloud Scheduler] --> CF[Cloud Function / Cloud Run]
         CF -->|"references"| VR
-        CF --> GCS[(Results: Cloud Storage)]
-        CF --> DASH[Dashboard]
+        CF --> FS[(Firestore: History)]
+        CF --> DASH[Timeline Dashboard]
     end
 
     subgraph "Databases"
@@ -654,7 +657,26 @@ graph TB
 8. CLI gets `--store-dir ./results` flag for local history accumulation
 9. Verify: `dotnet run -- -c "..." -s tms1034 -l 6 --output json --store-dir ./results` works end-to-end
 
-### Phase 2: Pipeline Gate (1-2 days)
+### Phase 2: Claude Code Skill (1 day)
+Fastest path to real results — runs locally with VPN, no GCP deployment needed.
+1. Create `/verify-databases` skill in `.claude/skills/verify-databases/`
+2. Invokes CLI via `dotnet run`, parses JSON output
+3. Stores results locally via `FileResultStore` (`--store-dir ./results`)
+4. On failure: creates Azure DevOps work item via MCP
+5. On success: brief summary to console
+6. Usable standalone or via `/loop 30m /verify-databases` for continuous local monitoring
+
+### Phase 3: Wiki Status Page (0.5-1 day)
+Make results visible to the team without any dashboard infrastructure.
+1. Add `MarkdownReporter` to `.Core` — generates a status page from latest + historical results
+2. Wiki page `TMS-Bridge-DB-Verification-Status.md` with:
+   - Current status per database (traffic-light)
+   - Last N checkpoints as timeline table (schema breathing visible)
+   - Failure details with column-level drill-down
+3. Publish via `/wiki-connector` (skill triggers this automatically after each run)
+4. Team can bookmark the wiki page — updated every time the skill runs
+
+### Phase 4: Pipeline Gate (1-2 days)
 1. Add pipeline step to `cal-new-dispo-tms-bridge-t-t-cloudrun` (Azure DevOps)
 2. Step runs CLI with target database identifier from pipeline variable
 3. Connection string from pipeline variable group or Secret Manager via Workload Identity
@@ -662,14 +684,7 @@ graph TB
 5. Two-phase: pre-deploy check (current DB vs incoming TMS Bridge expectations) + post-deploy re-verify
 6. Repeat for prod pipeline `cal-new-dispo-tms-bridge-p-p-cloudrun`
 
-### Phase 3: Claude Code Skill (1 day)
-1. Create `/verify-databases` skill in `.claude/skills/verify-databases/`
-2. Invokes CLI via `dotnet run`, parses JSON output
-3. On failure: creates Azure DevOps work item via MCP, publishes markdown to wiki via `/wiki-connector`
-4. On success: brief summary to console
-5. Usable standalone or via `/loop 30m /verify-databases` for continuous local monitoring
-
-### Phase 4: GCP Cloud Host + History + Dashboard (3-5 days)
+### Phase 5: GCP Cloud Host + History + Dashboard (3-5 days)
 1. Create `TmsBridgeDbVerifier.CloudHost` in `Code/Nagel-GCP/`
 2. References `.Core` directly (NuGet project reference, not copy-paste)
 3. HTTP trigger: `POST /verify?database=D-10-34&level=6` calls `VerificationRunner`, returns JSON
@@ -686,16 +701,23 @@ graph TB
 
 ---
 
-## Open Questions
+## Decisions
 
-1. **Which databases to monitor?** All environments (ABN, UAT, PROD) or start with a subset?
-2. **Check frequency?** Every 30 min seems reasonable — or different frequencies per environment?
-3. **Alerting targets?** Who gets notified on failures? Email, Slack, Azure DevOps work items?
-4. **Oracle access from Cloud Functions?** The Cloud4Log functions already connect to Oracle — need to verify VPN routing works for the verifier function too.
-5. **Should we add data-level checks?** Beyond schema verification, should we check things like row counts, replication lag, or data freshness?
-6. **Authentication for dashboard?** IAP (Identity-Aware Proxy) or public with simple auth?
-7. **Column registry automation:** Should the column registry be generated automatically from TMS Bridge source code on every PR (CI step), or maintained manually alongside `db-objects.json`? Automatic is more reliable but requires CI pipeline changes.
-8. **Type compatibility mapping:** PostgreSQL and Oracle use different type names (`character varying` vs `VARCHAR2`, `bigint` vs `NUMBER`). Need a compatibility map for cross-vendor column type checks. The TMS Bridge EF configurations may use `.HasColumnType()` — need to check coverage.
+| # | Question | Decision |
+|---|----------|----------|
+| 1 | Which databases to monitor? | **ABN 1034 (AlloyDB) + ABN 1060 (Oracle)** — both test environments, expand to UAT/PROD later |
+| 2 | Check frequency? | **Every 60 min** via `/loop` during work hours |
+| 3 | Alerting on failure? | **Console + wiki only** — no auto-created work items, review manually via wiki status page |
+| 4 | Data-level checks? | **Schema (L1-L6) + replication lag** — add Datastream replication slot health check for AlloyDB |
+| 5 | Column registry automation? | **Agent on demand first, CI auto-generation later.** CI does NOT require AI — the extraction (`HasColumnName` calls in EntityConfiguration classes) is deterministic and can be a simple Roslyn script or regex-based `dotnet tool`. The agent does the initial discovery; CI keeps it in sync long-term. |
+| 6 | GCP dashboard style? | **Decide later** — wiki status page from Phase 3 may be enough for a while |
+| 7 | Pipeline gate timing? | **Decide later** — focus on Phases 0-3 first |
+
+## Remaining Open Questions
+
+1. **Oracle access from Cloud Functions?** The Cloud4Log functions already connect to Oracle — need to verify VPN routing works for the verifier function too. (Relevant for Phase 5 only.)
+2. **Authentication for dashboard?** IAP (Identity-Aware Proxy) or public with simple auth? (Relevant for Phase 5 only.)
+3. **Type compatibility mapping:** PostgreSQL and Oracle use different type names (`character varying` vs `VARCHAR2`, `bigint` vs `NUMBER`). Need a compatibility map for cross-vendor column type checks. The TMS Bridge EF configurations may use `.HasColumnType()` — need to check coverage.
 
 ---
 
