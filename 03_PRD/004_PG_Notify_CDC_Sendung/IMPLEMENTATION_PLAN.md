@@ -342,10 +342,10 @@ Derived from PRD Verification section:
 
 | Step | Database | What | Status |
 |---|---|---|---|
-| T1 | `ent1034` (10.100.4.16) | Deploy trigger (`001_create_sendung_cdc_trigger.sql`) | — |
-| T2 | `ent1034` | Run writer locally with `Gcs:LocalOutputPath` → verify JSONL files on disk | — |
-| T3 | `ent1034` | Manual `pg_notify` test — confirm full pipeline works without touching real data | — |
-| T4 | `ent1034` | Trigger a real `sendungsart='A'` INSERT/UPDATE/DELETE — inspect JSONL output | — |
+| T1 | `ent1034` (10.100.4.16) | Deploy trigger (`001_create_sendung_cdc_trigger.sql`) | Done (2026-06-12) |
+| T2 | `ent1034` | Run writer locally with `Gcs:LocalOutputPath` → verify JSONL files on disk | Done (2026-06-12) |
+| T3 | `ent1034` | Manual `pg_notify` test — confirm full pipeline works without touching real data | Done (2026-06-12) |
+| T4 | `ent1034` | Trigger a real `sendungsart='A'` INSERT/UPDATE/DELETE — inspect JSONL output | Done (2026-06-12) |
 | T5 | `ent1034` | Rollback trigger if issues found, iterate | — |
 | T6 | `abn1034` (10.100.47.236) | Deploy trigger — production-path testing | — |
 | T7 | `abn1034` | Run writer against GCS bucket `abn1043-sendung-bucket-1` | — |
@@ -363,6 +363,46 @@ dotnet run
 ```
 
 Note: `appsettings.json` has `Gcs:LocalOutputPath` set to `./temp/pg-notify-test` — JSONL files will appear there. Set to `null` when switching to GCS.
+
+### T1–T4 Executed SQL Log (2026-06-12, ent1034)
+
+**T1 — Deploy trigger:**
+```sql
+-- Applied via: psql -h 10.100.4.16 -U tms1034 -d ent1034 -f scripts/001_create_sendung_cdc_trigger.sql
+-- Result: CREATE FUNCTION, CREATE TRIGGER
+```
+
+**T3 — Manual pg_notify (synthetic payload, no table change):**
+```sql
+SELECT pg_notify('sendung_cdc', json_build_object(
+    'op', 'INSERT',
+    'tix', 99999,
+    'ts', extract(epoch from clock_timestamp()),
+    'row', '{"sendung_tix":99999,"u_version":"!","sendung_n":1,"sendungsart":"A"}'::jsonb
+)::text);
+-- Result: Writer produced JSONL file (562 bytes), envelope correct
+```
+
+**T4 — Real data UPDATE (no-op, existing row):**
+```sql
+UPDATE tms1034.sendung SET u_time = u_time WHERE sendung_tix = 10340431238593;
+-- Row: ISOVOLTA KASSEL → RECAERO UAP (sendungsart='A', status_dis='F')
+-- Result: 2-line JSONL file (13,742 bytes) — UPDATE-DELETE (is_deleted=true) + UPDATE-INSERT (is_deleted=false)
+```
+
+**T4 — Real data INSERT (test row):**
+```sql
+INSERT INTO tms1034.sendung (sendung_tix, sendung_n, sendungsart, status_dis, firma, niederlassung,
+    fix_key, u_version, c_time, c_user, u_time, ols_user)
+VALUES (999999999999999, 9999999, 'A', 'F', 10, 34, '34       ', '!', now(), 'TEST    ', now(), 'TEST    ');
+-- Result: JSONL file (6,301 bytes) — INSERT (is_deleted=false)
+```
+
+**T4 — Real data DELETE (test row cleanup):**
+```sql
+DELETE FROM tms1034.sendung WHERE sendung_tix = 999999999999999;
+-- Result: JSONL file (6,300 bytes) — DELETE (is_deleted=true)
+```
 
 ---
 
