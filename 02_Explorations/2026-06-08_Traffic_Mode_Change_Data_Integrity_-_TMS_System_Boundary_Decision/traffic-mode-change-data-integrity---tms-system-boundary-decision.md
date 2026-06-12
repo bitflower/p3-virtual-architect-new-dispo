@@ -1,7 +1,7 @@
 # Traffic Mode Change Data Integrity - TMS System Boundary Decision
 
 **Date:** 2026-06-08
-**Status:** Decision Required
+**Status:** Decided — Option C (Go-Live Interim)
 **Decision Owner:** Christian Lang (Decision Maker), Matthias Max (P3 Architect)
 **Stakeholders:** Maximilian Beisheim (Business Owner Nagel), Maximilian Kehder (ProxyPO P3), Joachim Schreiner (TMS Database), Boyan Valchev (Lead Developer New Dispo)
 
@@ -26,7 +26,7 @@ When a shipment's traffic mode is changed in the TMS (UniFace UI) while the ship
 | 3 + without pre-haulage | 3 | HL (Long Haul Relation Loading) |
 | 3 / 31 / 32 | 4 | VL (Pre-Haulage) |
 
-> **Note:** Handling of TMS Traffic Mode 31 currently under clarification -- a change is expected here.
+> **Resolved (2026-06-11):** Joachim clarified with Reinhard that TMS Traffic Mode 31/32 is normal Sammelgut, same as Traffic Mode 3. It is NOT Relationsverladung. No mapping change needed.
 
 **Critical boundary:** Switching between HL (traffic modes 1/3) and VL (traffic modes 2/4) requires a fundamentally different pickup leg type.
 
@@ -92,6 +92,37 @@ When a shipment's traffic mode is changed in the TMS (UniFace UI) while the ship
 - Became frustrated with the discussion dynamic, feeling P3 was assigning work to Nagel personnel
 
 **Meeting 2 outcome:** Escalate to Matthias Max (P3 Architect) and Christian Lang (Decision Maker) for decision by Tuesday.
+
+### Meeting 5: Dispo Blocker — Traffic Mode (2026-06-09)
+
+**Participants:** Matthias Max, Maximilian Kehder, Patrick Uschmann, Joachim Schreiner
+**Source:** `00_Meetings/2026-06-09_Dispo Blocker-Traffic-Mode.vtt`
+
+**Joachim presented the blocking approach** after consulting with Reinhard. Key positions:
+- The "entscheidende Nachteil" of relying on CDC sync: "sind wir in dem Moment nicht mehr transaktionssicher" -- the system loses transactional safety between traffic mode change and CDC propagation
+- His "Horrorszenario": dispatched Vorlauf-Legs coexisting with a traffic mode that implies Gesamtstrecke (long-haul) in Fernverkehr
+- Proposed blocking as "die einfachere Lösung": extend the existing Fernverkehr blocking to Nahverkehr
+- Explicitly named it **Option C** (22:01): "Ja, ich würde dann fast eine Option C definieren, weil das ja jetzt unsere Interimsoption ist."
+- Confirmed that 4↔2 switches remain allowed (Vorlauf unaffected), only cross-boundary switches (VL↔HL) are blocked when dispatched
+
+**Matthias framed the broader context:**
+- "Es geht hier nicht drum, neue Features reinzubringen, sondern zu verhindern, dass bestimmte Flows Daten kaputt machen, bevor wir uns dann für Option A oder B entscheiden, die jetzt beide zu groß sind."
+- On Option B's implications: "Wir würden letztendlich erstmalig auch Richtung verteilte Systeme offiziell gehen... dann ist der Pfad eingeschlagen."
+
+**Patrick confirmed:** Christian not needed for the Go-Live blocking decision, but should be involved for the post Go-Live Option A/B decision.
+
+**Agreed next steps:** Joachim sends description, Matthias adds Option C to document, new version distributed.
+
+### Meeting 6: Dispo Blocker — Traffic Mode Decision Approved (2026-06-11)
+
+**Participants:** Matthias Max, Maximilian Kehder, Patrick Uschmann, Joachim Schreiner
+**Source:** `00_Meetings/2026-06-11_Dispo Blocker_ Traffic-Mode-Decision-approved.vtt`
+
+**Option C formally approved.** Joachim had no additional context from Reinhard consultation. The lock rules were confirmed in detail (see Option C section above). Verkehrsstrom 31 clarified as NOT Relationsverladung.
+
+Additional detail agreed: Hauptlauf-Leg generation for Traffic Mode 3 (Sammelgut + no Vorholung) must be tested end-to-end in Fernverkehrsdisposition before Go-Live -- Joachim flagged this as a "No-go" without testing.
+
+---
 
 ### Exchange: Kehder - Joachim (Teams Chat)
 
@@ -203,6 +234,37 @@ graph LR
 
 **This is not a bug fix -- it is an architectural direction change.**
 
+### Option C: Block Traffic Mode Changes When Dispatched (Go-Live Interim) ✅ APPROVED
+
+**Description:** Extend the existing Fernverkehr blocking mechanism to also cover Nahverkehr. When a shipment has any dispatched Leg (Vorlauf or Hauptlauf), block traffic mode changes that would invalidate that Leg's type. This is an interim solution that prevents data integrity issues at the source, buying time for the architectural decision between Option A and Option B post Go-Live.
+
+**Origin:** Joachim Schreiner proposed this in the June 9 Dispo Blocker as "Option C -- unsere Interimsoption." Approved by Patrick Uschmann, Matthias Max, Maximilian Kehder, and Joachim Schreiner on June 11.
+
+**Lock Rules:**
+
+| Dispatched Leg Type | Allowed Traffic Mode Changes | Blocked Traffic Mode Changes | Rationale |
+|---|---|---|---|
+| Hauptlauf-Leg dispatched | None | All traffic mode changes blocked | Hauptlauf-Leg is the primary dispatch unit; any change risks Fernverkehr inconsistency |
+| Only Vorlauf-Leg dispatched | 2 ↔ 4 | 2/4 → 1/3 and 1/3 → 2/4 | Switching between 2 and 4 does not affect the Vorlauf-Leg type (both have Vorlauf). Switching to 1 or 3 would remove the Vorlauf-Leg entirely. |
+| No Leg dispatched | All | None | No dispatch means no data integrity risk from traffic mode changes |
+
+**Existing precedent:** Fernverkehr already blocks traffic mode changes when dispatched. Option C extends this to Nahverkehr -- same mechanism, broader scope.
+
+**Dispatcher workflow under Option C:** If a dispatcher needs to change the traffic mode on a shipment with a dispatched Leg:
+1. Unassign the Leg from the transport order in New Dispo
+2. Change the traffic mode in TMS/OMS/CNS (now unblocked)
+3. Re-plan the shipment with the new Leg type
+
+**Properties:**
+- **No cross-system dependency:** The blocking happens within TMS's own transaction boundary when the traffic mode change is attempted. No CDC involvement, no New Dispo write-back.
+- **Transactional safety:** Joachim emphasized this as the key advantage: "Wenn es die Möglichkeit gibt für eine Transaktionssicherheit, dann würde ich die unter allen Umständen auch nutzen." The check and block happen atomically within TMS when saving the Sendung.
+- **Temporary scope:** This is explicitly an interim measure for Go-Live safety. The architectural decision (Option A vs. Option B) remains open for post Go-Live.
+- **Minimal effort:** Joachim confirmed the mechanism already exists for Fernverkehr. Extending it to Nahverkehr is a contained change within TMS database logic.
+
+**Implementation:** Joachim Schreiner (TMS Database team). The blocking checks are added at the essential entry points: OMS Übernahme (customer takeover), Sendungserfassung (shipment entry), and CNS.
+
+---
+
 ### Go-Live Context: Data Integrity on PROD
 
 For the Go-Live on PROD, **all known error sources that endanger data integrity must be prevented**. The traffic mode change is one such error source.
@@ -212,11 +274,11 @@ For the Go-Live on PROD, **all known error sources that endanger data integrity 
 - **Option A (TMS fix):** The TMS team currently has no capacity to implement this short-term.
 - **Option B (New Dispo corrects):** This is not a small adjustment but an architectural change of significant scope -- with all consequences listed under Option B.
 
-### Recommendation
+### Decision (2026-06-11)
 
-**For Go-Live:** Neither Option A nor Option B are feasible before Go-Live. The traffic mode change across the VL/HL boundary must therefore be **operationally blocked** for assigned shipments until a technical solution is in place.
+**Option C approved for Go-Live.** Traffic mode changes are blocked in UI/CNS when any Leg is dispatched. Joachim Schreiner implements the blocking within TMS database logic, extending the existing Fernverkehr mechanism to Nahverkehr. This was unanimously agreed across all participants in the June 9 and June 11 Dispo Blocker meetings.
 
-**Post Go-Live:** The decision between Option A and Option B will be analyzed and made in a subsequent concept phase.
+**Post Go-Live:** The architectural decision between Option A (TMS owns its data integrity -- cleanup/handling within TMS) and Option B (New Dispo takes responsibility for TMS data integrity -- write-back via CDC) remains open. This will be analyzed in a subsequent concept phase with Christian Lang involved. As Matthias framed it: choosing Option B would mean "erstmalig Richtung verteilte Systeme offiziell gehen" -- a path that needs deliberate architectural commitment, not an ad-hoc fix.
 
 ---
 
@@ -232,12 +294,15 @@ Additionally, Joachim's position is self-contradictory: the existing long-haul b
 
 ## Action Items
 
-| # | Action | Owner | Due |
-|---|--------|-------|-----|
-| 1 | Prepare written decision framing document for Christian Lang | Matthias Max | 2026-06-10 |
-| 2 | Schedule decision meeting with Christian, Matthias, Joachim | Matthias Max | 2026-06-10 |
-| 3 | Ensure meeting transcripts are preserved as evidence of the contradictory positions | Boyan / Maximilian Kehder | Done |
-| 4 | Clarify traffic mode 3 "Relationsverladung" mapping (Joachim admitted uncertainty) | Joachim Schreiner | 2026-06-10 |
+| # | Action | Owner | Due | Status |
+|---|--------|-------|-----|--------|
+| 1 | Prepare written decision framing document for Christian Lang | Matthias Max | 2026-06-10 | Done — this document |
+| 2 | Add Option C to document, distribute new version | Matthias Max | 2026-06-12 | Done |
+| 3 | Ensure meeting transcripts are preserved as evidence | Boyan / Maximilian Kehder | — | Done |
+| 4 | Clarify traffic mode 31 "Relationsverladung" mapping | Joachim Schreiner | 2026-06-11 | Done — 31/32 = normal Sammelgut, NOT Relationsverladung |
+| 5 | Implement Option C blocking in TMS database logic | Joachim Schreiner | Before Go-Live | In progress |
+| 6 | Test Hauptlauf-Leg generation (Traffic Mode 3) end-to-end in Fernverkehr | Joachim + Patrick | Before Go-Live | Pending — No-go without this |
+| 7 | Post Go-Live: schedule Option A vs. B decision meeting with Christian Lang | Matthias Max | Post Go-Live | Open |
 
 ---
 
@@ -252,6 +317,9 @@ Additionally, Joachim's position is self-contradictory: the existing long-haul b
 | Traffic mode mapping table | `00_Meetings/2026-06-05_Changing Traffic mode/image.png` |
 | Meeting 3: PO/Architect Sync | `00_Meetings/2026-06-08_Intern_ PO _ ARCH - Post Vacation Sync on topics and prios.vtt` |
 | Meeting 4: Lead Developer Sync | `00_Meetings/2026-06-08_Quick Sync - Boyan Matthias Post Vacation.vtt` |
+| Meeting 5: Dispo Blocker — Traffic Mode | `00_Meetings/2026-06-09_Dispo Blocker-Traffic-Mode.vtt` |
+| Meeting 6: Dispo Blocker — Decision Approved | `00_Meetings/2026-06-11_Dispo Blocker_ Traffic-Mode-Decision-approved.vtt` |
+| Meeting 6 Briefing | `00a_MeetingBriefs/2026-06-11_Dispo Blocker_ Traffic-Mode-Decision-approved-BRIEFING.md` |
 
 ---
 

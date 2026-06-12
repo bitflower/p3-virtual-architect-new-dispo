@@ -239,6 +239,72 @@ Creates or updates PROJECT-STATUS.md files with:
 
 ---
 
+### `/send-status-update-mail` - Generate Project Status Update Email
+
+Generates a compact, management-style status update email from a project's PROJECT-STATUS.md file, written in Matthias's tone of voice.
+
+**Usage:**
+```bash
+/send-status-update-mail <project-status-file>
+/send-status-update-mail 02_Explorations/.../PROJECT-STATUS.md
+```
+
+**What it does:**
+1. Reads the PROJECT-STATUS.md and tone of voice reference files
+2. Resolves the wiki link from `publish-mappings.json`
+3. Drafts a compact email with: key decisions, options, blockers, parallel tracks, pending actions table, next steps
+4. Writes the email to `01_Communication/` with date-prefixed naming
+5. Adds Virtual Architect branding footer
+
+**Email structure:**
+- Subject: `{Topic} — Status Update (CW {NN})`
+- Key Decision(s) + Options + Blocker(s)
+- Parallel tracks (bullet list with owners)
+- Pending Actions table (What | Owner | ETA)
+- Next Steps (numbered)
+- Wiki link to full project status
+- Sign-off: "Thanks!\nMatthias"
+
+**Output:**
+- `01_Communication/{YYYY-MM-DD}_{Topic}-Status-Update-CW{NN}.md`
+- Virtual Architect footer branding included
+
+**Example:**
+- See `01_Communication/2026-04-23_Oracle-CDC-Status-Update-CW17.md`
+
+---
+
+### `/meeting-task-router` - Route Meeting Tasks to Explorations
+
+Takes action items from a meeting briefing, finds matching explorations, and presents options for how to act on each task.
+
+**Usage:**
+```bash
+/meeting-task-router <path-to-briefing.md>
+/meeting-task-router 00a_MeetingBriefs/2026-06-11_some-meeting-BRIEFING.md
+```
+
+**What it does:**
+1. Parses "Action Items for Matthias" + "Topics Needing Matthias's Attention" from the briefing
+2. For each task, searches `02_Explorations/` by folder name and file content for matches
+3. Presents a decision block per task: matching explorations, match quality, and concrete options
+4. Waits for your input before touching anything
+5. Executes chosen actions (update exploration, start new one, etc.)
+
+**Options per task:**
+- **Update existing exploration** — integrate meeting context into a matched exploration
+- **Start new exploration** — create a new exploration for topics not yet covered
+- **No exploration needed** — simple action item (email, config change, conversation)
+- **Needs more context** — flag what's missing before you can decide
+
+**Key behavior:**
+- Never modifies an exploration without explicit approval
+- Fuzzy keyword matching (German/English domain terms, abbreviations)
+- Groups tasks that point to the same exploration
+- Integrates changes into existing sections (never appends "meeting update" blocks)
+
+---
+
 ### `/update-repos` - Update Code Repositories
 
 Fetches and pulls appropriate branches for all repositories in the Code folder.
