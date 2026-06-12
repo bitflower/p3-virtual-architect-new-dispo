@@ -9,7 +9,7 @@
 
 ## Problem Statement
 
-When a shipment's traffic mode is changed in the TMS (UniFace UI) while the shipment's pickup leg is already assigned to a transport order in New Dispo and in the TMS database, the TMS database retains stale assignment data. New Dispo correctly handles the change by removing the old leg and creating a new one of the correct type, but the TMS database does not clean up the orphaned transport order assignment. This results in data inconsistency between the two systems and incorrect display in the New Dispo drive instructions.
+When a shipment's traffic mode is changed in the TMS (UniFace UI) and this causes a change of the pickup leg type (e.g., from pre-haulage to long haul), while the shipment's pickup leg is already assigned to a transport order in New Dispo and in the TMS database, the TMS database retains stale assignment data. New Dispo correctly handles the change by removing the old New Dispo leg and creating a new one of the correct type, adding it to the transport order. But the TMS database does not clean up the orphaned transport order assignment. This results in drive instructions showing tour points that reference an orphaned leg in TMS that no longer exists in New Dispo.
 
 **The core question:** Who is responsible for maintaining data integrity within the TMS database when external operations (traffic mode changes via TMS) create inconsistent state?
 
@@ -24,9 +24,9 @@ When a shipment's traffic mode is changed in the TMS (UniFace UI) while the ship
 | 34 | 1 | HL (Long Haul) |
 | 30 | 2 | VL (Pre-Haulage) |
 | 3 + without pre-haulage | 3 | HL (Long Haul Relation Loading) |
-| 3 / 31 / 32 | 4 | VL (Pre-Haulage) |
+| 3 + with pre-haulage / 31 / 32 | 4 | VL (Pre-Haulage) |
 
-> **Resolved (2026-06-11):** Joachim clarified with Reinhard that TMS Traffic Mode 31/32 is normal Sammelgut, same as Traffic Mode 3. It is NOT Relationsverladung. No mapping change needed.
+> **Resolved (2026-06-11):** Joachim clarified with Reinhard that TMS Traffic Mode 31 is normal Sammelgut, same as Traffic Mode 3. It is NOT Relationsverladung. No mapping change needed.
 
 **Critical boundary:** Switching between HL (traffic modes 1/3) and VL (traffic modes 2/4) requires a fundamentally different pickup leg type.
 
@@ -236,7 +236,7 @@ graph LR
 
 ### Option C: Block Traffic Mode Changes When Dispatched (Go-Live Interim) ✅ APPROVED
 
-**Description:** Extend the existing Fernverkehr blocking mechanism to also cover Nahverkehr. When a shipment has any dispatched Leg (Vorlauf or Hauptlauf), block traffic mode changes that would invalidate that Leg's type. This is an interim solution that prevents data integrity issues at the source, buying time for the architectural decision between Option A and Option B post Go-Live.
+**Description:** Extend the existing Fernverkehr blocking mechanism to also cover Vorlauf (pre-haulage). When a shipment has any dispatched Leg (Vorlauf or Hauptlauf), block traffic mode changes that would invalidate that Leg's type. This is an interim solution that prevents data integrity issues at the source, buying time for the architectural decision between Option A and Option B post Go-Live.
 
 **Origin:** Joachim Schreiner proposed this in the June 9 Dispo Blocker as "Option C -- unsere Interimsoption." Approved by Patrick Uschmann, Matthias Max, Maximilian Kehder, and Joachim Schreiner on June 11.
 
@@ -244,24 +244,24 @@ graph LR
 
 | Dispatched Leg Type | Allowed Traffic Mode Changes | Blocked Traffic Mode Changes | Rationale |
 |---|---|---|---|
-| Hauptlauf-Leg dispatched | None | All traffic mode changes blocked | Hauptlauf-Leg is the primary dispatch unit; any change risks Fernverkehr inconsistency |
+| Hauptlauf-Leg dispatched | None | All traffic mode changes blocked | Hauptlauf-Leg is the primary dispatch unit |
 | Only Vorlauf-Leg dispatched | 2 ↔ 4 | 2/4 → 1/3 and 1/3 → 2/4 | Switching between 2 and 4 does not affect the Vorlauf-Leg type (both have Vorlauf). Switching to 1 or 3 would remove the Vorlauf-Leg entirely. |
 | No Leg dispatched | All | None | No dispatch means no data integrity risk from traffic mode changes |
 
-**Existing precedent:** Fernverkehr already blocks traffic mode changes when dispatched. Option C extends this to Nahverkehr -- same mechanism, broader scope.
+**Existing precedent:** Fernverkehr already blocks traffic mode changes when dispatched. Option C extends this to Vorlauf -- same mechanism, broader scope.
 
 **Dispatcher workflow under Option C:** If a dispatcher needs to change the traffic mode on a shipment with a dispatched Leg:
-1. Unassign the Leg from the transport order in New Dispo
-2. Change the traffic mode in TMS/OMS/CNS (now unblocked)
-3. Re-plan the shipment with the new Leg type
+1. Remove the Leg from the transport order in New Dispo
+2. Change the traffic mode in TMS/OMS (now unblocked)
+3. Re-plan the newly created Leg of the shipment with the new Leg type
 
 **Properties:**
 - **No cross-system dependency:** The blocking happens within TMS's own transaction boundary when the traffic mode change is attempted. No CDC involvement, no New Dispo write-back.
 - **Transactional safety:** Joachim emphasized this as the key advantage: "Wenn es die Möglichkeit gibt für eine Transaktionssicherheit, dann würde ich die unter allen Umständen auch nutzen." The check and block happen atomically within TMS when saving the Sendung.
 - **Temporary scope:** This is explicitly an interim measure for Go-Live safety. The architectural decision (Option A vs. Option B) remains open for post Go-Live.
-- **Minimal effort:** Joachim confirmed the mechanism already exists for Fernverkehr. Extending it to Nahverkehr is a contained change within TMS database logic.
+- **Minimal effort:** Joachim confirmed the mechanism already exists for Fernverkehr. Extending it to Vorlauf is a contained change within TMS database logic.
 
-**Implementation:** Joachim Schreiner (TMS Database team). The blocking checks are added at the essential entry points: OMS Übernahme (customer takeover), Sendungserfassung (shipment entry), and CNS.
+**Implementation:** Joachim Schreiner (TMS Database team). The blocking checks are added at the relevant entry points.
 
 ---
 
@@ -276,7 +276,7 @@ For the Go-Live on PROD, **all known error sources that endanger data integrity 
 
 ### Decision (2026-06-11)
 
-**Option C approved for Go-Live.** Traffic mode changes are blocked in UI/CNS when any Leg is dispatched. Joachim Schreiner implements the blocking within TMS database logic, extending the existing Fernverkehr mechanism to Nahverkehr. This was unanimously agreed across all participants in the June 9 and June 11 Dispo Blocker meetings.
+**Option C approved for Go-Live.** Traffic mode changes are blocked when any Leg is dispatched. Joachim Schreiner implements the blocking within TMS database logic, extending the existing Fernverkehr mechanism to Vorlauf. This was unanimously agreed across all participants in the June 9 and June 11 Dispo Blocker meetings.
 
 **Post Go-Live:** The architectural decision between Option A (TMS owns its data integrity -- cleanup/handling within TMS) and Option B (New Dispo takes responsibility for TMS data integrity -- write-back via CDC) remains open. This will be analyzed in a subsequent concept phase with Christian Lang involved. As Matthias framed it: choosing Option B would mean "erstmalig Richtung verteilte Systeme offiziell gehen" -- a path that needs deliberate architectural commitment, not an ad-hoc fix.
 
@@ -301,7 +301,7 @@ Additionally, Joachim's position is self-contradictory: the existing long-haul b
 | 3 | Ensure meeting transcripts are preserved as evidence | Boyan / Maximilian Kehder | — | Done |
 | 4 | Clarify traffic mode 31 "Relationsverladung" mapping | Joachim Schreiner | 2026-06-11 | Done — 31/32 = normal Sammelgut, NOT Relationsverladung |
 | 5 | Implement Option C blocking in TMS database logic | Joachim Schreiner | Before Go-Live | In progress |
-| 6 | Test Hauptlauf-Leg generation (Traffic Mode 3) end-to-end in Fernverkehr | Joachim + Patrick | Before Go-Live | Pending — No-go without this |
+| 6 | Test Hauptlauf disposition (Traffic Mode 1 and 3) end-to-end in New Dispo | Joachim + Patrick | Before Go-Live | Pending — No-go without this |
 | 7 | Post Go-Live: schedule Option A vs. B decision meeting with Christian Lang | Matthias Max | Post Go-Live | Open |
 
 ---

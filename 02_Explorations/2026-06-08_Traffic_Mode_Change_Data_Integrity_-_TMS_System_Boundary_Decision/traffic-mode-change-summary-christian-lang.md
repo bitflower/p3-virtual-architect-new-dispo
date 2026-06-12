@@ -9,9 +9,9 @@
 
 ## Problem
 
-Wird in UniFace die Verkehrsart einer Sendung geändert (z.B. von Vorholung auf Hauptlauf), während die Sendung in New Dispo und in der TMS-Datenbank bereits einem Transportauftrag zugewiesen ist, entsteht inkonsistenter Zustand in der TMS-Datenbank: Die alte Transportauftragszuweisung bleibt als verwaister Datensatz bestehen.
+Wird in UniFace die Verkehrsart einer Sendung geändert und es kommt zu einer Änderung des Pickup-Legs (z.B. von Vorlauf zu Hauptlauf), während die Sendung in New Dispo und in der TMS-Datenbank bereits einem Transportauftrag zugewiesen ist, entsteht ein inkonsistenter Zustand in der TMS-Datenbank: Die alte Transportauftragszuweisung bleibt als verwaister Datensatz bestehen.
 
-New Dispo reagiert korrekt. Das alte Leg wird entfernt, ein neues Leg des richtigen Typs wird angelegt. Aber die TMS-Datenbank räumt die verwaiste Zuweisung nicht auf. In den Fahranweisungen erscheinen dadurch Tourpunkte, die auf ein nicht mehr existierendes Leg verweisen.
+New Dispo reagiert korrekt. Das alte New Dispo-Leg wird entfernt, ein neues New Dispo-Leg des richtigen Typs wird angelegt und dem Fahrauftrag hinzugefügt. Aber die TMS-Datenbank räumt die verwaiste Zuweisung nicht auf. Dadurch erscheinen in der Fahranweisung Tourpunkte, die auf das fehlerhaft verwaiste Leg (in TMS) zeigen, welches in New Dispo nicht mehr existiert.
 
 **Kernfrage:** Wer ist verantwortlich für Datenintegrität innerhalb der TMS-Datenbank, wenn TMS-interne Operationen inkonsistenten Zustand erzeugen?
 
@@ -19,14 +19,14 @@ New Dispo reagiert korrekt. Das alte Leg wird entfernt, ein neues Leg des richti
 
 ## Technischer Hintergrund
 
-| TMS Verkehrsart | New Dispo Verkehrsart | Pickup-Leg-Typ |
-|---|---|---|
-| 34 | 1 | HL (Hauptlauf) |
-| 30 | 2 | VL (Vorholung) |
-| 3 + ohne Vorlauf | 3 | HL (Hauptlauf-Relationsverladung) |
-| 3 / 31 / 32 | 4 | VL (Vorholung) |
+| TMS Verkehrsart           | New Dispo Traffic Mode | Pickup-Leg-Typ                    |
+| ------------------------- | ---------------------- | --------------------------------- |
+| 34                        | 1                      | HL (Hauptlauf)                    |
+| 30                        | 2                      | VL (Vorholung)                    |
+| 3 + ohne Vorlauf          | 3                      | HL (Hauptlauf-Relationsverladung) |
+| 3 + mit Vorlauf / 31 / 32 | 4                      | VL (Vorholung)                    |
 
-> **Umgang mit TMS Verkehrsart 31 -- Geklärt (2026-06-11):** Verkehrsstrom 31/32 ist normales Sammelgut, wie Verkehrsart 3. Keine Relationsverladung. Abgestimmt zwischen Joachim und Reinhard.
+> **Umgang mit TMS Verkehrsart 31 -- Geklärt (2026-06-11):** Verkehrsart 31 ist normales Sammelgut, wie Verkehrsart 3. Keine Relationsverladung. Abgestimmt zwischen Joachim und Reinhard.
 
 **Kritische Grenze:** Ein Wechsel zwischen HL (Verkehrsart 1/3) und VL (Verkehrsart 2/4) erfordert einen komplett anderen Leg-Typ.
 
@@ -81,22 +81,22 @@ Daher wurde eine dritte Option erarbeitet.
 
 Am 2026-06-11 im Dispo-Blocker-Meeting wurde Option C einstimmig beschlossen.
 
-**Beschreibung:** Der bestehende Sperrmechanismus im Fernverkehr (Verkehrsart-Wechsel gesperrt, wenn Hauptlauf disponiert) wird auf den Nahverkehr ausgedehnt. Wenn eine Sendung ein disponiertes Leg hat, werden Verkehrsart-Wechsel blockiert, die den Leg-Typ ändern würden.
+**Beschreibung:** Der bestehende Sperrmechanismus im Fernverkehr (Verkehrsart-Wechsel gesperrt, wenn Hauptlauf disponiert) wird auf den Vorlauf ausgedehnt. Wenn eine Sendung ein disponiertes Leg hat, werden Verkehrsart-Wechsel blockiert, die den Leg-Typ ändern würden.
 
 **Sperrregeln:**
 
-| Disponiertes Leg | Erlaubte Wechsel | Gesperrt | Grund |
-|---|---|---|---|
-| Hauptlauf-Leg disponiert | Keine | Alle Wechsel gesperrt | Hauptlauf ist primaere Dispositionseinheit |
-| Nur Vorlauf-Leg disponiert | 2 <> 4 | 2/4 nach 1/3 und 1/3 nach 2/4 | Wechsel 2 <> 4 betrifft Vorlauf nicht. Wechsel zu 1/3 würde Vorlauf-Leg entfernen. |
-| Kein Leg disponiert | Alle | Keine | Keine Disposition, kein Risiko |
+| Disponiertes Leg           | Erlaubte Wechsel | Gesperrt                      | Grund                                                                              |
+| -------------------------- | ---------------- | ----------------------------- | ---------------------------------------------------------------------------------- |
+| Hauptlauf-Leg disponiert   | Keine            | Alle Wechsel gesperrt         | Hauptlauf ist primäre Dispositionseinheit                                          |
+| Nur Vorlauf-Leg disponiert | 2 <> 4           | 2/4 nach 1/3 und 1/3 nach 2/4 | Wechsel 2 <> 4 betrifft Vorlauf nicht. Wechsel zu 1/3 würde Vorlauf-Leg entfernen. |
+| Kein Leg disponiert        | Alle             | Keine                         | Keine Disposition, kein Risiko                                                     |
 
 **Arbeitsablauf für Disponenten:** Will ein Disponent die Verkehrsart einer zugewiesenen Sendung ändern:
-1. Leg vom Transportauftrag in New Dispo abmelden
-2. Verkehrsart in TMS/OMS/CNS ändern (jetzt freigegeben)
-3. Sendung mit neuem Leg-Typ erneut planen
+1. Leg von einem Fahrauftrag in New Dispo entfernen.
+2. Verkehrsart in TMS/OMS ändern
+3. Neuerstelltes Leg der Sendung mit neuem Leg-Typ erneut planen
 
-**Umsetzung:** Joachim Schreiner (TMS Database). Sperren werden an den relevanten Stellen eingebaut: OMS Übernahme, Sendungserfassung, CNS.
+**Umsetzung:** Joachim Schreiner (TMS Database). Sperren werden an den relevanten Stellen eingebaut.
 
 **Wichtig:** Dies ist eine **Interimslösung** für den Go-Live. Die architektonische Grundsatzentscheidung (Option A vs. Option B) steht noch aus.
 
@@ -135,11 +135,11 @@ New Dispo würde bei Erkennung eines Verkehrsart-Wechsels via CDC die TMS Bridge
 
 ## Nächste Schritte
 
-| # | Aktion | Verantwortlich | Status |
-|---|--------|----------------|--------|
-| 1 | Option C in TMS-Datenbanklogik umsetzen (Sperren) | Joachim Schreiner | In Arbeit |
-| 2 | Hauptlauf-Leg-Erzeugung (Verkehrsart 3) End-to-End testen in Fernverkehrsdisposition | Joachim + Patrick | Offen, No-Go ohne Test |
-| 3 | Nach Go-Live: Entscheidung Option A vs. B mit Christian Lang | Matthias Max | Nach Go-Live |
+| #   | Aktion                                                                      | Verantwortlich    | Status                 |
+| --- | --------------------------------------------------------------------------- | ----------------- | ---------------------- |
+| 1   | Option C in TMS-Datenbanklogik umsetzen (Sperren)                           | Joachim Schreiner | In Arbeit              |
+| 2   | Hauptlauf-Disposition (Traffic Mode 1 und 3) End-to-End in New Dispo testen | Joachim + Patrick | Offen, No-Go ohne Test |
+| 3   | Nach Go-Live: Entscheidung Option A vs. B mit Christian Lang                | Matthias Max      | Nach Go-Live           |
 
 ---
 
