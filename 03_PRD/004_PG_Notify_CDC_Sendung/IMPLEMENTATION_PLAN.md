@@ -327,9 +327,9 @@ Derived from PRD Verification section:
 | 3 | **Stream 0**: Trigger SQL scripts + .NET project scaffolding + models | — | same | Done |
 | 4 | **Review Gate G1**: Architectural + Clean-Code on Stream 0 | Hard stop: fix Critical/High | same | Done (see below) |
 | 5 | Commit Stream 0 | — | same | Done (`0857848`) |
-| 6 | **Stream A**: Writer service implementation (CdcListenerService, JsonlFormatter, UpdatePairTracker, HealthCheck, Tests) | — | same | In progress |
-| 7 | **Review Gate G2**: Architectural + Clean-Code on Stream A | Hard stop: fix Critical/High | same | — |
-| 8 | Commit Stream A | — | same | — |
+| 6 | **Stream A**: Writer service implementation (CdcListenerService, JsonlFormatter, UpdatePairTracker, HealthCheck, Tests) | — | same | Done |
+| 7 | **Review Gate G2**: Architectural + Clean-Code on Stream A | Hard stop: fix Critical/High | same | In progress |
+| 8 | Commit Stream A | — | same | Done (`64a1cbe`) |
 | 9 | **Integration**: Build verification, model consistency check | — | same | — |
 | 10 | **Review Gate G3**: Architectural on integrated project | Hard stop: fix Critical/High | same | — |
 | 11 | Final commit + report | — | same | — |
