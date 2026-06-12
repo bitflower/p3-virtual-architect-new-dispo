@@ -1,7 +1,7 @@
 # Implementation Plan: pg_notify CDC for sendung (abn1034)
 
 **PRD:** [PRD.md](./PRD.md)
-**Status:** In progress
+**Status:** In progress — Stream 0 done, G1 review running (2026-06-12)
 **Repos:**
 - **Virtual Architect (this repo):** `main` — plan, PRD, documentation only
 - **Nagel-GCP (`Code/Nagel-GCP/`):** `feature/pgnotify-cdc-sendung` — all code + SQL scripts
@@ -237,6 +237,23 @@ All paths below are relative to `Code/Nagel-GCP/` (the Nagel-GCP repo).
 - Low: log only
 - Fix commits: `review-fix: <area>`
 
+### G1 Review Result (2026-06-12)
+
+**Verdict: PASS** — 2 fixes applied, remaining findings triaged as false positives or deferred.
+
+| Finding | Severity | Disposition |
+|---|---|---|
+| Bucket name `abn1043` flagged as typo | Critical (both) | **False positive** — PRD specifies `abn1043-sendung-bucket-1` as actual GCP bucket name |
+| Program.cs won't compile without Stream A | Critical/High (both) | **By design** — foundation wiring, Gate G3 verifies assembled build |
+| Timestamp seconds vs millis in trigger | High (Arch) | **Stream A concern** — JsonlFormatter will `* 1000` |
+| `List<string>` → `IReadOnlyList<string>` for PrimaryKeys | Medium (CC) | **Fixed** — immutability contract consistency |
+| PgNotifyPayload short property names | Medium (CC) | **Fixed** — `Op`→`Operation`, `Tix`→`SendungTix`, `Ts`→`EpochTimestamp`, `Row`→`RowData` |
+| DateTimeOffset for timestamp fields | High (CC) | **Skipped** — output-only strings, format controlled in JsonlFormatter |
+| JsonArray vs JsonElement for sort_keys | High (CC) | **Skipped** — intentional: construction vs passthrough are different use cases |
+| Enums for ChangeType/ReadMethod | Medium (CC) | **Skipped** — temporary solution, constants belong in JsonlFormatter |
+| Split SourceMetadata to own file | Medium (CC) | **Skipped** — exclusively composed into DatastreamEnvelope |
+| Docker context ambiguity | Medium (CC) | **Skipped** — Dockerfile is in project dir, build context = project dir |
+
 ---
 
 ## 6. Risks & Mitigations
@@ -303,19 +320,19 @@ Derived from PRD Verification section:
 
 ## 9. Execution Order
 
-| Step | What | Gate? | Branch |
-|---|---|---|---|
-| 1 | Create feature branch `feature/pgnotify-cdc-sendung` | Hard stop: user confirms | — |
-| 2 | Commit this plan to feature branch | — | `feature/pgnotify-cdc-sendung` |
-| 3 | **Stream 0**: Trigger SQL scripts + .NET project scaffolding + models | — | same |
-| 4 | **Review Gate G1**: Architectural + Clean-Code on Stream 0 | Hard stop: fix Critical/High | same |
-| 5 | Commit Stream 0 | — | same |
-| 6 | **Stream A**: Writer service implementation (CdcListenerService, JsonlFormatter, UpdatePairTracker, HealthCheck, Tests) | — | same |
-| 7 | **Review Gate G2**: Architectural + Clean-Code on Stream A | Hard stop: fix Critical/High | same |
-| 8 | Commit Stream A | — | same |
-| 9 | **Integration**: Build verification, model consistency check | — | same |
-| 10 | **Review Gate G3**: Architectural on integrated project | Hard stop: fix Critical/High | same |
-| 11 | Final commit + report | — | same |
+| Step | What | Gate? | Branch | Status |
+|---|---|---|---|---|
+| 1 | Create feature branch `feature/pgnotify-cdc-sendung` | Hard stop: user confirms | — | Done |
+| 2 | Commit this plan to feature branch | — | `feature/pgnotify-cdc-sendung` | Skipped (plan in VA repo) |
+| 3 | **Stream 0**: Trigger SQL scripts + .NET project scaffolding + models | — | same | Done |
+| 4 | **Review Gate G1**: Architectural + Clean-Code on Stream 0 | Hard stop: fix Critical/High | same | Done (see below) |
+| 5 | Commit Stream 0 | — | same | — |
+| 6 | **Stream A**: Writer service implementation (CdcListenerService, JsonlFormatter, UpdatePairTracker, HealthCheck, Tests) | — | same | — |
+| 7 | **Review Gate G2**: Architectural + Clean-Code on Stream A | Hard stop: fix Critical/High | same | — |
+| 8 | Commit Stream A | — | same | — |
+| 9 | **Integration**: Build verification, model consistency check | — | same | — |
+| 10 | **Review Gate G3**: Architectural on integrated project | Hard stop: fix Critical/High | same | — |
+| 11 | Final commit + report | — | same | — |
 
 ---
 

@@ -152,6 +152,19 @@ Low-risk surface: the writer runs inside GCP, connects to AlloyDB via private ne
                               └─────────────────────────────────────────────┘
 ```
 
+### GCS Bucket: Why `abn1043` Not `abn1034`
+
+The active sendung CDC bucket is `gs://abn1043-sendung-bucket-1/`, not `gs://abn1034-sendung-bucket/`. Both exist in `prj-cal-w-wl5-t-6c00-53ad`:
+
+| Bucket | Status | Last data |
+|---|---|---|
+| `abn1034-sendung-bucket` | Abandoned | 2025 only (last activity Nov 2025) |
+| `abn1043-sendung-bucket-1` | **Active** — Datastream writes here, Cloud Function watches here | 2025 + 2026 (through current) |
+
+The `1043` in the bucket name is a typo that was baked into GCP infrastructure when the bucket was recreated (the `-1` suffix suggests a second attempt). The environment is `abn1034`, the schema is `tms1034`, but the live bucket carries the `1043` misnomer. All downstream configuration (Datastream, Cloud Function trigger) points to the `1043` bucket, so the writer must use it too.
+
+Verified via `gcloud storage ls` on 2026-06-12.
+
 ### Database Side (AlloyDB abn1034)
 
 | Object | Type | Purpose |
