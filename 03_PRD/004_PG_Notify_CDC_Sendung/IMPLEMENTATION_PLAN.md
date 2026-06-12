@@ -336,6 +336,36 @@ Derived from PRD Verification section:
 
 ---
 
+## 10. Local Testing Strategy
+
+**Start on ent1034** — not abn1034. Validate trigger + writer end-to-end on ent1034 first, then promote to abn1034.
+
+| Step | Database | What | Status |
+|---|---|---|---|
+| T1 | `ent1034` (10.100.4.16) | Deploy trigger (`001_create_sendung_cdc_trigger.sql`) | — |
+| T2 | `ent1034` | Run writer locally with `Gcs:LocalOutputPath` → verify JSONL files on disk | — |
+| T3 | `ent1034` | Manual `pg_notify` test — confirm full pipeline works without touching real data | — |
+| T4 | `ent1034` | Trigger a real `sendungsart='A'` INSERT/UPDATE/DELETE — inspect JSONL output | — |
+| T5 | `ent1034` | Rollback trigger if issues found, iterate | — |
+| T6 | `abn1034` (10.100.47.236) | Deploy trigger — production-path testing | — |
+| T7 | `abn1034` | Run writer against GCS bucket `abn1043-sendung-bucket-1` | — |
+
+**ent1034 connection:**
+```
+psql -h 10.100.4.16 -U tms1034 -d ent1034
+```
+
+**Local writer run (ent1034 + local files):**
+```bash
+cd Code/Nagel-GCP/SendungCdcWriter/SendungCdcWriter
+export ConnectionStrings__AlloyDb="Host=10.100.4.16;Port=5432;Database=ent1034;Username=tms1034"
+dotnet run
+```
+
+Note: `appsettings.json` has `Gcs:LocalOutputPath` set to `./temp/pg-notify-test` — JSONL files will appear there. Set to `null` when switching to GCS.
+
+---
+
 <div align="center">
   <sub>Created and maintained by <strong>Virtual Architect</strong></sub>
 </div>
