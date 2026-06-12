@@ -1,7 +1,7 @@
 # Implementation Plan: pg_notify CDC for sendung (abn1034)
 
 **PRD:** [PRD.md](./PRD.md)
-**Status:** In progress — Stream 0 done, G1 review running (2026-06-12)
+**Status:** In progress — Stream A running (2026-06-12)
 **Repos:**
 - **Virtual Architect (this repo):** `main` — plan, PRD, documentation only
 - **Nagel-GCP (`Code/Nagel-GCP/`):** `feature/pgnotify-cdc-sendung` — all code + SQL scripts
@@ -326,8 +326,8 @@ Derived from PRD Verification section:
 | 2 | Commit this plan to feature branch | — | `feature/pgnotify-cdc-sendung` | Skipped (plan in VA repo) |
 | 3 | **Stream 0**: Trigger SQL scripts + .NET project scaffolding + models | — | same | Done |
 | 4 | **Review Gate G1**: Architectural + Clean-Code on Stream 0 | Hard stop: fix Critical/High | same | Done (see below) |
-| 5 | Commit Stream 0 | — | same | — |
-| 6 | **Stream A**: Writer service implementation (CdcListenerService, JsonlFormatter, UpdatePairTracker, HealthCheck, Tests) | — | same | — |
+| 5 | Commit Stream 0 | — | same | Done (`0857848`) |
+| 6 | **Stream A**: Writer service implementation (CdcListenerService, JsonlFormatter, UpdatePairTracker, HealthCheck, Tests) | — | same | In progress |
 | 7 | **Review Gate G2**: Architectural + Clean-Code on Stream A | Hard stop: fix Critical/High | same | — |
 | 8 | Commit Stream A | — | same | — |
 | 9 | **Integration**: Build verification, model consistency check | — | same | — |
