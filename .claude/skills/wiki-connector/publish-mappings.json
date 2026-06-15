@@ -827,6 +827,20 @@
         },
         "notes": "Bug analysis document - full sync, no link rewriting needed"
       }
+    },
+    {
+      "id": "exploration-datastream-health-report-abn1034",
+      "source": "02_Explorations/2026-06-12_Datastream_Health_Check_Runbook/reports/2026-06-15_0924_datastream-health.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D15-Datastream-Health-Report-abn1034.md",
+      "description": "Datastream Health Report abn1034 — 2026-06-15: KPI assessment, root cause analysis (catalog_xmin pinned), recommended actions",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Health report — Commands Used and Reference sections wrapped in <!-- internal --> markers, stripped on publish"
+      }
     }
   ]
 }

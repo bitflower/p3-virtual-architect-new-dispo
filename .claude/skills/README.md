@@ -305,6 +305,97 @@ Takes action items from a meeting briefing, finds matching explorations, and pre
 
 ---
 
+### `/check-replication-slots` - Check AlloyDB Replication Slot Health
+
+Runs database-side health checks for the CDC pipeline via psql against AlloyDB.
+
+**Usage:**
+```bash
+/check-replication-slots              # checks abn1034 (default)
+/check-replication-slots abn2820      # checks abn2820
+/check-replication-slots all          # checks both
+```
+
+**What it does:**
+1. Queries `pg_replication_slots` for WAL lag, WAL status, active flag
+2. Checks `pg_stat_replication` for WAL sender process state
+3. Detects hung transactions blocking WAL cleanup
+4. Verifies publication scope (single table, not `FOR ALL TABLES`)
+5. Checks `max_slot_wal_keep_size` safety net
+
+**Output:** Structured summary with PASS/WARN/FAIL per check and overall HEALTHY/WARNING/CRITICAL assessment.
+
+**Requirements:** VPN connection, `.pgpass` configured
+
+---
+
+### `/check-datastream` - Check GCP Datastream Health
+
+Runs cloud-side health checks for the CDC pipeline via gcloud CLI.
+
+**Usage:**
+```bash
+/check-datastream                     # checks all streams (default)
+/check-datastream abn1034             # checks abn1034 stream only
+/check-datastream oracle              # checks Oracle stream only
+```
+
+**What it does:**
+1. Lists stream states (RUNNING/PAUSED/etc.)
+2. Checks CDC checkpoint log progression (silent stall detection)
+3. Verifies GCS bucket write activity
+4. Scans for error/warning logs
+5. Checks private connection health
+
+**Output:** Structured summary with PASS/WARN/FAIL per check and overall assessment. When a silent stall is detected, provides pause/resume commands.
+
+**Requirements:** `gcloud auth` to project `prj-cal-w-wl5-t-6c00-53ad`
+
+---
+
+### `/datastream-health` - End-to-End CDC Pipeline Health Check
+
+Combines database-side and cloud-side checks into a single assessment with 10 KPIs.
+
+**Usage:**
+```bash
+/datastream-health                    # full check of abn1034 (default)
+/datastream-health all                # check all databases and streams
+/datastream-health abn1034            # specific database
+```
+
+**What it does:**
+1. Runs all replication slot checks (database side)
+2. Runs all Datastream checks (cloud side)
+3. Assesses 10 KPIs against defined thresholds
+4. Produces HEALTHY/WARNING/CRITICAL overall status
+5. On failure, includes recommended actions based on failure pattern
+
+**KPIs assessed:** Slot WAL lag, WAL status, slot active, WAL sender state, hung transactions, safety net, CDC checkpoint advancing, bucket writes, stream state, error logs.
+
+**Requirements:** VPN + `.pgpass` (database side), `gcloud auth` (cloud side). Continues with partial results if one side is unreachable.
+
+---
+
+### `/datastream-health-report` - Generate Health Check Report
+
+Persists the output of a `/datastream-health` run as a timestamped markdown file.
+
+**Usage:**
+```bash
+/datastream-health-report
+```
+
+**What it does:**
+1. Takes results from the most recent `/datastream-health` run in the conversation
+2. Generates a structured markdown report with KPI table, detail sections, and status legend
+3. Includes all SQL and gcloud commands used as a reference appendix
+4. Saves to `02_Explorations/2026-06-12_Datastream_Health_Check_Runbook/reports/YYYY-MM-DD_HHmm_datastream-health.md`
+
+**Requirements:** A `/datastream-health` run must have completed in the current conversation.
+
+---
+
 ### `/update-repos` - Update Code Repositories
 
 Fetches and pulls appropriate branches for all repositories in the Code folder.
