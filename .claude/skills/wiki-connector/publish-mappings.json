@@ -841,6 +841,39 @@
         },
         "notes": "Health report — Commands Used and Reference sections wrapped in <!-- internal --> markers, stripped on publish"
       }
+    },
+    {
+      "id": "exploration-datastream-health-report-abn1034-1044",
+      "source": "02_Explorations/2026-06-12_Datastream_Health_Check_Runbook/reports/2026-06-15_1044_datastream-health.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D15-Datastream-Health-Report-abn1034-1044.md",
+      "description": "Datastream Health Report abn1034 — 2026-06-15 10:44 UTC: Full 12-KPI assessment with trend data and catalog_xmin root cause",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Health report — Commands Used and Reference sections stripped on publish"
+      }
+    },
+    {
+      "id": "adr-011-traffic-mode-change-blocking",
+      "source": "09_ADRs/ADR-011-traffic-mode-change-blocking/ADR-011-traffic-mode-change-blocking.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/ADRs/[ADR011]-Traffic-Mode-Change-Blocking-for-Disposed-Shipments.md",
+      "description": "ADR-011: Traffic Mode Change Blocking for Disposed Shipments",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "ADR document - traffic mode change blocking interim solution for Go-Live, no attachments"
+      }
     }
   ]
 }
