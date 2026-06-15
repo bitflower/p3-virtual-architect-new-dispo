@@ -1,7 +1,7 @@
 # Implementation Plan: pg_notify CDC for sendung (abn1034)
 
 **PRD:** [PRD.md](./PRD.md)
-**Status:** In progress — Stream A running (2026-06-12)
+**Status:** G2 done — ready for abn1034 deployment (2026-06-15)
 **Repos:**
 - **Virtual Architect (this repo):** `main` — plan, PRD, documentation only
 - **Nagel-GCP (`Code/Nagel-GCP/`):** `feature/pgnotify-cdc-sendung` — all code + SQL scripts
@@ -41,7 +41,7 @@ These fields are NOT used by the Cloud Function for business logic, but the writ
 
 | Field | PRD Says | Actual Datastream Output | Writer Will Use |
 |---|---|---|---|
-| `primary_keys` | `["sendung_tix"]` | ALL 170+ columns listed | All columns from `to_jsonb()` keys — matches Datastream behavior |
+| `primary_keys` | `["sendung_tix"]` | ALL 170+ columns listed | `["sendung_tix"]` — matches PRD and Cloud Function expectations (fixed in G2) |
 | `sort_keys` | `["sendung_tix", value]` | `[timestamp_millis, "lsn_string"]` | `[source_timestamp_epoch_millis, ""]` — no LSN available |
 | `schema_key` | Not detailed | SHA hash `ed46b7f9...` | Constant placeholder string — Cloud Function ignores this |
 | `lsn` | Not detailed | Actual PostgreSQL LSN e.g. `"77F/F94E0880"` | `""` — no WAL access from pg_notify |
@@ -254,6 +254,22 @@ All paths below are relative to `Code/Nagel-GCP/` (the Nagel-GCP repo).
 | Split SourceMetadata to own file | Medium (CC) | **Skipped** — exclusively composed into DatastreamEnvelope |
 | Docker context ambiguity | Medium (CC) | **Skipped** — Dockerfile is in project dir, build context = project dir |
 
+### G2 Review Result (2026-06-15)
+
+**Verdict: PASS** — 3 fixes applied.
+
+| Finding | Severity | Disposition |
+|---|---|---|
+| GCS write failures silently drop events during writer uptime | High (Arch) | **Fixed** — added single retry with 2s delay in `WriteWithRetryAsync` |
+| CancellationToken not propagated to ProcessNotificationAsync/WriteAsync | Medium (CC) | **Fixed** — `stoppingToken` flows through to `WriteAsync` for graceful shutdown |
+| `primary_keys` contains all columns instead of actual PK | High (Arch+CC) | **Fixed** — hardcoded `["sendung_tix"]` matching Cloud Function expectations |
+| 5s pairing timeout hardcoded | Medium (CC) | **Accepted** — temporary service, not worth config plumbing |
+| Config values use `!` with no startup validation | Medium (CC) | **Accepted** — temporary service |
+| Filename pattern duplicated across writers | Low (CC) | **Accepted** — two files, low risk |
+| `StorageClient.Create()` blocks constructor | Medium (CC) | **Accepted** — min-instances:1, rare cold starts |
+| Fire-and-forget `_ = ExpireAfterTimeout(...)` | Low (CC) | **Accepted** — functionally correct |
+| No structured metrics for M9 | Medium (Arch) | **Accepted** — per plan simplification |
+
 ---
 
 ## 6. Risks & Mitigations
@@ -328,7 +344,7 @@ Derived from PRD Verification section:
 | 4 | **Review Gate G1**: Architectural + Clean-Code on Stream 0 | Hard stop: fix Critical/High | same | Done (see below) |
 | 5 | Commit Stream 0 | — | same | Done (`0857848`) |
 | 6 | **Stream A**: Writer service implementation (CdcListenerService, JsonlFormatter, UpdatePairTracker, HealthCheck, Tests) | — | same | Done |
-| 7 | **Review Gate G2**: Architectural + Clean-Code on Stream A | Hard stop: fix Critical/High | same | In progress |
+| 7 | **Review Gate G2**: Architectural + Clean-Code on Stream A | Hard stop: fix Critical/High | same | Done (2026-06-15, see below) |
 | 8 | Commit Stream A | — | same | Done (`64a1cbe`) |
 | 9 | **Integration**: Build verification, model consistency check | — | same | — |
 | 10 | **Review Gate G3**: Architectural on integrated project | Hard stop: fix Critical/High | same | — |
@@ -347,7 +363,7 @@ Derived from PRD Verification section:
 | T3 | `ent1034` | Manual `pg_notify` test — confirm full pipeline works without touching real data | Done (2026-06-12) |
 | T4 | `ent1034` | Trigger a real `sendungsart='A'` INSERT/UPDATE/DELETE — inspect JSONL output | Done (2026-06-12) |
 | T5 | `ent1034` | Rollback trigger if issues found, iterate | — |
-| T6 | `abn1034` (10.100.47.236) | Deploy trigger — production-path testing | — |
+| T6 | `abn1034` (10.100.47.236) | Deploy trigger — production-path testing | Done (Sonja, 2026-06-15) |
 | T7 | `abn1034` | Run writer against GCS bucket `abn1043-sendung-bucket-1` | — |
 
 **ent1034 connection:**

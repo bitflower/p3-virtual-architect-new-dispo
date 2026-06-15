@@ -1,0 +1,1 @@
+Sonja: "Created trigger sendung_cdc_trigger and function sendung_cdc_notify_fn on ABN1034 Postgres "
