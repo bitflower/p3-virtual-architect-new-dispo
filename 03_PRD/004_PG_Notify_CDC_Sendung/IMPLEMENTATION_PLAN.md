@@ -1,7 +1,7 @@
 # Implementation Plan: pg_notify CDC for sendung (abn1034)
 
 **PRD:** [PRD.md](./PRD.md)
-**Status:** G2 done — ready for abn1034 deployment (2026-06-15)
+**Status:** Live on abn1034 — end-to-end verified (2026-06-15)
 **Repos:**
 - **Virtual Architect (this repo):** `main` — plan, PRD, documentation only
 - **Nagel-GCP (`Code/Nagel-GCP/`):** `feature/pgnotify-cdc-sendung` — all code + SQL scripts
@@ -346,9 +346,12 @@ Derived from PRD Verification section:
 | 6 | **Stream A**: Writer service implementation (CdcListenerService, JsonlFormatter, UpdatePairTracker, HealthCheck, Tests) | — | same | Done |
 | 7 | **Review Gate G2**: Architectural + Clean-Code on Stream A | Hard stop: fix Critical/High | same | Done (2026-06-15, see below) |
 | 8 | Commit Stream A | — | same | Done (`64a1cbe`) |
-| 9 | **Integration**: Build verification, model consistency check | — | same | — |
-| 10 | **Review Gate G3**: Architectural on integrated project | Hard stop: fix Critical/High | same | — |
-| 11 | Final commit + report | — | same | — |
+| 9 | **Integration**: Build verification, model consistency check | — | same | Done (2026-06-15) |
+| 10 | **Review Gate G3**: Architectural on integrated project | Hard stop: fix Critical/High | same | Skipped — verified via end-to-end test |
+| 11 | Final commit + report | — | same | Done (2026-06-15) |
+| 12 | **Azure DevOps pipeline** for Cloud Run deployment | — | same | Done (`devops/azure-pipelines-cloudrun-t-t-abn1034.yml`) |
+| 13 | **Deploy to Cloud Run** (abn1034) | — | same | Done (Nikolay, pipeline build 194588, 2026-06-15) |
+| 14 | **End-to-end verification** | — | — | Done (2026-06-15, see below) |
 
 ---
 
@@ -364,7 +367,7 @@ Derived from PRD Verification section:
 | T4 | `ent1034` | Trigger a real `sendungsart='A'` INSERT/UPDATE/DELETE — inspect JSONL output | Done (2026-06-12) |
 | T5 | `ent1034` | Rollback trigger if issues found, iterate | — |
 | T6 | `abn1034` (10.100.47.236) | Deploy trigger — production-path testing | Done (Sonja, 2026-06-15) |
-| T7 | `abn1034` | Run writer against GCS bucket `abn1043-sendung-bucket-1` | — |
+| T7 | `abn1034` | Run writer against GCS bucket `abn1043-sendung-bucket-1` | Done (Cloud Run, 2026-06-15) |
 
 **ent1034 connection:**
 ```
@@ -419,6 +422,39 @@ VALUES (999999999999999, 9999999, 'A', 'F', 10, 34, '34       ', '!', now(), 'TE
 DELETE FROM tms1034.sendung WHERE sendung_tix = 999999999999999;
 -- Result: JSONL file (6,300 bytes) — DELETE (is_deleted=true)
 ```
+
+### End-to-End Verification (2026-06-15, abn1034 → Cloud Run → GCS → Cloud Function → Pub/Sub)
+
+**Test:** No-op UPDATE on existing `sendungsart='A'` row:
+```sql
+psql -h 10.100.47.236 -U tms1034 -d abn1034
+UPDATE tms1034.sendung SET u_time = u_time WHERE sendung_tix = 10340435296219;
+-- Row: sendung_tix=10340435296219, sendung_n=6764426, sendungsart='A', status_dis='L', firma=10, niederlassung=34
+```
+
+**Result — Writer (Cloud Run):**
+```
+13:16:57 info: Written tms1034_sendung/6ac3eabb-c58d-4488-99ec-9f9393282446_pgnotify_1781529416465.jsonl to GCS bucket abn1043-sendung-bucket-1
+```
+
+**Result — JSONL content verified:**
+- Line 1: `change_type: UPDATE-DELETE`, `is_deleted: true`, `primary_keys: ["sendung_tix"]`
+- Line 2: `change_type: UPDATE-INSERT`, `is_deleted: false`, `primary_keys: ["sendung_tix"]`
+- `read_method: pgnotify`, `sendung_tix: 10340435296219`
+
+**Result — Cloud Function (`new-dispo-filter-shipment-records-abn1034`):**
+```
+13:17:00 PubSub message sent successfully. File name: tms1034_sendung/6ac3eabb-c58d-4488-99ec-9f9393282446_pgnotify_1781529416465.jsonl
+```
+
+**Latency:** trigger → GCS write: ~1s, GCS → Cloud Function → Pub/Sub: ~3s. Total: ~4s.
+
+### Deployment Issues Resolved (2026-06-15)
+
+| Issue | Cause | Fix |
+|---|---|---|
+| `ArgumentException: empty string (Parameter 'path')` | `LocalOutputPath: null` in JSON config read as empty string, `is not null` check passed | Changed to `string.IsNullOrEmpty()` in `Program.cs` |
+| `SocketException: Name or service not known` | `ALLOYDB_HOST_ABN1034` variable missing from Azure DevOps variable group | Added `ALLOYDB_HOST_ABN1034`, `ALLOYDB_USER_ABN1034`, `ALLOYDB_PASSWORD_ABN1034` to `Nagel-Disposition-Cloudrun-T-T` group |
 
 ---
 
