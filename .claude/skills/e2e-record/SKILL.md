@@ -6,6 +6,8 @@ allowed-tools: Bash,Read,Write,Edit,Glob,Grep
 
 # E2E Record Skill
 
+**IMPORTANT: Read `Code/Disposition-Frontend/e2e/DOM-TESTING-GUIDE.md` before writing any test code.** It contains critical knowledge about Angular CDK drag-and-drop, Material datepicker overlays, multiple spinners, locale-prefixed routes, and other DOM quirks that cause test failures.
+
 Launches Playwright codegen for the user to record a flow by clicking through the UI, then transforms the raw recording into a production-quality e2e test following the project's conventions.
 
 ## When to Use
