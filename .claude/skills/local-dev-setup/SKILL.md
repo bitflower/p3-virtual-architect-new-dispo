@@ -44,7 +44,7 @@ Local Dev Environment Ready
 ============================
 Infrastructure:
   PostgreSQL:  ✓ localhost:5432 (Docker: new-dispo-postgres, DB: cal-new-dispo)
-  Keycloak:    → https://dev.new-dispo.nagel.p3ds.net/keycloak/ (shared dev)
+  Keycloak:    ✓ localhost:8080 (Docker: new-dispo-keycloak, admin/admin, testuser/test)
 
 Services:
   TMS Bridge:  ✓ http://localhost:5158/bridge/     (PID: XXXX)
