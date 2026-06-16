@@ -1,6 +1,6 @@
 # Implementation Plan — PRD-006: Custom Flow Tracker for E2E Tests
 
-**Status:** Implementation complete — acceptance verification in progress
+**Status:** Implementation complete — all gates passed (2026-06-16)
 **Branch:** `feature/playwright-e2e-tests` (continue on existing branch, 2 commits ahead of `master`)
 **Worktrees:** No — file sets are fully disjoint across streams
 
@@ -282,6 +282,18 @@ export class PlanningPage {
 | G5 | Integration | Architectural | Does the full chain work: record → export JSON → generate test → test passes? Cross-cutting: timing, assertions, dialog flow |
 
 Gates G2, G3, G4 run in parallel (disjoint file sets).
+
+### Gate results (2026-06-16)
+
+| Gate | Verdict | Critical | High | Medium | Low | Notes |
+|------|---------|----------|------|--------|-----|-------|
+| G1 | PASS | 0 | 0 | 2 | 2 | Fixed: added testid catalog + Flow Tracker docs to GETTING-STARTED.md, removed obsolete Playwright codegen section |
+| G2 | PASS | 0 | 0 | 1 | 0 | Accepted: `!environment.production` guard on bridge events is intentional (localhost-first recording) |
+| G3 | PASS | 0 | 0 | 1 | 2 | Fixed: removed unnecessary `subtree: true` from overlay MutationObserver |
+| G4 | PASS | 0 | 0 | 1 | 1 | Fixed: aligned timeout formula with plan — `max(5000, waitedMs × 2)` when `waitedMs > 2500` |
+| G5 | PASS | 0 | 0 | 1 | 0 | Fixed: SKILL.md now instructs generator to compute `waitedMs` from step timestamps when `meta.waitedMs` absent |
+
+**All gates passed. 0 Critical, 0 High. 6 Medium findings — 4 fixed, 1 accepted (G2-1), 1 low-impact (G1-3 schema forward-compat).**
 
 ---
 
