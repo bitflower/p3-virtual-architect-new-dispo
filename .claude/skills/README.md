@@ -443,6 +443,55 @@ Updates all repositories and wikis in one command.
 
 ---
 
+### `/e2e-record` - Record & Refine Playwright E2E Test
+
+Transforms a raw Playwright codegen recording into a clean, convention-following e2e test with page objects and `data-testid` attributes.
+
+**Usage:**
+```bash
+/e2e-record
+```
+
+**Workflow:**
+1. Skill launches `playwright codegen` — browser + inspector open automatically
+2. User clicks through the flow in the browser
+3. User copies the generated code from the inspector and pastes it
+4. Skill transforms it into:
+   - Proper page objects (reusing existing ones where possible)
+   - `data-testid` attributes added to Angular templates
+   - Clean test file following project conventions
+5. Runs the test to verify it passes
+
+**Conventions enforced:**
+- `data-testid` naming: `[feature]-[element]-[qualifier]` in kebab-case
+- Page objects in `e2e/page-objects/*.page.ts`
+- Tests in `e2e/tests/*.spec.ts`
+- No translated text in selectors (i18n-safe)
+- CSS fallbacks with `// Target: page.getByTestId('...')` comments until deployed
+
+**File locations:**
+| What | Where |
+|------|-------|
+| Config | `Code/Disposition-Frontend/playwright.config.ts` |
+| Tests | `Code/Disposition-Frontend/e2e/tests/*.spec.ts` |
+| Page objects | `Code/Disposition-Frontend/e2e/page-objects/*.page.ts` |
+
+---
+
+### `/e2e-run` - Run Playwright E2E Tests
+
+Runs Playwright e2e tests with various modes.
+
+**Usage:**
+```bash
+/e2e-run                    # run all tests headless
+/e2e-run auth               # run auth.spec.ts
+/e2e-run auth --headed      # run with visible browser
+/e2e-run --debug            # step-through debug mode
+```
+
+---
+
 ## Skill Development
 
 ### Simple Skills (Single File)
