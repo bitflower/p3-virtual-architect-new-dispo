@@ -15,6 +15,7 @@
 | Code/CALConsult.TmsProxy                           | TMS Proxy                                      |
 | Code/CALConsult.TmsProxyClient                     | TMS Proxy Client                               |
 | Code/Disposition-Rollout-Tools                     | New Dispo Rollout Tools / Helpers              |
+| Code/Disposition-UI-Automation                     | New Dispo UI Tests (Selenium/NUnit)            |
 
 ## Testing
 
