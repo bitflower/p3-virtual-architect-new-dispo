@@ -35,3 +35,6 @@ transport order date range filtering
 
 transport order preformance date selector
 ![alt text](image-11.png)
+
+transport order created toast
+![alt text](image-12.png)
