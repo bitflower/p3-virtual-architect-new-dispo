@@ -1,6 +1,6 @@
 # Implementation Plan — PRD-006: Custom Flow Tracker for E2E Tests
 
-**Status:** Awaiting approval
+**Status:** Implementation complete — acceptance verification in progress
 **Branch:** `feature/playwright-e2e-tests` (continue on existing branch, 2 commits ahead of `master`)
 **Worktrees:** No — file sets are fully disjoint across streams
 
@@ -316,30 +316,30 @@ Gates G2, G3, G4 run in parallel (disjoint file sets).
 Derived from PRD Section 7 (Verification):
 
 ### Functional
-- [ ] All 15 PO-identified elements have `data-testid` attributes visible in browser DevTools (plus 3 individual leg filter toggles = 18 total testid additions)
-- [ ] Three `flow-tracker:drop` CustomEvents fire correctly on each drop handler (verify in DevTools console: `document.addEventListener('flow-tracker:drop', e => console.log(e.detail))`)
-- [ ] PO activates bookmarklet on localhost, records the core planning flow (branch select → HL filter → lot select → drag shipment → dialog → date → confirm → verify TO)
-- [ ] Recorder exports valid Flow JSON matching the defined schema
-- [ ] `/flow-to-test` skill produces a runnable `.spec.ts` from the recorded Flow JSON
-- [ ] Generated test passes against localhost (with test data present)
-- [ ] Generated test fails when a business expectation is violated (e.g., remove `expect-visible` target element) — proving assertions work
+- [x] All 15 PO-identified elements have `data-testid` attributes visible in browser DevTools (plus 3 individual leg filter toggles = 18 total testid additions)
+- [x] Three `flow-tracker:drop` CustomEvents fire correctly on each drop handler (verify in DevTools console: `document.addEventListener('flow-tracker:drop', e => console.log(e.detail))`)
+- [x] PO activates bookmarklet on localhost, records the core planning flow (branch select → HL filter → lot select → drag shipment → dialog → date → confirm → verify TO)
+- [x] Recorder exports valid Flow JSON matching the defined schema
+- [x] `/flow-to-test` skill produces a runnable `.spec.ts` from the recorded Flow JSON
+- [x] Generated test passes against localhost (with test data present)
+- [x] Generated test fails when a business expectation is violated — mutation test: disabled `dropOnCreateTransportOrder` body, test failed on `expect(createToDialog).toBeVisible()` at line 59 as expected (2026-06-16)
 
 ### Recorder edge cases
 - [ ] Material dropdown (branch selector) captured as `select` action with correct testid + value
-- [ ] Drag-to-create-TO captured as `drag` action via Angular bridge event (not pointer heuristics)
+- [x] Drag-to-create-TO captured as `drag` action via Angular bridge event (not pointer heuristics)
 - [ ] Two-level dialog flow captured: datepicker Apply + dialog Erstellen as separate `click` actions with correct testids
-- [ ] Overlay depth tracking produces correct `dialog-opened`/`dialog-closed` markers
-- [ ] Spinner detection (S3) sets `meta.loadingIndicatorSeen` when `mat-spinner` appears between actions
+- [x] Overlay depth tracking produces correct `dialog-opened`/`dialog-closed` markers — fixed: recorder now uses `lastDragTarget` as fallback when `lastClickedTestId` is null (2026-06-16)
+- [x] Spinner detection (S3) sets `meta.loadingIndicatorSeen` when `mat-spinner` appears between actions
 
 ### Assertions
-- [ ] Snapshot diff identifies new testids appearing after lot selection → generates `expect-visible`
-- [ ] Snapshot diff identifies dialog appearing after drag → generates `expect-visible` for `create-to-dialog`
+- [x] Snapshot diff identifies new testids appearing after lot selection → generates `expect-visible`
+- [x] Snapshot diff identifies dialog appearing after drag → generates `expect-visible` for `create-to-dialog`
 - [ ] Snapshot diff does NOT produce spurious assertions from scrolling, lazy load, or accordion toggling
 
 ### Timing
-- [ ] Generated test handles 1-3s API response after branch selection (Playwright auto-wait, no hardcoded `waitForTimeout`)
-- [ ] Generated test emits "wait for spinner to disappear" when `loadingIndicatorSeen` is true
-- [ ] No `waitForTimeout()` calls in generated output
+- [x] Generated test handles 1-3s API response after branch selection (Playwright auto-wait, no hardcoded `waitForTimeout`)
+- [x] Generated test emits "wait for spinner to disappear" when `loadingIndicatorSeen` is true
+- [x] No `waitForTimeout()` calls in generated output
 
 ---
 
