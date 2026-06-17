@@ -871,10 +871,10 @@
       }
     },
     {
-      "id": "exploration-cdc-recovery-pbi-challenge",
-      "source": "02_Explorations/2026-05-21_CDC_Recovery_-_Sendung_Data_Sync/2026-06-17-pbi-challenge.md",
-      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D17-CDC-Recovery-PBI-Challenge.md",
-      "description": "CDC Recovery PBI Challenge — concept-vs-PBI gap analysis for User Story #123589",
+      "id": "exploration-cdc-recovery-pbi-review",
+      "source": "02_Explorations/2026-05-21_CDC_Recovery_-_Sendung_Data_Sync/2026-06-17-pbi-review.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D17-CDC-Recovery-PBI-Review.md",
+      "description": "CDC Recovery PBI Review — concept-vs-PBI gap analysis for User Story #123589",
       "syncStrategy": {
         "type": "full-sync",
         "scope": "full-document",

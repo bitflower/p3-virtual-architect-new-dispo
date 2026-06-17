@@ -1,7 +1,7 @@
-# PBI Challenge: CDC Outage Recovery (#123589)
+# PBI Review: CDC Outage Recovery (#123589)
 
 **Date:** 2026-06-17
-**Challenger:** Matthias Max
+**Reviewer:** Matthias Max
 **Concept sources:**
 - [ADR-010: CDC Recovery Strategy](../../09_ADRs/ADR-010-cdc-recovery-sendung-data-sync/ADR-010-cdc-recovery-sendung-data-sync.md)
 - [Solution Concept: CDC Recovery - Sendung Data Sync](cdc-recovery-sendung-data-sync.md)
@@ -58,6 +58,21 @@ The PBI actually suggests the opposite — "investigate what makes sense to be p
 **Impact:** A parallel implementation will spike TMS database load. TMS databases have hard RAM/CPU constraints.
 
 **Fix:** PBI must reference load protection mitigations from the concept. Parallelization investigation must weigh performance gains against TMS load impact.
+
+### TMS Bridge queries use views with avoidable overhead
+
+The PBI mentions "make the request against the sendung table directly not against the view" as a parenthetical remark. Code review of the TMS Bridge and TMS database schema confirms this concern is real:
+
+| TMS Bridge query | View | Overhead source |
+|---|---|---|
+| `GetAllUnplanned()` | `v_dis_shipment` | Nested `NOT EXISTS` subquery on `sen_zuord` (checked twice) + `sen.isavis()` per row |
+| `GetShipments()` | `v_dis_shipment_all` | `sen.isavis()` per row only |
+
+Neither view JOINs other tables — both read from `sendung` directly. But `sen.isavis(sendung_tix)` internally re-fetches the full `sendung` row via `SEN.GET()` just to extract `STATUS_8`, a field already available in the row. This is an avoidable round-trip per shipment.
+
+The CDC Recovery mechanism uses `GetAllUnplanned()` → `v_dis_shipment`. The concept's ~10x overhead measurement was against `v_dis_shipment_all`, which has *less* overhead than `v_dis_shipment`. The actual overhead of `v_dis_shipment` is unmeasured and likely higher due to the `sen_zuord` subquery.
+
+**Fix:** This should be a conscious implementation decision, not an afterthought. The team should measure `v_dis_shipment` vs. raw `sendung` with equivalent filters early in the implementation to determine if a TMS Bridge change (new query endpoint or view optimization) is warranted.
 
 ### SaveChangesAsync refactoring framed as performance optimization, not correctness
 
@@ -176,37 +191,48 @@ This PBI needs an updated description before work can start. It should either be
 
 ---
 
-## Missing PBIs
+## Previously Missing PBIs
 
-The concept's Phase 1 backlog explicitly lists items that have no corresponding PBI:
+The concept's Phase 1 backlog listed items that had no corresponding PBI. Two have now been created:
 
-### TMS Load Evaluation
+### TMS Load Evaluation → created as #125381
 
-**Concept reference:** Issue #3, Open Process Question #5, Backlog item "TMS load evaluation"
+**Concept reference:** [Issue #3](cdc-recovery-sendung-data-sync.md#3-tms-database-load-protection), [Open Process Question #5](cdc-recovery-sendung-data-sync.md#open-process-questions), [Backlog item "TMS load evaluation"](cdc-recovery-sendung-data-sync.md#phase-1-go-live)
 
 Coordinate with Nagel on acceptable query patterns before production use. Collect concrete query examples during implementation. TMS databases have hard RAM/CPU constraints.
 
 **Why this matters:** This is a **pre-production blocker**. The concept explicitly states: "TMS database load impact unmeasured — must be evaluated with Nagel before production use."
 
-### Operations Runbook
+### Operations Runbook → created as #125382
 
-**Concept reference:** Backlog item "Runbook"
+**Concept reference:** [Backlog item "Runbook"](cdc-recovery-sendung-data-sync.md#phase-1-go-live)
 
 Phase 1 is manually triggered. Someone in operations needs to know:
-- How to detect that CDC is down (Open Process Question #1)
-- When to declare an outage (Open Process Question #2)
+- How to detect that CDC is down ([Open Process Question #1](cdc-recovery-sendung-data-sync.md#open-process-questions))
+- When to declare an outage ([Open Process Question #2](cdc-recovery-sendung-data-sync.md#open-process-questions))
 - How to determine the correct timestamp to provide
 - How to call the endpoint
 - What to check in the response
 - What to do if recovery partially fails
 
-### Direct Table Access (TMS Bridge)
+### Direct Table Access (TMS Bridge) → no separate PBI needed
 
-**Concept reference:** Issue #6, Backlog item "Direct table access"
+**Concept reference:** [Issue #6](cdc-recovery-sendung-data-sync.md#6-view-vs-direct-table-access), [Backlog item "Direct table access"](cdc-recovery-sendung-data-sync.md#phase-1-go-live)
 
-Ensure TMS Bridge queries use the `sendung` table directly, not the `v_shipment_all` view (~10x performance difference). Currently buried as a parenthetical remark in #124824, not a tracked deliverable.
+The concept recommended querying the raw `sendung` table instead of the `v_shipment_all` view (~10x overhead). Code review of the TMS Bridge and TMS database schema clarifies the actual situation:
 
-**Note:** This may require a TMS Bridge change. If so, it needs its own PBI with a different assignee/component.
+| TMS Bridge query | View used | Source table | Overhead |
+|---|---|---|---|
+| `GetAllUnplanned()` | `v_dis_shipment` | `sendung` (single table, no JOINs) | **Nested EXISTS subquery** on `sen_zuord` + `sen.isavis()` function call per row |
+| `GetShipments()` | `v_dis_shipment_all` | `sendung` (single table, no JOINs) | `sen.isavis()` function call per row only |
+
+Neither view JOINs other tables. The overhead comes from:
+1. **`v_dis_shipment`**: a nested `NOT EXISTS` subquery checking `sen_zuord` twice (filters out shipments with certain assignment relationships) — this is the primary cost driver
+2. **`sen.isavis(sendung_tix)`**: called per row in both views. The numeric overload internally re-fetches the full `sendung` row via `SEN.GET()` just to extract `STATUS_8` — a field already available in the row. This is an avoidable round-trip.
+
+The CDC Recovery mechanism uses `GetAllUnplanned()` → `v_dis_shipment`. The concept's ~10x measurement was against `v_shipment_all` (likely `v_dis_shipment_all`), which has less overhead than `v_dis_shipment`. The actual overhead of `v_dis_shipment` is **unmeasured and likely higher** due to the `sen_zuord` subquery.
+
+**Recommendation:** No separate PBI needed — this should be evaluated as part of #125381 (TMS load evaluation). Measure `v_dis_shipment` vs. raw `sendung` with equivalent filters to determine if a TMS Bridge change is warranted.
 
 ---
 
@@ -221,7 +247,7 @@ The PBIs capture the shape of the work (implement mechanism, expose endpoint, te
 | Delete detection must be scoped to unplanned legs only | #124824 | Unnecessary TMS load, architectural deviation |
 | Timestamp is a required endpoint input | #124826 | Endpoint unusable without it |
 | TMS load protection mitigations not specified | #124824 | TMS database stability risk in production |
-| No PBI for TMS load evaluation with Nagel | Missing | Pre-production blocker |
+| TMS load evaluation with Nagel | #125381 (created) | Pre-production blocker |
 | #123931 references removed PBI | #123931 | Stale description, needs update before work can start |
 
 ---
@@ -230,7 +256,7 @@ The PBIs capture the shape of the work (implement mechanism, expose endpoint, te
 
 | Date       | Author       | Change      |
 |------------|--------------|-------------|
-| 2026-06-17 | Matthias Max | PBI challenge created |
+| 2026-06-17 | Matthias Max | PBI review created |
 
 ---
 
