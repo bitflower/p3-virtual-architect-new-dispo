@@ -1,8 +1,8 @@
 # [ADR010] CDC Recovery Strategy: Sendung Data Sync
 
-**Status:** Proposed
+**Status:** Accepted (Extra Refinement — CDC Recovery, 2026-05-22)
 **Date:** 2026-05-21
-**Deciders:** Matthias Max, Christian Lang, Pascal Leicht
+**Deciders:** Matthias Max, Boyan Valchev, Yosif Mihaylov
 
 ## Context
 
@@ -112,6 +112,13 @@ Phase 1 (recovery endpoint) is approved for Go-Live. Phase 2 (continuous backgro
 * [Replication Slot Outage Recovery (Original Analysis)](../../02_Explorations/2026-03-19_team-intro/replication-slot-outage-recovery.md) -- the four recovery strategies initially identified
 * [CDC Error Flow - GoLive Workshop](../../02_Explorations/2026-03-24_GoLive_Workshop_Sofia_-_Resilience_and_TMS_Pulse_ORA_Analysis/cdc-error-flow.md) -- Batch Recovery Layer concept
 
+<internal>**Meeting Transcripts (decision trail):**
+* [Bi-Weekly — CDC Recovery + Delete TransportOrder (2026-05-19)](../../00_Meetings/2026-05-19_%5BP3%20Internal%5D%20New%20TMS%20Architecure%20Bi-Weekly_CDC-Recovery-plus-Delete-TransportOrder-Flow-7.vtt) — options narrowed to HWM approach
+* [Architect Sync Yosif — CDC Recovery Polling PoC (2026-05-19)](../../00_Meetings/2026-05-19_TMS_C4L%20Architect%20Sync_Yosif_CDC-Recovery-polling-poc/2026-05-19_TMS_C4L%20Architect%20Sync_Yosif_CDC-Recovery-polling-poc.vtt) — PoC walkthrough and technical validation
+* [Dispo Blocker — Joachim constraint confirmation (2026-05-21)](../../00_Meetings/2026-05-21_Dispo%20Blocker-cdc-sendung-sync-recovery-answer-joachim.vtt) — constraint #6 confirmed (dispatched shipments never deleted)
+* [Extra Refinement — CDC Recovery (2026-05-22)](../../00_Meetings/2026-05-22_Extra%20Refinement%20New%20Dispo%20-%20CDC%20Recovery.vtt) — approach accepted, PBIs requested for implementation
+</internal>
+
 **Key Source Files (PoC branch `feature/data-sync-poll-mechanism`):**
 
 | File | Role |
@@ -127,6 +134,7 @@ Phase 1 (recovery endpoint) is approved for Go-Live. Phase 2 (continuous backgro
 | Date       | Author       | Change      |
 |------------|--------------|-------------|
 | 2026-05-21 | Matthias Max | ADR created |
+| 2026-06-17 | Matthias Max | Status → Accepted (decision confirmed across Bi-Weekly 2026-05-19, Joachim constraint confirmation 2026-05-21, Extra Refinement 2026-05-22) |
 
 ---
 
