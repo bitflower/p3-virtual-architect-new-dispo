@@ -1,0 +1,2060 @@
+WEBVTT
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/9-0
+00:00:03.675 --> 00:00:04.355
+<v Matthias Max>Know of.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/10-0
+00:00:05.105 --> 00:00:11.447
+<v Matthias Max>I don't know all of us,
+but the status is there is a repo with</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/10-1
+00:00:11.447 --> 00:00:14.265
+<v Matthias Max>Selenium tests in the Azure.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/12-0
+00:00:15.385 --> 00:00:19.240
+<v Matthias Max>However,
+we stopped working on this at the end of</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/12-1
+00:00:19.240 --> 00:00:19.625
+<v Matthias Max>2025.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/11-0
+00:00:19.705 --> 00:00:19.825
+<v Maximilian Kehder>It.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/14-0
+00:00:22.745 --> 00:00:24.745
+<v Matthias Max>It's a constant topic, though.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/64-0
+00:00:27.005 --> 00:00:33.013
+<v Matthias Max>I think that this is a good way to run
+tests in a reusable way to cover</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/64-1
+00:00:33.013 --> 00:00:37.770
+<v Matthias Max>regression, etc.
+But we just didn't have the time in the</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/64-2
+00:00:37.770 --> 00:00:43.361
+<v Matthias Max>last month with all the pressure and
+complexity and let's face it,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/64-3
+00:00:43.361 --> 00:00:46.365
+<v Matthias Max>chaos with the client. Nevertheless,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/109-0
+00:00:47.805 --> 00:00:52.803
+<v Matthias Max>We want to get started here again,
+pick up where we left,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/109-1
+00:00:52.803 --> 00:01:00.042
+<v Matthias Max>and also probably try to get more people
+into this process of creating these tests.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/109-2
+00:01:00.042 --> 00:01:04.868
+<v Matthias Max>And this is precisely what we want to
+talk about today.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/109-3
+00:01:04.868 --> 00:01:10.125
+<v Matthias Max>Max and I had an exchange here,
+and we see some potential in</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/143-0
+00:01:11.245 --> 00:01:16.197
+<v Matthias Max>For example,
+him or any non-technical person taking</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/143-1
+00:01:16.197 --> 00:01:23.149
+<v Matthias Max>part in this by providing business flows
+as recorded sessions in the UI.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/143-2
+00:01:23.149 --> 00:01:29.245
+<v Matthias Max>Because usually the people who work with
+the system who test it</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/168-0
+00:01:29.805 --> 00:01:34.650
+<v Matthias Max>are most of the time or oftentimes
+business people,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/168-1
+00:01:34.650 --> 00:01:40.520
+<v Matthias Max>and they can provide this knowledge to us
+in a structured way.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/168-2
+00:01:40.520 --> 00:01:45.645
+<v Matthias Max>This is exactly the idea I want to
+present here today.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/189-0
+00:01:47.085 --> 00:01:53.321
+<v Matthias Max>It is a little prototype as well,
+and I've created 3 end-to-end tests with</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/189-1
+00:01:53.321 --> 00:01:57.645
+<v Matthias Max>it so far.
+But let me quickly go through it. Maybe.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/191-0
+00:01:58.845 --> 00:02:00.365
+<v Matthias Max>Now would be the time.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/198-0
+00:02:01.965 --> 00:02:06.205
+<v Matthias Max>But Valentin would be valuable not to
+miss the intro.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/203-0
+00:02:10.285 --> 00:02:12.285
+<v Matthias Max>Game should also work.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/205-0
+00:02:21.125 --> 00:02:22.205
+<v Matthias Max>And Team.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/206-0
+00:02:24.685 --> 00:02:24.845
+<v Matthias Max>But...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/211-0
+00:02:31.805 --> 00:02:33.965
+<v Matthias Max>I cannot click it, what's that?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/213-0
+00:02:36.525 --> 00:02:37.405
+<v Matthias Max>Strange.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/216-0
+00:02:42.045 --> 00:02:42.925
+<v Matthias Max>Now, it worked.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/228-0
+00:03:10.445 --> 00:03:12.125
+<v Matthias Max>It seems to take.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/229-0
+00:03:11.245 --> 00:03:13.005
+<v Boyan Valchev>He'll be joining any second, I think.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/231-0
+00:03:13.885 --> 00:03:14.365
+<v Matthias Max>Okay.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/238-0
+00:03:20.605 --> 00:03:23.645
+<v Maximilian Kehder>By the way, we still only see the...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/240-0
+00:03:25.285 --> 00:03:26.045
+<v Maximilian Kehder>MD file.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/242-0
+00:03:28.845 --> 00:03:29.885
+<v Matthias Max>File or...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/248-0
+00:03:32.125 --> 00:03:33.405
+<v Matthias Max>The raw code, no.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/250-0
+00:03:33.765 --> 00:03:34.925
+<v Maximilian Kehder>No, no, no.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/252-0
+00:03:35.245 --> 00:03:36.285
+<v Matthias Max>That's intended.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/253-0
+00:03:37.085 --> 00:03:37.565
+<v Maximilian Kehder>Okay.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/256-0
+00:03:40.445 --> 00:03:41.805
+<v Matthias Max>That's the new PowerPoint.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/257-0
+00:03:43.645 --> 00:03:44.205
+<v Valentin Varbanov>Pegas.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/266-0
+00:03:44.605 --> 00:03:48.685
+<v Matthias Max>Hi, Valentin. Sorry that I didn't add you.
+I just...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/275-0
+00:03:49.925 --> 00:03:54.045
+<v Matthias Max>Quick meeting set up yesterday evening,
+probably I was too sleepy.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/277-0
+00:03:55.165 --> 00:03:56.205
+<v Matthias Max>All right, so...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/322-0
+00:03:57.325 --> 00:04:04.260
+<v Matthias Max>We want to introduce a new way of how we
+record the metadata for business flows</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/281-0
+00:03:57.525 --> 00:03:57.965
+<v Valentin Varbanov>Todor.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/322-1
+00:04:04.260 --> 00:04:10.156
+<v Matthias Max>within the UI to speed up the process of
+creating end-to-end tests.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/322-2
+00:04:10.156 --> 00:04:16.398
+<v Matthias Max>So the problem is, like I said,
+it's quite tedious to create end-to-end</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/322-3
+00:04:16.398 --> 00:04:18.045
+<v Matthias Max>tests. We also know</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/356-0
+00:04:18.445 --> 00:04:24.744
+<v Matthias Max>They are quite weak when it comes to
+resilience regarding template changes.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/356-1
+00:04:24.744 --> 00:04:30.629
+<v Matthias Max>Usually you have to rewrite a lot of the
+tests when you do that. Also,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/356-2
+00:04:30.629 --> 00:04:36.845
+<v Matthias Max>the ability to record instead of just
+code these tests is not very mature.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/378-0
+00:04:37.325 --> 00:04:42.317
+<v Matthias Max>There's Playwright Coach Gen,
+there's the Chrome DevOps Recorder,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/378-1
+00:04:42.317 --> 00:04:46.478
+<v Matthias Max>and there's also Selenium Studio,
+I think it's called,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/378-2
+00:04:46.478 --> 00:04:48.445
+<v Matthias Max>and the Selenium Recorder.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/398-0
+00:04:49.405 --> 00:04:53.757
+<v Matthias Max>I did check them out.
+All of them have their weaknesses.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/398-1
+00:04:53.757 --> 00:04:59.867
+<v Matthias Max>Most of them fail with drag and drop,
+because that's just a difficult technical</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/398-2
+00:04:59.867 --> 00:05:01.165
+<v Matthias Max>pattern to track.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/445-0
+00:05:02.725 --> 00:05:07.664
+<v Matthias Max>So that's the circumstances,
+and also you have to deeply understand</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/445-1
+00:05:07.664 --> 00:05:10.859
+<v Matthias Max>the Angular internals to write these
+tests,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/445-2
+00:05:10.859 --> 00:05:16.234
+<v Matthias Max>which excludes any non-technical people
+like product owners from actually</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/445-3
+00:05:16.234 --> 00:05:22.045
+<v Matthias Max>contributing here, besides, of course,
+delivering test cases like Max just did.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/466-0
+00:05:23.245 --> 00:05:26.630
+<v Matthias Max>Now,
+the core idea is to come up with some</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/466-1
+00:05:26.630 --> 00:05:32.298
+<v Matthias Max>kind of, I call it UI domain mapping,
+which makes an explicit contract,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/466-2
+00:05:32.298 --> 00:05:33.085
+<v Matthias Max>literally.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/506-0
+00:05:34.365 --> 00:05:40.598
+<v Matthias Max>So it frames what literally the UI
+consists of in terms of domain value.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/506-1
+00:05:40.598 --> 00:05:47.428
+<v Matthias Max>Like a lot card is a valuable and aligned
+element, right? When we say lot card,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/506-2
+00:05:47.428 --> 00:05:53.405
+<v Matthias Max>we don't think in Angular.
+We think in this UI thing everybody knows.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/545-0
+00:05:53.885 --> 00:06:00.413
+<v Matthias Max>on all stakeholder sites.
+And this is precisely the contract we are</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/545-1
+00:06:00.413 --> 00:06:08.093
+<v Matthias Max>codifying. So we say with the test ID,
+which I think is a common pattern anyway</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/545-2
+00:06:08.093 --> 00:06:14.141
+<v Matthias Max>in end-to-end tests,
+this Angular component represents the lot</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/545-3
+00:06:14.141 --> 00:06:14.525
+<v Matthias Max>card</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/571-0
+00:06:15.085 --> 00:06:19.585
+<v Matthias Max>domain UI element.
+That's basically what's behind it.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/571-1
+00:06:19.585 --> 00:06:26.168
+<v Matthias Max>We started with 15 elements only in a
+little POC, but by now Max has provided,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/571-2
+00:06:26.168 --> 00:06:29.085
+<v Matthias Max>I just saw the numbers, 96 of them.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/602-0
+00:06:30.205 --> 00:06:35.188
+<v Matthias Max>So that's the basic for the two
+directions we want to go.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/602-1
+00:06:35.188 --> 00:06:40.516
+<v Matthias Max>One is the recorder,
+which records clicks in the UI, and two,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/602-2
+00:06:40.516 --> 00:06:46.445
+<v Matthias Max>the resulting tests that can also refer
+to this domain mapping list.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/639-0
+00:06:48.845 --> 00:06:53.155
+<v Matthias Max>Here are some examples.
+I think they are quite obvious.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/639-1
+00:06:53.155 --> 00:06:57.081
+<v Matthias Max>A lot card would be lot card followed
+with the ID.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/639-2
+00:06:57.081 --> 00:07:02.623
+<v Matthias Max>The important thing here is that we have
+dynamic and static UI element,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/639-3
+00:07:02.623 --> 00:07:08.165
+<v Matthias Max>UI domain elements, obviously.
+Branch selector, for example, is static.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/664-0
+00:07:08.845 --> 00:07:13.405
+<v Matthias Max>It's A one-time element statically
+available at the top,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/664-1
+00:07:13.405 --> 00:07:19.325
+<v Matthias Max>while others appear and disappear
+throughout the flow you go through as a</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/664-2
+00:07:19.325 --> 00:07:20.525
+<v Matthias Max>user on the UI.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/692-0
+00:07:22.205 --> 00:07:25.969
+<v Matthias Max>Of course,
+this catalog is probably growing over the</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/692-1
+00:07:25.969 --> 00:07:29.521
+<v Matthias Max>time. Right now, like I said,
+we started with 15,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/692-2
+00:07:29.521 --> 00:07:35.274
+<v Matthias Max>and they were enough to prove that three
+flows could be recorded and transformed</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/692-3
+00:07:35.274 --> 00:07:37.405
+<v Matthias Max>into working end-to-end tests.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/693-0
+00:07:39.525 --> 00:07:39.725
+<v Matthias Max>Yeah.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/715-0
+00:07:40.925 --> 00:07:43.610
+<v Matthias Max>So what does this mapping achieve?
+Like I said,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/715-1
+00:07:43.610 --> 00:07:48.142
+<v Matthias Max>it's a contract between Angular on the
+one hand, the recorder on the other hand.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/715-2
+00:07:48.142 --> 00:07:49.485
+<v Matthias Max>We'll see that in a bit.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/771-0
+00:07:51.085 --> 00:07:55.512
+<v Matthias Max>via the JSON format it creates,
+or which it represented by.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/771-1
+00:07:55.512 --> 00:08:00.529
+<v Matthias Max>The JSON format is literally a contract.
+And with this JSON format,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/771-2
+00:08:00.529 --> 00:08:05.768
+<v Matthias Max>we can then go into generators for
+Playwright and Selenium. Right now,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/771-3
+00:08:05.768 --> 00:08:11.966
+<v Matthias Max>I did it with Playwright because honestly,
+I completely forgot about Selenium world</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/771-4
+00:08:11.966 --> 00:08:13.885
+<v Matthias Max>when I started out, but it</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/785-0
+00:08:14.045 --> 00:08:22.226
+<v Matthias Max>I think it really doesn't matter. With AI,
+you create such a test from a flow in 30</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/785-1
+00:08:22.226 --> 00:08:23.005
+<v Matthias Max>seconds.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/789-0
+00:08:24.005 --> 00:08:25.725
+<v Matthias Max>And then, of course, some tweaking.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/797-0
+00:08:26.605 --> 00:08:30.205
+<v Matthias Max>So that's the idea behind it in terms of
+data contract.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/838-0
+00:08:31.645 --> 00:08:37.096
+<v Matthias Max>Now to the assertion model.
+So this is after we've created the test</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/838-1
+00:08:37.096 --> 00:08:43.509
+<v Matthias Max>and we want to make sure it fulfills the
+actual purpose of the end-to-end test.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/838-2
+00:08:43.509 --> 00:08:48.639
+<v Matthias Max>We have to have, I think,
+a little bit of a different assertion</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/838-3
+00:08:48.639 --> 00:08:51.285
+<v Matthias Max>model than we usually would have.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/853-0
+00:08:52.125 --> 00:08:56.374
+<v Matthias Max>So there's different categories. You have,
+of course,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/853-1
+00:08:56.374 --> 00:09:01.725
+<v Matthias Max>you have a navigation category where you
+tell the test where to go.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/898-0
+00:09:03.245 --> 00:09:10.162
+<v Matthias Max>You have interaction, clicking, selecting,
+filling, dragging could grow, of course.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/898-1
+00:09:10.162 --> 00:09:16.009
+<v Matthias Max>Then you have the expectation,
+what someone sees in the UI, and again,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/898-2
+00:09:16.009 --> 00:09:20.374
+<v Matthias Max>only on the selected and defined UI
+domain mappings.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/898-3
+00:09:20.374 --> 00:09:25.645
+<v Matthias Max>If an element is not defined as UI domain
+model, then it cannot</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/902-0
+00:09:25.685 --> 00:09:29.085
+<v Matthias Max>be asserted.
+That's the closing of the loop.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/921-0
+00:09:30.605 --> 00:09:35.367
+<v Matthias Max>And then, of course,
+you have some context when dialogues open</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/921-1
+00:09:35.367 --> 00:09:38.995
+<v Matthias Max>and close.
+This is also relevant to check in an</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/921-2
+00:09:38.995 --> 00:09:40.205
+<v Matthias Max>end-to-end test.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/942-0
+00:09:42.205 --> 00:09:47.422
+<v Matthias Max>Good. What's the time? 42.
+I would just go through this and then we</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/942-1
+00:09:47.422 --> 00:09:51.565
+<v Matthias Max>can discuss questions and also look at
+the prototype.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/971-0
+00:09:53.325 --> 00:10:01.254
+<v Matthias Max>Good, then what? Yeah,
+that's exactly a core differentiation.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/971-1
+00:10:01.254 --> 00:10:10.079
+<v Matthias Max>It might look like it's just a replay
+framework in the first glance,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/971-2
+00:10:10.079 --> 00:10:12.765
+<v Matthias Max>but really it is not.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1006-0
+00:10:14.285 --> 00:10:18.843
+<v Matthias Max>Under the hood,
+it tracks everything that becomes visible,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1006-1
+00:10:18.843 --> 00:10:22.552
+<v Matthias Max>even in a dynamic way,
+even with waiting times,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1006-2
+00:10:22.552 --> 00:10:26.261
+<v Matthias Max>because we have asynchronous updates on
+the UI.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1006-3
+00:10:26.261 --> 00:10:32.365
+<v Matthias Max>But they all get tracked by this flow
+recorder that is part of the tool chain.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1032-0
+00:10:32.925 --> 00:10:37.502
+<v Matthias Max>So in the end,
+it's quite automatic what happens and</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1032-1
+00:10:37.502 --> 00:10:44.238
+<v Matthias Max>what is recorded and what the E2E and
+finally users can still be decided when</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1032-2
+00:10:44.238 --> 00:10:45.965
+<v Matthias Max>the test is created.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1036-0
+00:10:47.165 --> 00:10:49.885
+<v Matthias Max>But we can look at that in a bit.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1082-0
+00:10:52.365 --> 00:10:58.498
+<v Matthias Max>Here is an example. In the early phase,
+I just had kind of a replay functionality,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1082-1
+00:10:58.498 --> 00:11:03.892
+<v Matthias Max>which doesn't really make sense, right?
+Of course, you can cause clicks,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1082-2
+00:11:03.892 --> 00:11:09.508
+<v Matthias Max>but that doesn't give you anything.
+So the second approach where I extended</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1082-3
+00:11:09.508 --> 00:11:11.725
+<v Matthias Max>the assertion model was really</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1108-0
+00:11:11.885 --> 00:11:16.819
+<v Matthias Max>the one where it clicked,
+because then you can go and say,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1108-1
+00:11:16.819 --> 00:11:20.667
+<v Matthias Max>I want to check for a certain amount of
+lots,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1108-2
+00:11:20.667 --> 00:11:26.605
+<v Matthias Max>or a certain value must be present in
+this space of the UI, et cetera.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1145-0
+00:11:27.725 --> 00:11:33.063
+<v Matthias Max>So why does this potentially speed up the
+creation? Traditionally,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1145-1
+00:11:33.063 --> 00:11:39.119
+<v Matthias Max>we only have test cases in written form
+in an Excel or it's in the story or</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1145-2
+00:11:39.119 --> 00:11:43.581
+<v Matthias Max>somewhere else.
+Then someone interprets this and writes</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1145-3
+00:11:43.581 --> 00:11:47.565
+<v Matthias Max>the test. All good, it works,
+but it's slow. Now.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1168-0
+00:11:47.885 --> 00:11:52.478
+<v Matthias Max>Someone, in this case,
+I refer to it as the PO and most of the</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1168-1
+00:11:52.478 --> 00:11:55.759
+<v Matthias Max>time,
+just opens the recorder in the running</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1168-2
+00:11:55.759 --> 00:11:59.405
+<v Matthias Max>app on test, I guess,
+clicks through the real UI.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1187-0
+00:12:00.365 --> 00:12:04.922
+<v Matthias Max>That way, the JSON gets created,
+a generator takes the JSON,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1187-1
+00:12:04.922 --> 00:12:09.405
+<v Matthias Max>creates the first draft of the test,
+and then we finish it.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1192-0
+00:12:10.765 --> 00:12:14.205
+<v Matthias Max>So that's the potential we talk about.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1199-0
+00:12:16.605 --> 00:12:21.565
+<v Matthias Max>And maybe to show you quickly how it
+looks.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1213-0
+00:12:22.525 --> 00:12:26.609
+<v Matthias Max>I did record yesterday a little bit,
+so this is just a video,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1213-1
+00:12:26.609 --> 00:12:29.245
+<v Matthias Max>but you get the idea. So I'm on the app.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1221-0
+00:12:31.245 --> 00:12:34.445
+<v Matthias Max>I clicked this. Do you see my mouse?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1257-0
+00:12:37.085 --> 00:12:44.017
+<v Matthias Max>I click this bookmarklet here in my
+toolbar of Chrome, Naga, Kyle Disposition,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1257-1
+00:12:44.017 --> 00:12:50.072
+<v Matthias Max>and this introduced a button here at the
+top which says Rec, Record.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1257-2
+00:12:50.072 --> 00:12:57.005
+<v Matthias Max>I can click that button and now the flow
+tracking started based on the defined</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1260-0
+00:12:57.325 --> 00:12:59.325
+<v Matthias Max>UI domain mapping elements.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1282-0
+00:13:00.685 --> 00:13:06.026
+<v Matthias Max>And I just do what I want to cover in
+that flow. In this case, it's, I think,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1282-1
+00:13:06.026 --> 00:13:08.765
+<v Matthias Max>creation of transport order from Leicht.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1285-0
+00:13:10.525 --> 00:13:11.805
+<v Matthias Max>I go through it.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1292-0
+00:13:13.725 --> 00:13:15.805
+<v Matthias Max>All of these things are now tracked.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1299-0
+00:13:18.045 --> 00:13:22.765
+<v Matthias Max>And once it's done, I stop the recording.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1315-0
+00:13:24.245 --> 00:13:27.622
+<v Matthias Max>Of course,
+I wait for it to really finish all the</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1315-1
+00:13:27.622 --> 00:13:31.405
+<v Matthias Max>activities. Now it's stopped,
+and as you can see, it...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1332-0
+00:13:32.365 --> 00:13:38.205
+<v Matthias Max>Downloaded the JSON file. I mean,
+that's really the MVP style currently.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1332-1
+00:13:38.205 --> 00:13:41.165
+<v Matthias Max>The JSON file with the recorded flow.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1340-0
+00:13:43.165 --> 00:13:47.645
+<v Matthias Max>Now,
+maybe we can look at the JSON quickly.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1341-0
+00:13:49.565 --> 00:13:50.285
+<v Matthias Max>Ohh.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1342-0
+00:13:53.085 --> 00:13:53.725
+<v Matthias Max>So.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1343-0
+00:13:55.005 --> 00:13:55.245
+<v Matthias Max>Oh.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1350-0
+00:14:01.965 --> 00:14:05.085
+<v Matthias Max>End to end, oops,
+I think I moved something.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1353-0
+00:14:07.725 --> 00:14:08.925
+<v Matthias Max>Flows, here it is.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1362-0
+00:14:09.965 --> 00:14:13.245
+<v Matthias Max>So that's what's coming out of this
+recording.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1377-0
+00:14:15.285 --> 00:14:20.173
+<v Matthias Max>Version just zero recorded.
+When was it recorded on which URL?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1377-1
+00:14:20.173 --> 00:14:21.725
+<v Matthias Max>What were the steps?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1405-0
+00:14:23.005 --> 00:14:28.418
+<v Matthias Max>Each one with a time stamp.
+This is interesting because we can derive</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1405-1
+00:14:28.418 --> 00:14:34.605
+<v Matthias Max>waiting times from it in the test later.
+Usually at some stage you have to work</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1405-2
+00:14:34.605 --> 00:14:36.925
+<v Matthias Max>with timeouts. This is what...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1414-0
+00:14:38.605 --> 00:14:44.605
+<v Matthias Max>You can use it for and we have these
+so-called auto-generated ones.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1448-0
+00:14:45.845 --> 00:14:51.316
+<v Matthias Max>which is part of the assertion model. So,
+for example,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1448-1
+00:14:51.316 --> 00:14:58.379
+<v Matthias Max>when I drag a leg to create a new lot,
+a new lot shows up right after.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1448-2
+00:14:58.379 --> 00:15:04.845
+<v Matthias Max>This is an auto-generated assertion,
+so the new lot will appear.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1464-0
+00:15:05.405 --> 00:15:11.042
+<v Matthias Max>appear here as expected visible,
+and we can then later in the test work</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1464-1
+00:15:11.042 --> 00:15:12.765
+<v Matthias Max>with that information.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1477-0
+00:15:14.045 --> 00:15:22.409
+<v Matthias Max>So this is what comes out in terms of the
+flow file and then the actual test looks</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1477-1
+00:15:22.409 --> 00:15:24.525
+<v Matthias Max>like I think this is.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1486-0
+00:15:27.405 --> 00:15:31.325
+<v Matthias Max>This was this one, create, no, sorry,
+create transport order.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1488-0
+00:15:33.725 --> 00:15:34.685
+<v Matthias Max>That's it.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1502-0
+00:15:35.565 --> 00:15:39.741
+<v Matthias Max>So,
+there's some basic stuff the AI skill</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1502-1
+00:15:39.741 --> 00:15:42.525
+<v Matthias Max>always adds, which is login.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1506-0
+00:15:43.565 --> 00:15:45.565
+<v Matthias Max>And some basic stuff.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1511-0
+00:15:46.925 --> 00:15:49.085
+<v Matthias Max>That's always part of every test.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1548-0
+00:15:50.125 --> 00:15:55.876
+<v Matthias Max>And then it starts, obviously,
+with going to that view page.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1548-1
+00:15:55.876 --> 00:16:03.608
+<v Matthias Max>And everything from here is auto-created.
+So it did see that we want to watch lot</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1548-2
+00:16:03.608 --> 00:16:08.605
+<v Matthias Max>cards and ship cards,
+so it creates these selectors.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1564-0
+00:16:09.725 --> 00:16:14.768
+<v Matthias Max>Then it clicked the HR filter.
+I think I didn't put that in the video,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1564-1
+00:16:14.768 --> 00:16:17.325
+<v Matthias Max>but that's an additional step I did.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1575-0
+00:16:19.245 --> 00:16:24.191
+<v Matthias Max>Then it did check if the spinner is
+hidden.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1575-1
+00:16:24.191 --> 00:16:28.125
+<v Matthias Max>That was also something it noticed.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1599-0
+00:16:29.485 --> 00:16:35.531
+<v Matthias Max>Then it checked the first lot card.
+If that's a simplified version of</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1599-1
+00:16:35.531 --> 00:16:42.701
+<v Matthias Max>creating a transport order from the leg,
+just take the first lot and from that the</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1599-2
+00:16:42.701 --> 00:16:43.565
+<v Matthias Max>first leg.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1601-0
+00:16:44.725 --> 00:16:46.365
+<v Matthias Max>So that's these two steps.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1612-0
+00:16:49.485 --> 00:16:56.045
+<v Matthias Max>And then it starts the dragging.
+This is a bit of a custom.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1657-0
+00:16:57.245 --> 00:17:00.658
+<v Matthias Max>helper I made,
+because it was a bit difficult to</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1657-1
+00:17:00.658 --> 00:17:06.232
+<v Matthias Max>simulate these track and drop things,
+as you probably learned yourself already.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1657-2
+00:17:06.232 --> 00:17:11.388
+<v Matthias Max>And like I said in the beginning,
+the other tools also are not able to do</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1657-3
+00:17:11.388 --> 00:17:15.637
+<v Matthias Max>this with this little help,
+but we can actually simulate it.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1657-4
+00:17:15.637 --> 00:17:18.285
+<v Matthias Max>And if you watch the test running with</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1666-0
+00:17:18.445 --> 00:17:23.223
+<v Matthias Max>the headless mode off,
+you see it also dragging things over to</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1666-1
+00:17:23.223 --> 00:17:24.285
+<v Matthias Max>the drop area.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1695-0
+00:17:26.685 --> 00:17:32.344
+<v Matthias Max>Then you of course expect the create TO
+dialogue to be visible,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1695-1
+00:17:32.344 --> 00:17:38.356
+<v Matthias Max>the date input to be visible,
+cancel confirm buttons to be visible,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1695-2
+00:17:38.356 --> 00:17:41.805
+<v Matthias Max>and so on, clicking the date to happen.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1697-0
+00:17:42.845 --> 00:17:44.285
+<v Matthias Max>And so on.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1714-0
+00:17:45.485 --> 00:17:52.157
+<v Matthias Max>And this is literally the moment where a
+test engineer or developer can jump in</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1714-1
+00:17:52.157 --> 00:17:53.325
+<v Matthias Max>and refine it.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1744-0
+00:17:54.605 --> 00:17:58.701
+<v Matthias Max>and make it complete,
+fill up gaps whatsoever.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1744-1
+00:17:58.701 --> 00:18:05.673
+<v Matthias Max>So it's definitely not the expectation
+that this is a fire and forget solution.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1744-2
+00:18:05.673 --> 00:18:10.205
+<v Matthias Max>It will just be a basis that helps us to
+be faster.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1746-0
+00:18:12.605 --> 00:18:13.005
+<v Matthias Max>Good.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1748-0
+00:18:14.845 --> 00:18:15.645
+<v Matthias Max>Boyan.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1753-0
+00:18:19.085 --> 00:18:22.285
+<v Boyan Valchev>Yeah, I have a couple of questions.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1754-0
+00:18:23.485 --> 00:18:23.965
+<v Matthias Max>Support.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1755-0
+00:18:23.805 --> 00:18:23.885
+<v Boyan Valchev>Uhh...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1802-0
+00:18:25.885 --> 00:18:30.005
+<v Boyan Valchev>One of them is probably a priority wise.
+The other one,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1802-1
+00:18:30.005 --> 00:18:33.242
+<v Boyan Valchev>let's just first discuss what you
+showcase,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1802-2
+00:18:33.242 --> 00:18:37.657
+<v Boyan Valchev>how this guarantees that those tests are
+in the every time,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1802-3
+00:18:37.657 --> 00:18:42.660
+<v Boyan Valchev>because this is not something which this
+thing would would provide,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1802-4
+00:18:42.660 --> 00:18:44.205
+<v Boyan Valchev>like from the get-go.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1845-0
+00:18:44.685 --> 00:18:49.370
+<v Boyan Valchev>It's basically the biggest issue we have
+so far with the automation testing,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1845-1
+00:18:49.370 --> 00:18:53.446
+<v Boyan Valchev>and I don't see how this solution would
+fix this issue. Basically,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1845-2
+00:18:53.446 --> 00:18:56.853
+<v Boyan Valchev>what there is like, what the leakage just,
+for example,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1845-3
+00:18:56.853 --> 00:19:01.659
+<v Boyan Valchev>the drug or the lot won't be visible next
+time you go into this page. So, how,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1833-0
+00:19:00.925 --> 00:19:01.085
+<v Matthias Max>Ohh.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1845-4
+00:19:01.659 --> 00:19:03.485
+<v Boyan Valchev>how is this important and how?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1892-0
+00:19:03.805 --> 00:19:08.340
+<v Boyan Valchev>can this track complex flows because yeah,
+it's okay if you just click buttons,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1892-1
+00:19:08.340 --> 00:19:12.762
+<v Boyan Valchev>just validate that whether we navigate to
+different pages or stuff like this.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1892-2
+00:19:12.762 --> 00:19:16.957
+<v Boyan Valchev>But I really doubt that this could
+capture complex flows in the important</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1892-3
+00:19:16.957 --> 00:19:20.416
+<v Boyan Valchev>way, in a usable way,
+that you can run like whenever we need</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1892-4
+00:19:20.416 --> 00:19:24.951
+<v Boyan Valchev>those and be confident that this would
+capture the exact business behavior that</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1892-5
+00:19:24.951 --> 00:19:25.405
+<v Boyan Valchev>we need.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1888-0
+00:19:25.925 --> 00:19:26.525
+<v Matthias Max>Mm-hmm.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1928-0
+00:19:26.445 --> 00:19:30.229
+<v Boyan Valchev>So, I mean, generally speaking,
+I get the idea just to involve like</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1928-1
+00:19:30.229 --> 00:19:34.681
+<v Boyan Valchev>someone from business just to test the
+flows and record them and then translate</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1928-2
+00:19:34.681 --> 00:19:37.130
+<v Boyan Valchev>them,
+but I don't think that this is like a</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1928-3
+00:19:37.130 --> 00:19:41.805
+<v Boyan Valchev>like a good enough approach going forward,
+this complex flows would be practically.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1979-0
+00:19:42.925 --> 00:19:47.646
+<v Boyan Valchev>Like the AI is incapable of tracking
+those complex flows in the impotent way.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1979-1
+00:19:47.646 --> 00:19:52.064
+<v Boyan Valchev>This is the important word here,
+so that we can reuse or just work with.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1979-2
+00:19:52.064 --> 00:19:56.362
+<v Boyan Valchev>Basically, it would, I would,
+but I think that once the queue engineer</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1979-3
+00:19:56.362 --> 00:20:00.599
+<v Boyan Valchev>or the developer goes into this,
+the generated AI scripts for complex</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/1979-4
+00:20:00.599 --> 00:20:03.565
+<v Boyan Valchev>flows, once again, it's also important,
+I think.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2002-0
+00:20:03.885 --> 00:20:08.999
+<v Boyan Valchev>it would be like more effort to fix it
+than actually starting from scratch and</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2002-1
+00:20:08.999 --> 00:20:11.977
+<v Boyan Valchev>with the exact concept how and how we
+behave,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2002-2
+00:20:11.977 --> 00:20:15.085
+<v Boyan Valchev>how the test should behave in an
+important way.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2036-0
+00:20:16.525 --> 00:20:21.476
+<v Matthias Max>I mean, like I said,
+this does not solve the end-to-end</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2036-1
+00:20:21.476 --> 00:20:26.604
+<v Matthias Max>challenges in general.
+It just is an intro to faster flow</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2036-2
+00:20:26.604 --> 00:20:30.582
+<v Matthias Max>tracking.
+The idempotency challenge you just</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2036-3
+00:20:30.582 --> 00:20:35.445
+<v Matthias Max>mentioned is a general challenge of E2E
+tests. It's...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2042-0
+00:20:35.525 --> 00:20:39.525
+<v Matthias Max>That's not what's supposed to be fixed
+with this.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2060-0
+00:20:42.245 --> 00:20:47.054
+<v Matthias Max>And also,
+we have to talk about how important the</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2060-1
+00:20:47.054 --> 00:20:50.805
+<v Matthias Max>idempotency is if you have a test data.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2064-0
+00:20:52.085 --> 00:20:54.325
+<v Matthias Max>You know, you can.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2066-0
+00:20:55.125 --> 00:20:55.925
+<v Matthias Max>Work with.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2073-0
+00:20:57.365 --> 00:21:00.405
+<v Matthias Max>And it's okay to lose data.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2094-0
+00:21:01.565 --> 00:21:07.576
+<v Matthias Max>Once it's processed,
+we probably can find a way to make tests</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2094-1
+00:21:07.576 --> 00:21:13.685
+<v Matthias Max>reliable without having to use the exact
+same ID, for example.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2105-0
+00:21:14.645 --> 00:21:20.001
+<v Matthias Max>You just have to make sure there is
+enough data with this exact same</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2105-1
+00:21:20.001 --> 00:21:22.485
+<v Matthias Max>signature, so all tests can run.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2121-0
+00:21:23.925 --> 00:21:28.720
+<v Matthias Max>My opinion,
+because the exact details of a record are</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2121-1
+00:21:28.720 --> 00:21:33.605
+<v Matthias Max>what matter,
+not if it's the same exact record per ID.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2138-0
+00:21:35.805 --> 00:21:39.286
+<v Matthias Max>But that's, like I said,
+not the topic here.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2138-1
+00:21:39.286 --> 00:21:44.005
+<v Matthias Max>This is a general E2E topic not resolved
+with this proposal.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2146-0
+00:21:45.685 --> 00:21:50.965
+<v Matthias Max>And we need to deal with that if we deal
+with E2E tests. Agreed.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2152-0
+00:21:53.925 --> 00:21:56.525
+<v Boyan Valchev>So what is the target of this proposal?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2163-0
+00:21:57.285 --> 00:22:01.525
+<v Matthias Max>Target is to get more business flows in
+in faster time.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2167-0
+00:22:02.725 --> 00:22:04.085
+<v Matthias Max>and also with less.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2171-0
+00:22:05.605 --> 00:22:08.725
+<v Matthias Max>Angular-specific knowledge.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2176-0
+00:22:09.725 --> 00:22:12.085
+<v Matthias Max>Or dependencies,
+maybe even the right word.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2195-0
+00:22:13.845 --> 00:22:17.372
+<v Boyan Valchev>And, like,
+the like my logical follow-up question is</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2195-1
+00:22:17.372 --> 00:22:20.366
+<v Boyan Valchev>like,
+what should those flows be if we don't</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2195-2
+00:22:20.366 --> 00:22:21.365
+<v Boyan Valchev>have like some?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2227-0
+00:22:22.565 --> 00:22:25.179
+<v Boyan Valchev>complex business interactions here.
+I mean,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2227-1
+00:22:25.179 --> 00:22:28.268
+<v Boyan Valchev>what are those laws that we can automate
+with this,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2227-2
+00:22:28.268 --> 00:22:32.961
+<v Boyan Valchev>which do not involve interactions with
+items, with IDs, which cannot be, like,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2227-3
+00:22:32.961 --> 00:22:36.645
+<v Boyan Valchev>may not be there the next time we go to
+this particular page.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2234-0
+00:22:40.405 --> 00:22:44.565
+<v Matthias Max>This is what the UI domain mapping solves.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2242-0
+00:22:46.965 --> 00:22:51.865
+<v Matthias Max>Right,
+you will have way more UI elements mapped</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2242-1
+00:22:51.865 --> 00:22:53.365
+<v Matthias Max>than currently.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2260-0
+00:22:54.245 --> 00:23:01.724
+<v Matthias Max>So literally you can assert anything that
+is defined as a UI relevant element for</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2260-1
+00:23:01.724 --> 00:23:04.005
+<v Matthias Max>the domain, like a toast.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2266-0
+00:23:05.285 --> 00:23:08.005
+<v Matthias Max>or anything that's relevant to the user
+flow.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2272-0
+00:23:09.205 --> 00:23:12.165
+<v Matthias Max>And that literally makes it.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2280-0
+00:23:13.205 --> 00:23:16.445
+<v Matthias Max>are feasible to cover any complexity in
+my opinion.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2298-0
+00:23:18.525 --> 00:23:22.152
+<v Matthias Max>Because it doesn't matter what the
+complexity is.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2298-1
+00:23:22.152 --> 00:23:25.561
+<v Matthias Max>If it's something that takes more steps,
+fine.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2298-2
+00:23:25.561 --> 00:23:28.245
+<v Matthias Max>It will just be a longer test script.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2299-0
+00:23:29.765 --> 00:23:30.165
+<v Boyan Valchev>Marin.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2312-0
+00:23:30.085 --> 00:23:35.205
+<v Matthias Max>But that's also the nature of end-to-end
+tests anyway. This is not...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2314-0
+00:23:36.805 --> 00:23:37.685
+<v Matthias Max>Changing that.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2363-0
+00:23:38.805 --> 00:23:42.242
+<v Boyan Valchev>Yeah,
+but the end-to-end test should cover like</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2363-1
+00:23:42.242 --> 00:23:47.828
+<v Boyan Valchev>the exact business law which we just
+discussed that this recorder is not able</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2363-2
+00:23:47.828 --> 00:23:53.413
+<v Boyan Valchev>to properly like map because it works
+with certain ideas and like this cannot</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2363-3
+00:23:53.413 --> 00:23:57.925
+<v Boyan Valchev>be properly captured with the recorder.
+My question is like...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2413-0
+00:23:58.445 --> 00:24:02.729
+<v Boyan Valchev>what are those business laws which do not
+involve entities with IDs?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2413-1
+00:24:02.729 --> 00:24:06.392
+<v Boyan Valchev>Because I can't think of such business
+laws. I mean, yeah,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2413-2
+00:24:06.392 --> 00:24:09.869
+<v Boyan Valchev>we can probably verify that the visual
+stuff are there,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2413-3
+00:24:09.869 --> 00:24:14.464
+<v Boyan Valchev>that let's say that the button is in a
+certain location, if it's clicked,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2413-4
+00:24:14.464 --> 00:24:18.189
+<v Boyan Valchev>it reacts and so on.
+But this is not a business law per se.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2413-5
+00:24:18.189 --> 00:24:19.245
+<v Boyan Valchev>This is just a...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2475-0
+00:24:19.325 --> 00:24:22.344
+<v Boyan Valchev>basic front-end interaction with the
+application. Like,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2475-1
+00:24:22.344 --> 00:24:26.710
+<v Boyan Valchev>our testing should mainly focus, I think,
+on the actual business processes which</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2475-2
+00:24:26.710 --> 00:24:29.999
+<v Boyan Valchev>bring value to the user,
+not actually clicking on buttons or</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2475-3
+00:24:29.999 --> 00:24:33.018
+<v Boyan Valchev>whether a particular button is, let's say,
+red. I mean,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2475-4
+00:24:33.018 --> 00:24:37.276
+<v Boyan Valchev>what I think we should care about is
+whether if a lot is assigned or a lake is</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2444-0
+00:24:33.925 --> 00:24:34.485
+<v Matthias Max>Yeah.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2475-5
+00:24:37.276 --> 00:24:39.648
+<v Boyan Valchev>assigned,
+that we create a transport order,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2475-6
+00:24:39.648 --> 00:24:43.045
+<v Boyan Valchev>that everything is assigned,
+that the basic interactions work.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2483-0
+00:24:43.445 --> 00:24:47.219
+<v Boyan Valchev>I really don't see how this recorder
+would make it easier for a QA,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2483-1
+00:24:47.219 --> 00:24:48.885
+<v Boyan Valchev>for example, to automate this.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2512-0
+00:24:50.245 --> 00:24:57.633
+<v Matthias Max>This is literally a gap that was not part
+of the POC, but which could be introduced,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2512-1
+00:24:57.633 --> 00:25:03.717
+<v Matthias Max>in my opinion, quite easily, which are,
+like I said in the beginning,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2512-2
+00:25:03.717 --> 00:25:08.845
+<v Matthias Max>are assertions or numbers, text, icons,
+whatever confirms.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2514-0
+00:25:09.365 --> 00:25:11.125
+<v Matthias Max>The business flow success.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2532-0
+00:25:12.205 --> 00:25:18.764
+<v Matthias Max>This is something that could be added to
+both the recall and therefore also to the</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2532-1
+00:25:18.764 --> 00:25:22.005
+<v Matthias Max>resulting tests which are auto-generated.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2537-0
+00:25:26.685 --> 00:25:28.485
+<v Matthias Max>In my opinion, this can be tackled.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2585-0
+00:25:33.045 --> 00:25:35.605
+<v Boyan Valchev>Yeah,
+but like this is the biggest problem that</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2585-1
+00:25:35.605 --> 00:25:39.285
+<v Boyan Valchev>we have right now. I mean,
+at least at least when I have like what I</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2585-2
+00:25:39.285 --> 00:25:42.805
+<v Boyan Valchev>remember from the test,
+this is like the biggest problem there is</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2585-3
+00:25:42.805 --> 00:25:46.911
+<v Boyan Valchev>with automation testing right now.
+We don't have issues capturing buttons or</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2585-4
+00:25:46.911 --> 00:25:49.951
+<v Boyan Valchev>stuff like this.
+I see how this could help, for example,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2585-5
+00:25:49.951 --> 00:25:52.885
+<v Boyan Valchev>just to just to help with the basic
+visual stuff, but.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2610-0
+00:25:53.365 --> 00:25:57.419
+<v Boyan Valchev>Like what, in my opinion,
+the testing should cover, as I mentioned,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2610-1
+00:25:57.419 --> 00:26:00.877
+<v Boyan Valchev>is that like the exact most important
+business processes,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2605-0
+00:26:00.645 --> 00:26:01.005
+<v Matthias Max>Yeah.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2610-2
+00:26:00.877 --> 00:26:02.725
+<v Boyan Valchev>and we are not solving it here.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2611-0
+00:26:02.925 --> 00:26:05.125
+<v Matthias Max>What? Name an example.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2613-0
+00:26:06.085 --> 00:26:06.685
+<v Matthias Max>One.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2635-0
+00:26:06.085 --> 00:26:09.748
+<v Boyan Valchev>You assign a Leicht to a transport order,
+you check where everything is populated,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2635-1
+00:26:09.748 --> 00:26:13.014
+<v Boyan Valchev>you open the driving instruction,
+you validate that the data is correctly</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2635-2
+00:26:13.014 --> 00:26:15.045
+<v Boyan Valchev>filled there according to what you put
+there.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2634-0
+00:26:15.685 --> 00:26:16.165
+<v Matthias Max>Mhm.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2667-0
+00:26:18.245 --> 00:26:22.189
+<v Matthias Max>Yeah,
+that's exactly what this aims for with</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2667-1
+00:26:22.189 --> 00:26:28.762
+<v Matthias Max>the little gap I just mentioned.
+It needs this final possibility to define</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2667-2
+00:26:28.762 --> 00:26:33.845
+<v Matthias Max>which UI domain mapping element has to
+carry which value.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2673-0
+00:26:34.965 --> 00:26:38.645
+<v Matthias Max>That's a little gap that will be can be
+closed easily.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2718-0
+00:26:39.365 --> 00:26:42.697
+<v Boyan Valchev>That's exactly my point.
+I don't think that this is a little gap</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2677-0
+00:26:39.845 --> 00:26:40.285
+<v Matthias Max>Zanter.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2718-1
+00:26:42.697 --> 00:26:45.311
+<v Boyan Valchev>in the 1st place.
+I think this is an enormous gap.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2718-2
+00:26:45.311 --> 00:26:48.540
+<v Boyan Valchev>This is the biggest problem we have right
+now, as I mentioned,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2718-3
+00:26:48.540 --> 00:26:52.538
+<v Boyan Valchev>in the whole automation testing framework.
+It's not a little gap as I see it,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2718-4
+00:26:52.538 --> 00:26:53.205
+<v Boyan Valchev>to be honest.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2723-0
+00:26:54.325 --> 00:26:57.445
+<v Boyan Valchev>This is like the best, once again,
+the biggest problem right now, as I know.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2716-0
+00:26:54.805 --> 00:26:54.965
+<v Matthias Max>Mm.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2745-0
+00:26:58.445 --> 00:27:02.139
+<v Matthias Max>Yeah, so let's hear out the others.
+Actually,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2745-1
+00:27:02.139 --> 00:27:06.958
+<v Matthias Max>I'm interested in more opinions because
+time is up. Bizeva,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2737-0
+00:27:06.165 --> 00:27:06.645
+<v Vesela Todorova>Yeah.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2745-2
+00:27:06.958 --> 00:27:08.805
+<v Matthias Max>I think you were first.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2765-0
+00:27:09.285 --> 00:27:13.666
+<v Vesela Todorova>Yeah,
+I totally agree with Boyan because the</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2765-1
+00:27:13.666 --> 00:27:21.845
+<v Vesela Todorova>main issue with the current UI tests that
+we have is exactly the test data. Because</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2800-0
+00:27:24.005 --> 00:27:28.491
+<v Vesela Todorova>You can't use them,
+you can't use the tests without</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2800-1
+00:27:28.491 --> 00:27:35.047
+<v Vesela Todorova>completing test data every time before
+starting them. You know what I mean?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2800-2
+00:27:35.047 --> 00:27:42.122
+<v Vesela Todorova>They are not actually automation tests if
+you have to change something every time</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2800-3
+00:27:42.122 --> 00:27:44.365
+<v Vesela Todorova>before you can start them.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2802-0
+00:27:46.085 --> 00:27:47.205
+<v Vesela Todorova>This is the main.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2814-0
+00:27:48.565 --> 00:27:53.153
+<v Vesela Todorova>The main concern we have,
+and I totally agree with everything Boyan</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2814-1
+00:27:53.153 --> 00:27:54.165
+<v Vesela Todorova>just mentioned.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2815-0
+00:27:54.805 --> 00:27:55.365
+<v Matthias Max>Okay.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2821-0
+00:27:56.885 --> 00:27:58.805
+<v Matthias Max>Good, that's great feedback, Ivaylo.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2860-0
+00:27:59.845 --> 00:28:05.445
+<v Ivaylo Petrov>I actually don't agree with this.
+As far as I remember,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2824-0
+00:28:00.325 --> 00:28:00.565
+<v Matthias Max>Okay.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2860-1
+00:28:05.445 --> 00:28:10.145
+<v Ivaylo Petrov>last time I've been working on this
+framework,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2860-2
+00:28:10.145 --> 00:28:16.745
+<v Ivaylo Petrov>I tried my best to make the tests not
+data dependent. And I mean,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2860-3
+00:28:16.745 --> 00:28:18.245
+<v Ivaylo Petrov>this should be.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2891-0
+00:28:18.325 --> 00:28:24.109
+<v Ivaylo Petrov>We at least double checked on the UI and
+the API framework,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2891-1
+00:28:24.109 --> 00:28:30.665
+<v Ivaylo Petrov>because they're quite old,
+but the point is that that's why we used</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2891-2
+00:28:30.665 --> 00:28:35.775
+<v Ivaylo Petrov>Tsvetelina,
+because it it can interact with the data</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2891-3
+00:28:35.775 --> 00:28:37.125
+<v Ivaylo Petrov>itself, and...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2926-0
+00:28:38.165 --> 00:28:43.966
+<v Ivaylo Petrov>everything that is happening and there
+were quite a lot of ideas how we can</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2926-1
+00:28:43.966 --> 00:28:49.004
+<v Ivaylo Petrov>improve this and the framework itself,
+it's really good for this.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2926-2
+00:28:49.004 --> 00:28:53.813
+<v Ivaylo Petrov>So it's not basically checking whether if
+a button is clicked,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2926-3
+00:28:53.813 --> 00:28:57.325
+<v Ivaylo Petrov>but what happens after the button is
+clicked.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2928-0
+00:28:57.445 --> 00:28:58.165
+<v Ivaylo Petrov>For example.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2954-0
+00:29:00.805 --> 00:29:06.305
+<v Matthias Max>Boyan, may I interrupt? Because Valentin,
+I would be really interested in your</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2954-1
+00:29:06.305 --> 00:29:12.014
+<v Matthias Max>opinion, but also the daily is starting.
+Should we come back together again after</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2954-2
+00:29:12.014 --> 00:29:13.685
+<v Matthias Max>the daily for 5 minutes?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2953-0
+00:29:14.005 --> 00:29:14.165
+<v Ivaylo Petrov>A.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2988-0
+00:29:16.365 --> 00:29:21.309
+<v Ivaylo Petrov>Actually,
+I think we need more time to prepare for</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2988-1
+00:29:21.309 --> 00:29:28.676
+<v Ivaylo Petrov>this because at least I didn't get the
+chance to prepare and it would be it</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2973-0
+00:29:28.005 --> 00:29:28.725
+<v Matthias Max>For sure.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2988-2
+00:29:28.676 --> 00:29:35.365
+<v Ivaylo Petrov>would be really nice if we investigate
+and did some research before.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2977-0
+00:29:29.885 --> 00:29:30.245
+<v Boyan Valchev>Just.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2981-0
+00:29:32.645 --> 00:29:32.805
+<v Boyan Valchev>Yeah.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2987-0
+00:29:35.765 --> 00:29:36.325
+<v Matthias Max>Sure.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/2990-0
+00:29:37.925 --> 00:29:38.325
+<v Boyan Valchev>Just.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3019-0
+00:29:37.925 --> 00:29:45.816
+<v Valentin Varbanov>Just quickly, so, Boyan, just quickly,
+I could say, could give opinion here,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3019-1
+00:29:45.816 --> 00:29:54.118
+<v Valentin Varbanov>but first I have to get know more about
+what's actually we have already done for</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3019-2
+00:29:54.118 --> 00:29:56.885
+<v Valentin Varbanov>the automation, and then...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3032-0
+00:29:57.525 --> 00:30:02.889
+<v Valentin Varbanov>continue from that point. Otherwise,
+I really don't know what's the current</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3032-1
+00:30:02.889 --> 00:30:04.725
+<v Valentin Varbanov>status and so on. So yeah.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3062-0
+00:30:05.365 --> 00:30:08.953
+<v Matthias Max>All right,
+that's also good outcomes of both you,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3062-1
+00:30:08.953 --> 00:30:12.398
+<v Matthias Max>Ivaylo and Valentin. Of course,
+need that time.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3062-2
+00:30:12.398 --> 00:30:17.925
+<v Matthias Max>Then I will wrap it up and we can then
+align on what the next steps will be.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3065-0
+00:30:19.045 --> 00:30:21.205
+<v Boyan Valchev>Just like a priority question which I had
+like...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3086-0
+00:30:22.245 --> 00:30:25.667
+<v Boyan Valchev>How, what, like,
+where this lies in the priority list?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3086-1
+00:30:25.667 --> 00:30:29.276
+<v Boyan Valchev>Is this something we should aim or aim
+for after go live,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3086-2
+00:30:29.276 --> 00:30:32.325
+<v Boyan Valchev>or where exactly this lies in the
+priority list?</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3089-0
+00:30:36.165 --> 00:30:37.285
+<v Matthias Max>I mean, it's...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3092-0
+00:30:38.725 --> 00:30:40.325
+<v Matthias Max>It's been something.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3107-0
+00:30:41.765 --> 00:30:44.870
+<v Matthias Max>We should have had,
+I get from the beginning,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3107-1
+00:30:44.870 --> 00:30:48.245
+<v Matthias Max>but as we all know,
+it was impossible to achieve.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3142-0
+00:30:49.365 --> 00:30:55.740
+<v Matthias Max>in the last few months. In my opinion,
+it's very important and therefore high</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3142-1
+00:30:55.740 --> 00:31:02.198
+<v Matthias Max>priority to have at least a certain set
+of flows covered because it just makes</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3142-2
+00:31:02.198 --> 00:31:08.165
+<v Matthias Max>life easier with terms of regression.
+But also I see that it could cover</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3183-0
+00:31:08.725 --> 00:31:14.999
+<v Matthias Max>to prevent manual work on new databases,
+Nagle provides to us because we know that</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3183-1
+00:31:14.999 --> 00:31:21.273
+<v Matthias Max>databases are really different every time.
+If we could run automated tests against</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3183-2
+00:31:21.273 --> 00:31:25.279
+<v Matthias Max>these new instances,
+be it different environments or</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3183-3
+00:31:25.279 --> 00:31:28.605
+<v Matthias Max>completely new branches,
+it would be a huge</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3186-0
+00:31:29.205 --> 00:31:31.605
+<v Matthias Max>Simplification and efficiency boost.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3189-0
+00:31:32.565 --> 00:31:33.285
+<v Boyan Valchev>Yeah, yeah, I mean...</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3227-0
+00:31:32.805 --> 00:31:37.026
+<v Matthias Max>So yeah,
+getting things live is of course highest</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3191-0
+00:31:34.205 --> 00:31:34.485
+<v Boyan Valchev>Like.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3227-1
+00:31:37.026 --> 00:31:40.994
+<v Matthias Max>prior,
+but I imagine something like working on</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3227-2
+00:31:40.994 --> 00:31:47.157
+<v Matthias Max>this in parallel or putting a part of the
+manual testing work into this,</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3227-3
+00:31:47.157 --> 00:31:51.125
+<v Matthias Max>something like that.
+We have to align on that.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3228-0
+00:31:51.285 --> 00:31:54.485
+<v Boyan Valchev>I don't think there is capacity for this.
+I can tell you right away.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3248-0
+00:31:56.245 --> 00:32:00.029
+<v Boyan Valchev>I mean, until the go live,
+there is absolutely no capacity from</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3248-1
+00:32:00.029 --> 00:32:03.045
+<v Boyan Valchev>anybody to take after to to start working
+on this.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3256-0
+00:32:05.045 --> 00:32:07.605
+<v Matthias Max>Yeah,
+we need to align on that with Max as well.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3272-0
+00:32:09.045 --> 00:32:14.835
+<v Maximilian Kehder>Yeah, I mean, basically for me,
+this will be something I will be tackling</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3272-1
+00:32:14.835 --> 00:32:16.165
+<v Maximilian Kehder>and adding tests.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3275-0
+00:32:17.725 --> 00:32:19.925
+<v Maximilian Kehder>Um, whenever I got time.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3287-0
+00:32:21.525 --> 00:32:26.325
+<v Maximilian Kehder>And we will need to see how we're moving
+forward with the manual testing.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3290-0
+00:32:28.885 --> 00:32:30.005
+<v Matthias Max>OK, then.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3305-0
+00:32:31.285 --> 00:32:35.562
+<v Matthias Max>We'll wrap it up.
+Max and I will plan a new follow-up with</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3305-1
+00:32:35.562 --> 00:32:38.245
+<v Matthias Max>enough time for everybody to prepare.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3306-0
+00:32:41.325 --> 00:32:41.845
+<v Matthias Max>Great.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3310-0
+00:32:42.565 --> 00:32:43.765
+<v Maximilian Kehder>Let's move to the lady.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3316-0
+00:32:46.485 --> 00:32:47.525
+<v Matthias Max>Thanks, bye.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3318-0
+00:32:47.845 --> 00:32:48.165
+<v Maximilian Kehder>Bye.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3321-0
+00:32:48.645 --> 00:32:49.205
+<v Valentin Varbanov>Cheers.</v>
+
+0bb1e94d-ed84-4365-90b5-a47df99bc0c3/3320-0
+00:32:49.205 --> 00:32:49.765
+<v Ivaylo Petrov>Thank you.</v>
