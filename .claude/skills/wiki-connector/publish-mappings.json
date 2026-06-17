@@ -857,6 +857,20 @@
       }
     },
     {
+      "id": "bug-125349-traffic-mode-3-transport-order",
+      "source": "20_Bug-Analysis/2026-06-16_BUG-125349_Traffic-Mode-3-Transport-Order-Cannot-Be-Created.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Bug-Analysis-(Automated)/2026%2D06%2D16-125349-Traffic-mode-3-Transport-Order-can-not-be-created.md",
+      "description": "BUG-125349: Traffic mode 3 Transport Order creation failure - DBNull cast in TMS Bridge CreateAndAddLeg",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Bug analysis document - full sync, no link rewriting needed"
+      }
+    },
+    {
       "id": "adr-011-traffic-mode-change-blocking",
       "source": "09_ADRs/ADR-011-traffic-mode-change-blocking/ADR-011-traffic-mode-change-blocking.md",
       "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/ADRs/[ADR011]-Traffic-Mode-Change-Blocking-for-Disposed-Shipments.md",
