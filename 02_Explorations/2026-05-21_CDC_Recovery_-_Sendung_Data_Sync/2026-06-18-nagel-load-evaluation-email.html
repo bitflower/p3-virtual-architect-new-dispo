@@ -1,0 +1,32 @@
+<html>
+<body style="font-family: Aptos, Calibri, sans-serif; font-size: 12pt; color: #000000; line-height: 1.4;">
+
+<p>Hi Joachim, hi Christian, hi Matt,</p>
+
+<p>quick heads-up — we're building a recovery mechanism for the CDC pipeline that syncs shipment data directly from TMS when Datastream/Striim has an outage.</p>
+
+<p><b>What does it do to TMS?</b><br>
+Per branch, per recovery run, we execute exactly <b>two queries</b>:</p>
+
+<ol>
+<li><code>SELECT</code> shipment IDs (unplanned shipments only) — for detecting deletions</li>
+<li><code>SELECT</code> full shipment rows <code>WHERE u_time > [watermark]</code> — for syncing inserts/updates</li>
+</ol>
+
+<p>That's it. No writes, no schema changes, no new objects. The watermark limits the query to the outage window, so it's not a full table scan. Both queries go through the same CDC resolver system.</p>
+
+<p><b>How often does this run?</b><br>
+Only when someone (service desk, operations, DevOps, or a developer) manually triggers it after a CDC outage. Not a background job, not continuous polling. Think: once in a while, when something breaks.</p>
+
+<p>We reviewed this in the team yesterday and explicitly decided against rate limiting or batching — given it's a one-time recovery action, that would be premature optimization. The team's PoC showed ~20 seconds end-to-end for a full branch sync with all shipments — that includes our own processing and writes, so the actual time spent querying TMS is a fraction of that.</p>
+
+<p><b>What I need from you:</b><br>
+Just a quick confirmation that these two read-only queries per branch are fine from your side. If there are any constraints or time windows we should be aware of (e.g., "don't run this during nightly batch jobs"), let me know. If I don't hear back within 3 days, I'll consider it confirmed.</p>
+
+<p>I've attached the ADR with the full technical context if you want the details.</p>
+
+<p>Cheers,<br>
+Matthias</p>
+
+</body>
+</html>

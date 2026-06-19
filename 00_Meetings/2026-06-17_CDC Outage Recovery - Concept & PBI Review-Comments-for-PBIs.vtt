@@ -1,0 +1,2794 @@
+WEBVTT
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/13-0
+00:00:27.853 --> 00:00:28.173
+<v Boyan Valchev>Hey.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/14-0
+00:00:30.013 --> 00:00:30.333
+<v Matthias Max>OK.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/16-0
+00:00:35.533 --> 00:00:40.813
+<v Matthias Max>Good, then I think we're complete.
+This is something we cannot change.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/17-0
+00:00:43.773 --> 00:00:48.599
+<v Matthias Max>So Max mentioned that, Kristiyan,
+you will be off for today.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/17-1
+00:00:48.599 --> 00:00:54.692
+<v Matthias Max>So that's why we have this back and forth
+and wanted to get this done today.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/17-2
+00:00:54.692 --> 00:00:59.281
+<v Matthias Max>Sorry for the short notice.
+So what are we talking about?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/17-3
+00:00:59.281 --> 00:01:01.813
+<v Matthias Max>CDC recovery has been finalized.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/18-0
+00:01:02.013 --> 00:01:07.936
+<v Matthias Max>Before I went to vacation,
+the PBIs have been written. All good.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/18-1
+00:01:07.936 --> 00:01:13.494
+<v Matthias Max>We had to remove ones is fine.
+The closed concept, all good.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/18-2
+00:01:13.494 --> 00:01:19.235
+<v Matthias Max>Automated tests, yeah,
+that's been a bit good question all the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/18-3
+00:01:19.235 --> 00:01:22.333
+<v Matthias Max>time. The other three are refined.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/19-0
+00:01:24.093 --> 00:01:29.236
+<v Matthias Max>I had a look again against the concept
+and the result is that there are some</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/19-1
+00:01:29.236 --> 00:01:30.973
+<v Matthias Max>things we need to discuss.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/20-0
+00:01:32.973 --> 00:01:39.043
+<v Matthias Max>First one is the scope when we delete,
+detect the delete scope.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/20-1
+00:01:39.043 --> 00:01:46.156
+<v Matthias Max>I had an explicit meeting with Joachim
+before I left about the question of</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/20-2
+00:01:46.156 --> 00:01:51.373
+<v Matthias Max>whether or not we need to look at planned
+legs at all.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/21-0
+00:01:52.173 --> 00:01:59.848
+<v Matthias Max>And he confirmed that these are never
+deleted or changed afterwards.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/21-1
+00:01:59.848 --> 00:02:08.635
+<v Matthias Max>So the delete case being special one,
+which we need to go through our complete</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/21-2
+00:02:08.635 --> 00:02:12.973
+<v Matthias Max>data set and like check in reverse what</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/22-0
+00:02:13.133 --> 00:02:19.675
+<v Matthias Max>could have potentially changed is the
+really the performance critical one of</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/22-1
+00:02:19.675 --> 00:02:24.942
+<v Matthias Max>the flows or cases.
+And this reduces the load on the database</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/22-2
+00:02:24.942 --> 00:02:29.785
+<v Matthias Max>on TMS side heavily.
+So implementing a retrieve all IDs,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/22-3
+00:02:29.785 --> 00:02:33.693
+<v Matthias Max>which is how it's currently formulated in
+the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/23-0
+00:02:33.813 --> 00:02:42.009
+<v Matthias Max>PVI can be drastically improved by
+skipping the planned ones and just</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/23-1
+00:02:42.009 --> 00:02:45.053
+<v Matthias Max>looking at unplanned ones.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/24-0
+00:02:46.133 --> 00:02:51.133
+<v Matthias Max>That's the first one.
+I think it's rather easy to achieve.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/25-0
+00:02:53.213 --> 00:02:54.413
+<v Matthias Max>So that's that.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/26-0
+00:02:57.613 --> 00:03:00.493
+<v Matthias Max>The next one is about...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/27-0
+00:03:01.773 --> 00:03:09.717
+<v Matthias Max>the watermark, right,
+which is the time we use to compare</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/27-1
+00:03:09.717 --> 00:03:10.813
+<v Matthias Max>against.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/28-0
+00:03:12.333 --> 00:03:13.133
+<v Matthias Max>And.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/29-0
+00:03:15.933 --> 00:03:21.357
+<v Matthias Max>It says here,
+make sure the logic there is filtering by</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/29-1
+00:03:21.357 --> 00:03:26.492
+<v Matthias Max>updated time.
+This sounds like it's a simple filter,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/29-2
+00:03:26.492 --> 00:03:30.173
+<v Matthias Max>but actually it is a bit more special.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/30-0
+00:03:32.173 --> 00:03:32.813
+<v Matthias Max>Boyan.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/32-0
+00:03:34.173 --> 00:03:36.051
+<v Boyan Valchev>Oh yeah,
+I had a question about the previous,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/31-0
+00:03:34.453 --> 00:03:34.813
+<v Matthias Max>But.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/32-1
+00:03:36.051 --> 00:03:38.093
+<v Boyan Valchev>the previous topics. Sorry,
+can you scroll it up?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/33-0
+00:03:37.373 --> 00:03:39.053
+<v Matthias Max>OK, sure, sure.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/34-0
+00:03:42.333 --> 00:03:43.533
+<v Boyan Valchev>Plus the delete.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/35-0
+00:03:46.413 --> 00:03:48.990
+<v Boyan Valchev>Okay, so this is only for the deletion,
+right? I mean,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/35-1
+00:03:48.990 --> 00:03:51.053
+<v Boyan Valchev>what you what we are discussed. Yeah,
+okay.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/36-0
+00:03:50.893 --> 00:03:56.532
+<v Matthias Max>Yeah, correct. So imagine outage, 3 hours,
+I don't know, internet down,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/36-1
+00:03:56.532 --> 00:04:01.780
+<v Matthias Max>the cloud couldn't reach,
+or the on-prem couldn't reach the cloud.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/36-2
+00:04:01.780 --> 00:04:06.950
+<v Matthias Max>We now need to recover.
+We only have to do so for unplanned ones,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/36-3
+00:04:06.950 --> 00:04:09.613
+<v Matthias Max>because the ones that were planned</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/37-0
+00:04:09.973 --> 00:04:14.639
+<v Matthias Max>when the outage started,
+can never be go back to unplanned.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/37-1
+00:04:14.639 --> 00:04:16.973
+<v Matthias Max>That's the restriction in TMS.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/38-0
+00:04:17.053 --> 00:04:18.973
+<v Boyan Valchev>Yeah, but what about changes?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/40-0
+00:04:20.573 --> 00:04:23.453
+<v Matthias Max>There will be no changes to plan once.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/39-0
+00:04:20.773 --> 00:04:21.373
+<v Boyan Valchev>What about?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/42-0
+00:04:22.733 --> 00:04:26.019
+<v Boyan Valchev>Over the, I mean, is this correct?
+Because, like,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/42-1
+00:04:26.019 --> 00:04:30.818
+<v Boyan Valchev>when Max Bizeva showed us like some
+operations which he claimed that the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/42-2
+00:04:30.818 --> 00:04:35.682
+<v Boyan Valchev>dispatchers do on a daily basis,
+like all of those operations he did over</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/42-3
+00:04:35.682 --> 00:04:40.218
+<v Boyan Valchev>planned shipments already,
+and he said that this is a daily use case</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/42-4
+00:04:40.218 --> 00:04:41.533
+<v Boyan Valchev>for the dispatchers.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/43-0
+00:04:42.493 --> 00:04:47.219
+<v Boyan Valchev>So, I mean, once again, just to receive,
+we are receiving contradicting</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/43-1
+00:04:47.219 --> 00:04:52.076
+<v Boyan Valchev>information from different stakeholders.
+So which one it is then? I mean,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/44-0
+00:04:51.853 --> 00:04:57.533
+<v Yosif Mihaylov>Oh, this is only for the deletion.
+Updates are a separate thing.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/43-2
+00:04:52.076 --> 00:04:52.733
+<v Boyan Valchev>basically.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/45-0
+00:04:57.533 --> 00:05:02.277
+<v Boyan Valchev>Yeah, this is why I asked,
+is this like also for the updates because.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/45-1
+00:05:02.277 --> 00:05:02.413
+<v Boyan Valchev>..</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/46-0
+00:05:03.573 --> 00:05:06.433
+<v Boyan Valchev>I mean,
+if we track changes only for own plan</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/46-1
+00:05:06.433 --> 00:05:09.170
+<v Boyan Valchev>shipments,
+then if this is what we just do,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/46-2
+00:05:09.170 --> 00:05:11.533
+<v Boyan Valchev>that is expected from us, that's fine.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/47-0
+00:05:12.893 --> 00:05:13.213
+<v Boyan Valchev>But.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/49-0
+00:05:13.933 --> 00:05:17.907
+<v Yosif Mihaylov>No, no,
+this is detecting deletions and like this</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/48-0
+00:05:13.973 --> 00:05:14.573
+<v Boyan Valchev>Like...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/49-1
+00:05:17.907 --> 00:05:24.503
+<v Yosif Mihaylov>is totally fine. The first part, I mean,
+this is actually like I would expect this</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/49-2
+00:05:24.503 --> 00:05:30.544
+<v Yosif Mihaylov>to be to be covered in the follow-up PVIs.
+I mean, such stuff, for example,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/49-3
+00:05:30.544 --> 00:05:32.213
+<v Yosif Mihaylov>that we identify that</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/51-0
+00:05:32.773 --> 00:05:37.141
+<v Yosif Mihaylov>when detecting deletions and retrieving
+these IDs,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/51-1
+00:05:37.141 --> 00:05:41.853
+<v Yosif Mihaylov>it doesn't make sense to check for
+unpumped shipments.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/52-0
+00:05:42.733 --> 00:05:46.144
+<v Boyan Valchev>Yeah, okay. I mean,
+I just want to like to be sure that it's</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/52-1
+00:05:46.144 --> 00:05:49.053
+<v Boyan Valchev>only for the deletion.
+This is why I brought it up.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/53-0
+00:05:51.213 --> 00:05:55.096
+<v Matthias Max>Yeah, I mean,
+that's why we discuss these things.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/53-1
+00:05:55.096 --> 00:05:59.213
+<v Matthias Max>We need to have all angles on each of the
+questions.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/56-0
+00:06:01.453 --> 00:06:06.797
+<v Yosif Mihaylov>On the second topic, if we like, oh,
+if you have anything more on the first</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/54-0
+00:06:01.773 --> 00:06:02.173
+<v Matthias Max>What?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/55-0
+00:06:03.533 --> 00:06:04.013
+<v Matthias Max>Mhm.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/56-1
+00:06:06.797 --> 00:06:08.133
+<v Yosif Mihaylov>one, just go ahead.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/57-0
+00:06:08.733 --> 00:06:14.946
+<v Matthias Max>I think what I need to say is that many
+of the points following are under the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/57-1
+00:06:14.946 --> 00:06:21.638
+<v Matthias Max>umbrella of load put on the TMS database.
+That's usually the ultimate architectural</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/57-2
+00:06:21.638 --> 00:06:27.533
+<v Matthias Max>infrastructural goal. And one,
+this tackles that, right? Reduce the load.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/58-0
+00:06:27.773 --> 00:06:32.866
+<v Matthias Max>because after an outage,
+the database would probably be under</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/58-1
+00:06:32.866 --> 00:06:36.973
+<v Matthias Max>heavy load anyway.
+So this is targeting that one.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/59-0
+00:06:38.253 --> 00:06:39.293
+<v Matthias Max>Yeah, now Yosif.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/61-0
+00:06:41.213 --> 00:06:46.727
+<v Yosif Mihaylov>Yeah,
+about the this comparison with the dates</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/61-1
+00:06:46.727 --> 00:06:50.013
+<v Yosif Mihaylov>and the and the EU time now.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/60-0
+00:06:49.533 --> 00:06:49.933
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/62-0
+00:06:51.853 --> 00:06:55.213
+<v Yosif Mihaylov>This won't be a problem if we compare.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/63-0
+00:06:56.573 --> 00:06:57.373
+<v Yosif Mihaylov>Oh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/64-0
+00:06:58.813 --> 00:07:03.058
+<v Yosif Mihaylov>Like,
+there are strategies there to compare</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/64-1
+00:07:03.058 --> 00:07:07.882
+<v Yosif Mihaylov>essentially you time against you time.
+Obviously,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/64-2
+00:07:07.882 --> 00:07:15.890
+<v Yosif Mihaylov>I think at the moment we don't have this
+you time on our legs, but if we add this,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/64-3
+00:07:15.890 --> 00:07:18.013
+<v Yosif Mihaylov>if you add this field.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/65-0
+00:07:18.653 --> 00:07:23.484
+<v Yosif Mihaylov>then we would be able to compare pretty
+much your time against your time and we</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/65-1
+00:07:23.484 --> 00:07:24.813
+<v Yosif Mihaylov>won't have this issue.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/69-0
+00:07:26.253 --> 00:07:31.299
+<v Boyan Valchev>We do have your time in our legs. Yeah,
+because Chris is using this for the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/66-0
+00:07:26.453 --> 00:07:26.733
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/67-0
+00:07:28.493 --> 00:07:29.133
+<v Yosif Mihaylov>We do.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/68-0
+00:07:30.253 --> 00:07:30.573
+<v Yosif Mihaylov>Anna.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/69-1
+00:07:31.299 --> 00:07:32.893
+<v Boyan Valchev>changes detection. Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/72-0
+00:07:31.853 --> 00:07:36.025
+<v Yosif Mihaylov>Actually, actually, yes,
+I think because like I do remember</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/72-1
+00:07:36.025 --> 00:07:40.058
+<v Yosif Mihaylov>considering this. So maybe,
+maybe it was there, but yeah,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/72-2
+00:07:40.058 --> 00:07:44.091
+<v Yosif Mihaylov>that's the idea.
+If we compare you time against you time,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/72-3
+00:07:44.091 --> 00:07:49.098
+<v Yosif Mihaylov>it doesn't matter the time zones because
+it will be the same time zone,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/70-0
+00:07:47.733 --> 00:07:47.853
+<v Matthias Max>Uh-huh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/72-4
+00:07:49.098 --> 00:07:49.933
+<v Yosif Mihaylov>essentially.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/71-0
+00:07:49.613 --> 00:07:49.933
+<v Matthias Max>Back.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/73-0
+00:07:51.533 --> 00:07:56.169
+<v Matthias Max>Okay, I mean,
+I took this from the description of the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/73-1
+00:07:56.169 --> 00:07:58.573
+<v Matthias Max>PVI, so that's probably why.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/74-0
+00:08:00.413 --> 00:08:03.213
+<v Matthias Max>It's not clear, so if this is covered,
+fine.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/75-0
+00:08:04.493 --> 00:08:10.493
+<v Matthias Max>But the actual input parameter is missing,
+right?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/76-0
+00:08:12.333 --> 00:08:13.613
+<v Yosif Mihaylov>Would you put parameter?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/77-0
+00:08:13.933 --> 00:08:16.493
+<v Matthias Max>To pass in a watermark.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/81-0
+00:08:20.253 --> 00:08:28.053
+<v Matthias Max>So imagine the example again,
+3 hours outage of one day. Yesterday, 6 A.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/81-1
+00:08:28.053 --> 00:08:34.571
+<v Matthias Max>m. to today, 7 A.m.
+You only want to recover these 26 hours,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/78-0
+00:08:29.373 --> 00:08:29.933
+<v Yosif Mihaylov>Okay.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/79-0
+00:08:31.453 --> 00:08:31.693
+<v Yosif Mihaylov>Okay.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/81-2
+00:08:34.571 --> 00:08:35.853
+<v Matthias Max>for example.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/80-0
+00:08:36.893 --> 00:08:37.613
+<v Yosif Mihaylov>Okay, Iliyan.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/82-0
+00:08:37.853 --> 00:08:46.093
+<v Matthias Max>You pass in a time and date to limit the
+time frame where your recovery is made.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/83-0
+00:08:47.533 --> 00:08:49.133
+<v Matthias Max>So, is this?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/84-0
+00:08:50.373 --> 00:08:57.135
+<v Matthias Max>present in the PBIs or not?
+Will it always do some kind of full sync</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/84-1
+00:08:57.135 --> 00:09:00.173
+<v Matthias Max>without looking at data ranges?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/85-0
+00:09:02.573 --> 00:09:06.381
+<v Yosif Mihaylov>Well,
+I think that currently currently is doing</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/85-1
+00:09:06.381 --> 00:09:09.635
+<v Yosif Mihaylov>a full sync,
+but this is like up for the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/85-2
+00:09:09.635 --> 00:09:14.316
+<v Yosif Mihaylov>implementation to see to see how to
+approach this. I mean,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/85-3
+00:09:14.316 --> 00:09:19.950
+<v Yosif Mihaylov>the initial concept was designed not only
+around this menu resolution,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/85-4
+00:09:19.950 --> 00:09:22.093
+<v Yosif Mihaylov>but also around the concept</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/86-0
+00:09:22.173 --> 00:09:28.573
+<v Yosif Mihaylov>Of potentially running this as a as a as
+a full-time scanning service, which,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/86-1
+00:09:28.573 --> 00:09:35.548
+<v Yosif Mihaylov>in this case, like there is no such input,
+but like after that we discussed more and</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/86-2
+00:09:35.548 --> 00:09:41.867
+<v Yosif Mihaylov>we agreed that this mostly be we are
+going to be triggered manually in terms</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/86-3
+00:09:41.867 --> 00:09:44.493
+<v Yosif Mihaylov>of this outage recoveries, so...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/87-0
+00:09:44.573 --> 00:09:50.109
+<v Yosif Mihaylov>Yeah, I mean, like,
+it could support such watermark and</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/87-1
+00:09:50.109 --> 00:09:55.053
+<v Yosif Mihaylov>timestamp to check against a specific
+rate range.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/88-0
+00:09:55.733 --> 00:09:56.453
+<v Matthias Max>Mmhm.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/89-0
+00:09:56.653 --> 00:09:58.093
+<v Yosif Mihaylov>That's totally possible.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/90-0
+00:10:00.333 --> 00:10:05.142
+<v Boyan Valchev>Yeah, I mean, will, like,
+my question would be, will we have a case,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/90-1
+00:10:05.142 --> 00:10:09.324
+<v Boyan Valchev>for example, like,
+I see why we have a start date, because,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/90-2
+00:10:09.324 --> 00:10:13.087
+<v Boyan Valchev>for example,
+let's say we have our latest update in a</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/90-3
+00:10:13.087 --> 00:10:17.896
+<v Boyan Valchev>certain point, but, like,
+is there a case where we want, don't want,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/90-4
+00:10:17.896 --> 00:10:18.733
+<v Boyan Valchev>like, to go?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/91-0
+00:10:18.773 --> 00:10:23.133
+<v Boyan Valchev>Past a certain point, I mean, just, yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/95-0
+00:10:20.813 --> 00:10:26.170
+<v Matthias Max>No, I think not. Yeah, yeah.
+I think it's only one day which marks the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/92-0
+00:10:25.933 --> 00:10:26.333
+<v Boyan Valchev>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/95-1
+00:10:26.170 --> 00:10:30.321
+<v Matthias Max>start, agreed.
+And then there was this overlap thought</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/93-0
+00:10:28.053 --> 00:10:28.333
+<v Boyan Valchev>Mm.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/95-2
+00:10:30.321 --> 00:10:31.453
+<v Matthias Max>in the concept.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/94-0
+00:10:32.413 --> 00:10:32.493
+<v Boyan Valchev>The.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/97-0
+00:10:32.493 --> 00:10:38.219
+<v Matthias Max>Because we are item-polent on our side,
+just add a little overlap to make sure</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/97-1
+00:10:38.219 --> 00:10:41.988
+<v Matthias Max>you cover bits and pieces,
+not on the second level,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/97-2
+00:10:41.988 --> 00:10:43.293
+<v Matthias Max>but maybe minutes.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/98-0
+00:10:44.573 --> 00:10:45.773
+<v Matthias Max>To have a little buffer.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/99-0
+00:10:47.453 --> 00:10:50.413
+<v Boyan Valchev>Yeah, problematic here, just...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/101-0
+00:10:51.773 --> 00:10:57.110
+<v Boyan Valchev>Just when I see your time,
+there is always time zones issues. Why?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/101-1
+00:10:57.110 --> 00:11:03.643
+<v Boyan Valchev>Because let's say there are update times
+in at least it was the case in Postgres.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/101-2
+00:11:03.643 --> 00:11:07.945
+<v Boyan Valchev>I see no reason why they would change
+this in Oracle,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/101-3
+00:11:07.945 --> 00:11:10.813
+<v Boyan Valchev>but basically they give those times.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/103-0
+00:11:10.893 --> 00:11:17.143
+<v Boyan Valchev>as time stamps without time zone.
+And this is an issue. And in our database,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/102-0
+00:11:15.613 --> 00:11:16.013
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/103-1
+00:11:17.143 --> 00:11:20.957
+<v Boyan Valchev>I think that we currently for the legs,
+Chris,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/103-2
+00:11:20.957 --> 00:11:27.370
+<v Boyan Valchev>correct me if I'm wrong on this one,
+but I think that we are writing our local</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/103-3
+00:11:27.370 --> 00:11:30.373
+<v Boyan Valchev>time with the time zone at the point.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/104-0
+00:11:30.533 --> 00:11:38.301
+<v Boyan Valchev>Where we execute updates over the next,
+so this directly causes a time zone issue,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/104-1
+00:11:38.301 --> 00:11:43.543
+<v Boyan Valchev>because, like,
+if we don't have information about their</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/104-2
+00:11:43.543 --> 00:11:48.129
+<v Boyan Valchev>time zone,
+it's always going to be an assumption</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/104-3
+00:11:48.129 --> 00:11:49.533
+<v Boyan Valchev>that it's an...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/105-0
+00:11:49.733 --> 00:11:51.933
+<v Boyan Valchev>Particular time zone, and then, yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/107-0
+00:11:52.813 --> 00:11:56.777
+<v Yosif Mihaylov>But Bobby,
+that's exactly what we discussed before</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/106-0
+00:11:52.973 --> 00:11:53.533
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/107-1
+00:11:56.777 --> 00:12:02.375
+<v Yosif Mihaylov>that on the U time topic. Like,
+I think that as long as we like reflect</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/107-2
+00:12:02.375 --> 00:12:07.583
+<v Yosif Mihaylov>this U time being updated between
+shipments and legs, for example,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/107-3
+00:12:07.583 --> 00:12:13.180
+<v Yosif Mihaylov>a shipment update comes like it could be
+the weight or any other field,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/107-4
+00:12:13.180 --> 00:12:14.813
+<v Yosif Mihaylov>obviously the U time.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/109-0
+00:12:15.133 --> 00:12:19.646
+<v Yosif Mihaylov>would have changed as well. Actually,
+on every update,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/109-1
+00:12:19.646 --> 00:12:23.257
+<v Yosif Mihaylov>we should expect this U time to be
+changed.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/109-2
+00:12:23.257 --> 00:12:29.493
+<v Yosif Mihaylov>So as long as we pass down this U time to
+our legs, we could then, I think,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/109-3
+00:12:29.493 --> 00:12:34.253
+<v Yosif Mihaylov>safely compare U times and don't compare
+our local times.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/110-0
+00:12:33.133 --> 00:12:39.749
+<v Boyan Valchev>Yeah, yeah, yeah, this is this is fine,
+but what about the watermark? Like,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/110-1
+00:12:39.749 --> 00:12:44.973
+<v Boyan Valchev>how do you like,
+how do we decide when the watermark start?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/112-0
+00:12:42.973 --> 00:12:47.438
+<v Yosif Mihaylov>But the watermark,
+you get the watermark based on the last</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/112-1
+00:12:47.438 --> 00:12:53.189
+<v Yosif Mihaylov>few time that we see in these legs,
+not against the last time stamp that we</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/112-2
+00:12:53.189 --> 00:12:54.173
+<v Yosif Mihaylov>have updated.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/111-0
+00:12:54.813 --> 00:12:55.213
+<v Boyan Valchev>If...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/113-0
+00:12:56.373 --> 00:12:59.117
+<v Boyan Valchev>If this is,
+if this is like the expectation,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/113-1
+00:12:59.117 --> 00:13:00.093
+<v Boyan Valchev>then fine, yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/114-0
+00:13:01.053 --> 00:13:02.973
+<v Matthias Max>Yeah, I would, I would agree to that.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/115-0
+00:13:06.973 --> 00:13:11.572
+<v Ivaylo Petrov>Actually, the your time,
+I think we should double check,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/115-1
+00:13:11.572 --> 00:13:17.784
+<v Ivaylo Petrov>but whenever a shipment update event
+comes and we get the your time from the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/115-2
+00:13:17.784 --> 00:13:24.320
+<v Ivaylo Petrov>event itself and we pass it to the Leicht
+entity, I think on the database level,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/115-3
+00:13:24.320 --> 00:13:25.853
+<v Ivaylo Petrov>the your time is...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/117-0
+00:13:26.013 --> 00:13:30.697
+<v Ivaylo Petrov>overwritten and the entity saved with our
+current local time,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/117-1
+00:13:30.697 --> 00:13:34.173
+<v Ivaylo Petrov>but I'm not sure it should be double
+checked.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/119-0
+00:13:34.573 --> 00:13:37.117
+<v Boyan Valchev>Yeah, yeah,
+this is the case I think right now,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/119-1
+00:13:37.117 --> 00:13:41.304
+<v Boyan Valchev>but like what Yosif idea is is probably
+just to keep like the shipment updated</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/119-2
+00:13:41.304 --> 00:13:43.053
+<v Boyan Valchev>time as a separate field as well.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/118-0
+00:13:43.933 --> 00:13:44.493
+<v Yosif Mihaylov>Exactly.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/122-0
+00:13:45.893 --> 00:13:51.080
+<v Boyan Valchev>Because there is a difference if we use
+the current field in the Leicht structure</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/120-0
+00:13:46.013 --> 00:13:46.133
+<v Matthias Max>Uh-huh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/122-1
+00:13:51.080 --> 00:13:56.268
+<v Boyan Valchev>for Chris to make the track like lots of
+dates and like it should be a local time</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/121-0
+00:13:54.653 --> 00:13:54.973
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/122-2
+00:13:56.268 --> 00:13:59.368
+<v Boyan Valchev>because this is like how we are working
+with it.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/122-3
+00:13:59.368 --> 00:14:04.240
+<v Boyan Valchev>But basically like if if you want to
+track those changes and have like let's</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/122-4
+00:14:04.240 --> 00:14:04.493
+<v Boyan Valchev>say.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/123-0
+00:14:04.613 --> 00:14:11.063
+<v Boyan Valchev>information what is the latest change we
+have reflected in our internal DB.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/123-1
+00:14:11.063 --> 00:14:17.853
+<v Boyan Valchev>I mean we should keep also the updated U
+time column from the shipments in our.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/124-0
+00:14:21.613 --> 00:14:23.453
+<v Boyan Valchev>In the next table, as well.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/125-0
+00:14:21.773 --> 00:14:25.199
+<v Yosif Mihaylov>Yeah,
+the the idea is the idea is to have a</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/125-1
+00:14:25.199 --> 00:14:27.613
+<v Yosif Mihaylov>field that has this uh this uh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/126-0
+00:14:29.453 --> 00:14:30.173
+<v Yosif Mihaylov>This.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/128-0
+00:14:31.253 --> 00:14:35.909
+<v Yosif Mihaylov>The ability, I would say, or whatever,
+in terms of comparing dates,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/128-1
+00:14:35.909 --> 00:14:40.360
+<v Yosif Mihaylov>the idea is just to derive this U time
+from the shipment entity,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/128-2
+00:14:40.360 --> 00:14:43.853
+<v Yosif Mihaylov>so later we can we can reuse it to
+compare safely.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/127-0
+00:14:45.173 --> 00:14:45.333
+<v Matthias Max>Uh-huh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/129-0
+00:14:48.173 --> 00:14:48.573
+<v Matthias Max>Team.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/130-0
+00:14:51.053 --> 00:14:55.404
+<v Matthias Max>Good.
+I think let's move on here to the time.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/130-1
+00:14:55.404 --> 00:15:03.162
+<v Matthias Max>Next one was again about the load we put
+on the TMS database and the concept this</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/130-2
+00:15:03.162 --> 00:15:08.175
+<v Matthias Max>is listed.
+And different mitigations were discussed.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/130-3
+00:15:08.175 --> 00:15:09.973
+<v Matthias Max>I know this is not.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/131-0
+00:15:10.733 --> 00:15:18.053
+<v Matthias Max>probably missing a final decision and
+it's also dependent on a discussion.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/131-1
+00:15:18.053 --> 00:15:25.569
+<v Matthias Max>I still need to lead with DMS about if
+there are any rules or constraints or</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/131-2
+00:15:25.569 --> 00:15:31.133
+<v Matthias Max>limitations we need to consider here when
+running larger</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/132-0
+00:15:31.773 --> 00:15:39.010
+<v Matthias Max>a recovery runs. For example, in the PBI,
+we also say that we need to investigate</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/132-1
+00:15:39.010 --> 00:15:44.041
+<v Matthias Max>how we parallelize this.
+If we run too much in parallel,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/132-2
+00:15:44.041 --> 00:15:50.573
+<v Matthias Max>we probably put a single TMS database
+under too much load. So I wanted to</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/133-0
+00:15:50.733 --> 00:15:56.045
+<v Matthias Max>bring this up again and make raise the
+awareness that we probably have some</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/133-1
+00:15:56.045 --> 00:15:57.933
+<v Matthias Max>differentiation here to do.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/134-0
+00:16:00.173 --> 00:16:00.813
+<v Matthias Max>Yosif.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/135-0
+00:16:01.533 --> 00:16:04.841
+<v Yosif Mihaylov>Yes,
+but in terms of the parallel branch</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/135-1
+00:16:04.841 --> 00:16:09.762
+<v Yosif Mihaylov>processing against against the sequential
+branch processing,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/135-2
+00:16:09.762 --> 00:16:15.652
+<v Yosif Mihaylov>actually it doesn't really matter in
+terms of the lot that has been put,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/135-3
+00:16:15.652 --> 00:16:20.413
+<v Yosif Mihaylov>because each branch is a different TMS
+database, different</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/136-0
+00:16:21.133 --> 00:16:25.853
+<v Yosif Mihaylov>On-premise resource, so...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/137-0
+00:16:26.893 --> 00:16:31.279
+<v Yosif Mihaylov>It doesn't matter if we if we make this
+request in parallel or sequentially,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/137-1
+00:16:31.279 --> 00:16:34.413
+<v Yosif Mihaylov>because we are hitting physically
+different databases.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/138-0
+00:16:35.493 --> 00:16:41.787
+<v Matthias Max>Yeah, that's not what I'm talking about.
+I'm rather talking about,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/138-1
+00:16:41.787 --> 00:16:47.987
+<v Matthias Max>do we need to rate limit something when
+we call single databases?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/138-2
+00:16:47.987 --> 00:16:54.000
+<v Matthias Max>Or is it fine to select all Sandung
+records at once, et cetera?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/138-3
+00:16:54.000 --> 00:16:55.973
+<v Matthias Max>These kind of things.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/139-0
+00:16:56.413 --> 00:17:03.133
+<v Matthias Max>Or do we need to batch select them in
+batches of 10, 100, or thousands?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/141-0
+00:17:04.733 --> 00:17:10.413
+<v Matthias Max>I'm really in the single connection
+scenario, not cross-branch.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/140-0
+00:17:05.213 --> 00:17:05.373
+<v Yosif Mihaylov>See.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/142-0
+00:17:10.653 --> 00:17:15.762
+<v Yosif Mihaylov>Well, because I can see the point,
+the second point on the bullet above</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/142-1
+00:17:15.762 --> 00:17:20.090
+<v Yosif Mihaylov>saying the sequential branch processing
+instead of parallel,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/142-2
+00:17:20.090 --> 00:17:25.483
+<v Yosif Mihaylov>then below I see the sentence that about
+the without the counterweight that</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/142-3
+00:17:25.483 --> 00:17:29.173
+<v Yosif Mihaylov>parallel branch processing conflicts with
+TMS vote.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/143-0
+00:17:29.253 --> 00:17:32.511
+<v Yosif Mihaylov>Detection,
+these two sentences doesn't make sense;</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/143-1
+00:17:32.511 --> 00:17:37.813
+<v Yosif Mihaylov>that's why I brought them up in terms of,
+in terms of the other stuff that you say</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/143-2
+00:17:37.813 --> 00:17:42.093
+<v Yosif Mihaylov>about the rate limiting, batching,
+and so on, like usually like...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/144-0
+00:17:45.053 --> 00:17:50.054
+<v Yosif Mihaylov>Rate limiting is not really is not really
+being implemented on the caller side.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/144-1
+00:17:50.054 --> 00:17:53.430
+<v Yosif Mihaylov>That's from one side and from the other
+side. I mean,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/144-2
+00:17:53.430 --> 00:17:58.431
+<v Yosif Mihaylov>I do understand that that we are somehow
+putting pressure on the TMS databases,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/144-3
+00:17:58.431 --> 00:18:02.432
+<v Yosif Mihaylov>but knowing the full context,
+knowing about the cloud for work,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/144-4
+00:18:02.432 --> 00:18:05.933
+<v Yosif Mihaylov>knowing about other parts of our
+applications, such as.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/145-0
+00:18:06.613 --> 00:18:13.155
+<v Yosif Mihaylov>detecting the changes and so on. And like,
+I'm not sure that it actually makes sense</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/145-1
+00:18:13.155 --> 00:18:18.543
+<v Yosif Mihaylov>to complicate this that much,
+at least up until the point that we see</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/145-2
+00:18:18.543 --> 00:18:23.776
+<v Yosif Mihaylov>that there's some actual issue exactly
+with this mechanism. I mean,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/145-3
+00:18:23.776 --> 00:18:27.933
+<v Yosif Mihaylov>because we for like,
+if we want this for the go live.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/148-0
+00:18:29.693 --> 00:18:35.070
+<v Yosif Mihaylov>Something like this,
+I think we'll just just put a lot of</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/148-1
+00:18:35.070 --> 00:18:39.892
+<v Yosif Mihaylov>overhead,
+like my suggestion is is just I guess try</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/148-2
+00:18:39.892 --> 00:18:47.031
+<v Yosif Mihaylov>it out and see if there there's some some
+issues and and only then only then</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/146-0
+00:18:46.733 --> 00:18:47.133
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/148-3
+00:18:47.031 --> 00:18:47.773
+<v Yosif Mihaylov>improve.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/149-0
+00:18:48.173 --> 00:18:52.413
+<v Yosif Mihaylov>Because otherwise, otherwise we risk,
+we risk to just...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/147-0
+00:18:48.333 --> 00:18:48.653
+<v Matthias Max>Also.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/150-0
+00:18:54.173 --> 00:18:55.773
+<v Matthias Max>Premature optimization.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/151-0
+00:18:54.533 --> 00:18:58.493
+<v Yosif Mihaylov>Um, complicated, complicated A lot.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/152-0
+00:18:59.093 --> 00:19:03.415
+<v Matthias Max>Yeah, all good.
+Then I can take that into the discussion</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/152-1
+00:19:03.415 --> 00:19:08.268
+<v Matthias Max>with them and just say, hey,
+we're not going to do any of this.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/152-2
+00:19:08.268 --> 00:19:11.453
+<v Matthias Max>It's going to be, yeah, just plain select.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/153-0
+00:19:11.853 --> 00:19:15.454
+<v Yosif Mihaylov>Also,
+one very also another thing that that is</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/153-1
+00:19:15.454 --> 00:19:18.901
+<v Yosif Mihaylov>very,
+very relevant about this topic is that</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/153-2
+00:19:18.901 --> 00:19:25.107
+<v Yosif Mihaylov>this would actually make a lot more sense
+if we wanted to go with this full-time</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/153-3
+00:19:25.107 --> 00:19:31.007
+<v Yosif Mihaylov>running service that do that does these
+scans every five seconds, 2 seconds,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/153-4
+00:19:31.007 --> 00:19:31.773
+<v Yosif Mihaylov>3 seconds.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/156-0
+00:19:32.093 --> 00:19:38.564
+<v Yosif Mihaylov>But right now we are talking about an
+outage recovery and something that will</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/156-1
+00:19:38.564 --> 00:19:43.625
+<v Yosif Mihaylov>happen rarely and probably will be around
+just once to sync.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/156-2
+00:19:43.625 --> 00:19:47.773
+<v Yosif Mihaylov>So especially in this context,
+I don't find this.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/154-0
+00:19:44.813 --> 00:19:45.293
+<v Matthias Max>Mhm.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/155-0
+00:19:48.733 --> 00:19:49.053
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/158-0
+00:19:50.013 --> 00:19:51.213
+<v Matthias Max>Well, that's good.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/157-0
+00:19:50.613 --> 00:19:51.213
+<v Yosif Mihaylov>Nice.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/159-0
+00:19:55.133 --> 00:20:02.781
+<v Matthias Max>The next one,
+the question of which source SQL object</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/159-1
+00:20:02.781 --> 00:20:03.773
+<v Matthias Max>we use.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/160-0
+00:20:05.013 --> 00:20:10.294
+<v Matthias Max>In the main concept,
+we talked about access to send them</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/160-1
+00:20:10.294 --> 00:20:12.333
+<v Matthias Max>directly all the time.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/161-0
+00:20:14.013 --> 00:20:19.073
+<v Matthias Max>However,
+is it is a direct call implemented in the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/161-1
+00:20:19.073 --> 00:20:26.813
+<v Matthias Max>bridge? Do we need it? Is it planned?
+I wasn't aware of where we stand there.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/162-0
+00:20:27.773 --> 00:20:28.253
+<v Matthias Max>Um...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/163-0
+00:20:29.773 --> 00:20:35.036
+<v Matthias Max>Or do we need these views that have
+further logic on them,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/163-1
+00:20:35.036 --> 00:20:39.853
+<v Matthias Max>which probably is unnecessary in the
+recovery moment?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/164-0
+00:20:41.533 --> 00:20:42.093
+<v Matthias Max>When?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/167-0
+00:20:41.773 --> 00:20:46.766
+<v Yosif Mihaylov>Well, before I sorry, Bobby,
+before I just let the word to Boyan,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/165-0
+00:20:43.613 --> 00:20:44.493
+<v Matthias Max>Ohh, sorry.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/167-1
+00:20:46.766 --> 00:20:51.532
+<v Yosif Mihaylov>I think it was actually,
+wasn't it me and you Matthias that we</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/167-2
+00:20:51.532 --> 00:20:57.584
+<v Yosif Mihaylov>that we measured the difference when we
+are executing this was this was because</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/167-3
+00:20:57.584 --> 00:21:02.653
+<v Yosif Mihaylov>this was most mostly for detecting
+deletions, if I'm not mistaken.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/169-0
+00:21:03.133 --> 00:21:10.052
+<v Yosif Mihaylov>And we noticed that when you try to
+retrieve this all of these shipment IDs,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/166-0
+00:21:03.213 --> 00:21:03.373
+<v Matthias Max>Uh-huh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/169-1
+00:21:10.052 --> 00:21:14.546
+<v Yosif Mihaylov>obviously filtered for the for the
+endpoint legs,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/169-2
+00:21:14.546 --> 00:21:21.915
+<v Yosif Mihaylov>it was taking way less time when we were
+executing the query directly against the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/169-3
+00:21:21.915 --> 00:21:23.173
+<v Yosif Mihaylov>sending table.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/170-0
+00:21:23.613 --> 00:21:25.053
+<v Yosif Mihaylov>That's why it was there.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/168-0
+00:21:23.773 --> 00:21:23.813
+<v Matthias Max>Uh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/171-0
+00:21:26.093 --> 00:21:26.573
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/174-0
+00:21:27.373 --> 00:21:34.486
+<v Yosif Mihaylov>Now, if this is some kind of a big issue,
+this is also fine because this is again</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/172-0
+00:21:27.533 --> 00:21:27.853
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/174-1
+00:21:34.486 --> 00:21:40.558
+<v Yosif Mihaylov>more relevant if we want to have this as
+a full time running service.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/174-2
+00:21:40.558 --> 00:21:45.936
+<v Yosif Mihaylov>Because if we just give this for the for
+the outage recovery,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/174-3
+00:21:45.936 --> 00:21:50.013
+<v Yosif Mihaylov>like given that this is going to be
+triggered.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/176-0
+00:21:50.093 --> 00:21:54.088
+<v Yosif Mihaylov>only accidentally.
+This means that we can just allow</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/176-1
+00:21:54.088 --> 00:21:58.460
+<v Yosif Mihaylov>ourselves to be a bit more slower.
+It doesn't make sense.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/176-2
+00:21:58.460 --> 00:22:03.133
+<v Yosif Mihaylov>We don't need them to have this query
+running under a second.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/176-3
+00:22:03.133 --> 00:22:09.013
+<v Yosif Mihaylov>It would be fine if it runs for 10
+seconds because it's a one-time thing. So.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/175-0
+00:22:08.653 --> 00:22:08.933
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/178-0
+00:22:10.133 --> 00:22:16.134
+<v Yosif Mihaylov>So if we have any kind of issue around
+doing queries directly against the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/177-0
+00:22:10.253 --> 00:22:10.973
+<v Matthias Max>Agreed.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/178-1
+00:22:16.134 --> 00:22:20.757
+<v Yosif Mihaylov>sending table,
+we could potentially work around this and</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/178-2
+00:22:20.757 --> 00:22:24.813
+<v Yosif Mihaylov>accept the performance hit while using
+the views.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/179-0
+00:22:25.973 --> 00:22:29.413
+<v Matthias Max>Yeah, I mean, Bobby, you were first.
+Maybe you go now.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/180-0
+00:22:30.053 --> 00:22:34.516
+<v Boyan Valchev>Yeah, yeah, I mean,
+like Yosif partially covered what I what</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/180-1
+00:22:34.516 --> 00:22:39.491
+<v Boyan Valchev>I wanted to say, basically,
+like we are not calling the index table</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/180-2
+00:22:39.491 --> 00:22:44.466
+<v Boyan Valchev>directly from TMS right now,
+we are just consuming the events which</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/180-3
+00:22:44.466 --> 00:22:50.173
+<v Boyan Valchev>are coming from the index table, like,
+generally speaking, like if we need...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/182-0
+00:22:50.333 --> 00:22:55.222
+<v Boyan Valchev>To make this call, we can make this call,
+but right now I I don't see why we will</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/182-1
+00:22:55.222 --> 00:22:59.813
+<v Boyan Valchev>need it. Basically, like the objects,
+I think I mean I haven't checked Yosif</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/182-2
+00:22:59.813 --> 00:23:03.032
+<v Boyan Valchev>POC branch,
+but I mean I would assume that he's using</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/182-3
+00:23:03.032 --> 00:23:07.802
+<v Boyan Valchev>the generation objects we have and the
+resolvers we have like for the CDC right</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/182-4
+00:23:07.802 --> 00:23:09.293
+<v Boyan Valchev>now, so basically like...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/183-0
+00:23:09.493 --> 00:23:12.412
+<v Boyan Valchev>Those, I think, are working with the,
+like,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/183-1
+00:23:12.412 --> 00:23:17.190
+<v Boyan Valchev>at least the initial generators are
+working with the VD shipment, yeah,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/183-2
+00:23:17.190 --> 00:23:21.901
+<v Boyan Valchev>with the VD shipment, I mean,
+doesn't make sense because they, I mean,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/183-3
+00:23:21.901 --> 00:23:27.209
+<v Boyan Valchev>it doesn't matter because both of the
+views have the exactly the same, I think,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/183-4
+00:23:27.209 --> 00:23:29.333
+<v Boyan Valchev>structure, so it should be fine.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/184-0
+00:23:29.773 --> 00:23:31.693
+<v Boyan Valchev>It should define like if we use like</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/187-0
+00:23:33.733 --> 00:23:39.788
+<v Boyan Valchev>whatever we choose basically from both.
+And just to say that currently, like for,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/187-1
+00:23:39.788 --> 00:23:43.554
+<v Boyan Valchev>let's say,
+the initial population of legs and lots</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/187-2
+00:23:43.554 --> 00:23:47.616
+<v Boyan Valchev>takes no more than that most I have seen
+it run for 8,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/187-3
+00:23:47.616 --> 00:23:51.973
+<v Boyan Valchev>9 seconds at most for two branches,
+let's say. So this is.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/185-0
+00:23:48.333 --> 00:23:48.493
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/186-0
+00:23:50.653 --> 00:23:51.373
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/188-0
+00:23:52.053 --> 00:23:57.984
+<v Boyan Valchev>executing insert operations which are
+basically slow operations. So yeah,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/188-1
+00:23:57.984 --> 00:24:04.155
+<v Boyan Valchev>I mean, it's behaving well enough.
+If we notice that the performance is that</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/188-2
+00:24:04.155 --> 00:24:08.804
+<v Boyan Valchev>big of a problem,
+we can always implement the code to the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/188-3
+00:24:08.804 --> 00:24:13.453
+<v Boyan Valchev>Sendux table and properly map the fields
+afterwards, but.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/190-0
+00:24:14.493 --> 00:24:16.907
+<v Boyan Valchev>Yeah,
+and it also makes sense that what Yosif</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/190-1
+00:24:16.907 --> 00:24:19.689
+<v Boyan Valchev>mentioned,
+that the same looks table is way quicker.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/190-2
+00:24:19.689 --> 00:24:23.259
+<v Boyan Valchev>It's quicker because, like,
+it doesn't have any functions which run</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/190-3
+00:24:23.259 --> 00:24:26.828
+<v Boyan Valchev>inside, at least in Postgres,
+those views have functions running in</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/190-4
+00:24:26.828 --> 00:24:29.400
+<v Boyan Valchev>them,
+and it's causing a performance issue, so..</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/190-5
+00:24:29.400 --> 00:24:29.453
+<v Boyan Valchev>.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/189-0
+00:24:30.213 --> 00:24:30.973
+<v Matthias Max>Mmh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/191-0
+00:24:32.173 --> 00:24:36.269
+<v Matthias Max>All right, yeah,
+just wanted to be clear here,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/191-1
+00:24:36.269 --> 00:24:43.328
+<v Matthias Max>because this is also some more additional
+load not required for the GM database,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/191-2
+00:24:43.328 --> 00:24:47.773
+<v Matthias Max>but good.
+It's probably fine to keep it like that.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/192-0
+00:24:50.253 --> 00:24:51.293
+<v Matthias Max>Next one.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/193-0
+00:24:52.173 --> 00:24:57.241
+<v Matthias Max>was about transactional borders.
+It just says here,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/193-1
+00:24:57.241 --> 00:25:05.038
+<v Matthias Max>after we finish updating the shipment,
+I just wanted to make sure again that or</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/193-2
+00:25:05.038 --> 00:25:11.373
+<v Matthias Max>ask if it's relevant to get a per
+shipment transaction here. And</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/194-0
+00:25:11.853 --> 00:25:12.813
+<v Matthias Max>Somehow.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/195-0
+00:25:14.013 --> 00:25:20.333
+<v Matthias Max>not lose work successfully done because
+one operation fails in the whole batch.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/196-0
+00:25:21.413 --> 00:25:23.453
+<v Matthias Max>It's probably covered already.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/197-0
+00:25:26.813 --> 00:25:28.653
+<v Matthias Max>Just wanted to bring this up quickly.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/199-0
+00:25:29.453 --> 00:25:33.723
+<v Yosif Mihaylov>Well, yeah,
+I think that it makes more sense to have</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/198-0
+00:25:29.973 --> 00:25:30.213
+<v Matthias Max>Good.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/199-1
+00:25:33.723 --> 00:25:39.041
+<v Yosif Mihaylov>the transaction isolation per shipment,
+obviously, because, like,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/199-2
+00:25:39.041 --> 00:25:45.004
+<v Yosif Mihaylov>we want to sync as much as possible, like,
+if we want to sync, let's say,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/199-3
+00:25:45.004 --> 00:25:49.033
+<v Yosif Mihaylov>a specific branch and our shipment
+syncing fails,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/199-4
+00:25:49.033 --> 00:25:51.773
+<v Yosif Mihaylov>it doesn't make sense to does not.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/200-0
+00:25:51.933 --> 00:25:57.376
+<v Yosif Mihaylov>sync the whole branch.
+There is we can go even lower in terms of</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/200-1
+00:25:57.376 --> 00:26:01.982
+<v Yosif Mihaylov>transaction isolation.
+We can go on filter date level,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/200-2
+00:26:01.982 --> 00:26:08.179
+<v Yosif Mihaylov>but I think that's unnecessary.
+This I think will also affect performance</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/200-3
+00:26:08.179 --> 00:26:11.613
+<v Yosif Mihaylov>because in theory we could save after we.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/201-0
+00:26:12.093 --> 00:26:17.662
+<v Yosif Mihaylov>sync any of the fields of the shipment.
+For example, as you said,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/201-1
+00:26:17.662 --> 00:26:22.387
+<v Yosif Mihaylov>we have a long outage for, let's say,
+some hours or so,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/201-2
+00:26:22.387 --> 00:26:27.028
+<v Yosif Mihaylov>and a particular shipment gets updated
+multiple times,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/201-3
+00:26:27.028 --> 00:26:31.753
+<v Yosif Mihaylov>so multiple fields have been updated for
+this shipment.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/201-4
+00:26:31.753 --> 00:26:34.453
+<v Yosif Mihaylov>We can then go ahead and just...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/203-0
+00:26:34.813 --> 00:26:43.395
+<v Yosif Mihaylov>Update every field on its own for this
+shipment, but I think that's too much. So,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/202-0
+00:26:41.053 --> 00:26:42.893
+<v Matthias Max>I think so, yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/203-1
+00:26:43.395 --> 00:26:50.093
+<v Yosif Mihaylov>so I would say that per shipment
+isolation level is the is the.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/204-0
+00:26:51.693 --> 00:26:59.699
+<v Yosif Mihaylov>I think more sensible think maybe like if
+the the the outage is big and let's say</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/204-1
+00:26:59.699 --> 00:27:07.314
+<v Yosif Mihaylov>some hours a day we need to test how
+exactly how exactly this will behave and</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/204-2
+00:27:07.314 --> 00:27:09.853
+<v Yosif Mihaylov>we have to let's say sync.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/205-0
+00:27:10.733 --> 00:27:17.446
+<v Yosif Mihaylov>like thousands of shipments across the
+branches because this would lead to</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/205-1
+00:27:17.446 --> 00:27:19.773
+<v Yosif Mihaylov>thousands of transactions.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/208-0
+00:27:20.933 --> 00:27:25.607
+<v Yosif Mihaylov>I don't think that would be that would be
+an issue, but yeah,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/208-1
+00:27:25.607 --> 00:27:31.413
+<v Yosif Mihaylov>I mean the other the other option is to
+go to is to go per branch with these</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/206-0
+00:27:30.973 --> 00:27:31.133
+<v Matthias Max>Mm.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/208-2
+00:27:31.413 --> 00:27:36.163
+<v Yosif Mihaylov>transactions or per batch,
+let's say updating 200 shipments or</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/207-0
+00:27:34.493 --> 00:27:34.893
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/208-3
+00:27:36.163 --> 00:27:39.933
+<v Yosif Mihaylov>something like that, but again,
+I think that's...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/210-0
+00:27:41.573 --> 00:27:47.792
+<v Yosif Mihaylov>That's something that we should address
+later if we see that there is an issue.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/209-0
+00:27:47.693 --> 00:27:47.773
+<v Matthias Max>Ohh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/210-1
+00:27:47.792 --> 00:27:52.844
+<v Yosif Mihaylov>After all of this is implemented,
+we can make some simple tests,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/210-2
+00:27:52.844 --> 00:27:57.353
+<v Yosif Mihaylov>like check that, I mean,
+make a use case where all of the</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/210-3
+00:27:57.353 --> 00:28:02.173
+<v Yosif Mihaylov>shipments have been updated,
+and we have to sync all of them.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/213-0
+00:28:02.653 --> 00:28:07.442
+<v Yosif Mihaylov>run the process and see what happens.
+Actually, I think I did that,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/213-1
+00:28:07.442 --> 00:28:12.443
+<v Yosif Mihaylov>if I do remember correctly,
+when I made the POC. I think it took like,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/213-2
+00:28:12.443 --> 00:28:16.669
+<v Yosif Mihaylov>for example, I don't know, 20 seconds,
+something like that,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/213-3
+00:28:16.669 --> 00:28:21.035
+<v Yosif Mihaylov>for a big amount of records,
+but this could be checked again.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/211-0
+00:28:20.573 --> 00:28:21.133
+<v Matthias Max>Okay.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/213-4
+00:28:21.035 --> 00:28:23.853
+<v Yosif Mihaylov>I don't expect to have issues with this.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/212-0
+00:28:25.133 --> 00:28:26.493
+<v Matthias Max>Okay, good.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/214-0
+00:28:27.613 --> 00:28:32.141
+<v Matthias Max>All right, moving on.
+I think this one we can skip.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/214-1
+00:28:32.141 --> 00:28:37.975
+<v Matthias Max>It's really beyond go live.
+I think this one we covered already by</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/214-2
+00:28:37.975 --> 00:28:41.894
+<v Matthias Max>accident,
+the missing input on the endpoint.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/214-3
+00:28:41.894 --> 00:28:47.293
+<v Matthias Max>So that is discussed already. Also,
+a small thing was that...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/215-0
+00:28:47.933 --> 00:28:54.002
+<v Matthias Max>This is the first real, not the first,
+probably the second real admin only</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/215-1
+00:28:54.002 --> 00:28:58.049
+<v Matthias Max>endpoint.
+And we need to make sure it's protected</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/215-2
+00:28:58.049 --> 00:29:01.853
+<v Matthias Max>with some sort of role or something like
+that.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/217-0
+00:29:02.493 --> 00:29:06.586
+<v Yosif Mihaylov>Well, if we do this like this,
+the same concept applies for the water</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/216-0
+00:29:03.293 --> 00:29:03.573
+<v Matthias Max>And.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/217-1
+00:29:06.586 --> 00:29:10.154
+<v Yosif Mihaylov>and leg generation. I mean,
+we could that we could add that,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/217-2
+00:29:10.154 --> 00:29:12.493
+<v Yosif Mihaylov>but again, that's just adding on top of.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/218-0
+00:29:13.053 --> 00:29:16.653
+<v Matthias Max>Yeah, I mean,
+I may sound bureaucratic here,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/218-1
+00:29:16.653 --> 00:29:19.773
+<v Matthias Max>but these are really the things that...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/219-0
+00:29:20.813 --> 00:29:26.379
+<v Matthias Max>are crucial in reality.
+Someone with access to dispo could run</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/219-1
+00:29:26.379 --> 00:29:33.536
+<v Matthias Max>these things in theory, a normal user.
+I just think it's the last 1% finish line</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/219-2
+00:29:33.536 --> 00:29:38.573
+<v Matthias Max>that we should add and it should be a few
+lines of code.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/220-0
+00:29:42.093 --> 00:29:45.293
+<v Matthias Max>Good, uh, then, um...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/221-0
+00:29:47.213 --> 00:29:48.573
+<v Matthias Max>Let me quickly recap.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/222-0
+00:29:55.173 --> 00:29:58.333
+<v Matthias Max>That's also probably overcomplicating
+things.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/223-0
+00:29:59.613 --> 00:29:59.933
+<v Matthias Max>Um...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/224-0
+00:30:01.453 --> 00:30:05.453
+<v Matthias Max>Let's talk about what happens on the
+response.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/225-0
+00:30:07.133 --> 00:30:12.970
+<v Matthias Max>Return enough information,
+probably not precise enough. Why is that?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/225-1
+00:30:12.970 --> 00:30:19.231
+<v Matthias Max>Because someone running the endpoint
+needs to know what happened exactly.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/225-2
+00:30:19.231 --> 00:30:26.253
+<v Matthias Max>So maybe we can talk about this quickly.
+I know it's also difficult to talk about.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/226-0
+00:30:26.653 --> 00:30:30.333
+<v Matthias Max>operations when you don't really have an
+operations team.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/227-0
+00:30:31.293 --> 00:30:39.425
+<v Matthias Max>But maybe this is something we can
+improve once a main work is done on these</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/227-1
+00:30:39.425 --> 00:30:44.178
+<v Matthias Max>PBIs,
+just to think about what someone would</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/227-2
+00:30:44.178 --> 00:30:50.093
+<v Matthias Max>need in the response. For example,
+for partial success.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/228-0
+00:30:50.493 --> 00:30:55.744
+<v Matthias Max>if we talk about the per shipment
+isolation and things like that.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/228-1
+00:30:55.744 --> 00:31:00.757
+<v Matthias Max>So not really a blocker, I think,
+on the first version of this</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/228-2
+00:31:00.757 --> 00:31:05.213
+<v Matthias Max>implementation,
+but something you need to keep in mind.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/229-0
+00:31:07.373 --> 00:31:08.093
+<v Matthias Max>Um...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/230-0
+00:31:10.453 --> 00:31:13.533
+<v Matthias Max>If you don't have questions,
+we can move on.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/231-0
+00:31:18.173 --> 00:31:22.180
+<v Matthias Max>Good. Sorry,
+I just have to quickly talk to my son</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/231-1
+00:31:22.180 --> 00:31:22.573
+<v Matthias Max>here.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/237-0
+00:32:00.413 --> 00:32:01.933
+<v Matthias Max>Sorry, back.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/238-0
+00:32:03.693 --> 00:32:13.196
+<v Matthias Max>OK, so Q,
+this is probably something we need anyway,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/238-1
+00:32:13.196 --> 00:32:14.093
+<v Matthias Max>so...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/239-0
+00:32:15.293 --> 00:32:17.853
+<v Matthias Max>Let's postpone that.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/241-0
+00:32:20.973 --> 00:32:25.918
+<v Matthias Max>And that one is obviously a gap already
+discussed, automated tests.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/241-1
+00:32:25.918 --> 00:32:28.973
+<v Matthias Max>I don't have an answer for that right now.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/242-0
+00:32:29.853 --> 00:32:35.980
+<v Matthias Max>And then I added two more PBIs,
+but they both fall onto my table.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/242-1
+00:32:35.980 --> 00:32:43.499
+<v Matthias Max>The first one is have a quick sync with
+Nagle again about if this load we put on</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/242-2
+00:32:43.499 --> 00:32:47.769
+<v Matthias Max>the database is fine.
+Discussed that already.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/242-3
+00:32:47.769 --> 00:32:49.533
+<v Matthias Max>And then obviously,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/243-0
+00:32:50.413 --> 00:32:55.853
+<v Matthias Max>some kind of operations runbook,
+how do we behave in this?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/244-0
+00:32:57.453 --> 00:33:01.621
+<v Matthias Max>middle,
+intermediate time after the go live when</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/244-1
+00:33:01.621 --> 00:33:06.129
+<v Matthias Max>we have failures, what's the runbook,
+who does what,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/244-2
+00:33:06.129 --> 00:33:11.999
+<v Matthias Max>who triggers the endpoint with which
+parameters, etc. This, I think,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/244-3
+00:33:11.999 --> 00:33:16.933
+<v Matthias Max>needs to be prepared.
+So I created a little PBI for that.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/248-0
+00:33:17.933 --> 00:33:23.840
+<v Yosif Mihaylov>Just one thing before we move on about
+this evaluation of the database or team</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/245-0
+00:33:18.293 --> 00:33:18.733
+<v Matthias Max>Aktan.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/246-0
+00:33:20.013 --> 00:33:20.413
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/248-1
+00:33:23.840 --> 00:33:30.196
+<v Yosif Mihaylov>back, just, I mean, we already covered it,
+but really just so that we don't create a</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/248-2
+00:33:30.196 --> 00:33:34.533
+<v Yosif Mihaylov>problem for us, which is unnecessary. Now,
+this is again,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/248-3
+00:33:34.533 --> 00:33:39.693
+<v Yosif Mihaylov>this is something that is going to be
+happening only on an accident.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/250-0
+00:33:39.933 --> 00:33:44.745
+<v Yosif Mihaylov>So to be honest,
+I'm not even sure if there's anything to</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/247-0
+00:33:41.053 --> 00:33:41.373
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/250-1
+00:33:44.745 --> 00:33:49.226
+<v Yosif Mihaylov>discuss. I mean,
+we are actually what we are running,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/250-2
+00:33:49.226 --> 00:33:55.781
+<v Yosif Mihaylov>when we want to sync for each branch,
+we run one query which is returning only</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/250-3
+00:33:55.781 --> 00:33:57.773
+<v Yosif Mihaylov>IDs to detect deletions.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/252-0
+00:33:58.733 --> 00:34:05.012
+<v Yosif Mihaylov>And one query to retrieve shipments with
+all of its contents, and that's it,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/252-1
+00:34:05.012 --> 00:34:07.133
+<v Yosif Mihaylov>and it's a one-time thing.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/251-0
+00:34:07.893 --> 00:34:08.133
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/253-0
+00:34:08.493 --> 00:34:09.773
+<v Yosif Mihaylov>So, yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/254-0
+00:34:11.293 --> 00:34:14.184
+<v Yosif Mihaylov>I mean, uh, yeah,
+just to to to make sure that we present</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/254-1
+00:34:14.184 --> 00:34:14.733
+<v Yosif Mihaylov>this right.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/255-0
+00:34:15.453 --> 00:34:17.453
+<v Matthias Max>Yeah, that's clear.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/256-0
+00:34:18.973 --> 00:34:22.876
+<v Matthias Max>Good.
+I think the rest we discussed already.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/256-1
+00:34:22.876 --> 00:34:28.253
+<v Matthias Max>Direct table access. So no,
+we discussed that. No PBI needed.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/257-0
+00:34:30.013 --> 00:34:33.613
+<v Matthias Max>So that said,
+I think we've gone through all of them.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/258-0
+00:34:34.733 --> 00:34:36.813
+<v Matthias Max>And it looks good to me.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/259-0
+00:34:38.493 --> 00:34:43.906
+<v Matthias Max>Max, I think also good for you, right?
+It sounded more than it is,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/259-1
+00:34:43.906 --> 00:34:46.573
+<v Matthias Max>but it was good to talk about it.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/260-0
+00:34:47.533 --> 00:34:48.453
+<v Matthias Max>I'll add the...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/261-0
+00:34:50.013 --> 00:34:53.284
+<v Matthias Max>Yep,
+we have identified and approved as a</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/261-1
+00:34:53.284 --> 00:34:55.933
+<v Matthias Max>comment on the PUS, and that's it.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/262-0
+00:35:00.173 --> 00:35:01.373
+<v Maximilian Kehder>Sounds good to me.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/263-0
+00:35:03.693 --> 00:35:06.333
+<v Matthias Max>OK, that's good to hear.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/264-0
+00:35:07.693 --> 00:35:13.853
+<v Matthias Max>Any further questions? If not,
+we can close the call and talk tomorrow.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/267-0
+00:35:15.453 --> 00:35:21.469
+<v Maximilian Kehder>I mean, obviously one more question.
+So just how we're going to continue.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/265-0
+00:35:16.093 --> 00:35:16.253
+<v Matthias Max>Ohh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/266-0
+00:35:18.733 --> 00:35:19.133
+<v Matthias Max>Oh.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/267-1
+00:35:21.469 --> 00:35:27.893
+<v Maximilian Kehder>You finish up and get your approvals of
+everything tomorrow and the day after.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/270-0
+00:35:30.333 --> 00:35:35.321
+<v Maximilian Kehder>Then, basically,
+Ivaylo and Chris need to start working on</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/270-1
+00:35:35.321 --> 00:35:37.773
+<v Maximilian Kehder>their PBI thread in sequence.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/269-0
+00:35:36.973 --> 00:35:37.573
+<v Matthias Max>Exactly.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/271-0
+00:35:39.973 --> 00:35:40.253
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/272-0
+00:35:41.453 --> 00:35:45.958
+<v Maximilian Kehder>Meaning, do you already have a plan?
+So Ivaylo your PBI is first,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/272-1
+00:35:45.958 --> 00:35:51.624
+<v Maximilian Kehder>do you have a plan when you can start or
+is the pending confirmations dependent on</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/272-2
+00:35:51.624 --> 00:35:54.013
+<v Maximilian Kehder>you starting tomorrow, for example?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/273-0
+00:35:55.133 --> 00:35:59.481
+<v Ivaylo Petrov>Well, actually,
+this depends whether there are more</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/273-1
+00:35:59.481 --> 00:36:03.913
+<v Ivaylo Petrov>Oracle issues.
+I'm currently trying to solve the one</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/273-2
+00:36:03.913 --> 00:36:07.592
+<v Ivaylo Petrov>with the other point procedure.
+After that,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/273-3
+00:36:07.592 --> 00:36:13.613
+<v Ivaylo Petrov>I should start with the get driver.
+We have an issue there as well. And</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/275-0
+00:36:14.973 --> 00:36:20.251
+<v Ivaylo Petrov>Yeah, if anything on Dyulgerova pops up,
+I believe it's with higher priorities on</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/275-1
+00:36:20.251 --> 00:36:20.573
+<v Ivaylo Petrov>this.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/274-0
+00:36:21.213 --> 00:36:21.693
+<v Maximilian Kehder>Mhm.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/276-0
+00:36:24.093 --> 00:36:24.653
+<v Maximilian Kehder>Agree.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/277-0
+00:36:26.333 --> 00:36:26.453
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/278-0
+00:36:27.133 --> 00:36:32.055
+<v Maximilian Kehder>Do we have anyone else who could start
+this except you? So Chris is in vacation,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/278-1
+00:36:32.055 --> 00:36:33.453
+<v Maximilian Kehder>on vacation, lucky him.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/279-0
+00:36:40.253 --> 00:36:42.653
+<v Maximilian Kehder>If that is a no, okay.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/280-0
+00:36:44.573 --> 00:36:47.773
+<v Maximilian Kehder>Then we just need to see when we get this
+started.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/281-0
+00:36:48.813 --> 00:36:49.293
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/282-0
+00:36:48.893 --> 00:36:54.216
+<v Maximilian Kehder>I mean, it's not, in my opinion,
+and please say, no, no, no, you're wrong,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/282-1
+00:36:54.216 --> 00:36:58.262
+<v Maximilian Kehder>but in my opinion,
+this is not a deal breaker for any go</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/282-2
+00:36:58.262 --> 00:37:03.373
+<v Maximilian Kehder>live because it's a recovery feature.
+Obviously, we want to recover and</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/283-0
+00:37:05.293 --> 00:37:07.533
+<v Maximilian Kehder>Oh, two hands risen directly.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/285-0
+00:37:08.253 --> 00:37:13.159
+<v Yosif Mihaylov>Yeah,
+I think that this is a deal breaker for</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/285-1
+00:37:13.159 --> 00:37:22.013
+<v Yosif Mihaylov>the go live because we saw how fragile is
+the data stream and the CDC and we don't</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/285-2
+00:37:22.013 --> 00:37:22.973
+<v Yosif Mihaylov>have a...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/284-0
+00:37:22.173 --> 00:37:24.733
+<v Maximilian Kehder>We're not we're not connecting to data
+stream.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/287-0
+00:37:27.173 --> 00:37:30.593
+<v Matthias Max>No, no,
+this is this is the backup for data</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/286-0
+00:37:27.373 --> 00:37:28.293
+<v Yosif Mihaylov>I feel most.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/287-1
+00:37:30.593 --> 00:37:36.733
+<v Matthias Max>stream outages, all stream could even,
+it doesn't matter, it's CDZ in general.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/289-0
+00:37:37.533 --> 00:37:42.628
+<v Yosif Mihaylov>I mean that even for stream,
+although it probably hasn't failed so far,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/288-0
+00:37:38.093 --> 00:37:38.213
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/289-1
+00:37:42.628 --> 00:37:47.440
+<v Yosif Mihaylov>we don't have any recovery mechanism if
+we don't have this, I mean,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/289-2
+00:37:47.440 --> 00:37:48.573
+<v Yosif Mihaylov>in terms of CDC.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/290-0
+00:37:49.853 --> 00:37:52.013
+<v Yosif Mihaylov>If potentially something happens.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/291-0
+00:37:52.973 --> 00:37:53.773
+<v Yosif Mihaylov>With the stream.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/292-0
+00:37:54.893 --> 00:38:00.618
+<v Yosif Mihaylov>Even if we, if we don't like, OK,
+we don't release for with the data stream,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/292-1
+00:38:00.618 --> 00:38:05.823
+<v Yosif Mihaylov>but with the stream, sure,
+like it hasn't failed us so far, but this,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/292-2
+00:38:05.823 --> 00:38:07.533
+<v Yosif Mihaylov>I don't think that's...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/293-0
+00:38:09.133 --> 00:38:17.183
+<v Yosif Mihaylov>That should be comforting for us,
+and I think that we should have a way</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/293-1
+00:38:17.183 --> 00:38:18.413
+<v Yosif Mihaylov>defined to.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/294-0
+00:38:19.853 --> 00:38:22.493
+<v Yosif Mihaylov>Get a resolution if something like this
+happens.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/295-0
+00:38:24.653 --> 00:38:25.213
+<v Maximilian Kehder>Boyan.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/297-0
+00:38:27.933 --> 00:38:31.487
+<v Boyan Valchev>Definitely,
+it would like it would be safer for us</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/297-1
+00:38:31.487 --> 00:38:36.713
+<v Boyan Valchev>just to know that if something goes up,
+goes wrong, I mean, not but wrong,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/297-2
+00:38:36.713 --> 00:38:39.013
+<v Boyan Valchev>then we have something just to...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/299-0
+00:38:41.453 --> 00:38:44.502
+<v Boyan Valchev>Fire and just have the whole thing are
+recovered.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/299-1
+00:38:44.502 --> 00:38:47.613
+<v Boyan Valchev>This is like definitely the safer option,
+I think.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/300-0
+00:38:49.213 --> 00:38:52.086
+<v Boyan Valchev>Once again,
+if the question comes down to capacity</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/300-1
+00:38:52.086 --> 00:38:54.621
+<v Boyan Valchev>and effort, because like, let's say,
+I mean,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/300-2
+00:38:54.621 --> 00:38:57.382
+<v Boyan Valchev>I was going to say that I can take a look
+at it,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/300-3
+00:38:57.382 --> 00:39:02.115
+<v Boyan Valchev>but like now we need to take care of like
+the load generation rules because this is</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/300-4
+00:39:02.115 --> 00:39:06.622
+<v Boyan Valchev>preventing like us from starting actual
+like bug hunt or testing actual testing</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/300-5
+00:39:06.622 --> 00:39:07.693
+<v Boyan Valchev>over this new load.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/301-0
+00:39:08.413 --> 00:39:13.693
+<v Boyan Valchev>generations through or something.
+I see how fast I can tackle this, but...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/302-0
+00:39:16.733 --> 00:39:17.693
+<v Boyan Valchev>Yeah, I mean...</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/303-0
+00:39:20.213 --> 00:39:23.053
+<v Matthias Max>I mean, first of all, two things, Max.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/304-0
+00:39:24.173 --> 00:39:28.742
+<v Matthias Max>Is it relevant for go live?
+I have an opinion here. Yes, it is.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/304-1
+00:39:28.742 --> 00:39:33.812
+<v Matthias Max>I don't want to wake up to a call which
+says, hey, we're missing data.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/304-2
+00:39:33.812 --> 00:39:37.382
+<v Matthias Max>And then I start running around trying to
+fix it.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/304-3
+00:39:37.382 --> 00:39:42.879
+<v Matthias Max>It's like driving a car without airbag.
+Yes, it drives. But once it crashes,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/304-4
+00:39:42.879 --> 00:39:45.093
+<v Matthias Max>you suddenly remember all that.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/305-0
+00:39:45.173 --> 00:39:51.031
+<v Matthias Max>was not a good idea. That's that.
+And Christian explicitly said that he</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/305-1
+00:39:51.031 --> 00:39:57.378
+<v Matthias Max>wants an end-to-end reliable system.
+Totally understandable customer request.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/305-2
+00:39:57.378 --> 00:40:01.853
+<v Matthias Max>So that's that. On the other hand,
+regarding capacity.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/306-0
+00:40:03.693 --> 00:40:09.664
+<v Matthias Max>I've done.NET in the past.
+Probably can support here, of course.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/306-1
+00:40:09.664 --> 00:40:16.371
+<v Matthias Max>It would always be a team effort with
+someone reviewing. So question is,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/306-2
+00:40:16.371 --> 00:40:17.933
+<v Matthias Max>as always, is it?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/307-0
+00:40:18.893 --> 00:40:26.387
+<v Matthias Max>helping someone if he only has to review?
+Or is it better to do it completely on</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/307-1
+00:40:26.387 --> 00:40:32.493
+<v Matthias Max>its own from the beginning?
+But I can offer help here, of course.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/308-0
+00:40:33.453 --> 00:40:37.773
+<v Matthias Max>But I would wait for Monday or so to see
+where we stand.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/310-0
+00:40:43.773 --> 00:40:46.950
+<v Boyan Valchev>Yeah, let's see how we are tomorrow.
+Let's see how far we are with the issues</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/309-0
+00:40:44.293 --> 00:40:44.493
+<v Matthias Max>Yeah.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/310-1
+00:40:46.950 --> 00:40:48.173
+<v Boyan Valchev>and with this whole CDC thing.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/311-0
+00:40:49.533 --> 00:40:53.116
+<v Boyan Valchev>Uh, yeah, well,
+we'll see me probably tomorrow we should</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/311-1
+00:40:53.116 --> 00:40:55.693
+<v Boyan Valchev>decide how we approach this, I would say.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/312-0
+00:40:56.853 --> 00:41:01.460
+<v Boyan Valchev>Because we need to start it at some point,
+if not tomorrow, then Friday for sure.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/312-1
+00:41:01.460 --> 00:41:03.933
+<v Boyan Valchev>So yeah,
+let's see where we stand tomorrow.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/313-0
+00:41:05.213 --> 00:41:05.413
+<v Matthias Max>No.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/314-0
+00:41:05.293 --> 00:41:09.795
+<v Yosif Mihaylov>Yeah, I mean,
+I would say I'm the best person to</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/314-1
+00:41:09.795 --> 00:41:15.216
+<v Yosif Mihaylov>advance on this.
+The problem is the quad for work and also</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/314-2
+00:41:15.216 --> 00:41:22.567
+<v Yosif Mihaylov>there's quite hard over there as well in
+terms of capacity, but for sure, like,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/314-3
+00:41:22.567 --> 00:41:24.773
+<v Yosif Mihaylov>I mean, I can also help.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/315-0
+00:41:24.893 --> 00:41:30.013
+<v Yosif Mihaylov>I could either pick up something myself
+or actively support whoever picks this up.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/317-0
+00:41:31.213 --> 00:41:33.693
+<v Yosif Mihaylov>So, I think we can we can push it through.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/318-0
+00:41:34.893 --> 00:41:40.721
+<v Matthias Max>Yeah, let's align.
+I just want to say if anyone starts on it,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/318-1
+00:41:40.721 --> 00:41:48.147
+<v Matthias Max>we should have a pain not to have two
+people invest a morning just to find out</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/318-2
+00:41:48.147 --> 00:41:49.933
+<v Matthias Max>we had double work.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/319-0
+00:41:50.893 --> 00:41:54.470
+<v Matthias Max>And of course,
+Cloud for Lock is also a high priority</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/319-1
+00:41:54.470 --> 00:41:55.133
+<v Matthias Max>right now.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/321-0
+00:41:59.613 --> 00:42:01.533
+<v Maximilian Kehder>Great to have always high priority.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/320-0
+00:42:00.013 --> 00:42:00.413
+<v Matthias Max>Thank you.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/322-0
+00:42:03.533 --> 00:42:04.013
+<v Matthias Max>Okay.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/323-0
+00:42:05.293 --> 00:42:05.853
+<v Matthias Max>Okay.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/325-0
+00:42:06.733 --> 00:42:11.461
+<v Matthias Max>So to wrap it up,
+I will put the comments from our</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/325-1
+00:42:11.461 --> 00:42:17.580
+<v Matthias Max>decisions into the PBIs.
+I will get the task done where we verify</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/325-2
+00:42:17.580 --> 00:42:22.308
+<v Matthias Max>with Nagle once again that the load stuff
+is fine,</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/325-3
+00:42:22.308 --> 00:42:26.573
+<v Matthias Max>which closes the oldest one PBI which is
+new.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/326-0
+00:42:27.373 --> 00:42:29.533
+<v Matthias Max>And then we're good to go.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/328-0
+00:42:34.453 --> 00:42:38.783
+<v Maximilian Kehder>Okay,
+then let's hope that Ivaylo is quickly</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/327-0
+00:42:34.973 --> 00:42:35.213
+<v Matthias Max>But.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/328-1
+00:42:38.783 --> 00:42:44.173
+<v Maximilian Kehder>done tomorrow. And for you, Chris,
+enjoy your vacation.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/330-0
+00:42:50.893 --> 00:42:52.493
+<v Maximilian Kehder>That's it? Yes, no?</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/329-0
+00:42:52.173 --> 00:42:52.573
+<v Matthias Max>Good.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/331-0
+00:42:53.693 --> 00:42:54.333
+<v Matthias Max>Thanks.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/337-0
+00:42:55.773 --> 00:42:58.813
+<v Maximilian Kehder>Thanks, everyone.
+Have a great end of the day. Bye-bye.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/332-0
+00:42:55.933 --> 00:42:57.213
+<v Boyan Valchev>Thank you, guys. Bye.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/335-0
+00:42:58.093 --> 00:42:58.813
+<v Matthias Max>See you, bye.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/339-0
+00:42:59.133 --> 00:42:59.933
+<v Yosif Mihaylov>Thanks, bye.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/341-0
+00:42:59.773 --> 00:43:00.173
+<v Kristiyan Paunov>But.</v>
+
+b1d7cd43-62bb-4696-9775-a15b8227241a/342-0
+00:43:00.093 --> 00:43:00.973
+<v Ivaylo Petrov>Thank you, bye.</v>

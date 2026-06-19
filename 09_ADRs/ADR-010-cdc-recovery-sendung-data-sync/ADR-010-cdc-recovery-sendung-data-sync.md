@@ -59,6 +59,17 @@ Recovery is a two-step process:
 
 The watermark is derived from the last successful sync timestamp. Delete detection is scoped to unplanned legs only, reducing query volume from hundreds of thousands to hundreds or thousands of shipment IDs per branch.
 
+### TMS Database Load Profile
+
+Per branch, per recovery run, the mechanism executes exactly two read-only queries against the TMS database:
+
+| # | Query | Purpose | Result set |
+|---|-------|---------|------------|
+| 1 | `SELECT` shipment IDs (unplanned only) | Delete detection — compare against local leg IDs | IDs only, no full rows |
+| 2 | `SELECT` full shipment rows `WHERE u_time > watermark` | Insert/update sync — feed into existing CDC resolvers | Full shipment rows within outage window |
+
+No writes, no schema changes, no new database objects. Both queries use the existing views already consumed by the regular CDC flow. The team's PoC measured ~20 seconds end-to-end for a full branch sync with all shipments — this includes TMS queries, resolver processing, and CloudSQL writes. The actual TMS-side query time is a fraction of that. Recovery is triggered manually per outage, not continuously.
+
 Phase 1 (recovery endpoint) is approved for Go-Live. Phase 2 (continuous background polling) is documented as a future option, not in scope for Go-Live.
 
 ## Rationale
@@ -135,6 +146,7 @@ Phase 1 (recovery endpoint) is approved for Go-Live. Phase 2 (continuous backgro
 |------------|--------------|-------------|
 | 2026-05-21 | Matthias Max | ADR created |
 | 2026-06-17 | Matthias Max | Status → Accepted (decision confirmed across Bi-Weekly 2026-05-19, Joachim constraint confirmation 2026-05-21, Extra Refinement 2026-05-22) |
+| 2026-06-18 | Matthias Max | Added TMS Database Load Profile to Decision section |
 
 ---
 
