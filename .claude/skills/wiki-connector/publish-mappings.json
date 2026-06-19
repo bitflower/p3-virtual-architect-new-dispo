@@ -890,6 +890,26 @@
       }
     },
     {
+      "id": "adr-010-cdc-recovery-sendung-data-sync",
+      "source": "09_ADRs/ADR-010-cdc-recovery-sendung-data-sync/ADR-010-cdc-recovery-sendung-data-sync.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/ADRs/[ADR010]-CDC-Recovery-Strategy%3A-Sendung-Data-Sync.md",
+      "description": "ADR-010: CDC Recovery Strategy - Sendung Data Sync",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "stripTags": ["internal"],
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "ADR document - CDC recovery strategy, strip <internal> meeting transcript references on sync"
+      }
+    },
+    {
       "id": "adr-011-traffic-mode-change-blocking",
       "source": "09_ADRs/ADR-011-traffic-mode-change-blocking/ADR-011-traffic-mode-change-blocking.md",
       "target": "WIKI/Nagel-CAL-Disposition.wiki/Technical-Documentation/ADRs/[ADR011]-Traffic-Mode-Change-Blocking-for-Disposed-Shipments.md",
@@ -906,6 +926,20 @@
           "rewriteToWikiPaths": true
         },
         "notes": "ADR document - traffic mode change blocking interim solution for Go-Live, no attachments"
+      }
+    },
+    {
+      "id": "exploration-lot-generation-rules-change",
+      "source": "02_Explorations/2026-06-18_Lot_Generation_Rules_Change/lot-generation-rules-change.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D18-Lot-Generation-Rules-Change.md",
+      "description": "Lot Generation Rules Change — switching from PickupDateFrom/PickupDateTo to CollectionDate, impact analysis, options",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Exploration document - full sync, no link rewriting needed"
       }
     }
   ]
