@@ -230,8 +230,9 @@ Code/Disposition-Rollout-Tools/
 ### Existing Artifacts
 
 - `Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier/` — existing CLI to refactor
-- `Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier/Registry/db-objects.json` — registry (extended by PRD-002)
+- `Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier/Registry/db-objects.json` — registry (extended by PRD-002), includes `extractedFromCommit` watermark for diff-driven sync
 - `.claude/agents/tms-bridge-db-extractor.md` — agent that produces the registry
+- `.claude/skills/sync-db-registry/SKILL.md` — diff-driven sync skill: compares TMS Bridge `origin/master` against watermark, classifies changes, triggers targeted patch or full re-extraction. Use via `/loop 30m /sync-db-registry` for continuous sync (replaces W6 CI automation for local dev)
 
 ---
 
