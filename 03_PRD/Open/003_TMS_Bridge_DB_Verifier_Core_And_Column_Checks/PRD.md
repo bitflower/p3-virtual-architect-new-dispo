@@ -215,6 +215,7 @@ Code/Disposition-Rollout-Tools/
 - `02_Explorations/2026-05-11_ABN1060_Oracle_TMS_Database_Review_-_First_Batch_Analysis/` — manual column-level issues (`U_TIME`, `Comment` casing, `comment_` rename)
 - `02_Explorations/2026-06-11_Advanced_TMS_Verifier_-_Continuous_Database_Monitoring_Service_in_GCP/` — 6-level model, two-stage check design, result store, architecture
 - `02_Explorations/2026-05-19_TMS_Bridge_Function_vs_Procedure_Execution_Gap/` — type mismatch patterns
+- `02_Explorations/2026-06-19_Oracle_Identifier_Length_Limits_-_Are_the_V_DIS_TP_CLIENT_COMM_Column_Length_Iss/` — Oracle 12.1 30-byte identifier limit, latent TMS Bridge bug in `V_DIS_TP_CLIENT_COMM` (discovered during PRD-003 smoke testing)
 
 ### Prerequisites
 
