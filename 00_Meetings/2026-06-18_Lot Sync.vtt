@@ -1,0 +1,986 @@
+WEBVTT
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/7-0
+00:00:03.275 --> 00:00:03.835
+<v Boyan Valchev>So, no.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/8-0
+00:00:05.410 --> 00:00:06.170
+<v Boyan Valchev>Who would be?</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/12-0
+00:00:07.370 --> 00:00:11.247
+<v Boyan Valchev>Probably just to map this to know,
+so I can avoid any further,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/12-1
+00:00:11.247 --> 00:00:15.000
+<v Boyan Valchev>like here in the other field,
+just to map it always to know,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/10-0
+00:00:14.770 --> 00:00:15.370
+<v Matthias Max>Mm-hmm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/12-2
+00:00:15.000 --> 00:00:19.370
+<v Boyan Valchev>so we can avoid this risk as well,
+but it's even hackier, I think, so.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/11-0
+00:00:18.250 --> 00:00:18.530
+<v Matthias Max>Mm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/14-0
+00:00:20.090 --> 00:00:26.415
+<v Matthias Max>So let me ask again,
+why do we shy away from removing both</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/14-1
+00:00:26.415 --> 00:00:30.490
+<v Matthias Max>pickup columns and adding the new one?</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/16-0
+00:00:31.530 --> 00:00:35.370
+<v Boyan Valchev>Yeah, I mean, this is the other option,
+basically, because...</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/15-0
+00:00:32.970 --> 00:00:33.450
+<v Matthias Max>What?</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/17-0
+00:00:34.490 --> 00:00:40.393
+<v Matthias Max>I would really want the code to be clean
+or matching the actual requirement.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/17-1
+00:00:40.393 --> 00:00:45.300
+<v Matthias Max>Because someone later down the road,
+down the stream, will say,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/17-2
+00:00:45.300 --> 00:00:47.370
+<v Matthias Max>why do we have pickup date?</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/18-0
+00:00:49.050 --> 00:00:54.292
+<v Matthias Max>from map from collection date and pickup
+day two from pickup day two.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/18-1
+00:00:54.292 --> 00:00:56.090
+<v Matthias Max>That's a strange change.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/20-0
+00:00:57.050 --> 00:00:59.719
+<v Boyan Valchev>Yeah, it is. I, I, yeah,
+I agree with this,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/19-0
+00:00:57.450 --> 00:00:58.890
+<v Matthias Max>It confuses people.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/20-1
+00:00:59.719 --> 00:01:03.965
+<v Boyan Valchev>but like this is the other option,
+we just go and remove those suits,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/20-2
+00:01:03.965 --> 00:01:06.695
+<v Boyan Valchev>we change the locations,
+but as I mentioned,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/20-3
+00:01:06.695 --> 00:01:09.850
+<v Boyan Valchev>like the testing there should be way more
+thorough.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/21-0
+00:01:10.090 --> 00:01:13.690
+<v Matthias Max>It's yeah, then it's more testing.
+I don't accept.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/22-0
+00:01:14.850 --> 00:01:19.250
+<v Matthias Max>Ah, I mean, I say it that easy. Of course,
+we have timelines and stuff.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/23-0
+00:01:20.250 --> 00:01:25.134
+<v Matthias Max>I don't accept this such a call flow,
+call a call flow.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/23-1
+00:01:25.134 --> 00:01:31.327
+<v Matthias Max>Why should we accept such a bad code?
+Just because they make pressure.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/23-2
+00:01:31.327 --> 00:01:33.770
+<v Matthias Max>I think we can clarify that.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/24-0
+00:01:35.530 --> 00:01:40.515
+<v Matthias Max>And maybe we can check also again how
+much more effort it is to test it when we</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/24-1
+00:01:40.515 --> 00:01:41.450
+<v Matthias Max>do it properly.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/25-0
+00:01:42.810 --> 00:01:45.894
+<v Boyan Valchev>I mean,
+like the areas which you have highlighted</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/25-1
+00:01:45.894 --> 00:01:49.594
+<v Boyan Valchev>are basically here. I mean,
+it's those areas which you have</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/25-2
+00:01:49.594 --> 00:01:50.890
+<v Boyan Valchev>highlighted in the...</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/26-0
+00:01:52.170 --> 00:01:52.890
+<v Boyan Valchev>Uh, yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/27-0
+00:01:52.490 --> 00:01:52.810
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/28-0
+00:01:54.570 --> 00:01:57.850
+<v Matthias Max>And they,
+how are they covered with automated tests?</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/29-0
+00:02:00.090 --> 00:02:04.096
+<v Matthias Max>I mean,
+is it easy to just run existing test</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/35-0
+00:02:01.770 --> 00:02:05.473
+<v Boyan Valchev>I don't think they are covered.
+I don't think they are covered by</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/29-1
+00:02:04.096 --> 00:02:05.610
+<v Matthias Max>suites? Oh, okay.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/35-1
+00:02:05.473 --> 00:02:09.233
+<v Boyan Valchev>automation tests. Like,
+they'll be covered by unit tests, I think.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/30-0
+00:02:08.570 --> 00:02:08.730
+<v Matthias Max>Mm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/35-2
+00:02:09.233 --> 00:02:11.983
+<v Boyan Valchev>I mean,
+if like it would require us switching to</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/35-3
+00:02:11.983 --> 00:02:15.462
+<v Boyan Valchev>unit tests as well,
+like for pickup days where we have pickup</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/31-0
+00:02:12.450 --> 00:02:12.650
+<v Matthias Max>Mm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/35-4
+00:02:15.462 --> 00:02:20.175
+<v Boyan Valchev>day from or pickup day two. But basically,
+like my expectation is that most of this</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/32-0
+00:02:19.450 --> 00:02:19.610
+<v Matthias Max>Mm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/35-5
+00:02:20.175 --> 00:02:22.813
+<v Boyan Valchev>logic should be covered by unit tests,
+not by,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/35-6
+00:02:22.813 --> 00:02:25.170
+<v Boyan Valchev>I don't think we covered it by automation.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/33-0
+00:02:24.410 --> 00:02:24.890
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/36-0
+00:02:25.250 --> 00:02:25.690
+<v Boyan Valchev>This.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/34-0
+00:02:26.410 --> 00:02:26.890
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/37-0
+00:02:32.490 --> 00:02:32.890
+<v Matthias Max>Ohh.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/39-0
+00:02:32.570 --> 00:02:35.130
+<v Boyan Valchev>But it's a decision we need to make, yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/38-0
+00:02:34.050 --> 00:02:34.330
+<v Matthias Max>No.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/40-0
+00:02:35.850 --> 00:02:36.570
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/41-0
+00:02:37.370 --> 00:02:37.930
+<v Matthias Max>So...</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/42-0
+00:02:38.810 --> 00:02:43.797
+<v Matthias Max>Isn't there a third option to keep the
+two dates as they are and add the</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/42-1
+00:02:43.797 --> 00:02:44.890
+<v Matthias Max>collection date?</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/43-0
+00:02:49.250 --> 00:02:50.570
+<v Matthias Max>What does that imply?</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/48-0
+00:02:50.810 --> 00:02:54.492
+<v Boyan Valchev>It's even worse,
+because I think we'll still need to touch</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/48-1
+00:02:54.492 --> 00:02:57.738
+<v Boyan Valchev>the same places, like if we remove those,
+but yeah,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/44-0
+00:02:55.010 --> 00:02:55.170
+<v Matthias Max>Mm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/45-0
+00:02:57.050 --> 00:02:57.930
+<v Matthias Max>Yeah, I know.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/48-2
+00:02:57.738 --> 00:03:03.043
+<v Boyan Valchev>we'll have the old fields as well, which,
+which is like, if we're going to touch it,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/46-0
+00:03:00.090 --> 00:03:00.570
+<v Matthias Max>True.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/47-0
+00:03:01.730 --> 00:03:01.970
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/48-3
+00:03:03.043 --> 00:03:05.290
+<v Boyan Valchev>then let's just touch it then, yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/49-0
+00:03:04.970 --> 00:03:10.597
+<v Matthias Max>So the cleanest way is to confirm again
+that they will never ever need the two</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/49-1
+00:03:10.597 --> 00:03:16.082
+<v Matthias Max>pick up the pick up pair dates that we
+remove it and we just have collection</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/49-2
+00:03:16.082 --> 00:03:19.928
+<v Matthias Max>date mapped.
+That's it accepting the bigger test them</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/49-3
+00:03:19.928 --> 00:03:23.490
+<v Matthias Max>effort. That's the cleanest way forward,
+I think.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/51-0
+00:03:24.570 --> 00:03:29.130
+<v Boyan Valchev>It is, I mean, it is the cleanest way,
+but it requires testing, yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/50-0
+00:03:26.850 --> 00:03:27.010
+<v Matthias Max>And.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/52-0
+00:03:32.250 --> 00:03:32.970
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/53-0
+00:03:36.650 --> 00:03:36.850
+<v Matthias Max>Huh.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/56-0
+00:03:36.890 --> 00:03:40.330
+<v Boyan Valchev>So yeah,
+I mean I can spend some time just trying</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/56-1
+00:03:40.330 --> 00:03:45.629
+<v Boyan Valchev>to remove those fields and like just
+covering all of the all the situations,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/56-2
+00:03:45.629 --> 00:03:49.276
+<v Boyan Valchev>but but yeah,
+I mean it's I'll keep this one as well</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/54-0
+00:03:47.130 --> 00:03:47.610
+<v Matthias Max>Mhm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/56-3
+00:03:49.276 --> 00:03:54.436
+<v Boyan Valchev>because this is like the one that I
+showed you is just requiring almost no</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/56-4
+00:03:54.436 --> 00:03:56.570
+<v Boyan Valchev>testing, I mean little testing.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/55-0
+00:03:56.130 --> 00:03:56.730
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/59-0
+00:03:56.650 --> 00:04:00.346
+<v Boyan Valchev>Of course,
+I can also spend some time today just</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/59-1
+00:04:00.346 --> 00:04:05.399
+<v Boyan Valchev>checking the other the other approach.
+I mean, generally speaking,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/57-0
+00:04:04.890 --> 00:04:05.370
+<v Matthias Max>Mhm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/59-2
+00:04:05.399 --> 00:04:10.453
+<v Boyan Valchev>it would require changes,
+but like the bigger effort I think would</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/59-3
+00:04:10.453 --> 00:04:12.490
+<v Boyan Valchev>be on the Q side of things.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/58-0
+00:04:13.690 --> 00:04:14.090
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/60-0
+00:04:14.570 --> 00:04:17.103
+<v Boyan Valchev>Because, like,
+if I just switch the fields and</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/60-1
+00:04:17.103 --> 00:04:19.530
+<v Boyan Valchev>everything,
+it should be fine at some point.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/61-0
+00:04:20.970 --> 00:04:25.043
+<v Matthias Max>Aren't the first three bullet points
+covered in the same resolvers?</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/61-1
+00:04:25.043 --> 00:04:29.056
+<v Matthias Max>Initial generation of lots,
+generation of lots, operation of lots,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/61-2
+00:04:29.056 --> 00:04:32.470
+<v Matthias Max>CDC mechanism,
+aren't they running through the same code</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/61-3
+00:04:32.470 --> 00:04:32.890
+<v Matthias Max>anyway?</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/64-0
+00:04:33.690 --> 00:04:37.284
+<v Boyan Valchev>Don't think so. And I'll tell you why.
+Because, for example,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/64-1
+00:04:37.284 --> 00:04:41.821
+<v Boyan Valchev>the initial generation of loads just
+generates the legs and groups them into</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/64-2
+00:04:41.821 --> 00:04:46.122
+<v Boyan Valchev>loads. This is the one thing.
+Creation of load. So you have this option,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/62-0
+00:04:43.850 --> 00:04:44.330
+<v Matthias Max>Mhm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/64-3
+00:04:46.122 --> 00:04:50.011
+<v Boyan Valchev>like from the front end,
+you can take a leg and just create a new</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/64-4
+00:04:50.011 --> 00:04:53.016
+<v Boyan Valchev>load from it.
+This is what is meant by creation of</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/63-0
+00:04:52.410 --> 00:04:54.410
+<v Matthias Max>I see, I see.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/64-5
+00:04:53.016 --> 00:04:53.370
+<v Boyan Valchev>loads.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/69-0
+00:04:55.530 --> 00:04:59.596
+<v Boyan Valchev>Yeah, the CGC mechanism,
+how we reflect the changes. I mean,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/65-0
+00:04:55.770 --> 00:04:56.490
+<v Matthias Max>I see.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/69-1
+00:04:59.596 --> 00:05:02.930
+<v Boyan Valchev>I saw that we tracked this column,
+which is okay,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/66-0
+00:05:01.370 --> 00:05:01.890
+<v Matthias Max>Mhm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/69-2
+00:05:02.930 --> 00:05:07.596
+<v Boyan Valchev>but basically we need to reflect it.
+We need to like move this column</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/69-3
+00:05:07.596 --> 00:05:12.730
+<v Boyan Valchev>collection data into the log generation
+fields because you have separate CGC</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/67-0
+00:05:12.050 --> 00:05:12.170
+<v Matthias Max>Uh-huh.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/69-4
+00:05:12.730 --> 00:05:14.330
+<v Boyan Valchev>handlers for this field.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/72-0
+00:05:14.490 --> 00:05:22.410
+<v Boyan Valchev>For those which affect the which affect
+the uh a lot and uh yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/68-0
+00:05:14.970 --> 00:05:15.370
+<v Matthias Max>Matt.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/70-0
+00:05:18.330 --> 00:05:19.050
+<v Matthias Max>Minute.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/71-0
+00:05:21.010 --> 00:05:21.530
+<v Matthias Max>Mmh.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/73-0
+00:05:24.090 --> 00:05:27.732
+<v Matthias Max>Okay, what about this last sentence here?
+The new column,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/74-0
+00:05:27.530 --> 00:05:32.766
+<v Boyan Valchev>This Max put this because I suggested
+this as a quick workaround. Basically,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/73-1
+00:05:27.732 --> 00:05:29.930
+<v Matthias Max>but actually it should be this old.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/74-1
+00:05:32.766 --> 00:05:34.330
+<v Boyan Valchev>it's not a requirement.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/75-0
+00:05:34.970 --> 00:05:38.970
+<v Matthias Max>Because this would destroy our whole
+discussion here.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/77-0
+00:05:37.690 --> 00:05:40.498
+<v Boyan Valchev>Yeah, yeah,
+but I think you put it because of this,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/77-1
+00:05:40.498 --> 00:05:44.170
+<v Boyan Valchev>like, as a like suggestion,
+it's it's not something which is, yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/76-0
+00:05:42.330 --> 00:05:43.290
+<v Matthias Max>Quick fixed.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/78-0
+00:05:44.850 --> 00:05:45.050
+<v Matthias Max>Mm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/79-0
+00:05:46.410 --> 00:05:46.890
+<v Matthias Max>Ohh.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/81-0
+00:05:49.850 --> 00:05:56.250
+<v Matthias Max>I mean, the clean way is clear, right?
+We just face time constraints.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/80-0
+00:05:53.450 --> 00:05:55.050
+<v Boyan Valchev>I mean, yeah, the clean way.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/83-0
+00:05:59.610 --> 00:06:04.126
+<v Matthias Max>I think now that we've talked about it,
+there's a direction.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/83-1
+00:06:04.126 --> 00:06:10.124
+<v Matthias Max>We all favor the clean way, let's face it.
+Maybe you can invest a bit more time,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/82-0
+00:06:07.450 --> 00:06:07.530
+<v Boyan Valchev>Oh.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/83-2
+00:06:10.124 --> 00:06:14.271
+<v Matthias Max>like an hour,
+to see what really the QA effort would be</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/83-3
+00:06:14.271 --> 00:06:15.530
+<v Matthias Max>or talk to Vessi.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/84-0
+00:06:16.490 --> 00:06:20.730
+<v Matthias Max>just to get some more input and then we
+decide finally.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/85-0
+00:06:22.490 --> 00:06:25.130
+<v Matthias Max>But I would, I would prefer the clean way.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/86-0
+00:06:26.730 --> 00:06:28.250
+<v Boyan Valchev>OK, so.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/89-0
+00:06:27.690 --> 00:06:33.628
+<v Matthias Max>With all, you know, for thinking about it,
+what terms we've had in two years,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/89-1
+00:06:33.628 --> 00:06:36.978
+<v Matthias Max>how many terms,
+how many misunderstandings,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/89-2
+00:06:36.978 --> 00:06:41.698
+<v Matthias Max>and now we introduce a mapping that is a
+confusion in itself.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/87-0
+00:06:37.290 --> 00:06:37.690
+<v Boyan Valchev>Ohh.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/88-0
+00:06:39.530 --> 00:06:39.770
+<v Boyan Valchev>No.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/89-3
+00:06:41.698 --> 00:06:43.450
+<v Matthias Max>I just don't like that.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/91-0
+00:06:44.330 --> 00:06:48.223
+<v Boyan Valchev>Yeah, it's clear. This is, I mean,
+it's not it's not clean.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/90-0
+00:06:46.490 --> 00:06:47.210
+<v Matthias Max>So.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/91-1
+00:06:48.223 --> 00:06:50.170
+<v Boyan Valchev>This is this is like for sure.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/92-0
+00:06:48.650 --> 00:06:52.002
+<v Matthias Max>Yeah.
+And I really differentiate between</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/92-1
+00:06:52.002 --> 00:06:55.845
+<v Matthias Max>operational hacks and logical hacks.
+You know,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/92-2
+00:06:55.845 --> 00:07:01.732
+<v Matthias Max>setting up a microservice that
+temporarily does something for a certain</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/92-3
+00:07:01.732 --> 00:07:07.210
+<v Matthias Max>amount of time, that's fine for me.
+But this is the central logic.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/93-0
+00:07:07.250 --> 00:07:13.032
+<v Matthias Max>which we make dirty. So yeah,
+I'm repeating myself. You get the idea.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/93-1
+00:07:13.032 --> 00:07:18.650
+<v Matthias Max>Let's try the clean approach and only
+pivot to the dirty one. Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/96-0
+00:07:17.930 --> 00:07:20.783
+<v Boyan Valchev>I'll keep both. I mean,
+I'll keep this one as a pull request</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/96-1
+00:07:20.783 --> 00:07:24.664
+<v Boyan Valchev>state and I'll just switch the other ones
+like I'll just spend an hour or two just</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/96-2
+00:07:24.664 --> 00:07:27.050
+<v Boyan Valchev>trying to do this and I'll let you know
+like once.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/94-0
+00:07:26.530 --> 00:07:27.130
+<v Matthias Max>Mm-hmm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/95-0
+00:07:28.330 --> 00:07:28.650
+<v Matthias Max>Matt.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/97-0
+00:07:28.530 --> 00:07:32.251
+<v Boyan Valchev>Okay,
+just a question because like those fields,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/97-1
+00:07:32.251 --> 00:07:38.250
+<v Boyan Valchev>I think those fields are also currently
+present in the legs and lots entities.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/98-0
+00:07:39.210 --> 00:07:39.690
+<v Matthias Max>Mhm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/99-0
+00:07:39.250 --> 00:07:43.148
+<v Boyan Valchev>Do we want to keep those there as well or
+just remove them? Because I mean,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/99-1
+00:07:43.148 --> 00:07:45.610
+<v Boyan Valchev>I don't think there will be no longer
+relevant.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/101-0
+00:07:47.050 --> 00:07:49.530
+<v Boyan Valchev>But yeah, just.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/100-0
+00:07:48.970 --> 00:07:49.050
+<v Matthias Max>Eng.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/102-0
+00:07:51.050 --> 00:07:51.930
+<v Boyan Valchev>Because it's...</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/103-0
+00:07:51.130 --> 00:07:54.890
+<v Matthias Max>Everything downstream would also be
+affected, I would say.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/105-0
+00:07:55.290 --> 00:07:57.956
+<v Boyan Valchev>Yeah,
+but like if we want to keep it clean and</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/105-1
+00:07:57.956 --> 00:08:01.871
+<v Boyan Valchev>those dates are not filtered,
+they are not longer no longer required</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/105-2
+00:08:01.871 --> 00:08:06.410
+<v Boyan Valchev>for the for the legs and the lots. I mean,
+it does not make sense to keep them.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/104-0
+00:08:04.570 --> 00:08:04.610
+<v Matthias Max>I.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/106-0
+00:08:08.330 --> 00:08:12.266
+<v Matthias Max>I mean,
+that would maybe be easier to evaluate if</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/106-1
+00:08:12.266 --> 00:08:17.699
+<v Matthias Max>we get a feedback from them on why these
+fields are constantly null.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/106-2
+00:08:17.699 --> 00:08:23.290
+<v Matthias Max>And if there are plans to fix it or plans
+to use these columns at all.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/107-0
+00:08:24.490 --> 00:08:27.050
+<v Matthias Max>Maybe that could help, but...</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/108-0
+00:08:28.730 --> 00:08:31.770
+<v Matthias Max>Otherwise,
+I would just get rid of them as well.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/112-0
+00:08:32.330 --> 00:08:34.728
+<v Boyan Valchev>Well, I mean,
+even if they want to change it,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/112-1
+00:08:34.728 --> 00:08:37.699
+<v Boyan Valchev>it will be a switch of the whole process
+and everything.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/112-2
+00:08:37.699 --> 00:08:41.610
+<v Boyan Valchev>But like we had a discussion with them
+about this and I think that it was,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/109-0
+00:08:38.490 --> 00:08:38.890
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/112-3
+00:08:41.610 --> 00:08:44.633
+<v Boyan Valchev>I think that they intended to create them
+from new dispo,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/112-4
+00:08:44.633 --> 00:08:47.397
+<v Boyan Valchev>but basically like they're not filled
+from anywhere.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/110-0
+00:08:46.370 --> 00:08:46.890
+<v Matthias Max>Mmh.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/112-5
+00:08:47.397 --> 00:08:50.890
+<v Boyan Valchev>The question is whether they have some
+plans to use those columns.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/111-0
+00:08:51.450 --> 00:08:51.770
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/114-0
+00:08:51.850 --> 00:08:57.476
+<v Boyan Valchev>But, but yeah, OK, so yeah,
+let's then I'll just try to do the</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/114-1
+00:08:57.476 --> 00:08:59.530
+<v Boyan Valchev>changes and everything.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/113-0
+00:09:00.330 --> 00:09:00.850
+<v Matthias Max>Mhm.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/115-0
+00:09:02.650 --> 00:09:04.995
+<v Boyan Valchev>Oh,
+and afterwards I can focus on the polling</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/115-1
+00:09:04.995 --> 00:09:07.544
+<v Boyan Valchev>mechanism.
+I hope that I'll be able to start both</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/115-2
+00:09:07.544 --> 00:09:07.850
+<v Boyan Valchev>today.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/116-0
+00:09:07.570 --> 00:09:13.144
+<v Matthias Max>Okay, yeah.
+What I could offer is let it run through</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/116-1
+00:09:13.144 --> 00:09:16.090
+<v Matthias Max>the chain I have here for...</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/117-0
+00:09:17.130 --> 00:09:20.810
+<v Matthias Max>both analyzing and potentially fixing
+things.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/119-0
+00:09:21.850 --> 00:09:28.924
+<v Matthias Max>It helped me a lot in the past few weeks
+to trace down such changes and the</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/119-1
+00:09:28.924 --> 00:09:33.579
+<v Matthias Max>effects of it.
+It also successfully triaged bugs.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/118-0
+00:09:31.610 --> 00:09:31.890
+<v Boyan Valchev>Okay.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/119-2
+00:09:33.579 --> 00:09:40.840
+<v Matthias Max>The last two or three bugs I've run
+through it and they literally came to the</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/119-3
+00:09:40.840 --> 00:09:42.330
+<v Matthias Max>same conclusion.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/120-0
+00:09:42.970 --> 00:09:47.039
+<v Matthias Max>every time then, for example,
+yours or someone else's.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/120-1
+00:09:47.039 --> 00:09:52.810
+<v Matthias Max>So it really proves to be working,
+if that helps in speeding up the analysis.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/121-0
+00:10:06.730 --> 00:10:07.130
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/122-0
+00:10:08.090 --> 00:10:08.490
+<v Matthias Max>Yup.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/124-0
+00:10:08.330 --> 00:10:12.050
+<v Boyan Valchev>So, I'll start with this, and let's see,
+let's see how it ends up,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/124-1
+00:10:12.050 --> 00:10:15.770
+<v Boyan Valchev>and then we can then we can see what,
+like, what the situation is.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/123-0
+00:10:12.930 --> 00:10:13.290
+<v Matthias Max>K.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/125-0
+00:10:17.210 --> 00:10:17.690
+<v Matthias Max>Good.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/126-0
+00:10:18.130 --> 00:10:18.570
+<v Boyan Valchev>Okay.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/127-0
+00:10:18.570 --> 00:10:19.210
+<v Matthias Max>All right.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/129-0
+00:10:21.370 --> 00:10:26.090
+<v Matthias Max>And it's resolved, I hope,
+and we can move on.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/131-0
+00:10:27.610 --> 00:10:32.606
+<v Boyan Valchev>I mean, yeah, just, just, I will,
+I'll keep the mapping and I'll just work</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/130-0
+00:10:28.170 --> 00:10:28.490
+<v Matthias Max>Cem.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/131-1
+00:10:32.606 --> 00:10:36.470
+<v Boyan Valchev>over this as well,
+like whatever the preferred option is,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/131-2
+00:10:36.470 --> 00:10:40.334
+<v Boyan Valchev>like, I mean, we know,
+like from technical point of view,</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/131-3
+00:10:40.334 --> 00:10:44.798
+<v Boyan Valchev>what the preferred option is,
+if for some reason we need to go the</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/131-4
+00:10:44.798 --> 00:10:47.330
+<v Boyan Valchev>other way, then I'll keep this just...</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/132-0
+00:10:47.450 --> 00:10:51.610
+<v Boyan Valchev>To have it there as well, but yeah, OK,
+I'll just do the changes in scope then.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/133-0
+00:10:52.490 --> 00:10:52.890
+<v Matthias Max>Yeah.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/134-0
+00:10:53.930 --> 00:10:54.410
+<v Matthias Max>All right.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/135-0
+00:10:54.690 --> 00:10:55.130
+<v Boyan Valchev>OK.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/136-0
+00:10:55.770 --> 00:10:57.210
+<v Matthias Max>Good, see you in a bit.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/137-0
+00:10:57.490 --> 00:10:58.170
+<v Boyan Valchev>Yep, bye.</v>
+
+a63bcdca-a802-4412-8c05-2b73154d5d2b/139-0
+00:10:58.650 --> 00:10:59.290
+<v Matthias Max>Bye-bye.</v>
