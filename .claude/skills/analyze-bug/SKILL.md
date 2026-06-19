@@ -116,6 +116,14 @@ Focus on:
 - **What gets logged** (full exception vs. just message, structured vs. unstructured)
 - **What the caller sees** (HTTP status code, error response body)
 
+### Frontend-Facing Bugs
+
+When the ticket describes a UI issue (wrong values, missing data, display errors, "Data is incomplete!" messages), do a deep analysis of the full data chain between Frontend and Backend:
+- Trace the **data mapping chain** end-to-end: Frontend component → API call → Backend endpoint → handler/service → TMS Bridge GraphQL query → database
+- Be very precise about each transformation step — data errors in upstream components often surface as frontend display bugs
+- Identify where values are mapped, renamed, aggregated, or defaulted — each transformation is a potential corruption point
+- Check for mismatches between what the Backend returns and what the Frontend expects (field names, types, nullability, units)
+
 ## Phase 5: GCP Log Investigation
 
 ### Authentication Check
@@ -226,6 +234,12 @@ The report MUST include these sections in order:
 ```markdown
 # BUG-{ID}: {Title}
 
+## TL;DR
+(3-5 sentence executive summary. Must cover: what the bug actually is beyond the ticket description,
+severity assessment with recommendation if escalation is warranted, the root cause in plain language,
+the fix in one sentence, and any deeper issues discovered during analysis. Write so someone can read
+only this section and know whether to act urgently.)
+
 ## Ticket Info
 (Table with all ticket metadata — see Phase 1 fields)
 
@@ -279,6 +293,33 @@ The report MUST include these sections in order:
 - Risk zones (potential/untested paths): `rect rgb(255, 235, 200)` (orange)
 - Include the actual error messages in the diagram notes
 - Show ALL components that participate in the flow, including databases
+
+## Phase 6b: Append Internal Wrap-Up
+
+At the very end of the local report (after the Virtual Architect footer), append an `<internal>` block. This block is **stripped when copying to the wiki** — it only lives in the local file under `20_Bug-Analysis/`.
+
+```markdown
+<internal>
+
+## Run Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Date** | {YYYY-MM-DD} |
+| **Ticket** | BUG-{ID} |
+| **Duration** | ~{N} min (excluding user wait time) |
+| **Phases executed** | {comma-separated list: e.g. Ticket fetch, Code analysis (4 agents), Report, Live verification (Chrome), Wiki publish, Ticket comment} |
+| **Components analyzed** | {count} ({list}) |
+| **Root causes found** | {count} |
+| **Live verified** | Yes/No |
+| **Severity recommendation** | {original} → {recommended} / No change |
+
+</internal>
+```
+
+Also update the duration tracking memory at `reference_analyze_bug_durations.md` with a new row.
+
+When publishing to wiki (Phase 7), strip everything between `<internal>` and `</internal>` (inclusive) from the wiki copy.
 
 ## Phase 7: Publish to Wiki (on user request only)
 
