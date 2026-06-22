@@ -244,11 +244,11 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 
 **Owner:** Nagel
 
-| Env      | Status              | Notes                        |
-| -------- | ------------------- | ---------------------------- |
-| **ABN**  | done                | Connected and working        |
-| **UAT**  | done                | Connected and working        |
-| **PROD** | pending             |                              |
+| Env      | Status              | URL                          | Notes                        |
+| -------- | ------------------- | ---------------------------- | ---------------------------- |
+| **ABN**  | done                | Nikolay to provide           | Connected and working        |
+| **UAT**  | done                | Nikolay to provide           | Connected and working        |
+| **PROD** | pending             | `https://top.elogsvc.nagel-group.local/` | Pending confirmation (URL and further config) |
 
 ---
 
