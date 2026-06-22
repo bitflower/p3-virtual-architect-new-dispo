@@ -151,9 +151,11 @@ No DEV instance needed — ENT1 is schema-only without CDC pipeline.
 
 | Function     | Workload | Trigger       | Env  | Instance Name                                  | Config | Status |
 | ------------ | -------- | ------------- | ---- | ---------------------------------------------- | ------ | ------ |
-| Dispo Filter | WL5      | Cloud Storage | ABN  | `new-dispo-filter-shipment-records-abn1060`    | Python | done|
-| Dispo Filter | WL5      | Cloud Storage | UAT  | `new-dispo-filter-shipment-records-uat1060`    | Python | done|
+| Dispo Filter | WL5      | Cloud Storage | ABN  | `new-dispo-filter-shipment-records-abn1034`    | Python | done|
+| Dispo Filter | WL5      | Cloud Storage | UAT  | `new-dispo-filter-shipment-records-abn1034`    | Python | done|
 | Dispo Filter | WL5      | Cloud Storage | PROD | `new-dispo-filter-shipment-records-1060`       | Python | PR created|
+
+> The environments shares the same function hence the same name.
 
 ### 3.3 Databases
 
@@ -237,8 +239,8 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 | Env      | Status              | Notes                        |
 | -------- | ------------------- | ---------------------------- |
 | **ABN**  | done                | Set up and working           |
-| **UAT**  | not set up          |                              |
-| **PROD** | unknown             | To be verified               |
+| **UAT**  | done                | Set up and working           |
+| **PROD** | done                | Set up and working           |
 
 ### 3.11 TOP Service
 
@@ -246,8 +248,8 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 
 | Env      | Status              | URL                          | Notes                        |
 | -------- | ------------------- | ---------------------------- | ---------------------------- |
-| **ABN**  | done                | Nikolay to provide           | Connected and working        |
-| **UAT**  | done                | Nikolay to provide           | Connected and working        |
+| **ABN**  | done                | https://featuretest-top.cal-consult.int/ | Connected and working        |
+| **UAT**  | done                | https://featuretest-top.cal-consult.int/ | not tested yet        |
 | **PROD** | pending             | `https://top.elogsvc.nagel-group.local/` | Pending confirmation (URL and further config) |
 
 ---
@@ -328,7 +330,6 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 
 | #   | Task                                                | Owner                                   | Support | Status        | Blocked by | Waiting on | Notes                                          |
 | --- | --------------------------------------------------- | --------------------------------------- | ------- | ------------- | ---------- | ---------- | ---------------------------------------------- |
-| 1   | **Oracle ENT1 schema development**                  | Joachim Schreiner (Nagel)               | --      | Active        | --         | --         | Wrapper procedures for 1060                    |
 | 2   | **Provision ORA-ABN-1060**                          | Bernd Friedewald, Thomas Paulus (Nagel) | Joachim | ✅ Done       | --         | --         | DB objects deployed by Eric (2026-05-01)       |
 | 3   | **Provision ORA-UAT-1060**                          | Bernd Friedewald, Thomas Paulus (Nagel) | Joachim | ✅ Done       | --         | --         | Provisioned                                    |
 | 4   | **Oracle deployment pipeline (QS tool)**            | Joachim Schreiner (Nagel)               | --      | Operational   | --         | --         | ENT -> ABN -> UAT -> PROD                      |
@@ -337,9 +338,9 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 | 7   | **Backend ABN env config for Oracle**               | P3 (Matthias, Max K.)                   | --      | ✅ Done       | --         | --         | Resolved with #6                               |
 | 8   | **GCP Secret Manager: Oracle connection strings**   | P3 / CAL Infra (Matt W.)               | --      | Active        | --         | --         | ABN + UAT done; PROD pending                   |
 | 9   | **Network/VPN: Oracle on-prem reachable from GCP**  | CAL Infra / Nagel Infra                 | --      | ✅ Done       | --         | --         | Confirmed working for ABN and UAT              |
-| 10  | **End-to-end integration test (ABN 1060)**          | P3 (Matthias, Max K.)                   | Joachim | In Progress   | --         | P3         | Running for ABN; UAT starting soon             |
+| 10  | **End-to-end integration test**          | P3 (Matthias, Max K.)                   | Joachim | In Progress   | --         | P3         | Running for ABN; UAT starting soon             |
 | 11  | **Character encoding validation (UTF-8 vs Oracle)** | P3                                      | Joachim | No issues observed | --   | --         | Not encountered during ABN testing             |
-| 12  | **TMS Pulse load test (ABN 1060)**                  | P3                                      | Nagel   | Pending       | #10        | P3, CAL/Nagel | Requires ABN with real data                 |
+| 12  | **TMS Pulse load test (UAT 1060)**                  | P3                                      | Nagel   | Pending       | #10        | P3, CAL/Nagel | Requires ABN with real data                 |
 | 13  | **ABN sign-off**                                    | Patrick U., Max K. (P3)                 | --      | Pending       | #10, #11   | P3, Nagel  | Gate to UAT                                    |
 | 14  | **UAT sign-off**                                    | Max Beisheim, Patrick U. (Nagel)        | --      | Pending       | #3, #13    | P3, Nagel  | Gate to PROD                                   |
 | 15  | **Oracle CDC pipeline (Striim)**                    | Nagel                                   | --      | Active        | --         | --         | ABN + UAT done (Nikolay confirmed); PROD pending |
@@ -347,9 +348,8 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 | 17  | **Dispo Filter function for 1060 CDC**              | P3                                      | --      | In Progress   | --         | --         | ABN + UAT deployed; PROD PR created            |
 | 18  | **Pub/Sub topic for 1060 CDC**                      | P3                                      | --      | ✅ Done       | --         | --         | UAT + PROD done; ABN operational               |
 | 19  | **Pipeline testing to Production WL4**              | P3                                      | --      | ✅ Done       | --         | --         | ABN + UAT deployed to WL4 and WL5              |
-| 20  | **Keycloak and user access design**                 | P3                                      | --      | Open Question | --         | --         | Requested by Nagel (Matt W., 2026-05-01)       |
-| 21  | **Entra ID setup per environment**                  | Nagel                                   | P3      | In Progress   | --         | --         | ABN done; UAT not set up; PROD unknown         |
-| 22  | **TOP Service connectivity per environment**        | Nagel                                   | P3      | In Progress   | --         | --         | ABN + UAT done; PROD pending                   |
+| 20  | **Entra ID setup per environment**                  | Nagel                                   | P3      | In Progress   | --         | --         | ABN done; *UAT not set up*; PROD done         |
+| 21  | **TOP Service connectivity per environment**        | Nagel                                   | P3      | In Progress   | --         | --         | ABN + UAT done; PROD pending                   |
 
 ### 6.2 Standing Ownership
 
@@ -395,9 +395,20 @@ Branching & versioning concept currently in the making.
 | 5   | VPN/Network path to Oracle 1060 from GCP    | Confirmed working — ABN and UAT connected                     | 2026-06-22 |
 | 8   | Packet loss GCP <-> Nagel on-prem           | Managed by Telekom/Arista -- monitoring in place              | 2026-04-20 |
 
+## 9. GoLive Steps (P3 Proposal, WIP)
+
+| #   | Step                            | Risk                                                    | Impact on Fail   |
+| --- | ------------------------------------------- | ------------------------------------------------------------- | ---------- |
+| 1a   | Migrate 1060 Oracle Database      | High              | Classic Dispatching potentially broken (due to changes to core TMS logic, e.g.) |
+| 1b   | Full GCP Deployment & Verification      | Low              | Doesn't disturb users (as no production users exist yet) |
+| 2a   | Oracle Database Check (Database Health)      | Low              | Doesn't write data nor cause heavy load on the DB |
+| 2b   | Setup Striim & Confirm Files in bucket      | Low              | Low until no users actively use it (in the last step) |
+| 2c   | Monitor GCP Infrastrcture & Application      | Low              | Doesn't affect the application functionality |
+| x   | User start using New Dispo      | Low              | - |
+
 ---
 
-## 9. Related Resources
+## 10. Related Resources
 
 | Resource                          | Location                                                                   |
 | --------------------------------- | -------------------------------------------------------------------------- |
