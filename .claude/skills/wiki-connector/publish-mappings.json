@@ -941,6 +941,20 @@
         },
         "notes": "Exploration document - full sync, no link rewriting needed"
       }
+    },
+    {
+      "id": "exploration-tms-verifier-violations-review",
+      "source": "00_Meetings/2026-06-22_TMS-Verifier-Violations-Review.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D22-TMS-Verifier-Violations-Review.md",
+      "description": "TMS Verifier Violations Review — meeting briefing for developer discussion on PG/Oracle verification gaps",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Meeting briefing - full sync, no link rewriting needed"
+      }
     }
   ]
 }
