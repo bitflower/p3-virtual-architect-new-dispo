@@ -492,6 +492,60 @@ Runs Playwright e2e tests with various modes.
 
 ---
 
+### `/sync-db-registry` - Sync TMS Bridge DB Registry
+
+Diff-driven sync of `db-objects.json` from TMS Bridge source code. Compares the stored watermark against `origin/master` and only re-extracts when extraction-relevant files changed.
+
+**Usage:**
+```bash
+/sync-db-registry
+```
+
+**What it does:**
+1. Verifies TMS Bridge repo is on `master` (skips feature branches)
+2. Compares `extractedFromCommit` watermark in `db-objects.json` against `origin/master`
+3. Runs scoped `git diff` on extraction-relevant paths only
+4. Classifies changes: entity/config/DbContext changes trigger full re-extraction; mutation/query-only changes trigger a targeted `expectedArgs` patch
+5. Updates the watermark after sync
+
+**Extraction scope (monitored paths):**
+- `CALConsult.TMSBridge.API/Data/Entities/`
+- `CALConsult.TMSBridge.API/Data/DbContexts/`
+- `CALConsult.TMSBridge.API/GraphQL/Mutations/`
+- `CALConsult.TMSBridge.API/GraphQL/Queries/`
+- `CALConsult.TMSBridge.API/Startup.cs`
+- `CALConsult.TMSBridge.API/Services/Resolvers/`
+
+**Loop usage:**
+```bash
+/loop 30m /sync-db-registry
+```
+
+**Registry file:** `Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier.Core/Registry/db-objects.json`
+
+**Related:** Uses the `tms-bridge-db-extractor` agent for full re-extractions.
+
+---
+
+### `tms-bridge-db-extractor` (Agent)
+
+Specialized agent that extracts all TMS database objects and column definitions from the TMS Bridge C# source code. Not a skill — invoked as an agent by `/sync-db-registry` or directly via the Agent tool.
+
+**What it does:**
+1. Collects EF mappings (`ToView`/`ToTable`) from EntityConfigurations and BranchDbContext
+2. Extracts column definitions from entity classes and configuration files
+3. Discovers stored procedures/functions from mutations and queries
+4. Resolves schemas from DbContext, Startup.cs registrations, and naming conventions
+5. Produces `db-objects.json` with tables, views, procedures, functions, and column metadata
+
+**Source:** `Code/Disposition-Abstraction-Layer/CALConsult.TMSBridge.API/`
+
+**Agent definition:** `.claude/agents/tms-bridge-db-extractor.md`
+
+**Output:** JSON registry at `Code/Disposition-Rollout-Tools/TmsBridgeDbVerifier.Core/Registry/db-objects.json`
+
+---
+
 ## Skill Development
 
 ### Simple Skills (Single File)
