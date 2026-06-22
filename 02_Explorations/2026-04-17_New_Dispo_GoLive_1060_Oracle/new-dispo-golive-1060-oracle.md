@@ -132,17 +132,17 @@ Each virtual environment requires its own Cloud Run deployment (see Section 1.3)
 
 | Service    | Workload | Env  | Cloud Run Service Name                         | URL                                              | Status   |
 | ---------- | -------- | ---- | ---------------------------------------------- | ------------------------------------------------ | -------- |
-| Frontend   | WL4      | DEV  | `cal-new-disposition-frontend-t-t-dev`         | TBD                                              | TBD      |
-| Frontend   | WL4      | ABN  | `cal-new-disposition-frontend-t-t-abn`         | TBD                                              | TBD      |
-| Frontend   | WL4      | UAT  | `cal-new-disposition-frontend-t-t-uat`         | TBD                                              | TBD      |
+| Frontend   | WL4      | DEV  | `cal-new-disposition-frontend-t-t-dev`         | `https://dev-dispo.gcp.nagel-group.com`| existing |
+| Frontend   | WL4      | ABN  | `cal-new-disposition-frontend-t-t-abn`         | `https://test.dispo.gcp.nagel-group.com`                                              | existing |
+| Frontend   | WL4      | UAT  | `cal-new-disposition-frontend-t-t-uat`         | `https://uat-dispo.gcp.nagel-group.com`                                              | existing |
 | Frontend   | WL4      | PROD | `cal-new-disposition-frontend-p-p`             | `https://dispo.gcp.nagel-group.com`              | existing |
-| Backend    | WL4      | DEV  | `cal-new-disposition-backend-t-t-dev`          | TBD                                              | TBD      |
-| Backend    | WL4      | ABN  | `cal-new-disposition-backend-t-t-abn`          | TBD                                              | TBD      |
-| Backend    | WL4      | UAT  | `cal-new-disposition-backend-t-t-uat`          | TBD                                              | TBD      |
+| Backend    | WL4      | DEV  | `cal-new-disposition-backend-t-t-dev`          | `https://dev-dispo.gcp.nagel-group.com`| existing |
+| Backend    | WL4      | ABN  | `cal-new-disposition-backend-t-t-abn`          | `https://test.dispo.gcp.nagel-group.com`| existing |
+| Backend    | WL4      | UAT  | `cal-new-disposition-backend-t-t-uat`          | `https://uat-dispo.gcp.nagel-group.com`| existing |
 | Backend    | WL4      | PROD | `cal-new-disposition-backend-p-p`              | `https://dispo.gcp.nagel-group.com`              | existing |
-| TMS Bridge | WL5      | DEV  | `cal-new-disposition-tmsbridge-t-t-dev`        | TBD                                              | TBD      |
-| TMS Bridge | WL5      | ABN  | `cal-new-disposition-tmsbridge-t-t-abn`        | TBD                                              | TBD      |
-| TMS Bridge | WL5      | UAT  | `cal-new-disposition-tmsbridge-t-t-uat`        | TBD                                              | TBD      |
+| TMS Bridge | WL5      | DEV  | `cal-new-disposition-tmsbridge-d-d-dev`        | `https://dev-tms-bridge.gcp.nagel-group.com`| existing |
+| TMS Bridge | WL5      | ABN  | `cal-new-disposition-tmsbridge-t-t-abn`        | `https://test.tms-bridge.gcp.nagel-group.com`                                              | existing |
+| TMS Bridge | WL5      | UAT  | `cal-new-disposition-tmsbridge-t-t-uat`        | `https://uat-tms-bridge.gcp.nagel-group.com`                                              | existing |
 | TMS Bridge | WL5      | PROD | `cal-new-disposition-tmsbridge-p-p`            | `https://tms-bridge.gcp.nagel-group.com`         | existing |
 
 ### 3.2 Cloud Functions (Gen2)
@@ -151,9 +151,9 @@ No DEV instance needed — ENT1 is schema-only without CDC pipeline.
 
 | Function     | Workload | Trigger       | Env  | Instance Name                                  | Config | Status |
 | ------------ | -------- | ------------- | ---- | ---------------------------------------------- | ------ | ------ |
-| Dispo Filter | WL5      | Cloud Storage | ABN  | `new-dispo-filter-shipment-records-abn1060`    | Python | TBD    |
-| Dispo Filter | WL5      | Cloud Storage | UAT  | `new-dispo-filter-shipment-records-uat1060`    | Python | TBD    |
-| Dispo Filter | WL5      | Cloud Storage | PROD | `new-dispo-filter-shipment-records-1060`       | Python | TBD    |
+| Dispo Filter | WL5      | Cloud Storage | ABN  | `new-dispo-filter-shipment-records-abn1060`    | Python | done|
+| Dispo Filter | WL5      | Cloud Storage | UAT  | `new-dispo-filter-shipment-records-uat1060`    | Python | done|
+| Dispo Filter | WL5      | Cloud Storage | PROD | `new-dispo-filter-shipment-records-1060`       | Python | PR created|
 
 ### 3.3 Databases
 
@@ -161,18 +161,18 @@ Each virtual environment's Backend requires its own CloudSQL database for isolat
 
 | Database             | Type                | Env  | CloudSQL Instance                      | Database Name | Status   |
 | -------------------- | ------------------- | ---- | -------------------------------------- | ------------- | -------- |
-| New Dispo Backend DB | CloudSQL PostgreSQL | DEV  | `cal-new-disposition-psql-t-t`         | TBD           | TBD      |
-| New Dispo Backend DB | CloudSQL PostgreSQL | ABN  | `cal-new-disposition-psql-t-t`         | TBD           | TBD      |
-| New Dispo Backend DB | CloudSQL PostgreSQL | UAT  | `cal-new-disposition-psql-t-t`         | TBD           | TBD      |
-| New Dispo Backend DB | CloudSQL PostgreSQL | PROD | `cal-new-disposition-postgres-p-p`     | --            | existing |
+| New Dispo Backend DB | CloudSQL PostgreSQL | DEV  | `cal-new-disposition-psql-d-d`         | TBD           | TBD      |
+| New Dispo Backend DB | CloudSQL PostgreSQL | ABN  | `cal-new-disposition-psql-t-t`         | cal-new-dispo| existing|
+| New Dispo Backend DB | CloudSQL PostgreSQL | UAT  | `cal-new-disposition-psql-t-t`         | cal-new-dispo-uat| existing|
+| New Dispo Backend DB | CloudSQL PostgreSQL | PROD | `cal-new-disposition-postgres-p-p`     | cal-new-dispo| existing |
 
 ### 3.4 Azure Service Bus
 
 | Stage | ASB Namespace | Queue | Status |
 | ----- | ------------- | ----- | ------ |
-| ABN   | TBD           | TBD   | TBD    |
-| UAT   | TBD           | TBD   | TBD    |
-| PROD  | TBD           | TBD   | TBD    |
+| ABN   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | done    |
+| UAT   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | TBD    |
+| PROD  | TBD           | newdispo_to_calsuite   | TBD    |
 
 **Purpose:** Outbound EDI messages (invoice/shipment distribution) via AMQP/TLS.
 
@@ -187,9 +187,9 @@ Secret names follow the credential routing convention from ADR-009: `{SYSTEM}-{E
 | ------------------------ | ----------- | ---- | -------------------------------- | ------------- | ------------------------ |
 | `dispo-dev-O-10-60`     | WL4-T-T     | DEV  | Oracle connection (ENT1)         | TMS Bridge    | TBD                      |
 | `dispo-abn-O-10-60`     | WL4-T-T     | ABN  | Oracle connection (ORA-ABN-1060) | TMS Bridge    | TBD                      |
-| `dispo-uat-O-10-60`     | WL4-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | TBD                      |
+| `dispo-uat-O-10-60`     | WL4-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | done (2026-06-17)|
 | `dispo-abn-O-10-60`     | WL5-T-T     | ABN  | Oracle connection (ORA-ABN-1060) | TMS Bridge    | done (2026-05-01)        |
-| `dispo-uat-O-10-60`     | WL5-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | TBD                      |
+| `dispo-uat-O-10-60`     | WL5-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | done (2026-06-17)                      |
 | `O-10-60`               | WL5-P-P     | PROD | Oracle connection (PROD)         | TMS Bridge    | TBD                      |
 
 ### 3.6 Cloud Storage Buckets
@@ -205,8 +205,8 @@ Secret names follow the credential routing convention from ADR-009: `{SYSTEM}-{E
 | Resource                | GCP Project | Stage | Purpose                | Status |
 | ----------------------- | ----------- | ----- | ---------------------- | ------ |
 | `WL5_CDC_TOPIC_ABN1060` | WL5-T-T     | ABN   | CDC events for ABN1060 | TBD    |
-| `WL5_CDC_TOPIC_UAT1060` | WL5-T-T     | UAT   | CDC events for UAT1060 | TBD    |
-| `WL5_CDC_TOPIC_1060`    | WL5-P-P     | PROD  | CDC events for 1060    | TBD    |
+| `uat1060-sendung-topic-ordered` | WL5-T-T     | UAT   | CDC events for UAT1060 | done|
+| `uat1060-sendung-topic-ordered`    | WL5-P-P     | PROD  | CDC events for 1060    | done|
 
 ### 3.8 Networking
 
@@ -225,9 +225,9 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 | Env   | Keycloak URL                                      | Status   |
 | ----- | ------------------------------------------------- | -------- |
 | LOCAL | `http://localhost:8080`                           | existing |
-| DEV   | TBD                                               | TBD      |
-| ABN   | TBD                                               | TBD      |
-| UAT   | TBD                                               | TBD      |
+| DEV   | `https://dev-dispo.gcp.nagel-group.com/keycloak`| done|
+| ABN   | `https://test.dispo.gcp.nagel-group.com/keycloak`| done|
+| UAT   | `https://uat-dispo.gcp.nagel-group.com/keycloak`| done|
 | PROD  | `https://dispo.gcp.nagel-group.com/keycloak`      | existing |
 
 ---
