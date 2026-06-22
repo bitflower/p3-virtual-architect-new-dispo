@@ -236,9 +236,11 @@ The report MUST include these sections in order:
 
 ## TL;DR
 (3-5 sentence executive summary. Must cover: what the bug actually is beyond the ticket description,
-severity assessment with recommendation if escalation is warranted, the root cause in plain language,
-the fix in one sentence, and any deeper issues discovered during analysis. Write so someone can read
-only this section and know whether to act urgently.)
+severity assessment, the root cause in plain language,
+and any deeper issues discovered during analysis. Write so someone can read
+only this section and know whether to act urgently.
+IMPORTANT: Do NOT propose fixes or solutions — the report is a diagnostic artifact, not a prescription.
+The development team owns the fix.)
 
 ## Ticket Info
 (Table with all ticket metadata — see Phase 1 fields)
@@ -275,10 +277,15 @@ only this section and know whether to act urgently.)
 (Explanation with file:line references)
 (Repeat for each root cause)
 
-## Recommendations
-### Immediate
-### Short-Term
-### Medium-Term
+## Potentials
+(Broader implications, related risks, or areas potentially affected by the root causes.
+Surface what COULD be impacted — other endpoints, depots, edge cases, data consistency.
+Frame as diagnostic observations, not as fix proposals or action items.)
+
+## Open Questions
+(List any unresolved questions, ambiguities, or areas that need further investigation.
+IMPORTANT: Do NOT include fix proposals, solution recommendations, or implementation suggestions.
+This report is a diagnostic artifact — the development team owns the fix.)
 
 ---
 
@@ -312,7 +319,7 @@ At the very end of the local report (after the Virtual Architect footer), append
 | **Components analyzed** | {count} ({list}) |
 | **Root causes found** | {count} |
 | **Live verified** | Yes/No |
-| **Severity recommendation** | {original} → {recommended} / No change |
+| **Ticket severity** | {original severity from ticket} |
 
 </internal>
 ```
@@ -403,7 +410,7 @@ Fall back to `WebFetch` on the ticket URL (will fail on auth redirect — inform
 - Report what was searched and what was not found — absence of evidence is still evidence
 
 ### Insufficient Log Detail
-When logs lack stack traces or context (e.g., `_logger.LogError(ex.Message)` pattern), document this as a finding. It's a root cause in itself — the logging is inadequate and should be flagged as a recommendation.
+When logs lack stack traces or context (e.g., `_logger.LogError(ex.Message)` pattern), document this as a finding and list it under Root Causes — inadequate logging is a root cause in itself that makes diagnosis harder.
 
 ## Tips
 
