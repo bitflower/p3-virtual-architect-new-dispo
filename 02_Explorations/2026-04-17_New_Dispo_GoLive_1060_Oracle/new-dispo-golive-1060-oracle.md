@@ -186,7 +186,7 @@ Secret names follow the credential routing convention from ADR-009: `{SYSTEM}-{E
 | Secret Name              | GCP Project | Env  | Purpose                          | Injected Into | Status                   |
 | ------------------------ | ----------- | ---- | -------------------------------- | ------------- | ------------------------ |
 | `dispo-dev-O-10-60`     | WL4-T-T     | DEV  | Oracle connection (ENT1)         | TMS Bridge    | TBD                      |
-| `dispo-abn-O-10-60`     | WL4-T-T     | ABN  | Oracle connection (ORA-ABN-1060) | TMS Bridge    | TBD                      |
+| `dispo-O-10-60`     | WL4-T-T     | ABN  | Oracle connection (ORA-ABN-1060) | TMS Bridge    | done|
 | `dispo-uat-O-10-60`     | WL4-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | done (2026-06-17)|
 | `dispo-abn-O-10-60`     | WL5-T-T     | ABN  | Oracle connection (ORA-ABN-1060) | TMS Bridge    | done (2026-05-01)        |
 | `dispo-uat-O-10-60`     | WL5-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | done (2026-06-17)                      |
@@ -197,7 +197,7 @@ Secret names follow the credential routing convention from ADR-009: `{SYSTEM}-{E
 | Bucket                   | GCP Project | Stage | Purpose                | Status |
 | ------------------------ | ----------- | ----- | ---------------------- | ------ |
 | `wl5-cdc-bucket-abn1060` | WL5-T-T     | ABN   | CDC bucket for ABN1060 | done   |
-| `wl5-cdc-bucket-uat1060` | WL5-T-T     | UAT   | CDC bucket for UAT1060 | done   |
+| `tms-alloydb-datastream-bucket-wl5-t-t` | WL5-T-T     | UAT   | CDC bucket for UAT1060 | done   |
 | `wl5-cdc-bucket-1060`    | WL5-P-P     | PROD  | CDC bucket for 1060    | done   |
 
 ### 3.7 Pub/Sub
@@ -275,8 +275,8 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 | Database      | TMS Bridge  | Status Bridge                    | TMS Pulse | Status Pulse |
 | ------------- | ----------- | -------------------------------- | --------- | ------------ |
 | ENT1          | TBD         | --                               | TBD       | --           |
-| ORA-ABN-1060  | `TMSBR1060` | Provisioned (2026-05-04)         | TBD       | --           |
-| ORA-UAT-1060  | `TMSBR1060` | Pending: after ABN sign-off      | TBD       | --           |
+| ORA-ABN-1060  | `TMSBR1060` | Connected                        | TBD       | --           |
+| ORA-UAT-1060  | `TMSBR1060` | Connected                        | TBD       | --           |
 | ORA-PROD-1060 | `TMSBR1060` | Pending: after UAT sign-off      | TBD       | --           |
 
 The exact permission scope required by the `TMSBR*` user (tables, views, functions, procedures) is defined in the [TMS Bridge Database Objects](02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md) inventory.
@@ -310,23 +310,23 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 | --- | --------------------------------------------------- | --------------------------------------- | ------- | ------------- | ---------- | ---------- | ---------------------------------------------- |
 | 1   | **Oracle ENT1 schema development**                  | Joachim Schreiner (Nagel)               | --      | Active        | --         | --         | Wrapper procedures for 1060                    |
 | 2   | **Provision ORA-ABN-1060**                          | Bernd Friedewald, Thomas Paulus (Nagel) | Joachim | ✅ Done       | --         | --         | DB objects deployed by Eric (2026-05-01)       |
-| 3   | **Provision ORA-UAT-1060**                          | Bernd Friedewald, Thomas Paulus (Nagel) | Joachim | Pending       | #13        | CAL/Nagel  | After ABN sign-off                             |
+| 3   | **Provision ORA-UAT-1060**                          | Bernd Friedewald, Thomas Paulus (Nagel) | Joachim | ✅ Done       | --         | --         | Provisioned                                    |
 | 4   | **Oracle deployment pipeline (QS tool)**            | Joachim Schreiner (Nagel)               | --      | Operational   | --         | --         | ENT -> ABN -> UAT -> PROD                      |
 | 5   | **ORA-ABN-1060 connection details**                 | Joachim Schreiner (Nagel)               | --      | ✅ Done       | --         | --         | TMSBR1060 user provisioned by Eric (2026-05-01) |
-| 6   | **TMS Bridge config for ORA-ABN-1060**              | P3 (Matthias, Max K.)                   | Joachim | In Progress   | --         | --         | Secret created in WL5-T-T; WL4-T-T TBC        |
-| 7   | **Backend ABN env config for Oracle**               | P3 (Matthias, Max K.)                   | --      | Pending       | #6         | P3         |                                                |
-| 8   | **GCP Secret Manager: Oracle connection strings**   | P3 / CAL Infra (Matt W.)               | --      | In Progress   | --         | --         | TMSBR1060 secret in WL5-T-T (2026-05-01); WL4-T-T TBC |
-| 9   | **Network/VPN: Oracle on-prem reachable from GCP**  | CAL Infra / Nagel Infra                 | --      | TBD           | --         | --         | Verify `oracle-user` tag grants access to 1060 |
-| 10  | **End-to-end integration test (ABN 1060)**          | P3 (Matthias, Max K.)                   | Joachim | Pending       | #6, #7, #9 | P3         | Frontend -> Backend -> Bridge -> ORA-ABN-1060  |
-| 11  | **Character encoding validation (UTF-8 vs Oracle)** | P3                                      | Joachim | Pending       | #10        | P3         | Polish/special-char data in ABN 1060           |
+| 6   | **TMS Bridge config for ORA-ABN-1060**              | P3 (Matthias, Max K.)                   | Joachim | ✅ Done       | --         | --         | Connected to ABN + UAT on TMS Bridge and Backend |
+| 7   | **Backend ABN env config for Oracle**               | P3 (Matthias, Max K.)                   | --      | ✅ Done       | --         | --         | Resolved with #6                               |
+| 8   | **GCP Secret Manager: Oracle connection strings**   | P3 / CAL Infra (Matt W.)               | --      | Active        | --         | --         | ABN + UAT done; PROD pending                   |
+| 9   | **Network/VPN: Oracle on-prem reachable from GCP**  | CAL Infra / Nagel Infra                 | --      | ✅ Done       | --         | --         | Confirmed working for ABN and UAT              |
+| 10  | **End-to-end integration test (ABN 1060)**          | P3 (Matthias, Max K.)                   | Joachim | In Progress   | --         | P3         | Running for ABN; UAT starting soon             |
+| 11  | **Character encoding validation (UTF-8 vs Oracle)** | P3                                      | Joachim | No issues observed | --   | --         | Not encountered during ABN testing             |
 | 12  | **TMS Pulse load test (ABN 1060)**                  | P3                                      | Nagel   | Pending       | #10        | P3, CAL/Nagel | Requires ABN with real data                 |
 | 13  | **ABN sign-off**                                    | Patrick U., Max K. (P3)                 | --      | Pending       | #10, #11   | P3, Nagel  | Gate to UAT                                    |
 | 14  | **UAT sign-off**                                    | Max Beisheim, Patrick U. (Nagel)        | --      | Pending       | #3, #13    | P3, Nagel  | Gate to PROD                                   |
-| 15  | **Oracle CDC pipeline (Striim)**                    | Nagel                                   | --      | Pending       | #16        | CAL/Nagel  | Nagel to setup Striim once target bucket provided |
-| 16  | **CDC target bucket for ABN1060**                   | P3                                      | --      | Open Question | --         | P3         | Bucket name needed by Nagel for Striim setup   |
-| 17  | **Dispo Filter function for 1060 CDC**              | P3                                      | --      | Pending       | #16        | P3         | New function instance per branch               |
-| 18  | **Pub/Sub topic for 1060 CDC**                      | P3                                      | --      | Pending       | --         | P3         | `WL5_CDC_TOPIC_1060`                           |
-| 19  | **Pipeline testing to Production WL4**              | P3                                      | --      | Open Question | --         | --         | Verify CI/CD pipelines deploy to Prod WL4      |
+| 15  | **Oracle CDC pipeline (Striim)**                    | Nagel                                   | --      | Active        | --         | --         | ABN + UAT done (Nikolay confirmed); PROD pending |
+| 16  | **CDC target bucket for ABN1060**                   | P3                                      | --      | ✅ Done       | --         | --         | Different bucket than planned, but operational |
+| 17  | **Dispo Filter function for 1060 CDC**              | P3                                      | --      | In Progress   | --         | --         | ABN + UAT deployed; PROD PR created            |
+| 18  | **Pub/Sub topic for 1060 CDC**                      | P3                                      | --      | ✅ Done       | --         | --         | UAT + PROD done; ABN operational               |
+| 19  | **Pipeline testing to Production WL4**              | P3                                      | --      | ✅ Done       | --         | --         | ABN + UAT deployed to WL4 and WL5              |
 | 20  | **Keycloak and user access design**                 | P3                                      | --      | Open Question | --         | --         | Requested by Nagel (Matt W., 2026-05-01)       |
 
 ### 6.2 Standing Ownership
@@ -348,62 +348,19 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 
 ---
 
-## 7. Roadmap*
-
-> To be created by Patrick U. and Max K.
-
-All dates are indicative and subject to alignment with Patrick U. (PO) and Max K. (TechPO).
-Database deployments follow a **2-week release cycle** (abn1034, uat1034, and 1060 DBs going forward).
-
-```mermaid
-gantt
-    title GoLive 1060 (Oracle) Roadmap
-    dateFormat YYYY-MM-DD
-    axisFormat %d %b
-
-    section Postgres -> Oracle Migration
-    Oracle wrapper development (Joachim)         :active, ora-dev, 2026-03-01, 2026-05-15
-    Functions & Procedures (Joachim)              :ora-funcs, 2026-03-01, 2026-05-15
-    Views (Joachim)                              :ora-views, 2026-03-01, 2026-05-15
-
-    section New Dispo Feature Development
-    New Dispo Resilience                         :active, feat-res, 2026-04-01, 2026-05-15
-    Feature 1                                    :feat-1, 2026-04-14, 2026-05-15
-    Feature 2                                    :feat-2, 2026-05-01, 2026-06-01
-    Branching & versioning concept               :feat-branch, 2026-04-14, 2026-04-30
-
-    section ABN Deployment
-    ORA-ABN-1060 provisioning (Nagel)            :active, abn-prov, 2026-04-01, 2026-04-30
-    Connection details & network verification    :abn-conn, after abn-prov, 7d
-    E2E integration testing (ABN 1060)           :abn-test, after abn-conn, 21d
-    ABN sign-off (Patrick U., Max K.)            :milestone, abn-sign, after abn-test, 0d
-
-    section UAT Deployment
-    ORA-UAT-1060 provisioning (Nagel)            :uat-prov, after abn-sign, 14d
-    UAT testing & TMS Pulse load test            :uat-test, after uat-prov, 14d
-    UAT sign-off (Max Beisheim, Patrick U.)      :milestone, uat-sign, after uat-test, 0d
-
-    section PROD Deployment
-    Production readiness review                  :prod-prep, after uat-sign, 7d
-    Go-Live 1060                                 :milestone, crit, go-live, after prod-prep, 0d
-```
-
----
-
-## 8. CI/CD & Release Branches
+## 7. CI/CD & Release Branches
 
 Branching & versioning concept currently in the making.
 
 ---
 
-## 9. Risks & Open Items (WIP)
+## 8. Risks & Open Items (WIP)
 
 | #   | Risk / Open Item                            | Impact                               | Mitigation                                    | Owner        |
 | --- | ------------------------------------------- | ------------------------------------ | --------------------------------------------- | ------------ |
-| 3   | Character encoding (UTF-8 vs Oracle legacy) | Data corruption (Poland incident)    | Explicit testing with Polish data in ABN 1060 | P3           |
+| 3   | Character encoding (UTF-8 vs Oracle legacy) | Data corruption (Poland incident)    | Not encountered during ABN testing            | P3           |
 | 4   | Wrapper edge cases on real 1060 data        | Runtime failures in production       | ABN 1060 has real data -- test early          | P3 + Joachim |
-| 5   | VPN/Network path to Oracle 1060 from GCP    | TMS Bridge cannot reach Oracle       | Verify with CAL Infra                         | CAL Infra    |
-| 6   | Oracle CDC pipeline for 1060 not scoped     | CDC events missing for 1060 branches | Nagel to setup Striim once target bucket provided | P3 / Nagel |
+| 6   | Oracle CDC pipeline for 1060 not scoped     | CDC events missing for 1060 branches | Striim active, final bucket name pending (Nikolay) | P3 / Nagel |
 | 7   | Sign-off criteria undefined                 | Unclear go/no-go gate                | Define criteria for ABN and UAT               | Patrick U.   |
 | 9   | Keycloak and user access design undefined   | Blocks security review               | Nagel waiting for documentation from P3       | P3           |
 
@@ -413,11 +370,12 @@ Branching & versioning concept currently in the making.
 | --- | ------------------------------------------- | ------------------------------------------------------------- | ---------- |
 | 1   | ORA-ABN-1060 availability date unknown      | ABN1060 provisioned, DB objects deployed by Eric              | 2026-05-01 |
 | 2   | ORA-ABN-1060 connection details pending     | TMSBR1060 user provisioned, secret created in WL5-T-T        | 2026-05-01 |
+| 5   | VPN/Network path to Oracle 1060 from GCP    | Confirmed working — ABN and UAT connected                     | 2026-06-22 |
 | 8   | Packet loss GCP <-> Nagel on-prem           | Managed by Telekom/Arista -- monitoring in place              | 2026-04-20 |
 
 ---
 
-## 10. Next Steps (WIP)
+## 9. Next Steps (WIP)
 
 1. **Obtain ORA-ABN-1060 connection details** from Joachim (host, port, user, network path)
 2. **Verify VPN/network connectivity** from GCP WL5 to Oracle 1060 on-prem
@@ -433,7 +391,7 @@ Branching & versioning concept currently in the making.
 
 ---
 
-## 11. Related Resources
+## 10. Related Resources
 
 | Resource                          | Location                                                                   |
 | --------------------------------- | -------------------------------------------------------------------------- |
