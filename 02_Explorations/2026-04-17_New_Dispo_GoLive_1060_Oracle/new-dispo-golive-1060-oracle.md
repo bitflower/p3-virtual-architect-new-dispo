@@ -230,6 +230,26 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 | UAT   | `https://uat-dispo.gcp.nagel-group.com/keycloak`| done|
 | PROD  | `https://dispo.gcp.nagel-group.com/keycloak`      | existing |
 
+### 3.10 Entra ID
+
+**Owner:** Nagel
+
+| Env      | Status              | Notes                        |
+| -------- | ------------------- | ---------------------------- |
+| **ABN**  | done                | Set up and working           |
+| **UAT**  | not set up          |                              |
+| **PROD** | unknown             | To be verified               |
+
+### 3.11 TOP Service
+
+**Owner:** Nagel
+
+| Env      | Status              | Notes                        |
+| -------- | ------------------- | ---------------------------- |
+| **ABN**  | done                | Connected and working        |
+| **UAT**  | done                | Connected and working        |
+| **PROD** | pending             |                              |
+
 ---
 
 ## 4. Security - Users & Service Accounts
@@ -328,6 +348,8 @@ Format: `{DBMS}-{COUNTRY}-{COMPANY}-{BRANCH}` (e.g., `O-D-10-60` for Oracle Germ
 | 18  | **Pub/Sub topic for 1060 CDC**                      | P3                                      | --      | ✅ Done       | --         | --         | UAT + PROD done; ABN operational               |
 | 19  | **Pipeline testing to Production WL4**              | P3                                      | --      | ✅ Done       | --         | --         | ABN + UAT deployed to WL4 and WL5              |
 | 20  | **Keycloak and user access design**                 | P3                                      | --      | Open Question | --         | --         | Requested by Nagel (Matt W., 2026-05-01)       |
+| 21  | **Entra ID setup per environment**                  | Nagel                                   | P3      | In Progress   | --         | --         | ABN done; UAT not set up; PROD unknown         |
+| 22  | **TOP Service connectivity per environment**        | Nagel                                   | P3      | In Progress   | --         | --         | ABN + UAT done; PROD pending                   |
 
 ### 6.2 Standing Ownership
 
