@@ -184,6 +184,7 @@ For each match, extract:
 - **Schema:** from the routine name if qualified (e.g., `disp_mde_ah.scanbarcode`), or from the folder/namespace convention
 - **GraphQL entry point:** the mutation class name (from the `[ExtendObjectType(typeof(Mutation))]` class)
 - **Access:** always WRITE for procedures
+- **expectedArgs:** count ALL parameter builder calls in the same method that builds the RoutineDto. Count each `.AddInput(...)`, `.AddOutput(...)`, and `.AddPlsqlBooleanOutput(...)` call as one argument. The total is the expectedArgs value. This counts IN + OUT args, matching Oracle's `ALL_ARGUMENTS` and PostgreSQL's `proallargtypes`.
 
 **Also check Startup.cs** for procedure-related registrations to ensure completeness.
 
@@ -197,7 +198,7 @@ Files: GraphQL/Mutations/**/*.cs, GraphQL/Queries/**/*.cs, Services/**/*.cs
 Pattern: OperationType.Function
 ```
 
-Extract same fields as Step 4. Additionally:
+Extract same fields as Step 4 (including **expectedArgs** — same counting rule). Additionally:
 - **Access classification:** If the function is called from a Query class or is a pure getter (name starts with `get`), classify as READ. If called from a Mutation class and the name starts with `set`, `create`, `add`, `remove`, classify as WRITE.
 - **Do not rely on naming alone** — check the actual call site context.
 
@@ -217,7 +218,7 @@ Files: GraphQL/Mutations/**/*.cs, Services/**/*.cs
 Pattern: OperationType.Table
 ```
 
-These generate `SELECT * FROM TABLE(schema.function(...))` via `OracleTableBuilder`. Flag as TABLE FUNCTION type. Always READ access.
+These generate `SELECT * FROM TABLE(schema.function(...))` via `OracleTableBuilder`. Flag as TABLE FUNCTION type. Always READ access. Include **expectedArgs** (same counting rule as Step 4).
 
 ---
 
@@ -365,13 +366,26 @@ Entry format for Tables and Views:
 }
 ```
 
-Entry format for routines and custom types (unchanged — no `columns`):
+Entry format for routines (no `columns`, but includes `expectedArgs`):
 ```json
 {
   "kind": "Procedure",
   "schema": "pdis_transportorder",
   "name": "addtourpoint",
-  "permission": "EXECUTE"
+  "permission": "EXECUTE",
+  "expectedArgs": 21
+}
+```
+
+`expectedArgs` = total count of `.AddInput()` + `.AddOutput()` + `.AddPlsqlBooleanOutput()` calls for that routine. This counts all parameter directions (IN + OUT), matching how both Oracle (`ALL_ARGUMENTS`) and PostgreSQL (`proallargtypes`) report arg counts. For `DbFunction`-attributed functions that don't use `RoutineParameterBuilder`, count the C# method parameters (excluding the `this` parameter if it's an extension method).
+
+Entry format for custom types (no `columns`, no `expectedArgs`):
+```json
+{
+  "kind": "CustomType",
+  "schema": "pdis_transportorder",
+  "name": "legtype",
+  "permission": "USAGE"
 }
 ```
 
