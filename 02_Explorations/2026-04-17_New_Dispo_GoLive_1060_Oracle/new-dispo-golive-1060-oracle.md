@@ -171,7 +171,7 @@ Each virtual environment's Backend requires its own CloudSQL database for isolat
 | Stage | ASB Namespace | Queue | Status |
 | ----- | ------------- | ----- | ------ |
 | ABN   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | done    |
-| UAT   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | TBD    |
+| UAT   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | done    |
 | PROD  | TBD           | newdispo_to_calsuite   | TBD    |
 
 **Purpose:** Outbound EDI messages (invoice/shipment distribution) via AMQP/TLS.
@@ -397,23 +397,7 @@ Branching & versioning concept currently in the making.
 
 ---
 
-## 9. Next Steps (WIP)
-
-1. **Obtain ORA-ABN-1060 connection details** from Joachim (host, port, user, network path)
-2. **Verify VPN/network connectivity** from GCP WL5 to Oracle 1060 on-prem
-3. **Create GCP secrets** for Oracle 1060 connection (`O-D-10-60` pattern)
-4. **Configure TMS Bridge** appsettings for ORA-ABN-1060
-5. **Run first end-to-end integration test** through full stack
-6. **Test character encoding** with Polish/special-character data
-7. **Scope Oracle CDC** for 1060 (Striim/Datastream decision)
-8. **TMS Pulse load test** against ABN 1060
-9. **ABN sign-off** -> proceed to UAT 1060
-10. **Clarify application access methods** per environment (Citrix for UAT, Cameyo for ABN, direct access in Nuremberg)
-11. **UAT sign-off** -> go-live
-
----
-
-## 10. Related Resources
+## 9. Related Resources
 
 | Resource                          | Location                                                                   |
 | --------------------------------- | -------------------------------------------------------------------------- |
