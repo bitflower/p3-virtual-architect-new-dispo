@@ -2,7 +2,7 @@
 
 **Feature ID:** 003_TMS_Bridge_DB_Verifier_Core_And_Column_Checks
 **Date:** 2026-06-11
-**Status:** In Progress (Phase 1 complete, Phases 2–6 remaining)
+**Status:** In Progress — Phase 1 complete (PR #33441 merged), Phases 2–6 open
 **Prerequisite:** PRD-002 (Column Registry) must be complete
 
 ---
