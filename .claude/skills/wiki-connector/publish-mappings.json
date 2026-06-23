@@ -955,6 +955,55 @@
         },
         "notes": "Meeting briefing - full sync, no link rewriting needed"
       }
+    },
+    {
+      "id": "refinement-e2e-trace-sql-logging",
+      "source": "03_PRD/Open/010_E2E_Trace_SQL_Logging/TLDR.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Planning/Team-Refinements/2026%2D06%2D23-E2E-Trace-SQL-Logging.md",
+      "description": "PRD 010 E2E Trace SQL Logging — TL;DR refinement brief for team session",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "notes": "Refinement brief - full sync, no link rewriting needed"
+      }
+    },
+    {
+      "id": "exploration-golive-1060-reverse-timeline",
+      "source": "02_Explorations/2026-06-23_GoLive_1060_Reverse_Timeline/golive-1060-reverse-timeline.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D23-GoLive-1060-Reverse-Timeline.md",
+      "description": "GoLive 1060 Reverse Timeline — backward calculation of all technical steps towards production, per-stakeholder steps and dependencies",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "excludeSections": ["Related Resources"],
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "notes": "Exploration document - exclude Related Resources (internal file paths), rewrite links to wiki paths"
+      }
+    },
+    {
+      "id": "exploration-gcs-processed-file-tracking-cleanup",
+      "source": "02_Explorations/2026-06-23_GCS_Cloud_Storage_processed-file_tracking_and_cleanup_patterns_Cloud_Function_tr/gcs-cloud-storage-processed-file-tracking-and-cleanup-patterns-cloud-function-tr.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D23-GCS-Processed-File-Tracking-and-Cleanup.md",
+      "description": "GCS processed-file tracking and cleanup patterns — no native processed flag; zone separation + Lifecycle vs external ledger; FilterShipments.Bucket review; CDC bucket Lifecycle gap",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "stripTags": ["internal"],
+        "notes": "Exploration document - strip <internal> tags (Original User Input, Related Files) on publish"
+      }
     }
   ]
 }
