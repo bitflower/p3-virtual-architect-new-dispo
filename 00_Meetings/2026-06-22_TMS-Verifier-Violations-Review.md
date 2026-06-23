@@ -15,7 +15,9 @@
 
 The verifier's `expectedArgs` are derived from the TMS Bridge C# source code (counting `AddInput` + `AddOutput` + `AddPlsqlBooleanOutput` calls per routine). Signature matching is overload-aware — both PostgreSQL and Oracle support routine overloading, and the verifier checks whether any overload matches the expected count.
 
-Reports: `Code/Disposition-Rollout-Tools/reports/2026-06-22_*`
+Full reports:
+- [ABN1034 — PostgreSQL L6](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Rollout-Tools?path=/reports/2026-06-22_17-55-48_abn1034-postgresql-l6.md&version=GBfeature/prd-003-column-registry-sync&_a=preview)
+- [ABN1060 — Oracle L6](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_git/Disposition-Rollout-Tools?path=/reports/2026-06-22_17-58-01_abn1060-oracle-l6.md&version=GBfeature/prd-003-column-registry-sync&_a=preview)
 
 ---
 
