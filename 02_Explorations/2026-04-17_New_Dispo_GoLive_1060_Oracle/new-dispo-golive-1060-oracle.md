@@ -1,6 +1,6 @@
 # New Dispo GoLive 1060 (Oracle)
 
-**Date:** 2026-05-19
+**Date:** 2026-06-23
 **Status:** Active
 **Purpose:** Holistic overview to align all stakeholders on the architecture, infrastructure, environments, and ownership for Branch 1060 on Oracle.
 
@@ -153,7 +153,7 @@ No DEV instance needed — ENT1 is schema-only without CDC pipeline.
 | ------------ | -------- | ------------- | ---- | ---------------------------------------------- | ------ | ------ |
 | Dispo Filter | WL5      | Cloud Storage | ABN  | `new-dispo-filter-shipment-records-abn1034`    | Python | done|
 | Dispo Filter | WL5      | Cloud Storage | UAT  | `new-dispo-filter-shipment-records-abn1034`    | Python | done|
-| Dispo Filter | WL5      | Cloud Storage | PROD | `new-dispo-filter-shipment-records-1060`       | Python | PR created|
+| Dispo Filter | WL5      | Cloud Storage | PROD | `new-dispo-filter-shipment-records-1060`       | Python | <span style="color:red">**PR created** </span>|
 
 > The environments shares the same function hence the same name.
 
@@ -173,8 +173,8 @@ Each virtual environment's Backend requires its own CloudSQL database for isolat
 | Stage | ASB Namespace | Queue | Status |
 | ----- | ------------- | ----- | ------ |
 | ABN   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | done    |
-| UAT   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | done    |
-| PROD  | TBD           | newdispo_to_calsuite   | TBD    |
+| UAT   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | done|
+| PROD  | <span style="color:red">**TBD** </span>           | newdispo_to_calsuite   | <span style="color:red">**TBD** </span>    |
 
 **Purpose:** Outbound EDI messages (invoice/shipment distribution) via AMQP/TLS.
 
@@ -192,7 +192,7 @@ Secret names follow the credential routing convention from ADR-009: `{SYSTEM}-{E
 | `dispo-uat-O-10-60`     | WL4-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | done (2026-06-17)|
 | `dispo-abn-O-10-60`     | WL5-T-T     | ABN  | Oracle connection (ORA-ABN-1060) | TMS Bridge    | done (2026-05-01)        |
 | `dispo-uat-O-10-60`     | WL5-T-T     | UAT  | Oracle connection (ORA-UAT-1060) | TMS Bridge    | done (2026-06-17)                      |
-| `O-10-60`               | WL5-P-P     | PROD | Oracle connection (PROD)         | TMS Bridge    | TBD                      |
+| `dispo-prod-O-10-60`               | WL5-P-P     | PROD | Oracle connection (PROD)         | TMS Bridge    | <span style="color:red">**credentials to be provided by Nagel** </span>|
 
 ### 3.6 Cloud Storage Buckets
 
@@ -206,19 +206,22 @@ Secret names follow the credential routing convention from ADR-009: `{SYSTEM}-{E
 
 | Resource                | GCP Project | Stage | Purpose                | Status |
 | ----------------------- | ----------- | ----- | ---------------------- | ------ |
-| `WL5_CDC_TOPIC_ABN1060` | WL5-T-T     | ABN   | CDC events for ABN1060 | TBD    |
+| `abn1034-sendung-topic-ordered` | WL5-T-T     | ABN   | CDC events for ABN1060 | done|
 | `uat1060-sendung-topic-ordered` | WL5-T-T     | UAT   | CDC events for UAT1060 | done|
 | `uat1060-sendung-topic-ordered`    | WL5-P-P     | PROD  | CDC events for 1060    | done|
+
+> **Note:** `filter-shipment-function` now can be triggered from multiple buckets and is using only 1 sub and 1 topic.
+> The `abn1034` topic is used also for ABN1060.
 
 ### 3.8 Networking
 
 | Resource            | Test                                   | Prod                                   | Status            |
 | ------------------- | -------------------------------------- | -------------------------------------- | ----------------- |
-| Shared VPC          | `vpc-c-shared-vpc-c-net-s-t`           | `vpc-c-shared-vpc-c-net-s-p`           | * to be confirmed |
-| Subnet              | `sn-vpc-c-net-s-t-europe-west3-common` | `sn-vpc-c-net-s-p-europe-west3-common` | * to be confirmed |
-| Hub VPC Project     | `prj-cal-net-h-5332-53ad`              | `prj-cal-net-h-5332-53ad`              | * to be confirmed |
-| CAL VPN Endpoints   | `34.157.54.59`, `34.157.191.34`        | (same hub)                             | * to be confirmed |
-| Nagel VPN Endpoints | `35.242.18.84`, `34.157.189.239`       | (same hub)                             | * to be confirmed |
+| Shared VPC          | `vpc-c-shared-vpc-c-net-s-t`           | `vpc-c-shared-vpc-c-net-s-p`           | confirmed|
+| Subnet              | `sn-vpc-c-net-s-t-europe-west3-common` | `sn-vpc-c-net-s-p-europe-west3-common` | confirmed |
+| Hub VPC Project     | `prj-cal-net-h-5332-53ad`              | `prj-cal-net-h-5332-53ad`              | <span style="color:red">**to be confirmed** </span> |
+| CAL VPN Endpoints   | `34.157.54.59`, `34.157.191.34`        | (same hub)                             | <span style="color:red">**to be confirmed** </span>|
+| Nagel VPN Endpoints | `35.242.18.84`, `34.157.189.239`       | (same hub)                             | <span style="color:red">**to be confirmed** </span>|
 
 ### 3.9 Keycloak Servers
 
@@ -249,8 +252,18 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 | Env      | Status              | URL                          | Notes                        |
 | -------- | ------------------- | ---------------------------- | ---------------------------- |
 | **ABN**  | done                | https://featuretest-top.cal-consult.int/ | Connected and working        |
-| **UAT**  | done                | https://featuretest-top.cal-consult.int/ | not tested yet        |
-| **PROD** | pending             | `https://top.elogsvc.nagel-group.local/` | Pending confirmation (URL and further config) |
+| **UAT**  | done                | https://featuretest-top.cal-consult.int/| <span style="color:red">**not tested yet** </span>    |
+| **PROD** | pending             | `https://top.elogsvc.nagel-group.local/` | <span style="color:red">**Pending confirmation (URL and further config)** </span> |
+
+### 3.12 Whitelist CSV
+
+| Env  | GCP Project | Whitelist CSV configured?                       | Status                                                                                          |
+| ---- | ----------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| ABN  | WL5-T-T     | <span style="color:red">**No — `GcsSettings` empty, not pipeline-injected** </span> | <span style="color:red">**fail-open: no consignor filtering — confirm if intended** </span> |
+| UAT  | WL5-T-T     | <span style="color:red">**No — `GcsSettings` empty, not pipeline-injected** </span> | <span style="color:red">**fail-open: no consignor filtering — confirm if intended** </span> |
+| PROD | WL5-P-P     | <span style="color:red">**to be confirmed** </span> | <span style="color:red">**CSV must be uploaded & `GcsSettings` wired before go-live** </span> |
+
+Status reflects repo config and deploy pipelines (verified 2026-06-23: `FilterShipments.Bucket/Whitelist/*`, `appsettings.*.json`, `devops/azure-pipelines-*.yml`); live Cloud Run env vars and the actual presence of a CSV object per bucket were not separately verified. See also the GCS cleanup exploration (§10).
 
 ---
 
@@ -260,33 +273,31 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 
 | Context                       | Method                           | Identity Provider                     | Status           |
 | ----------------------------- | -------------------------------- | ------------------------------------- | ---------------- |
-| User login (Browser)          | OAuth2 Authorization Code + PKCE | Keycloak                              | * to be verified |
-| Service-to-Service (Cloud)    | Client Credentials (OAuth2)      | Keycloak                              | * to be verified |
-| CI/CD Pipeline                | Workload Identity Federation     | GCP IAM (Azure DevOps token exchange) | * to be verified |
-| Cloud Run <-> CloudSQL        | CloudSQL Proxy + IAM             | GCP IAM                               | * to be verified |
-| Cloud Functions <-> Resources | GCP Service Account              | GCP IAM                               | * to be verified |
-| Local Development             | Username/Password                | Local Keycloak + local Postgres       | * to be verified |
+| User login (Browser)          | OAuth2 Authorization Code + PKCE | Keycloak                              | <span style="color:red">**to be verified** </span>  |
+| Service-to-Service (Cloud)    | Client Credentials (OAuth2)      | Keycloak                              | <span style="color:red">**to be verified** </span>  |
+| CI/CD Pipeline                | Workload Identity Federation     | GCP IAM (Azure DevOps token exchange) | <span style="color:red">**to be verified** </span>  |
+| Cloud Run <-> CloudSQL        | CloudSQL Proxy + IAM             | GCP IAM                               | <span style="color:red">**to be verified** </span> |
+| Cloud Functions <-> Resources | GCP Service Account              | GCP IAM                               | <span style="color:red">**to be verified** </span> |
+| Local Development             | Username/Password                | Local Keycloak + local Postgres       | <span style="color:red">**to be verified** </span>  |
 
 ### 4.2 Keycloak Clients
 
 | Client ID                 | Type                    | Used By                | Environment        | Status           |
 | ------------------------- | ----------------------- | ---------------------- | ------------------ | ---------------- |
-| `cal-client`              | User-facing (Auth Code) | Frontend + Backend     | Production         | * to be verified |
-| `ebv-client`              | User-facing             | Legacy EBV integration | Production         | * to be verified |
-| `client-credentials-test` | Machine-to-Machine      | Service accounts       | Test               | * to be verified |
-| `cloud-run-client`        | Machine-to-Machine      | Cloud Run functions    | Cloud environments | * to be verified |
-| `tms-cloud-service`       | Machine-to-Machine      | TMS Bridge             | Cloud environments | * to be verified |
-| `tmsng-client`            | Machine-to-Machine      | ?????                  | Test               | * to be verified |
-| `driverapp-client`        | Machine-to-Machine      | ?????                  | Test               | * to be verified |
+| `cal-client`              | User-facing (Auth Code) | Frontend + Backend     | Production         | <span style="color:red">**to be verified** </span> |
+| `ebv-client`              | User-facing             | Legacy EBV integration | Production         | <span style="color:red">**to be verified** </span> |
+| `client-credentials-test` | Machine-to-Machine      | Service accounts       | Test               | <span style="color:red">**to be verified** </span>|
+| `cloud-run-client`        | Machine-to-Machine      | Cloud Run functions    | Cloud environments | <span style="color:red">**to be verified** </span>|
+| `tms-cloud-service`       | Machine-to-Machine      | TMS Bridge             | Cloud environments | <span style="color:red">**to be verified** </span> |
 
 ### 4.3 GCP Service Accounts
 
 | Service Account                                                  | Scope            | Purpose                                                             | Status            |
 | ---------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------- | ----------------- |
-| `wl-cicd@prj-cal-w-cicd-wl4-a1bc-53ad.iam.gserviceaccount.com`   | WL4 CI/CD        | Azure DevOps (P3) pipeline deployments (Frontend, Backend)          | * to be confirmed |
-| `wl-cicd@prj-cal-w-cicd-wl5-a591-53ad.iam.gserviceaccount.com`   | WL5 CI/CD        | Azure DevOps (P3) pipeline deployments (TMS Bridge, Cloud4Log, CDC) | * to be confirmed |
-| `wl5-cloudrun@prj-cal-w-wl5-t-6c00-53ad.iam.gserviceaccount.com` | WL5 Test Runtime | Cloud Run + Workflow execution (Test)                               | * to be confirmed |
-| `wl5-cloudrun@prj-cal-w-wl5-p-3e5b-53ad.iam.gserviceaccount.com` | WL5 Prod Runtime | Cloud Run + Workflow execution (Prod)                               | * to be confirmed |
+| `wl-cicd@prj-cal-w-cicd-wl4-a1bc-53ad.iam.gserviceaccount.com`   | WL4 CI/CD        | Azure DevOps (P3) pipeline deployments (Frontend, Backend)          | <span style="color:red">**to be confirmed** </span> |
+| `wl-cicd@prj-cal-w-cicd-wl5-a591-53ad.iam.gserviceaccount.com`   | WL5 CI/CD        | Azure DevOps (P3) pipeline deployments (TMS Bridge, Cloud4Log, CDC) | <span style="color:red">**to be confirmed** </span> |
+| `wl5-cloudrun@prj-cal-w-wl5-t-6c00-53ad.iam.gserviceaccount.com` | WL5 Test Runtime | Cloud Run + Workflow execution (Test)                               | <span style="color:red">**to be confirmed** </span>|
+| `wl5-cloudrun@prj-cal-w-wl5-p-3e5b-53ad.iam.gserviceaccount.com` | WL5 Prod Runtime | Cloud Run + Workflow execution (Prod)                               | <span style="color:red">**to be confirmed** </span> |
 
 **Workload Identity Pools (Azure DevOps Federation):**
 - WL4: `azure-devops` (project number: 607166292072)
@@ -296,9 +307,9 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 
 | Database      | TMS Bridge  | Status Bridge                    | TMS Pulse | Status Pulse |
 | ------------- | ----------- | -------------------------------- | --------- | ------------ |
-| ENT1          | TBD         | --                               | TBD       | --           |
-| ORA-ABN-1060  | `TMSBR1060` | Connected                        | TBD       | --           |
-| ORA-UAT-1060  | `TMSBR1060` | Connected                        | TBD       | --           |
+| ENT1          | TBD         | --                               | <span style="color:red">**TBD** </span>       | --           |
+| ORA-ABN-1060  | `TMSBR1060` | Connected                        | <span style="color:red">**TBD** </span>        | --           |
+| ORA-UAT-1060  | `TMSBR1060` | Connected                        | <span style="color:red">**TBD** </span>        | --           |
 | ORA-PROD-1060 | `TMSBR1060` | Pending: after UAT sign-off      | TBD       | --           |
 
 The exact permission scope required by the `TMSBR*` user (tables, views, functions, procedures) is defined in the [TMS Bridge Database Objects](02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md) inventory.
@@ -385,6 +396,7 @@ Branching & versioning concept currently in the making.
 | 6   | Oracle CDC pipeline for 1060 not scoped     | CDC events missing for 1060 branches | Striim active, final bucket name pending (Nikolay) | P3 / Nagel |
 | 7   | Sign-off criteria undefined                 | Unclear go/no-go gate                | Define criteria for ABN and UAT               | Patrick U.   |
 | 9   | Keycloak and user access design undefined   | Blocks security review               | Nagel waiting for documentation from P3       | P3           |
+| 10  | CDC bucket explosion — Datastream/Striim writes **all** shipment CDC records to the bucket (the consignor whitelist filters only at *publish* time inside the function, not at ingestion); no CDC bucket has a Lifecycle/cleanup policy, so objects accumulate indefinitely | Unbounded GCS storage growth & cost; slower bucket ops over time | Add a Lifecycle `age` rule to the CDC buckets (none today); confirm retention/replay needs first — see [GCS cleanup exploration](../2026-06-23_GCS_Cloud_Storage_processed-file_tracking_and_cleanup_patterns_Cloud_Function_tr/gcs-cloud-storage-processed-file-tracking-and-cleanup-patterns-cloud-function-tr.md) | P3 |
 
 **Resolved:**
 
@@ -397,14 +409,14 @@ Branching & versioning concept currently in the making.
 
 ## 9. GoLive Steps (P3 Proposal, WIP)
 
-| #   | Step                            | Risk                                                    | Impact on Fail   |
-| --- | ------------------------------------------- | ------------------------------------------------------------- | ---------- |
-| 1a   | Migrate 1060 Oracle Database      | High              | Classic Dispatching potentially broken (due to changes to core TMS logic, e.g.) |
-| 1b   | Full GCP Deployment & Verification      | Low              | Doesn't disturb users (as no production users exist yet) |
-| 2a   | Oracle Database Check (Database Health)      | Low              | Doesn't write data nor cause heavy load on the DB |
-| 2b   | Setup Striim & Confirm Files in bucket      | Low              | Low until no users actively use it (in the last step) |
-| 2c   | Monitor GCP Infrastrcture & Application      | Low              | Doesn't affect the application functionality |
-| x   | User start using New Dispo      | Low              | - |
+| #   | Step                            | Risk                                                    | Impact on Fail   |      Estimated Duration   |
+| --- | ------------------------------------------- | ------------------------------------------------------------- | ---------- | ----------- |
+| 1a   | Migrate 1060 Oracle Database      | High              | Classic Dispatching potentially broken (due to changes to core TMS logic, e.g.) |         |
+| 1b   | Full GCP Deployment & Verification      | Low              | Doesn't disturb users (as no production users exist yet) |         |
+| 2a   | Oracle Database Check (Database Health)      | Low              | Doesn't write data nor cause heavy load on the DB |         |
+| 2b   | Setup Striim & Confirm Files in bucket      | Low              | Low until no users actively use it (in the last step) |         |
+| 2c   | Monitor GCP Infrastrcture & Application      | Low              | Doesn't affect the application functionality |         |
+| x   | User start using New Dispo      | Low              | - |         |
 
 ---
 
@@ -422,6 +434,7 @@ Branching & versioning concept currently in the making.
 | Wiki: Environments                | `WIKI/Nagel-CAL-Disposition.wiki/Devops/Environments.md`                   |
 | ADR-004: DB Identifier Convention | `01_ADRs/`                                                                 |
 | TMS Bridge Database Objects       | `02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md` |
+| GCS Bucket Cleanup & Processed-File Tracking | `02_Explorations/2026-06-23_GCS_Cloud_Storage_processed-file_tracking_and_cleanup_patterns_Cloud_Function_tr/` |
 
 ---
 
