@@ -1,0 +1,8 @@
+{
+  "from": {
+    "name": "Virtual Architect",
+    "address": "virtual-architect.p3.test@bitflower.digital"
+  },
+  "to": "matthias.max@p3-group.com",
+  "subjectPrefix": "[VA]"
+}
