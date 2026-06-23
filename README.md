@@ -32,7 +32,14 @@ See **[CLAUDE.md — Components & Repositories](./CLAUDE.md#components--reposito
 
 ### Clone Instructions
 
-Run from the repo root after cloning:
+After cloning, set the local git identity for this repo (not stored in the repo, must be done per machine):
+
+```bash
+git config user.name "Matthias Max"
+git config user.email "matthias.max@bitflower.net"
+```
+
+Then clone the nested repos from the repo root:
 
 ```bash
 # GitHub — user: matthiasmax-p3
