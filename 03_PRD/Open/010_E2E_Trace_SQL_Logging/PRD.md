@@ -29,6 +29,8 @@ GCP Cloud Run already injects trace context (`X-Cloud-Trace-Context`) on every r
 - **M6**: SQL log entries are searchable in GCP Cloud Logging by trace ID (same trace as Frontend and Backend logs)
 - **M7**: SQL log entries include the originating GraphQL operation name for context (e.g. `GetPoolDto`, `SetPoolDto`)
 
+- **M8**: Sequential HTTP requests triggered by a single user action (e.g. tour calculation → data reload) are linked via an `X-Previous-Trace-Id` header — each SQL log entry includes both `TraceId` and `PreviousTraceId`, enabling backward traversal of multi-step flows. Header value is regex-validated (`^[0-9a-fA-F]{32}$`) at both Backend and TMS Bridge to prevent log injection.
+
 ### Should Have
 
 - **S1**: SQL log entries include execution duration per statement
@@ -60,28 +62,29 @@ GCP Cloud Run already injects trace context (`X-Cloud-Trace-Context`) on every r
 |---|---|---|---|
 | T1 | SQL logs contain business data (order IDs, customer refs, weights) | Data exposure in Cloud Logging | `Enabled: false` by default. On only in ABN/UAT where test data is used. Cloud Logging access restricted by IAM. |
 | T2 | Logging overhead under high load | Performance degradation | Non-blocking fire-and-forget. Circuit breaker auto-disables after consecutive failures. |
+| T3 | `X-Previous-Trace-Id` header injection (log poisoning) | Malformed values in structured logs | Regex validation `^[0-9a-fA-F]{32}$` at both Backend and TMS Bridge; invalid values logged as `"none"`. |
 
 ## Implementation Approach (unverified hint)
 
 ### Frontend (Disposition-Frontend)
 
-- HTTP interceptor: generate `traceparent` header on outgoing requests using `crypto.randomUUID()` formatted as W3C trace context
-- New lightweight component: trace ID badge (toolbar/footer) with copy-to-clipboard. Shows the 32-hex trace ID from the current/last request.
+- HTTP interceptor: read `X-Trace-Id` from responses, store in `TraceIdService` (`BehaviorSubject`). On outgoing requests, attach `X-Previous-Trace-Id` header set to the last-received trace ID — creating a backward-linked chain across sequential requests.
+- New lightweight component: trace ID badge (toolbar) with copy-to-clipboard. Shows the 32-hex trace ID from the current/last request.
 
 ### Backend (Disposition-Backend)
 
-- **Likely zero code changes.** .NET 8's `HttpClient` auto-propagates `Activity` trace context when `System.Diagnostics.Activity` is active. Verify that the GraphQL client to TMS Bridge inherits the incoming trace ID.
-- Serilog: verify `logging.googleapis.com/trace` field is included in structured logs (may already be present via Cloud Run's logging agent).
+- Add `traceparent` header to TMS Bridge GraphQL calls in `GraphQLQueryService.cs` (the `GraphQLHttpClient` bypasses `IHttpClientFactory`, so trace context is not auto-propagated).
+- Emit `X-Trace-Id` response header; expose via CORS `.WithExposedHeaders("X-Trace-Id")`.
+- Forward `X-Previous-Trace-Id` from the incoming Frontend request to the TMS Bridge (regex-validated).
 
 ### TMS Bridge (Disposition-Abstraction-Layer)
 
 - New `SqlTracingSettings` class bound to `SqlTracing` appsettings section via `IOptions<SqlTracingSettings>`
 - New `SqlTraceInterceptor : DbCommandInterceptor` (EF Core) — logs SQL + parameters when enabled
-- Hook raw ADO.NET command execution in custom command builders (Postgres/Oracle) for non-EF queries
-- Format: interpolated SQL with parameter values as a single human-readable string
-- Log via Serilog tagged with `Activity.Current?.TraceId`
-- Include GraphQL operation name from request context
-- Non-blocking: wrap in try-catch, never throw from interceptor
+- Hook raw ADO.NET command execution via decorator on `ISqlCommandExecutor<DataTable>` (wraps `SqlFunctionExecutor`, `SqlProcedureExecutor`, `SqlTableExecutor`)
+- Format: interpolated SQL with parameter values as a single human-readable string (`FormatSql` inline substitution)
+- Log via Serilog tagged with `Activity.Current?.TraceId` and `X-Previous-Trace-Id` (regex-validated from incoming request)
+- Non-blocking: wrap in try-catch, never throw from decorator. Circuit breaker auto-disables after consecutive failures.
 
 ## Files Likely to Change
 
@@ -108,6 +111,7 @@ GCP Cloud Run already injects trace context (`X-Cloud-Trace-Context`) on every r
 - [ ] With `SqlTracing:Enabled: true`, verify full SQL with parameter values appears in Cloud Logging, including the GraphQL operation name.
 - [ ] Copy a logged SQL statement. Paste into pgAdmin/DBeaver. Verify it parses as valid SQL.
 - [ ] Inject a failure in the SQL interceptor. Verify the business operation succeeds (non-blocking).
+- [ ] Trigger a multi-step flow (e.g. tour calculation). Verify `PreviousTraceId` in SQL logs chains the sequential requests — from the badge trace ID, follow backwards to the calculation's SQL.
 - [ ] Run a tour calculation with SQL logging on vs. off. Verify < 5% overhead.
 
 ## Related
