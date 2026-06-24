@@ -125,8 +125,8 @@ Refactor `.Core` API and add `MarkdownReporter`. Everything else depends on this
 
 | File | Change | Notes |
 |---|---|---|
-| `.Core/Verification/VerificationRunner.cs` | Add `RunVerificationAsync()`, refactor `RunAsync()` to call it | Must preserve exact CLI behavior. `RunAsync` return type stays `Task<bool>`. |
-| `.Core/Reporting/MarkdownReporter.cs` | **New.** Static class, same pattern as `ConsoleReporter` / `JsonReporter`. Takes `VerificationResult`, returns `string`. | Sections: summary table, per-object results, column detail for failures, drift warnings. |
+| `.Core/Verification/VerificationRunner.cs` | Add `RunVerificationAsync()`, refactor `RunAsync()` to call it | Must preserve exact CLI behavior. `RunAsync` return type stays `Task<bool>`. Also surfaces `ExpectedArgs` on `ObjectResult` (from the registry `RoutineObject`) — feeds the report's L3 "Expected Args" column and the JSON output. |
+| `.Core/Reporting/MarkdownReporter.cs` | **New.** Static class, same pattern as `ConsoleReporter` / `JsonReporter`. Takes `VerificationResult`, returns `string`. | Rich report: header, summary table, per-object check matrix (✅/❌/—), verification-levels legend, violations by level (L1–L5), appendix (type mismatches, drift, deprecated). Matches the format in `reports/`. |
 | `TmsBridgeDbVerifier/Program.cs` | Update to use `RunVerificationAsync` when `output == "json"` | Keeps CLI backward-compatible. Console path unchanged. |
 | `Tests/Verification/VerificationRunnerRefactorTests.cs` | **New.** Tests that `RunVerificationAsync` returns correct `VerificationResult` structure. | Uses mock `IDbVerifier` (same pattern as existing tests). |
 | `Tests/Reporting/MarkdownReporterTests.cs` | **New.** Tests markdown output for: happy path, failures, drift, empty results. | Pattern: feed `VerificationResult` → assert markdown contains expected sections/content. |
@@ -226,11 +226,11 @@ Derived from PRD Verification section:
 - [ ] **V4 — Cloud Workflow parallel execution:** Deploy workflow, trigger via `gcloud workflows run`. All configured databases checked in parallel. Workflow succeeds if all return HTTP 200.
 - [ ] **V5 — Cloud Scheduler trigger:** Scheduler fires on cron. Workflow runs. Results appear in GCS.
 - [ ] **V6 — Cloud Monitoring alert:** Deliberate column mismatch → log-based metric fires → alert policy triggers notification.
-- [x] **V7 — MarkdownReporter output:** Generated markdown is valid, readable, contains: summary table, per-object status, column detail for failures, drift warnings. *(12 unit tests cover all sections)*
+- [x] **V7 — MarkdownReporter output:** Rich report — header, summary table, per-object check matrix (✅/❌/—), verification-levels legend, violations by level (L1–L5), appendix (column type mismatches, schema drift, deprecated). Matches the format in `reports/`. *(16 unit tests cover all sections)*
 - [ ] **V8 — Unreachable database handling:** POST with unreachable database identifier → HTTP 200 with connection error in response body. No crash, no retry storm.
 - [ ] **V9 — CI/CD pipeline:** Pipeline builds, runs tests, pushes Docker image, deploys Cloud Run service. Deployment succeeds, service is callable.
 - [ ] **V10 — Health endpoint:** `GET /health` returns 200 with version info.
-- [x] **V11 — All existing tests pass:** `dotnet test TmsBridgeDbVerifier.sln` — 141 green (133 existing + 8 CloudHost).
+- [x] **V11 — All existing tests pass:** `dotnet test TmsBridgeDbVerifier.sln` — 144 green (136 Core + 8 CloudHost).
 
 ---
 
