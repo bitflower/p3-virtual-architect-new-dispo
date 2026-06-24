@@ -1,0 +1,4365 @@
+{
+  "timestamp": "2026-06-24T12:00:10.9492779Z",
+  "database": "abn1034",
+  "schema": "tms1034",
+  "provider": "PostgreSql",
+  "level": "All",
+  "duration": "2.01s",
+  "summary": {
+    "totalObjects": 80,
+    "allPassed": false,
+    "existence": {
+      "passed": 77,
+      "failed": 1,
+      "skipped": 2
+    },
+    "type": {
+      "passed": 76,
+      "failed": 1,
+      "skipped": 3
+    },
+    "signature": {
+      "passed": 43,
+      "failed": 1,
+      "skipped": 36
+    },
+    "permissions": {
+      "passed": 77,
+      "failed": 1,
+      "skipped": 2
+    },
+    "columns": {
+      "objectsChecked": 33,
+      "columnsOk": 625,
+      "columnsMissing": 0,
+      "objectsWithNoData": 0
+    },
+    "drift": {
+      "objectsWithDrift": 18,
+      "totalExtraColumns": 551
+    }
+  },
+  "objects": [
+    {
+      "name": "bordero",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 4,
+        "present": 4,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "druckdatum_e",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "u_version",
+          "nummernkreis_k",
+          "firma",
+          "c_time",
+          "u_time",
+          "ols_user",
+          "absend_n",
+          "absend_i",
+          "absend_name1",
+          "empf_n",
+          "empf_i",
+          "empf_name1",
+          "gewicht",
+          "relation",
+          "dispo_text",
+          "status_k",
+          "status_text",
+          "pauschale_aufw_g",
+          "pauschale_aufw_w",
+          "stop_pauschale",
+          "stop_pauschale_w",
+          "status_fak",
+          "spt_n",
+          "spt_i",
+          "spt_name1",
+          "rueckm_k",
+          "rueckm_e",
+          "lhm_list_tix",
+          "maut_fix_g",
+          "maut_fix_w",
+          "lst_d"
+        ]
+      }
+    },
+    {
+      "name": "fahrer",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 17,
+        "present": 17,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "firmennummer",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "niederlassung",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "fahrer_schluessel",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "name",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "u_version",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "c_date",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "c_time",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "u_date",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "u_time",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ols_user",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "eintrittsdatum",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "fuehrerschein_kl",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "fs_geprueft_am",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ggvs_fs",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ggvs_klassen",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "text",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "del_flag",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "ort",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 20,
+        "present": 20,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "ort_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "plz",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ortsnamen",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "land",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ortszust_bezirk",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "u_version",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "del_flag",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "c_time",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "u_time",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "relations_nummer",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ost_west_kennz",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "bezirk",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "bahnhofs_nummer",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "laengengrad",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "breitengrad",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "post_orts_idnr",
+          "ols_user",
+          "ortsklasse_degt",
+          "ortsklasse_bsl",
+          "ortsklasse_db",
+          "ortskl_rueckrech",
+          "ikona_knoten_1",
+          "ikona_knoten_2",
+          "gem_schluessel",
+          "typ",
+          "ort_k",
+          "bezirk_k",
+          "gemeinde_k",
+          "ews_knoten",
+          "ews_knoten_int",
+          "ort_status",
+          "ref_city_id"
+        ]
+      }
+    },
+    {
+      "name": "person",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 12,
+        "present": 12,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "del_flag",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pers_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "land_sitz",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "u_version",
+          "firmennummer",
+          "region",
+          "sprache",
+          "verbund_code",
+          "kz_waehrung",
+          "name_alp_sortierun",
+          "c_time",
+          "c_user",
+          "u_time",
+          "ols_user",
+          "typ",
+          "anrede_kz",
+          "name_3",
+          "postfach",
+          "plz_postfach",
+          "bezirk_sitz",
+          "ort_sitz_tix",
+          "land_berechnung",
+          "plz_berechnung",
+          "ort_berechnung",
+          "bezirk_berechnung",
+          "ort_bere_tix",
+          "zone",
+          "kdnr_frachtzahler",
+          "kdnr_index_frachtz",
+          "kdnr_rg_empf",
+          "kdnr_index_rg_emf",
+          "sperrkz_auftrag",
+          "ausf_besch_b",
+          "fax_b",
+          "intrastat_b",
+          "faktura_vor_abf_nv",
+          "faktura_kz_art",
+          "faktura_zeitraum",
+          "mwst_kz",
+          "umsatzsteuer_id",
+          "kostenart",
+          "rechnungs_komp_kz",
+          "scheck_akz_b",
+          "kto_nr_fibu_spezi",
+          "kontonr_fibu",
+          "kto_n_fibu_k",
+          "kunde_n",
+          "bankeinzug",
+          "bankleitzahl_1",
+          "bankname_1",
+          "kontonummer_bank_1",
+          "bankleitzahl_2",
+          "bankname_2",
+          "kontonummer_bank_2",
+          "bankleitzahl_3",
+          "bankname_3",
+          "kontonummer_bank_3",
+          "telefonnummer",
+          "telefaxnummer",
+          "modem_n",
+          "isdn_nummer",
+          "e_mail_adr",
+          "www_adr",
+          "partner_aquisition",
+          "partner_buchhaltun",
+          "partner_dispo",
+          "partner_leitung",
+          "postf_ort",
+          "postf_land",
+          "sort_fakpos_k",
+          "fiskal_vertret_b",
+          "nullregelung_b",
+          "pseudobeleg_fibu_b",
+          "sachbearb",
+          "allfa_min_g",
+          "fak_min_g_k",
+          "st_n",
+          "fibu_n",
+          "rea_st_n_re_b",
+          "rea_st_n_gs_b",
+          "lhm_options",
+          "iban1",
+          "iban2",
+          "iban3",
+          "swift1",
+          "swift2",
+          "swift3",
+          "zahlart",
+          "firma_ident_n",
+          "firma_reg_n",
+          "firma_sitz_t",
+          "archiv_dok_typ",
+          "archiv_druck_b",
+          "sammelbeleg_b",
+          "info_t",
+          "gesch_bereich",
+          "vs_pm",
+          "eing_kontr_b",
+          "lspers_tix",
+          "kleinunt_b",
+          "ls_ware_b",
+          "ls_emp_b",
+          "ls_pdf_b",
+          "ls_label_druck_b",
+          "fak_abl_anhang_b",
+          "lagerknd_b",
+          "verkehr_k",
+          "prod_grp",
+          "ladzrmp7prio_b",
+          "au7_sperr_b",
+          "au7_extern_b"
+        ]
+      }
+    },
+    {
+      "name": "pst_hst",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 6,
+        "present": 6,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "c_time_inv",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "mp",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pst_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sen_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "u_version",
+          "c_time",
+          "c_user",
+          "ref_tix",
+          "ref_k",
+          "t",
+          "ereignis_e",
+          "quell_k",
+          "mp_sub",
+          "rel",
+          "c_utc",
+          "ereignis_utc",
+          "mde_id",
+          "sachbearb"
+        ]
+      }
+    },
+    {
+      "name": "rollkart",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 5,
+        "present": 5,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "druckdatum_e",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "dispo_text",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "u_version",
+          "nummernkreis_k",
+          "firma",
+          "c_time",
+          "u_time",
+          "ols_user",
+          "absend_n",
+          "absend_i",
+          "absend_name1",
+          "gewicht",
+          "tour",
+          "entf",
+          "stop_c",
+          "rueckmeldung_e",
+          "status_k",
+          "status_text",
+          "pauschale_aufw_g",
+          "pauschale_aufw_w",
+          "stop_pauschale",
+          "stop_pauschale_w",
+          "status_fak",
+          "unfr_b",
+          "lst_d",
+          "maut_fix_g",
+          "maut_fix_w",
+          "planung_b",
+          "entf_top",
+          "maut_entf_t",
+          "stop_c_top",
+          "status",
+          "abfahrt_soll_e",
+          "ankunft_soll_e"
+        ]
+      }
+    },
+    {
+      "name": "sen_ls_pst",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 3,
+        "present": 3,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sen_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pst_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ls_n",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "u_version",
+          "c_time",
+          "c_user"
+        ]
+      }
+    },
+    {
+      "name": "sen_ls_ref",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 4,
+        "present": 4,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "ls_n",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sen_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "u_version",
+          "c_time",
+          "c_user",
+          "u_time",
+          "u_user",
+          "art"
+        ]
+      }
+    },
+    {
+      "name": "sen_ref",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 3,
+        "present": 3,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sen_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "u_version",
+          "c_time",
+          "c_user",
+          "u_time",
+          "u_user",
+          "art"
+        ]
+      }
+    },
+    {
+      "name": "sen_zuord",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 3,
+        "present": 3,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sen_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ref_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "typ",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "u_version",
+          "c_time",
+          "c_user",
+          "u_time",
+          "u_user",
+          "lfd_n"
+        ]
+      }
+    },
+    {
+      "name": "sendung",
+      "kind": "Table",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Table",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 13,
+        "present": 13,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sendung_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "verkehrsstrom",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sendungsart",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "relation",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "leistungsdatum",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "fixtermin_datum",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "absend_name1",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "tran_art",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "u_version",
+          "fix_key",
+          "firma",
+          "niederlassung",
+          "rollkart_tix",
+          "bordero_tix",
+          "ladelist_tix",
+          "c_time",
+          "c_user",
+          "u_time",
+          "ols_user",
+          "auftrag_n",
+          "lagerplatz",
+          "zone_abg",
+          "zone_empf",
+          "fixtermin_zeit",
+          "frankatur",
+          "status_erf",
+          "status_dis",
+          "tour",
+          "status_zus",
+          "status_frb",
+          "status_mod",
+          "status_abf",
+          "status_fak",
+          "status_rue",
+          "status_sta",
+          "status_hst",
+          "status_1",
+          "status_2",
+          "status_3",
+          "status_4",
+          "status_5",
+          "status_6",
+          "status_7",
+          "status_8",
+          "status_9",
+          "status_10",
+          "status_11",
+          "status_12",
+          "status_13",
+          "status_14",
+          "status_15",
+          "auftrag_doss_t",
+          "absend_n",
+          "absend_i",
+          "empf_name1",
+          "sped_n",
+          "sped_i",
+          "sped_name1",
+          "unt_n",
+          "unt_i",
+          "unt_name1",
+          "dispo_deaktiv",
+          "direktsendung",
+          "direkt_angeladen",
+          "gefahrgut",
+          "lauf_kennz",
+          "zeitzone",
+          "gewicht",
+          "gewicht_frachtpf",
+          "volumen",
+          "anzahl_colli",
+          "eing_bordero_n",
+          "eing_bordero_pos",
+          "rollk_pos",
+          "rollk_e",
+          "rollk_abhol_n",
+          "rollk_abhol_pos",
+          "bordero_pos",
+          "bordero_e",
+          "ladeliste_n",
+          "ladeliste_pos",
+          "ladeliste_e",
+          "entladeliste",
+          "auftragsart",
+          "faktur_freigabe",
+          "selbstabholer",
+          "selbstanlieferer",
+          "dfue_in",
+          "dfue_out",
+          "dfue_empf_sped",
+          "absend_name2",
+          "absend_name3",
+          "absend_strasse",
+          "absend_land",
+          "absend_plz",
+          "absend_ort",
+          "absend_bezirk",
+          "absend_ort_tix",
+          "absend_postf",
+          "absend_pf_plz",
+          "absend_abw_land",
+          "absend_abw_plz",
+          "absend_abw_ort",
+          "absend_abw_bez",
+          "absend_abworttix",
+          "absend_ust_id",
+          "empf_name2",
+          "empf_name3",
+          "empf_strasse",
+          "empf_land",
+          "empf_plz",
+          "empf_ort",
+          "empf_bezirk",
+          "empf_ort_tix",
+          "empf_postf",
+          "empf_pf_plz",
+          "empf_abw_land",
+          "empf_abw_plz",
+          "empf_abw_ort",
+          "empf_abw_bez",
+          "empf_abwort_tix",
+          "empf_ust_id",
+          "empf_adr_aend",
+          "sped_strasse",
+          "sped_ort_tix",
+          "sped_postf",
+          "sped_pf_plz",
+          "sped_ust_id",
+          "unt_strasse",
+          "unt_ort_tix",
+          "unt_postf",
+          "unt_pf_plz",
+          "unt_ust_id",
+          "zustelldatum",
+          "absend_adr_aend",
+          "abs_rel",
+          "kond_bed",
+          "transit_k",
+          "ref_sen_tix",
+          "ref_k",
+          "stellplatz_c",
+          "quell_k",
+          "abl_scan_anw_k",
+          "emp_erm_rel",
+          "emp_abf_rel",
+          "rrv_gremp_b",
+          "pst_verfolg_k",
+          "abs_ursp_rel",
+          "abs_st_land",
+          "emp_st_land",
+          "zusa_k",
+          "prod_grp",
+          "abf_bereich_k",
+          "neutr_auslief_b",
+          "emp_adr_art",
+          "tran_art2",
+          "fix_bis_d",
+          "fix_bis_z",
+          "ursp_sen_n",
+          "lspers_k",
+          "logistik_k",
+          "dok_emp_b",
+          "d_kunde_b",
+          "kombisen_b",
+          "rrv_sperr_k",
+          "rrv_emp_typ",
+          "emp_rel_prod_grp",
+          "mde_id",
+          "prod_k",
+          "prod_intern_k",
+          "fix_von_d",
+          "fix_von_z",
+          "bodenstpl_c",
+          "volstpl_c",
+          "abh_von_d",
+          "abh_von_z",
+          "abh_bis_d",
+          "abh_bis_z"
+        ]
+      }
+    },
+    {
+      "name": "v_dis_branch_address",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 17,
+        "present": 17,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "company",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "branch",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "relation",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractornumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorindex",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "country",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "addressid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "addresstype",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_contact_details",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 8,
+        "present": 8,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "pers_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pers_n",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sitz_land",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "tix",
+          "u_version",
+          "del_flag",
+          "firma",
+          "nl",
+          "pers_i",
+          "typ",
+          "name3",
+          "match",
+          "info_t",
+          "adr_art",
+          "sitz_bez",
+          "sitz_ort_tix",
+          "postf_land",
+          "postf_plz",
+          "postf_ort",
+          "postf",
+          "ber_land",
+          "ber_plz",
+          "ber_ort",
+          "ber_bez",
+          "ber_ort_tix",
+          "lad_str",
+          "lad_land",
+          "lad_plz",
+          "lad_ort",
+          "lad_bez",
+          "gln",
+          "rel",
+          "region",
+          "fibu_n",
+          "w",
+          "tel",
+          "fax"
+        ]
+      }
+    },
+    {
+      "name": "v_dis_freight_exchange_tp",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 11,
+        "present": 11,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "tourpointid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transportorderid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sequencenumber",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "type",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "plannedarrivaltime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "planneddeparturetime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_leg",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 40,
+        "present": 40,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "legtype",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverydatefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverytimefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverydateto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverytimeto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "productgroup",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickupcountry",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliveryname2",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliveryname3",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverycountry",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliveryservicearea",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_shipment",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 46,
+        "present": 46,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "shipmentid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "company",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "branch",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "creationtime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "shipmenttype",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "dispatchstatus",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "collectiondate",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "fixeddeliverydate",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "fixeddeliverytime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "shipmentnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "modeoftransport",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "tournumber",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "productgroup",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "weight",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorname",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorcountry",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorzipcode",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorcity",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorstreet",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorservicearea",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneename",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneecountry",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneezipcode",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneecity",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneestreet",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneeservicearea",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "palletspace",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "departureservicearea",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "destinationservicearea",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "modeoftraffic",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverydatefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverydateto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverytimefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverytimeto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "floorpalletspaces",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "volumepalletspaces",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "noprecarriage",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "isavis",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickupdatefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickupdateto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickuptimefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickuptimeto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ispreliminary",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "updatetime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_shipment_all",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 46,
+        "present": 46,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "shipmentid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "company",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "branch",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "creationtime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "shipmenttype",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "dispatchstatus",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "collectiondate",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "fixeddeliverydate",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "fixeddeliverytime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "shipmentnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "modeoftransport",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "tournumber",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "productgroup",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "weight",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorname",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorcountry",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorzipcode",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorcity",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorstreet",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorservicearea",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneename",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneecountry",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneezipcode",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneecity",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneestreet",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneeservicearea",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "palletspace",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "departureservicearea",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "destinationservicearea",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "modeoftraffic",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverydatefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverydateto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverytimefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverytimeto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "floorpalletspaces",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "volumepalletspaces",
+            "typeExpected": "double precision",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "noprecarriage",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "isavis",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickupdatefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickupdateto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickuptimefrom",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickuptimeto",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "ispreliminary",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "updatetime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_to_features",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 13,
+        "present": 13,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "transportorderid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_to_filter",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 36,
+        "present": 36,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "transportorderid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transportordernumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "company",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "branch",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "loadingdate",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "region",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transportmode",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractornumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorindex",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorparticipanttype",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorcountry",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractoraddressid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "truckid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "trailerid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "driverid",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "codriverid",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "vehiclepalletspaces",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "vehicleweight",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_to_pickupplanning",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 23,
+        "present": 23,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "transportorderid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transportordernumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "loadingdate",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "performancedate",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "status",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transportmode",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractornumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorindex",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "planneddeparturetime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "weight",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "number_of_tourpoints",
+            "typeExpected": "integer",
+            "typeActual": "bigint",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "chamber1_temp",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "chamber2_temp",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "chamber3_temp",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_to_presettemp",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 3,
+        "present": 3,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "transportorderid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_to_tourpoint",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 42,
+        "present": 42,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "tourpointid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transportorderid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sequencenumber",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "company",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "branch",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "kind",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "type",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "personid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "personnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "personindex",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "persontype",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "addresstype",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "addressid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "plannedarrivaltime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "planneddeparturetime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "shipmentamount",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "packageamount",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "drive_instruction",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "distance",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "breakduration",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "drivingduration",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "waitingduration"
+        ]
+      }
+    },
+    {
+      "name": "v_dis_to_tp_target_dates",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 8,
+        "present": 8,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "transportorderid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "tourpointid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sequencenumber",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "company",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "branch",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "type",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "targetstarttime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "targetendtime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_to_tp_tour_number",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 3,
+        "present": 3,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "tourpointid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "personnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_tp_client_comm",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 88,
+        "present": 88,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "shipmentid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickuptourpointid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transportorderid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "tournumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "tourposition",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "loadinglocationgloballocationnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "datatransfernumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "grossweight",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "netweight",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "shippingunitsquantitypalletplacesquantity",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "loadingaidquantity",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "numberofccg1pallets",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "numberofpickingpallets",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "palletsover120cm",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "palletsunder120cm",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "stopnumber",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "volumepalletspaces",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignortmsnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignortmsindex",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignorgloballocationnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneetmsnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneetmsindex",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consigneegloballocationnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_dis_transportorder",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 63,
+        "present": 63,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "transportorderid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transportordernumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "company",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "branch",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "loadingdate",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "regionid",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "status",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transportmode",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractornumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorindex",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorparticipanttype",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractorcountry",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "contractoraddressid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "truckid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "trailerid",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "driverid",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "codriverid",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "vehiclepalletspaces",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "vehicleweight",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "planneddeparturetime",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pickuplocationssum",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "deliverylocationssum",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "chamberssum",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "plannedpalletspaces",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "loadingaidssum",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "weight",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "freightcosts",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "tollcosts",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "totalcosts",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "currency",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "companyfreightcosts",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "companytollcosts",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "companytotalcosts",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "companycurrency",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "origin",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "contractoraddresstype",
+          "transportordertype"
+        ]
+      }
+    },
+    {
+      "name": "v_ebv_delivery_note",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 4,
+        "present": 4,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sendung_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "number",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_ebv_leg",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 8,
+        "present": 8,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sendung_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_k",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_art",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_n",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": null
+    },
+    {
+      "name": "v_ebv_participant",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 11,
+        "present": 11,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sendung_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_k",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_art",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_n",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_b_n",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "person_number",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "person_index",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sapnumber",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "mail_address"
+        ]
+      }
+    },
+    {
+      "name": "v_ebv_service",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 16,
+        "present": 16,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sendung_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_k",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_art",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_g_art",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_n",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_b_n",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "lst_g_n",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "amount_currency",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "revenue_type",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "costcenter_issuer",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "costcenter_recipient",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "receipt_date",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "receipt_state",
+          "ref_id"
+        ]
+      }
+    },
+    {
+      "name": "v_ebv_shipment",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 32,
+        "present": 32,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sendung_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "number",
+            "typeExpected": "integer",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "order_type",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "company",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "branch",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "service_date",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "postage",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignor_number",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignor_index",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignor_name",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignor_country",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignor_zipcode",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignor_city",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignee_number",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignee_index",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignee_name",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignee_country",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignee_zipcode",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "consignee_city",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "product_group",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "delivery_date_to",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "delivery_time_to",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "delivery_date_from",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "delivery_time_from",
+            "typeExpected": "timestamp with time zone",
+            "typeActual": "timestamp without time zone",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "traffic_mode",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "transport_mode",
+            "typeExpected": "smallint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "tms_relation"
+        ]
+      }
+    },
+    {
+      "name": "v_pers_tb",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 15,
+        "present": 15,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "pers_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pers_n",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "pers_tb",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "del_flag",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "typ",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sitz_land",
+            "typeExpected": "text",
+            "typeActual": "character",
+            "typeCompatible": false
+          },
+          {
+            "columnName": "sitz_ort_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "iln",
+          "matchcode",
+          "name2",
+          "name3",
+          "postf",
+          "postf_plz",
+          "sitz_okl_bsl",
+          "sitz_okl_db",
+          "ber_land",
+          "ber_plz",
+          "ber_ort",
+          "ber_bez",
+          "ber_ort_tix",
+          "ber_okl_bsl",
+          "ber_okl_db",
+          "rel",
+          "rel_tk",
+          "zone",
+          "adr_aend_b",
+          "erf_sperr_b",
+          "selbstanl_b",
+          "selbstabh_b",
+          "ust_id",
+          "kst",
+          "frz_n",
+          "frz_i",
+          "bee_n",
+          "bee_i",
+          "abl_scan_anw_k",
+          "adr_art",
+          "rrv_gremp_b",
+          "pst_verfolg_k",
+          "d_kunde_b",
+          "kond_bed",
+          "abl_scan_anw_aus_emp_b",
+          "st_land",
+          "ls_label_druck_b",
+          "logistik_k",
+          "rrv_sperr_k",
+          "rrv_knd_typ",
+          "emp_master_pst_b",
+          "mp8_digitalsign_b"
+        ]
+      }
+    },
+    {
+      "name": "v_sen_ls",
+      "kind": "View",
+      "schema": "tms1034",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "View",
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Granted",
+      "requiredPermission": "SELECT",
+      "columnDetails": {
+        "status": "Passed",
+        "expected": 2,
+        "present": 2,
+        "missing": [],
+        "typeMismatches": [
+          {
+            "columnName": "sen_tix",
+            "typeExpected": "bigint",
+            "typeActual": "numeric",
+            "typeCompatible": false
+          }
+        ],
+        "liveProbeError": null
+      },
+      "driftDetails": {
+        "extraColumns": [
+          "ls_e",
+          "lspers_k",
+          "lspers_t",
+          "u_version",
+          "sen_n",
+          "fix_key",
+          "sen_art",
+          "vkstrom",
+          "firma",
+          "nl",
+          "lst_d_ym",
+          "lst_d",
+          "fix_d",
+          "fix_t",
+          "zus_d",
+          "frankatur",
+          "emp_rel",
+          "abs_rel",
+          "tour",
+          "abs_n",
+          "abs_i",
+          "abs_name1",
+          "abs_name2",
+          "abs_name3",
+          "abs_strasse",
+          "abs_land",
+          "abs_plz",
+          "abs_ort_tix",
+          "abs_ort",
+          "abs_bezirk",
+          "abs_postf",
+          "abs_postf_plz",
+          "abs_ustid",
+          "emp_n",
+          "emp_i",
+          "emp_name1",
+          "emp_name2",
+          "emp_name3",
+          "emp_strasse",
+          "emp_land",
+          "emp_plz",
+          "emp_ort_tix",
+          "emp_ort",
+          "emp_bezirk",
+          "emp_postf",
+          "emp_postf_plz",
+          "emp_ustid",
+          "gew",
+          "gew_fp",
+          "vol",
+          "ebo_n",
+          "ebo_pos",
+          "rk_tix",
+          "rk_n",
+          "rk_pos",
+          "rk_e",
+          "bo_tix",
+          "bo_n",
+          "bo_pos",
+          "bo_e",
+          "ll_tix",
+          "ll_n",
+          "ll_pos",
+          "ll_e",
+          "druck_k",
+          "prod_grp",
+          "status_vorl",
+          "ls_ext_tix",
+          "sen_display",
+          "sen_ls",
+          "sen_ls_avail",
+          "ls_dup",
+          "tranart",
+          "lsinfo_k",
+          "digilis_sort_k"
+        ]
+      }
+    },
+    {
+      "name": "item",
+      "kind": "Function",
+      "schema": "cal_uniface",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Function",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "getstaysloadedstatus",
+      "kind": "Function",
+      "schema": "pdis_leg",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Function",
+      "signature": "Match",
+      "actualArgs": 1,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "createtransportorderfromshipment",
+      "kind": "Function",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Skipped",
+      "deprecated": true,
+      "typeCheck": "Skipped",
+      "actualKind": null,
+      "signature": "Skipped",
+      "actualArgs": null,
+      "permission": "Skipped",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "geterrormessage",
+      "kind": "Function",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Function",
+      "signature": "Match",
+      "actualArgs": 0,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "getxserverdto",
+      "kind": "Function",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Function",
+      "signature": "Match",
+      "actualArgs": 1,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setxserverdto",
+      "kind": "Function",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Function",
+      "signature": "Match",
+      "actualArgs": 1,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "get",
+      "kind": "Function",
+      "schema": "pdis_transportorderdto",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Function",
+      "signature": "Match",
+      "actualArgs": 1,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "list2dbtt",
+      "kind": "TableFunction",
+      "schema": "cal_uniface",
+      "passed": false,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Mismatch",
+      "actualKind": "Function",
+      "signature": "Match",
+      "actualArgs": 1,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "abschlnve",
+      "kind": "Procedure",
+      "schema": "disp_mde_ah",
+      "passed": false,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Mismatch",
+      "actualArgs": 6,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "endeentladung",
+      "kind": "Procedure",
+      "schema": "disp_mde_ah",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 4,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "scanbarcode",
+      "kind": "Procedure",
+      "schema": "disp_mde_ah",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "startentladung",
+      "kind": "Procedure",
+      "schema": "disp_mde_ah",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 14,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "abschlnve",
+      "kind": "Procedure",
+      "schema": "disp_mde_eb",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 10,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "endeentladung",
+      "kind": "Procedure",
+      "schema": "disp_mde_eb",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 5,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "staysloaded",
+      "kind": "Procedure",
+      "schema": "pdis_leg",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "removeloadingintervals",
+      "kind": "Procedure",
+      "schema": "pdis_tourpoint",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 1,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setcustomertournumber",
+      "kind": "Procedure",
+      "schema": "pdis_tourpoint",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setloadinginterval",
+      "kind": "Procedure",
+      "schema": "pdis_tourpoint",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 3,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setloadingreference",
+      "kind": "Procedure",
+      "schema": "pdis_tourpoint",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "settargetloadingendtime",
+      "kind": "Procedure",
+      "schema": "pdis_tourpoint",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "settargetloadingstarttime",
+      "kind": "Procedure",
+      "schema": "pdis_tourpoint",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "addshipment",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Skipped",
+      "deprecated": true,
+      "typeCheck": "Skipped",
+      "actualKind": null,
+      "signature": "Skipped",
+      "actualArgs": null,
+      "permission": "Skipped",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "addtourpoint",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 21,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "addtrailer",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 4,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "addvehicle",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 4,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "createandaddleg",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 9,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "createtransportorderfromleg",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 15,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "delete",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "deletetourpoint",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 3,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "edittourpoint",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 14,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "getdriver",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 4,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "movetourpoint",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 5,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "removedriver",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 1,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "removeleg",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 3,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "removeparticipant",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 3,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "removeshipment",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 3,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "removetrailer",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "removevehicle",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setcomment",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setdriver",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 4,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setequipmenthired",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 5,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setloadingaidsoptions",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setparticipant",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 11,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setpresettemp",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 3,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "settransportmode",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 2,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "setvehicleattributes",
+      "kind": "Procedure",
+      "schema": "pdis_transportorder",
+      "passed": true,
+      "existence": "Found",
+      "deprecated": false,
+      "typeCheck": "Match",
+      "actualKind": "Procedure",
+      "signature": "Match",
+      "actualArgs": 11,
+      "permission": "Granted",
+      "requiredPermission": "EXECUTE",
+      "columnDetails": null,
+      "driftDetails": null
+    },
+    {
+      "name": "legtype",
+      "kind": "CustomType",
+      "schema": "pdis_transportorder",
+      "passed": false,
+      "existence": "NotFound",
+      "deprecated": false,
+      "typeCheck": null,
+      "actualKind": null,
+      "signature": null,
+      "actualArgs": null,
+      "permission": "Denied",
+      "requiredPermission": "USAGE",
+      "columnDetails": null,
+      "driftDetails": null
+    }
+  ]
+}
