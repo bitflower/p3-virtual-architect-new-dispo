@@ -2,7 +2,7 @@
 
 > **This is the source of truth.** A read-only copy is synced to `Code/Disposition-Rollout-Tools/docs/009-cloud-host-implementation-plan.md`.
 
-**Status:** Implementation complete — PR #33453 open
+**Status:** Closed — implemented & deployed to wl5 test (Cloud Run `tms-verifier-00007`, build 195199); scheduler live, hourly weekday runs. PR #33453.
 **Branch:** `feature/009-verifier-cloud-host` (in `Code/Disposition-Rollout-Tools`)
 **Worktrees:** No — single branch, disjoint file ownership enforces parallelism.
 

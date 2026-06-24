@@ -2,7 +2,7 @@
 
 **Feature ID:** 009_TMS_Bridge_DB_Verifier_GCP_Cloud_Host
 **Date:** 2026-06-23
-**Status:** Implementation complete — PR #33453 open
+**Status:** Closed — implemented & deployed to wl5 test (Cloud Run `tms-verifier-00007`, build 195199); scheduler live, hourly weekday runs. PR #33453.
 **Prerequisite:** PRD-003 (Core Library + Column Verification) — complete
 **Target workload:** wl5 test — `prj-cal-w-wl5-t-6c00-53ad`
 
