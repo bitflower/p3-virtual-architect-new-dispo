@@ -257,15 +257,22 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 
 ### 3.12 Whitelist CSV
 
-| Env  | GCP Project | Whitelist CSV configured?                       | Status                                                                                          |
-| ---- | ----------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| ABN  | WL5-T-T     | <span style="color:red">**No — `GcsSettings` empty, not pipeline-injected** </span> | <span style="color:red">**fail-open: no consignor filtering — confirm if intended** </span> |
-| UAT  | WL5-T-T     | <span style="color:red">**No — `GcsSettings` empty, not pipeline-injected** </span> | <span style="color:red">**fail-open: no consignor filtering — confirm if intended** </span> |
-| PROD | WL5-P-P     | <span style="color:red">**to be confirmed** </span> | <span style="color:red">**CSV must be uploaded & `GcsSettings` wired before go-live** </span> |
+| Env  | GCP Project | Whitelist received? | Whitelist CSV configured?                       | Status                                                                                          |
+| ---- | ----------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------- |
+| ABN  | WL5-T-T     | yes | <span style="color:red">**No — `GcsSettings` empty, not pipeline-injected** </span> | <span style="color:red">**fail-open: no consignor filtering — confirm if intended** </span> |
+| UAT  | WL5-T-T     | yes | <span style="color:red">**No — `GcsSettings` empty, not pipeline-injected** </span> | <span style="color:red">**fail-open: no consignor filtering — confirm if intended** </span> |
+| PROD | WL5-P-P     |  yes |<span style="color:red">**to be confirmed** </span> | <span style="color:red">**CSV must be uploaded & `GcsSettings` wired before go-live** </span> |
 
 Status reflects repo config and deploy pipelines (verified 2026-06-23: `FilterShipments.Bucket/Whitelist/*`, `appsettings.*.json`, `devops/azure-pipelines-*.yml`); live Cloud Run env vars and the actual presence of a CSV object per bucket were not separately verified. See also the GCS cleanup exploration (§10).
 
 ---
+### 3.13 Contact person freight exchange Excel
+
+| Env  | GCP Project | Contact person list received? | Contact person list Excel configured?                       | Status                                                                                          |
+| ---- | ----------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------- |
+| ABN  | <span style="color:red"> **WL5-T-T ??** </span>  | yes | <span style="color:red">**@nikolay please update** </span> | <span style="color:red">**1034 contacts available** </span> |
+| UAT  | <span style="color:red"> **WL5-T-T ??** </span>  | yes | <span style="color:red">**@nikolay please update** </span> | <span style="color:red">**no information** </span> |
+| PROD | <span style="color:red"> **WL5-P-P ??** </span> |  yes |<span style="color:red">**@nikolay please update** </span> | <span style="color:red">**Excel must be uploaded and  wired before go-live** </span> |
 
 ## 4. Security - Users & Service Accounts
 
@@ -310,7 +317,7 @@ Status reflects repo config and deploy pipelines (verified 2026-06-23: `FilterSh
 | ENT1          | TBD         | --                               | <span style="color:red">**TBD** </span>       | --           |
 | ORA-ABN-1060  | `TMSBR1060` | Connected                        | <span style="color:red">**TBD** </span>        | --           |
 | ORA-UAT-1060  | `TMSBR1060` | Connected                        | <span style="color:red">**TBD** </span>        | --           |
-| ORA-PROD-1060 | `TMSBR1060` | Pending: after UAT sign-off      | TBD       | --           |
+| ORA-PROD-1060 | `TMSBR1060` | Pending: after UAT sign-off      | <span style="color:red">**TBD** </span>        | --           |
 
 The exact permission scope required by the `TMSBR*` user (tables, views, functions, procedures) is defined in the [TMS Bridge Database Objects](02_Explorations/2026-04-29_TMS_Bridge_Database_Object_Inventory/tms-bridge-db-permission-scope.md) inventory.
 
