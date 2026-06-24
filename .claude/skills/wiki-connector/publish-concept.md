@@ -81,6 +81,12 @@ If `attachmentHandling.enabled: true` in syncStrategy:
 - Detect conflicts (target modified since last sync)
 - Warn if untracked sections would be affected
 
+#### Step 4.6: Update Page Order (`.order`) — new pages only
+If this publish **creates a new page** (target did not exist before):
+- Add the new page's basename (filename **without** `.md`, exact URL-encoded form — e.g. `2026%2D06%2D23-GCS-Processed-File-Tracking-and-Cleanup`) to the `.order` file in the target's directory.
+- **Insert respecting the folder's existing order** (see "Page Ordering" under Implementation Notes). For date-prefixed, newest-first folders (`Explorations/`, `Bug-Analysis-(Automated)/`) a current-dated page goes at the **top**.
+- If the page is **already listed** (updating an existing page), leave `.order` untouched.
+
 ### 5. Show Diff Preview
 - Display a unified diff showing:
   - Lines to be added (prefixed with `+`)
@@ -95,6 +101,7 @@ If `attachmentHandling.enabled: true` in syncStrategy:
   - Number of lines added/removed/modified
   - Which sections were affected (for section-scoped sync)
   - Target file path
+  - Whether the page was added to `.order` (and at which position) for new pages
 - Indicate if any warnings or conflicts occurred
 
 ## Implementation Notes
@@ -123,6 +130,18 @@ When `attachmentHandling.enabled: true` in syncStrategy:
 - **Preserve** original file in source location (don't modify source)
 - **Skip** if file already exists in `.attachments/` (unless `forceUpdate: true`)
 - **Supported formats**: .svg, .png, .jpg, .jpeg, .gif, .pdf
+
+### Page Ordering (Azure DevOps `.order` File)
+Azure DevOps wikis control nav order via a `.order` file in each directory — one page name per line, **without** the `.md` extension, using the **exact** URL-encoded filename (e.g. `2026%2D06%2D23-GCS-Processed-File-Tracking-and-Cleanup`). A page that is not listed falls to the bottom / alphabetical and looks "missing" from the curated nav.
+
+- **When to update**: only when **creating a new page** (initial publish). Re-publishing an existing page must **not** modify `.order`.
+- **Never duplicate**: if the basename is already present, leave the file unchanged.
+- **Where to insert**: match the directory's existing convention:
+  - Date-prefixed, newest-first folders (`Explorations/`, `Bug-Analysis-(Automated)/`): insert so dates stay descending — a current-dated page goes at the **top**.
+  - Manually curated / hierarchical folders (`Projects/`, `Technical-Documentation/`): match the surrounding grouping; if placement is unclear, **append at the end and note it** in the preview rather than guessing.
+- **Missing `.order`**: don't fabricate one unless the user asks; note its absence (Azure DevOps falls back to alphabetical).
+- **Preview**: include the `.order` change in the diff shown before writing.
+- **Encoding gotcha**: the entry must match the filename byte-for-byte — `%2D` for hyphens inside the page title, `%3A` for colons, etc. Copy from the actual target filename; do not re-derive.
 
 ### Content Exclusion (Internal-Only Sections)
 Support for marking sections as "internal only" that should be stripped when publishing to wiki:

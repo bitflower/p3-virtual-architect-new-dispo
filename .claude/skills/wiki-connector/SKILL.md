@@ -23,8 +23,9 @@ This skill publishes local concept/exploration files to WIKI documentation using
 5. **Rewrite Links**: If `linkRewriting.enabled`, rewrite relative paths to wiki paths and optionally remove internal-only links
 6. **Handle Attachments**: If `attachmentHandling.enabled`, copy referenced images to wiki `.attachments/` folder and rewrite image paths
 7. **Calculate Diff**: Compare processed source with existing target
-8. **Show Preview**: Display unified diff of changes
+8. **Show Preview**: Display unified diff of changes (including any `.order` change)
 9. **Write Changes**: After user confirmation, write to target
+10. **Update `.order`**: When a new page is created, add it to the target directory's `.order` file (Azure DevOps nav ordering), respecting the folder's existing order convention
 
 ## Implementation
 
@@ -34,6 +35,7 @@ Follow the detailed specification in `.claude/skills/wiki-connector/publish-conc
 - Date marker handling
 - Conflict detection
 - Attachment management
+- `.order` page-ordering maintenance for new pages
 - Error handling
 
 ## Usage Examples
