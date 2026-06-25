@@ -1,0 +1,83 @@
+{
+  "lastCheckedUtc": "2026-06-25T13:24:41Z",
+  "prs": {
+    "33458": {
+      "repository": "Disposition-Frontend",
+      "project": "Nagel-CAL Disposition",
+      "sourceBranch": "feature/e2e-trace-sql-logging",
+      "status": "Active",
+      "isDraft": false,
+      "mergeStatus": "Succeeded",
+      "reviewerVotes": { "boyan.valchev@p3-group.com": 0 },
+      "triagedThreads": {},
+      "pendingFixes": [],
+      "lastBuildId": 0,
+      "lastBuildResult": null
+    },
+    "33457": {
+      "repository": "Disposition-Backend",
+      "project": "Nagel-CAL Disposition",
+      "sourceBranch": "feature/e2e-trace-sql-logging",
+      "status": "Active",
+      "isDraft": false,
+      "mergeStatus": "Succeeded",
+      "reviewerVotes": { "boyan.valchev@p3-group.com": 0, "yosif.mihaylov@p3-group.com": 0 },
+      "triagedThreads": {},
+      "pendingFixes": [],
+      "lastBuildId": 0,
+      "lastBuildResult": null
+    },
+    "33456": {
+      "repository": "Disposition-Abstraction-Layer",
+      "project": "Nagel-CAL Disposition",
+      "sourceBranch": "feature/e2e-trace-sql-logging",
+      "status": "Active",
+      "isDraft": false,
+      "mergeStatus": "Succeeded",
+      "reviewerVotes": { "boyan.valchev@p3-group.com": 0, "ivaylo.petrov@p3-group.com": 0, "yosif.mihaylov@p3-group.com": 0 },
+      "triagedThreads": { "198697": 1, "198698": 1, "198699": 1, "198702": 1, "198703": 1, "198705": 1, "198712": 1 },
+      "pendingFixes": [],
+      "lastBuildId": 0,
+      "lastBuildResult": null
+    },
+    "33346": {
+      "repository": "Nagel-GCP",
+      "project": "Nagel-CAL Disposition",
+      "sourceBranch": "feature/pgnotify-cdc-sendung",
+      "status": "Active",
+      "isDraft": false,
+      "mergeStatus": "Succeeded",
+      "reviewerVotes": { "nikolay.hristov@p3-group.com": 0, "boyan.valchev@p3-group.com": 0, "stanislav.stoychev@p3-group.com": 0, "yosif.mihaylov@p3-group.com": 0 },
+      "triagedThreads": { "197961": 1, "197962": 1, "197963": 1, "197964": 1, "198106": 1, "198107": 1, "198108": 1 },
+      "pendingFixes": [],
+      "lastBuildId": 194588,
+      "lastBuildResult": "Succeeded"
+    },
+    "33057": {
+      "repository": "Disposition-Backend",
+      "project": "Nagel-CAL Disposition",
+      "sourceBranch": "feature/tour-calculation-tracing-v1",
+      "status": "Active",
+      "isDraft": true,
+      "mergeStatus": "Succeeded",
+      "reviewerVotes": {},
+      "triagedThreads": {},
+      "pendingFixes": [],
+      "lastBuildId": 0,
+      "lastBuildResult": null
+    },
+    "33056": {
+      "repository": "Disposition-Frontend",
+      "project": "Nagel-CAL Disposition",
+      "sourceBranch": "feature/tour-calculation-tracing-v1",
+      "status": "Active",
+      "isDraft": true,
+      "mergeStatus": "Succeeded",
+      "reviewerVotes": {},
+      "triagedThreads": {},
+      "pendingFixes": [],
+      "lastBuildId": 0,
+      "lastBuildResult": null
+    }
+  }
+}
