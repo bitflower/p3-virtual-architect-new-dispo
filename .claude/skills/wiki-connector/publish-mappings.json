@@ -191,6 +191,28 @@
       }
     },
     {
+      "id": "oracle-cdc-striim-latency-analysis",
+      "source": "02_Explorations/2026-06-24_Striim_CDC_latency_between_abn1060_Oracle_and_GCP_bucket__2_min_delay_from_DB_ch/striim-cdc-latency-between-abn1060-oracle-and-gcp-bucket--2-min-delay-from-db-ch.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/Oracle-CDC/Striim-CDC-Latency-Analysis.md",
+      "description": "Striim CDC Latency Analysis - abn1060 ~2min delay root-caused to the Striim GCS Writer 5-min upload interval; first measured commit->bucket latency (sub-page of Oracle CDC project)",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "linkRewriting": {
+          "enabled": true,
+          "removeInternalLinks": true,
+          "rewriteToWikiPaths": true
+        },
+        "attachmentHandling": {
+          "enabled": false
+        },
+        "notes": "Sub-page of Oracle CDC project. IMPORTANT: the 'Original User Input' section is wrapped in bare <internal>...</internal> tags (not the <!-- internal --> comment form) and MUST be stripped on publish. No charts/attachments."
+      }
+    },
+    {
       "id": "project-cdc-error-flow",
       "source": "02_Explorations/2026-03-03_cdc-sync-and-error-scenarios/PROJECT-STATUS.md",
       "target": "WIKI/Nagel-CAL-Disposition.wiki/Projects/Active/CDC-Error-Flow.md",
