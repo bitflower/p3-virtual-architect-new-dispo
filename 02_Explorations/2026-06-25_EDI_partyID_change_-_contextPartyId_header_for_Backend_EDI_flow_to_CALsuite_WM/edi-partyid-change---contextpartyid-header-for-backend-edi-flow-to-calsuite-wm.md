@@ -1,7 +1,7 @@
 # EDI partyID change - contextPartyId header for Backend EDI flow to CALsuite WM
 
-**Date:** 2026-06-25
-**Status:** Exploration
+**Date:** 2026-06-25 (contract confirmed & approach aligned 2026-06-26)
+**Status:** Aligned — handed to implementing dev for fast-iteration validation
 
 ---
 
@@ -44,46 +44,79 @@ header of the messages New Dispo sends it, so it can map our JSON to the correct
 route-planning (Tourenplanung) context: **`303` for ACC/UAT, `507` for Prod**.
 
 The relevant path is the **New Dispo Backend EDI flow** (`SendToEDI` →
-`EdiProvider` → Azure Service Bus → Lobster/CALsuite WM). The now-deprecated
-CrossDock Event Publisher is *not* in scope.
+`EdiProvider` → Azure Service Bus → CALsuite WM directly). The now-deprecated
+~~CrossDock Event Publisher~~ is *not* in scope.
 
 **This is a Backend code change, not just config.** The Backend's EDI sender
 (`EdiProvider`) currently sends a bare JSON body with **zero message headers /
 application properties** — there is no place for `contextPartyId` to live today.
-Making the flow "work" requires: (1) adding the header in `EdiProvider`, (2) a
-config field to carry the per-environment value, and (3) wiring that value into
-each deployment.
+Making the flow "work" requires: (1) setting the headers + subject in
+`EdiProvider`, (2) a config field to carry the per-environment `contextPartyId`
+value, and (3) wiring that value into each deployment.
 
-**Blocker before coding:** the exact header envelope CALsuite WM requires is
-**undocumented** in our repo (the operational guide only states "Message Format:
-EDI JSON bodies"). The screenshot shows an underscore-prefixed envelope
-(`_component`, `_contextPartyId`, `_correlationId`, `_culture`) that matches
-*neither* our current output *nor* the old CrossDock output. The precise contract
-(property names, which headers are mandatory) must be confirmed with Patrick /
-the CALsuite team — see below.
+**Contract confirmed (Roel, 2026-06-26 — `00_Meetings/2026-06-26_EDI-alignment-Roel/`).**
+New Dispo sets the envelope as **message headers** (ASB application properties,
+leading underscore) plus the message **Subject** (`system.Label`):
 
-## Questions/Open Items (blocker — confirm with Patrick / CALsuite before coding)
+| field | role | value |
+| ----- | ---- | ----- |
+| `_contextPartyId` | party id for Nagel-Group (env-dependent) | `303` ACC/UAT, `507` PROD |
+| `_component` | source api/service identifying the sender | `CALConsult.Disposition.API` (the Backend assembly/project name) |
+| `_correlationId` | track consumption in CALsuite | **optional** GUID — Roel recommends using it |
+| `Subject` (`system.Label`) | message subject CALsuite WM routes on | `SendPickupPlanToCALsuiteWM` |
 
-1. **Header vs. body** — is `contextPartyId` expected as an ASB **application
-   property** (most consistent with the screenshot's header view) or as a field in
-   the JSON body? (Backend sets neither today.)
-2. **Exact property name/casing** — screenshot shows `_contextPartyId` (leading
-   underscore); deprecated CrossDock used `contextPartyId` (no underscore). Which
-   does CALsuite WM actually read?
-3. **Other headers** — Patrick says only *"one more"* piece of info is needed, yet
-   the screenshot shows four headers. Are `_component` (`CALConsult.CALoms.Shipment`),
-   `_correlationId`, `_culture` (`en`) **also required**, or already satisfied
-   elsewhere? Does CALsuite WM expect `_component` to identify *our* message type?
-4. **Lobster vs. direct** — on ABN/UAT the path goes via **Lobster**
-   (`newdispo_to_lobster`); does Lobster currently inject the other envelope
-   headers? PROD targets CALsuite WM **directly** (`newdispo_to_calsuite`) — if
-   Lobster was the one adding them, the direct PROD path would be missing them.
-5. **ABN / DEV value** — Patrick only gave ACC=303 and Prod=507. What value (if
-   any) for ABN and DEV? (ABN shares the `sb-calsuite-tst` namespace with UAT, so
-   plausibly 303 — needs confirmation.)
-6. **Config vs. secret** — `contextPartyId` is a non-secret static value; inject
-   via the same pipeline jq patch as `ConnectionString`/`Queue`, or hardcode per
-   `appsettings.{ENV}.json`? (Pipeline injection keeps all EDI settings in one place.)
+**Agreed approach:** the **datacontract (JSON body / `JsonRootDto`) stays
+unchanged** — we only add the headers and set the Subject. Use the official
+**Azure Service Bus SDK** (`Azure.Messaging.ServiceBus`, already referenced
+v7.20.1 — recommendation already satisfied). Then **validate via fast iteration**
+(fire events → Nagel confirms) *before* committing and deploying — see
+*Validation plan* below.
+
+*Roel's two screenshots are reference only* (not the contract): a generic console
+sender showing the SDK pattern (`message.Subject` + `ApplicationProperties.Add(...)`,
+`ServiceBusClient` is heavy → cache/reuse), and CALsuite's own
+`MessageHeadersFactory` (`CALConsult.CALoms.Shipment`) which reads `ContextPartyId`
+as a numeric `long` from config — so the value is numeric (303/507), not a string.
+
+## Resolved by alignment (Roel, 2026-06-26)
+
+1. **Header vs. body → headers.** Set as ASB **application properties** (message
+   headers), not body fields.
+2. **Name/casing → leading underscore.** `_contextPartyId` (confirms the
+   screenshot; *not* the deprecated CrossDock `contextPartyId`).
+3. **Other headers.** `_component` (source api/service) is **required**;
+   `_correlationId` (GUID) is **optional but recommended** for tracking consumption
+   in CALsuite. Plus set the message **Subject** (`system.Label`) =
+   `SendPickupPlanToCALsuiteWM`.
+4. **Lobster vs. direct → CalSuite direct.** New Dispo sets the headers itself and
+   now publishes to **CalSuite WM directly** (no Lobster), so the headers travel with
+   our message regardless of environment.
+5. **SDK.** Use the official **Azure Service Bus SDK** (`Azure.Messaging.ServiceBus`)
+   — already referenced (v7.20.1); recommendation already satisfied.
+
+## Decided (2026-06-26)
+
+- **`_component` = `CALConsult.Disposition.API`** — the Backend's assembly/project
+  name (csproj sets no `AssemblyName`/`RootNamespace`, so it defaults to the project
+  file name); fits Roel's `CALConsult.<product>.<area>` "source api/service"
+  convention. In-code alternative is the existing self-id `CALConsult.NewDispo.EdiProvider`
+  (hardcoded as the body `correlationId` at `EdiJsonBuilderSubHandler.cs:45`).
+- **DEV `contextPartyId` = n/a** — DEV sends no CALsuite EDI (accepted).
+- **`_culture`** — intentionally **skipped**, not required.
+- **Target = CalSuite WM directly, not Lobster** — New Dispo no longer publishes via
+  Lobster. ABN & UAT route internally to CalSuite **ACC** (`_contextPartyId` = 303);
+  PROD = 507. CalSuite queue per GoLive page = `newdispo_to_calsuite`. ⚠️ The GoLive
+  ABN/UAT rows still show the stale `newdispo_to_lobster` — see *Still open #2*.
+
+## Still open
+
+1. **Config vs. secret.** `contextPartyId` is a non-secret static value; inject via
+   the same pipeline jq patch as `ConnectionString`/`Queue`, or hardcode per
+   `appsettings.{ENV}.json`. (Pipeline injection keeps all EDI settings in one place.)
+   Note CALsuite reads it as a numeric `long`.
+2. **ABN/UAT queue name.** GoLive page (`§3.4`) lists `newdispo_to_lobster` for
+   ABN/UAT but `newdispo_to_calsuite` for PROD; with Lobster dropped, confirm ABN/UAT
+   now use `newdispo_to_calsuite` and update the GoLive page accordingly.
 
 ## Analysis
 
@@ -94,7 +127,7 @@ deprecated, leaving the EDI flow as the one to productionize:
 
 | Flow | Component | Repo | Mechanism | `contextPartyId` today |
 | ---- | --------- | ---- | --------- | ---------------------- |
-| **EDI (in scope)** | New Dispo Backend `SendToEDI` | `Code/Disposition-Backend` | ASB **queue** → Lobster / CALsuite WM | **None — no headers set at all** |
+| **EDI (in scope)** | New Dispo Backend `SendToEDI` | `Code/Disposition-Backend` | ASB **queue** → CALsuite WM (direct) | **None — no headers set at all** |
 | ~~CrossDock (deprecated)~~ | `CrossDockEventPublisher` Cloud Function | `Code/Nagel-GCP` | ASB **topic** | Set from env var `ENVIRONMENT` (`28302` test / `44901` fallback) |
 
 The request wording ("CALsuite **WM**", "shipment", "map our JSON to the route
@@ -113,7 +146,7 @@ Frontend "Send to EDI" action
       • builds JSON via EdiJsonBuilderSubHandler   ← the "JSON" Patrick refers to
       • EdiProvider.SendEdiMessageAsync(json)        ← sends BARE body, no headers
   → Azure Service Bus queue (EdiSettings.Queue)
-  → Lobster / CALsuite WM
+  → CALsuite WM (direct)
 ```
 
 The JSON body itself (`JsonRootDto`) carries `correlationId`, `createdAt`,
@@ -134,9 +167,12 @@ headers**, not body fields. In Azure Service Bus terms these map to
 | UAT   | `sb-calsuite-tst…`    | `newdispo_to_lobster`  | done |
 | PROD  | `sb-calsuitewm-acc…`  | `newdispo_to_calsuite` | open |
 
-Note ABN/UAT route via **Lobster**; PROD targets a **CALsuite-WM-direct** queue.
-This matters for the open question of whether Lobster injects any of the other
-envelope headers on the ABN/UAT path.
+**Correction (2026-06-26):** New Dispo **no longer publishes via Lobster** — the
+target is **CalSuite WM directly** (queue `newdispo_to_calsuite`). The GoLive page
+(`02_Explorations/2026-04-17_New_Dispo_GoLive_1060_Oracle/`, §3.4) still lists
+`newdispo_to_lobster` for ABN/UAT (PROD already shows `newdispo_to_calsuite`); those
+ABN/UAT rows look stale and should be reconciled. ABN & UAT route internally to
+CalSuite **ACC**.
 
 ## Source Code Evidence
 
@@ -186,39 +222,69 @@ MessageType = "SendPickupPlanToCustomerAction", … }`.
 1. **It is a code change.** The Backend EDI sender attaches no application
    properties; `contextPartyId` cannot be set by config alone.
 2. **Minimal change surface = 3 spots:**
-   - `EdiProvider.SendEdiMessageAsync` → add `wrappedMessage.ApplicationProperties.Add("contextPartyId", _settings.ContextPartyId)` (exact name TBD).
-   - `AzureServiceBusSettingsDto` → add `public string ContextPartyId { get; set; } = "";`.
+   - `EdiProvider.SendEdiMessageAsync` → set `Subject = "SendPickupPlanToCALsuiteWM"` and add the `_contextPartyId` / `_component` / (optional) `_correlationId` application properties.
+   - `AzureServiceBusSettingsDto` → add `ContextPartyId` alongside `ConnectionString`/`Queue` (`_component` is a constant `CALConsult.Disposition.API`, no config field needed).
    - Each deployment pipeline → inject `.EdiSettings.ContextPartyId` (mirror the existing `ConnectionString`/`Queue` jq pattern), or set it in `appsettings.{ENV}.json` (it's a non-secret static value).
-3. **Environment values (only ACC/Prod given):**
+3. **Environment values.** ABN & UAT both route internally to CALsuite **ACC**
+   (confirmed 2026-06-26), so both carry **303**; only DEV is unspecified.
 
    | Stage | contextPartyId |
    | ----- | -------------- |
-   | UAT (= ACC) | **303** |
+   | ABN (→ CALsuite ACC) | **303** |
+   | UAT (→ CALsuite ACC) | **303** |
    | PROD | **507** |
-   | ABN / DEV | ⚠️ not specified by Patrick |
-4. **Envelope contract is undocumented.** The screenshot shows
-   `_component=CALConsult.CALoms.Shipment`, `_contextPartyId`, `_correlationId`,
-   `_culture=en` — underscore-prefixed and matching neither our current output nor
-   the old CrossDock output (`component=TMS Bridge`, `contextPartyId`, `_type`).
-   Cannot be inferred safely; must be confirmed.
+   | DEV | n/a — no CALsuite EDI on DEV (accepted) |
+4. **Envelope contract — now confirmed (Roel, 2026-06-26).** Underscore-prefixed
+   application properties `_contextPartyId`, `_component`, `_correlationId`
+   (optional), plus Subject `SendPickupPlanToCALsuiteWM`. The leading-underscore
+   form is confirmed (not the deprecated CrossDock `contextPartyId`). `_culture`
+   (=en in yesterday's screenshot) is intentionally **skipped** — not required
+   (confirmed 2026-06-26).
 5. **PROD EDI is not wired yet** (pipeline injection commented out; GoLive status
    "open") — so PROD needs both the connection/queue *and* the new value before it
    can work end-to-end.
 
-### Proposed change (pending contract confirmation — NOT yet applied)
+### Proposed change (contract confirmed — NOT yet applied; validate first)
+
+Datacontract (JSON body) unchanged — only the Subject + headers are added.
 
 ```csharp
 // EdiProvider.SendEdiMessageAsync
-var wrappedMessage = new ServiceBusMessage(message);
+var wrappedMessage = new ServiceBusMessage(message)
+{
+    // Subject == the older "Label" (system.Label); CALsuite WM routes on it.
+    Subject = "SendPickupPlanToCALsuiteWM",
+};
 
-// Required by CALsuite WM to map the message to the correct route-planning context.
-// Static, environment-dependent value: 303 (ACC/UAT), 507 (PROD).
-// NOTE: exact property name/casing and any additional required headers
-//       (_component, _correlationId, _culture) to be confirmed with CALsuite.
-wrappedMessage.ApplicationProperties.Add("contextPartyId", _settings.ContextPartyId);
+// Headers CALsuite WM reads to map our JSON to the correct route-planning context.
+// Leading underscore is part of the contract (Roel, 2026-06-26).
+wrappedMessage.ApplicationProperties.Add("_contextPartyId", _settings.ContextPartyId); // 303 ACC/UAT, 507 PROD (numeric)
+wrappedMessage.ApplicationProperties.Add("_component", "CALConsult.Disposition.API"); // the Backend assembly/project name (source api/service)
+wrappedMessage.ApplicationProperties.Add("_correlationId", Guid.NewGuid().ToString());  // optional, recommended
+// _culture (=en in the screenshot) intentionally skipped — not required (confirmed 2026-06-26).
 
 await sender.SendMessageAsync(wrappedMessage);
 ```
+
+### Validation plan (fast iteration — dev-driven)
+
+This exploration is the **handoff**; the implementing dev drives the steps below.
+Goal: confirm the contract end-to-end with Nagel/CALsuite **before** committing or
+deploying — avoid the slow code → build → deploy → trigger → check loop.
+
+1. **Fire** a representative message (unchanged JSON body + the Subject and headers
+   above) at **CalSuite WM directly** (queue `newdispo_to_calsuite` per the GoLive
+   page; New Dispo no longer publishes via Lobster) — ABN & UAT both route internally
+   to CalSuite **ACC**, so `_contextPartyId` = 303. Fastest from a local run; Roel's
+   sample console sender is a ready template and the Backend already uses the same SDK.
+2. **Nagel confirms** quickly that CALsuite WM maps it to the route planning.
+3. **Only then** make the change permanent in `EdiProvider` + config, commit, and
+   deploy (ABN → UAT → PROD).
+
+Target decided (2026-06-26): **CalSuite WM directly** (queue `newdispo_to_calsuite`),
+**not** Lobster and **not** the P3 POC namespace in `appsettings.Local.json`. The
+CalSuite connection string is a pipeline secret (empty in local/ABN/UAT appsettings);
+the implementing dev supplies it for the local run.
 
 ## Related Files
 
@@ -233,6 +299,7 @@ await sender.SendMessageAsync(wrappedMessage);
 
 - **ADO User Story [#125889](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_workitems/edit/125889)** — "EDI flow: add contextPartyId header so CALsuite WM can map our JSON to route planning" (child of Feature [#123230](https://dev.azure.com/p3ds/Nagel-CAL%20Disposition/_workitems/edit/123230) "Customer Communication")
 - Request source: `00_Meetings/2026-06-25_EDI-partyID.change/2026-06-25_EDI-partyID.change.md` (+ `image.png`)
+- Alignment / contract confirmation: `00_Meetings/2026-06-26_EDI-alignment-Roel/` (Roel, 2026-06-26 — note + 2 reference screenshots)
 - GoLive / ASB setup: `02_Explorations/2026-04-17_New_Dispo_GoLive_1060_Oracle/new-dispo-golive-1060-oracle.md`
 - Infra context: `02_Explorations/2026-03-03_Infrastructure-documentation-wiki-comparison/Infrastructure-Operational-Guide.md` (CALSuite Service Bus)
 - Deprecated, for contrast only: `[ADR001] Data Exchange Between TMS and CALSuite's Cross-Dock`; `Code/Nagel-GCP/CrossDockEventPublisher`
