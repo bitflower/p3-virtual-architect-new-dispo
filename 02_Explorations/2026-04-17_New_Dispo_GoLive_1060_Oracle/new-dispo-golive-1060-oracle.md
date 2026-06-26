@@ -170,11 +170,15 @@ Each virtual environment's Backend requires its own CloudSQL database for isolat
 
 ### 3.4 Azure Service Bus
 
-| Stage | ASB Namespace | Queue | Status |
-| ----- | ------------- | ----- | ------ |
-| ABN   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | done    |
-| UAT   | Endpoint=sb://sb-calsuite-tst.servicebus.windows.net/| newdispo_to_lobster   | done|
-| PROD  | <span style="color:red">**TBD** </span>           | newdispo_to_calsuite   | <span style="color:red">**TBD** </span>    |
+<span style="color:red">**⚠️ Entire section — to be reviewed and confirmed by @nikolay (namespaces, endpoints, queue provisioning).**</span>
+
+| Stage | Service Bus Namespace | Endpoint URL | Queue / Entity Name | contextPartyId | Status |
+| ----- | --------------------- | ------------ | ------------------- | -------------- | ------ |
+| ABN   | `sb-calsuitewm-tst` | `sb://sb-calsuitewm-tst.servicebus.windows.net/` | `newdispo_to_calsuite` | `28302` | open |
+| UAT   | `sb-calsuitewm-acc` | `sb://sb-calsuitewm-acc.servicebus.windows.net/` | `newdispo_to_calsuite` | `303` | open |
+| PROD  | `sb-calsuitewm-prd` | `sb://sb-calsuitewm-prd.servicebus.windows.net/` | `newdispo_to_calsuite` | `507` | open |
+
+_Namespace mapping (Roel, 2026-06-26): DEV `sb-calsuitewm-dev` · ABN `sb-calsuitewm-tst` · UAT `sb-calsuitewm-acc` · PRD `sb-calsuitewm-prd` — dedicated per environment (supersedes the earlier shared `sb-calsuite-tst`). The **Namespace** is the resource name; the `sb://…servicebus.windows.net/` value is the **Endpoint URL**. Queues are flat entities — no Topics/Subscriptions._
 
 **Purpose:** Outbound EDI messages (invoice/shipment distribution) via AMQP/TLS.
 
@@ -219,7 +223,7 @@ Secret names follow the credential routing convention from ADR-009: `{SYSTEM}-{E
 | ------------------- | -------------------------------------- | -------------------------------------- | ----------------- |
 | Shared VPC          | `vpc-c-shared-vpc-c-net-s-t`           | `vpc-c-shared-vpc-c-net-s-p`           | confirmed|
 | Subnet              | `sn-vpc-c-net-s-t-europe-west3-common` | `sn-vpc-c-net-s-p-europe-west3-common` | confirmed |
-| Hub VPC Project     | `prj-cal-net-h-5332-53ad`              | `prj-cal-net-h-5332-53ad`              | <span style="color:red">**to be confirmed** </span> |
+| Hub VPC Project     | `prj-cal-net-h-5332-53ad`              | `prj-cal-net-h-5332-53ad`              | confirmed |
 | CAL VPN Endpoints   | `34.157.54.59`, `34.157.191.34`        | (same hub)                             | <span style="color:red">**to be confirmed** </span>|
 | Nagel VPN Endpoints | `35.242.18.84`, `34.157.189.239`       | (same hub)                             | <span style="color:red">**to be confirmed** </span>|
 
@@ -261,7 +265,7 @@ Each virtual environment requires its own Keycloak instance or realm (see Sectio
 | ---- | ----------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------- |
 | ABN  | WL5-T-T     | yes | <span style="color:red">**No — `GcsSettings` empty, not pipeline-injected** </span> | <span style="color:red">**fail-open: no consignor filtering — confirm if intended** </span> |
 | UAT  | WL5-T-T     | yes | <span style="color:red">**No — `GcsSettings` empty, not pipeline-injected** </span> | <span style="color:red">**fail-open: no consignor filtering — confirm if intended** </span> |
-| PROD | WL5-P-P     |  yes |<span style="color:red">**to be confirmed** </span> | <span style="color:red">**CSV must be uploaded & `GcsSettings` wired before go-live** </span> |
+| PROD | WL5-P-P     |  yes |yes | <span style="color:red">**CSV must be uploaded & `GcsSettings` wired before go-live** </span> |
 
 Status reflects repo config and deploy pipelines (verified 2026-06-23: `FilterShipments.Bucket/Whitelist/*`, `appsettings.*.json`, `devops/azure-pipelines-*.yml`); live Cloud Run env vars and the actual presence of a CSV object per bucket were not separately verified. See also the GCS cleanup exploration (§10).
 
@@ -270,9 +274,9 @@ Status reflects repo config and deploy pipelines (verified 2026-06-23: `FilterSh
 
 | Env  | GCP Project | Contact person list received? | Contact person list Excel configured?                       | Status                                                                                          |
 | ---- | ----------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------- |
-| ABN  | <span style="color:red"> **WL5-T-T ??** </span>  | yes | <span style="color:red">**@nikolay please update** </span> | <span style="color:red">**1034 contacts available** </span> |
-| UAT  | <span style="color:red"> **WL5-T-T ??** </span>  | yes | <span style="color:red">**@nikolay please update** </span> | <span style="color:red">**no information** </span> |
-| PROD | <span style="color:red"> **WL5-P-P ??** </span> |  yes |<span style="color:red">**@nikolay please update** </span> | <span style="color:red">**Excel must be uploaded and  wired before go-live** </span> |
+| ABN  | WL5-T-T  | yes | yes | <span style="color:red">**1034 contacts available** </span> |
+| UAT  | WL5-T-T  | yes | yes | <span style="color:red">**no information** </span> |
+| PROD | WL5-P-P  |  yes |<span style="color:red">**@nikolay please update** </span> | <span style="color:red">**Excel must be uploaded and  wired before go-live** </span> |
 
 ## 4. Security - Users & Service Accounts
 
@@ -291,10 +295,10 @@ Status reflects repo config and deploy pipelines (verified 2026-06-23: `FilterSh
 
 | Client ID                 | Type                    | Used By                | Environment        | Status           |
 | ------------------------- | ----------------------- | ---------------------- | ------------------ | ---------------- |
-| `cal-client`              | User-facing (Auth Code) | Frontend + Backend     | Production         | <span style="color:red">**to be verified** </span> |
-| `ebv-client`              | User-facing             | Legacy EBV integration | Production         | <span style="color:red">**to be verified** </span> |
-| `client-credentials-test` | Machine-to-Machine      | Service accounts       | Test               | <span style="color:red">**to be verified** </span>|
-| `cloud-run-client`        | Machine-to-Machine      | Cloud Run functions    | Cloud environments | <span style="color:red">**to be verified** </span>|
+| `cal-client`              | User-facing (Auth Code) | Frontend + Backend     | Production         | existing|
+| `ebv-client`              | User-facing             | Legacy EBV integration | Production         | existing |
+| `client-credentials-test` | Machine-to-Machine      | Service accounts       | Test               | existing|
+| `cloud-run-client`        | Machine-to-Machine      | Cloud Run functions    | Cloud environments | existing|
 | `tms-cloud-service`       | Machine-to-Machine      | TMS Bridge             | Cloud environments | <span style="color:red">**to be verified** </span> |
 
 ### 4.3 GCP Service Accounts
