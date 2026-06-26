@@ -1026,6 +1026,21 @@
         "stripTags": ["internal"],
         "notes": "Exploration document - strip <internal> tags (Original User Input, Related Files) on publish"
       }
+    },
+    {
+      "id": "exploration-edi-partyid-contextpartyid-header",
+      "source": "02_Explorations/2026-06-25_EDI_partyID_change_-_contextPartyId_header_for_Backend_EDI_flow_to_CALsuite_WM/edi-partyid-change---contextpartyid-header-for-backend-edi-flow-to-calsuite-wm.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D25-EDI-PartyID-Change-ContextPartyId-Header.md",
+      "description": "EDI partyID change — adding contextPartyId header to the Backend EDI flow so CALsuite WM can map our JSON to route planning (303 ACC/UAT, 507 PROD)",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "stripTags": ["internal"],
+        "notes": "Exploration document - 'Original User Input' (raw client chat + screenshot) wrapped in <internal> tags, stripped on publish"
+      }
     }
   ]
 }
