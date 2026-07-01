@@ -1041,6 +1041,28 @@
         "stripTags": ["internal"],
         "notes": "Exploration document - 'Original User Input' (raw client chat + screenshot) wrapped in <internal> tags, stripped on publish"
       }
+    },
+    {
+      "id": "exploration-tms-bridge-test-latency-ora50201",
+      "source": "02_Explorations/2026-06-30_TMS_Bridge_test_latency_spike__Oracle_connectivity_outage_ORA-50201_on_2026-06-3/tms-bridge-test-latency-spike--oracle-connectivity-outage-ora-50201-on-2026-06-3.md",
+      "target": "WIKI/Nagel-CAL-Disposition.wiki/Sandbox-(Internal)/Explorations/2026%2D06%2D30-TMS-Bridge-Test-Latency-Oracle-Connectivity-Outage-ORA-50201.md",
+      "description": "TMS Bridge test latency spike root-caused to an Oracle connectivity outage (ORA-50201) on 2026-06-30; ORA-00904 CAL_UNIFACE.ITEM noted as a separate pre-existing bug",
+      "syncStrategy": {
+        "type": "full-sync",
+        "scope": "full-document",
+        "dateMarkers": {
+          "enabled": false
+        },
+        "stripTags": ["internal"],
+        "attachmentHandling": {
+          "enabled": true,
+          "sourceBasePath": "02_Explorations/2026-06-30_TMS_Bridge_test_latency_spike__Oracle_connectivity_outage_ORA-50201_on_2026-06-3",
+          "targetPath": ".attachments",
+          "supportedFormats": [".svg", ".png", ".jpg", ".jpeg", ".gif", ".pdf"],
+          "forceUpdate": false
+        },
+        "notes": "Exploration document - strip <internal> (Original User Input) on publish; copy the request-latencies chart to .attachments. The image is kept outside the internal block intentionally."
+      }
     }
   ]
 }
